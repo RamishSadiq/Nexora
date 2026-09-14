@@ -75,15 +75,15 @@ export function CrmWorkspace({ permissions, initial, initialRecord, fixedKind = 
 }
 
 function RecordForm({ row, kind, directory, busy, onSave, onCancel }: { row?: RecordRow; kind: string; directory: Directory; busy: boolean; onSave: (r: unknown) => Promise<void>; onCancel: () => void }) {
-  const [attributes, setAttributes] = useState<string[]>([]);
-  useEffect(() => { if (kind !== "contact" && kind !== "account") return; void crm<{ name: string; kind: string }[]>("/fields").then(fields => setAttributes(fields.filter(f => f.kind === kind).map(f => f.name))).catch(() => setAttributes([])); }, [kind]);
+  const [attributes, setAttributes] = useState<{ name: string; dataType: string }[]>([]);
+  useEffect(() => { if (kind !== "contact" && kind !== "account") return; void crm<{ name: string; kind: string; dataType: string }[]>("/fields").then(fields => setAttributes(fields.filter(f => f.kind === kind))).catch(() => setAttributes([])); }, [kind]);
   return <form className="grid gap-4 sm:grid-cols-2" onSubmit={e => { const r = data(e); void onSave({ ...r, kind, category: r.category || null, ownerUserId: r.ownerUserId || null, ownerTeamId: r.ownerTeamId || null, version: row?.version }); }}>
     <Label title={kind === "contact" ? "Full name" : "Account name"}><input className={input} name="name" defaultValue={row?.name} maxLength={160} required /></Label>
     <Label title="Status"><select className={input} name="status" defaultValue={row?.status ?? "active"}>{["active", "prospect", "inactive"].map(s => <option key={s}>{s}</option>)}</select></Label>
     <Label title="Category"><input className={input} name="category" defaultValue={row?.category ?? ""} maxLength={100} /></Label>
     <Label title="Owner"><select className={input} name="ownerUserId" defaultValue={row?.ownerUserId ?? ""}><option value="">Unassigned</option>{directory.users.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></Label>
     <Label title="Team"><select className={input} name="ownerTeamId" defaultValue={row?.ownerTeamId ?? ""}><option value="">Unassigned</option>{directory.teams.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}</select></Label>
-    {attributes.map(attribute => <Label key={attribute} title={attribute}><input className={input} name={`attribute_${attribute}`} maxLength={500} /></Label>)}
+    {attributes.map(attribute => <Label key={attribute.name} title={attribute.name}><input className={input} name={`attribute_${attribute.name}`} maxLength={500} type={attribute.dataType === "number" ? "number" : attribute.dataType === "date" ? "date" : attribute.dataType === "boolean" ? "checkbox" : "text"} /></Label>)}
     <div className="flex items-end gap-2"><button className={primary} disabled={busy}>Save {kind}</button><button type="button" className={button} onClick={onCancel}>Cancel</button></div>
   </form>;
 }
