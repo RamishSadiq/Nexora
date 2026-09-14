@@ -41,6 +41,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
     radial-gradient(circle at 10% 92%, rgba(54, 91, 186, 0.2), transparent 30%),
     linear-gradient(145deg, #0b1224 0%, #111b35 55%, #0b142b 100%);
 }
+.login-form-panel {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(157, 67, 91, .12), transparent 28%),
+    radial-gradient(circle at 92% 88%, rgba(116, 39, 69, .08), transparent 30%),
+    linear-gradient(145deg, #f5efeb 0%, #f1e8e7 100%);
+}
 .login-circuit {
   opacity: .7;
   background-image: radial-gradient(circle at 85% 20%, rgba(112,166,255,.95) 0 1px, transparent 2px), linear-gradient(135deg, transparent 0 72%, rgba(71,124,255,.5) 72.2% 72.5%, transparent 72.8%), linear-gradient(45deg, transparent 0 78%, rgba(71,124,255,.35) 78.2% 78.5%, transparent 78.8%);

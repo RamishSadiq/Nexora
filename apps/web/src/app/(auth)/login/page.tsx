@@ -21,8 +21,8 @@ export default async function LoginPage({
     ? requestedReturnTo
     : "/dashboard";
   return (
-    <main className="grid min-h-screen bg-[#f3f0e9] lg:grid-cols-[minmax(420px,0.92fr)_minmax(560px,1.08fr)]">
-      <section className="relative flex min-h-screen flex-col bg-[#f3f0e9] px-6 py-7 sm:px-12 lg:px-[clamp(3rem,7vw,7.5rem)] lg:py-9">
+    <main className="grid min-h-screen bg-[#f1e8e7] lg:grid-cols-[minmax(420px,0.92fr)_minmax(560px,1.08fr)]">
+      <section className="login-form-panel relative flex min-h-screen flex-col px-6 py-7 sm:px-12 lg:px-[clamp(3rem,7vw,7.5rem)] lg:py-9">
         <div className="flex items-center justify-between">
           <NexoraMark />
           <a href="mailto:support@nexora.example" className="rounded-lg px-2 py-1.5 text-sm font-medium text-[#667085] transition hover:bg-[#f5f7fa] hover:text-[#27364a]">
