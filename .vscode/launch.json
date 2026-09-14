@@ -1,0 +1,40 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Nexora API",
+      "type": "coreclr",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/src/Nexora.Api/bin/Debug/net10.0/Nexora.Api.exe",
+      "cwd": "${workspaceFolder}/backend/src/Nexora.Api",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "Identity__SeedAdminPassword": "Nexora-Local-2026!"
+      },
+      "launchBrowser": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "Now listening on: (https?://\\S+)"
+      },
+      "preLaunchTask": "build-api"
+    },
+    {
+      "name": "Nexora Web",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/apps/web",
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "- Local:\\s+(https?://\\S+)"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Nexora (API + Web)",
+      "configurations": ["Nexora API", "Nexora Web"],
+      "stopAll": true
+    }
+  ]
+}
