@@ -23,7 +23,7 @@ function ConfirmDialog({ message, onConfirm, onCancel }: { message: string; onCo
   </dialog>;
 }
 
-export function CrmWorkspace({ permissions, initial, initialRecord }: { permissions: string[]; initial: ListState; initialRecord: string }) {
+export function CrmWorkspace({ permissions, initial, initialRecord, fixedKind = false }: { permissions: string[]; initial: ListState; initialRecord: string; fixedKind?: boolean }) {
   const [query, setQuery] = useState(initial);
   const [search, setSearch] = useState(initial.search);
   const [selected, setSelected] = useState(initialRecord);
@@ -61,7 +61,7 @@ export function CrmWorkspace({ permissions, initial, initialRecord }: { permissi
     <header className="flex flex-wrap items-center justify-between gap-4"><div><p className="text-xs font-semibold uppercase tracking-widest text-indigo-600">CRM workspace</p><h1 className="mt-1 text-3xl font-semibold tracking-tight">Relationships</h1><p className="mt-2 text-sm text-slate-600">People, organisations and the history that connects them.</p></div>{canManage && <button className={primary} onClick={() => { setCreating(true); setSelected(""); }}>Create {query.kind}</button>}</header>
     {error && <div role="alert" className="flex flex-wrap items-center justify-between gap-2 rounded-lg border border-red-200 bg-red-50 p-4 text-sm text-red-800">{error}<button className={button} onClick={() => { setError(""); setLoading(true); setRefresh(r => r + 1); }}>Retry loading</button></div>}
     <section aria-label="Search and list preferences" className="space-y-4 rounded-xl border border-slate-200 bg-white p-4">
-      <div className="flex flex-wrap gap-2">{["contact", "account"].map(kind => <button key={kind} aria-pressed={query.kind === kind} className={query.kind === kind ? primary : button} onClick={() => { filter({ kind }); setSelected(""); setCreating(false); }}>{kind === "contact" ? "Contacts" : "Accounts"}</button>)}</div>
+      {!fixedKind && <div className="flex flex-wrap gap-2">{["contact", "account"].map(kind => <button key={kind} aria-pressed={query.kind === kind} className={query.kind === kind ? primary : button} onClick={() => { filter({ kind }); setSelected(""); setCreating(false); }}>{kind === "contact" ? "Contacts" : "Accounts"}</button>)}</div>}
       <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
         <form className="flex items-end gap-2 sm:col-span-2" onSubmit={e => { e.preventDefault(); filter({ search }); }}><Label title="Search by name"><input className={input} value={search} maxLength={160} onChange={e => setSearch(e.target.value)} placeholder="Find a person or organisation" /></Label><button className={button}>Search</button></form>
         <Label title="Status"><select className={input} value={query.status} onChange={e => filter({ status: e.target.value })}><option value="">All statuses</option>{["active", "prospect", "inactive"].map(s => <option key={s}>{s}</option>)}</select></Label>
