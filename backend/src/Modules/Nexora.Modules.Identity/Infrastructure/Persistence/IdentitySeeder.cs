@@ -78,6 +78,11 @@ public static class IdentitySeeder
             EnsureSucceeded(userResult);
             EnsureSucceeded(await userManager.AddToRoleAsync(user, role.Name!));
         }
+        else if (configuration.GetValue<bool>("Identity:ResetSeedAdminPassword"))
+        {
+            EnsureSucceeded(await userManager.RemovePasswordAsync(user));
+            EnsureSucceeded(await userManager.AddPasswordAsync(user, password));
+        }
 
         if (!await dbContext.Teams.AnyAsync(x => x.TenantId == tenant.Id, cancellationToken))
         {

@@ -10,6 +10,7 @@
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Identity__SeedAdminPassword": "Nexora-Local-2026!",
+        "Identity__ResetSeedAdminPassword": "true",
         "ConnectionStrings__Nexora": "Server=.\\SQLEXPRESS;Database=NexoraDev;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
       },
       "serverReadyAction": {
