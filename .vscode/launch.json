@@ -21,7 +21,7 @@
       "name": "Nexora Web",
       "type": "node-terminal",
       "request": "launch",
-      "command": "npm run dev",
+      "command": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe node_modules/next/dist/bin/next dev",
       "cwd": "${workspaceFolder}/apps/web",
       "serverReadyAction": {
         "action": "openExternally",
