@@ -21,8 +21,8 @@ export default async function LoginPage({
     ? requestedReturnTo
     : "/dashboard";
   return (
-    <main className="grid min-h-screen bg-white lg:grid-cols-[minmax(420px,0.92fr)_minmax(560px,1.08fr)]">
-      <section className="relative flex min-h-screen flex-col px-6 py-7 sm:px-12 lg:px-[clamp(3rem,7vw,7.5rem)] lg:py-9">
+    <main className="grid min-h-screen bg-[#f3f0e9] lg:grid-cols-[minmax(420px,0.92fr)_minmax(560px,1.08fr)]">
+      <section className="relative flex min-h-screen flex-col bg-[#f3f0e9] px-6 py-7 sm:px-12 lg:px-[clamp(3rem,7vw,7.5rem)] lg:py-9">
         <div className="flex items-center justify-between">
           <NexoraMark />
           <a href="mailto:support@nexora.example" className="rounded-lg px-2 py-1.5 text-sm font-medium text-[#667085] transition hover:bg-[#f5f7fa] hover:text-[#27364a]">
@@ -32,10 +32,10 @@ export default async function LoginPage({
 
         <div className="page-enter mx-auto flex w-full max-w-[440px] flex-1 flex-col justify-center py-14">
           <div className="mb-9">
-            <span className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#f0f4ff] px-3 py-1.5 text-xs font-semibold text-[#405bd8]">
-              <Sparkles className="size-3.5" aria-hidden="true" /> Your connected workspace
+            <span className="mb-4 grid size-8 place-items-center rounded-full bg-[#e5e0d8] text-[#24314b]">
+              <Sparkles className="size-4" aria-hidden="true" />
             </span>
-            <h1 className="text-[clamp(2rem,4vw,2.7rem)] font-semibold leading-[1.08] tracking-[-0.055em] text-[#17213a]">Welcome back</h1>
+            <h1 className="text-[clamp(2.2rem,4vw,3rem)] font-semibold leading-[1.08] tracking-[-0.055em] text-[#111827]">Welcome back</h1>
             <p className="mt-3 max-w-sm text-[15px] leading-6 text-[#667085]">
               Sign in to manage relationships, operations, and insight in one place.
             </p>
@@ -51,6 +51,7 @@ export default async function LoginPage({
 
       <section className="login-aurora relative hidden min-h-screen overflow-hidden p-10 text-white lg:flex lg:flex-col">
         <div className="login-grid absolute inset-0" aria-hidden="true" />
+        <div className="login-circuit absolute inset-0" aria-hidden="true" />
         <div className="absolute -right-20 -top-24 size-80 rounded-full border border-white/10" aria-hidden="true" />
         <div className="absolute -right-4 -top-8 size-52 rounded-full border border-white/10" aria-hidden="true" />
         <div className="relative z-10 flex items-center justify-between">

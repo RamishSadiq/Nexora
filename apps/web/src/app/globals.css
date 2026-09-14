@@ -37,9 +37,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .login-aurora {
   background:
-    radial-gradient(circle at 14% 22%, rgba(118, 144, 255, 0.42), transparent 30%),
-    radial-gradient(circle at 82% 72%, rgba(56, 208, 186, 0.23), transparent 29%),
-    linear-gradient(145deg, #132143 0%, #1a2b59 48%, #18294c 100%);
+    radial-gradient(circle at 88% 8%, rgba(73, 126, 255, 0.28), transparent 22%),
+    radial-gradient(circle at 10% 92%, rgba(54, 91, 186, 0.2), transparent 30%),
+    linear-gradient(145deg, #0b1224 0%, #111b35 55%, #0b142b 100%);
+}
+.login-circuit {
+  opacity: .7;
+  background-image: radial-gradient(circle at 85% 20%, rgba(112,166,255,.95) 0 1px, transparent 2px), linear-gradient(135deg, transparent 0 72%, rgba(71,124,255,.5) 72.2% 72.5%, transparent 72.8%), linear-gradient(45deg, transparent 0 78%, rgba(71,124,255,.35) 78.2% 78.5%, transparent 78.8%);
+  background-size: 220px 220px, 260px 260px, 190px 190px;
+  mask-image: radial-gradient(ellipse at 86% 25%, black 0 32%, transparent 72%);
 }
 .login-grid {
   background-image:
