@@ -5,7 +5,7 @@
       "label": "free-api-port",
       "type": "shell",
       "command": "powershell",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", \"Get-NetTCPConnection -LocalPort 5081 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }\"],
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "Get-NetTCPConnection -LocalPort 5081 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }"],
       "problemMatcher": []
     },
     {
