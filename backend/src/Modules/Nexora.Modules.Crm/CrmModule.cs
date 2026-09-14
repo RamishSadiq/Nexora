@@ -97,6 +97,11 @@ public static class CrmModule
             var field = new CustomFieldDefinition { TenantId = who.TenantId!.Value, Name = Required(r.Name, 80), Kind = r.Kind, DataType = r.DataType };
             db.Add(field); await db.SaveChangesAsync(ct); return Results.Ok(field);
         }).RequireAuthorization("crm.configure");
+        api.MapDelete("/fields/{id:guid}", async (Guid id, CrmDbContext db, IRequestIdentity who, CancellationToken ct) =>
+        {
+            var field = await db.Set<CustomFieldDefinition>().SingleOrDefaultAsync(x => x.Id == id && x.TenantId == who.TenantId, ct) ?? throw new KeyNotFoundException();
+            db.Remove(field); await db.SaveChangesAsync(ct); return Results.NoContent();
+        }).RequireAuthorization("crm.configure");
         api.MapPut("/records/{id:guid}/fields/{fieldId:guid}", SetFieldAsync).RequireAuthorization("crm.manage");
         api.MapGet("/views", async (CrmDbContext db, CancellationToken ct) => await db.Set<SavedView>().OrderBy(x => x.Name).ToListAsync(ct));
         api.MapPost("/views", async (ViewRequest r, CrmDbContext db, IRequestIdentity who, CancellationToken ct) =>
