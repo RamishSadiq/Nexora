@@ -75,12 +75,15 @@ export function CrmWorkspace({ permissions, initial, initialRecord, fixedKind = 
 }
 
 function RecordForm({ row, kind, directory, busy, onSave, onCancel }: { row?: RecordRow; kind: string; directory: Directory; busy: boolean; onSave: (r: unknown) => Promise<void>; onCancel: () => void }) {
+  const [attributes, setAttributes] = useState<string[]>([]);
+  useEffect(() => { const key = `nexora-attributes-${kind === "contact" ? "contacts" : "accounts"}`; try { setAttributes(JSON.parse(localStorage.getItem(key) ?? "[]")); } catch { setAttributes([]); } }, [kind]);
   return <form className="grid gap-4 sm:grid-cols-2" onSubmit={e => { const r = data(e); void onSave({ ...r, kind, category: r.category || null, ownerUserId: r.ownerUserId || null, ownerTeamId: r.ownerTeamId || null, version: row?.version }); }}>
     <Label title={kind === "contact" ? "Full name" : "Account name"}><input className={input} name="name" defaultValue={row?.name} maxLength={160} required /></Label>
     <Label title="Status"><select className={input} name="status" defaultValue={row?.status ?? "active"}>{["active", "prospect", "inactive"].map(s => <option key={s}>{s}</option>)}</select></Label>
     <Label title="Category"><input className={input} name="category" defaultValue={row?.category ?? ""} maxLength={100} /></Label>
     <Label title="Owner"><select className={input} name="ownerUserId" defaultValue={row?.ownerUserId ?? ""}><option value="">Unassigned</option>{directory.users.map(u => <option key={u.id} value={u.id}>{u.name}</option>)}</select></Label>
     <Label title="Team"><select className={input} name="ownerTeamId" defaultValue={row?.ownerTeamId ?? ""}><option value="">Unassigned</option>{directory.teams.map(t => <option key={t.id} value={t.id}>{t.name}</option>)}</select></Label>
+    {attributes.map(attribute => <Label key={attribute} title={attribute}><input className={input} name={`attribute_${attribute}`} maxLength={500} /></Label>)}
     <div className="flex items-end gap-2"><button className={primary} disabled={busy}>Save {kind}</button><button type="button" className={button} onClick={onCancel}>Cancel</button></div>
   </form>;
 }
