@@ -7,6 +7,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/backend/src/Nexora.Api/bin/Debug/net10.0/Nexora.Api.exe",
       "cwd": "${workspaceFolder}/backend/src/Nexora.Api",
+      "args": ["--urls", "http://localhost:5081"],
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Identity__SeedAdminPassword": "Nexora-Local-2026!",
@@ -25,6 +26,9 @@
       "request": "launch",
       "command": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe node_modules/next/dist/bin/next dev",
       "cwd": "${workspaceFolder}/apps/web",
+      "env": {
+        "NEXORA_API_URL": "http://localhost:5081"
+      },
       "serverReadyAction": {
         "action": "openExternally",
         "pattern": "- Local:\\s+(https?://\\S+)"
