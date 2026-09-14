@@ -1,0 +1,69 @@
+using Nexora.BuildingBlocks.Reporting;
+using System.Globalization;
+using System.Text;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Nexora.BuildingBlocks.Domain;
+using Nexora.BuildingBlocks.Endpoints;
+using Nexora.BuildingBlocks.Security;
+using Nexora.Modules.Finance.Domain;
+using Nexora.Modules.Finance.Infrastructure;
+using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
+namespace Nexora.Modules.Finance;
+public static class FinanceModule
+{
+ public static IServiceCollection AddNexoraFinance(this IServiceCollection services,IConfiguration config){services.AddDbContext<FinanceDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","finance")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("orders","Sales orders","finance.read",sp.GetRequiredService<FinanceDbContext>().Set<SalesOrder>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.CustomerName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+        return services;}
+ public static IEndpointRouteBuilder MapNexoraFinance(this IEndpointRouteBuilder routes)
+ {
+  var api=routes.Module("finance");
+  api.MapGet("/customers",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
+  api.MapGet("/products",async(FinanceDbContext db,CancellationToken ct)=>await db.Set<CatalogueProduct>().OrderBy(x=>x.Name).ToListAsync(ct));
+  api.MapPost("/products",async(CatalogueRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Money(r.UnitPrice,true);Choice(r.Currency,"GBP","EUR","USD");Check(r.VatBasisPoints is >=0 and <=10000,"VAT basis points must be 0–10000.");var row=new CatalogueProduct{TenantId=who.TenantId!.Value,Name=Text(r.Name),Sku=Text(r.Sku,80),UnitPrice=r.UnitPrice,Currency=r.Currency,VatBasisPoints=r.VatBasisPoints};db.Add(row);History(db,who,http,row.Id,"product.created","Catalogue entry");await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.manage");
+  api.MapGet("/orders",async(FinanceDbContext db,CancellationToken ct)=>await db.Set<SalesOrder>().OrderByDescending(x=>x.CreatedAtUtc).Take(200).ToListAsync(ct));
+  api.MapPost("/orders",async(OrderRequest r,FinanceDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
+  {
+   var customer=await crm.FindActiveAsync(r.CustomerId,ct)??throw new KeyNotFoundException();Check(r.Lines is {Length:>0 and <=100},"An order needs 1–100 lines.");var order=new SalesOrder{TenantId=who.TenantId!.Value,CustomerId=customer.Id,CustomerName=customer.Name};var lines=new List<OrderLine>();
+   foreach(var item in r.Lines!){Check(item.Quantity is >=1 and <=1000,"Quantity must be 1–1000.");var product=await db.Set<CatalogueProduct>().SingleOrDefaultAsync(x=>x.Id==item.ProductId&&x.IsActive,ct)??throw new KeyNotFoundException();if(lines.Count==0)order.Currency=product.Currency;Check(order.Currency==product.Currency,"All lines must use one currency.");var net=product.UnitPrice*item.Quantity;var tax=decimal.Round(net*product.VatBasisPoints/10000m,2,MidpointRounding.AwayFromZero);lines.Add(new OrderLine{TenantId=who.TenantId.Value,OrderId=order.Id,ProductId=product.Id,Description=product.Name,Quantity=item.Quantity,UnitPrice=product.UnitPrice,VatBasisPoints=product.VatBasisPoints,Net=net,Tax=tax});}
+   order.Net=lines.Sum(x=>x.Net);order.Tax=lines.Sum(x=>x.Tax);order.Total=order.Net+order.Tax;Money(order.Total,true);db.Add(order);db.AddRange(lines);History(db,who,http,order.Id,"order.created","Price and tax snapshots captured");await db.SaveChangesAsync(ct);return Results.Ok(order);
+  }).RequireAuthorization("finance.manage");
+  api.MapGet("/orders/{id:guid}",async(Guid id,FinanceDbContext db,CancellationToken ct)=>{var order=await db.Set<SalesOrder>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();return Results.Ok(new{order,lines=await db.Set<OrderLine>().Where(x=>x.OrderId==id).ToListAsync(ct)});});
+  api.MapPost("/orders/{id:guid}/post",async(Guid id,VersionRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
+  {var order=await db.Set<SalesOrder>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();if(order.Version!=r.Version)return Conflict();Check(order.Status=="draft","Only draft orders can be posted.");order.Status="posted";var invoice=new PostedInvoice{TenantId=who.TenantId!.Value,OrderId=id,CustomerId=order.CustomerId,CustomerName=order.CustomerName,Currency=order.Currency,Total=order.Total};invoice.Number="INV-"+invoice.Id.ToString("N")[..12].ToUpperInvariant();db.Add(invoice);History(db,who,http,invoice.Id,"invoice.posted","Posted order "+id);await db.SaveChangesAsync(ct);return Results.Ok(invoice);}).RequireAuthorization("finance.post");
+  api.MapGet("/invoices",async(FinanceDbContext db,CancellationToken ct)=>await db.Set<PostedInvoice>().OrderByDescending(x=>x.CreatedAtUtc).Take(200).ToListAsync(ct));
+  api.MapGet("/invoices/{id:guid}",async(Guid id,FinanceDbContext db,CancellationToken ct)=>{var invoice=await Invoice(db,id,ct);var credits=await db.Set<Credit>().Where(x=>x.InvoiceId==id).ToListAsync(ct);var allocations=await db.Set<Allocation>().Where(x=>x.InvoiceId==id).ToListAsync(ct);return Results.Ok(new{invoice,credits,allocations,balance=invoice.Total-credits.Sum(x=>x.Amount)-allocations.Sum(x=>x.Amount)});});
+  api.MapPost("/invoices/{id:guid}/credits",async(Guid id,MoneyRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
+  {var invoice=await Invoice(db,id,ct);Money(r.Amount);var credited=(await db.Set<Credit>().Where(x=>x.InvoiceId==id).ToListAsync(ct)).Sum(x=>x.Amount);Check(r.Amount<=invoice.Total-credited,"Credit exceeds the uncredited invoice total.");var row=new Credit{TenantId=who.TenantId!.Value,InvoiceId=id,Amount=r.Amount,Reference=Text(r.Reference,100),Reason=Text(r.Reason,500)};db.Add(row);Touch(invoice);History(db,who,http,id,"invoice.credited",row.Reason);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.post");
+  api.MapGet("/receipts",async(FinanceDbContext db,CancellationToken ct)=>await db.Set<Receipt>().OrderByDescending(x=>x.CreatedAtUtc).Take(200).ToListAsync(ct));
+  api.MapPost("/receipts",async(ReceiptRequest r,FinanceDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Check(await crm.FindActiveAsync(r.CustomerId,ct)!=null,"Choose an active customer.");Money(r.Amount);Choice(r.Currency,"GBP","EUR","USD");var row=new Receipt{TenantId=who.TenantId!.Value,CustomerId=r.CustomerId,Amount=r.Amount,Currency=r.Currency,Reference=Text(r.Reference,100)};db.Add(row);History(db,who,http,row.Id,"receipt.recorded","External receipt recorded; no charge initiated");await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.post");
+  api.MapGet("/receipts/{id:guid}",async(Guid id,FinanceDbContext db,CancellationToken ct)=>{var receipt=await ReceiptAsync(db,id,ct);var refunds=await db.Set<Refund>().Where(x=>x.ReceiptId==id).ToListAsync(ct);var allocations=await db.Set<Allocation>().Where(x=>x.ReceiptId==id).ToListAsync(ct);return Results.Ok(new{receipt,refunds,allocations,available=receipt.Amount-refunds.Sum(x=>x.Amount)-allocations.Sum(x=>x.Amount)});});
+  api.MapPost("/allocations",async(AllocationRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
+  {var invoice=await Invoice(db,r.InvoiceId,ct);var receipt=await ReceiptAsync(db,r.ReceiptId,ct);Money(r.Amount);Check(invoice.Currency==receipt.Currency&&invoice.CustomerId==receipt.CustomerId,"Invoice and receipt must have the same customer and currency.");Check(r.Amount<=await Available(db,receipt,ct),"Receipt has insufficient unallocated funds.");var due=invoice.Total-(await db.Set<Credit>().Where(x=>x.InvoiceId==invoice.Id).ToListAsync(ct)).Sum(x=>x.Amount)-(await db.Set<Allocation>().Where(x=>x.InvoiceId==invoice.Id).ToListAsync(ct)).Sum(x=>x.Amount);Check(r.Amount<=due,"Allocation exceeds the invoice balance.");var row=new Allocation{TenantId=who.TenantId!.Value,InvoiceId=invoice.Id,ReceiptId=receipt.Id,Amount=r.Amount};db.Add(row);Touch(invoice);Touch(receipt);History(db,who,http,invoice.Id,"receipt.allocated","Allocated receipt "+receipt.Reference);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.post");
+  api.MapPost("/allocations/{id:guid}/reverse",async(Guid id,ReasonRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var original=await db.Set<Allocation>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();Check(original.Amount>0,"Only original allocations can be reversed.");Check(!await db.Set<Allocation>().AnyAsync(x=>x.ReversesId==id,ct),"Already reversed.");var invoice=await Invoice(db,original.InvoiceId,ct);var receipt=await ReceiptAsync(db,original.ReceiptId,ct);var row=new Allocation{TenantId=who.TenantId!.Value,InvoiceId=invoice.Id,ReceiptId=receipt.Id,Amount=-original.Amount,ReversesId=id};db.Add(row);Touch(invoice);Touch(receipt);History(db,who,http,invoice.Id,"allocation.reversed",Text(r.Reason,500));await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.post");
+  api.MapPost("/receipts/{id:guid}/refunds",async(Guid id,MoneyRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var receipt=await ReceiptAsync(db,id,ct);Money(r.Amount);Check(r.Amount<=await Available(db,receipt,ct),"Refund exceeds unallocated funds. Reverse allocations first if necessary.");var row=new Refund{TenantId=who.TenantId!.Value,ReceiptId=id,Amount=r.Amount,Reference=Text(r.Reference,100),Reason=Text(r.Reason,500)};db.Add(row);Touch(receipt);History(db,who,http,id,"refund.recorded",row.Reason);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.post");
+  api.MapPost("/receipts/{id:guid}/reconcile",async(Guid id,ReconcileRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var receipt=await ReceiptAsync(db,id,ct);if(receipt.Version!=r.Version)return Conflict();Check(receipt.StatementReference==null,"Receipt is already reconciled.");Check(receipt.Amount==r.Amount&&receipt.Currency==r.Currency,"Statement amount and currency must match the original receipt.");receipt.StatementReference=Text(r.StatementReference,100);History(db,who,http,id,"receipt.reconciled",receipt.StatementReference);await db.SaveChangesAsync(ct);return Results.Ok(receipt);}).RequireAuthorization("finance.post");
+  api.MapGet("/export",async(FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var invoices=await db.Set<PostedInvoice>().OrderBy(x=>x.CreatedAtUtc).Take(10000).ToListAsync(ct);var csv=new StringBuilder("Invoice,Customer,Currency,Total\r\n");foreach(var row in invoices)csv.AppendLine(string.Join(",",Csv(row.Number),Csv(row.CustomerName),Csv(row.Currency),row.Total.ToString("0.00",CultureInfo.InvariantCulture)));History(db,who,http,Guid.Empty,"invoices.exported",invoices.Count+" rows");await db.SaveChangesAsync(ct);return Results.File(Encoding.UTF8.GetBytes(csv.ToString()),"text/csv","nexora-invoices.csv");}).RequireAuthorization("finance.export");
+  return routes;
+ }
+ private static Task<PostedInvoice> Invoice(FinanceDbContext db,Guid id,CancellationToken ct)=>Find<PostedInvoice>(db,id,ct);
+ private static Task<Receipt> ReceiptAsync(FinanceDbContext db,Guid id,CancellationToken ct)=>Find<Receipt>(db,id,ct);
+ private static async Task<T> Find<T>(FinanceDbContext db,Guid id,CancellationToken ct)where T:TenantEntity=>await db.Set<T>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();
+ private static async Task<decimal> Available(FinanceDbContext db,Receipt receipt,CancellationToken ct)=>receipt.Amount-(await db.Set<Allocation>().Where(x=>x.ReceiptId==receipt.Id).ToListAsync(ct)).Sum(x=>x.Amount)-(await db.Set<Refund>().Where(x=>x.ReceiptId==receipt.Id).ToListAsync(ct)).Sum(x=>x.Amount);
+ private static void Money(decimal value,bool zero=false)=>Check(value>=(zero?0:0.01m)&&value<100000000&&decimal.Round(value,2)==value,"Use a positive amount below 100 million with at most two decimal places.");
+ private static void Touch(TenantEntity row)=>row.Version=Guid.NewGuid();
+ private static string Csv(string text){if(text.TrimStart().StartsWith('=')||text.TrimStart().StartsWith('+')||text.TrimStart().StartsWith('-')||text.TrimStart().StartsWith('@'))text="'"+text;return "\""+text.Replace("\"","\"\"")+"\"";}
+ private static void History(FinanceDbContext db,IRequestIdentity who,HttpContext http,Guid id,string action,string reason)=>db.Add(new FinanceHistory{TenantId=who.TenantId!.Value,SubjectId=id,Action=action,Reason=reason,ActorUserId=who.UserId!.Value,CorrelationId=http.TraceIdentifier});
+}
+public sealed record CatalogueRequest(string Sku,string Name,decimal UnitPrice,string Currency,int VatBasisPoints);
+public sealed record LineRequest(Guid ProductId,int Quantity);
+public sealed record OrderRequest(Guid CustomerId,LineRequest[] Lines);
+public sealed record VersionRequest(Guid Version);
+public sealed record MoneyRequest(decimal Amount,string Reference,string Reason);
+public sealed record ReceiptRequest(Guid CustomerId,decimal Amount,string Currency,string Reference);
+public sealed record AllocationRequest(Guid ReceiptId,Guid InvoiceId,decimal Amount);
+public sealed record ReasonRequest(string Reason);
+public sealed record ReconcileRequest(Guid Version,string StatementReference,decimal Amount,string Currency);

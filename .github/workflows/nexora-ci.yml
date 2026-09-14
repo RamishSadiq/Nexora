@@ -1,0 +1,54 @@
+name: Nexora CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: dotnet restore backend/Nexora.slnx
+      - run: dotnet build backend/Nexora.slnx --configuration Release --no-restore
+      - run: dotnet test backend/Nexora.slnx --configuration Release --no-build
+
+  sql-migrations:
+    runs-on: windows-latest
+    env:
+      NEXORA_TEST_SQLSERVER: 'Server=(localdb)\MSSQLLocalDB;Trusted_Connection=True;TrustServerCertificate=True'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - run: sqllocaldb start MSSQLLocalDB
+      - run: dotnet test backend/Nexora.slnx --configuration Release
+      - run: ./scripts/Export-NexoraMigrations.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nexora-migration-candidates
+          path: artifacts/migrations/

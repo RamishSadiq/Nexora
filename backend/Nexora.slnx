@@ -1,0 +1,22 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Nexora.Api/Nexora.Api.csproj" />
+    <Project Path="src/Nexora.Worker/Nexora.Worker.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/">
+    <Project Path="src/BuildingBlocks/Nexora.BuildingBlocks/Nexora.BuildingBlocks.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/Nexora.Modules.Work/Nexora.Modules.Work.csproj" />
+    <Project Path="src/Modules/Nexora.Modules.Engagement/Nexora.Modules.Engagement.csproj" />
+    <Project Path="src/Modules/Nexora.Modules.Finance/Nexora.Modules.Finance.csproj" />
+    <Project Path="src/Modules/Nexora.Modules.Events/Nexora.Modules.Events.csproj" />
+    <Project Path="src/Modules/Nexora.Modules.Membership/Nexora.Modules.Membership.csproj" />
+    <Project Path="src/Modules/Nexora.Modules.Crm/Nexora.Modules.Crm.csproj" />
+    <Project Path="src/Modules/Nexora.Modules.Identity/Nexora.Modules.Identity.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Nexora.Api.Tests/Nexora.Api.Tests.csproj" />
+    <Project Path="tests/Nexora.Architecture.Tests/Nexora.Architecture.Tests.csproj" />
+  </Folder>
+</Solution>

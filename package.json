@@ -1,0 +1,15 @@
+{
+  "name": "nexora",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:web": "npm --prefix apps/web run dev",
+    "build:web": "npm --prefix apps/web run build",
+    "lint:web": "npm --prefix apps/web run lint",
+    "test:backend": "dotnet test backend/Nexora.slnx",
+    "build:backend": "dotnet build backend/Nexora.slnx --configuration Release"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.12">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks\Nexora.BuildingBlocks\Nexora.BuildingBlocks.csproj" />
+    <ProjectReference Include="..\Modules\Nexora.Modules.Identity\Nexora.Modules.Identity.csproj" />
+  </ItemGroup>
+
+  <ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Crm\Nexora.Modules.Crm.csproj" /></ItemGroup>
+<ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Membership\Nexora.Modules.Membership.csproj" /></ItemGroup>
+<ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Events\Nexora.Modules.Events.csproj" /></ItemGroup>
+<ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Finance\Nexora.Modules.Finance.csproj" /></ItemGroup>
+<ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Engagement\Nexora.Modules.Engagement.csproj" /></ItemGroup>
+<ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Work\Nexora.Modules.Work.csproj" /></ItemGroup>
+</Project>

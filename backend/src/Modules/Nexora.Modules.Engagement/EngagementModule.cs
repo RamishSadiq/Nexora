@@ -1,0 +1,46 @@
+using Nexora.BuildingBlocks.Reporting;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Nexora.BuildingBlocks.Endpoints;
+using Nexora.BuildingBlocks.Security;
+using Nexora.Modules.Engagement.Domain;
+using Nexora.Modules.Engagement.Infrastructure;
+using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
+namespace Nexora.Modules.Engagement;
+public static class EngagementModule
+{
+ public static IServiceCollection AddNexoraEngagement(this IServiceCollection services,IConfiguration config){services.AddDbContext<EngagementDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","engagement")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("campaigns","Campaigns","engagement.read",sp.GetRequiredService<EngagementDbContext>().Set<Campaign>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+        return services;}
+ public static IEndpointRouteBuilder MapNexoraEngagement(this IEndpointRouteBuilder routes)
+ {
+  var api=routes.Module("engagement");
+  api.MapGet("/contacts",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
+  api.MapGet("/communities",async(EngagementDbContext db,CancellationToken ct)=>await db.Set<Community>().OrderBy(x=>x.Name).ToListAsync(ct));
+  api.MapPost("/communities",async(CommunityRequest r,EngagementDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Choice(r.Kind,"group","committee");var row=new Community{TenantId=who.TenantId!.Value,Kind=r.Kind,Name=Text(r.Name),Purpose=Text(r.Purpose,500)};db.Add(row);History(db,who,http,row.Id,"community.created",row.Name);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.manage");
+  api.MapGet("/communities/{id:guid}",async(Guid id,EngagementDbContext db,CancellationToken ct)=>{var community=await db.Set<Community>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();return Results.Ok(new{community,members=await db.Set<CommunityMember>().Where(x=>x.CommunityId==id).OrderBy(x=>x.ContactName).ToListAsync(ct),meetings=await db.Set<CommunityMeeting>().Where(x=>x.CommunityId==id).OrderBy(x=>x.StartsAtUtc).ToListAsync(ct)});});
+  api.MapPost("/communities/{id:guid}/members",async(Guid id,MemberRequest r,EngagementDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Check(await db.Set<Community>().AnyAsync(x=>x.Id==id,ct),"Community unavailable.");var contact=await crm.FindActiveAsync(r.ContactId,ct)??throw new KeyNotFoundException();Check(contact.Kind=="contact","Choose a Contact.");var row=new CommunityMember{TenantId=who.TenantId!.Value,CommunityId=id,ContactId=contact.Id,ContactName=contact.Name,Role=Text(r.Role,80)};db.Add(row);History(db,who,http,id,"member.added",row.Role);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.manage");
+  api.MapDelete("/communities/{id:guid}/members/{memberId:guid}",async(Guid id,Guid memberId,EngagementDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var row=await db.Set<CommunityMember>().SingleOrDefaultAsync(x=>x.Id==memberId&&x.CommunityId==id,ct)??throw new KeyNotFoundException();db.Remove(row);History(db,who,http,id,"member.removed",row.Role);await db.SaveChangesAsync(ct);return Results.NoContent();}).RequireAuthorization("engagement.manage");
+  api.MapPost("/communities/{id:guid}/meetings",async(Guid id,MeetingRequest r,EngagementDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Check(await db.Set<Community>().AnyAsync(x=>x.Id==id,ct),"Community unavailable.");var row=new CommunityMeeting{TenantId=who.TenantId!.Value,CommunityId=id,Subject=Text(r.Subject),Agenda=Text(r.Agenda,500),StartsAtUtc=r.StartsAtUtc};db.Add(row);History(db,who,http,id,"meeting.scheduled",row.Subject);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.manage");
+  api.MapGet("/campaigns",async(EngagementDbContext db,CancellationToken ct)=>await db.Set<Campaign>().OrderByDescending(x=>x.CreatedAtUtc).Take(200).ToListAsync(ct));
+  api.MapPost("/campaigns",async(CampaignRequest r,EngagementDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Check(await db.Set<Community>().AnyAsync(x=>x.Id==r.CommunityId,ct),"Community unavailable.");var row=new Campaign{TenantId=who.TenantId!.Value,CommunityId=r.CommunityId,Name=Text(r.Name),Subject=Text(r.Subject)};db.Add(row);History(db,who,http,row.Id,"campaign.created",row.Name);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.manage");
+  api.MapPost("/campaigns/{id:guid}/prepare",async(Guid id,CampaignVersion r,EngagementDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var campaign=await db.Set<Campaign>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();if(campaign.Version!=r.Version)return Conflict();Check(campaign.Status=="draft","This audience is already prepared.");var members=await db.Set<CommunityMember>().Where(x=>x.CommunityId==campaign.CommunityId).ToListAsync(ct);Check(members.Count<=1000,"Use a community of at most 1000 members for this preparation workflow.");var included=0;foreach(var member in members){var email=await crm.MarketingEmailAsync(member.ContactId,ct);if(email==null)continue;db.Add(new CampaignRecipient{TenantId=who.TenantId!.Value,CampaignId=id,ContactId=member.ContactId,Email=email});included++;}campaign.Status="prepared";History(db,who,http,id,"campaign.prepared",included+" consented recipients; no messages sent");await db.SaveChangesAsync(ct);return Results.Ok(new{campaign,included,excluded=members.Count-included});}).RequireAuthorization("engagement.manage");
+  api.MapGet("/campaigns/{id:guid}/audience",async(Guid id,EngagementDbContext db,CancellationToken ct)=>{Check(await db.Set<Campaign>().AnyAsync(x=>x.Id==id,ct),"Campaign unavailable.");return Results.Ok(await db.Set<CampaignRecipient>().Where(x=>x.CampaignId==id).Select(x=>new{x.Id,x.ContactId,x.Email}).ToListAsync(ct));});
+  api.MapGet("/funds",async(EngagementDbContext db,CancellationToken ct)=>await db.Set<Fund>().OrderBy(x=>x.Name).ToListAsync(ct));
+  api.MapPost("/funds",async(FundRequest r,EngagementDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Choice(r.Currency,"GBP","EUR","USD");Check(r.Target>=0&&r.Target<100000000&&decimal.Round(r.Target,2)==r.Target,"Invalid target.");var row=new Fund{TenantId=who.TenantId!.Value,Name=Text(r.Name),Currency=r.Currency,Target=r.Target};db.Add(row);History(db,who,http,row.Id,"fund.created",row.Name);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.manage");
+  api.MapGet("/funds/{id:guid}",async(Guid id,EngagementDbContext db,CancellationToken ct)=>{var fund=await db.Set<Fund>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();var contributions=await db.Set<Contribution>().Where(x=>x.FundId==id).ToListAsync(ct);return Results.Ok(new{fund,contributions,donations=contributions.Where(x=>x.Kind=="donation").Sum(x=>x.Amount),pledges=contributions.Where(x=>x.Kind=="pledge").Sum(x=>x.Amount)});});
+  api.MapPost("/funds/{id:guid}/contributions",async(Guid id,ContributionRequest r,EngagementDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Check(await db.Set<Fund>().AnyAsync(x=>x.Id==id,ct),"Fund unavailable.");Choice(r.Kind,"donation","pledge");Check(r.Amount>0&&r.Amount<100000000&&decimal.Round(r.Amount,2)==r.Amount,"Use a positive amount with two decimal places.");var contact=await crm.FindActiveAsync(r.ContactId,ct)??throw new KeyNotFoundException();var row=new Contribution{TenantId=who.TenantId!.Value,FundId=id,ContactId=contact.Id,ContactName=contact.Name,Kind=r.Kind,Amount=r.Amount,Reference=Text(r.Reference,100)};db.Add(row);History(db,who,http,id,"contribution.recorded",r.Kind+" recorded; no payment initiated");await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.fundraise");
+  return routes;
+ }
+ private static void History(EngagementDbContext db,IRequestIdentity who,HttpContext http,Guid id,string action,string reason)=>db.Add(new EngagementHistory{TenantId=who.TenantId!.Value,SubjectId=id,ActorUserId=who.UserId!.Value,Action=action,Reason=reason,CorrelationId=http.TraceIdentifier});
+}
+public sealed record CommunityRequest(string Kind,string Name,string Purpose);
+public sealed record MemberRequest(Guid ContactId,string Role);
+public sealed record MeetingRequest(string Subject,string Agenda,DateTime StartsAtUtc);
+public sealed record CampaignRequest(Guid CommunityId,string Name,string Subject);
+public sealed record CampaignVersion(Guid Version);
+public sealed record FundRequest(string Name,string Currency,decimal Target);
+public sealed record ContributionRequest(Guid ContactId,string Kind,decimal Amount,string Reference);
