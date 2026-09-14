@@ -14,17 +14,13 @@
         "Identity__ResetSeedAdminPassword": "true",
         "ConnectionStrings__Nexora": "Server=.\\SQLEXPRESS;Database=NexoraDev;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
       },
-      "serverReadyAction": {
-        "action": "openExternally",
-        "pattern": "Now listening on: (https?://\\S+)"
-      },
       "preLaunchTask": "build-api"
     },
     {
       "name": "Nexora Web",
       "type": "node-terminal",
       "request": "launch",
-      "command": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe node_modules/next/dist/bin/next dev",
+      "command": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe node_modules/next/dist/bin/next dev --webpack",
       "cwd": "${workspaceFolder}/apps/web",
       "env": {
         "NEXORA_API_URL": "http://localhost:5081"
