@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useId, useRef, useState, type FormEvent, type ReactNode } from "react";
-import { Eye, Pencil, SlidersHorizontal, Trash2, UserRound } from "lucide-react";
+import { Eye, MoreHorizontal, Pencil, SlidersHorizontal, Trash2, UserRound } from "lucide-react";
 import { crm } from "./api";
 import type { Activity, Detail, Directory, Field, Item, ListState, RecordRow } from "./types";
 
