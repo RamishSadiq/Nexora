@@ -46,7 +46,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
   }
 
   return (
-    <div className={cn("min-h-screen bg-[#f5f7fb]", dashboardTheme && "dashboard-theme")}>
+    <div className={cn("min-h-screen bg-[#f5f7fb] workspace-theme", dashboardTheme && "dashboard-theme")}>
       {mobileOpen && <button className="fixed inset-0 z-40 bg-[#0f1830]/35 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}
       <aside className={cn("fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r border-[#e5e9ef] bg-white transition-transform lg:translate-x-0", mobileOpen ? "visible translate-x-0" : "invisible -translate-x-full lg:visible")}>
         <div className="flex h-[76px] items-center justify-between px-5">
