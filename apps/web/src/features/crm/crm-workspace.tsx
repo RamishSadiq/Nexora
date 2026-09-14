@@ -76,7 +76,7 @@ export function CrmWorkspace({ permissions, initial, initialRecord, fixedKind = 
 
 function RecordForm({ row, kind, directory, busy, onSave, onCancel }: { row?: RecordRow; kind: string; directory: Directory; busy: boolean; onSave: (r: unknown) => Promise<void>; onCancel: () => void }) {
   const [attributes, setAttributes] = useState<string[]>([]);
-  useEffect(() => { const key = `nexora-attributes-${kind === "contact" ? "contacts" : "accounts"}`; try { setAttributes(JSON.parse(localStorage.getItem(key) ?? "[]")); } catch { setAttributes([]); } }, [kind]);
+  useEffect(() => { if (kind !== "contact" && kind !== "account") return; void crm<{ name: string; kind: string }[]>("/fields").then(fields => setAttributes(fields.filter(f => f.kind === kind).map(f => f.name))).catch(() => setAttributes([])); }, [kind]);
   return <form className="grid gap-4 sm:grid-cols-2" onSubmit={e => { const r = data(e); void onSave({ ...r, kind, category: r.category || null, ownerUserId: r.ownerUserId || null, ownerTeamId: r.ownerTeamId || null, version: row?.version }); }}>
     <Label title={kind === "contact" ? "Full name" : "Account name"}><input className={input} name="name" defaultValue={row?.name} maxLength={160} required /></Label>
     <Label title="Status"><select className={input} name="status" defaultValue={row?.status ?? "active"}>{["active", "prospect", "inactive"].map(s => <option key={s}>{s}</option>)}</select></Label>
