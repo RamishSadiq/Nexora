@@ -11,7 +11,6 @@
         "ASPNETCORE_ENVIRONMENT": "Development",
         "Identity__SeedAdminPassword": "Nexora-Local-2026!"
       },
-      "launchBrowser": false,
       "serverReadyAction": {
         "action": "openExternally",
         "pattern": "Now listening on: (https?://\\S+)"
