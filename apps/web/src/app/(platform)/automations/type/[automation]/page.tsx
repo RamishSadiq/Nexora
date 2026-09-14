@@ -1,4 +1,5 @@
-import Link from "next/link";`r`nimport type { Route } from "next";
+import Link from "next/link";
+import type { Route } from "next";
 import { requireSession } from "@/lib/auth/session";
 import { ArrowLeft, Workflow } from "lucide-react";
 const entities = ["Contacts", "Accounts", "Membership", "Applications", "Events and learning", "Sales and finance", "Engagement", "Work"];
