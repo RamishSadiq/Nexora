@@ -5,7 +5,7 @@ import type { Route } from "next";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState, type ReactNode } from "react";
-import { Bell, Blocks, CalendarDays, ChevronDown, CircleHelp, ContactRound, GraduationCap, LayoutDashboard, LogOut, Menu, MessageSquareText, PanelLeftClose, Search, Settings, ShieldCheck, Sparkles, WalletCards, X } from "lucide-react";
+import { Bell, Blocks, CalendarDays, ChevronDown, CircleHelp, ContactRound, GraduationCap, LayoutDashboard, LogOut, Menu, MessageSquareText, PanelLeftClose, Search, Settings, ShieldCheck, Sparkles, WalletCards, Workflow, X } from "lucide-react";
 import { NexoraMark } from "@/components/brand/nexora-mark";
 import { cn } from "@/lib/cn";
 import type { Session } from "@/lib/auth/session";
@@ -77,7 +77,8 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
           </div>
         </nav>
         <div className="border-t border-[#e9ecf1] p-3">
-          <Link className="flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium text-[#5c6879] hover:bg-[#f4f6f9]" href={"/settings" as Route}><Settings className="size-[18px] text-[#8b96a8]" />Administration</Link>
+          <Link className={cn("flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium", pathname === "/settings" ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9]")} href={"/settings" as Route}><Settings className="size-[18px] text-[#8b96a8]" />Administration</Link>
+          <div className="ml-8 mt-1 space-y-1 border-l border-[#dfe5f5] pl-3"><Link href={"/automations" as Route} onClick={() => setMobileOpen(false)} className={cn("flex items-center gap-2 rounded-lg px-3 py-2 text-xs font-medium", pathname.startsWith("/automations") ? "bg-[#f1f4ff] text-[#364fc7]" : "text-[#7b8798] hover:bg-[#f6f7fa]")}><Workflow className="size-3.5" />Automations</Link></div>
           <div className="mt-2 flex items-center gap-3 rounded-xl border border-[#e8ebf0] bg-[#fafbfc] p-3">
             <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-[#dfe6ff] text-xs font-bold text-[#3b55c5]">{initials}</span>
             <div className="min-w-0 flex-1"><p className="truncate text-sm font-semibold text-[#27364a]">{session.displayName}</p><p className="truncate text-xs text-[#8a94a5]">{session.roles[0] ?? session.tenantName}</p></div>
