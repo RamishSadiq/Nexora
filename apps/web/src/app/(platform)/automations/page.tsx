@@ -2,7 +2,7 @@ import { requireSession } from "@/lib/auth/session";
 import Link from "next/link";
 import { Workflow } from "lucide-react";
 
-const automations = [{ slug: "design-controller", name: "Design controller", description: "Arrange sections and set the layout shown on an entity." }, { slug: "attributes-controller", name: "Attributes controller", description: "Add or remove attributes shown on entity forms." }];
+const automations = [{ slug: "design-controller", name: "Design controller", description: "Arrange sections and set the layout shown on an entity." }, { slug: "attributes-controller", name: "Attributes controller", description: "Add or remove attributes shown on entity forms." }, { slug: "rules-controller", name: "Rules controller", description: "Create formulas and conditional actions between entity fields." }];
 
 export default async function AutomationsPage() {
   await requireSession();
