@@ -38,6 +38,32 @@ public sealed class CrmEndpointTests
         "/api/v1/crm/records", HttpMethod.Post, new { name, kind, status = "active" }), HttpStatusCode.Created);
 
     [Fact]
+    public async Task Attributes_support_order_rename_typed_record_save_and_delete_with_values()
+    {
+        using var app = new IdentityApiFactory(); using var client = await Login(app);
+        var first = await Json(await Send(client, "/api/v1/crm/fields", HttpMethod.Post, new { name = "Score", kind = "contact", dataType = "number" }));
+        var second = await Json(await Send(client, "/api/v1/crm/fields", HttpMethod.Post, new { name = "Consent", kind = "contact", dataType = "boolean" }));
+        var firstId = first["id"]!.GetValue<string>(); var secondId = second["id"]!.GetValue<string>();
+        Assert.Equal(HttpStatusCode.NoContent, (await Send(client, "/api/v1/crm/fields/order", HttpMethod.Put, new { kind = "contact", ids = new[] { secondId, firstId } })).StatusCode);
+        Assert.Equal(secondId, (await Json(await client.GetAsync("/api/v1/crm/fields")))[0]!["id"]!.GetValue<string>());
+        Assert.Equal(HttpStatusCode.BadRequest, (await Send(client, "/api/v1/crm/fields/order", HttpMethod.Put, new { kind = "contact", ids = new[] { firstId, firstId } })).StatusCode);
+        var row = await Json(await Send(client, "/api/v1/crm/records", HttpMethod.Post, new { kind = "contact", name = "Typed attributes", status = "active", attributes = new Dictionary<string, object> { [firstId] = new { numberValue = 12.25 }, [secondId] = new { booleanValue = false } } }), HttpStatusCode.Created);
+        var path = "/api/v1/crm/records/" + row["id"]!.GetValue<string>();
+        var detail = await Json(await client.GetAsync(path));
+        Assert.Equal(2, detail["fields"]!.AsArray().Count);
+        Assert.Contains(detail["fields"]!.AsArray(), x => x!["booleanValue"]?.GetValue<bool>() == false);
+        await Json(await Send(client, "/api/v1/crm/fields/" + firstId, HttpMethod.Patch, new { name = "Rating", kind = "contact", dataType = "number" }));
+        Assert.Equal(HttpStatusCode.BadRequest, (await Send(client, "/api/v1/crm/fields/" + firstId, HttpMethod.Patch, new { name = "Rating", kind = "contact", dataType = "text" })).StatusCode);
+        using var outside = await Login(app, "outside@nexora.test");
+        Assert.Empty((await Json(await outside.GetAsync("/api/v1/crm/fields"))).AsArray());
+        Assert.Equal(HttpStatusCode.Forbidden, (await Send(outside, "/api/v1/crm/fields/" + firstId, HttpMethod.Delete)).StatusCode);
+        Assert.Equal(HttpStatusCode.NoContent, (await Send(client, "/api/v1/crm/fields/" + firstId, HttpMethod.Delete)).StatusCode);
+        Assert.Single((await Json(await client.GetAsync(path)))["fields"]!.AsArray());
+        Assert.Equal(HttpStatusCode.BadRequest, (await Send(client, "/api/v1/crm/records", HttpMethod.Post, new { kind = "account", name = "Wrong entity", status = "active", attributes = new Dictionary<string, object> { [secondId] = new { booleanValue = true } } })).StatusCode);
+        Assert.Empty((await Json(await client.GetAsync("/api/v1/crm/records?kind=account")))["items"]!.AsArray());
+    }
+
+    [Fact]
     public async Task Contact_and_account_lifecycle_related_data_and_concurrency()
     {
         using var app = new IdentityApiFactory(); using var client = await Login(app);

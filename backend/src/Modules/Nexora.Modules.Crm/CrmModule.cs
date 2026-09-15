@@ -89,18 +89,39 @@ public static class CrmModule
             http.Response.Headers.XContentTypeOptions = "nosniff";
             return Results.File(file.Content, "application/octet-stream", file.Name);
         }).RequireAuthorization("crm.files");
-        api.MapGet("/fields", async (CrmDbContext db, CancellationToken ct) => await db.Set<CustomFieldDefinition>().OrderBy(x => x.Name).ToListAsync(ct));
+        api.MapGet("/fields", async (CrmDbContext db, CancellationToken ct) => await db.Set<CustomFieldDefinition>().OrderBy(x => x.DisplayOrder).ThenBy(x => x.Name).ToListAsync(ct));
         api.MapPost("/fields", async (FieldRequest r, CrmDbContext db, IRequestIdentity who, CancellationToken ct) =>
         {
             Choice(r.Kind, "contact", "account"); Choice(r.DataType, "text", "number", "boolean", "date");
             if (await db.Set<CustomFieldDefinition>().CountAsync(ct) >= 50) throw new ValidationException("A tenant can define up to 50 CRM fields.");
             var field = new CustomFieldDefinition { TenantId = who.TenantId!.Value, Name = Required(r.Name, 80), Kind = r.Kind, DataType = r.DataType };
+            field.DisplayOrder = (await db.Set<CustomFieldDefinition>().Where(x => x.Kind == r.Kind).MaxAsync(x => (int?)x.DisplayOrder, ct) ?? -1) + 1;
             db.Add(field); await db.SaveChangesAsync(ct); return Results.Ok(field);
         }).RequireAuthorization("crm.configure");
         api.MapDelete("/fields/{id:guid}", async (Guid id, CrmDbContext db, IRequestIdentity who, CancellationToken ct) =>
         {
             var field = await db.Set<CustomFieldDefinition>().SingleOrDefaultAsync(x => x.Id == id && x.TenantId == who.TenantId, ct) ?? throw new KeyNotFoundException();
+            db.RemoveRange(await db.Set<CustomFieldValue>().Where(x => x.DefinitionId == id).ToListAsync(ct));
             db.Remove(field); await db.SaveChangesAsync(ct); return Results.NoContent();
+        }).RequireAuthorization("crm.configure");
+        api.MapPatch("/fields/{id:guid}", async (Guid id, FieldRequest r, CrmDbContext db, CancellationToken ct) =>
+        {
+            var field = await db.Set<CustomFieldDefinition>().SingleOrDefaultAsync(x => x.Id == id, ct) ?? throw new KeyNotFoundException();
+            Choice(r.DataType, "text", "number", "boolean", "date");
+            if (r.Kind != field.Kind) throw new ValidationException("The entity type cannot change.");
+            if (r.DataType != field.DataType && await db.Set<CustomFieldValue>().AnyAsync(x => x.DefinitionId == id, ct))
+                throw new ValidationException("The data type cannot change while this attribute has saved values.");
+            field.Name = Required(r.Name, 80); field.DataType = r.DataType;
+            await db.SaveChangesAsync(ct); return Results.Ok(field);
+        }).RequireAuthorization("crm.configure");
+        api.MapPut("/fields/order", async (FieldOrderRequest r, CrmDbContext db, CancellationToken ct) =>
+        {
+            Choice(r.Kind, "contact", "account");
+            var fields = await db.Set<CustomFieldDefinition>().Where(x => x.Kind == r.Kind).ToListAsync(ct);
+            if (r.Ids == null || r.Ids.Length != fields.Count || r.Ids.Distinct().Count() != fields.Count || fields.Any(x => !r.Ids.Contains(x.Id)))
+                throw new ValidationException("Reload attributes and include each field exactly once.");
+            foreach (var field in fields) field.DisplayOrder = Array.IndexOf(r.Ids, field.Id);
+            await db.SaveChangesAsync(ct); return Results.NoContent();
         }).RequireAuthorization("crm.configure");
         api.MapPut("/records/{id:guid}/fields/{fieldId:guid}", SetFieldAsync).RequireAuthorization("crm.manage");
         api.MapGet("/views", async (CrmDbContext db, CancellationToken ct) => await db.Set<SavedView>().OrderBy(x => x.Name).ToListAsync(ct));
@@ -155,6 +176,7 @@ public static class CrmModule
         await ValidateAsync(r, directory, ct);
         var row = new CrmRecord { TenantId = who.TenantId!.Value, Kind = r.Kind };
         Apply(row, r); db.Add(row); Audit(db, who, http, row.Id, "record.created");
+        await ApplyAttributesAsync(row, r.Attributes, db, ct);
         await db.SaveChangesAsync(ct); return Results.Created($"/api/v1/crm/records/{row.Id}", row);
     }
     private static async Task<IResult> UpdateAsync(Guid id, RecordRequest r, CrmDbContext db, IIdentityDirectory directory, IRequestIdentity who, HttpContext http, CancellationToken ct)
@@ -163,6 +185,7 @@ public static class CrmModule
         if (r.Version != row.Version) return Conflict();
         if (r.Kind != row.Kind) throw new ValidationException("Record type cannot change.");
         await ValidateAsync(r, directory, ct); Apply(row, r);
+        await ApplyAttributesAsync(row, r.Attributes, db, ct);
         Audit(db, who, http, id, "record.updated"); await db.SaveChangesAsync(ct); return Results.Ok(row);
     }
     private static async Task<IResult> TransitionAsync(Guid id, TransitionRequest r, bool archived, CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct)
@@ -221,6 +244,24 @@ public static class CrmModule
         record.Version = Guid.NewGuid(); record.UpdatedAtUtc = DateTime.UtcNow;
         row.TextValue = Optional(r.TextValue, 500); row.NumberValue = r.NumberValue; row.BooleanValue = r.BooleanValue; row.DateValue = r.DateValue;
         Audit(db, who, http, id, "custom-field.updated"); await db.SaveChangesAsync(ct); return Results.Ok(row);
+    }
+    private static async Task ApplyAttributesAsync(CrmRecord record, Dictionary<Guid, ValueRequest>? values, CrmDbContext db, CancellationToken ct)
+    {
+        if (values == null) return;
+        if (values.Count > 50) throw new ValidationException("Too many attribute values.");
+        var definitions = await db.Set<CustomFieldDefinition>().Where(x => x.Kind == record.Kind).ToListAsync(ct);
+        var existing = await db.Set<CustomFieldValue>().Where(x => x.RecordId == record.Id).ToListAsync(ct);
+        foreach (var (id, value) in values)
+        {
+            var definition = definitions.SingleOrDefault(x => x.Id == id) ?? throw new ValidationException("An attribute was removed or is unavailable. Reload the form.");
+            if (value == null || (value.TextValue != null && definition.DataType != "text") || (value.NumberValue != null && definition.DataType != "number") || (value.BooleanValue != null && definition.DataType != "boolean") || (value.DateValue != null && definition.DataType != "date"))
+                throw new ValidationException("The value does not match the field type.");
+            if (value.NumberValue is decimal n && (n >= 100000000000000m || n <= -100000000000000m || decimal.Round(n, 4) != n))
+                throw new ValidationException("Use at most 14 integer digits and 4 decimal places.");
+            var row = existing.SingleOrDefault(x => x.DefinitionId == id);
+            if (row == null) { row = new CustomFieldValue { TenantId = record.TenantId, RecordId = record.Id, DefinitionId = id }; db.Add(row); }
+            row.TextValue = Optional(value.TextValue, 500); row.NumberValue = value.NumberValue; row.BooleanValue = value.BooleanValue; row.DateValue = value.DateValue;
+        }
     }
     private static async Task ValidateAsync(RecordRequest r, IIdentityDirectory directory, CancellationToken ct)
     {

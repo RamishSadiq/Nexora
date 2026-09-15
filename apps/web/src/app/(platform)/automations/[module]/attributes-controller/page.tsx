@@ -1,15 +1,68 @@
 "use client";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Trash2 } from "lucide-react";
 import { crm } from "@/features/crm/api";
+import type { Field } from "@/features/crm/types";
+import { buttonClass, inputClass, primaryClass } from "@/features/shared/module-ui";
 
 export default function AttributesControllerPage({ params }: { params: Promise<{ module: string }> }) {
-  const [module, setModule] = useState(""); const [attributes, setAttributes] = useState<string[]>([]); const [draft, setDraft] = useState(""); const [saved, setSaved] = useState(false);
-  useEffect(() => { void params.then(async p => { setModule(p.module); if (p.module === "contacts" || p.module === "accounts") { try { const fields = await crm<{ name: string }[]>("/fields"); setAttributes(fields.map(f => f.name)); } catch { setAttributes([]); } } }); }, [params]);
-  if (!module) return null;
-  const name = module.replaceAll("-", " ").replace(/\b\w/g, c => c.toUpperCase());
-  return <main className="page-enter mx-auto max-w-3xl space-y-6 p-5 text-slate-800 sm:p-8"><Link href={`/automations/${module}`} className="inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:underline"><ArrowLeft className="size-4" />{name} automations</Link><header><p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">Attributes controller</p><h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">Manage {name} attributes</h1><p className="mt-2 text-sm text-slate-600">Add new fields or remove existing attributes. Save to apply the configuration to entity forms.</p></header><form className="flex gap-2" onSubmit={e => { e.preventDefault(); if (draft.trim() && !attributes.includes(draft.trim())) { const next = [...attributes, draft.trim()]; setAttributes(next); localStorage.setItem(`nexora-attributes-${module}`, JSON.stringify(next)); } setDraft(""); setSaved(false); }}><input className="mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm" value={draft} onChange={e => setDraft(e.target.value)} placeholder="New attribute name" required /><button className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white">Add attribute</button></form><ul className="divide-y rounded-xl border border-slate-200 bg-white">{attributes.map(attribute => <li key={attribute} className="flex items-center justify-between p-4 text-sm"><span>{attribute}</span><button type="button" className="text-rose-600" aria-label={`Remove ${attribute}`} onClick={() => { setAttributes(attributes.filter(x => x !== attribute)); localStorage.setItem(`nexora-attributes-${module}`, JSON.stringify(attributes.filter(x => x !== attribute))); setSaved(false); }}><Trash2 className="size-4" /></button></li>)}</ul><div className="flex justify-end gap-3"><span className="text-sm text-emerald-700">{saved ? "Changes saved" : ""}</span><button type="button" className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm" onClick={() => setAttributes(JSON.parse(localStorage.getItem(`nexora-attributes-${module}`) ?? "[]"))}>Cancel</button><button type="button" className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white" onClick={async () => { if (module === "contacts" || module === "accounts") { for (const attribute of attributes) { try { await crm("/fields", "POST", { name: attribute, kind: module === "contacts" ? "contact" : "account", dataType: "text" }); } catch {} } } localStorage.setItem(`nexora-attributes-${module}`, JSON.stringify(attributes)); setSaved(true); }}>Save changes</button></div></main>;
+  const { module } = use(params);
+  const kind = module === "contacts" ? "contact" : module === "accounts" ? "account" : null;
+  const [fields, setFields] = useState<Field[]>([]);
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
+  const [loading, setLoading] = useState(true);
+  async function reload() {
+    const rows = await crm<Field[]>("/fields");
+    setFields(rows.filter(f => f.kind === kind));
+  }
+  useEffect(() => {
+    let active = true;
+    if (kind) void crm<Field[]>("/fields").then(rows => { if (active) { setFields(rows.filter(f => f.kind === kind)); setLoading(false); } }).catch(e => { if (active) { setError(e.message); setLoading(false); } });
+    return () => { active = false; };
+  }, [kind]);
+  async function change(action: () => Promise<unknown>) {
+    setBusy(true); setError("");
+    try { await action(); await reload(); }
+    catch (e) { setError(e instanceof Error ? e.message : "Unable to save attributes."); }
+    finally { setBusy(false); }
+  }
+  function move(index: number, offset: number) {
+    const ids = fields.map(f => f.id);
+    [ids[index], ids[index + offset]] = [ids[index + offset], ids[index]];
+    void change(() => crm("/fields/order", "PUT", { kind, ids }));
+  }
+  return <main className="mx-auto max-w-3xl space-y-6 p-5 text-slate-800 sm:p-8">
+    <Link href={`/automations/${module}`} className="text-indigo-700 underline">Back to automations</Link>
+    <h1 className="text-3xl font-semibold">Manage {module.replaceAll("-", " ")} attributes</h1>
+    {!kind ? <p role="status">Attributes for this entity are not connected yet.</p> : <>
+      <p className="text-sm text-slate-600">Changes are saved immediately. Deleting an attribute also removes its saved values.</p>
+      {error && <p role="alert" className="text-red-700">{error}</p>}
+      {loading ? <p role="status">Loading attributes…</p> : <>
+        <form className="flex flex-wrap items-end gap-3" onSubmit={event => {
+          event.preventDefault(); const form = event.currentTarget; const data = new FormData(form);
+          void change(async () => { await crm("/fields", "POST", { kind, name: data.get("name"), dataType: data.get("dataType") }); form.reset(); });
+        }}>
+          <label>Name<input name="name" required maxLength={80} className={inputClass} /></label>
+          <label>Data type<select name="dataType" className={inputClass}>{["text","number","boolean","date"].map(t => <option key={t}>{t}</option>)}</select></label>
+          <button disabled={busy} className={primaryClass}>Add attribute</button>
+        </form>
+        <ul className="space-y-3">{fields.map((field, index) => <li key={field.id} className="rounded-xl border bg-white p-4">
+          <form className="flex flex-wrap items-end gap-3" onSubmit={event => {
+            event.preventDefault(); const data = new FormData(event.currentTarget);
+            void change(() => crm(`/fields/${field.id}`, "PATCH", { kind, name: data.get("name"), dataType: data.get("dataType") }));
+          }}>
+            <label>Name<input key={field.name} name="name" defaultValue={field.name} required maxLength={80} className={inputClass} /></label>
+            <label>Data type<select key={field.dataType} name="dataType" defaultValue={field.dataType} className={inputClass}>{["text","number","boolean","date"].map(t => <option key={t}>{t}</option>)}</select></label>
+            <button disabled={busy} className={buttonClass}>Save</button>
+            <button type="button" disabled={busy || index === 0} className={buttonClass} onClick={() => move(index, -1)} aria-label={`Move ${field.name} up`}>Up</button>
+            <button type="button" disabled={busy || index === fields.length - 1} className={buttonClass} onClick={() => move(index, 1)} aria-label={`Move ${field.name} down`}>Down</button>
+            <button type="button" disabled={busy} className={buttonClass} onClick={() => { if (window.confirm(`Delete ${field.name} and its saved values?`)) void change(() => crm(`/fields/${field.id}`, "DELETE")); }}>Delete</button>
+          </form>
+        </li>)}</ul>
+      </>}
+    </>}
+  </main>;
 }
 
 

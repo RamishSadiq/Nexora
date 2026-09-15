@@ -82,6 +82,7 @@ public sealed class SavedView : TenantRow
 }
 public sealed class CustomFieldDefinition : TenantRow
 {
+    public int DisplayOrder { get; set; }
     public string Name { get; set; } = "";
     public string Kind { get; set; } = "contact";
     public string DataType { get; set; } = "text";
