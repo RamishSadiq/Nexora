@@ -103,6 +103,9 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
           </div>
         </header>
         <div className="min-h-[calc(100vh-76px)]">{children}</div>
+        <footer className="pointer-events-none fixed bottom-3 right-4 z-20 text-right text-[10px] text-white/55 sm:right-7" aria-label="Copyright">
+          © 2026 Nexora. All rights reserved.
+        </footer>
       </div>
     </div>
   );
