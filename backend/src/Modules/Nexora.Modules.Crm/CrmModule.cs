@@ -184,7 +184,11 @@ public static class CrmModule
         var count = await query.CountAsync(ct);
         var ordered = sort switch { "-name" => query.OrderByDescending(x => x.Name), "updated" => query.OrderByDescending(x => x.UpdatedAtUtc), _ => query.OrderBy(x => x.Name) };
         var number = Math.Clamp(page ?? 1, 1, 10000); var size = Math.Clamp(pageSize ?? 20, 1, 100);
-        return Results.Ok(new { items = await ordered.ThenBy(x => x.Id).Skip((number - 1) * size).Take(size).ToListAsync(ct), total = count, page = number, pageSize = size });
+        var rows = await ordered.ThenBy(x => x.Id).Skip((number - 1) * size).Take(size).ToListAsync(ct);
+        var ids = rows.Select(x => x.Id).ToArray();
+        var values = await db.Set<CustomFieldValue>().AsNoTracking().Where(x => ids.Contains(x.RecordId)).ToListAsync(ct);
+        var items = rows.Select(row => new { row.Id, row.Kind, row.Name, row.Status, row.Category, row.OwnerUserId, row.OwnerTeamId, row.IsArchived, row.Version, row.UpdatedAtUtc, CustomFields = values.Where(v => v.RecordId == row.Id) });
+        return Results.Ok(new { items, total = count, page = number, pageSize = size });
     }
     private static async Task<IResult> DetailAsync(Guid id, CrmDbContext db, CancellationToken ct)
     {
