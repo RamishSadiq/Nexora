@@ -19,6 +19,7 @@ const navigation: Array<{ label: string; href: Route; match: string; icon: typeo
   { label: "Engagement", href: "/engagement" as Route, match: "/engagement", icon: MessageSquareText },
   { label: "Work", href: "/work" as Route, match: "/work", icon: Blocks },
   { label: "Insights", href: "/insights" as Route, match: "/insights", icon: GraduationCap },
+  { label: "NexOrchestr AI", href: "/assistant" as Route, match: "/assistant", icon: Sparkles },
 ];
 
 export function AppShell({ children, session }: { children: ReactNode; session: Session }) {
