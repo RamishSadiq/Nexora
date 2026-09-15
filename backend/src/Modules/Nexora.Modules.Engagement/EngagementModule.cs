@@ -1,3 +1,4 @@
+using Nexora.BuildingBlocks.Persistence;
 using Nexora.BuildingBlocks.Reporting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -17,7 +18,7 @@ public static class EngagementModule
         return services;}
  public static IEndpointRouteBuilder MapNexoraEngagement(this IEndpointRouteBuilder routes)
  {
-  var api=routes.Module("engagement");
+  var api=routes.Module("engagement").WithAttributes<EngagementDbContext>("engagement.manage", typeof(Community), typeof(CommunityMember), typeof(CommunityMeeting), typeof(Campaign), typeof(Fund), typeof(Contribution));
   api.MapGet("/contacts",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
   api.MapGet("/communities",async(EngagementDbContext db,CancellationToken ct)=>await db.Set<Community>().OrderBy(x=>x.Name).ToListAsync(ct));
   api.MapPost("/communities",async(CommunityRequest r,EngagementDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Choice(r.Kind,"group","committee");var row=new Community{TenantId=who.TenantId!.Value,Kind=r.Kind,Name=Text(r.Name),Purpose=Text(r.Purpose,500)};db.Add(row);History(db,who,http,row.Id,"community.created",row.Name);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("engagement.manage");
@@ -37,10 +38,10 @@ public static class EngagementModule
  }
  private static void History(EngagementDbContext db,IRequestIdentity who,HttpContext http,Guid id,string action,string reason)=>db.Add(new EngagementHistory{TenantId=who.TenantId!.Value,SubjectId=id,ActorUserId=who.UserId!.Value,Action=action,Reason=reason,CorrelationId=http.TraceIdentifier});
 }
-public sealed record CommunityRequest(string Kind,string Name,string Purpose);
-public sealed record MemberRequest(Guid ContactId,string Role);
-public sealed record MeetingRequest(string Subject,string Agenda,DateTime StartsAtUtc);
-public sealed record CampaignRequest(Guid CommunityId,string Name,string Subject);
+public sealed record CommunityRequest(string Kind,string Name,string Purpose) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record MemberRequest(Guid ContactId,string Role) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record MeetingRequest(string Subject,string Agenda,DateTime StartsAtUtc) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record CampaignRequest(Guid CommunityId,string Name,string Subject) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record CampaignVersion(Guid Version);
-public sealed record FundRequest(string Name,string Currency,decimal Target);
-public sealed record ContributionRequest(Guid ContactId,string Kind,decimal Amount,string Reference);
+public sealed record FundRequest(string Name,string Currency,decimal Target) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record ContributionRequest(Guid ContactId,string Kind,decimal Amount,string Reference) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }

@@ -1,3 +1,4 @@
+using Nexora.BuildingBlocks.Persistence;
 using Nexora.BuildingBlocks.Reporting;
 using System.Text;
 using Microsoft.AspNetCore.Builder;
@@ -18,7 +19,7 @@ public static class WorkModule
         return services;}
  public static IEndpointRouteBuilder MapNexoraWork(this IEndpointRouteBuilder routes)
  {
-  var api=routes.Module("work");api.MapGet("/directory",(IIdentityDirectory directory,CancellationToken ct)=>directory.GetAsync(ct));api.MapGet("/contacts",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
+  var api=routes.Module("work").WithAttributes<WorkDbContext>("work.manage", typeof(WorkItem));api.MapGet("/directory",(IIdentityDirectory directory,CancellationToken ct)=>directory.GetAsync(ct));api.MapGet("/contacts",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
   api.MapGet("/items",async(WorkDbContext db,string? status,CancellationToken ct)=>{var q=db.Set<WorkItem>().AsNoTracking();if(!string.IsNullOrEmpty(status)){Choice(status,"open","in-progress","done","cancelled");q=q.Where(x=>x.Status==status);}return Results.Ok(await q.OrderBy(x=>x.DueAtUtc).ThenBy(x=>x.Id).Take(200).ToListAsync(ct));});
   api.MapPost("/items",async(WorkRequest r,WorkDbContext db,IIdentityDirectory directory,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{await Validate(r,directory,crm,ct);var row=new WorkItem{TenantId=who.TenantId!.Value};Apply(row,r);db.Add(row);Notify(db,who,row);History(db,who,http,row.Id,"task.created",row.Title);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("work.manage");
   api.MapPatch("/items/{id:guid}",async(Guid id,WorkRequest r,WorkDbContext db,IIdentityDirectory directory,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{var row=await db.Set<WorkItem>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();if(row.Version!=r.Version)return Conflict();await Validate(r,directory,crm,ct);var previous=row.AssigneeUserId;Apply(row,r);if(previous!=row.AssigneeUserId)Notify(db,who,row);History(db,who,http,id,"task.updated",row.Status);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("work.manage");
@@ -37,7 +38,7 @@ public static class WorkModule
  private static string Csv(string text){if(text.TrimStart().StartsWith('=')||text.TrimStart().StartsWith('+')||text.TrimStart().StartsWith('-')||text.TrimStart().StartsWith('@'))text="'"+text;return "\""+text.Replace("\"","\"\"")+"\"";}
  private static void History(WorkDbContext db,IRequestIdentity who,HttpContext http,Guid id,string action,string reason)=>db.Add(new WorkHistory{TenantId=who.TenantId!.Value,SubjectId=id,ActorUserId=who.UserId!.Value,Action=action,Reason=reason,CorrelationId=http.TraceIdentifier});
 }
-public sealed record WorkRequest(string Title,string? Description,string Status,string Priority,DateTime? DueAtUtc,Guid? AssigneeUserId,Guid? TeamId,Guid? ContactId,Guid? Version);
+public sealed record WorkRequest(string Title,string? Description,string Status,string Priority,DateTime? DueAtUtc,Guid? AssigneeUserId,Guid? TeamId,Guid? ContactId,Guid? Version) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record ImportTask(string Title,string Priority,DateTime? DueAtUtc);
 public sealed record ImportRequest(string Name,ImportTask[] Rows);
 public sealed record ImportVersion(Guid Version);

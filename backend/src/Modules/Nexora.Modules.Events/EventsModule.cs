@@ -1,3 +1,4 @@
+using Nexora.BuildingBlocks.Persistence;
 using Nexora.BuildingBlocks.Reporting;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -18,7 +19,7 @@ public static class EventsModule
         return services;}
     public static IEndpointRouteBuilder MapNexoraEvents(this IEndpointRouteBuilder routes)
     {
-        var api=routes.Module("events");
+        var api=routes.Module("events").WithAttributes<EventsDbContext>("events.manage", typeof(Offering), typeof(EventSession), typeof(Enrollment), typeof(ExamResult));
         api.MapGet("/contacts",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
         api.MapGet("/offerings",async(EventsDbContext db,string? kind,CancellationToken ct)=>{var q=db.Set<Offering>().AsNoTracking();if(!string.IsNullOrWhiteSpace(kind)){Choice(kind,"event","course","exam");q=q.Where(x=>x.Kind==kind);}return Results.Ok(await q.OrderBy(x=>x.StartsAtUtc).Take(200).ToListAsync(ct));});
         api.MapPost("/offerings",async(OfferingRequest r,EventsDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
@@ -64,9 +65,9 @@ public static class EventsModule
     private static void Touch(Offering row){row.Version=Guid.NewGuid();row.UpdatedAtUtc=DateTime.UtcNow;}
     private static void History(EventsDbContext db,IRequestIdentity who,HttpContext http,Guid offering,Guid? enrollment,string action,string reason)=>db.Add(new EventHistory{TenantId=who.TenantId!.Value,OfferingId=offering,EnrollmentId=enrollment,Action=action,Reason=reason,ActorUserId=who.UserId!.Value,CorrelationId=http.TraceIdentifier});
 }
-public sealed record OfferingRequest(string Kind,string Name,string Venue,DateTime StartsAtUtc,DateTime EndsAtUtc,int Capacity,int PassingScore);
-public sealed record SessionRequest(string Name,DateTime StartsAtUtc,DateTime EndsAtUtc);
-public sealed record EnrollmentRequest(Guid ContactId);
+public sealed record OfferingRequest(string Kind,string Name,string Venue,DateTime StartsAtUtc,DateTime EndsAtUtc,int Capacity,int PassingScore) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record SessionRequest(string Name,DateTime StartsAtUtc,DateTime EndsAtUtc) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record EnrollmentRequest(Guid ContactId) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record EnrollmentChange(Guid Version,string Reason,Guid? TargetOfferingId);
-public sealed record ResultRequest(Guid Version,int Score);
+public sealed record ResultRequest(Guid Version,int Score) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record CancelRequest(Guid Version,string Reason);

@@ -18,8 +18,15 @@ public abstract class TenantDbContext(DbContextOptions options, IRequestIdentity
         entity.Property(x => x.Version).IsConcurrencyToken();
         return entity;
     }
-    protected static void ConfigureColumns(ModelBuilder builder)
+    protected void ConfigureColumns(ModelBuilder builder)
     {
+        TenantTable<AttributeDefinition>(builder, "AttributeDefinitions");
+        TenantTable<AttributeValue>(builder, "AttributeValues");
+        builder.Entity<AttributeDefinition>().Property(x => x.Name).HasMaxLength(80);
+        builder.Entity<AttributeDefinition>().Property(x => x.EntityType).HasMaxLength(80);
+        builder.Entity<AttributeDefinition>().HasIndex(x => new { x.TenantId, x.EntityType, x.Name }).IsUnique();
+        builder.Entity<AttributeValue>().HasIndex(x => new { x.TenantId, x.RecordId, x.DefinitionId }).IsUnique();
+        builder.Entity<AttributeValue>().HasOne<AttributeDefinition>().WithMany().HasForeignKey(x => new { x.TenantId, x.DefinitionId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         var utc = new ValueConverter<DateTime, DateTime>(v => v, v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
         foreach (var entity in builder.Model.GetEntityTypes())
             foreach (var property in entity.GetProperties())
@@ -28,6 +35,7 @@ public abstract class TenantDbContext(DbContextOptions options, IRequestIdentity
                 if (property.ClrType == typeof(decimal) || property.ClrType == typeof(decimal?)) { property.SetPrecision(18); property.SetScale(2); }
                 if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?)) property.SetValueConverter(utc);
             }
+        builder.Entity<AttributeValue>().Property(x => x.NumberValue).HasPrecision(18, 4);
     }
     public override int SaveChanges(bool acceptAllChangesOnSuccess) { GuardAsync(default).GetAwaiter().GetResult(); return base.SaveChanges(acceptAllChangesOnSuccess); }
     public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)

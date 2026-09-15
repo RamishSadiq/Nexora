@@ -1,8 +1,10 @@
 import { requireSession } from "@/lib/auth/session";
+import { createAssistantAccessToken } from "@/lib/assistant-access";
 
 export default async function AssistantPage() {
-  await requireSession();
+  const session = await requireSession();
   const configuredUrl = process.env.NEXORCHESTR_APP_URL;
+  const accessToken = createAssistantAccessToken(session);
   let appUrl: string | null = null;
   if (configuredUrl) {
     try {
@@ -22,7 +24,7 @@ export default async function AssistantPage() {
       {appUrl ? (
         <iframe
           title="NexOrchestr AI chatbot"
-          src={appUrl}
+          src={accessToken ? `${appUrl}${appUrl.includes("?") ? "&" : "?"}nexora_access_token=${encodeURIComponent(accessToken)}` : appUrl}
           className="h-[calc(100dvh-220px)] min-h-[480px] w-full rounded-xl border border-slate-200 bg-white"
           sandbox="allow-scripts allow-same-origin allow-forms"
           referrerPolicy="no-referrer"

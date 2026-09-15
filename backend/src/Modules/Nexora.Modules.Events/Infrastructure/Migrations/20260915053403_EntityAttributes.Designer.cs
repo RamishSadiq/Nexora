@@ -3,21 +3,24 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Nexora.Modules.Membership.Infrastructure;
+using Nexora.Modules.Events.Infrastructure;
 
 #nullable disable
 
-namespace Nexora.Modules.Membership.Infrastructure.Migrations
+namespace Nexora.Modules.Events.Infrastructure.Migrations
 {
-    [DbContext(typeof(MembershipDbContext))]
-    partial class MembershipDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(EventsDbContext))]
+    [Migration("20260915053403_EntityAttributes")]
+    partial class EntityAttributes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("membership")
+                .HasDefaultSchema("events")
                 .HasAnnotation("ProductVersion", "10.0.12")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
@@ -65,7 +68,7 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
                     b.HasIndex("TenantId", "EntityType", "Name")
                         .IsUnique();
 
-                    b.ToTable("AttributeDefinitions", "membership");
+                    b.ToTable("AttributeDefinitions", "events");
                 });
 
             modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.AttributeValue", b =>
@@ -116,16 +119,13 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
                     b.HasIndex("TenantId", "RecordId", "DefinitionId")
                         .IsUnique();
 
-                    b.ToTable("AttributeValues", "membership");
+                    b.ToTable("AttributeValues", "events");
                 });
 
-            modelBuilder.Entity("Nexora.Modules.Membership.Domain.MemberSubscription", b =>
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.Enrollment", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ApplicationId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ContactId")
@@ -139,23 +139,8 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Currency")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("EndsAtUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("ProductId")
+                    b.Property<Guid>("OfferingId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("Rate")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("StartsAtUtc")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Status")
                         .IsRequired()
@@ -174,86 +159,13 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasAlternateKey("TenantId", "Id");
-
-                    b.HasIndex("TenantId", "ApplicationId")
+                    b.HasIndex("TenantId", "OfferingId", "ContactId")
                         .IsUnique();
 
-                    b.HasIndex("TenantId", "ProductId");
-
-                    b.HasIndex("TenantId", "ContactId", "ProductId")
-                        .IsUnique()
-                        .HasFilter("Status = 'active'");
-
-                    b.ToTable("Subscriptions", "membership");
+                    b.ToTable("Enrollments", "events");
                 });
 
-            modelBuilder.Entity("Nexora.Modules.Membership.Domain.MembershipApplication", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ContactId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("ContactName")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<DateTime>("CreatedAtUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Currency")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<string>("DecisionReason")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<Guid?>("MembershipId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("ProductId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<decimal>("QuotedRate")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<DateTime>("RequestedStartUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<Guid>("TenantId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("TermMonths")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("UpdatedAtUtc")
-                        .HasColumnType("datetime2");
-
-                    b.Property<Guid>("Version")
-                        .IsConcurrencyToken()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("TenantId", "ProductId");
-
-                    b.ToTable("Applications", "membership");
-                });
-
-            modelBuilder.Entity("Nexora.Modules.Membership.Domain.MembershipHistory", b =>
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.EventHistory", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -275,19 +187,16 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime?>("NewEndUtc")
-                        .HasColumnType("datetime2");
+                    b.Property<Guid?>("EnrollmentId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("PreviousEndUtc")
-                        .HasColumnType("datetime2");
+                    b.Property<Guid>("OfferingId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Reason")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
-
-                    b.Property<Guid>("SubjectId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
@@ -303,47 +212,36 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
 
                     b.HasAlternateKey("TenantId", "Id");
 
-                    b.HasIndex("TenantId", "SubjectId", "CreatedAtUtc");
+                    b.HasIndex("TenantId", "OfferingId");
 
-                    b.ToTable("History", "membership");
+                    b.ToTable("History", "events");
                 });
 
-            modelBuilder.Entity("Nexora.Modules.Membership.Domain.MembershipProduct", b =>
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.EventSession", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Category")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Currency")
+                    b.Property<DateTime>("EndsAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                    b.Property<Guid>("OfferingId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(160)
-                        .HasColumnType("nvarchar(160)");
-
-                    b.Property<decimal>("Rate")
-                        .HasPrecision(18, 2)
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<DateTime>("StartsAtUtc")
+                        .HasColumnType("datetime2");
 
                     b.Property<Guid>("TenantId")
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("TermMonths")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdatedAtUtc")
                         .HasColumnType("datetime2");
@@ -354,7 +252,112 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", "membership");
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "OfferingId");
+
+                    b.ToTable("Sessions", "events");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.ExamResult", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ActorUserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("EnrollmentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Outcome")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("Score")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "EnrollmentId")
+                        .IsUnique();
+
+                    b.ToTable("Results", "events");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.Offering", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("Capacity")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("EndsAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Kind")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("PassingScore")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartsAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Venue")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "StartsAtUtc");
+
+                    b.ToTable("Offerings", "events");
                 });
 
             modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.AttributeValue", b =>
@@ -367,28 +370,41 @@ namespace Nexora.Modules.Membership.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Nexora.Modules.Membership.Domain.MemberSubscription", b =>
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.Enrollment", b =>
                 {
-                    b.HasOne("Nexora.Modules.Membership.Domain.MembershipApplication", null)
+                    b.HasOne("Nexora.Modules.Events.Domain.Offering", null)
                         .WithMany()
-                        .HasForeignKey("TenantId", "ApplicationId")
-                        .HasPrincipalKey("TenantId", "Id")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("Nexora.Modules.Membership.Domain.MembershipProduct", null)
-                        .WithMany()
-                        .HasForeignKey("TenantId", "ProductId")
+                        .HasForeignKey("TenantId", "OfferingId")
                         .HasPrincipalKey("TenantId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Nexora.Modules.Membership.Domain.MembershipApplication", b =>
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.EventHistory", b =>
                 {
-                    b.HasOne("Nexora.Modules.Membership.Domain.MembershipProduct", null)
+                    b.HasOne("Nexora.Modules.Events.Domain.Offering", null)
                         .WithMany()
-                        .HasForeignKey("TenantId", "ProductId")
+                        .HasForeignKey("TenantId", "OfferingId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.EventSession", b =>
+                {
+                    b.HasOne("Nexora.Modules.Events.Domain.Offering", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "OfferingId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Events.Domain.ExamResult", b =>
+                {
+                    b.HasOne("Nexora.Modules.Events.Domain.Enrollment", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "EnrollmentId")
                         .HasPrincipalKey("TenantId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();

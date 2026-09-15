@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
+using Microsoft.AspNetCore.WebUtilities;
 using Nexora.BuildingBlocks.Security;
 using Nexora.Modules.Crm.Contracts;
 using Nexora.Modules.Crm.Domain;
@@ -44,6 +48,18 @@ public static class CrmModule
             catch (DbUpdateException) { return Results.Problem(statusCode: 409, title: "The change conflicts with existing data. Reload and check related records."); }
         });
         api.MapGet("/directory", (IIdentityDirectory directory, CancellationToken ct) => directory.GetAsync(ct));
+        endpoints.MapGet("/api/v1/assistant/crm-context", async (string? accessToken, string? q, Guid? id, int? limit, CrmDbContext db, IConfiguration config, CancellationToken ct) =>
+        {
+            var token = await ValidateAssistantTokenAsync(config, accessToken);
+            if (token == null) return Results.Unauthorized();
+            var take = Math.Clamp(limit ?? 25, 1, 100);
+            var records = db.Records.IgnoreQueryFilters().Where(x => x.TenantId == token.Value.TenantId && !x.IsArchived);
+            if (id is Guid recordId) records = records.Where(x => x.Id == recordId);
+            if (!string.IsNullOrWhiteSpace(q)) records = records.Where(x => x.Name.Contains(q));
+            var rows = await records.OrderBy(x => x.Name).Take(take).ToListAsync(ct);
+            var values = await db.Set<CustomFieldValue>().IgnoreQueryFilters().Where(x => x.TenantId == token.Value.TenantId && rows.Select(r => r.Id).Contains(x.RecordId)).ToListAsync(ct);
+            return Results.Ok(new { records = rows, customFields = values, tenantId = token.Value.TenantId, readOnly = true });
+        }).WithTags("Assistant");
         api.MapGet("/records", ListAsync);
         api.MapGet("/records/{id:guid}", DetailAsync);
         api.MapPost("/records", CreateAsync).RequireAuthorization("crm.manage");
@@ -140,6 +156,20 @@ public static class CrmModule
             db.Remove(row); await db.SaveChangesAsync(ct); return Results.NoContent();
         });
         return endpoints;
+    }
+
+    private static Task<(Guid TenantId, Guid UserId)?> ValidateAssistantTokenAsync(IConfiguration config, string? token)
+    {
+        // The upstream assistant sends this token as a query parameter through its server-side bridge.
+        if (string.IsNullOrWhiteSpace(token)) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
+        var parts = token.Split('.', 2);
+        if (parts.Length != 2) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
+        var secret = config["NEXORCHESTR_SHARED_SECRET"] ?? Environment.GetEnvironmentVariable("NEXORCHESTR_SHARED_SECRET");
+        if (string.IsNullOrWhiteSpace(secret)) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
+        var expected = WebEncoders.Base64UrlEncode(HMACSHA256.HashData(Encoding.UTF8.GetBytes(secret), Encoding.UTF8.GetBytes(parts[0])));
+        if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(expected), Encoding.UTF8.GetBytes(parts[1]))) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
+        try { var json = JsonSerializer.Deserialize<JsonElement>(WebEncoders.Base64UrlDecode(parts[0])); if (json.GetProperty("exp").GetInt64() < DateTimeOffset.UtcNow.ToUnixTimeSeconds()) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null); return Task.FromResult<(Guid TenantId, Guid UserId)?>( (json.GetProperty("tenantId").GetGuid(), json.GetProperty("userId").GetGuid()) ); }
+        catch { return Task.FromResult<(Guid TenantId, Guid UserId)?>(null); }
     }
 
     private static async Task<IResult> ListAsync(CrmDbContext db, string? kind, string? search, string? status, string? sort, bool? archived, int? page, int? pageSize, CancellationToken ct)

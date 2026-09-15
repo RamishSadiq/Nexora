@@ -1,3 +1,4 @@
+using Nexora.BuildingBlocks.Persistence;
 using Nexora.BuildingBlocks.Reporting;
 using System.Globalization;
 using System.Text;
@@ -20,7 +21,7 @@ public static class FinanceModule
         return services;}
  public static IEndpointRouteBuilder MapNexoraFinance(this IEndpointRouteBuilder routes)
  {
-  var api=routes.Module("finance");
+  var api=routes.Module("finance").WithAttributes<FinanceDbContext>("finance.manage", typeof(CatalogueProduct), typeof(SalesOrder), typeof(PostedInvoice), typeof(Receipt), typeof(Credit), typeof(Allocation), typeof(Refund));
   api.MapGet("/customers",(string? search,ICrmDirectory crm,CancellationToken ct)=>crm.SearchContactsAsync(search,ct));
   api.MapGet("/products",async(FinanceDbContext db,CancellationToken ct)=>await db.Set<CatalogueProduct>().OrderBy(x=>x.Name).ToListAsync(ct));
   api.MapPost("/products",async(CatalogueRequest r,FinanceDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>{Money(r.UnitPrice,true);Choice(r.Currency,"GBP","EUR","USD");Check(r.VatBasisPoints is >=0 and <=10000,"VAT basis points must be 0–10000.");var row=new CatalogueProduct{TenantId=who.TenantId!.Value,Name=Text(r.Name),Sku=Text(r.Sku,80),UnitPrice=r.UnitPrice,Currency=r.Currency,VatBasisPoints=r.VatBasisPoints};db.Add(row);History(db,who,http,row.Id,"product.created","Catalogue entry");await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("finance.manage");
@@ -58,12 +59,12 @@ public static class FinanceModule
  private static string Csv(string text){if(text.TrimStart().StartsWith('=')||text.TrimStart().StartsWith('+')||text.TrimStart().StartsWith('-')||text.TrimStart().StartsWith('@'))text="'"+text;return "\""+text.Replace("\"","\"\"")+"\"";}
  private static void History(FinanceDbContext db,IRequestIdentity who,HttpContext http,Guid id,string action,string reason)=>db.Add(new FinanceHistory{TenantId=who.TenantId!.Value,SubjectId=id,Action=action,Reason=reason,ActorUserId=who.UserId!.Value,CorrelationId=http.TraceIdentifier});
 }
-public sealed record CatalogueRequest(string Sku,string Name,decimal UnitPrice,string Currency,int VatBasisPoints);
+public sealed record CatalogueRequest(string Sku,string Name,decimal UnitPrice,string Currency,int VatBasisPoints) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record LineRequest(Guid ProductId,int Quantity);
-public sealed record OrderRequest(Guid CustomerId,LineRequest[] Lines);
+public sealed record OrderRequest(Guid CustomerId,LineRequest[] Lines) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record VersionRequest(Guid Version);
-public sealed record MoneyRequest(decimal Amount,string Reference,string Reason);
-public sealed record ReceiptRequest(Guid CustomerId,decimal Amount,string Currency,string Reference);
-public sealed record AllocationRequest(Guid ReceiptId,Guid InvoiceId,decimal Amount);
+public sealed record MoneyRequest(decimal Amount,string Reference,string Reason) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record ReceiptRequest(Guid CustomerId,decimal Amount,string Currency,string Reference) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record AllocationRequest(Guid ReceiptId,Guid InvoiceId,decimal Amount) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record ReasonRequest(string Reason);
 public sealed record ReconcileRequest(Guid Version,string StatementReference,decimal Amount,string Currency);

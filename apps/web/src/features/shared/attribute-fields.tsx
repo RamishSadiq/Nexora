@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { crm } from "../crm/api";
+import { moduleApi } from "./module-api";
 import type { Detail, Field, FieldValue } from "../crm/types";
 import { Field as Label, inputClass } from "./module-ui";
 
@@ -20,7 +21,7 @@ export function attributeValues(data: Record<string, string>) {
   return values;
 }
 
-export function AttributeFields({ kind, recordId }: { kind: string; recordId?: string }) {
+export function AttributeFields({ kind, recordId, module = "crm" }: { kind: string; recordId?: string; module?: string }) {
   const [fields, setFields] = useState<Field[]>([]);
   const [values, setValues] = useState<FieldValue[]>([]);
   const [error, setError] = useState("");
@@ -28,14 +29,19 @@ export function AttributeFields({ kind, recordId }: { kind: string; recordId?: s
   useEffect(() => {
     let active = true;
     const load = () => {
-      void Promise.all([crm<Field[]>("/fields"), recordId ? crm<Detail>(`/records/${recordId}`) : Promise.resolve(null)])
-        .then(([definitions, detail]) => { if (active) { setFields(definitions.filter(f => f.kind === kind)); setValues(detail?.fields ?? []); setError(""); setLoading(false); } })
+      const definitions = module === "crm" ? crm<Field[]>("/fields").then(rows => rows.filter(f => f.kind === kind)) : moduleApi<Field[]>(module, `/attributes/${kind}/definitions`);
+      const values = !recordId ? Promise.resolve([]) : module === "crm" ? crm<Detail>(`/records/${recordId}`).then(detail => detail.fields) : moduleApi<FieldValue[]>(module, `/attributes/${kind}/records/${recordId}`);
+      void Promise.all([definitions, values])
+        .then(([definitions, values]) => { if (active) { setFields(definitions); setValues(values); setError(""); setLoading(false); } })
         .catch(e => { if (active) { setError(e.message); setLoading(false); } });
     };
     load();
     window.addEventListener("focus", load);
-    return () => { active = false; window.removeEventListener("focus", load); };
-  }, [kind, recordId]);
+    const interval = window.setInterval(load, 15000);
+    const channel = new BroadcastChannel("nexora-attributes");
+    channel.onmessage = load;
+    return () => { active = false; window.removeEventListener("focus", load); window.clearInterval(interval); channel.close(); };
+  }, [kind, recordId, module]);
   if (loading || error) return <div className="sm:col-span-2" role={error ? "alert" : "status"}>
     {error || "Loading attributes…"}
     <input aria-label="Attributes unavailable" required value="" onChange={() => {}} className="sr-only" />

@@ -1,4 +1,16 @@
 export async function moduleApi<T>(module: string, path: string, method = "GET", body?: unknown): Promise<T> {
+  if (body && typeof body === "object" && !(body instanceof FormData)) {
+    const payload = { ...body } as Record<string, unknown>;
+    const attributes: Record<string, unknown> = {};
+    for (const [key, raw] of Object.entries(payload)) {
+      if (!key.startsWith("attribute:")) continue;
+      const [, id, type] = key.split(":"); const value = String(raw);
+      attributes[id] = { textValue: type === "text" && value ? value : null, numberValue: type === "number" && value !== "" ? Number(value) : null, booleanValue: type === "boolean" && value !== "" ? value === "true" : null, dateValue: type === "date" && value ? `${value}T00:00:00Z` : null };
+      delete payload[key];
+    }
+    if (Object.keys(attributes).length || (method === "PUT" && path.startsWith("/attributes/") && path.includes("/records/"))) payload.attributes = attributes;
+    body = payload;
+  }
   const headers: Record<string,string> = {};
   if (method !== "GET") {
     const response = await fetch("/api/v1/auth/csrf", { credentials: "include", cache: "no-store" });
