@@ -26,6 +26,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
   const pathname = usePathname();
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [relationshipsOpen, setRelationshipsOpen] = useState(pathname.startsWith("/relationships"));
   const [isSigningOut, setIsSigningOut] = useState(false);
   const dashboardTheme = pathname === "/dashboard";
   const initials = session.displayName.split(/\s+/).map((part) => part[0]).join("").slice(0, 2).toUpperCase();
@@ -63,12 +64,13 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
               const Icon = item.icon;
               return (
                 <div key={item.label}>
-                  <Link href={item.href} onClick={() => setMobileOpen(false)} className={cn("group flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition", active ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9] hover:text-[#263244]")}>
+                  {item.label === "Relationships" ? <button type="button" onClick={() => setRelationshipsOpen(open => !open)} aria-expanded={relationshipsOpen} className={cn("group flex h-11 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-medium transition", active ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9] hover:text-[#263244]")}>
                     <Icon className={cn("size-[18px]", active ? "text-[#4b66dd]" : "text-[#8b96a8] group-hover:text-[#5f6e82]")} />
-                    <span className="flex-1">{item.label}</span>
-                    {item.label !== "Home" && <ChevronDown className="size-3.5 -rotate-90 opacity-45" />}
-                  </Link>
-                  {item.label === "Relationships" && active && <div className="ml-8 mt-1 space-y-1 border-l border-[#dfe5f5] pl-3">
+                    <span className="flex-1">{item.label}</span><ChevronDown className={cn("size-3.5 opacity-45 transition-transform", relationshipsOpen ? "rotate-0" : "-rotate-90")} />
+                  </button> : <Link href={item.href} onClick={() => setMobileOpen(false)} className={cn("group flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition", active ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9] hover:text-[#263244]")}>
+                    <Icon className={cn("size-[18px]", active ? "text-[#4b66dd]" : "text-[#8b96a8] group-hover:text-[#5f6e82]")} /><span className="flex-1">{item.label}</span>{item.label !== "Home" && <ChevronDown className="size-3.5 -rotate-90 opacity-45" />}
+                  </Link>}
+                  {item.label === "Relationships" && relationshipsOpen && <div className="ml-8 mt-1 space-y-1 border-l border-[#dfe5f5] pl-3">
                     <Link href={"/relationships/contacts" as Route} onClick={() => setMobileOpen(false)} className={cn("block rounded-lg px-3 py-2 text-xs font-medium", pathname === "/relationships/contacts" ? "bg-[#f1f4ff] text-[#364fc7]" : "text-[#7b8798] hover:bg-[#f6f7fa]")}>Contacts</Link>
                     <Link href={"/relationships/accounts" as Route} onClick={() => setMobileOpen(false)} className={cn("block rounded-lg px-3 py-2 text-xs font-medium", pathname === "/relationships/accounts" ? "bg-[#f1f4ff] text-[#364fc7]" : "text-[#7b8798] hover:bg-[#f6f7fa]")}>Accounts</Link>
                   </div>}
