@@ -24,3 +24,8 @@ internal sealed class IdentityDirectoryService(NexoraIdentityDbContext db) : IId
         (userId == null || await db.Users.AnyAsync(x => x.Id == userId && x.IsActive, ct)) &&
         (teamId == null || await db.Teams.AnyAsync(x => x.Id == teamId, ct));
 }
+
+internal sealed class PublicTenantDirectory(NexoraIdentityDbContext db) : IPublicTenantDirectory
+{
+    public Task<bool> IsActiveAsync(Guid tenantId, CancellationToken ct) => db.Tenants.IgnoreQueryFilters().AnyAsync(t => t.Id == tenantId && t.Status == Nexora.Modules.Identity.Domain.TenantStatus.Active, ct);
+}

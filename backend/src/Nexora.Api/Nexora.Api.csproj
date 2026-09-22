@@ -25,4 +25,5 @@
 <ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Finance\Nexora.Modules.Finance.csproj" /></ItemGroup>
 <ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Engagement\Nexora.Modules.Engagement.csproj" /></ItemGroup>
 <ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Work\Nexora.Modules.Work.csproj" /></ItemGroup>
+<ItemGroup><ProjectReference Include="..\Modules\Nexora.Modules.Content\Nexora.Modules.Content.csproj" /></ItemGroup>
 </Project>

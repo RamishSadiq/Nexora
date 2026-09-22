@@ -16,7 +16,7 @@ public sealed class AttributeDefinition : TenantEntity
     public string DataType { get; set; } = "text";
     public int DisplayOrder { get; set; }
 }
-public sealed class AttributeValue : TenantEntity
+public sealed class AttributeValue : TenantEntity, IAutomationValue
 {
     public Guid RecordId { get; set; }
     public Guid DefinitionId { get; set; }
@@ -36,6 +36,7 @@ public static class EntityAttributes
     public static RouteGroupBuilder WithAttributes<TDb>(this RouteGroupBuilder api, string permission, params Type[] entities) where TDb : TenantDbContext
     {
         Type Resolve(string entityType) => entities.SingleOrDefault(t => t.Name == entityType) ?? throw new KeyNotFoundException();
+        Automations.Map<TDb>(api, permission, entityType => entities.SingleOrDefault(t => t.Name == entityType), (db, kind, ct) => db.AutomationFieldsAsync(kind, ct));
         api.MapGet("/attribute-entities", () => entities.Select(t => t.Name));
         api.MapGet("/attributes/{entityType}/records", async (string entityType, int? page, TDb db, CancellationToken ct) =>
         {

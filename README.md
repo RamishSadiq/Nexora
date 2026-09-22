@@ -55,3 +55,5 @@ dotnet test backend/Nexora.slnx --configuration Release
 The Relationships workspace now supports the Contact and Account lifecycle, related data, personal saved views and typed custom fields. See [Stage 3 implementation and verification](docs/stages/STAGE-03-CRM-FOUNDATION.md).
 
 Stage-specific implementation notes are recorded in [docs/stages](docs/stages).
+
+The [automation controllers](docs/stages/AUTOMATION-CONTROLLERS.md) provide persistent typed attributes, rules that calculate custom attributes on save, and shared record section layouts. Their database migrations and browser verification instructions are included in that guide.

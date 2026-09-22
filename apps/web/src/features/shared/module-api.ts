@@ -8,7 +8,7 @@ export async function moduleApi<T>(module: string, path: string, method = "GET",
       attributes[id] = { textValue: type === "text" && value ? value : null, numberValue: type === "number" && value !== "" ? Number(value) : null, booleanValue: type === "boolean" && value !== "" ? value === "true" : null, dateValue: type === "date" && value ? `${value}T00:00:00Z` : null };
       delete payload[key];
     }
-    if (Object.keys(attributes).length || (method === "PUT" && path.startsWith("/attributes/") && path.includes("/records/"))) payload.attributes = attributes;
+    if (Object.keys(attributes).length || (payload.attributes === undefined && method === "PUT" && path.startsWith("/attributes/") && path.includes("/records/"))) payload.attributes = attributes;
     body = payload;
   }
   const headers: Record<string,string> = {};
@@ -23,5 +23,6 @@ export async function moduleApi<T>(module: string, path: string, method = "GET",
     const problem = await response.json().catch(() => null) as { title?: string; errors?: Record<string,string[]> } | null;
     throw new Error(response.status === 401 ? "Your session expired. Sign in again." : response.status === 403 ? "You do not have permission for this action." : response.status === 404 ? "This record is unavailable." : problem?.errors ? Object.values(problem.errors).flat().join(" ") : problem?.title ?? "Unable to complete the request.");
   }
+  if (method !== "GET" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("nexora-records", { detail: { module } }));
   return response.status === 204 ? undefined as T : response.json() as Promise<T>;
 }

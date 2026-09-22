@@ -16,7 +16,7 @@ public sealed class MembershipEndpointTests
     {
         using var app=new IdentityApiFactory();using var client=await Login(app);var contact=await Contact(client);
         var product=await Json(await Send(client,"/api/v1/membership/products",HttpMethod.Post,new{name="Annual",category="Standard",termMonths=12,rate=100,currency="GBP",isActive=true}));
-        var application=await Json(await Send(client,"/api/v1/membership/applications",HttpMethod.Post,new{contactId=Id(contact),productId=Id(product),startsAtUtc=DateTime.UtcNow.Date}));
+        var application=await Json(await Send(client,"/api/v1/membership/applications",HttpMethod.Post,new{contactId=Id(contact),productId=Id(product),applicationType="individual",termsAccepted=true,startsAtUtc=DateTime.UtcNow.Date}));
         await Json(await Send(client,"/api/v1/membership/products/"+Id(product),HttpMethod.Patch,new{name="Annual",category="Standard",termMonths=12,rate=150,currency="GBP",isActive=true,version=Version(product)}));
         var approved=await Json(await Send(client,"/api/v1/membership/applications/"+Id(application)+"/decision",HttpMethod.Post,new{version=Version(application),decision="approve",reason="Eligible"}));
         var id=approved["membershipId"]!.GetValue<string>();
@@ -39,11 +39,11 @@ public sealed class MembershipEndpointTests
         var product=await Json(await Send(client,"/api/v1/membership/products",HttpMethod.Post,new{name="Annual",category="Standard",termMonths=12,rate=100,currency="GBP",isActive=true}));
         Assert.Equal(HttpStatusCode.Forbidden,(await outside.GetAsync("/api/v1/membership/products")).StatusCode);
         Assert.Equal(HttpStatusCode.BadRequest,(await client.PostAsJsonAsync("/api/v1/membership/products",new{name="No token"})).StatusCode);
-        var request=new{contactId=Id(contact),productId=Id(product),startsAtUtc=DateTime.UtcNow.Date};
+        var request=new{contactId=Id(contact),productId=Id(product),applicationType="individual",termsAccepted=true,startsAtUtc=DateTime.UtcNow.Date};
         var first=await Json(await Send(client,"/api/v1/membership/applications",HttpMethod.Post,request));var second=await Json(await Send(client,"/api/v1/membership/applications",HttpMethod.Post,request));
         await Json(await Send(client,"/api/v1/membership/applications/"+Id(first)+"/decision",HttpMethod.Post,new{version=Version(first),decision="approve",reason="Approved"}));
         Assert.Equal(HttpStatusCode.BadRequest,(await Send(client,"/api/v1/membership/applications/"+Id(second)+"/decision",HttpMethod.Post,new{version=Version(second),decision="approve",reason="Overlapping"})).StatusCode);
-        Assert.Equal(HttpStatusCode.NotFound,(await Send(client,"/api/v1/membership/applications",HttpMethod.Post,new{contactId=Guid.NewGuid(),productId=Id(product),startsAtUtc=DateTime.UtcNow.Date})).StatusCode);
+        Assert.Equal(HttpStatusCode.NotFound,(await Send(client,"/api/v1/membership/applications",HttpMethod.Post,new{contactId=Guid.NewGuid(),productId=Id(product),applicationType="individual",termsAccepted=true,startsAtUtc=DateTime.UtcNow.Date})).StatusCode);
         var session=(await outside.GetFromJsonAsync<SessionResponse>("/api/v1/auth/session"))!;
         using var scope=app.Services.CreateScope();var options=new DbContextOptionsBuilder<MembershipDbContext>().UseSqlite(scope.ServiceProvider.GetRequiredService<MembershipDbContext>().Database.GetDbConnection()).Options;
         await using var db=new MembershipDbContext(options,new Identity(session.TenantId,session.UserId));

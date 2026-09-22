@@ -13,3 +13,8 @@ public interface IIdentityDirectory
     Task<IdentityDirectory> GetAsync(CancellationToken cancellationToken);
     Task<bool> IsValidOwnerAsync(Guid? userId, Guid? teamId, CancellationToken cancellationToken);
 }
+
+public interface IPublicTenantDirectory
+{
+    Task<bool> IsActiveAsync(Guid tenantId, CancellationToken ct);
+}

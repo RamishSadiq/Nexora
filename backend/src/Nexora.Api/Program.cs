@@ -1,3 +1,4 @@
+using Nexora.Modules.Content;
 using Nexora.Api;
 using System.Reflection;
 using Nexora.Modules.Work;
@@ -25,6 +26,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddHealthChecks();
 builder.Services.AddNexoraIdentity(builder.Configuration, builder.Environment.IsDevelopment());
 builder.Services.AddNexoraCrm(builder.Configuration);
+builder.Services.AddNexoraContent(builder.Configuration);
 builder.Services.AddNexoraMembership(builder.Configuration);
 builder.Services.AddNexoraEvents(builder.Configuration);
 builder.Services.AddNexoraFinance(builder.Configuration);
@@ -85,6 +87,7 @@ app.MapGet("/api/v1/platform", () =>
 
 app.MapNexoraIdentityEndpoints();
 app.MapNexoraCrm();
+app.MapNexoraContent();
 app.MapNexoraMembership();
 app.MapNexoraEvents();
 app.MapNexoraFinance();
@@ -100,6 +103,7 @@ if (app.Environment.IsDevelopment())
     {
         await using var scope = app.Services.CreateAsyncScope();
         await scope.ServiceProvider.GetRequiredService<CrmDbContext>().Database.MigrateAsync();
+        await scope.ServiceProvider.GetRequiredService<ContentDbContext>().Database.MigrateAsync();
         await scope.ServiceProvider.GetRequiredService<MembershipDbContext>().Database.MigrateAsync();
         await scope.ServiceProvider.GetRequiredService<EventsDbContext>().Database.MigrateAsync();
         await scope.ServiceProvider.GetRequiredService<FinanceDbContext>().Database.MigrateAsync();

@@ -23,6 +23,130 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.AutomationConfiguration", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("RulesJson")
+                        .IsRequired()
+                        .HasMaxLength(100000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SectionsJson")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "EntityType")
+                        .IsUnique();
+
+                    b.ToTable("AutomationConfigurations", "crm");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.AccountContact", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("EndReason")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("IsAuthorisedContact")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMainContact")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("JobTitle")
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("WorkClassification")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "AccountId", "ContactId")
+                        .IsUnique()
+                        .HasFilter("EndDate IS NULL");
+
+                    b.HasIndex("TenantId", "ContactId", "EndDate");
+
+                    b.ToTable("AccountContacts", "crm");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.AccountContactRole", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AssociationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RoleCode")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "AssociationId", "RoleCode")
+                        .IsUnique();
+
+                    b.ToTable("AccountContactRoles", "crm");
+                });
+
             modelBuilder.Entity("Nexora.Modules.Crm.Domain.Activity", b =>
                 {
                     b.Property<Guid>("Id")
@@ -417,10 +541,14 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                     b.Property<bool>("Archived")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Columns")
-                        .IsRequired()
+                    b.Property<string>("Category")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Columns")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
 
                     b.Property<string>("Kind")
                         .IsRequired()
@@ -431,6 +559,12 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid?>("OwnerTeamId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("OwnerUserId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Search")
                         .IsRequired()
@@ -458,6 +592,33 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                     b.HasAlternateKey("TenantId", "Id");
 
                     b.ToTable("SavedViews", "crm");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.AccountContact", b =>
+                {
+                    b.HasOne("Nexora.Modules.Crm.Domain.CrmRecord", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "AccountId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Nexora.Modules.Crm.Domain.CrmRecord", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "ContactId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.AccountContactRole", b =>
+                {
+                    b.HasOne("Nexora.Modules.Crm.Domain.AccountContact", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "AssociationId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Nexora.Modules.Crm.Domain.Activity", b =>

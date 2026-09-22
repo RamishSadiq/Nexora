@@ -36,10 +36,25 @@ public abstract class TenantDbContext(DbContextOptions options, IRequestIdentity
                 if (property.ClrType == typeof(DateTime) || property.ClrType == typeof(DateTime?)) property.SetValueConverter(utc);
             }
         builder.Entity<AttributeValue>().Property(x => x.NumberValue).HasPrecision(18, 4);
+        Automations.Configure(builder);
+        builder.Entity<AutomationConfiguration>().HasQueryFilter(x => x.TenantId == ActiveTenantId);
     }
-    public override int SaveChanges(bool acceptAllChangesOnSuccess) { GuardAsync(default).GetAwaiter().GetResult(); return base.SaveChanges(acceptAllChangesOnSuccess); }
+    public async Task<AutomationField[]> AutomationFieldsAsync(string kind, CancellationToken ct)
+    {
+        await Set<AttributeDefinition>().Where(x => x.EntityType == kind).LoadAsync(ct);
+        return ChangeTracker.Entries<AttributeDefinition>().Where(e => e.State != EntityState.Deleted && e.Entity.TenantId == ActiveTenantId && e.Entity.EntityType == kind)
+            .Select(e => new AutomationField(e.Entity.Id.ToString(), e.Entity.Name, e.Entity.DataType, true)).ToArray();
+    }
+    private async Task AutomateAsync(CancellationToken ct)
+    {
+        await GuardAsync(ct);
+        await Automations.GuardAsync(this, ActiveTenantId, ActiveUserId, ct);
+        await Automations.ApplyAsync<AttributeValue>(this, ActiveTenantId, kind => Model.GetEntityTypes().Select(e => e.ClrType).SingleOrDefault(t => t.Name == kind), x => x.GetType().Name, AutomationFieldsAsync, ct);
+        await GuardAsync(ct);
+    }
+    public override int SaveChanges(bool acceptAllChangesOnSuccess) { AutomateAsync(default).GetAwaiter().GetResult(); return base.SaveChanges(acceptAllChangesOnSuccess); }
     public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
-    { await GuardAsync(cancellationToken); return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken); }
+    { await AutomateAsync(cancellationToken); return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken); }
     protected virtual Task ValidateEntityAsync(EntityEntry<TenantEntity> entry, CancellationToken ct) => Task.CompletedTask;
     private async Task GuardAsync(CancellationToken ct)
     {

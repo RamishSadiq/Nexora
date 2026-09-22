@@ -9,4 +9,4 @@ public sealed record TagRequest(string Name);
 public sealed record FieldRequest(string Name, string Kind, string DataType);
 public sealed record FieldOrderRequest(string Kind, Guid[] Ids);
 public sealed record ValueRequest(string? TextValue, decimal? NumberValue, bool? BooleanValue, DateTime? DateValue);
-public sealed record ViewRequest(string Name, string Kind, string Search, string Status, string Sort, bool Archived, string Columns);
+public sealed record ViewRequest(string Name, string Kind, string Search, string Status, string Sort, bool Archived, string Columns, Guid? OwnerUserId = null, Guid? OwnerTeamId = null, string? Category = null);

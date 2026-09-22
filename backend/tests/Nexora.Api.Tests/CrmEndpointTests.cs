@@ -10,7 +10,7 @@ using Nexora.Modules.Identity;
 
 namespace Nexora.Api.Tests;
 
-public sealed class CrmEndpointTests
+public sealed partial class CrmEndpointTests
 {
     private sealed record Identity(Guid? TenantId, Guid? UserId) : IRequestIdentity;
     private static async Task<HttpClient> Login(IdentityApiFactory app, string email = IdentityApiFactory.AdminEmail)

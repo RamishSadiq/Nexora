@@ -71,6 +71,9 @@ public sealed class Activity : RecordChild
 }
 public sealed class SavedView : TenantRow
 {
+    public Guid? OwnerUserId { get; set; }
+    public Guid? OwnerTeamId { get; set; }
+    public string? Category { get; set; }
     public Guid UserId { get; set; }
     public string Name { get; set; } = "";
     public string Kind { get; set; } = "contact";
@@ -87,7 +90,7 @@ public sealed class CustomFieldDefinition : TenantRow
     public string Kind { get; set; } = "contact";
     public string DataType { get; set; } = "text";
 }
-public sealed class CustomFieldValue : RecordChild
+public sealed class CustomFieldValue : RecordChild, Nexora.BuildingBlocks.Persistence.IAutomationValue
 {
     public Guid DefinitionId { get; set; }
     public string? TextValue { get; set; }

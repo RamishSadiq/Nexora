@@ -35,6 +35,8 @@ public static class IdentityModule
         services.AddHttpContextAccessor();
         services.AddScoped<IRequestIdentity, RequestIdentity>();
         services.AddScoped<IIdentityDirectory, IdentityDirectoryService>();
+        services.AddScoped<IPortalRecipientDirectory, PortalRecipientDirectory>();
+        services.AddScoped<IPublicTenantDirectory, PublicTenantDirectory>();
         services.AddScoped<ITenantContext, HttpTenantContext>();
         services.AddDbContext<NexoraIdentityDbContext>(options => options.UseSqlServer(connectionString));
 
@@ -103,7 +105,7 @@ public static class IdentityModule
                     .AddRequirements(activeTenantRequirement)
                     .RequireClaim(NexoraClaimTypes.Permission, NexoraPermissions.AuditRead));
 
-        foreach (var permission in new[] { "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export" })
+        foreach (var permission in new[] { "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export", "content.read", "content.manage", "content.publish" })
         {
             services.AddAuthorizationBuilder().AddPolicy(permission, policy => policy.RequireAuthenticatedUser()
                 .AddRequirements(activeTenantRequirement).RequireClaim(NexoraClaimTypes.Permission, permission));
@@ -135,6 +137,7 @@ public static class IdentityModule
                     }));
         });
 
+        services.AddPortal(isDevelopment);
         return services;
     }
 
@@ -167,6 +170,7 @@ public static class IdentityModule
             .WithTags("Administration")
             .RequireAuthorization(NexoraPermissions.IdentityRead);
 
+        endpoints.MapPortal();
         return endpoints;
     }
 

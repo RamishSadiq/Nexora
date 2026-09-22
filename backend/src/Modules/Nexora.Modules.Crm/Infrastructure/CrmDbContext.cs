@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nexora.BuildingBlocks.Security;
 using Nexora.Modules.Crm.Domain;
+using Nexora.BuildingBlocks.Persistence;
 
 namespace Nexora.Modules.Crm.Infrastructure;
 
@@ -17,6 +18,21 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
         Configure<Address>(b, "Addresses");
         Configure<CommunicationMethod>(b, "CommunicationMethods");
         Configure<RecordRelationship>(b, "Relationships");
+        Configure<AccountContact>(b, "AccountContacts");
+        Configure<AccountContactRole>(b, "AccountContactRoles");
+        b.Entity<AccountContact>().Property(x => x.Version).IsConcurrencyToken();
+        b.Entity<AccountContact>().Property(x => x.JobTitle).HasMaxLength(160);
+        b.Entity<AccountContact>().Property(x => x.WorkClassification).HasMaxLength(30);
+        b.Entity<AccountContact>().HasOne<CrmRecord>().WithMany()
+            .HasForeignKey(x => new { x.TenantId, x.AccountId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<AccountContact>().HasOne<CrmRecord>().WithMany()
+            .HasForeignKey(x => new { x.TenantId, x.ContactId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<AccountContact>().HasIndex(x => new { x.TenantId, x.AccountId, x.ContactId }).IsUnique().HasFilter("EndDate IS NULL");
+        b.Entity<AccountContact>().HasIndex(x => new { x.TenantId, x.ContactId, x.EndDate });
+        b.Entity<AccountContactRole>().Property(x => x.RoleCode).HasMaxLength(50);
+        b.Entity<AccountContactRole>().HasOne<AccountContact>().WithMany()
+            .HasForeignKey(x => new { x.TenantId, x.AssociationId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<AccountContactRole>().HasIndex(x => new { x.TenantId, x.AssociationId, x.RoleCode }).IsUnique();
         Configure<Note>(b, "Notes");
         Configure<RecordTag>(b, "Tags");
         Configure<RecordFile>(b, "Files");
@@ -24,6 +40,7 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
         Configure<CustomFieldDefinition>(b, "CustomFieldDefinitions");
         Configure<CustomFieldValue>(b, "CustomFieldValues");
         Configure<SavedView>(b, "SavedViews");
+        b.Entity<SavedView>().Property(x => x.Columns).HasMaxLength(4000);
         b.Entity<SavedView>().HasQueryFilter(x => x.TenantId == TenantId && x.UserId == UserId);
         b.Entity<CrmRecord>().Property(x => x.Version).IsConcurrencyToken();
         b.Entity<CrmRecord>().HasIndex(x => new { x.TenantId, x.Kind, x.IsArchived, x.Name, x.Id });
@@ -50,6 +67,8 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
         foreach (var entity in b.Model.GetEntityTypes())
             foreach (var property in entity.GetProperties().Where(x => x.ClrType == typeof(string) && x.GetMaxLength() == null))
                 property.SetMaxLength(property.Name == "Body" ? 4000 : 500);
+        Automations.Configure(b);
+        b.Entity<AutomationConfiguration>().HasQueryFilter(x => x.TenantId == TenantId);
     }
     private void Configure<T>(ModelBuilder b, string table) where T : TenantRow
     {
@@ -64,13 +83,27 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
 
     public override int SaveChanges(bool acceptAllChangesOnSuccess)
     {
-        GuardAsync(default).GetAwaiter().GetResult();
+        AutomateAsync(default).GetAwaiter().GetResult();
         return base.SaveChanges(acceptAllChangesOnSuccess);
     }
     public override async Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = default)
     {
-        await GuardAsync(cancellationToken);
+        await AutomateAsync(cancellationToken);
         return await base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+    }
+    public async Task<AutomationField[]> AutomationFieldsAsync(string kind, CancellationToken ct)
+    {
+        await Set<CustomFieldDefinition>().Where(x => x.Kind == kind).LoadAsync(ct);
+        return ChangeTracker.Entries<CustomFieldDefinition>().Where(e => e.State != EntityState.Deleted && e.Entity.TenantId == TenantId && e.Entity.Kind == kind)
+            .Select(e => new AutomationField(e.Entity.Id.ToString(), e.Entity.Name, e.Entity.DataType, true)).ToArray();
+    }
+    private async Task AutomateAsync(CancellationToken ct)
+    {
+        await GuardAsync(ct);
+        await Automations.GuardAsync(this, TenantId, UserId, ct);
+        await Automations.ApplyAsync<CustomFieldValue>(this, TenantId, kind => kind is "contact" or "account" ? typeof(CrmRecord) : null,
+            x => ((CrmRecord)x).Kind, AutomationFieldsAsync, ct);
+        await GuardAsync(ct);
     }
     private async Task GuardAsync(CancellationToken ct)
     {
@@ -83,12 +116,30 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
                 (directory == null || !await directory.IsValidOwnerAsync(record.OwnerUserId, record.OwnerTeamId, ct))) throw new CrmBoundaryException();
             if (e.Entity is SavedView view && view.UserId != UserId) throw new CrmBoundaryException();
             if (e.Entity is Activity && e.State != EntityState.Added) throw new CrmBoundaryException();
+            if (e.Entity is AccountContact && e.State == EntityState.Deleted) throw new CrmBoundaryException();
             if (e.State != EntityState.Added)
             {
                 var stored = await e.GetDatabaseValuesAsync(ct);
                 if (stored == null || !Equals(stored["TenantId"], TenantId) ||
                     (e.Entity is SavedView && !Equals(stored["UserId"], UserId))) throw new CrmBoundaryException();
+                if (e.Entity is AccountContact &&
+                    (!Equals(stored[nameof(AccountContact.AccountId)], e.CurrentValues[nameof(AccountContact.AccountId)]) ||
+                     !Equals(stored[nameof(AccountContact.ContactId)], e.CurrentValues[nameof(AccountContact.ContactId)]) ||
+                     !Equals(stored[nameof(AccountContact.StartDate)], e.CurrentValues[nameof(AccountContact.StartDate)]) ||
+                     stored[nameof(AccountContact.EndDate)] != null))
+                    throw new CrmBoundaryException();
             }
+            if (e.Entity is AccountContact link && e.State != EntityState.Deleted)
+            {
+                if (!await Records.AnyAsync(x => x.Id == link.AccountId && x.Kind == "account", ct) ||
+                    !await Records.AnyAsync(x => x.Id == link.ContactId && x.Kind == "contact", ct)) throw new CrmBoundaryException();
+                if (!AccountContactChoices.WorkClassifications.Contains(link.WorkClassification) ||
+                    link.StartDate == default || link.StartDate.TimeOfDay != TimeSpan.Zero || link.StartDate > DateTime.UtcNow.Date ||
+                    (link.EndDate.HasValue && (link.EndDate < link.StartDate || link.EndDate > DateTime.UtcNow.Date || link.EndDate.Value.TimeOfDay != TimeSpan.Zero)))
+                    throw new System.ComponentModel.DataAnnotations.ValidationException("Invalid association classification or dates.");
+            }
+            if (e.Entity is AccountContactRole role && e.State != EntityState.Deleted && !AccountContactChoices.Roles.Contains(role.RoleCode))
+                throw new System.ComponentModel.DataAnnotations.ValidationException("Unsupported contact role.");
         }
     }
 }

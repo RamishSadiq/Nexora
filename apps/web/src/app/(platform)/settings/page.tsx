@@ -1,5 +1,6 @@
 import { ShieldCheck, UsersRound, UserRoundCog } from "lucide-react";
 import { getAccessOverview, requireSession } from "@/lib/auth/session";
+import { PortalAccessManagement } from "@/features/portal/portal-access-management";
 
 export default async function AdministrationPage() {
   const session = await requireSession();
@@ -38,6 +39,8 @@ export default async function AdministrationPage() {
             </div>
           ))}
         </section>
+
+        {session.permissions.includes("identity.manage") && session.permissions.includes("crm.manage") && session.permissions.includes("crm.read") && <PortalAccessManagement users={overview.users} />}
 
         <section className="overflow-hidden rounded-2xl border border-[#e5e9ef] bg-white shadow-sm">
           <div className="border-b border-[#e9ecf1] px-5 py-4"><h2 className="font-semibold text-[#263244]">Users</h2></div>

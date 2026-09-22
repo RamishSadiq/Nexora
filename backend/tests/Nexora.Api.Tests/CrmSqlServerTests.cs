@@ -1,6 +1,8 @@
 using System.Diagnostics;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Nexora.BuildingBlocks.Security;
 using Nexora.Modules.Crm.Domain;
 using Nexora.Modules.Crm.Infrastructure;
@@ -20,6 +22,33 @@ public sealed class SqlServerFactAttribute : FactAttribute
 public sealed class CrmSqlServerTests(ITestOutputHelper output)
 {
     private sealed record Identity(Guid? TenantId, Guid? UserId) : IRequestIdentity;
+    [SqlServerFact]
+    public async Task Saved_view_migration_preserves_existing_account_views_and_widens_columns()
+    {
+        var connection = new SqlConnectionStringBuilder(Environment.GetEnvironmentVariable("NEXORA_TEST_SQLSERVER"))
+        { InitialCatalog = "NexoraCrmTest_" + Guid.NewGuid().ToString("N") };
+        var options = new DbContextOptionsBuilder<CrmDbContext>().UseSqlServer(connection.ConnectionString,
+            sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "crm")).Options;
+        var tenant = Guid.NewGuid(); var user = Guid.NewGuid(); var id = Guid.NewGuid();
+        await using var db = new CrmDbContext(options, new Identity(tenant, user));
+        try
+        {
+            var migrations = db.Database.GetMigrations().ToArray();
+            var index = Array.FindIndex(migrations, m => m.EndsWith("_CrmSavedViewFilters"));
+            Assert.True(index > 0);
+            await db.GetService<IMigrator>().MigrateAsync(migrations[index - 1]);
+            await db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO [crm].[SavedViews] ([Id],[TenantId],[UserId],[Name],[Kind],[Search],[Status],[Sort],[Archived],[Columns]) VALUES ({id},{tenant},{user},N'Legacy accounts',N'account',N'Example',N'active',N'name',0,N'name,status')");
+            await db.Database.MigrateAsync();
+            var view = await db.Set<SavedView>().SingleAsync();
+            Assert.Equal(id, view.Id); Assert.Equal("account", view.Kind); Assert.Equal("Example", view.Search);
+            Assert.Equal("name,status", view.Columns); Assert.Null(view.OwnerUserId); Assert.Null(view.Category);
+            view.Columns = "name," + string.Join(',', Enumerable.Range(0, 50).Select(_ => "field:" + Guid.NewGuid()));
+            await db.SaveChangesAsync(); db.ChangeTracker.Clear();
+            Assert.True((await db.Set<SavedView>().SingleAsync()).Columns.Length > 500);
+        }
+        finally { await db.Database.EnsureDeletedAsync(); }
+    }
+
     [SqlServerFact]
     public async Task Migration_is_idempotent_and_tenant_queries_work_at_10000_records()
     {

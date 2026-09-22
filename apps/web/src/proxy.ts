@@ -6,7 +6,9 @@ export function proxy(request: NextRequest) {
   const hasSession = sessionCookieNames.some((name) => request.cookies.has(name));
   const isLogin = request.nextUrl.pathname === "/login";
 
-  if (!hasSession && !isLogin) {
+  const isPublicSite = request.nextUrl.pathname.startsWith("/site/") || request.nextUrl.pathname === "/portal" || request.nextUrl.pathname.startsWith("/portal/");
+
+  if (!hasSession && !isLogin && !isPublicSite) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set(
       "returnTo",

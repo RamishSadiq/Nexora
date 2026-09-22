@@ -1,3 +1,4 @@
+using Nexora.Modules.Content;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Data.Sqlite;
 using Nexora.Modules.Crm.Infrastructure;
@@ -21,6 +22,7 @@ namespace Nexora.Api.Tests;
 
 public sealed class IdentityApiFactory : WebApplicationFactory<Program>
 {
+    private readonly SqliteConnection _contentConnection = new("Data Source=:memory:");
     private readonly SqliteConnection _engagementConnection = new("Data Source=:memory:");
     private readonly SqliteConnection _workConnection = new("Data Source=:memory:");
     private readonly SqliteConnection _financeConnection = new("Data Source=:memory:");
@@ -35,6 +37,7 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
     public IdentityApiFactory()
     {
         _connection.Open();
+        _contentConnection.Open();
         _crmConnection.Open();
         _membershipConnection.Open();
         _eventsConnection.Open();
@@ -49,6 +52,9 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
         builder.UseEnvironment("Development");
         builder.ConfigureTestServices(services =>
         {
+            services.RemoveAll<DbContextOptions<ContentDbContext>>();
+            services.RemoveAll<IDbContextOptionsConfiguration<ContentDbContext>>();
+            services.AddDbContext<ContentDbContext>(options => options.UseSqlite(_contentConnection));
             services.RemoveAll<DbContextOptions<EngagementDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<EngagementDbContext>>();
             services.AddDbContext<EngagementDbContext>(options => options.UseSqlite(_engagementConnection));
@@ -77,13 +83,14 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (disposing) { _connection.Dispose(); _crmConnection.Dispose(); _membershipConnection.Dispose(); _eventsConnection.Dispose(); _financeConnection.Dispose(); _workConnection.Dispose(); _engagementConnection.Dispose(); }
+        if (disposing) { _contentConnection.Dispose(); _connection.Dispose(); _crmConnection.Dispose(); _membershipConnection.Dispose(); _eventsConnection.Dispose(); _financeConnection.Dispose(); _workConnection.Dispose(); _engagementConnection.Dispose(); }
     }
 
     private async Task SeedAsync()
     {
         await using var scope = Services.CreateAsyncScope();
         await scope.ServiceProvider.GetRequiredService<CrmDbContext>().Database.EnsureCreatedAsync();
+        await scope.ServiceProvider.GetRequiredService<ContentDbContext>().Database.EnsureCreatedAsync();
         await scope.ServiceProvider.GetRequiredService<MembershipDbContext>().Database.EnsureCreatedAsync();
         await scope.ServiceProvider.GetRequiredService<EventsDbContext>().Database.EnsureCreatedAsync();
         await scope.ServiceProvider.GetRequiredService<FinanceDbContext>().Database.EnsureCreatedAsync();

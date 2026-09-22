@@ -10,6 +10,7 @@ public sealed partial class NexoraIdentityDbContext(DbContextOptions<NexoraIdent
     : IdentityDbContext<NexoraUser, NexoraRole, Guid>(options)
 {
     public DbSet<Tenant> Tenants => Set<Tenant>();
+    public DbSet<PortalAccess> PortalAccess => Set<PortalAccess>();
     public DbSet<Team> Teams => Set<Team>();
     public DbSet<TeamMember> TeamMembers => Set<TeamMember>();
     public DbSet<RolePermission> RolePermissions => Set<RolePermission>();
@@ -33,6 +34,25 @@ public sealed partial class NexoraIdentityDbContext(DbContextOptions<NexoraIdent
 
 
         builder.HasDefaultSchema("identity");
+        builder.Entity<PortalOrganisationGrant>(entity =>
+        {
+            entity.ToTable("PortalOrganisationGrants");
+            entity.HasKey(x => x.Id);
+            entity.HasQueryFilter(x => SystemAccess || x.TenantId == CurrentTenantId);
+            entity.HasIndex(x => new { x.TenantId, x.PortalAccessId, x.AccountId }).IsUnique().HasFilter("[IsRevoked] = 0");
+            entity.HasOne<PortalAccess>().WithMany().HasForeignKey(x => new { x.TenantId, x.PortalAccessId })
+                .HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        });
+        builder.Entity<PortalAccess>(entity =>
+        {
+            entity.ToTable("PortalAccess");
+            entity.HasKey(x => x.Id);
+            entity.HasQueryFilter(x => SystemAccess || x.TenantId == CurrentTenantId);
+            entity.HasIndex(x => new { x.TenantId, x.UserId }).IsUnique().HasFilter("[IsRevoked] = 0");
+            entity.HasIndex(x => new { x.TenantId, x.ContactId }).IsUnique().HasFilter("[IsRevoked] = 0");
+            entity.HasOne<NexoraUser>().WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.Restrict);
+            entity.HasOne<Tenant>().WithMany().HasForeignKey(x => x.TenantId).OnDelete(DeleteBehavior.Restrict);
+        });
         builder.Entity<Tenant>(entity =>
         {
             entity.ToTable("Tenants");

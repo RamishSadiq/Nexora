@@ -1,9 +1,20 @@
 import Link from "next/link";
+import type { Route } from "next";
+import { notFound } from "next/navigation";
 import { requireSession } from "@/lib/auth/session";
-import { Workflow, ArrowLeft } from "lucide-react";
-
+import { attributeEntities } from "@/features/shared/attribute-entities";
+const controllers = [
+  { slug: "design-controller", title: "Design controller", description: "Arrange record sections." },
+  { slug: "attributes-controller", title: "Attributes controller", description: "Manage typed custom attributes." },
+  { slug: "rules-controller", title: "Rules controller", description: "Calculate attributes when records are saved." },
+];
 export default async function AutomationModulePage({ params }: { params: Promise<{ module: string }> }) {
   await requireSession();
-  const moduleName = (await params).module.replaceAll("-", " ").replace(/\b\w/g, c => c.toUpperCase());
-  return <main className="page-enter mx-auto max-w-5xl space-y-6 p-5 text-slate-800 sm:p-8"><Link href="/automations" className="inline-flex items-center gap-2 text-sm font-medium text-indigo-700 hover:underline"><ArrowLeft className="size-4" />All automations</Link><header><p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-600">{moduleName}</p><h1 className="mt-2 text-3xl font-semibold tracking-tight text-slate-950">{moduleName} automations</h1><p className="mt-2 text-sm text-slate-600">Choose an automation to configure.</p></header><div className="grid gap-4 md:grid-cols-2"><Link href={`/automations/${(await params).module}/design-controller`} className="block rounded-xl border border-indigo-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-md"><span className="grid size-10 place-items-center rounded-lg bg-indigo-600 text-white"><Workflow className="size-5" /></span><h2 className="mt-4 text-lg font-semibold text-slate-900">Design controller</h2><p className="mt-1 text-sm text-slate-600">Arrange the sections shown in this module.</p></Link><Link href={`/automations/${(await params).module}/attributes-controller`} className="block rounded-xl border border-indigo-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-md"><span className="grid size-10 place-items-center rounded-lg bg-indigo-50 text-indigo-600"><Workflow className="size-5" /></span><h2 className="mt-4 text-lg font-semibold text-slate-900">Attributes controller</h2><p className="mt-1 text-sm text-slate-600">Add or remove attributes shown on this entity’s forms.</p></Link></div></main>;
+  const { module } = await params;
+  if (!attributeEntities[module]) notFound();
+  return <main className="mx-auto max-w-5xl space-y-6 p-5 sm:p-8">
+    <Link href="/automations" className="text-indigo-700 underline">All automations</Link>
+    <h1 className="text-3xl font-semibold capitalize">{module.replaceAll("-", " ")} automations</h1>
+    <div className="grid gap-4 md:grid-cols-3">{controllers.map(c => <Link key={c.slug} href={`/automations/${module}/${c.slug}` as Route} className="rounded-xl border bg-white p-6 hover:border-indigo-400"><h2 className="font-semibold">{c.title}</h2><p className="mt-2 text-sm text-slate-600">{c.description}</p></Link>)}</div>
+  </main>;
 }

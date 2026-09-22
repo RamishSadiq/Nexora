@@ -294,6 +294,75 @@ namespace Nexora.Modules.Identity.Infrastructure.Persistence.Migrations
                     b.ToTable("Users", "identity");
                 });
 
+            modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalAccess", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("ContactId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("TenantId", "ContactId")
+                        .IsUnique()
+                        .HasFilter("[IsRevoked] = 0");
+
+                    b.HasIndex("TenantId", "UserId")
+                        .IsUnique()
+                        .HasFilter("[IsRevoked] = 0");
+
+                    b.ToTable("PortalAccess", "identity");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalOrganisationGrant", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("CanSubmitApplications")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("PortalAccessId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "PortalAccessId", "AccountId")
+                        .IsUnique()
+                        .HasFilter("[IsRevoked] = 0");
+
+                    b.ToTable("PortalOrganisationGrants", "identity");
+                });
+
             modelBuilder.Entity("Nexora.Modules.Identity.Domain.RolePermission", b =>
                 {
                     b.Property<Guid>("RoleId")
@@ -450,6 +519,31 @@ namespace Nexora.Modules.Identity.Infrastructure.Persistence.Migrations
                     b.HasOne("Nexora.Modules.Identity.Domain.Tenant", null)
                         .WithMany()
                         .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalAccess", b =>
+                {
+                    b.HasOne("Nexora.Modules.Identity.Domain.Tenant", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Nexora.Modules.Identity.Domain.NexoraUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalOrganisationGrant", b =>
+                {
+                    b.HasOne("Nexora.Modules.Identity.Domain.PortalAccess", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "PortalAccessId")
+                        .HasPrincipalKey("TenantId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });

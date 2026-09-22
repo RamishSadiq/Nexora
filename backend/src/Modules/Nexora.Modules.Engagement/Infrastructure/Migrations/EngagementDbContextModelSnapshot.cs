@@ -119,6 +119,42 @@ namespace Nexora.Modules.Engagement.Infrastructure.Migrations
                     b.ToTable("AttributeValues", "engagement");
                 });
 
+            modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.AutomationConfiguration", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("EntityType")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<string>("RulesJson")
+                        .IsRequired()
+                        .HasMaxLength(100000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("SectionsJson")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("nvarchar(4000)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "EntityType")
+                        .IsUnique();
+
+                    b.ToTable("AutomationConfigurations", "engagement");
+                });
+
             modelBuilder.Entity("Nexora.Modules.Engagement.Domain.Campaign", b =>
                 {
                     b.Property<Guid>("Id")

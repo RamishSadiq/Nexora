@@ -5,21 +5,38 @@
       "label": "free-web-port",
       "type": "shell",
       "command": "powershell",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "$c = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue; if ($null -ne $c) { $c | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }; exit 0"],
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$c = Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue; if ($null -ne $c) { $c | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }; exit 0"
+      ],
       "problemMatcher": []
     },
     {
       "label": "free-api-port",
       "type": "shell",
       "command": "powershell",
-      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", "$c = Get-NetTCPConnection -LocalPort 5081 -ErrorAction SilentlyContinue; if ($null -ne $c) { $c | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }; exit 0"],
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-Command",
+        "$c = Get-NetTCPConnection -LocalPort 5081 -ErrorAction SilentlyContinue; if ($null -ne $c) { $c | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue } }; exit 0"
+      ],
       "problemMatcher": []
     },
     {
       "label": "build-api",
       "type": "process",
       "command": "dotnet",
-      "args": ["build", "backend/src/Nexora.Api", "--configuration", "Debug"],
+      "args": [
+        "build",
+        "backend/src/Nexora.Api",
+        "--configuration",
+        "Debug"
+      ],
       "problemMatcher": "$msCompile",
       "group": {
         "kind": "build",
@@ -30,6 +47,53 @@
         "panel": "shared",
         "clear": false
       }
+    },
+    {
+      "label": "website-check-ports",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "${workspaceFolder}/scripts/Prepare-WebsiteDebug.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "website-build-api",
+      "type": "process",
+      "command": "dotnet",
+      "args": [
+        "build",
+        "${workspaceFolder}/backend/src/Nexora.Api",
+        "--configuration",
+        "WebsiteDebug",
+        "-p:DebugSymbols=true",
+        "-p:DebugType=portable",
+        "-p:Optimize=false"
+      ],
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "website-prepare",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "website-check-ports",
+        "website-build-api"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "website-wait-api",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "${workspaceFolder}/scripts/Prepare-WebsiteDebug.ps1",
+        "-WaitForApi"
+      ],
+      "problemMatcher": []
     }
   ]
 }

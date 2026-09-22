@@ -1,4 +1,5 @@
 using Nexora.BuildingBlocks.Reporting;
+using Nexora.BuildingBlocks.Persistence;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Builder;
@@ -7,10 +8,6 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.Json;
-using Microsoft.AspNetCore.WebUtilities;
 using Nexora.BuildingBlocks.Security;
 using Nexora.Modules.Crm.Contracts;
 using Nexora.Modules.Crm.Domain;
@@ -23,6 +20,7 @@ public static class CrmModule
     public static IServiceCollection AddNexoraCrm(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<ICrmDirectory, CrmDirectory>();
+        services.AddScoped<IMemberProfileDirectory, MemberProfileDirectory>();
         services.AddDbContext<CrmDbContext>(o => o.UseSqlServer(configuration.GetConnectionString("Nexora"),
             sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "crm")));
         services.AddScoped<IReportDataset>(sp=>new ReportDataset("contacts","Contacts","crm.read",sp.GetRequiredService<CrmDbContext>().Set<CrmRecord>().AsNoTracking().Where(x=>x.Kind=="contact"&&!x.IsArchived).Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
@@ -45,21 +43,19 @@ public static class CrmModule
             catch (KeyNotFoundException) { return Results.NotFound(); }
             catch (DbUpdateConcurrencyException) { return Results.Problem(statusCode: 409, title: "This record changed. Reload it before saving again."); }
             catch (CrmBoundaryException) { return Results.Forbid(); }
+            catch (TenantBoundaryException) { return Results.Forbid(); }
             catch (DbUpdateException) { return Results.Problem(statusCode: 409, title: "The change conflicts with existing data. Reload and check related records."); }
         });
         api.MapGet("/directory", (IIdentityDirectory directory, CancellationToken ct) => directory.GetAsync(ct));
-        endpoints.MapGet("/api/v1/assistant/crm-context", async (string? accessToken, string? q, Guid? id, int? limit, CrmDbContext db, IConfiguration config, CancellationToken ct) =>
+        api.MapAccountContacts();
+        Automations.Map<CrmDbContext>(api, "crm.manage", kind => kind is "contact" or "account" ? typeof(CrmRecord) : null, (db, kind, ct) => db.AutomationFieldsAsync(kind, ct));
+        // Legacy query-string tokens did not enforce current user permissions.
+        // Fail closed until the assistant has a scoped, revocable integration identity.
+        endpoints.MapGet("/api/v1/assistant/crm-context", (HttpContext http) =>
         {
-            var token = await ValidateAssistantTokenAsync(config, accessToken);
-            if (token == null) return Results.Unauthorized();
-            var take = Math.Clamp(limit ?? 25, 1, 100);
-            var records = db.Records.IgnoreQueryFilters().Where(x => x.TenantId == token.Value.TenantId && !x.IsArchived);
-            if (id is Guid recordId) records = records.Where(x => x.Id == recordId);
-            if (!string.IsNullOrWhiteSpace(q)) records = records.Where(x => x.Name.Contains(q));
-            var rows = await records.OrderBy(x => x.Name).Take(take).ToListAsync(ct);
-            var values = await db.Set<CustomFieldValue>().IgnoreQueryFilters().Where(x => x.TenantId == token.Value.TenantId && rows.Select(r => r.Id).Contains(x.RecordId)).ToListAsync(ct);
-            return Results.Ok(new { records = rows, customFields = values, tenantId = token.Value.TenantId, readOnly = true });
-        }).WithTags("Assistant");
+            http.Response.Headers.CacheControl = "no-store";
+            return Results.Problem(statusCode: 503, title: "Assistant CRM access is disabled.");
+        }).RequireAuthorization("crm.read").WithTags("Assistant");
         api.MapGet("/records", ListAsync);
         api.MapGet("/records/{id:guid}", DetailAsync);
         api.MapPost("/records", CreateAsync).RequireAuthorization("crm.manage");
@@ -140,15 +136,25 @@ public static class CrmModule
             await db.SaveChangesAsync(ct); return Results.NoContent();
         }).RequireAuthorization("crm.configure");
         api.MapPut("/records/{id:guid}/fields/{fieldId:guid}", SetFieldAsync).RequireAuthorization("crm.manage");
-        api.MapGet("/views", async (CrmDbContext db, CancellationToken ct) => await db.Set<SavedView>().OrderBy(x => x.Name).ToListAsync(ct));
+        api.MapGet("/views", async (string? kind, CrmDbContext db, CancellationToken ct) =>
+        {
+            if (kind != null) Choice(kind, "contact", "account");
+            return Results.Ok(await db.Set<SavedView>().Where(x => kind == null || x.Kind == kind).OrderBy(x => x.Name).ThenBy(x => x.Id).ToListAsync(ct));
+        });
+        api.MapGet("/views/{id:guid}", async (Guid id, CrmDbContext db, CancellationToken ct) =>
+            Results.Ok(await db.Set<SavedView>().SingleOrDefaultAsync(x => x.Id == id, ct) ?? throw new KeyNotFoundException()));
         api.MapPost("/views", async (ViewRequest r, CrmDbContext db, IRequestIdentity who, CancellationToken ct) =>
         {
-            Choice(r.Kind, "contact", "account"); Choice(r.Sort, "name", "-name", "updated"); Choice(r.Status, "", "active", "prospect", "inactive");
-            Required(r.Columns, 100);
-            foreach (var column in r.Columns.Split(',')) Choice(column, "name", "status", "category", "updatedAtUtc");
-            if (!r.Columns.Split(',').Contains("name")) throw new ValidationException("The name column is required.");
-            var row = new SavedView { TenantId = who.TenantId!.Value, UserId = who.UserId!.Value, Name = Required(r.Name, 80), Kind = r.Kind, Search = Optional(r.Search, 160) ?? "", Status = r.Status, Sort = r.Sort, Archived = r.Archived, Columns = Required(r.Columns, 100) };
+            var row = new SavedView { TenantId = who.TenantId!.Value, UserId = who.UserId!.Value };
+            await ApplyViewAsync(row, r, db, ct);
             db.Add(row); await db.SaveChangesAsync(ct); return Results.Ok(row);
+        });
+        api.MapPut("/views/{id:guid}", async (Guid id, ViewRequest r, CrmDbContext db, CancellationToken ct) =>
+        {
+            var row = await db.Set<SavedView>().SingleOrDefaultAsync(x => x.Id == id, ct) ?? throw new KeyNotFoundException();
+            if (row.Kind != r.Kind) throw new ValidationException("A saved view cannot change record type.");
+            await ApplyViewAsync(row, r, db, ct);
+            await db.SaveChangesAsync(ct); return Results.Ok(row);
         });
         api.MapDelete("/views/{id:guid}", async (Guid id, CrmDbContext db, CancellationToken ct) =>
         {
@@ -158,21 +164,25 @@ public static class CrmModule
         return endpoints;
     }
 
-    private static Task<(Guid TenantId, Guid UserId)?> ValidateAssistantTokenAsync(IConfiguration config, string? token)
+    private static async Task ApplyViewAsync(SavedView row, ViewRequest r, CrmDbContext db, CancellationToken ct)
     {
-        // The upstream assistant sends this token as a query parameter through its server-side bridge.
-        if (string.IsNullOrWhiteSpace(token)) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
-        var parts = token.Split('.', 2);
-        if (parts.Length != 2) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
-        var secret = config["NEXORCHESTR_SHARED_SECRET"] ?? Environment.GetEnvironmentVariable("NEXORCHESTR_SHARED_SECRET");
-        if (string.IsNullOrWhiteSpace(secret)) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
-        var expected = WebEncoders.Base64UrlEncode(HMACSHA256.HashData(Encoding.UTF8.GetBytes(secret), Encoding.UTF8.GetBytes(parts[0])));
-        if (!CryptographicOperations.FixedTimeEquals(Encoding.UTF8.GetBytes(expected), Encoding.UTF8.GetBytes(parts[1]))) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null);
-        try { var json = JsonSerializer.Deserialize<JsonElement>(WebEncoders.Base64UrlDecode(parts[0])); if (json.GetProperty("exp").GetInt64() < DateTimeOffset.UtcNow.ToUnixTimeSeconds()) return Task.FromResult<(Guid TenantId, Guid UserId)?>(null); return Task.FromResult<(Guid TenantId, Guid UserId)?>( (json.GetProperty("tenantId").GetGuid(), json.GetProperty("userId").GetGuid()) ); }
-        catch { return Task.FromResult<(Guid TenantId, Guid UserId)?>(null); }
+        Choice(r.Kind, "contact", "account"); Choice(r.Sort, "name", "-name", "updated"); Choice(r.Status, "", "active", "prospect", "inactive");
+        var columns = Required(r.Columns, 4000).Split(',');
+        if (columns.Length > 54 || columns.Distinct().Count() != columns.Length || !columns.Contains("name"))
+            throw new ValidationException("Choose up to 54 distinct columns, including Name.");
+        var definitions = await db.Set<CustomFieldDefinition>().Where(x => x.Kind == r.Kind).Select(x => x.Id).ToListAsync(ct);
+        foreach (var column in columns)
+        {
+            if (column is "name" or "status" or "category" or "updatedAtUtc") continue;
+            if (!column.StartsWith("field:") || !Guid.TryParse(column[6..], out var id) || !definitions.Contains(id))
+                throw new ValidationException("A selected custom field is unavailable for this record type. Reload the columns and try again.");
+        }
+        row.Name = Required(r.Name, 80); row.Kind = r.Kind; row.Search = Optional(r.Search, 160) ?? "";
+        row.Status = r.Status; row.Sort = r.Sort; row.Archived = r.Archived; row.Columns = string.Join(',', columns);
+        row.OwnerUserId = r.OwnerUserId; row.OwnerTeamId = r.OwnerTeamId; row.Category = Optional(r.Category, 100);
     }
 
-    private static async Task<IResult> ListAsync(CrmDbContext db, string? kind, string? search, string? status, string? sort, bool? archived, int? page, int? pageSize, CancellationToken ct)
+    private static async Task<IResult> ListAsync(CrmDbContext db, string? kind, string? search, string? status, string? sort, bool? archived, int? page, int? pageSize, string? ownerUserId, string? ownerTeamId, string? category, CancellationToken ct)
     {
         kind ??= "contact"; sort ??= "name";
         Choice(kind, "contact", "account"); Choice(sort, "name", "-name", "updated");
@@ -181,6 +191,12 @@ public static class CrmModule
         var query = db.Records.AsNoTracking().Where(x => x.Kind == kind && x.IsArchived == (archived ?? false));
         if (!string.IsNullOrEmpty(term)) query = query.Where(x => x.Name.Contains(term));
         if (!string.IsNullOrEmpty(status)) query = query.Where(x => x.Status == status);
+        static Guid? OwnerFilter(string? value) => string.IsNullOrEmpty(value) ? null : Guid.TryParse(value, out var id) ? id : throw new ValidationException("Invalid owner filter.");
+        var userFilter = OwnerFilter(ownerUserId); var teamFilter = OwnerFilter(ownerTeamId);
+        if (userFilter.HasValue) query = query.Where(x => x.OwnerUserId == userFilter);
+        if (teamFilter.HasValue) query = query.Where(x => x.OwnerTeamId == teamFilter);
+        var categoryFilter = Optional(category, 100);
+        if (categoryFilter != null) query = query.Where(x => x.Category == categoryFilter);
         var count = await query.CountAsync(ct);
         var ordered = sort switch { "-name" => query.OrderByDescending(x => x.Name), "updated" => query.OrderByDescending(x => x.UpdatedAtUtc), _ => query.OrderBy(x => x.Name) };
         var number = Math.Clamp(page ?? 1, 1, 10000); var size = Math.Clamp(pageSize ?? 20, 1, 100);

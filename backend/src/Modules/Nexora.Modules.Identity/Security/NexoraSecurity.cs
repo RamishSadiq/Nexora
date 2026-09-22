@@ -16,7 +16,7 @@ public static class NexoraPermissions
     public const string IdentityManage = "identity.manage";
     public const string AuditRead = "audit.read";
 
-    public static readonly string[] All = [IdentityRead, IdentityManage, AuditRead, "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export"];
+    public static readonly string[] All = [IdentityRead, IdentityManage, AuditRead, "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export", "content.read", "content.manage", "content.publish"];
 }
 
 public interface ITenantContext

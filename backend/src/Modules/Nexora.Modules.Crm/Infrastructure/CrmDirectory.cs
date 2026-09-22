@@ -17,6 +17,14 @@ internal sealed class CrmDirectory(CrmDbContext db) : ICrmDirectory
         if (!string.IsNullOrWhiteSpace(search)) query = query.Where(x => x.Name.Contains(search));
         return await query.OrderBy(x => x.Name).ThenBy(x => x.Id).Take(50).Select(x => new CrmIdentity(x.Id,x.Name,x.Kind)).ToListAsync(ct);
     }
+    public async Task<IReadOnlyList<CrmIdentity>> SearchAccountsAsync(string? search, CancellationToken ct)
+    {
+        var query = db.Records.Where(x => x.Kind == "account" && !x.IsArchived);
+        if (!string.IsNullOrWhiteSpace(search)) query = query.Where(x => x.Name.Contains(search));
+        return await query.OrderBy(x => x.Name).ThenBy(x => x.Id).Take(50).Select(x => new CrmIdentity(x.Id, x.Name, x.Kind)).ToListAsync(ct);
+    }
+    public Task<bool> HasCurrentAccountContactAsync(Guid accountId, Guid contactId, CancellationToken ct) =>
+        db.Set<AccountContact>().AnyAsync(x => x.AccountId == accountId && x.ContactId == contactId && x.EndDate == null && x.StartDate <= DateTime.UtcNow.Date, ct);
     public Task<CrmIdentity?> FindActiveAsync(Guid id, CancellationToken ct) => db.Records.Where(x => x.Id == id && !x.IsArchived)
         .Select(x => new CrmIdentity(x.Id, x.Name, x.Kind)).SingleOrDefaultAsync(ct);
 }
