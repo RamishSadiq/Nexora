@@ -36,11 +36,16 @@ public sealed class ContentScheduler(IServiceScopeFactory scopes, ILogger<Conten
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         using var timer = new PeriodicTimer(TimeSpan.FromSeconds(30));
-        while (await timer.WaitForNextTickAsync(stoppingToken))
+        try
         {
-            try { using var scope = scopes.CreateScope(); await DispatchAsync(scope.ServiceProvider, DateTime.UtcNow, stoppingToken); }
-            catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested) { break; }
-            catch (Exception e) { log.LogError(e, "Scheduled publication dispatch failed; pending jobs will retry."); }
+            while (await timer.WaitForNextTickAsync(stoppingToken))
+            {
+                try { using var scope = scopes.CreateScope(); await DispatchAsync(scope.ServiceProvider, DateTime.UtcNow, stoppingToken); }
+                catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested) { break; }
+                catch (Exception e) { log.LogError(e, "Scheduled publication dispatch failed; pending jobs will retry."); }
+            }
         }
+        catch (OperationCanceledException) when (stoppingToken.IsCancellationRequested)
+        { /* Normal host shutdown also cancels the idle timer wait. */ }
     }
 }

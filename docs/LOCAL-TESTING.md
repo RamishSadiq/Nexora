@@ -1,6 +1,6 @@
 # Test CRM, Portal and CMS in VS Code
 
-Open **D:\Projects new\Nexora** as the VS Code folder. In **Run and Debug**, choose CRM, Portal or CMS and press **F5**:
+Open **D:\Projects new\Nexora** as the VS Code folder. In **Run and Debug**, choose Company Dash, CRM, Portal, CMS or All applications and press **F5**:
 
 | Option | Opens | What to test |
 | --- | --- | --- |
@@ -11,7 +11,7 @@ Open **D:\Projects new\Nexora** as the VS Code folder. In **Run and Debug**, cho
 
 Each Nexora frontend first runs `local-ensure-api`. It builds and starts the shared API if port 5097 is free, or waits for the existing API to be ready. Concurrent launches serialize API startup. CRM, Portal and CMS use ports **3017**, **3018** and **3019**, isolated Next output, and separate explicit **Microsoft Edge** debug profiles. You can launch Portal and CMS together without manually starting the API.
 
-The shared API uses **SQL Express `.\SQLEXPRESS` / `NexoraDev`** and remains running when a frontend stops. Logs are in `artifacts/local-shared-api.log` and `artifacts/local-shared-api-error.log`; its PID is in `artifacts/local-shared-api.pid`. For C# breakpoints, choose **Attach shared API** and select the Nexora API process. To rebuild backend edits, stop that specific API process, then launch a frontend again. **Nexora shared API** is an optional direct debugger launch for an already-built API when 5097 is free; do not launch a second API on the same port.
+The shared API uses **SQL Express `.\SQLEXPRESS` / `NexoraDev`** and remains running when a frontend stops. Logs are in `artifacts/local-shared-api.log` and `artifacts/local-shared-api-error.log`; its PID is in `artifacts/local-shared-api.pid`. For C# breakpoints, choose **Attach shared API** and select the Nexora API process. To rebuild backend edits, stop that specific API process, then launch a frontend again. The manual API launch configuration is hidden to avoid starting a duplicate API. Each frontend has its own preparation task; a mutex serializes only shared API creation, not application launch order.
 
 ## Test accounts and data
 
@@ -56,3 +56,13 @@ The signed-in landing page at `/portal` is **Dashboard**, with live membership/a
 The local navigation check is `npx playwright test tests/portal-navigation.spec.ts` from `apps/web`, with `NEXORA_BROWSER_URL`, `NEXORA_PORTAL_EMAIL` and `NEXORA_PORTAL_PASSWORD` set for a provisioned local member. It checks menu isolation, active navigation, reload, Back, dashboard links, sign-out and mobile overflow.
 
 Dashboard/navigation verification on 28 September: Edge menu isolation/reload/Back/sign-out/mobile check passed; all three production portal journeys passed against a disposable SQL Express database; production build, TypeScript and lint passed. The backend test build emitted ASP.NET analyzer AD0001 warnings but no build errors.
+
+## Any-order and simultaneous startup
+
+There is no CRM-before-Portal-before-CMS dependency. `presentation.order` only orders the VS Code dropdown. Choose any app first, or choose **All applications** to launch all four. Each Nexora frontend independently ensures the shared API is ready. Company Dash starts its own Node server (UI and API on 8000) and does not require Nexora. All four use separate Edge debug profiles. Stopping a frontend does not stop another frontend or the shared API.
+
+The CMS scheduled publishing service handles cancellation both during dispatch and while waiting for its timer. A normal API shutdown no longer leaves the timer cancellation unhandled in user code. If the debugger is explicitly set to break on every thrown CLR exception, it can still pause on handled cancellation; resume execution or use unhandled-exception breakpoints.
+
+`node scripts/Verify-LaunchOrder.mjs` requires clear debug ports. It starts Company Dash alone, then tests CMS-first, Portal-first and CRM-first cold API launches with all four apps running, checks each frontend proxy, and tests concurrent API preparation. It stops only its own processes. VS Code UI/F5 dispatch is a separate manual check.
+
+Verified launch repair: five targeted CMS tests passed, including idle scheduler shutdown completing successfully. The configured launch commands passed CMS → Portal → CRM, Portal → CRM → CMS and CRM → CMS → Portal from a cold API, with Company Dash running alongside and successful API proxy calls through all three frontends. Concurrent cold API preparation passed, and Company Dash shutdown left the shared API healthy. Verification processes were stopped afterward. Actual VS Code F5 UI dispatch was not automated.

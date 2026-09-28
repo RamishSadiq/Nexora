@@ -23,7 +23,7 @@
       },
       "justMyCode": true,
       "presentation": {
-        "order": 1
+        "hidden": true
       },
       "preLaunchTask": "local-build-api"
     },
@@ -56,7 +56,7 @@
       "presentation": {
         "hidden": true
       },
-      "preLaunchTask": "local-ensure-api"
+      "preLaunchTask": "local-ensure-api-crm"
     },
     {
       "name": "Nexora internal Portal web",
@@ -87,7 +87,7 @@
       "presentation": {
         "hidden": true
       },
-      "preLaunchTask": "local-ensure-api"
+      "preLaunchTask": "local-ensure-api-portal"
     },
     {
       "name": "Nexora internal CMS web",
@@ -118,7 +118,7 @@
       "presentation": {
         "hidden": true
       },
-      "preLaunchTask": "local-ensure-api"
+      "preLaunchTask": "local-ensure-api-cms"
     },
     {
       "type": "node",
@@ -128,12 +128,16 @@
       "cwd": "C:/Users/ramish/Documents/ChatGPT/Company Dash",
       "console": "integratedTerminal",
       "serverReadyAction": {
+        "name": "Company Dash Edge",
         "pattern": "Command Center: (http://[^\\s]+)",
-        "uriFormat": "%s",
-        "action": "openExternally"
+        "action": "startDebugging"
       },
       "presentation": {
         "order": 0
+      },
+      "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "env": {
+        "PORT": "8000"
       }
     },
     {
@@ -174,6 +178,16 @@
       "type": "coreclr",
       "request": "attach",
       "processId": "${command:pickProcess}"
+    },
+    {
+      "name": "Company Dash Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://127.0.0.1:8000",
+      "userDataDir": "${workspaceFolder}/artifacts/edge-company-dash",
+      "presentation": {
+        "hidden": true
+      }
     }
   ],
   "compounds": [
@@ -205,6 +219,19 @@
       "stopAll": false,
       "presentation": {
         "order": 3
+      }
+    },
+    {
+      "name": "All applications",
+      "configurations": [
+        "Company Dash",
+        "Nexora internal CRM web",
+        "Nexora internal Portal web",
+        "Nexora internal CMS web"
+      ],
+      "stopAll": false,
+      "presentation": {
+        "order": 4
       }
     }
   ]

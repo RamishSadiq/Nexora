@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import { createRequire } from "node:module";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const launch = JSON.parse(fs.readFileSync(path.join(root, ".vscode/launch.json"), "utf8"));
-if (launch.compounds.map(x => x.name).join(",") !== "CRM,Portal,CMS") throw new Error("Expected CRM, Portal and CMS compounds.");
+if (!["CRM", "Portal", "CMS", "All applications"].every(name => launch.compounds.some(c => c.name === name))) throw new Error("Expected CRM, Portal and CMS compounds.");
 const require = createRequire(path.join(root, "apps/web/package.json")); const { chromium } = require("@playwright/test");
 const config = launch.configurations.find(x => x.type === "coreclr");
 const env = { ...process.env, ...config.env, NEXORA_API_URL: "http://localhost:5097", NEXORA_NEXT_DIST_DIR: ".next-local-debug" };

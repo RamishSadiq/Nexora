@@ -42,6 +42,39 @@
         "-WaitForApi"
       ],
       "problemMatcher": []
+    },
+    {
+      "label": "local-ensure-api-crm",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "${workspaceFolder}/scripts/Prepare-LocalDebug.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "local-ensure-api-portal",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "${workspaceFolder}/scripts/Prepare-LocalDebug.ps1"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "local-ensure-api-cms",
+      "type": "process",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-File",
+        "${workspaceFolder}/scripts/Prepare-LocalDebug.ps1"
+      ],
+      "problemMatcher": []
     }
   ]
 }
