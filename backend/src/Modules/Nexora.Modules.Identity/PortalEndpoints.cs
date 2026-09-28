@@ -81,6 +81,7 @@ internal static partial class PortalEndpoints
             return await next(context);
         });
         MapOrganisations(own);
+        own.MapGet("/configuration", async (IPortalPresentationDirectory directory, CancellationToken ct) => Results.Ok(await directory.ReadAsync(ct)));
         MapEvidence(own);
         own.MapGet("/profile", async (HttpContext http, IMemberProfileDirectory directory, CancellationToken ct) =>
             Results.Ok(await directory.ReadAsync((Guid)http.Items["portal_contact"]!, ct)));

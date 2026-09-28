@@ -51,6 +51,8 @@ Backend solution tests also passed: 115 API tests and 2 architecture tests; 7 AP
 
 ## Member navigation
 
+CRM now includes **Portal** at `http://localhost:3017/portal-management`. Use it to configure branding, menus, dashboard sections and custom member information pages. Save a draft, preview it and publish to apply it to signed-in members. Existing defaults remain until publication. See [Stage 19](stages/STAGE-19-PORTAL-CONFIGURATION.md) for scope and verification.
+
 The signed-in landing page at `/portal` is **Dashboard**, with live membership/application totals, current membership, recent applications and quick links. Each menu has its own page: `/portal/memberships`, `/portal/applications`, `/portal/organisations`, `/portal/profile` and `/portal/notifications`. Only the selected section is rendered; refresh and browser Back preserve the selected page. Application receipts remain at their existing URLs.
 
 The local navigation check is `npx playwright test tests/portal-navigation.spec.ts` from `apps/web`, with `NEXORA_BROWSER_URL`, `NEXORA_PORTAL_EMAIL` and `NEXORA_PORTAL_PASSWORD` set for a provisioned local member. It checks menu isolation, active navigation, reload, Back, dashboard links, sign-out and mobile overflow.

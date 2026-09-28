@@ -52,7 +52,7 @@ export function ApplicationReceipt({ id, accountId }: { id: string; accountId?: 
         {receipt.acceptedTerms ? <><p className="mt-2 whitespace-pre-wrap break-words text-sm leading-7">{receipt.acceptedTerms}</p>{receipt.termsAcceptedAtUtc && <p className="mt-3 text-sm text-slate-600">Accepted {portalDate(receipt.termsAcceptedAtUtc)}</p>}</> : <p className="mt-2 text-sm text-slate-600">A portal terms snapshot was not recorded for this application. Contact your association for a copy.</p>}
       </section>
       <ApplicationEvidence path={`/api/v1/portal${accountId ? `/organisations/${accountId}` : ""}/applications/${id}/evidence`} />
-      <button className="mt-7 rounded-full border border-[#183a31] px-5 py-3 font-semibold print:hidden" onClick={() => window.print()}>Print application receipt</button>
+      <button className="mt-7 rounded-full border border-[var(--portal-brand,#183a31)] px-5 py-3 font-semibold print:hidden" onClick={() => window.print()}>Print application receipt</button>
     </>}
   </section>;
 }

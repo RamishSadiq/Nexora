@@ -68,7 +68,7 @@ try {
   if (production) await run(process.execPath, ["node_modules/next/dist/bin/next", "build", "--webpack"], webRoot);
   web = start(process.execPath, ["node_modules/next/dist/bin/next", ...(production ? ["start"] : ["dev", "--webpack"]), "--port", String(webPort)], webRoot, "web.log");
   await ready(`${env.NEXORA_BROWSER_URL}/login`, web);
-  await run(process.execPath, ["node_modules/@playwright/test/cli.js", "test", ...(all ? ["crm.spec.ts", "portal.spec.ts", "website.spec.ts"] : [crm ? "crm.spec.ts" : portal ? "portal.spec.ts" : "website.spec.ts"]), "--output", path.join(artifacts, "results")], webRoot);
+  await run(process.execPath, ["node_modules/@playwright/test/cli.js", "test", ...(all ? ["crm.spec.ts", "portal.spec.ts", "portal-configuration.spec.ts", "website.spec.ts"] : crm ? ["crm.spec.ts"] : portal ? ["portal.spec.ts", "portal-configuration.spec.ts"] : ["website.spec.ts"]), "--output", path.join(artifacts, "results")], webRoot);
 } catch (error) { console.error(error.message); process.exitCode = 1; }
 finally {
   for (const child of [web, api]) if (child && child.exitCode === null) {

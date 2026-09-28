@@ -18,6 +18,7 @@ const navigation: Array<{ label: string; href: Route; match: string; icon: typeo
   { label: "Sales & finance", href: "/finance" as Route, match: "/finance", icon: WalletCards },
   { label: "Engagement", href: "/engagement" as Route, match: "/engagement", icon: MessageSquareText },
   { label: "Work", href: "/work" as Route, match: "/work", icon: Blocks },
+  { label: "Portal", href: "/portal-management" as Route, match: "/portal-management", icon: Blocks },
   { label: "Website", href: "/website" as Route, match: "/website", icon: Blocks },
   { label: "Insights", href: "/insights" as Route, match: "/insights", icon: GraduationCap },
   { label: "NexOrchestr AI", href: "/assistant" as Route, match: "/assistant", icon: Sparkles },
@@ -60,7 +61,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
         <nav className="flex-1 overflow-y-auto px-3 py-3" aria-label="Primary navigation">
           <p className="mb-2 px-3 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#a0a9b8]">Workspace</p>
           <div className="space-y-1">
-            {navigation.filter(item => item.match !== "/website" || session.permissions.includes("content.read")).map((item) => {
+            {navigation.filter(item => !["/website", "/portal-management"].includes(item.match) || session.permissions.includes("content.read")).map((item) => {
               const active = pathname === item.match || (item.match !== "/dashboard" && pathname.startsWith(item.match));
               const Icon = item.icon;
               return (

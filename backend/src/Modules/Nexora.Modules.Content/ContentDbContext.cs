@@ -17,6 +17,10 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
     {
         b.HasDefaultSchema("content");
         Configure<Site>(b, "Sites"); Configure<Page>(b, "Pages");
+        Configure<PortalConfiguration>(b, "PortalConfigurations");
+        b.Entity<PortalConfiguration>().HasIndex(x => x.TenantId).IsUnique();
+        b.Entity<PortalConfiguration>().Property(x => x.DraftJson).HasMaxLength(100000);
+        b.Entity<PortalConfiguration>().Property(x => x.PublishedJson).HasMaxLength(100000);
         Configure<PageVersion>(b, "PageVersions"); Configure<Publication>(b, "Publications");
         Configure<MediaAsset>(b, "MediaAssets"); Configure<PageRedirect>(b, "PageRedirects"); Configure<ScheduledPublication>(b, "ScheduledPublications");
         b.Entity<Site>().Property(x => x.BrandColor).HasMaxLength(7);

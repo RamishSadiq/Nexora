@@ -21,6 +21,7 @@ public static partial class ContentModule
     {
         services.AddDbContext<ContentDbContext>(o => o.UseSqlServer(configuration.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "content")));
         services.AddHostedService<ContentScheduler>();
+        services.AddScoped<IPortalPresentationDirectory, PortalPresentationDirectory>();
         return services;
     }
     public static void MapNexoraContent(this IEndpointRouteBuilder endpoints)
@@ -42,6 +43,7 @@ public static partial class ContentModule
             catch (DbUpdateException) { return Results.Problem(statusCode: 409, title: "This site or page address already exists, or the page changed. Reload and try again."); }
         });
         MapManagement(api);
+        MapPortalPresentation(api);
         MapPublic(endpoints);
         api.MapGet("/site", async (ContentDbContext db, CancellationToken ct) =>
         {

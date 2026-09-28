@@ -11,7 +11,7 @@ using Nexora.Modules.Identity.Infrastructure.Persistence;
 using static Nexora.Api.Tests.WorkflowTestClient;
 
 namespace Nexora.Api.Tests;
-public sealed class PortalEndpointTests
+public sealed partial class PortalEndpointTests
 {
     private sealed class ResultScanner(string result) : Nexora.BuildingBlocks.Documents.IDocumentScanner
     {
