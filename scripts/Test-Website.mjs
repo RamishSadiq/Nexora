@@ -13,6 +13,8 @@ const webRoot = path.join(artifacts, "web");
 const apiPort = 5095, webPort = 3015;
 const production = process.argv.includes("--production");
 const portal = process.argv.includes("--portal");
+const crm = process.argv.includes("--crm");
+const all = process.argv.includes("--all");
 const configuration = portal ? "PortalTest" : "Website";
 // Override the server only; the runner always owns a uniquely named disposable catalog.
 const sqlServer = process.env.NEXORA_TEST_SQLSERVER_INSTANCE ?? "(localdb)\\MSSQLLocalDB";
@@ -66,7 +68,7 @@ try {
   if (production) await run(process.execPath, ["node_modules/next/dist/bin/next", "build", "--webpack"], webRoot);
   web = start(process.execPath, ["node_modules/next/dist/bin/next", ...(production ? ["start"] : ["dev", "--webpack"]), "--port", String(webPort)], webRoot, "web.log");
   await ready(`${env.NEXORA_BROWSER_URL}/login`, web);
-  await run(process.execPath, ["node_modules/@playwright/test/cli.js", "test", portal ? "portal.spec.ts" : "website.spec.ts", "--output", path.join(artifacts, "results")], webRoot);
+  await run(process.execPath, ["node_modules/@playwright/test/cli.js", "test", ...(all ? ["crm.spec.ts", "portal.spec.ts", "website.spec.ts"] : [crm ? "crm.spec.ts" : portal ? "portal.spec.ts" : "website.spec.ts"]), "--output", path.join(artifacts, "results")], webRoot);
 } catch (error) { console.error(error.message); process.exitCode = 1; }
 finally {
   for (const child of [web, api]) if (child && child.exitCode === null) {

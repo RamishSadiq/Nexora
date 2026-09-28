@@ -13,10 +13,64 @@ using static Nexora.Api.Tests.WorkflowTestClient;
 namespace Nexora.Api.Tests;
 public sealed class PortalEndpointTests
 {
+    private sealed class ResultScanner(string result) : Nexora.BuildingBlocks.Documents.IDocumentScanner
+    {
+        public Task<string> ScanAsync(byte[] content, CancellationToken ct) => Task.FromResult(result);
+    }
+    private static async Task<JsonNode> UploadEvidence(HttpClient member, string path, string version)
+    {
+        var csrf = await member.GetFromJsonAsync<CsrfResponse>("/api/v1/portal/csrf");
+        using var form = new MultipartFormDataContent();
+        form.Add(new StringContent(version), "version");
+        form.Add(new ByteArrayContent("proof"u8.ToArray()), "file", "proof.txt");
+        using var request = new HttpRequestMessage(HttpMethod.Post, "/api/v1/portal" + path) { Content = form };
+        request.Headers.Add("X-CSRF-TOKEN", csrf!.Token);
+        return await Json(await member.SendAsync(request));
+    }
+
+    [Fact]
+    public async Task Rejected_evidence_is_unavailable_and_notification_explains_rejection()
+    {
+        using var app = new IdentityApiFactory(new ResultScanner("rejected")); using var staff = await Login(app); using var member = app.CreateClient();
+        await Grant(app, staff); await PortalLogin(member);
+        var product = await Json(await Send(staff, "/api/v1/membership/products", HttpMethod.Post, new { name = "Rejected evidence", category = "individual", termMonths = 12, rate = 0, currency = "GBP", isActive = true }));
+        await Json(await Send(staff, $"/api/v1/membership/products/{Id(product)}/portal", HttpMethod.Put, new { version = Version(product), enabled = true, terms = "Terms" }));
+        var id = Guid.NewGuid();
+        var draft = await Json(await PortalSend(member, $"/drafts/{id}", HttpMethod.Put, new { productId = Id(product), startsAtUtc = DateTime.UtcNow.Date, notes = "", version = (string?)null }));
+        var uploaded = await UploadEvidence(member, $"/drafts/{id}/evidence", Version(draft));
+        Assert.Equal("rejected", uploaded["document"]!["scanStatus"]!.GetValue<string>());
+        var fileId = uploaded["document"]!["id"]!.GetValue<string>();
+        Assert.Equal(HttpStatusCode.BadRequest, (await member.GetAsync($"/api/v1/portal/drafts/{id}/evidence/{fileId}")).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, (await PortalSend(member, $"/drafts/{id}/evidence/{fileId}/scan", HttpMethod.Post, new { version = uploaded["draftVersion"]!.GetValue<string>() })).StatusCode);
+        Assert.Contains("Evidence file rejected", (await Json(await member.GetAsync("/api/v1/portal/notifications"))).ToJsonString());
+    }
+
+    [Fact]
+    public async Task Postal_address_is_shared_allowlisted_and_versioned_without_replacing_other_addresses()
+    {
+        using var app = new IdentityApiFactory(); using var staff = await Login(app); using var member = app.CreateClient();
+        var (_, contact) = await Grant(app, staff); await PortalLogin(member);
+        var profile = await Json(await member.GetAsync("/api/v1/portal/profile"));
+        await Json(await Send(staff, $"/api/v1/crm/records/{Id(contact)}/addresses", HttpMethod.Post, new { label = "Office", line1 = "Staff address", line2 = "", city = "London", region = "", postalCode = "SW1A 1AA", country = "UK" }));
+        profile = await Json(await member.GetAsync("/api/v1/portal/profile"));
+        var address = new { line1 = "12 Member Road", line2 = "", city = "London", region = "", postalCode = "SW1A 1AA", country = "United Kingdom" };
+        var updated = await Json(await PortalSend(member, "/profile", HttpMethod.Put, new { name = "Member", version = Version(profile), postalAddress = address }));
+        Assert.Equal("12 Member Road", updated["postalAddress"]!["line1"]!.GetValue<string>());
+        Assert.Equal(HttpStatusCode.Conflict, (await PortalSend(member, "/profile", HttpMethod.Put, new { name = "Stale", version = Version(profile), postalAddress = (object?)null })).StatusCode);
+        Assert.Equal(HttpStatusCode.BadRequest, (await PortalSend(member, "/profile", HttpMethod.Put, new { name = "Unsafe", version = Version(updated), postalAddress = new { line1 = "Injected", contactId = Guid.NewGuid() } })).StatusCode);
+        var renamed = await Json(await PortalSend(member, "/profile", HttpMethod.Put, new { name = "New name", version = Version(updated) }));
+        Assert.Equal("London", renamed["postalAddress"]!["city"]!.GetValue<string>());
+        var cleared = await Json(await PortalSend(member, "/profile", HttpMethod.Put, new { name = "New name", version = Version(renamed), postalAddress = (object?)null }));
+        Assert.Null(cleared["postalAddress"]);
+        var shared = await Json(await staff.GetAsync($"/api/v1/crm/records/{Id(contact)}"));
+        Assert.Contains("Staff address", shared.ToJsonString());
+        Assert.DoesNotContain("12 Member Road", shared.ToJsonString());
+    }
+
     [Fact]
     public async Task Organisation_grants_are_explicit_scoped_revocable_and_do_not_expose_personal_records()
     {
-        using var app = new IdentityApiFactory(); using var staff = await Login(app); using var member = app.CreateClient();
+        using var app = new IdentityApiFactory(new ResultScanner("clean")); using var staff = await Login(app); using var member = app.CreateClient();
         var (access, contact) = await Grant(app, staff); await PortalLogin(member);
         var account = await Json(await Send(staff, "/api/v1/crm/records", HttpMethod.Post, new { kind = "account", name = "Company A", status = "active" }), HttpStatusCode.Created);
         var path = $"/organisations/{Id(account)}";
@@ -36,6 +90,9 @@ public sealed class PortalEndpointTests
         await Json(await Send(staff, $"/api/v1/membership/products/{Id(product)}/portal", HttpMethod.Put, new { version = Version(product), enabled = false, organisationEnabled = true, terms = "Company terms" }));
         var draftId = Guid.NewGuid();
         var draft = await Json(await PortalSend(member, $"{path}/drafts/{draftId}", HttpMethod.Put, new { version = (string?)null, productId = Id(product), startsAtUtc = DateTime.UtcNow.Date, notes = "Representative notes" }));
+        var uploaded = await UploadEvidence(member, $"{path}/drafts/{draftId}/evidence", Version(draft));
+        var fileId = uploaded["document"]!["id"]!.GetValue<string>();
+        draft["version"] = uploaded["draftVersion"]!.GetValue<string>();
         Assert.Empty((await Json(await member.GetAsync("/api/v1/portal/drafts"))).AsArray());
         Assert.Equal(HttpStatusCode.NotFound, (await PortalSend(member, $"/drafts/{draftId}/submit", HttpMethod.Post, new { version = Version(draft), termsAccepted = true })).StatusCode);
         var submitted = await Json(await PortalSend(member, $"{path}/drafts/{draftId}/submit", HttpMethod.Post, new { version = Version(draft), termsAccepted = true }));
@@ -43,6 +100,12 @@ public sealed class PortalEndpointTests
         Assert.Equal(HttpStatusCode.NotFound, (await member.GetAsync($"/api/v1/portal/applications/{id}")).StatusCode);
         var receipt = await Json(await member.GetAsync($"/api/v1/portal{path}/applications/{id}"));
         Assert.Equal("Company terms", receipt["acceptedTerms"]!.GetValue<string>());
+        Assert.Equal("proof", await (await member.GetAsync($"/api/v1/portal{path}/applications/{id}/evidence/{fileId}")).Content.ReadAsStringAsync());
+        var staffFile = await staff.GetAsync($"/api/v1/membership/applications/{id}/evidence/{fileId}");
+        Assert.Equal(HttpStatusCode.OK, staffFile.StatusCode);
+        Assert.Equal("nosniff", staffFile.Headers.GetValues("X-Content-Type-Options").Single());
+        Assert.Equal(HttpStatusCode.NotFound, (await member.GetAsync($"/api/v1/portal/applications/{id}/evidence/{fileId}")).StatusCode);
+
         Assert.Empty((await Json(await member.GetAsync("/api/v1/portal/memberships")))["applications"]!.AsArray());
         var application = (await Json(await staff.GetAsync("/api/v1/membership/applications")))["items"]![0]!;
         await Json(await Send(staff, $"/api/v1/membership/applications/{id}/decision", HttpMethod.Post, new { version = Version(application), decision = "approve", reason = "PRIVATE decision" }));
@@ -53,6 +116,8 @@ public sealed class PortalEndpointTests
         Assert.Equal(HttpStatusCode.NotFound, (await member.GetAsync($"/api/v1/portal/organisations/{Guid.NewGuid()}/applications/{id}")).StatusCode);
         await Send(staff, $"{adminPath}/{Id(grant)}", HttpMethod.Delete);
         Assert.Equal(HttpStatusCode.NotFound, (await member.GetAsync($"/api/v1/portal{path}/applications/{id}")).StatusCode);
+        Assert.Equal(HttpStatusCode.NotFound, (await member.GetAsync($"/api/v1/portal{path}/applications/{id}/evidence/{fileId}")).StatusCode);
+
         await Json(await Send(staff, adminPath, HttpMethod.Post, new { accountId = Id(account), canSubmitApplications = true }));
         await Json(await Send(staff, $"/api/v1/crm/account-contacts/{Id(link)}/end", HttpMethod.Post, new { version = Version(link), endDate = DateTime.UtcNow.Date, reason = "Left company" }));
         Assert.Empty((await Json(await member.GetAsync("/api/v1/portal/organisations"))).AsArray());
@@ -120,6 +185,9 @@ public sealed class PortalEndpointTests
         await Json(await Send(staff, "/api/v1/admin/portal-access/local-member", HttpMethod.Post, new { email = "receipt.other@nexora.test", password = IdentityApiFactory.AdminPassword, contactId = Id(otherContact) }));
         await PortalSend(other, "/login", HttpMethod.Post, new LoginRequest("receipt.other@nexora.test", IdentityApiFactory.AdminPassword, false));
         Assert.Equal(HttpStatusCode.NotFound, (await other.GetAsync($"/api/v1/portal/applications/{applicationId}")).StatusCode);
+        Assert.DoesNotContain((await Json(await other.GetAsync("/api/v1/portal/notifications"))).AsArray(), n => n!["id"]!.GetValue<string>() == notificationId);
+        Assert.Equal(HttpStatusCode.NotFound, (await PortalSend(other, $"/notifications/{notificationId}/read", HttpMethod.Post)).StatusCode);
+
         await Send(staff, $"/api/v1/membership/products/{Id(product)}/portal", HttpMethod.Put, new { version = Version(product), enabled = true, terms = "Changed after submission" });
         var application = (await Json(await staff.GetAsync("/api/v1/membership/applications")))["items"]![0]!;
         await Json(await Send(staff, $"/api/v1/membership/applications/{applicationId}/decision", HttpMethod.Post, new { version = Version(application), decision = "approve", reason = "PRIVATE STAFF DECISION" }));
@@ -329,7 +397,7 @@ public sealed class PortalEndpointTests
         Assert.Equal(HttpStatusCode.Unauthorized, (await member.GetAsync("/api/v1/crm/records")).StatusCode);
         Assert.Equal(HttpStatusCode.Unauthorized, (await member.GetAsync("/api/v1/auth/session")).StatusCode);
         var profile = await Json(await member.GetAsync("/api/v1/portal/profile"));
-        Assert.Equal(2, profile.AsObject().Count); Assert.Null(profile["tenantId"]); Assert.Null(profile["contactId"]);
+        Assert.Equal(3, profile.AsObject().Count); Assert.Null(profile["tenantId"]); Assert.Null(profile["contactId"]);
         var version = Version(profile);
         Assert.Equal(HttpStatusCode.BadRequest, (await member.PutAsJsonAsync("/api/v1/portal/profile", new { name = "Unsafe", version })).StatusCode);
         Assert.Equal(HttpStatusCode.BadRequest, (await PortalSend(member, "/profile", HttpMethod.Put, new { name = "Unsafe", version, contactId = Guid.NewGuid() })).StatusCode);

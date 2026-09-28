@@ -29,6 +29,7 @@ public static class IdentityModule
             ?? throw new InvalidOperationException("Connection string 'Nexora' is required.");
 
         services.Configure<IdentityProviderOptions>(configuration.GetSection("Identity:Provider"));
+        services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Identity.Security.CrmPortalContext>();
         services.AddSingleton(new LocalIdentitySettings(isDevelopment &&
             configuration.GetValue<bool>("Identity:Provider:LocalDevelopmentEnabled")));
         services.AddScoped<ILocalIdentityAdapter, LocalIdentityAdapter>();
@@ -37,6 +38,7 @@ public static class IdentityModule
         services.AddScoped<IIdentityDirectory, IdentityDirectoryService>();
         services.AddScoped<IPortalRecipientDirectory, PortalRecipientDirectory>();
         services.AddScoped<IPublicTenantDirectory, PublicTenantDirectory>();
+        services.AddScoped<IScheduledPublisherDirectory, ScheduledPublisherDirectory>();
         services.AddScoped<ITenantContext, HttpTenantContext>();
         services.AddDbContext<NexoraIdentityDbContext>(options => options.UseSqlServer(connectionString));
 

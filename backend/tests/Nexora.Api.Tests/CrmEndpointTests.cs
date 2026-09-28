@@ -143,7 +143,7 @@ public sealed partial class CrmEndpointTests
     [Fact]
     public async Task Custom_fields_saved_views_files_and_validation()
     {
-        using var app = new IdentityApiFactory(); using var client = await Login(app);
+        using var app = new IdentityApiFactory(new CrmTestScanner { Status = "clean" }); using var client = await Login(app);
         var row = await Create(client, "Custom"); var id = row["id"]!.GetValue<string>(); var path = "/api/v1/crm/records/" + id;
         var field = await Json(await Send(client, "/api/v1/crm/fields", HttpMethod.Post, new { name = "Score", kind = "contact", dataType = "number" }));
         var fieldPath = path + "/fields/" + field["id"]!.GetValue<string>();
@@ -158,6 +158,7 @@ public sealed partial class CrmEndpointTests
         Assert.Equal(HttpStatusCode.BadRequest, (await Send(client, path + "/communications", HttpMethod.Post, new { kind = "email", value = "bad", consent = "granted" })).StatusCode);
         var token = await client.GetFromJsonAsync<CsrfResponse>("/api/v1/auth/csrf");
         using var form = new MultipartFormDataContent(); form.Add(new ByteArrayContent("test attachment"u8.ToArray()), "file", "note.txt");
+        form.Add(new StringContent((await Json(await client.GetAsync(path)))["record"]!["version"]!.GetValue<string>()), "version");
         using var upload = new HttpRequestMessage(HttpMethod.Post, path + "/files") { Content = form }; upload.Headers.Add("X-CSRF-TOKEN", token!.Token);
         var file = await Json(await client.SendAsync(upload));
         var download = await client.GetAsync(path + "/files/" + file["id"]!.GetValue<string>());

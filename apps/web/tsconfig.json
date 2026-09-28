@@ -35,10 +35,17 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
-    ".next-website-debug/types/**/*.ts",
-    ".next-website-debug/dev/types/**/*.ts"
+    ".next-local-debug/types/**/*.ts",
+    ".next-local-debug/dev/types/**/*.ts",
+    ".next-local-debug-crm/types/**/*.ts",
+    ".next-local-debug-crm/dev/types/**/*.ts",
+    ".next-local-debug-portal/types/**/*.ts",
+    ".next-local-debug-portal/dev/types/**/*.ts",
+    ".next-local-debug-cms/types/**/*.ts",
+    ".next-local-debug-cms/dev/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    ".next-website-debug"
   ]
 }

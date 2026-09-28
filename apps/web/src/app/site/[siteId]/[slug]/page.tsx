@@ -1,7 +1,7 @@
 import { headers } from "next/headers";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { cache } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Route } from "next";
 import { SiteRenderer } from "@/features/content/site-renderer";
 import type { PublicPage } from "@/features/content/types";
 
@@ -12,12 +12,14 @@ const read = cache(async (siteId: string, slug: string): Promise<PublicPage> => 
   const response = await fetch(`${process.env.NEXORA_API_URL ?? "http://localhost:5080"}/api/v1/public/sites/${siteId}/${slug}`, { cache: "no-store", headers: { Host: host } });
   if (response.status === 404) notFound();
   if (!response.ok) throw new Error("The website could not be loaded. Please try again.");
-  return response.json();
+  const data = await response.json();
+  if (data.redirectSlug) permanentRedirect(`${data.basePath ?? `/site/${siteId}`}/${data.redirectSlug}` as Route);
+  return data;
 });
 type Props = { params: Promise<{ siteId: string; slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { siteId, slug } = await params; const data = await read(siteId, slug);
-  return { title: { absolute: `${data.page.title} | ${data.site.name}` }, description: data.page.description };
+  return { title: { absolute: `${data.page.title} | ${data.site.name}` }, description: data.page.description, alternates: data.canonical ? { canonical: data.canonical } : undefined };
 }
 export default async function PublicSitePage({ params }: Props) {
   const { siteId, slug } = await params;

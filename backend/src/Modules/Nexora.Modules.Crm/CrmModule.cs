@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
+using Nexora.BuildingBlocks.Documents;
+using System.Security.Cryptography;
 using Nexora.BuildingBlocks.Reporting;
 using Nexora.BuildingBlocks.Persistence;
 using System.ComponentModel.DataAnnotations;
@@ -15,7 +18,7 @@ using Nexora.Modules.Crm.Infrastructure;
 
 namespace Nexora.Modules.Crm;
 
-public static class CrmModule
+public static partial class CrmModule
 {
     public static IServiceCollection AddNexoraCrm(this IServiceCollection services, IConfiguration configuration)
     {
@@ -48,6 +51,7 @@ public static class CrmModule
         });
         api.MapGet("/directory", (IIdentityDirectory directory, CancellationToken ct) => directory.GetAsync(ct));
         api.MapAccountContacts();
+        MapCompletion(api);
         Automations.Map<CrmDbContext>(api, "crm.manage", kind => kind is "contact" or "account" ? typeof(CrmRecord) : null, (db, kind, ct) => db.AutomationFieldsAsync(kind, ct));
         // Legacy query-string tokens did not enforce current user permissions.
         // Fail closed until the assistant has a scoped, revocable integration identity.
@@ -98,8 +102,8 @@ public static class CrmModule
         {
             await RecordAsync(db, id, ct);
             var file = await db.Set<RecordFile>().SingleOrDefaultAsync(x => x.RecordId == id && x.Id == fileId, ct) ?? throw new KeyNotFoundException();
-            http.Response.Headers.XContentTypeOptions = "nosniff";
-            return Results.File(file.Content, "application/octet-stream", file.Name);
+            if (file.ScanStatus != "clean" || file.Sha256 != Convert.ToHexString(SHA256.HashData(file.Content))) throw new ValidationException("This file is unavailable until its security scan passes.");
+            return DocumentSafety.Download(http, file.Name, file.Content);
         }).RequireAuthorization("crm.files");
         api.MapGet("/fields", async (CrmDbContext db, CancellationToken ct) => await db.Set<CustomFieldDefinition>().OrderBy(x => x.DisplayOrder).ThenBy(x => x.Name).ToListAsync(ct));
         api.MapPost("/fields", async (FieldRequest r, CrmDbContext db, IRequestIdentity who, CancellationToken ct) =>
@@ -182,14 +186,25 @@ public static class CrmModule
         row.OwnerUserId = r.OwnerUserId; row.OwnerTeamId = r.OwnerTeamId; row.Category = Optional(r.Category, 100);
     }
 
-    private static async Task<IResult> ListAsync(CrmDbContext db, string? kind, string? search, string? status, string? sort, bool? archived, int? page, int? pageSize, string? ownerUserId, string? ownerTeamId, string? category, CancellationToken ct)
+    private static async Task<IResult> ListAsync(CrmDbContext db, IEnumerable<ICrmContextProvider> providers, Microsoft.AspNetCore.Authorization.IAuthorizationService auth, HttpContext http, string? kind, string? search, string? status, string? sort, bool? archived, int? page, int? pageSize, string? ownerUserId, string? ownerTeamId, string? category, CancellationToken ct)
     {
         kind ??= "contact"; sort ??= "name";
         Choice(kind, "contact", "account"); Choice(sort, "name", "-name", "updated");
         if (!string.IsNullOrEmpty(status)) Choice(status, "active", "prospect", "inactive");
         var term = Optional(search, 160);
         var query = db.Records.AsNoTracking().Where(x => x.Kind == kind && x.IsArchived == (archived ?? false));
-        if (!string.IsNullOrEmpty(term)) query = query.Where(x => x.Name.Contains(term));
+        var connectedIds = new HashSet<Guid>();
+        if (!string.IsNullOrEmpty(term))
+        {
+            foreach (var provider in providers)
+            {
+                var allowed = true;
+                foreach (var permission in provider.Permissions) if (!(await auth.AuthorizeAsync(http.User, null, permission)).Succeeded) { allowed = false; break; }
+                if (allowed) connectedIds.UnionWith(await provider.SearchRecordIdsAsync(term, kind, ct));
+                if (connectedIds.Count > 1000) throw new ValidationException("This connected search is too broad. Use a more specific term.");
+            }
+        }
+        if (!string.IsNullOrEmpty(term)) query = query.Where(x => connectedIds.Contains(x.Id) || x.Name.Contains(term) || db.Set<CommunicationMethod>().Any(c => c.RecordId == x.Id && c.Value.Contains(term)) || db.Set<RecordTag>().Any(t => t.RecordId == x.Id && t.Name.Contains(term)) || db.Set<CustomFieldValue>().Any(v => v.RecordId == x.Id && v.TextValue != null && v.TextValue.Contains(term)));
         if (!string.IsNullOrEmpty(status)) query = query.Where(x => x.Status == status);
         static Guid? OwnerFilter(string? value) => string.IsNullOrEmpty(value) ? null : Guid.TryParse(value, out var id) ? id : throw new ValidationException("Invalid owner filter.");
         var userFilter = OwnerFilter(ownerUserId); var teamFilter = OwnerFilter(ownerTeamId);
@@ -217,7 +232,7 @@ public static class CrmModule
             relationships = await (from link in db.Set<RecordRelationship>() join target in db.Records on link.TargetRecordId equals target.Id where link.RecordId == id select new { link.Id, link.Label, link.TargetRecordId, target.Name }).ToListAsync(ct),
             notes = await db.Set<Note>().Where(x => x.RecordId == id).OrderByDescending(x => x.CreatedAtUtc).ToListAsync(ct),
             tags = await db.Set<RecordTag>().Where(x => x.RecordId == id).OrderBy(x => x.Name).ToListAsync(ct),
-            files = await db.Set<RecordFile>().Where(x => x.RecordId == id).Select(x => new { x.Id, x.Name, x.CreatedAtUtc }).ToListAsync(ct),
+            files = await db.Set<RecordFile>().Where(x => x.RecordId == id).Select(x => new { x.Id, x.Name, x.CreatedAtUtc, x.Version, x.ScanStatus, x.ScannedAtUtc }).ToListAsync(ct),
             fields = await db.Set<CustomFieldValue>().Where(x => x.RecordId == id).ToListAsync(ct)
         });
     }
@@ -270,18 +285,13 @@ public static class CrmModule
         if (row == null) throw new KeyNotFoundException();
         db.Remove(row); Audit(db, who, http, id, collection + ".removed"); await db.SaveChangesAsync(ct); return Results.NoContent();
     }
-    private static async Task<IResult> UploadAsync(Guid id, CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct)
+    private static async Task<IResult> UploadAsync(Guid id, CrmDbContext db, IRequestIdentity who, HttpContext http, IDocumentScanner scanner, CancellationToken ct)
     {
-        await RecordAsync(db, id, ct, true);
-        if (http.Request.ContentLength is null or > 6 * 1024 * 1024) throw new ValidationException("Choose a file up to 5 MB.");
-        if (!http.Request.HasFormContentType) throw new ValidationException("Upload a multipart form containing a file.");
-        var form = await http.Request.ReadFormAsync(ct); var file = form.Files.GetFile("file");
-        if (file == null || file.Length is <= 0 or > 5 * 1024 * 1024) throw new ValidationException("Choose a file up to 5 MB.");
-        var name = Required(Path.GetFileName(file.FileName.Replace('\\', '/')), 160);
-        if (name.Any(char.IsControl)) throw new ValidationException("Use a filename without control characters.");
-        if (!new[] { ".pdf", ".txt", ".csv", ".png", ".jpg", ".jpeg" }.Contains(Path.GetExtension(name).ToLowerInvariant())) throw new ValidationException("Supported files: PDF, text, CSV, PNG and JPEG.");
-        using var buffer = new MemoryStream(); await file.CopyToAsync(buffer, ct);
-        return await AddChildAsync(id, new RecordFile { Name = name, Content = buffer.ToArray() }, "file.added", db, who, http, ct);
+        var parent = await RecordAsync(db, id, ct, true);
+        var upload = await DocumentSafety.ReadAsync(http.Request, ct);
+        var form = await http.Request.ReadFormAsync(ct);
+        if (!Guid.TryParse(form["version"], out var version) || version != parent.Version) return Conflict();
+        return await AddChildAsync(id, new RecordFile { Name = upload.Name, Content = upload.Content, Sha256 = Convert.ToHexString(SHA256.HashData(upload.Content)), ScanStatus = await scanner.ScanAsync(upload.Content, ct), ScannedAtUtc = DateTime.UtcNow }, "file.added", db, who, http, ct);
     }
     private static async Task<IResult> SetFieldAsync(Guid id, Guid fieldId, ValueRequest r, CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct)
     {

@@ -1,5 +1,8 @@
 # Member portal — local access and own-profile foundation
 
+> Current VS Code setup (24 September): use **CRM**, **Portal** or **CMS**. [Local testing instructions](../LOCAL-TESTING.md) supersede the older launch names and LocalDB guidance below.
+
+
 The product owner selected local development first; the production identity provider remains undecided. This phase supplies a separate portal experience at `/portal`, a dedicated HttpOnly cookie, an explicit revocable user/tenant/Contact binding and a restricted own-profile API. It does not implement verified external identity, invitations, self-registration, email recovery or membership self-service.
 
 ## Access boundaries

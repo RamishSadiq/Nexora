@@ -57,3 +57,8 @@ The Relationships workspace now supports the Contact and Account lifecycle, rela
 Stage-specific implementation notes are recorded in [docs/stages](docs/stages).
 
 The [automation controllers](docs/stages/AUTOMATION-CONTROLLERS.md) provide persistent typed attributes, rules that calculate custom attributes on save, and shared record section layouts. Their database migrations and browser verification instructions are included in that guide.
+
+
+## Local debugging
+
+Choose **CRM**, **Portal** or **CMS** in VS Code Run and Debug, then press F5. [Shared local testing and accounts](docs/LOCAL-TESTING.md).

@@ -15,7 +15,8 @@ namespace Nexora.Modules.Events;
 public static class EventsModule
 {
     public static IServiceCollection AddNexoraEvents(this IServiceCollection services,IConfiguration config)
-    {services.AddDbContext<EventsDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","events")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("offerings","Events and learning","events.read",sp.GetRequiredService<EventsDbContext>().Set<Offering>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+    {services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Events.Infrastructure.CrmContextProvider>();
+        services.AddDbContext<EventsDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","events")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("offerings","Events and learning","events.read",sp.GetRequiredService<EventsDbContext>().Set<Offering>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         return services;}
     public static IEndpointRouteBuilder MapNexoraEvents(this IEndpointRouteBuilder routes)
     {

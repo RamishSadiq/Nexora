@@ -1,5 +1,8 @@
 # Website and Portal debugger readiness investigation
 
+> Current VS Code setup (24 September): use **CRM**, **Portal** or **CMS**. [Local testing instructions](../LOCAL-TESTING.md) supersede the older launch names and LocalDB guidance below.
+
+
 **Date:** 21 September 2026.
 
 ## Finding and limits

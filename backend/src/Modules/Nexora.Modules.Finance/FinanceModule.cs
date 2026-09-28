@@ -17,7 +17,8 @@ using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
 namespace Nexora.Modules.Finance;
 public static class FinanceModule
 {
- public static IServiceCollection AddNexoraFinance(this IServiceCollection services,IConfiguration config){services.AddDbContext<FinanceDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","finance")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("orders","Sales orders","finance.read",sp.GetRequiredService<FinanceDbContext>().Set<SalesOrder>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.CustomerName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+ public static IServiceCollection AddNexoraFinance(this IServiceCollection services,IConfiguration config){services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Finance.Infrastructure.CrmContextProvider>();
+        services.AddDbContext<FinanceDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","finance")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("orders","Sales orders","finance.read",sp.GetRequiredService<FinanceDbContext>().Set<SalesOrder>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.CustomerName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         return services;}
  public static IEndpointRouteBuilder MapNexoraFinance(this IEndpointRouteBuilder routes)
  {

@@ -14,7 +14,8 @@ using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
 namespace Nexora.Modules.Engagement;
 public static class EngagementModule
 {
- public static IServiceCollection AddNexoraEngagement(this IServiceCollection services,IConfiguration config){services.AddDbContext<EngagementDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","engagement")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("campaigns","Campaigns","engagement.read",sp.GetRequiredService<EngagementDbContext>().Set<Campaign>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+ public static IServiceCollection AddNexoraEngagement(this IServiceCollection services,IConfiguration config){services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Engagement.Infrastructure.CrmContextProvider>();
+        services.AddDbContext<EngagementDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","engagement")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("campaigns","Campaigns","engagement.read",sp.GetRequiredService<EngagementDbContext>().Set<Campaign>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         return services;}
  public static IEndpointRouteBuilder MapNexoraEngagement(this IEndpointRouteBuilder routes)
  {

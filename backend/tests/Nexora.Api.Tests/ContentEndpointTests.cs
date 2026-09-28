@@ -56,6 +56,10 @@ public sealed class ContentEndpointTests
         await Json(await Send(editor, "/api/v1/content/site", new { name = "Tenant B", tagline = "" }));
         var own = await Json(await Send(editor, "/api/v1/content/pages", Draft()));
         Assert.Equal(HttpStatusCode.Forbidden, (await Send(editor, $"/api/v1/content/pages/{own["page"]!["id"]!.GetValue<string>()}/publish", new { version = own["page"]!["version"]!.GetValue<string>() })).StatusCode);
+        var ownPage = own["page"]!; var ownId = ownPage["id"]!.GetValue<string>(); var ownVersion = ownPage["version"]!.GetValue<string>();
+        Assert.Equal(HttpStatusCode.Forbidden, (await Send(editor, $"/api/v1/content/pages/{ownId}/navigation", new { version = ownVersion, label = "Menu", order = 0, visible = true }, HttpMethod.Put)).StatusCode);
+        Assert.Equal(HttpStatusCode.Forbidden, (await Send(editor, $"/api/v1/content/pages/{ownId}/address", new { version = ownVersion, slug = "changed" }, HttpMethod.Put)).StatusCode);
+        Assert.Equal(HttpStatusCode.Forbidden, (await Send(editor, $"/api/v1/content/pages/{ownId}/schedule", new { version = ownVersion, revisionId = own["revision"]!["id"]!.GetValue<string>(), publishAtUtc = DateTime.UtcNow.AddHours(1) })).StatusCode);
         var forbiddenRevision = own["revision"]!["id"]!.GetValue<string>();
         Assert.Equal(HttpStatusCode.NotFound, (await Send(staff, $"/api/v1/content/pages/{id}/publish", new { version, revisionId = forbiddenRevision })).StatusCode);
     }

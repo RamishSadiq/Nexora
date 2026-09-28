@@ -26,7 +26,9 @@ public static class MembershipModule
         return (number, size, (int)offset);
     }
     public static IServiceCollection AddNexoraMembership(this IServiceCollection services, IConfiguration config)
-    { services.AddDbContext<MembershipDbContext>(o => o.UseSqlServer(config.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory","membership"))); services.AddScoped<IReportDataset>(sp=>new ReportDataset("members","Memberships","membership.read",sp.GetRequiredService<MembershipDbContext>().Set<MemberSubscription>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.ContactName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+    { services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Membership.Infrastructure.CrmContextProvider>();
+        services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Membership.Infrastructure.CrmEvidenceContext>();
+        services.AddDbContext<MembershipDbContext>(o => o.UseSqlServer(config.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory","membership"))); services.AddScoped<IReportDataset>(sp=>new ReportDataset("members","Memberships","membership.read",sp.GetRequiredService<MembershipDbContext>().Set<MemberSubscription>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.ContactName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         services.AddScoped<IMemberMembershipDirectory, MemberMembershipDirectory>();
         services.AddScoped<IMemberApplicationService, MemberApplicationService>();
         services.AddScoped<IPortalNotificationService, PortalNotificationService>();
@@ -105,8 +107,8 @@ public static class MembershipModule
                 var requestedEnd = application.RequestedEndUtc ?? application.RequestedStartUtc.AddMonths(application.TermMonths);
                 Check(!await db.Set<MemberSubscription>().AnyAsync(x =>
                     (application.AccountId.HasValue ? x.AccountId == application.AccountId : x.AccountId == null && x.ContactId == application.ContactId)
-                    && x.ProductId == application.ProductId && x.Status == "active" && x.StartsAtUtc < requestedEnd && x.EndsAtUtc > application.RequestedStartUtc,ct),
-                    "This applicant already has an overlapping active membership.");
+                    && x.Status == "active",ct),
+                    "This applicant already has an active membership. End it before activating another membership.");
                 var member = new MemberSubscription { TenantId = who.TenantId!.Value, AccountId = application.AccountId, AccountName = application.AccountName, ContactId = application.ContactId, ContactName = application.ContactName, ProductId = application.ProductId, StartsAtUtc = application.RequestedStartUtc, EndsAtUtc = requestedEnd, Rate = application.QuotedRate, Currency = application.Currency, ApplicationId = application.Id };
                 db.Add(member); application.MembershipId = member.Id; History(db,who,http,member.Id,"membership.activated",r.Reason);
             }
@@ -138,6 +140,9 @@ public static class MembershipModule
             if (action is "renew" or "reinstate")
             {
                 Check(action == "renew" ? member.Status is "active" or "lapsed" : member.Status == "cancelled", "This transition is not allowed from the current status.");
+                Check(!await db.Set<MemberSubscription>().AnyAsync(x => x.Id != member.Id && x.Status == "active" &&
+                    (member.AccountId.HasValue ? x.AccountId == member.AccountId : x.AccountId == null && x.ContactId == member.ContactId), ct),
+                    "This applicant already has an active membership. End it before activating another membership.");
                 var quote = await MembershipOperations.RenewalQuoteAsync(db, member, action == "reinstate", ct);
                 member.EndsAtUtc = quote.EndsAtUtc; member.Rate = quote.Total; member.Currency = quote.Currency; member.Status = "active";
             }

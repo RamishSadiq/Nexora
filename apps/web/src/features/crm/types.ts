@@ -1,5 +1,5 @@
 export type RecordRow = { id: string; kind: string; name: string; status: string; category: string | null; ownerUserId: string | null; ownerTeamId: string | null; isArchived: boolean; version: string; updatedAtUtc: string; customFields?: FieldValue[] };
-export type Item = { id: string; name?: string; label?: string; body?: string; kind?: string; value?: string; consent?: string; consentEvidence?: string; line1?: string; city?: string; postalCode?: string; country?: string; targetRecordId?: string; createdAtUtc?: string };
+export type Item = { id: string; version?: string; scanStatus?: string; name?: string; label?: string; body?: string; kind?: string; value?: string; consent?: string; consentEvidence?: string; line1?: string; city?: string; postalCode?: string; country?: string; targetRecordId?: string; createdAtUtc?: string };
 export type Detail = { record: RecordRow; addresses: Item[]; communications: Item[]; relationships: Item[]; notes: Item[]; tags: Item[]; files: Item[]; fields: FieldValue[] };
 export type Field = { id: string; name: string; kind: string; dataType: string };
 export type FieldValue = { definitionId: string; textValue: string | null; numberValue: number | null; booleanValue: boolean | null; dateValue: string | null };

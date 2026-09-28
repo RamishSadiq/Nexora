@@ -15,7 +15,8 @@ using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
 namespace Nexora.Modules.Work;
 public static class WorkModule
 {
- public static IServiceCollection AddNexoraWork(this IServiceCollection services,IConfiguration config){services.AddDbContext<WorkDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","work")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("tasks","Tasks","work.read",sp.GetRequiredService<WorkDbContext>().Set<WorkItem>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Title,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+ public static IServiceCollection AddNexoraWork(this IServiceCollection services,IConfiguration config){services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Work.Infrastructure.CrmContextProvider>();
+        services.AddDbContext<WorkDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","work")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("tasks","Tasks","work.read",sp.GetRequiredService<WorkDbContext>().Set<WorkItem>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Title,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         return services;}
  public static IEndpointRouteBuilder MapNexoraWork(this IEndpointRouteBuilder routes)
  {

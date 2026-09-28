@@ -42,7 +42,7 @@ internal sealed class ApplicationEvidenceService(MembershipDbContext db, IReques
         db.Add(item); Audit(draftId, "application.evidence.uploaded");
         var recipient = await recipients.FindPortalUserIdAsync(who.TenantId!.Value, draft.ContactId, ct);
         if (recipient is Guid userId) db.Add(new PortalNotification { TenantId = who.TenantId.Value, RecipientUserId = userId, ApplicationId = draft.ApplicationId,
-            Kind = "application.evidence." + item.ScanStatus, Subject = item.ScanStatus == "clean" ? "Evidence scan passed" : "Evidence scan pending", Body = item.ScanStatus == "clean" ? $"The evidence file {item.Name} is ready to view." : $"The evidence file {item.Name} is awaiting a security scan.", DeliveryStatus = "queued" });
+            Kind = "application.evidence." + item.ScanStatus, Subject = item.ScanStatus == "clean" ? "Evidence scan passed" : item.ScanStatus == "rejected" ? "Evidence file rejected" : "Evidence scan pending", Body = item.ScanStatus == "clean" ? $"The evidence file {item.Name} is ready to view." : item.ScanStatus == "rejected" ? $"The evidence file {item.Name} was rejected by the security scan." : $"The evidence file {item.Name} is awaiting a security scan.", DeliveryStatus = "queued" });
         await db.SaveChangesAsync(ct); return new(Read(item), draft.Version);
     }
     public async Task<EvidenceChange> RemoveAsync(Guid contactId, Guid draftId, Guid? accountId, Guid fileId, Guid version, CancellationToken ct)

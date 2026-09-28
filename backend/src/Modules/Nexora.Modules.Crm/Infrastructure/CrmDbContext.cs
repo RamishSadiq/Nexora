@@ -36,6 +36,9 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
         Configure<Note>(b, "Notes");
         Configure<RecordTag>(b, "Tags");
         Configure<RecordFile>(b, "Files");
+        b.Entity<RecordFile>().Property(x => x.Version).IsConcurrencyToken();
+        b.Entity<RecordFile>().Property(x => x.Sha256).HasMaxLength(64);
+        b.Entity<RecordFile>().Property(x => x.ScanStatus).HasMaxLength(20);
         Configure<Activity>(b, "Activities");
         Configure<CustomFieldDefinition>(b, "CustomFieldDefinitions");
         Configure<CustomFieldValue>(b, "CustomFieldValues");

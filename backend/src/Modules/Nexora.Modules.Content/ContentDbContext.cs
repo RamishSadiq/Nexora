@@ -18,6 +18,21 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
         b.HasDefaultSchema("content");
         Configure<Site>(b, "Sites"); Configure<Page>(b, "Pages");
         Configure<PageVersion>(b, "PageVersions"); Configure<Publication>(b, "Publications");
+        Configure<MediaAsset>(b, "MediaAssets"); Configure<PageRedirect>(b, "PageRedirects"); Configure<ScheduledPublication>(b, "ScheduledPublications");
+        b.Entity<Site>().Property(x => x.BrandColor).HasMaxLength(7);
+        b.Entity<Page>().Property(x => x.NavigationLabel).HasMaxLength(80);
+        b.Entity<PageRedirect>().Property(x => x.Slug).HasMaxLength(100);
+        b.Entity<PageRedirect>().HasIndex(x => new { x.TenantId, x.SiteId, x.Slug }).IsUnique();
+        b.Entity<PageRedirect>().HasOne<Page>().WithMany().HasForeignKey(x => new { x.TenantId, x.PageId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MediaAsset>().HasOne<Site>().WithMany().HasForeignKey(x => new { x.TenantId, x.SiteId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MediaAsset>().Property(x => x.Name).HasMaxLength(160);
+        b.Entity<MediaAsset>().Property(x => x.ContentType).HasMaxLength(30);
+        b.Entity<MediaAsset>().Property(x => x.ScanStatus).HasMaxLength(20);
+        b.Entity<MediaAsset>().Property(x => x.Content).HasMaxLength(5 * 1024 * 1024);
+        b.Entity<ScheduledPublication>().Property(x => x.Status).HasMaxLength(20);
+        b.Entity<ScheduledPublication>().Property(x => x.Failure).HasMaxLength(300);
+        b.Entity<ScheduledPublication>().HasIndex(x => new { x.TenantId, x.PageId }).IsUnique().HasFilter("[Status] = 'pending'");
+        b.Entity<ScheduledPublication>().HasOne<Page>().WithMany().HasForeignKey(x => new { x.TenantId, x.PageId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         b.Entity<Site>().HasIndex(x => x.TenantId).IsUnique();
         b.Entity<Site>().Property(x => x.Name).HasMaxLength(100);
         b.Entity<Site>().Property(x => x.Tagline).HasMaxLength(200);
@@ -29,6 +44,9 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
         b.Entity<PageVersion>().Property(x => x.Title).HasMaxLength(120);
         b.Entity<PageVersion>().Property(x => x.Description).HasMaxLength(300);
         b.Entity<PageVersion>().Property(x => x.BlocksJson).HasMaxLength(40000);
+        foreach (var entity in b.Model.GetEntityTypes())
+            foreach (var property in entity.GetProperties().Where(p => p.ClrType == typeof(DateTime)))
+                property.SetValueConverter(new Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter<DateTime, DateTime>(v => v, v => DateTime.SpecifyKind(v, DateTimeKind.Utc)));
     }
     private void Configure<T>(ModelBuilder b, string name) where T : TenantEntity
     {

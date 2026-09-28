@@ -1,5 +1,8 @@
 # Member portal — personal self-service and staff access management
 
+> Current VS Code setup (24 September): use **CRM**, **Portal** or **CMS**. [Local testing instructions](../LOCAL-TESTING.md) supersede the older launch names and LocalDB guidance below.
+
+
 **Delivery date:** 21 September 2026.  
 **Identity decision:** The product owner explicitly retained local development for this increment. Production registration, invitations and recovery remain deferred.
 

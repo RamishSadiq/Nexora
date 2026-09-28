@@ -23,6 +23,60 @@ namespace Nexora.Modules.Content.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("Nexora.Modules.Content.MediaAsset", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<byte[]>("Content")
+                        .IsRequired()
+                        .HasMaxLength(5242880)
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsPublic")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<string>("ScanStatus")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid>("SiteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "SiteId");
+
+                    b.ToTable("MediaAssets", "content");
+                });
+
             modelBuilder.Entity("Nexora.Modules.Content.Page", b =>
                 {
                     b.Property<Guid>("Id")
@@ -35,8 +89,19 @@ namespace Nexora.Modules.Content.Migrations
                     b.Property<Guid>("DraftId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("NavigationLabel")
+                        .IsRequired()
+                        .HasMaxLength(80)
+                        .HasColumnType("nvarchar(80)");
+
+                    b.Property<int>("NavigationOrder")
+                        .HasColumnType("int");
+
                     b.Property<Guid?>("PublishedId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("ShowInNavigation")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("SiteId")
                         .HasColumnType("uniqueidentifier");
@@ -62,6 +127,48 @@ namespace Nexora.Modules.Content.Migrations
                         .IsUnique();
 
                     b.ToTable("Pages", "content");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Content.PageRedirect", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("PageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("SiteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Slug")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "PageId");
+
+                    b.HasIndex("TenantId", "SiteId", "Slug")
+                        .IsUnique();
+
+                    b.ToTable("PageRedirects", "content");
                 });
 
             modelBuilder.Entity("Nexora.Modules.Content.PageVersion", b =>
@@ -150,7 +257,7 @@ namespace Nexora.Modules.Content.Migrations
                     b.ToTable("Publications", "content");
                 });
 
-            modelBuilder.Entity("Nexora.Modules.Content.Site", b =>
+            modelBuilder.Entity("Nexora.Modules.Content.ScheduledPublication", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -158,6 +265,65 @@ namespace Nexora.Modules.Content.Migrations
 
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Failure")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<Guid>("PageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("PublishAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("PublisherId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("RevisionId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "PageId")
+                        .IsUnique()
+                        .HasFilter("[Status] = 'pending'");
+
+                    b.ToTable("ScheduledPublications", "content");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Content.Site", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("BrandColor")
+                        .IsRequired()
+                        .HasMaxLength(7)
+                        .HasColumnType("nvarchar(7)");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("LogoMediaId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -187,11 +353,31 @@ namespace Nexora.Modules.Content.Migrations
                     b.ToTable("Sites", "content");
                 });
 
+            modelBuilder.Entity("Nexora.Modules.Content.MediaAsset", b =>
+                {
+                    b.HasOne("Nexora.Modules.Content.Site", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "SiteId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Nexora.Modules.Content.Page", b =>
                 {
                     b.HasOne("Nexora.Modules.Content.Site", null)
                         .WithMany()
                         .HasForeignKey("TenantId", "SiteId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Content.PageRedirect", b =>
+                {
+                    b.HasOne("Nexora.Modules.Content.Page", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "PageId")
                         .HasPrincipalKey("TenantId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -208,6 +394,16 @@ namespace Nexora.Modules.Content.Migrations
                 });
 
             modelBuilder.Entity("Nexora.Modules.Content.Publication", b =>
+                {
+                    b.HasOne("Nexora.Modules.Content.Page", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "PageId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Content.ScheduledPublication", b =>
                 {
                     b.HasOne("Nexora.Modules.Content.Page", null)
                         .WithMany()

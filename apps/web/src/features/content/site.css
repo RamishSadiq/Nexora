@@ -3,7 +3,12 @@
 .association-site a { text-underline-offset: 5px; }
 .association-site footer a:hover { text-decoration: underline; }
 .site-blocks { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
-.site-blocks > section { grid-column: 1 / -1; }
+.site-blocks > section, .site-blocks > figure { grid-column: 1 / -1; }
+.site-navigation { width: 100%; border-top: 1px solid #183a3120; padding-top: 20px; }
+.site-portal-link { display: inline-flex; align-items: center; gap: 16px; border: 1px solid currentColor; border-radius: 999px; padding: 12px 20px; font-size: 14px; font-weight: 600; }
+.site-portal-link:hover { background: #ddebab; }
+.site-introduction { max-width: 48rem; color: #486157; font-size: 18px; line-height: 1.8; margin: -8px 0 32px; }
+.site-back-link { display: inline-block; font-size: 14px; margin-bottom: 28px; text-decoration: underline; }
 .site-blocks > [data-block="feature"] { grid-column: span 2; }
 .site-feature-mark { display: block; color: #6b7a25; font-size: 36px; margin-bottom: 32px; }
 .site-hero .site-block-copy { max-width: 65%; }

@@ -1,5 +1,8 @@
 # Personal portal application drafts and submission
 
+> Current VS Code setup (24 September): use **CRM**, **Portal** or **CMS**. [Local testing instructions](../LOCAL-TESTING.md) supersede the older launch names and LocalDB guidance below.
+
+
 **Latest follow-up:** Receipt/detail pages, draft discard and staff access management are now implemented; the expanded approval/rejection browser journeys passed. See [Stage 13](STAGE-13-PORTAL-SELF-SERVICE.md) for current scope and verification. The earlier interrupted-run notes below are retained as history.
 
 Delivered locally on 21 September 2026. Members can save and reopen personal application drafts, review the current quoted total and membership terms, accept those terms and submit to the existing staff decision workflow. Submission does not take payment or activate membership.

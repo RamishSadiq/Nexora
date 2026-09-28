@@ -1,0 +1,24 @@
+import { test, expect } from "@playwright/test";
+test("CRM imports reconcile, connected activity stays live and files require scans", async ({ page }) => {
+  await page.goto("/login"); await page.getByLabel("Work email").fill("admin@nexora.local"); await page.getByLabel("Password", { exact: true }).fill(process.env.NEXORA_BROWSER_PASSWORD!); await page.getByRole("button", { name: "Sign in", exact: true }).click(); await expect(page).not.toHaveURL(/\/login/, { timeout: 60000 });
+  await page.goto("/relationships/contacts");
+  await page.getByText("Import and export", { exact: true }).click();
+  await page.getByLabel("CSV data", { exact: true }).fill("id,version,kind,name,status,category,email\n,,contact,CRM Acceptance Member,active,Testing,crm.acceptance@example.test");
+  await page.getByRole("button", { name: "Preview import", exact: true }).click(); await expect(page.getByText("Preview valid. Ready to import.", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Import validated records", exact: true }).click(); await expect(page.getByText("Import complete.", { exact: true })).toBeVisible();
+  const csv = await page.request.get("/api/v1/crm/export?kind=contact"); expect(csv.ok()).toBeTruthy(); expect(await csv.text()).toContain("CRM Acceptance Member");
+  await page.getByRole("button", { name: "Preview import", exact: true }).click(); await expect(page.getByText("Nothing imported. Resolve the blocked rows.", { exact: true })).toBeVisible();
+  await page.getByRole("textbox", { name: "Search records", exact: true }).fill("crm.acceptance@example.test"); await page.getByRole("button", { name: "Search", exact: true }).click();
+  await page.getByRole("button", { name: "Edit CRM Acceptance Member", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Applications (0)", exact: true })).toBeVisible();
+  const record = (await (await page.request.get("/api/v1/crm/records?search=CRM%20Acceptance%20Member")).json()).items[0];
+  const csrf = (await (await page.request.get("/api/v1/auth/csrf")).json()).token;
+  const productResponse = await page.request.post("/api/v1/membership/products", { headers: { "X-CSRF-TOKEN": csrf }, data: { name: "CRM linked membership", category: "Personal", termMonths: 12, rate: 25, currency: "GBP", isActive: true } }); expect(productResponse.ok()).toBeTruthy();
+  const application = await page.request.post("/api/v1/membership/applications", { headers: { "X-CSRF-TOKEN": csrf }, data: { contactId: record.id, productId: (await productResponse.json()).id, startsAtUtc: new Date().toISOString().slice(0,10) + "T00:00:00Z", applicationType: "individual", termsAccepted: true } }); expect(application.ok()).toBeTruthy();
+  await page.getByRole("button", { name: "Refresh connected activity", exact: true }).click(); await expect(page.getByRole("heading", { name: "Applications (1)", exact: true })).toBeVisible();
+  await page.getByLabel("Attach file (up to 5 MB)").setInputFiles({ name: "crm-note.txt", mimeType: "text/plain", buffer: Buffer.from("CRM acceptance document") }); await page.getByRole("button", { name: "Upload file", exact: true }).click();
+  await expect(page.getByText("crm-note.txt · quarantined", { exact: true })).toBeVisible(); await expect(page.getByRole("link", { name: "crm-note.txt", exact: true })).toHaveCount(0);
+  await page.screenshot({ path: "../../crm-connected-desktop.png", fullPage: true });
+  await page.setViewportSize({ width: 390, height: 844 }); expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy(); await page.screenshot({ path: "../../crm-connected-mobile.png", fullPage: true });
+  await page.getByRole("button", { name: "Delete file", exact: true }).click(); await page.getByRole("button", { name: "Confirm", exact: true }).click(); await expect(page.getByText("crm-note.txt · quarantined", { exact: true })).toHaveCount(0);
+});

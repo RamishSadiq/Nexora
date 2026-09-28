@@ -2,47 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Nexora API",
+      "name": "Nexora shared API",
       "type": "coreclr",
       "request": "launch",
-      "program": "${workspaceFolder}/backend/src/Nexora.Api/bin/Debug/net10.0/Nexora.Api.exe",
-      "cwd": "${workspaceFolder}/backend/src/Nexora.Api",
-      "args": [
-        "--urls",
-        "http://localhost:5081"
-      ],
-      "env": {
-        "ASPNETCORE_ENVIRONMENT": "Development",
-        "Identity__SeedAdminPassword": "Nexora-Local-2026!",
-        "Identity__ResetSeedAdminPassword": "true",
-        "ConnectionStrings__Nexora": "Server=.\\SQLEXPRESS;Database=NexoraDev;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True"
-      },
-      "preLaunchTask": "free-api-port"
-    },
-    {
-      "name": "Nexora Web",
-      "type": "node-terminal",
-      "request": "launch",
-      "command": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe node_modules/next/dist/bin/next dev --webpack",
-      "cwd": "${workspaceFolder}/apps/web",
-      "args": [
-        "--port",
-        "3000"
-      ],
-      "env": {
-        "NEXORA_API_URL": "http://localhost:5081"
-      },
-      "preLaunchTask": "free-web-port",
-      "serverReadyAction": {
-        "action": "openExternally",
-        "pattern": "- Local:\\s+(https?://\\S+)"
-      }
-    },
-    {
-      "name": "Website API (LocalDB)",
-      "type": "coreclr",
-      "request": "launch",
-      "program": "${workspaceFolder}/backend/src/Nexora.Api/bin/WebsiteDebug/net10.0/Nexora.Api.dll",
+      "program": "${workspaceFolder}/backend/src/Nexora.Api/bin/LocalDebug/net10.0/Nexora.Api.dll",
       "cwd": "${workspaceFolder}/backend/src/Nexora.Api",
       "args": [
         "--urls",
@@ -51,14 +14,21 @@
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "DOTNET_ENVIRONMENT": "Development",
-        "ConnectionStrings__Nexora": "Server=(localdb)\\MSSQLLocalDB;Database=NexoraDev;Trusted_Connection=True;TrustServerCertificate=True",
+        "ConnectionStrings__Nexora": "Server=.\\SQLEXPRESS;Database=NexoraDev;Trusted_Connection=True;TrustServerCertificate=True",
         "Web__AllowedOrigins__0": "http://localhost:3017",
+        "Web__AllowedOrigins__1": "http://localhost:3018",
+        "Web__AllowedOrigins__2": "http://localhost:3019",
+        "Identity__SeedAdminPassword": "Nexora-Local-2026!",
         "Identity__ResetSeedAdminPassword": "false"
       },
-      "justMyCode": true
+      "justMyCode": true,
+      "presentation": {
+        "order": 1
+      },
+      "preLaunchTask": "local-build-api"
     },
     {
-      "name": "Website Web (source + browser)",
+      "name": "Nexora internal CRM web",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
@@ -72,23 +42,24 @@
       ],
       "env": {
         "NEXORA_API_URL": "http://localhost:5097",
-        "NEXORA_NEXT_DIST_DIR": ".next-website-debug"
+        "NEXORA_NEXT_DIST_DIR": ".next-local-debug-crm"
       },
       "autoAttachChildProcesses": true,
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "preLaunchTask": "website-wait-api",
       "serverReadyAction": {
-        "action": "debugWithEdge",
-        "killOnServerStop": true,
-        "pattern": "- Local:\\s+(https?://\\S+)",
-        "uriFormat": "%s/site/513f76cf-4cae-40aa-8812-0d9de03c6285/home",
-        "webRoot": "${workspaceFolder}/apps/web"
-      }
+        "action": "startDebugging",
+        "name": "Nexora CRM Edge",
+        "pattern": "- Local:\\s+(https?://\\S+)"
+      },
+      "presentation": {
+        "hidden": true
+      },
+      "preLaunchTask": "local-ensure-api"
     },
     {
-      "name": "Portal Web (source + browser)",
+      "name": "Nexora internal Portal web",
       "type": "node",
       "request": "launch",
       "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
@@ -98,52 +69,143 @@
         "dev",
         "--webpack",
         "--port",
-        "3017"
+        "3018"
       ],
       "env": {
         "NEXORA_API_URL": "http://localhost:5097",
-        "NEXORA_NEXT_DIST_DIR": ".next-website-debug"
+        "NEXORA_NEXT_DIST_DIR": ".next-local-debug-portal"
       },
       "autoAttachChildProcesses": true,
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "preLaunchTask": "website-wait-api",
       "serverReadyAction": {
-        "action": "debugWithEdge",
-        "killOnServerStop": true,
-        "pattern": "- Local:\\s+(https?://\\S+)",
-        "uriFormat": "%s/portal",
-        "webRoot": "${workspaceFolder}/apps/web"
+        "action": "startDebugging",
+        "name": "Nexora Portal Edge",
+        "pattern": "- Local:\\s+(https?://\\S+)"
+      },
+      "presentation": {
+        "hidden": true
+      },
+      "preLaunchTask": "local-ensure-api"
+    },
+    {
+      "name": "Nexora internal CMS web",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "program": "${workspaceFolder}/apps/web/node_modules/next/dist/bin/next",
+      "cwd": "${workspaceFolder}/apps/web",
+      "args": [
+        "dev",
+        "--webpack",
+        "--port",
+        "3019"
+      ],
+      "env": {
+        "NEXORA_API_URL": "http://localhost:5097",
+        "NEXORA_NEXT_DIST_DIR": ".next-local-debug-cms"
+      },
+      "autoAttachChildProcesses": true,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "serverReadyAction": {
+        "action": "startDebugging",
+        "name": "Nexora CMS Edge",
+        "pattern": "- Local:\\s+(https?://\\S+)"
+      },
+      "presentation": {
+        "hidden": true
+      },
+      "preLaunchTask": "local-ensure-api"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Company Dash",
+      "program": "C:/Users/ramish/Documents/ChatGPT/Company Dash/server/main.mjs",
+      "cwd": "C:/Users/ramish/Documents/ChatGPT/Company Dash",
+      "console": "integratedTerminal",
+      "serverReadyAction": {
+        "pattern": "Command Center: (http://[^\\s]+)",
+        "uriFormat": "%s",
+        "action": "openExternally"
+      },
+      "presentation": {
+        "order": 0
       }
+    },
+    {
+      "name": "Nexora CRM Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3017/relationships/contacts",
+      "webRoot": "${workspaceFolder}/apps/web",
+      "userDataDir": "${workspaceFolder}/artifacts/edge-crm",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "name": "Nexora Portal Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3018/portal",
+      "webRoot": "${workspaceFolder}/apps/web",
+      "userDataDir": "${workspaceFolder}/artifacts/edge-portal",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "name": "Nexora CMS Edge",
+      "type": "msedge",
+      "request": "launch",
+      "url": "http://localhost:3019/site/26b20458-a580-40a8-8345-369ad954a54d/home",
+      "webRoot": "${workspaceFolder}/apps/web",
+      "userDataDir": "${workspaceFolder}/artifacts/edge-cms",
+      "presentation": {
+        "hidden": true
+      }
+    },
+    {
+      "name": "Attach shared API",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
     }
   ],
   "compounds": [
     {
-      "name": "Portal (API + Web)",
+      "name": "CRM",
       "configurations": [
-        "Website API (LocalDB)",
-        "Portal Web (source + browser)"
+        "Nexora internal CRM web"
       ],
-      "preLaunchTask": "website-prepare",
-      "stopAll": true
+      "stopAll": false,
+      "presentation": {
+        "order": 1
+      }
     },
     {
-      "name": "Website (API + Web)",
+      "name": "Portal",
       "configurations": [
-        "Website API (LocalDB)",
-        "Website Web (source + browser)"
+        "Nexora internal Portal web"
       ],
-      "preLaunchTask": "website-prepare",
-      "stopAll": true
+      "stopAll": false,
+      "presentation": {
+        "order": 2
+      }
     },
     {
-      "name": "Nexora (API + Web)",
+      "name": "CMS",
       "configurations": [
-        "Nexora API",
-        "Nexora Web"
+        "Nexora internal CMS web"
       ],
-      "stopAll": true
+      "stopAll": false,
+      "presentation": {
+        "order": 3
+      }
     }
   ]
 }

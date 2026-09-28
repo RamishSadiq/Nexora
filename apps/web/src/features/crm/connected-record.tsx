@@ -1,0 +1,11 @@
+"use client";
+import { useEffect, useState } from "react";
+import { crm } from "./api";
+type Section = { title: string; total: number; items: { id: string; label: string; status: string; atUtc: string; url: string }[] };
+export function ConnectedRecord({ id, refresh }: { id: string; refresh: number }) {
+  const [sections, setSections] = useState<Section[] | null>(null); const [error, setError] = useState(""); const [retry, setRetry] = useState(0);
+  useEffect(() => { let active = true; crm<Section[]>(`/records/${id}/context`).then(s => { if (active) { setSections(s); setError(""); } }).catch(e => { if (active) setError(e.message); }); return () => { active = false; }; }, [id, refresh, retry]);
+  return <section aria-label="Connected activity" className="rounded-xl border border-slate-200 bg-white p-5"><div className="flex flex-wrap items-center justify-between gap-3"><h2 className="text-lg font-semibold">Connected activity</h2><button className="rounded border px-3 py-2 text-sm" onClick={() => setRetry(x => x + 1)}>Refresh connected activity</button></div><p className="my-3 text-sm text-slate-600">Live information from the modules you can access. Portal profile changes are reflected in this CRM record. Access grants show recorded permissions; current account, contact and login checks still apply.</p>
+    {error ? <p role="alert">{error}</p> : sections == null ? <p role="status">Loading connected activity…</p> : sections.length === 0 ? <p>No connected modules are available with your permissions.</p> : <div className="grid gap-4 md:grid-cols-2">{sections.map(s => <section key={s.title} className="min-w-0 rounded-lg bg-slate-50 p-4"><h3 className="font-semibold">{s.title} ({s.total})</h3>{s.total === 0 && <p className="mt-2 text-sm text-slate-600">No records.</p>}<ul className="mt-3 space-y-3">{s.items.map(item => <li key={item.id} className="break-words text-sm"><a className="font-medium text-indigo-700 underline" href={item.url}>{item.label}</a><p>{item.status} · {new Date(item.atUtc).toLocaleString()}</p></li>)}</ul>{s.total > s.items.length && <p className="mt-3 text-xs">Showing the latest {s.items.length}. Open the module for the full list.</p>}</section>)}</div>}
+  </section>;
+}

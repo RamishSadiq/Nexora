@@ -34,8 +34,11 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
     public const string AdminEmail = "admin@nexora.test";
     public const string AdminPassword = "Nexora-Test-2026!";
 
-    public IdentityApiFactory()
+    private readonly Nexora.BuildingBlocks.Documents.IDocumentScanner? _scanner;
+    public IdentityApiFactory() : this(null) { }
+    internal IdentityApiFactory(Nexora.BuildingBlocks.Documents.IDocumentScanner? scanner)
     {
+        _scanner = scanner;
         _connection.Open();
         _contentConnection.Open();
         _crmConnection.Open();
@@ -52,6 +55,7 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
         builder.UseEnvironment("Development");
         builder.ConfigureTestServices(services =>
         {
+            if (_scanner != null) services.AddSingleton(_scanner);
             services.RemoveAll<DbContextOptions<ContentDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<ContentDbContext>>();
             services.AddDbContext<ContentDbContext>(options => options.UseSqlite(_contentConnection));

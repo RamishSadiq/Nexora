@@ -38,7 +38,12 @@ public sealed class CrmSqlServerTests(ITestOutputHelper output)
             Assert.True(index > 0);
             await db.GetService<IMigrator>().MigrateAsync(migrations[index - 1]);
             await db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO [crm].[SavedViews] ([Id],[TenantId],[UserId],[Name],[Kind],[Search],[Status],[Sort],[Archived],[Columns]) VALUES ({id},{tenant},{user},N'Legacy accounts',N'account',N'Example',N'active',N'name',0,N'name,status')");
+            var oldRecord = Guid.NewGuid(); var oldFile = Guid.NewGuid(); var now = DateTime.UtcNow;
+            await db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO [crm].[Records] ([Id],[TenantId],[Kind],[Name],[Status],[IsArchived],[Version],[CreatedAtUtc],[UpdatedAtUtc]) VALUES ({oldRecord},{tenant},'contact','Legacy file owner','active',0,{Guid.NewGuid()},{now},{now})");
+            await db.Database.ExecuteSqlInterpolatedAsync($"INSERT INTO [crm].[Files] ([Id],[TenantId],[RecordId],[Name],[Content],[CreatedAtUtc]) VALUES ({oldFile},{tenant},{oldRecord},'legacy.txt',{new byte[] { 65 }},{now})");
             await db.Database.MigrateAsync();
+            var retained = await db.Set<RecordFile>().SingleAsync(); Assert.Equal("quarantined", retained.ScanStatus); Assert.Equal(new byte[] { 65 }, retained.Content); Assert.Null(retained.ScannedAtUtc);
+            Assert.False(db.Database.HasPendingModelChanges());
             var view = await db.Set<SavedView>().SingleAsync();
             Assert.Equal(id, view.Id); Assert.Equal("account", view.Kind); Assert.Equal("Example", view.Search);
             Assert.Equal("name,status", view.Columns); Assert.Null(view.OwnerUserId); Assert.Null(view.Category);

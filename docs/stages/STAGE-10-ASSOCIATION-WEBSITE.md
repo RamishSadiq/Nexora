@@ -1,5 +1,8 @@
 # Association website — first delivery slice
 
+> Current VS Code setup (24 September): use **CRM**, **Portal** or **CMS**. [Local testing instructions](../LOCAL-TESTING.md) supersede the older launch names and LocalDB guidance below.
+
+
 On 18 September 2026 the product owner confirmed the sequence: **association website first, member portal next**. This changes implementation priority from the earlier week-by-week proposal, which placed portal P3 before website P4. It does not remove the identity, privacy or deployment acceptance gates. The website belongs to the tenant organisation, not Nexora's marketing brand.
 
 ## Implemented scope
@@ -65,3 +68,6 @@ Apply both the Identity `ContentPermissions` migration and Content `InitialConte
 - TypeScript and targeted website ESLint checks passed.
 - Production frontend build remains unverified: Google Fonts DNS/download failures blocked compilation; the stalled build was stopped. The optional `--production` runner preserves this check for an environment with working font access.
 - Local editor relaunched at `http://localhost:3016/website`. Portal implementation is the next phase, not part of these completed website checks.
+
+
+Presentation and publishing follow-up: [Stage 16 — CMS publishing](STAGE-16-CMS-PUBLISHING.md). Its delivery and verification notes supersede the original remaining-work assessment for that scope.

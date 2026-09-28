@@ -58,6 +58,10 @@ public sealed class RecordTag : RecordChild
 }
 public sealed class RecordFile : RecordChild
 {
+    public Guid Version { get; set; } = Guid.NewGuid();
+    public string ScanStatus { get; set; } = "quarantined";
+    public string Sha256 { get; set; } = "";
+    public DateTime? ScannedAtUtc { get; set; }
     public string Name { get; set; } = "";
     public byte[] Content { get; set; } = [];
     public DateTime CreatedAtUtc { get; set; } = DateTime.UtcNow;

@@ -165,6 +165,13 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   await submitted.getByRole("combobox", { name: /^Decision/ }).selectOption(decision);
   await submitted.getByLabel("Decision reason", { exact: true }).fill("Private staff approval note");
   await submitted.getByRole("button", { name: "Record decision" }).click();
+  if (decision === "approve") {
+    await expect(staffPage.getByRole("alert").filter({ hasText: "already has an active membership" })).toBeVisible();
+    const existing = (await (await request.get("/api/v1/membership/members")).json()).items.find((m: { contactId: string; productId: string }) => m.contactId === contact.id && m.productId === product.id);
+    expect(existing).toBeTruthy();
+    await send(`/api/v1/membership/members/${existing.id}/cancel`, { version: existing.version, reason: "Switch to the new membership" });
+    await submitted.getByRole("button", { name: "Record decision" }).click();
+  }
   await expect(submitted).toContainText(decision === "approve" ? "approved" : "rejected");
   await expect(submitted.getByRole("button", { name: "Record decision" })).toHaveCount(0);
   await page.getByRole("button", { name: "Refresh application status", exact: true }).click();
@@ -183,11 +190,25 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   expect(overview.memberships.filter((m: { product: string }) => m.product === openProduct.name)).toHaveLength(decision === "approve" ? 1 : 0);
   await expect(page.getByText("Internal review complete", { exact: true })).toHaveCount(0);
   expect((await page.request.get("/api/v1/crm/records")).status()).toBe(401);
+  const inbox = page.getByRole("region", { name: "Notifications", exact: true });
+  await inbox.getByRole("button", { name: "Refresh notifications" }).click();
+  await expect(inbox).toContainText(decision === "approve" ? "approved" : "rejected");
+  const unread = inbox.getByRole("button", { name: /^Mark as read/ });
+  const unreadCount = await unread.count();
+  expect(unreadCount).toBeGreaterThan(0);
+  await unread.first().click();
+  await expect(unread).toHaveCount(unreadCount - 1);
+  await page.reload();
+  await expect(inbox.getByRole("button", { name: /^Mark as read/ })).toHaveCount(unreadCount - 1);
   await page.getByLabel("Display name").fill("Jordan Updated");
+  await page.getByLabel("Address line 1", { exact: true }).fill("12 Member Road");
+  await page.getByLabel("City", { exact: true }).fill("London");
+  await page.getByLabel("Country", { exact: true }).fill("United Kingdom");
   await page.getByRole("button", { name: "Save profile" }).click();
   await expect(page.getByRole("status").filter({ hasText: "Your profile" })).toHaveText("Your profile has been saved.");
   await page.reload();
   await expect(page.getByLabel("Display name")).toHaveValue("Jordan Updated");
+  await expect(page.getByLabel("Address line 1", { exact: true })).toHaveValue("12 Member Road");
   const shared = await request.get(`/api/v1/crm/records/${contact.id}`);
   expect(await shared.text()).toContain("Jordan Updated");
   await page.screenshot({ path: "../../portal-desktop.png", fullPage: true });
