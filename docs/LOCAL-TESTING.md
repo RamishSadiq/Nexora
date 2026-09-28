@@ -48,3 +48,11 @@ CMS launches the published public homepage. Staff CMS management remains at http
 
 28 September verification: LocalDebug API build passed with no warnings; concurrent API readiness tasks passed; Edge member login and authenticated profile requests on 3018 passed alongside repeated CMS reloads on 3019. Frontend lint passed. VS Code F5 browser dispatch itself was not automated.
 Backend solution tests also passed: 115 API tests and 2 architecture tests; 7 API tests skipped. The reported API project reference resolved without MSB9008 during this build.
+
+## Member navigation
+
+The signed-in landing page at `/portal` is **Dashboard**, with live membership/application totals, current membership, recent applications and quick links. Each menu has its own page: `/portal/memberships`, `/portal/applications`, `/portal/organisations`, `/portal/profile` and `/portal/notifications`. Only the selected section is rendered; refresh and browser Back preserve the selected page. Application receipts remain at their existing URLs.
+
+The local navigation check is `npx playwright test tests/portal-navigation.spec.ts` from `apps/web`, with `NEXORA_BROWSER_URL`, `NEXORA_PORTAL_EMAIL` and `NEXORA_PORTAL_PASSWORD` set for a provisioned local member. It checks menu isolation, active navigation, reload, Back, dashboard links, sign-out and mobile overflow.
+
+Dashboard/navigation verification on 28 September: Edge menu isolation/reload/Back/sign-out/mobile check passed; all three production portal journeys passed against a disposable SQL Express database; production build, TypeScript and lint passed. The backend test build emitted ASP.NET analyzer AD0001 warnings but no build errors.

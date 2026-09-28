@@ -29,6 +29,7 @@ test("organisation permission, application receipt and live revocation", async (
   await page.getByLabel("Email", { exact: true }).fill("company.member@nexora.test");
   await page.getByLabel("Password", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await page.getByRole("navigation", { name: "Member navigation" }).getByRole("link", { name: "My organisations", exact: true }).click();
   await expect(page.getByText("No organisation access has been granted.")).toBeVisible();
   await staffPage.goto("/settings");
   const record = staffPage.getByRole("article").filter({ hasText: "company.member@nexora.test" });
@@ -122,8 +123,9 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   await page.getByLabel("Email", { exact: true }).fill(`member-${decision}@nexora.test`);
   await page.getByLabel("Password", { exact: true }).fill(password);
   await page.getByRole("button", { name: "Sign in", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "My profile" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: "Individual membership", exact: true })).toHaveCount(2);
+  await expect(page.getByRole("heading", { name: "Dashboard", exact: true })).toBeVisible();
+  await page.getByRole("navigation", { name: "Member navigation" }).getByRole("link", { name: "My applications", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Individual membership", exact: true })).toHaveCount(1);
   await page.getByRole("button", { name: "New application", exact: true }).click();
   await page.getByLabel("Membership product").selectOption(openProduct.id);
   await page.getByLabel("Application notes").fill(`Please review my personal application: ${decision}.`);
@@ -182,14 +184,15 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
   await page.screenshot({ path: `../../portal-receipt-${decision}-mobile.png`, fullPage: true });
   await page.setViewportSize({ width: 1280, height: 900 });
-  await page.goto("/portal");
-  await expect(page.getByRole("heading", { name: "New member application", exact: true })).toHaveCount(decision === "approve" ? 2 : 1);
+  await page.goto("/portal/applications");
+  await expect(page.getByRole("heading", { name: "New member application", exact: true })).toHaveCount(1);
   await expect(page.getByText("Private staff approval note", { exact: true })).toHaveCount(0);
   const overview = await (await page.request.get("/api/v1/portal/memberships")).json();
   expect(overview.applications.find((a: { product: string }) => a.product === openProduct.name).status).toBe(decision === "approve" ? "approved" : "rejected");
   expect(overview.memberships.filter((m: { product: string }) => m.product === openProduct.name)).toHaveLength(decision === "approve" ? 1 : 0);
   await expect(page.getByText("Internal review complete", { exact: true })).toHaveCount(0);
   expect((await page.request.get("/api/v1/crm/records")).status()).toBe(401);
+  await page.getByRole("navigation", { name: "Member navigation" }).getByRole("link", { name: "Notifications", exact: true }).click();
   const inbox = page.getByRole("region", { name: "Notifications", exact: true });
   await inbox.getByRole("button", { name: "Refresh notifications" }).click();
   await expect(inbox).toContainText(decision === "approve" ? "approved" : "rejected");
@@ -200,6 +203,7 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   await expect(unread).toHaveCount(unreadCount - 1);
   await page.reload();
   await expect(inbox.getByRole("button", { name: /^Mark as read/ })).toHaveCount(unreadCount - 1);
+  await page.getByRole("navigation", { name: "Member navigation" }).getByRole("link", { name: "My profile", exact: true }).click();
   await page.getByLabel("Display name").fill("Jordan Updated");
   await page.getByLabel("Address line 1", { exact: true }).fill("12 Member Road");
   await page.getByLabel("City", { exact: true }).fill("London");

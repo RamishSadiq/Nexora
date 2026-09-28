@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import type { Route } from "next";
 import { portal } from "./api";
 import { ApplicationEvidence } from "@/features/shared/application-evidence";
 
@@ -27,7 +28,7 @@ export function ApplicationReceipt({ id, accountId }: { id: string; accountId?: 
   function refresh() { setReceipt(null); setError(""); setAttempt(n => n + 1); }
   return <section className="min-w-0 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-label="Application receipt">
     <div className="flex flex-wrap items-center justify-between gap-4 print:hidden">
-      <Link className="underline underline-offset-4" href="/portal">Back to my portal</Link>
+      <Link className="underline underline-offset-4" href={(accountId ? "/portal/organisations" : "/portal/applications") as Route}>{accountId ? "Back to my organisations" : "Back to my applications"}</Link>
       <button className="underline underline-offset-4" onClick={refresh}>Refresh application status</button>
     </div>
     <h2 className="mt-6 text-2xl font-semibold">Application receipt</h2>

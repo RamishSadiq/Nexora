@@ -17,7 +17,7 @@ try {
   await member.getByLabel("Email", { exact: true }).fill("local.member@nexora.local");
   await member.getByLabel("Password", { exact: true }).fill(password);
   await member.getByRole("button", { name: "Sign in", exact: true }).click();
-  await expect(member.getByRole("button", { name: "Refresh organisations", exact: true })).toBeVisible({ timeout: 60000 });
+  await expect(member.getByRole("heading", { name: "Dashboard", exact: true })).toBeVisible({ timeout: 60000 });
   for (let i = 0; i < 3; i++) {
     const [profile, website] = await Promise.all([member.request.get("http://localhost:3018/api/v1/portal/profile"), cms.reload()]);
     if (!profile.ok() || !website.ok()) throw new Error(`Concurrent request failure: portal=${profile.status()}, cms=${website.status()}`);
