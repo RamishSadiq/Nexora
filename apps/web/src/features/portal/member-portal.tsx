@@ -8,11 +8,12 @@ import Link from "next/link";
 import type { Route } from "next";
 import { ApplicationReceipt } from "./application-receipt";
 import { NotificationInbox } from "./notification-inbox";
+import { ContactNameFields, emptyContactDetails, type ContactDetails } from "../shared/profile-fields";
 import { OrganisationWorkspace } from "./organisation-workspace";
 
 type PostalAddress = { line1: string; line2: string; city: string; region: string; postalCode: string; country: string };
 const emptyAddress: PostalAddress = { line1: "", line2: "", city: "", region: "", postalCode: "", country: "" };
-type Profile = { name: string; version: string; postalAddress: PostalAddress | null };
+type Profile = { contactDetails: ContactDetails | null; name: string; version: string; postalAddress: PostalAddress | null };
 type Overview = { memberships: { id: string; product: string; status: string; startsAtUtc: string; endsAtUtc: string }[]; applications: { id: string; product: string; status: string; createdAtUtc: string }[] };
 const input = "mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900";
 const button = "rounded-full bg-[var(--portal-brand,#183a31)] px-6 py-3 font-semibold text-white disabled:opacity-50";
@@ -25,6 +26,7 @@ export function MemberPortal({ applicationId, accountId, section = "dashboard" }
   const sectionLabel = presentation.menu.find(m => m.key === section)?.label ?? "Page unavailable";
   const [profile, setProfile] = useState<Profile | null>(null);
   const [name, setName] = useState("");
+  const [contactDetails, setContactDetails] = useState<ContactDetails>(emptyContactDetails);
   const [address, setAddress] = useState<PostalAddress>(emptyAddress);
   const [ready, setReady] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -33,13 +35,13 @@ export function MemberPortal({ applicationId, accountId, section = "dashboard" }
   const [overviewVersion, setOverviewVersion] = useState(0);
   const hadSession = useRef(false);
   async function load() {
-    const [current, config] = await Promise.all([portal<Profile>("/profile"), portal<PortalPresentation>("/configuration")]); setPresentation(config); hadSession.current = true; setProfile(current); setName(current.name); setAddress(current.postalAddress ?? emptyAddress);
+    const [current, config] = await Promise.all([portal<Profile>("/profile"), portal<PortalPresentation>("/configuration")]); setPresentation(config); hadSession.current = true; setProfile(current); setName(current.name); setAddress(current.postalAddress ?? emptyAddress); setContactDetails(current.contactDetails ?? emptyContactDetails);
   }
   useEffect(() => {
     let active = true;
     const expired = () => { setProfile(null); setPresentation(defaultPresentation); setName(""); setMessage(""); if (hadSession.current) setError("Sign in with an account that has active member access."); hadSession.current = false; };
     window.addEventListener("portal-session-expired", expired);
-    Promise.all([portal<Profile>("/profile"), portal<PortalPresentation>("/configuration")]).then(([p, config]) => { if (active) { setPresentation(config); hadSession.current = true; setProfile(p); setName(p.name); setAddress(p.postalAddress ?? emptyAddress); } })
+    Promise.all([portal<Profile>("/profile"), portal<PortalPresentation>("/configuration")]).then(([p, config]) => { if (active) { setPresentation(config); hadSession.current = true; setProfile(p); setName(p.name); setAddress(p.postalAddress ?? emptyAddress); setContactDetails(p.contactDetails ?? emptyContactDetails); } })
       .catch(e => { if (active && e.status !== 401) setError(e.message); }).finally(() => { if (active) setReady(true); });
     return () => { active = false; window.removeEventListener("portal-session-expired", expired); };
   }, []);
@@ -73,8 +75,9 @@ export function MemberPortal({ applicationId, accountId, section = "dashboard" }
         {!customPage && !(section in portalSections) && <p>This page is not currently available. Choose a section from the menu.</p>}
         {section === "profile" && <>
         <section id="profile" className="min-w-0 scroll-mt-6 rounded-2xl border border-slate-200 bg-white p-7"><h2 className="text-2xl font-semibold">My profile</h2><p className="mt-3 text-sm text-slate-600">Your name and correspondence address are shared with the membership team. This address is member supplied. Leave all address fields blank to remove it.</p>
-          <form className="mt-6 space-y-5" onSubmit={e => { e.preventDefault(); void action(async () => { const updated = await portal<Profile>("/profile", "PUT", { name, version: profile.version, postalAddress: Object.values(address).some(v => v.trim()) ? address : null }); setProfile(updated); setName(updated.name); setAddress(updated.postalAddress ?? emptyAddress); setMessage("Your profile has been saved."); }); }}>
+          <form className="mt-6 space-y-5" onSubmit={e => { e.preventDefault(); void action(async () => { const updated = await portal<Profile>("/profile", "PUT", { name, version: profile.version, contactDetails, postalAddress: Object.values(address).some(v => v.trim()) ? address : null }); setProfile(updated); setName(updated.name); setAddress(updated.postalAddress ?? emptyAddress); setContactDetails(updated.contactDetails ?? emptyContactDetails); setMessage("Your profile has been saved."); }); }}>
             <label className="block">Display name<input className={input} value={name} onChange={e => setName(e.target.value)} required maxLength={160} /></label>
+            <ContactNameFields value={contactDetails} onChange={setContactDetails} disabled={busy} inputClass={input} />
             <fieldset className="space-y-4"><legend className="font-semibold">Correspondence address</legend>{([
               ["line1", "Address line 1"], ["line2", "Address line 2"], ["city", "City"], ["region", "Region"], ["postalCode", "Postal code"], ["country", "Country"],
             ] as const).map(([key, label]) => <label key={key} className="block">{label}<input className={input} value={address[key] ?? ""} maxLength={160} onChange={e => setAddress(current => ({ ...current, [key]: e.target.value }))} /></label>)}</fieldset>

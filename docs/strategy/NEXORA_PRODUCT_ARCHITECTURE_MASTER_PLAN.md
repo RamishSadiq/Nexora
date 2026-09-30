@@ -7,6 +7,8 @@
 
 **Progress tracking — 21 September 2026:** Implementation now follows the revised website-first, portal-next priority to establish a tangible working product. See the living progress report for current CRM, Portal and Website estimates, delivered capabilities and verification gaps. The original assessment below is retained as the planning baseline; its historical gaps and phase order are not a current delivery status.
 
+**Requirements update — 29 September 2026:** The [standard-functionality gap analysis](STANDARD_FUNCTIONALITY_GAP_ANALYSIS.md) and its module-by-module delivery sequence are incorporated into this master plan in section 48. The supplied migration workbook establishes the field requirements for CRM first and Portal afterwards; see the [field and schema review](DATA_MIGRATION_FIELD_REVIEW.md) and [complete source field inventory](DATA_MIGRATION_FIELD_INVENTORY.md). Section 48 is the current refinement sequence for this work. The historical assessment and estimates below remain dated evidence, not current completion claims. The latest request authorises plan updates and workbook review, not new database migrations or bulk import.
+
 ## 1. Executive product vision
 
 Build a focused **membership operations platform for small and midsize professional and trade associations**, initially those managing company memberships, named contacts, applications and renewals. Give staff and members one reliable record of their relationship, responsibilities, membership status and transactions.
@@ -398,7 +400,7 @@ All tenant-owned rows include TenantId even where omitted in this diagram. An Ac
 
 Use composite `(TenantId, Id)` references within a module. Cross-module references require validated typed contracts, lifecycle restrictions and an integrity reconciliation job; a plain GUID must not be accepted unchecked. Use a closed registry of subject types for generic links with owner-module validation, not arbitrary table-name strings.
 
-Membership uniqueness is by **tenant + entitlement subject + product + overlapping effective term**, not applicant contact. Serialize approval/renewal on a tenant/subject/product lock or equivalent SQL transaction mechanism with indexed range protection. A unique application ID prevents duplicate approval of one application but does not prevent overlap between two applications. Reject both duplicate corporate terms and accidental individual overlaps under concurrency.
+**Updated 29 September 2026 to reflect the established membership rule:** Permit only one active membership per tenant and Contact, or per tenant and Account, regardless of product/offering. Account membership belongs to the Account, not its applicant Contact. Serialize activation/approval against the entitlement subject across products and retain the existing filtered unique indexes. A unique application ID prevents duplicate approval of one application but does not prevent concurrent activation of different applications. Pending applications across different offerings remain allowed. Preserve historical memberships; the migration workbook's `Primary_Membership` field does not authorise multiple active entitlements.
 
 Keep immutable MembershipTerm/price/terms-version snapshots so renewal does not erase prior commercial terms. Add currency precision policy; initial V1 supports one configured settlement currency per tenant, with existing historic currencies preserved. Store business dates distinctly from instants; use UTC instants for events and tenant time zone for date-based deadlines. These are proposed conventions requiring migration tests.
 
@@ -875,3 +877,40 @@ No implementation starts merely because a tab or screen is absent. An important 
 10. Expand only from paid demand and measured user outcomes.
 
 The complete weekly sequence and completion evidence follow in the [Week-by-week execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md). The present deliverable is an audit and design proposal. It does not authorise implementation, deploy anything, provision accounts or send messages to prospective customers.
+
+## 48. Standard functionality and migration field requirements
+
+Added 29 September 2026 at the user's request; workbook review completed 30 September. This section incorporates the previous gap review and records the new workbook findings. Detailed requirements are retained in the linked documents so that the master plan and implementation backlog have one traceable source.
+
+### Requirements and scope
+
+- [Standard functionality comparison](STANDARD_FUNCTIONALITY_GAP_ANALYSIS.md): existing implementation, gaps, exclusions, acceptance and delivery evidence by module.
+- [Migration field review](DATA_MIGRATION_FIELD_REVIEW.md): all 22 workbook sheets reviewed, schema implications, current-code comparison, sample-data issues and proposed CRM/Portal access categories.
+- [Exact field inventory](DATA_MIGRATION_FIELD_INVENTORY.md): 717 field-header occurrences with source sheet/cell and section. These are import field occurrences, not 717 distinct columns to add to the database.
+- The workbook is the requested field baseline. Preserve its field meanings and source mappings. A field being required in the product does not establish that every record must contain a value, that every member may edit it, or that it is public.
+- Keep CRM, Portal and CMS on shared module-owned data and commands. Deliver staff capture and validation first, then authorised Portal views/edits. CMS receives only explicitly published projections.
+- Continue excluding unbuilt modules from immediate delivery. Retain CPD, qualifications, disability/EDI collection, Direct Debit execution and elections as future requirements where dedicated workflows do not exist. Do not silently discard their source columns during migration staging.
+- Preserve the one-active-membership rule, historic records, existing IDs, permission boundaries, file scanning and size limits. Sample values, workbook notes and labels are reference data, not instructions to execute actions.
+
+### Integrated sequence
+
+| Order | Work | Status or completion gate |
+| --- | --- | --- |
+| 1 | Accounts/Contacts association history and paging from the standard-functionality review | Delivered in the working tree: dates, reasons, history filter, paging and load recovery. Recorded verification: 4 association backend tests including SQL replay, 2 Edge browser journeys, TypeScript and focused lint. Not a deployment claim |
+| 2 | Complete source-to-domain field dictionary before schema-heavy CRM work | Workbook reviewed and exact headers captured. Still define canonical types, requiredness, lookup codes, lengths, source precedence and field-level Portal rights |
+| 3 | Common UI gaps | Wire sidebar collapse and record section visibility/collapse through existing components; preserve accessibility and permission enforcement |
+| 4 | CRM field foundation, module by module | Extend typed Contact/Account profiles, association department/Main Account semantics, communication channels, address purpose/history and consent. Additive migrations must preserve current IDs and shared Portal behaviour |
+| 5 | CRM notes and existing connected activity | Note metadata/important alert; permission-filtered Finance related lists and explicitly defined Account roll-ups. Follow the detailed gap review rather than reimplementing existing module services |
+| 6 | Existing Membership, Events, Engagement and Finance fields | Map the workbook to the current domain models; separate lifecycle actions from subject type, transaction headers from lines and editable fields from derived balances. Defer missing submodules |
+| 7 | Portal field exposure | For each delivered CRM field, define own-record or delegated-account access, editability, review requirements and audit. Reject staff-only fields at the server; do not return the full CRM object |
+| 8 | Migration and acceptance | Tenant/source/entity-aware ID mapping, dry run, duplicate/reference resolution, idempotent batch import, reconciliation and rollback. Validate staff-to-Portal consistency and regress existing CMS publishing |
+
+The workbook review refines the earlier sequence by putting the field dictionary ahead of schema changes. On 30 September the user authorised starting the first unambiguous field slice. The [Contact/Account profile dictionary and delivery record](CRM_STRUCTURED_PROFILE_FIELDS.md) defines exact source mappings, validation, relational ownership, Portal rights, routes and verification. Structured names and organisation details are now implemented in the working tree with an additive migration. Verification passed: 24 focused API tests across runs, 2 architecture tests, 4 Edge browser journeys across runs, TypeScript, focused lint and no pending CRM model changes. The migration was exercised on disposable SQL Express databases; the shared running instance has not been restarted or migrated. The next authorised slice delivers Department on Account–Contact relationships with a read-only own-relationship Portal projection. Five focused API/SQL tests, the expanded Edge journey, TypeScript, lint and migration-model checks passed; see the delivery record for boundaries. Main Account selection is now implemented as one optional current relationship per Contact, with atomic switching, a database uniqueness constraint and read-only Portal indication. Final regression passed: 30 API/SQL tests without skips, 2 architecture tests, 3 Edge journeys, TypeScript/lint and no pending CRM model changes. Address purpose/source/history and communication preferences are next. No workbook data has been imported. Existing estimates and progress percentages are unchanged.
+
+### Decisions still needed before affected implementation
+
+1. Mandatory fields by workflow, permitted lookup values and precise meaning of red headers. No validation lists or explicit legend are present in the workbook.
+2. Portal field ownership: self-edit, delegated-account edit, staff approval, read-only or staff-only. Directory publication is a separate choice.
+3. Membership source precedence across Contact, Account and Membership sheets, meaning of Primary Membership under one active entitlement, and separation of payer/invoice recipient from entitlement owner.
+4. Directory address precedence, field-specific consent/suppression semantics, and source handling of balances, tax and currency.
+5. Resolve sample duplicate IDs and unresolved references through import validation; never merge or invent linked records automatically.

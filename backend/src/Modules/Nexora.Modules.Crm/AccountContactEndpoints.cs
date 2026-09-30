@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
@@ -17,6 +18,7 @@ internal static class AccountContactEndpoints
             roles = AccountContactChoices.Roles, workClassifications = AccountContactChoices.WorkClassifications
         });
         api.MapGet("/records/{id:guid}/account-contacts", ListAsync);
+        api.MapPut("/contacts/{contactId:guid}/main-account", SetMainAccountAsync).RequireAuthorization("crm.manage");
         api.MapPost("/accounts/{accountId:guid}/contacts", CreateAsync).RequireAuthorization("crm.manage");
         api.MapPatch("/account-contacts/{id:guid}", UpdateAsync).RequireAuthorization("crm.manage");
         api.MapPost("/account-contacts/{id:guid}/end", EndAsync).RequireAuthorization("crm.manage");
@@ -39,15 +41,49 @@ internal static class AccountContactEndpoints
             join contact in db.Records on link.ContactId equals contact.Id
             orderby account.Name, contact.Name, link.Id
             select new { association = link, accountName = account.Name, contactName = contact.Name,
-                accountArchived = account.IsArchived, contactArchived = contact.IsArchived })
+                accountArchived = account.IsArchived, contactArchived = contact.IsArchived, contactVersion = contact.Version })
             .Skip((number - 1) * size).Take(size).ToListAsync(ct);
         var ids = items.Select(x => x.association.Id).ToArray();
         var roles = await db.Set<AccountContactRole>().AsNoTracking().Where(x => ids.Contains(x.AssociationId))
             .OrderBy(x => x.RoleCode).ToListAsync(ct);
         return Results.Ok(new { items = items.Select(x => new {
-            x.association, x.accountName, x.contactName, x.accountArchived, x.contactArchived,
+            x.association, x.accountName, x.contactName, x.accountArchived, x.contactArchived, x.contactVersion,
             roles = roles.Where(r => r.AssociationId == x.association.Id).Select(r => r.RoleCode)
         }), totalCount, page = number, pageSize = size });
+    }
+
+    private static async Task<IResult> SetMainAccountAsync(Guid contactId, MainAccountRequest r,
+        CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct)
+    {
+        await using var transaction = await db.Database.BeginTransactionAsync(ct);
+        var contact = await Parent(db, contactId, "contact", true, ct);
+        if (contact.Version != r.Version) return Conflict();
+        var current = await db.Set<AccountContact>().SingleOrDefaultAsync(x => x.ContactId == contactId && x.EndDate == null && x.IsMainAccount, ct);
+        AccountContact? target = null;
+        CrmRecord? account = null;
+        if (r.AssociationId.HasValue)
+        {
+            target = await db.Set<AccountContact>().SingleOrDefaultAsync(x => x.Id == r.AssociationId && x.ContactId == contactId && x.EndDate == null, ct)
+                ?? throw new KeyNotFoundException();
+            account = await Parent(db, target.AccountId, "account", true, ct);
+        }
+        if (current?.Id == target?.Id) return Results.Ok(new { contact.Version });
+        if (current != null)
+        {
+            current.IsMainAccount = false; current.Version = Guid.NewGuid(); current.UpdatedAtUtc = DateTime.UtcNow;
+            var previousAccount = await Parent(db, current.AccountId, "account", false, ct);
+            Audit(db, who, http, previousAccount, contact, current.Id, "main-account-cleared");
+            // Release the filtered unique slot before selecting another link, within one transaction.
+            await db.SaveChangesAsync(ct);
+        }
+        if (target != null)
+        {
+            target.IsMainAccount = true; target.Version = Guid.NewGuid(); target.UpdatedAtUtc = DateTime.UtcNow;
+            Audit(db, who, http, account!, contact, target.Id, "main-account-selected");
+            await db.SaveChangesAsync(ct);
+        }
+        await transaction.CommitAsync(ct);
+        return Results.Ok(new { contact.Version });
     }
 
     private static async Task<IResult> CreateAsync(Guid accountId, CreateAccountContactRequest r,
@@ -61,7 +97,7 @@ internal static class AccountContactEndpoints
         if (await db.Set<AccountContact>().AnyAsync(x => x.AccountId == accountId && x.ContactId == r.ContactId && x.EndDate == null, ct))
             return Results.Problem(statusCode: 409, title: "This Contact already has a current link to this Account.");
         var link = new AccountContact { TenantId = who.TenantId!.Value, AccountId = accountId, ContactId = r.ContactId,
-            StartDate = DateTime.SpecifyKind(r.StartDate.Date, DateTimeKind.Utc) };
+            StartDate = DateTime.SpecifyKind(r.StartDate.Date, DateTimeKind.Utc), Department = Department(r.Department) };
         Apply(link, r.JobTitle, r.WorkClassification, r.IsMainContact, r.IsAuthorisedContact);
         db.Add(link);
         AddRoles(db, link, r.Roles!);
@@ -80,6 +116,11 @@ internal static class AccountContactEndpoints
         var contact = await Parent(db, link.ContactId, "contact", true, ct);
         Validate(r.JobTitle, r.WorkClassification, r.Roles);
         Apply(link, r.JobTitle, r.WorkClassification, r.IsMainContact, r.IsAuthorisedContact);
+        if (r.Department.ValueKind != JsonValueKind.Undefined)
+        {
+            Check(r.Department.ValueKind is JsonValueKind.String or JsonValueKind.Null, "Department must be text or null.");
+            link.Department = Department(r.Department.GetString());
+        }
         var previous = await db.Set<AccountContactRole>().Where(x => x.AssociationId == id).ToListAsync(ct);
         db.RemoveRange(previous.Where(x => !r.Roles!.Contains(x.RoleCode)));
         AddRoles(db, link, r.Roles!.Except(previous.Select(x => x.RoleCode)));
@@ -113,6 +154,11 @@ internal static class AccountContactEndpoints
         Check(!requireUnarchived || !record.IsArchived, "Restore the archived record before changing its relationships.");
         return record;
     }
+    private static string? Department(string? value)
+    {
+        Check(value == null || (value.Length <= 160 && !value.Any(char.IsControl)), "Department must be at most 160 characters without control characters.");
+        return string.IsNullOrWhiteSpace(value) ? null : value.Trim();
+    }
     private static void Validate(string? title, string classification, string[]? roles)
     {
         Check(title == null || title.Length <= 160, "Job title must not exceed 160 characters.");
@@ -143,7 +189,8 @@ internal static class AccountContactEndpoints
 }
 
 public sealed record CreateAccountContactRequest(Guid ContactId, DateTime StartDate, string? JobTitle,
-    string WorkClassification, bool IsMainContact, bool IsAuthorisedContact, string[]? Roles);
+    string WorkClassification, bool IsMainContact, bool IsAuthorisedContact, string[]? Roles, string? Department = null);
 public sealed record UpdateAccountContactRequest(Guid Version, string? JobTitle,
-    string WorkClassification, bool IsMainContact, bool IsAuthorisedContact, string[]? Roles);
+    string WorkClassification, bool IsMainContact, bool IsAuthorisedContact, string[]? Roles, JsonElement Department = default);
+public sealed record MainAccountRequest(Guid Version, Guid? AssociationId);
 public sealed record EndAccountContactRequest(Guid Version, DateTime EndDate, string Reason);

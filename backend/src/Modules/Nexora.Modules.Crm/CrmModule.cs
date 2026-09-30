@@ -52,6 +52,7 @@ public static partial class CrmModule
         api.MapGet("/directory", (IIdentityDirectory directory, CancellationToken ct) => directory.GetAsync(ct));
         api.MapAccountContacts();
         MapCompletion(api);
+        MapProfiles(api);
         Automations.Map<CrmDbContext>(api, "crm.manage", kind => kind is "contact" or "account" ? typeof(CrmRecord) : null, (db, kind, ct) => db.AutomationFieldsAsync(kind, ct));
         // Legacy query-string tokens did not enforce current user permissions.
         // Fail closed until the assistant has a scoped, revocable integration identity.
@@ -227,6 +228,8 @@ public static partial class CrmModule
         return Results.Ok(new
         {
             record,
+            contactDetails = record.Kind == "contact" ? await RecordProfileFields.ContactAsync(db, id, ct) : null,
+            accountDetails = record.Kind == "account" ? await RecordProfileFields.AccountAsync(db, id, ct) : null,
             addresses = await db.Set<Address>().Where(x => x.RecordId == id).ToListAsync(ct),
             communications = await db.Set<CommunicationMethod>().Where(x => x.RecordId == id).ToListAsync(ct),
             relationships = await (from link in db.Set<RecordRelationship>() join target in db.Records on link.TargetRecordId equals target.Id where link.RecordId == id select new { link.Id, link.Label, link.TargetRecordId, target.Name }).ToListAsync(ct),

@@ -74,6 +74,10 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAtUtc")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Department")
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
                     b.Property<DateTime?>("EndDate")
                         .HasColumnType("datetime2");
 
@@ -82,6 +86,9 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                         .HasColumnType("nvarchar(500)");
 
                     b.Property<bool>("IsAuthorisedContact")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsMainAccount")
                         .HasColumnType("bit");
 
                     b.Property<bool>("IsMainContact")
@@ -110,6 +117,10 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "ContactId")
+                        .IsUnique()
+                        .HasFilter("[IsMainAccount] = 1 AND [EndDate] IS NULL");
 
                     b.HasIndex("TenantId", "AccountId", "ContactId")
                         .IsUnique()
@@ -145,6 +156,39 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                         .IsUnique();
 
                     b.ToTable("AccountContactRoles", "crm");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.AccountProfile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateOnly?>("DateBusinessCommenced")
+                        .HasColumnType("date");
+
+                    b.Property<string>("FullName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("RecordId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("TradingAs")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "RecordId")
+                        .IsUnique();
+
+                    b.ToTable("AccountProfiles", "crm");
                 });
 
             modelBuilder.Entity("Nexora.Modules.Crm.Domain.Activity", b =>
@@ -276,6 +320,52 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                     b.HasIndex("TenantId", "RecordId");
 
                     b.ToTable("CommunicationMethods", "crm");
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.ContactProfile", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("FirstName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("LastName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MiddleName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PostNominal")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PreviousLastName")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<Guid>("RecordId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "RecordId")
+                        .IsUnique();
+
+                    b.ToTable("ContactProfiles", "crm");
                 });
 
             modelBuilder.Entity("Nexora.Modules.Crm.Domain.CrmRecord", b =>
@@ -638,6 +728,16 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.AccountProfile", b =>
+                {
+                    b.HasOne("Nexora.Modules.Crm.Domain.CrmRecord", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "RecordId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Nexora.Modules.Crm.Domain.Activity", b =>
                 {
                     b.HasOne("Nexora.Modules.Crm.Domain.CrmRecord", null)
@@ -659,6 +759,16 @@ namespace Nexora.Modules.Crm.Infrastructure.Migrations
                 });
 
             modelBuilder.Entity("Nexora.Modules.Crm.Domain.CommunicationMethod", b =>
+                {
+                    b.HasOne("Nexora.Modules.Crm.Domain.CrmRecord", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "RecordId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Crm.Domain.ContactProfile", b =>
                 {
                     b.HasOne("Nexora.Modules.Crm.Domain.CrmRecord", null)
                         .WithMany()

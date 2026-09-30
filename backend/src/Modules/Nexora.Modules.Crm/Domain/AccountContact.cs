@@ -5,8 +5,10 @@ public sealed class AccountContact : TenantRow
 {
     public Guid AccountId { get; set; }
     public Guid ContactId { get; set; }
+    public string? Department { get; set; }
     public string? JobTitle { get; set; }
     public string WorkClassification { get; set; } = "unknown";
+    public bool IsMainAccount { get; set; }
     public bool IsMainContact { get; set; }
     public bool IsAuthorisedContact { get; set; }
     public DateTime StartDate { get; set; }

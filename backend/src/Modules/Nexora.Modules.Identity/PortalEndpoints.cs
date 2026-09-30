@@ -125,11 +125,11 @@ internal static partial class PortalEndpoints
         });
         own.MapPut("/profile", async (JsonElement body, HttpContext http, IMemberProfileDirectory directory, CancellationToken ct) =>
         {
-            if (body.ValueKind != JsonValueKind.Object || body.EnumerateObject().Count() != (body.TryGetProperty("postalAddress", out _) ? 3 : 2) ||
-                body.EnumerateObject().Any(p => p.Name is not ("name" or "version" or "postalAddress")) ||
+            if (body.ValueKind != JsonValueKind.Object || body.EnumerateObject().Count() != (2 + (body.TryGetProperty("postalAddress", out _) ? 1 : 0) + (body.TryGetProperty("contactDetails", out _) ? 1 : 0)) ||
+                body.EnumerateObject().Any(p => p.Name is not ("name" or "version" or "postalAddress" or "contactDetails")) ||
                 !body.TryGetProperty("name", out var nameValue) || nameValue.ValueKind != JsonValueKind.String ||
                 !body.TryGetProperty("version", out var versionValue) || versionValue.ValueKind != JsonValueKind.String || !versionValue.TryGetGuid(out var version))
-                return Results.Problem(statusCode: 400, title: "Only name, postalAddress and version are accepted.");
+                return Results.Problem(statusCode: 400, title: "Only name, postalAddress, contactDetails and version are accepted.");
             var name = nameValue.GetString()?.Trim();
             if (string.IsNullOrEmpty(name) || name.Length > 160) return Results.Problem(statusCode: 400, title: "Enter a name between 1 and 160 characters.");
             var updateAddress = body.TryGetProperty("postalAddress", out var address);
@@ -145,7 +145,18 @@ internal static partial class PortalEndpoints
                     return Results.Problem(statusCode: 400, title: "Enter an address line, city and country.");
                 postal = new(Value("line1"), Value("line2"), Value("city"), Value("region"), Value("postalCode"), Value("country"));
             }
-            var result = await directory.UpdateNameAsync((Guid)http.Items["portal_contact"]!, name, version, ct, postal, updateAddress);
+            var updateDetails = body.TryGetProperty("contactDetails", out var details);
+            ContactDetails? contactDetails = null;
+            if (updateDetails && details.ValueKind != JsonValueKind.Null)
+            {
+                string[] keys = ["title", "firstName", "middleName", "lastName", "previousLastName", "postNominal"];
+                if (details.ValueKind != JsonValueKind.Object || details.EnumerateObject().Count() != keys.Length ||
+                    keys.Any(k => !details.TryGetProperty(k, out var v) || v.ValueKind is not (JsonValueKind.String or JsonValueKind.Null)))
+                    return Results.Problem(statusCode: 400, title: "Provide only the six personal name fields.");
+                string? Value(string key) => details.GetProperty(key).GetString();
+                contactDetails = new(Value("title"), Value("firstName"), Value("middleName"), Value("lastName"), Value("previousLastName"), Value("postNominal"));
+            }
+            var result = await directory.UpdateNameAsync((Guid)http.Items["portal_contact"]!, name, version, ct, postal, updateAddress, contactDetails, updateDetails);
             return result == null ? Results.Unauthorized() : Results.Ok(result);
         });
         // Logout still works after revocation; it only removes this browser's portal cookie.

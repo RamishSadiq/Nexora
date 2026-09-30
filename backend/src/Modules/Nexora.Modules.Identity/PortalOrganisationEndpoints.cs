@@ -43,6 +43,16 @@ internal static partial class PortalEndpoints
             if ((!HttpMethods.IsGet(http.Request.Method) || http.Request.Path.Value!.Contains("/drafts")) && !g.CanSubmitApplications) return Results.StatusCode(403);
             return await next(context);
         });
+        company.MapGet("/association", async (Guid accountId, HttpContext http, IMemberProfileDirectory directory, CancellationToken ct) =>
+        {
+            var association = await directory.ReadAssociationAsync(accountId, (Guid)http.Items["portal_contact"]!, ct);
+            return association == null ? Results.NotFound() : Results.Ok(association);
+        });
+        company.MapGet("/profile", async (Guid accountId, IMemberProfileDirectory directory, CancellationToken ct) =>
+        {
+            var profile = await directory.ReadOrganisationAsync(accountId, ct);
+            return profile == null ? Results.NotFound() : Results.Ok(profile);
+        });
         company.MapGet("/application-products", async (IMemberApplicationService service, CancellationToken ct) => Results.Ok(await service.ProductsAsync(ct, true)));
         MapEvidence(company);
         company.MapGet("/memberships", async (Guid accountId, IMemberMembershipDirectory directory, CancellationToken ct) => Results.Ok(await directory.ReadOrganisationAsync(accountId, ct)));

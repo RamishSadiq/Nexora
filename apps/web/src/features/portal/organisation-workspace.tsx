@@ -2,11 +2,13 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import type { Route } from "next";
+import type { AccountDetails } from "../shared/profile-fields";
 import { portal } from "./api";
 import { ApplicationWorkspace } from "./application-workspace";
 import { portalDate } from "./application-receipt";
 
 type Organisation = { id: string; name: string; canSubmitApplications: boolean };
+type OrganisationProfile = { name: string; accountDetails: AccountDetails | null; websites: string[] };
 type Overview = { memberships: { id: string; product: string; status: string; startsAtUtc: string; endsAtUtc: string }[]; applications: { id: string; product: string; status: string }[] };
 export function OrganisationWorkspace() {
   const [organisations, setOrganisations] = useState<Organisation[] | null>(null);
@@ -29,18 +31,27 @@ export function OrganisationWorkspace() {
   </section>;
 }
 function OrganisationDetails({ organisation }: { organisation: Organisation }) {
+  const [association, setAssociation] = useState<{ department: string | null; jobTitle: string | null; isMainAccount: boolean } | null>(null);
+  const [profile, setProfile] = useState<OrganisationProfile | null>(null);
   const [overview, setOverview] = useState<Overview | null>(null);
   const [error, setError] = useState("");
   const [reload, setReload] = useState(0);
   useEffect(() => {
     let active = true;
-    portal<Overview>(`/organisations/${organisation.id}/memberships`).then(value => { if (active) setOverview(value); }).catch(e => { if (active) setError(e.message); });
+    Promise.all([portal<Overview>(`/organisations/${organisation.id}/memberships`), portal<OrganisationProfile>(`/organisations/${organisation.id}/profile`), portal<{ department: string | null; jobTitle: string | null; isMainAccount: boolean }>(`/organisations/${organisation.id}/association`)]).then(([value, details, link]) => { if (active) { setOverview(value); setProfile(details); setAssociation(link); } }).catch(e => { if (active) setError(e.message); });
     return () => { active = false; };
   }, [organisation.id, reload]);
   return <div className="space-y-5">
     <h3 className="text-xl font-semibold">{organisation.name}</h3>
     <button className="text-sm underline" onClick={() => { setOverview(null); setError(""); setReload(n => n + 1); }}>Refresh company status</button>
     {error ? <p role="alert" className="text-red-800">{error}</p> : !overview ? <p role="status">Loading company status…</p> : <>
+      {profile && <section aria-label="Organisation details" className="rounded-lg border border-slate-200 p-4"><h4 className="font-semibold">Organisation details</h4><dl className="mt-3 space-y-2">
+        <div><dt className="text-sm text-slate-600">Full organisation name</dt><dd>{profile.accountDetails?.fullName || "Not recorded"}</dd></div>
+        <div><dt className="text-sm text-slate-600">Trading as</dt><dd>{profile.accountDetails?.tradingAs || "Not recorded"}</dd></div>
+        <div><dt className="text-sm text-slate-600">Business commencement date</dt><dd>{profile.accountDetails?.dateBusinessCommenced || "Not recorded"}</dd></div>
+        <div><dt className="text-sm text-slate-600">Websites</dt><dd>{profile.websites.length ? profile.websites.map(url => <p key={url}>{url}</p>) : "Not recorded"}</dd></div>
+      </dl><p className="mt-3 text-sm text-slate-600">Contact the membership team to update these details.</p></section>}
+      {association && <section aria-label="Your organisation relationship" className="rounded-lg border border-slate-200 p-4"><h4 className="font-semibold">Your organisation relationship</h4>{association.isMainAccount && <p className="mt-2 font-semibold">Your main account</p>}<dl className="mt-3 space-y-2"><div><dt>Department</dt><dd>{association.department || "Not recorded"}</dd></div><div><dt>Job title</dt><dd>{association.jobTitle || "Not recorded"}</dd></div></dl><p className="mt-3 text-sm text-slate-600">Contact the membership team to update your relationship details.</p></section>}
       <h4 className="font-semibold">Company memberships</h4>
       {!overview.memberships.length && <p>No company memberships.</p>}
       {overview.memberships.map(m => <article key={m.id} className="rounded-lg bg-[#eef3df] p-4"><p className="font-semibold">{m.product}</p><p className="capitalize">{m.status}</p><p className="text-sm">{portalDate(m.startsAtUtc)} – {portalDate(m.endsAtUtc)}</p></article>)}

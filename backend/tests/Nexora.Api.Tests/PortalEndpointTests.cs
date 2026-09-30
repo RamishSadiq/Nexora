@@ -397,7 +397,8 @@ public sealed partial class PortalEndpointTests
         Assert.Equal(HttpStatusCode.Unauthorized, (await member.GetAsync("/api/v1/crm/records")).StatusCode);
         Assert.Equal(HttpStatusCode.Unauthorized, (await member.GetAsync("/api/v1/auth/session")).StatusCode);
         var profile = await Json(await member.GetAsync("/api/v1/portal/profile"));
-        Assert.Equal(3, profile.AsObject().Count); Assert.Null(profile["tenantId"]); Assert.Null(profile["contactId"]);
+        Assert.Equal(new[] { "contactDetails", "name", "postalAddress", "version" }, profile.AsObject().Select(x => x.Key).Order().ToArray());
+        Assert.Null(profile["tenantId"]); Assert.Null(profile["contactId"]);
         var version = Version(profile);
         Assert.Equal(HttpStatusCode.BadRequest, (await member.PutAsJsonAsync("/api/v1/portal/profile", new { name = "Unsafe", version })).StatusCode);
         Assert.Equal(HttpStatusCode.BadRequest, (await PortalSend(member, "/profile", HttpMethod.Put, new { name = "Unsafe", version, contactId = Guid.NewGuid() })).StatusCode);

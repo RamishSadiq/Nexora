@@ -140,14 +140,19 @@ public sealed class AccountContactTests
             var contact = new CrmRecord { TenantId = account.TenantId, Kind = "contact", Name = "Person" };
             db.AddRange(account, contact); await db.SaveChangesAsync();
             AccountContact NewLink() => new() { TenantId = account.TenantId, AccountId = account.Id, ContactId = contact.Id, StartDate = DateTime.UtcNow.Date };
-            var first = NewLink(); db.Add(first); await db.SaveChangesAsync();
+            var first = NewLink(); first.IsMainAccount = true; db.Add(first); await db.SaveChangesAsync();
+            var otherAccount = new CrmRecord { TenantId = account.TenantId, Kind = "account", Name = "Other company" };
+            db.Add(otherAccount); await db.SaveChangesAsync();
+            db.Add(new AccountContact { TenantId = account.TenantId, AccountId = otherAccount.Id, ContactId = contact.Id, StartDate = DateTime.UtcNow.Date, IsMainAccount = true });
+            await Assert.ThrowsAsync<DbUpdateException>(() => db.SaveChangesAsync());
+            db.ChangeTracker.Clear();
             db.Add(NewLink());
             await Assert.ThrowsAsync<DbUpdateException>(() => db.SaveChangesAsync());
             db.ChangeTracker.Clear();
             var stored = await db.Set<AccountContact>().SingleAsync();
             stored.EndDate = DateTime.UtcNow.Date; stored.EndReason = "Ended";
             await db.SaveChangesAsync();
-            db.Add(NewLink()); await db.SaveChangesAsync();
+            var next = NewLink(); next.IsMainAccount = true; db.Add(next); await db.SaveChangesAsync();
             Assert.Equal(2, await db.Set<AccountContact>().CountAsync());
             Assert.Single(await db.Set<AccountContact>().Where(x => x.EndDate == null).ToListAsync());
         }

@@ -1,0 +1,83 @@
+import { test, expect } from "@playwright/test";
+import { randomBytes } from "node:crypto";
+
+test("CRM name and company fields are shared with the scoped member portal", async ({ page, browser }) => {
+  const staff = await browser.newContext();
+  try {
+    const request = staff.request;
+    async function send(path: string, data: unknown, method = "POST") {
+      const csrf = await (await request.get("/api/v1/auth/csrf")).json();
+      const response = await request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": csrf.token } });
+      expect(response.ok(), await response.text()).toBeTruthy();
+      return response.status() === 204 ? null : response.json();
+    }
+    await send("/api/v1/auth/login", { email: "admin@nexora.local", password: process.env.NEXORA_BROWSER_PASSWORD, rememberMe: false });
+    const contact = await send("/api/v1/crm/records", { kind: "contact", name: "Legacy display name", status: "active" });
+    const account = await send("/api/v1/crm/records", { kind: "account", name: "Structured company", status: "active" });
+    const staffPage = await staff.newPage();
+    await staffPage.goto(`/relationships/contacts?record=${contact.id}`);
+    await expect(staffPage.getByLabel("First name", { exact: true })).toHaveValue("");
+    await expect(staffPage.getByLabel("First name", { exact: true })).toBeDisabled();
+    await staffPage.goto(`/relationships/contacts?search=${encodeURIComponent(contact.name)}`);
+    await staffPage.getByRole("button", { name: `Edit ${contact.name}`, exact: true }).click();
+    await staffPage.getByLabel("Title", { exact: true }).fill("Dr");
+    await staffPage.getByLabel("First name", { exact: true }).fill("Alex");
+    await staffPage.getByLabel("Last name", { exact: true }).fill("Smith");
+    await staffPage.getByLabel("Post-nominal letters", { exact: true }).fill("PhD");
+    await staffPage.getByRole("button", { name: "Save name details", exact: true }).click();
+    await expect.poll(async () => (await (await request.get(`/api/v1/crm/records/${contact.id}`)).json()).contactDetails?.firstName).toBe("Alex");
+    await staffPage.reload();
+    await expect(staffPage.getByLabel("First name", { exact: true })).toHaveValue("Alex");
+    await expect(staffPage.getByRole("heading", { name: "Legacy display name", exact: true })).toBeVisible();
+
+    await staffPage.goto(`/relationships/accounts?search=${encodeURIComponent(account.name)}`);
+    await staffPage.getByRole("button", { name: `Edit ${account.name}`, exact: true }).click();
+    await staffPage.getByLabel("Full organisation name", { exact: true }).fill("Structured Company Limited");
+    await staffPage.getByLabel("Trading as", { exact: true }).fill("Structured Trading");
+    await staffPage.getByLabel("Business commencement date", { exact: true }).fill("2001-02-03");
+    await staffPage.getByRole("button", { name: "Save organisation details", exact: true }).click();
+    await expect.poll(async () => (await (await request.get(`/api/v1/crm/records/${account.id}`)).json()).accountDetails?.tradingAs).toBe("Structured Trading");
+    await send(`/api/v1/crm/records/${account.id}/communications`, { kind: "website", value: "https://example.test", consent: "unknown" });
+    await send(`/api/v1/crm/accounts/${account.id}/contacts`, { contactId: contact.id, startDate: "2026-01-01", department: "Finance", workClassification: "unknown", roles: [] });
+    await staffPage.reload();
+    await expect(staffPage.getByText("Department: Finance", { exact: false })).toBeVisible();
+    await staffPage.goto(`/relationships/accounts?search=${encodeURIComponent(account.name)}`);
+    await staffPage.getByRole("button", { name: `Edit ${account.name}`, exact: true }).click();
+    await staffPage.getByRole("button", { name: "Edit association", exact: true }).click();
+    const associationForm = staffPage.locator("form").filter({ has: staffPage.getByRole("button", { name: "Save", exact: true }) });
+    await associationForm.getByLabel("Department", { exact: true }).fill("Operations");
+    await associationForm.getByRole("button", { name: "Save", exact: true }).click();
+    await expect(staffPage.getByText("Department: Operations", { exact: false })).toBeVisible();
+    await staffPage.getByRole("button", { name: "Set as main account", exact: true }).click();
+    await expect(staffPage.getByRole("button", { name: "Clear main account", exact: true })).toBeVisible();
+    const password = `Member!${randomBytes(16).toString("hex")}`;
+    const access = await send("/api/v1/admin/portal-access/local-member", { contactId: contact.id, email: "profile.member@nexora.test", password });
+    await send(`/api/v1/admin/portal-access/${access.id}/organisations`, { accountId: account.id, canSubmitApplications: false });
+    await page.goto("/portal/profile");
+    await page.getByLabel("Email", { exact: true }).fill("profile.member@nexora.test");
+    await page.getByLabel("Password", { exact: true }).fill(password);
+    await page.getByRole("button", { name: "Sign in", exact: true }).click();
+    await expect(page.getByLabel("First name", { exact: true })).toHaveValue("Alex");
+    await expect(page.getByLabel("Display name", { exact: true })).toHaveValue("Legacy display name");
+    await page.getByLabel("Middle name", { exact: true }).fill("Morgan");
+    await page.getByRole("button", { name: "Save profile", exact: true }).click();
+    await expect(page.getByText("Your profile has been saved.", { exact: true })).toBeVisible();
+    await page.reload();
+    await expect(page.getByLabel("Middle name", { exact: true })).toHaveValue("Morgan");
+    await staffPage.goto(`/relationships/contacts?record=${contact.id}`);
+    await expect(staffPage.getByLabel("Middle name", { exact: true })).toHaveValue("Morgan");
+    await page.getByRole("link", { name: "My organisations", exact: true }).click();
+    await page.getByLabel("Organisation", { exact: true }).selectOption(account.id);
+    const company = page.getByRole("region", { name: "Organisation details", exact: true });
+    await expect(company.getByText("Structured Company Limited", { exact: true })).toBeVisible();
+    await expect(company.getByText("2001-02-03", { exact: true })).toBeVisible();
+    await expect(company.getByText("https://example.test", { exact: true })).toBeVisible();
+    await expect(company.getByRole("textbox")).toHaveCount(0);
+    const relationship = page.getByRole("region", { name: "Your organisation relationship", exact: true });
+    await expect(relationship.getByText("Operations", { exact: true })).toBeVisible();
+    await expect(relationship.getByText("Your main account", { exact: true })).toBeVisible();
+    await expect(relationship.getByRole("textbox")).toHaveCount(0);
+    await page.setViewportSize({ width: 390, height: 844 });
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
+  } finally { await staff.close(); }
+});

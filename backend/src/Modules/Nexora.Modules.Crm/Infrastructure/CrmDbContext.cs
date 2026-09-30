@@ -16,11 +16,17 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
         b.HasDefaultSchema("crm");
         Configure<CrmRecord>(b, "Records");
         Configure<Address>(b, "Addresses");
+        Configure<ContactProfile>(b, "ContactProfiles");
+        Configure<AccountProfile>(b, "AccountProfiles");
+        Child<ContactProfile>(b); Child<AccountProfile>(b);
+        b.Entity<ContactProfile>().HasIndex(x => new { x.TenantId, x.RecordId }).IsUnique();
+        b.Entity<AccountProfile>().HasIndex(x => new { x.TenantId, x.RecordId }).IsUnique();
         Configure<CommunicationMethod>(b, "CommunicationMethods");
         Configure<RecordRelationship>(b, "Relationships");
         Configure<AccountContact>(b, "AccountContacts");
         Configure<AccountContactRole>(b, "AccountContactRoles");
         b.Entity<AccountContact>().Property(x => x.Version).IsConcurrencyToken();
+        b.Entity<AccountContact>().Property(x => x.Department).HasMaxLength(160);
         b.Entity<AccountContact>().Property(x => x.JobTitle).HasMaxLength(160);
         b.Entity<AccountContact>().Property(x => x.WorkClassification).HasMaxLength(30);
         b.Entity<AccountContact>().HasOne<CrmRecord>().WithMany()
@@ -29,6 +35,8 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
             .HasForeignKey(x => new { x.TenantId, x.ContactId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         b.Entity<AccountContact>().HasIndex(x => new { x.TenantId, x.AccountId, x.ContactId }).IsUnique().HasFilter("EndDate IS NULL");
         b.Entity<AccountContact>().HasIndex(x => new { x.TenantId, x.ContactId, x.EndDate });
+        b.Entity<AccountContact>().HasIndex(x => new { x.TenantId, x.ContactId }).IsUnique()
+            .HasFilter("[IsMainAccount] = 1 AND [EndDate] IS NULL");
         b.Entity<AccountContactRole>().Property(x => x.RoleCode).HasMaxLength(50);
         b.Entity<AccountContactRole>().HasOne<AccountContact>().WithMany()
             .HasForeignKey(x => new { x.TenantId, x.AssociationId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
@@ -120,6 +128,13 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
             if (e.Entity is SavedView view && view.UserId != UserId) throw new CrmBoundaryException();
             if (e.Entity is Activity && e.State != EntityState.Added) throw new CrmBoundaryException();
             if (e.Entity is AccountContact && e.State == EntityState.Deleted) throw new CrmBoundaryException();
+            if (e.Entity is ContactProfile or AccountProfile)
+            {
+                var profile = (RecordChild)e.Entity;
+                var kind = profile is ContactProfile ? "contact" : "account";
+                if (!await Records.AnyAsync(x => x.Id == profile.RecordId && x.Kind == kind, ct)) throw new CrmBoundaryException();
+                if (e.State != EntityState.Added && e.Property(nameof(RecordChild.RecordId)).IsModified) throw new CrmBoundaryException();
+            }
             if (e.State != EntityState.Added)
             {
                 var stored = await e.GetDatabaseValuesAsync(ct);
@@ -136,6 +151,8 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
             {
                 if (!await Records.AnyAsync(x => x.Id == link.AccountId && x.Kind == "account", ct) ||
                     !await Records.AnyAsync(x => x.Id == link.ContactId && x.Kind == "contact", ct)) throw new CrmBoundaryException();
+                if (link.Department?.Length > 160 || link.Department?.Any(char.IsControl) == true)
+                    throw new System.ComponentModel.DataAnnotations.ValidationException("Department must be at most 160 characters without control characters.");
                 if (!AccountContactChoices.WorkClassifications.Contains(link.WorkClassification) ||
                     link.StartDate == default || link.StartDate.TimeOfDay != TimeSpan.Zero || link.StartDate > DateTime.UtcNow.Date ||
                     (link.EndDate.HasValue && (link.EndDate < link.StartDate || link.EndDate > DateTime.UtcNow.Date || link.EndDate.Value.TimeOfDay != TimeSpan.Zero)))
