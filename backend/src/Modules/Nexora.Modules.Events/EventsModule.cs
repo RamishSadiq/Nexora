@@ -12,12 +12,15 @@ using Nexora.Modules.Events.Domain;
 using Nexora.Modules.Events.Infrastructure;
 using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
 namespace Nexora.Modules.Events;
-public static class EventsModule
+public static partial class EventsModule
 {
     public static IServiceCollection AddNexoraEvents(this IServiceCollection services,IConfiguration config)
     {services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Events.Infrastructure.CrmContextProvider>();
-        services.AddDbContext<EventsDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","events")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("offerings","Events and learning","events.read",sp.GetRequiredService<EventsDbContext>().Set<Offering>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
-        return services;}
+        services.AddDbContext<EventsDbContext>((sp,o)=>o.AddInterceptors(sp.GetRequiredService<WorkflowCaptureInterceptor>()).UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","events")));services.AddScoped<IReportDataset>(sp=>new ReportDataset("offerings","Events and learning","events.read",sp.GetRequiredService<EventsDbContext>().Set<Offering>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+
+        services.AddWorkflowEntity<EventsDbContext,Offering>("events","Events and learning","events.read","Name",null,null,null);
+        services.AddWorkflowEntity<EventsDbContext,Enrollment>("enrollments","Event registrations","events.read","ContactName",null,null,null,new WorkflowRelation("event","events","offeringId"),new WorkflowRelation("contact","contacts","contactId"));
+        AddWorkflowCommands(services);return services;}
     public static IEndpointRouteBuilder MapNexoraEvents(this IEndpointRouteBuilder routes)
     {
         var api=routes.Module("events").WithAttributes<EventsDbContext>("events.manage", typeof(Offering), typeof(EventSession), typeof(Enrollment), typeof(ExamResult));
@@ -36,9 +39,7 @@ public static class EventsModule
         {var offering=await OfferingAsync(db,id,ct);Check(offering.Status=="published","The offering is cancelled.");Check(r.StartsAtUtc>=offering.StartsAtUtc&&r.EndsAtUtc<=offering.EndsAtUtc&&r.StartsAtUtc<r.EndsAtUtc,"Session times must fit the offering.");var row=new EventSession{TenantId=who.TenantId!.Value,OfferingId=id,Name=Text(r.Name),StartsAtUtc=r.StartsAtUtc,EndsAtUtc=r.EndsAtUtc};db.Add(row);Touch(offering);History(db,who,http,id,null,"session.created",r.Name);await db.SaveChangesAsync(ct);return Results.Ok(row);}).RequireAuthorization("events.manage");
         api.MapPost("/offerings/{id:guid}/enrollments",async(Guid id,EnrollmentRequest r,EventsDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
         {
-            var offering=await OfferingAsync(db,id,ct);Check(offering.Status=="published","The offering is cancelled.");var contact=await crm.FindActiveAsync(r.ContactId,ct)??throw new KeyNotFoundException();Check(contact.Kind=="contact","Choose a Contact.");
-            var status=offering.Kind=="course"?"submitted":await HasSeat(db,id,offering.Capacity,ct)?"registered":"waitlisted";
-            var row=new Enrollment{TenantId=who.TenantId!.Value,OfferingId=id,ContactId=contact.Id,ContactName=contact.Name,Status=status};db.Add(row);Touch(offering);History(db,who,http,id,row.Id,"enrollment."+status,"Created booking/application");await db.SaveChangesAsync(ct);return Results.Ok(row);
+            var row=await Enroll(id,r.ContactId,db,crm,who,http,null,ct);await db.SaveChangesAsync(ct);return Results.Ok(row);
         }).RequireAuthorization("events.manage");
         api.MapPost("/enrollments/{id:guid}/{action}",async(Guid id,string action,EnrollmentChange r,EventsDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)=>
         {
@@ -61,6 +62,9 @@ public static class EventsModule
         {var offering=await OfferingAsync(db,id,ct);if(offering.Version!=r.Version)return Conflict();Check(offering.Status=="published","Already cancelled.");var reason=Text(r.Reason,500);offering.Status="cancelled";foreach(var row in await db.Set<Enrollment>().Where(x=>x.OfferingId==id&&(x.Status=="registered"||x.Status=="waitlisted"||x.Status=="submitted")).ToListAsync(ct)){row.Status="cancelled";History(db,who,http,id,row.Id,"enrollment.cancelled",reason);}History(db,who,http,id,null,"offering.cancelled",reason);await db.SaveChangesAsync(ct);return Results.Ok(offering);}).RequireAuthorization("events.manage");
         return routes;
     }
+    private static async Task<Enrollment> Enroll(Guid id,Guid contactId,EventsDbContext db,ICrmDirectory crm,IRequestIdentity who,HttpContext http,Guid? enrollmentId,CancellationToken ct){            var offering=await OfferingAsync(db,id,ct);Check(offering.Status=="published","The offering is cancelled.");var contact=await crm.FindActiveAsync(contactId,ct)??throw new KeyNotFoundException();Check(contact.Kind=="contact","Choose a Contact.");
+            var status=offering.Kind=="course"?"submitted":await HasSeat(db,id,offering.Capacity,ct)?"registered":"waitlisted";
+            var row=new Enrollment{Id=enrollmentId??Guid.NewGuid(),TenantId=who.TenantId!.Value,OfferingId=id,ContactId=contact.Id,ContactName=contact.Name,Status=status};db.Add(row);Touch(offering);History(db,who,http,id,row.Id,"enrollment."+status,"Created booking/application");return row;}
     private static async Task<Offering> OfferingAsync(EventsDbContext db,Guid id,CancellationToken ct)=>await db.Set<Offering>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();
     private static async Task<bool> HasSeat(EventsDbContext db,Guid id,int capacity,CancellationToken ct)=>await db.Set<Enrollment>().CountAsync(x=>x.OfferingId==id&&(x.Status=="registered"||x.Status=="attended"),ct)<capacity;
     private static void Touch(Offering row){row.Version=Guid.NewGuid();row.UpdatedAtUtc=DateTime.UtcNow;}

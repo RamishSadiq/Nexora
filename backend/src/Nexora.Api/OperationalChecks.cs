@@ -1,3 +1,4 @@
+using Nexora.Modules.Workflow;
 using Nexora.Modules.Content;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
@@ -33,7 +34,8 @@ public static class OperationalChecks
     services.GetRequiredService<EventsDbContext>(),
     services.GetRequiredService<FinanceDbContext>(),
     services.GetRequiredService<EngagementDbContext>(),
-    services.GetRequiredService<WorkDbContext>()
+    services.GetRequiredService<WorkDbContext>(),
+    services.GetRequiredService<WorkflowDbContext>()
    ];
    return CheckDatabasesAsync(databases, app.Logger, ct, TimeSpan.FromSeconds(30));
   });

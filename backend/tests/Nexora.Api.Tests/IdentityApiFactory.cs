@@ -1,3 +1,5 @@
+using Nexora.BuildingBlocks.Persistence;
+using Nexora.Modules.Workflow;
 using Nexora.Modules.Content;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Data.Sqlite;
@@ -22,6 +24,7 @@ namespace Nexora.Api.Tests;
 
 public sealed class IdentityApiFactory : WebApplicationFactory<Program>
 {
+    private readonly SqliteConnection _workflowConnection = new("Data Source=:memory:");
     private readonly SqliteConnection _contentConnection = new("Data Source=:memory:");
     private readonly SqliteConnection _engagementConnection = new("Data Source=:memory:");
     private readonly SqliteConnection _workConnection = new("Data Source=:memory:");
@@ -35,11 +38,13 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
     public const string AdminPassword = "Nexora-Test-2026!";
 
     private readonly Nexora.BuildingBlocks.Documents.IDocumentScanner? _scanner;
+    private readonly IWorkflowTransport? _transport;
     public IdentityApiFactory() : this(null) { }
-    internal IdentityApiFactory(Nexora.BuildingBlocks.Documents.IDocumentScanner? scanner)
+    internal IdentityApiFactory(Nexora.BuildingBlocks.Documents.IDocumentScanner? scanner,IWorkflowTransport? transport=null)
     {
-        _scanner = scanner;
+        _scanner = scanner;_transport=transport;
         _connection.Open();
+        _workflowConnection.Open();
         _contentConnection.Open();
         _crmConnection.Open();
         _membershipConnection.Open();
@@ -55,28 +60,34 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
         builder.UseEnvironment("Development");
         builder.ConfigureTestServices(services =>
         {
+            if(_transport!=null){services.RemoveAll<IWorkflowTransport>();services.AddSingleton(_transport);}
             if (_scanner != null) services.AddSingleton(_scanner);
+            var workflowWorker=services.SingleOrDefault(d=>d.ServiceType==typeof(Microsoft.Extensions.Hosting.IHostedService)&&d.ImplementationType==typeof(WorkflowWorker));
+            if(workflowWorker!=null)services.Remove(workflowWorker);
+            services.RemoveAll<DbContextOptions<WorkflowDbContext>>();
+            services.RemoveAll<IDbContextOptionsConfiguration<WorkflowDbContext>>();
+            services.AddDbContext<WorkflowDbContext>(options=>options.UseSqlite(_workflowConnection));
             services.RemoveAll<DbContextOptions<ContentDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<ContentDbContext>>();
-            services.AddDbContext<ContentDbContext>(options => options.UseSqlite(_contentConnection));
+            services.AddDbContext<ContentDbContext>((sp,options) => options.AddInterceptors(sp.GetRequiredService<WorkflowCaptureInterceptor>()).UseSqlite(_contentConnection));
             services.RemoveAll<DbContextOptions<EngagementDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<EngagementDbContext>>();
-            services.AddDbContext<EngagementDbContext>(options => options.UseSqlite(_engagementConnection));
+            services.AddDbContext<EngagementDbContext>((sp,options) => options.UseSqlite(_engagementConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<WorkDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<WorkDbContext>>();
-            services.AddDbContext<WorkDbContext>(options => options.UseSqlite(_workConnection));
+            services.AddDbContext<WorkDbContext>((sp,options) => options.UseSqlite(_workConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<FinanceDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<FinanceDbContext>>();
-            services.AddDbContext<FinanceDbContext>(options => options.UseSqlite(_financeConnection));
+            services.AddDbContext<FinanceDbContext>((sp,options) => options.UseSqlite(_financeConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<EventsDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<EventsDbContext>>();
-            services.AddDbContext<EventsDbContext>(options => options.UseSqlite(_eventsConnection));
+            services.AddDbContext<EventsDbContext>((sp,options) => options.UseSqlite(_eventsConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<MembershipDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<MembershipDbContext>>();
-            services.AddDbContext<MembershipDbContext>(options => options.UseSqlite(_membershipConnection));
+            services.AddDbContext<MembershipDbContext>((sp,options) => options.UseSqlite(_membershipConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<CrmDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<CrmDbContext>>();
-            services.AddDbContext<CrmDbContext>(options => options.UseSqlite(_crmConnection));
+            services.AddDbContext<CrmDbContext>((sp,options) => options.UseSqlite(_crmConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<NexoraIdentityDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<NexoraIdentityDbContext>>();
             services.AddDbContext<NexoraIdentityDbContext>(options =>
@@ -87,12 +98,13 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
     protected override void Dispose(bool disposing)
     {
         base.Dispose(disposing);
-        if (disposing) { _contentConnection.Dispose(); _connection.Dispose(); _crmConnection.Dispose(); _membershipConnection.Dispose(); _eventsConnection.Dispose(); _financeConnection.Dispose(); _workConnection.Dispose(); _engagementConnection.Dispose(); }
+        if (disposing) { _workflowConnection.Dispose(); _contentConnection.Dispose(); _connection.Dispose(); _crmConnection.Dispose(); _membershipConnection.Dispose(); _eventsConnection.Dispose(); _financeConnection.Dispose(); _workConnection.Dispose(); _engagementConnection.Dispose(); }
     }
 
     private async Task SeedAsync()
     {
         await using var scope = Services.CreateAsyncScope();
+        await scope.ServiceProvider.GetRequiredService<WorkflowDbContext>().Database.EnsureCreatedAsync();
         await scope.ServiceProvider.GetRequiredService<CrmDbContext>().Database.EnsureCreatedAsync();
         await scope.ServiceProvider.GetRequiredService<ContentDbContext>().Database.EnsureCreatedAsync();
         await scope.ServiceProvider.GetRequiredService<MembershipDbContext>().Database.EnsureCreatedAsync();

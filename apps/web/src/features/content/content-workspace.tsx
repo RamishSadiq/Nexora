@@ -1,6 +1,8 @@
 "use client";
+import { EntityHeading } from "@/components/ui/entity-heading";
 
 import { useEffect, useRef, useState } from "react";
+import { useEntityListing } from "../shared/entity-listing-controls";
 import { moduleApi } from "../shared/module-api";
 import { CmsSettings, PagePublishingSettings } from "./cms-settings";
 import { SiteRenderer } from "./site-renderer";
@@ -27,6 +29,7 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
   const request = useRef(0);
   const canEdit = permissions.includes("content.manage");
   const canPublish = permissions.includes("content.publish");
+  const listing=useEntityListing({records:state.pages.map(page=>({...page,status:page.publishedId?"published":"draft"})),columns:["Page","Details"]});
   const dirty = JSON.stringify(draft) !== saved;
   useEffect(() => {
     let current = true;
@@ -58,7 +61,7 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
     });
   }
   return <main className="mx-auto max-w-7xl space-y-5 p-5 sm:p-8">
-    <header className="rounded-xl bg-white p-6 text-slate-900"><p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">Association website</p><h1 className="mt-2 text-3xl font-semibold">Your website, in your words.</h1><p className="mt-2 text-sm text-slate-600">Build pages, review a draft, then publish when you’re ready.</p></header>
+    <header className="rounded-xl bg-white p-6 text-slate-900"><p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">Association website</p><EntityHeading className="mt-2">Your website, in your words.</EntityHeading><p className="mt-2 text-sm text-slate-600">Build pages, review a draft, then publish when you’re ready.</p></header>
     {error && <div role="alert" className="rounded-lg bg-red-50 p-4 text-red-800">{error} <button className={button} onClick={() => { setReload(n => n + 1); if (detail) void open(detail.page.id); }}>Reload</button></div>}
     {message && <p role="status" className="rounded-lg bg-emerald-50 p-4 text-emerald-900">{message}</p>}
     {!ready && !error && <p role="status" className="rounded-lg bg-white p-4">Loading website…</p>}
@@ -66,12 +69,13 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
       e.preventDefault(); const data = new FormData(e.currentTarget);
       void action(async () => { await moduleApi("content", "/site", "POST", { name: data.get("name"), tagline: data.get("tagline") }); setMessage("Website created. Add your first page and publish it when ready."); });
     }}><h2 className="text-xl font-semibold">Create your association website</h2><label className="block text-sm">Association name<input name="name" className={input} required maxLength={100} /></label><label className="block text-sm">Short tagline<input name="tagline" className={input} maxLength={200} /></label><button className={primary} disabled={busy || !canEdit}>Create website</button></form>}
+    {state.site && listing.toolbar}
     {state.site && <CmsSettings site={state.site} media={media} canEdit={canEdit} canPublish={canPublish} changed={() => setReload(n => n + 1)} />}
     {state.site && <div className="grid items-start gap-5 lg:grid-cols-[260px_1fr]">
       <section className="space-y-4 rounded-xl bg-white p-5 text-slate-900" aria-label="Website pages"><h2 className="font-semibold">{state.site.name}</h2>
         {state.pages.some(p => p.slug === "home" && p.publishedId) && <a className={`${button} block text-center`} href={`/site/${state.site.id}/home`} target="_blank" rel="noreferrer">Open public website ↗</a>}
         {state.pages.length === 0 && <p className="text-sm text-slate-500">Start with a home page, then add information about your association and membership.</p>}
-        {state.pages.map(p => <button key={p.id} disabled={busy} onClick={() => void open(p.id)} className={`block w-full rounded-lg border p-3 text-left ${p.id === detail?.page.id ? "border-emerald-700 bg-emerald-50" : "border-slate-200"}`}><span className="block font-medium">{p.title}</span><span className="text-xs text-slate-500">/{p.slug} · {p.publishedId ? "Published" : "Draft"}{p.publishedId && p.publishedId !== p.draftId ? " · Unpublished changes" : ""}</span></button>)}
+        {state.pages.filter(page=>listing.matches({...page,status:page.publishedId?"published":"draft"})).map(p => <button key={p.id} disabled={busy} onClick={() => void open(p.id)} className={`block w-full rounded-lg border p-3 text-left ${p.id === detail?.page.id ? "border-emerald-700 bg-emerald-50" : "border-slate-200"}`}><span className="block font-medium">{p.title}</span><span hidden={!listing.show("Details")} className="text-xs text-slate-500">/{p.slug} · {p.publishedId ? "Published" : "Draft"}{p.publishedId && p.publishedId !== p.draftId ? " · Unpublished changes" : ""}</span></button>)}
         {canEdit && <button className={button} disabled={busy} onClick={() => { if (editing && dirty && !window.confirm("Discard unsaved changes?")) return; ++request.current; setDetail(null); setDraft({ ...blank, slug: state.pages.length ? "" : "home" }); setSaved(""); setEditing(true); setPreview(false); setMessage(""); }}>New page</button>}
       </section>
       {editing ? <section className="space-y-5 rounded-xl bg-white p-6 text-slate-900">

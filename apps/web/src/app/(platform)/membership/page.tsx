@@ -1,7 +1,13 @@
+import { notFound, redirect } from "next/navigation";
 import { requireSession } from "@/lib/auth/session";
 import { MembershipWorkspace } from "@/features/membership/membership-workspace";
-export default async function MembershipPage() {
- const session = await requireSession();
- if (!session.permissions.includes("membership.read")) return <main className="p-8"><h1 className="text-2xl font-semibold">Membership</h1><p className="mt-4">Ask your administrator for Membership access.</p></main>;
- return <MembershipWorkspace permissions={session.permissions} />;
+
+export default async function Page({ params }: { params: Promise<{ section?: string }> }) {
+  const session = await requireSession();
+  const { section } = await params;
+  if (section === "products") redirect("/membership/setup");
+  if (section && !["members", "applications", "products"].includes(section)) notFound();
+  if (!session.permissions.includes("membership.read")) return <main className="p-8">Ask your administrator for access.</main>;
+  if (!section) redirect("/membership/members");
+  return <MembershipWorkspace key={section} permissions={session.permissions} section={section} />;
 }

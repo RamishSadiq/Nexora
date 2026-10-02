@@ -1,6 +1,6 @@
 # NEXORA — PROJECT PROGRESS REPORT
 
-**Latest assessment:** 28 September 2026, 7:25 am catch-up review (Europe/London)<br>
+**Latest assessment:** 1 October 2026, 5:49 pm requested refresh (Europe/London)<br>
 **Reporting baseline:** Revised delivery priority: a tangible, working CRM, association website and member portal.  
 **Daily update:** 9:00 pm Europe/London; scheduled in the current Codex task.  
 **Companion documents:** [Master plan](NEXORA_PRODUCT_ARCHITECTURE_MASTER_PLAN.md) · [Execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md)
@@ -14,6 +14,8 @@ This report is the living progress record. The master plan retains the product v
 ## 2. Current progress dashboard
 
 Latest recorded integrated verification is the 24 September CRM delivery: 122 API tests and five browser journeys passed. The subsequent public-website work populates the local CMS with nine editable pages and adds anonymous desktop/mobile navigation checks. These are local functional results; production services and deployment acceptance remain open. See the dated entries below for evidence.
+
+The 30 September delivery adds shared structured CRM/Portal profiles, relationship Department and Main Account selection, committed as `4d48fd5`. Its delivery notes record 30 focused API/SQL tests, two architecture tests and three Edge journeys passing. These focused results supplement the integrated baseline; they do not constitute a fresh whole-system regression. Estimates remain unchanged because this extends existing record/profile functionality without closing the remaining release dependencies or changing the bounded scope.
 
 | Area | Estimated functional completion | Remaining | Current position |
 | --- | ---: | ---: | --- |
@@ -69,14 +71,14 @@ The entries below summarize recorded delivery evidence. Current CRM and integrat
 | Integrated CRM/Portal/CMS browser journeys | All 5 passed, 24 September | CRM import/search/context/files, 3 portal journeys and CMS publishing against one isolated production frontend. No public deployment. |
 | TypeScript/targeted lint | Full TypeScript and changed CRM/test lint passed, 24 September | Prior CMS/proxy/routes checks also passed; no blanket full-repository lint claim. |
 | Production frontend build | Passed on 24 September | Isolated `next build --webpack` and browser verification against `next start`. API uses Development local identity; production identity/deployment remain unverified. |
-| Git integration | Substantial modified/untracked implementation | Current work is not yet one committed, verified release baseline. |
+| Git integration | Latest commit remains `4d48fd5`, 30 September; substantial subsequent application changes are uncommitted | The 1 October afternoon checkout includes UI, administration, membership setup and workflow work. Focused results do not verify the entire evolving checkout. |
 
 **Release position:** Working local product slices; full MVP acceptance and commercial readiness are not complete. Production staff identity remains disabled. The confirmed personal/company one-active-membership rule now has application checks and passing SQL concurrency coverage; live provider and antivirus operations remain release dependencies. These concerns are tracked independently from functional percentages.
 
 ## 5. Next delivery priorities
 
 1. Core local portal delivery is verified; retain production identity, external delivery and live antivirus operations as explicit release dependencies.
-2. Consolidate current work into a reviewed, verified repository baseline without discarding unrelated changes.
+2. Verify the shared local instance against the new CRM migrations before user acceptance; the 30 September delivery notes leave that instance unmigrated. Keep focused verification distinct from a fresh integrated regression.
 3. Keep production identity explicitly deferred by the user's local-development choice; resume provider integration when that choice changes.
 4. Local CRM integration is verified; use the shared CRM/Portal/CMS debug options for user acceptance.
 5. Bounded CMS presentation/publishing controls are delivered; complete scanner/domain deployment acceptance when production integration is resumed.
@@ -96,6 +98,34 @@ This is a proposed next-work order, not authorization to launch a production ser
 - If there is no material change, leave percentages unchanged and record that briefly. Daily reporting does not itself prove daily delivery.
 
 ## 7. Daily progress log
+
+### 1 October 2026 — Catch-up review of 30 September delivery
+
+**5:49 pm requested refresh:** The checkout has materially changed since this morning. New and modified source includes shared listing/navigation/presentation controls, administration screens and backend permissions, membership setup values with an additive migration, and a new Workflow module/designer with persistence, migrations, processing and test coverage. These changes remain uncommitted; latest commit is still `4d48fd5`. This paragraph supersedes the morning's clean-application-working-tree observation, while preserving it as history.
+
+**Afternoon verification evidence:** `artifacts/workflow-final-tests.log` records six passing API tests, zero failures/skips, at 4:33 pm. `artifacts/workflow-advanced-build.log` records a successful later build with zero warnings/errors at 5:43 pm. The [workflow delivery plan](ADVANCED_WORKFLOW_ARCHITECTURE_AND_DELIVERY_PLAN.md) records local save/publish/execute/history browser checks, isolated SQL migration/lease checks, architecture checks and frontend typecheck/lint for the initial manual workflow slice. These are recorded results, not tests rerun for this report. Later advanced workflow files exist, so the earlier six-test pass must not be treated as verification of every current change. No fresh integrated CRM/Portal/CMS regression or complete administration/membership-setup acceptance result was established in this review.
+
+**Afternoon assessment and next actions:** CRM **95%**, Portal **85%**, Website/CMS **90%** remain the bounded functional estimates. Shared UI changes do not independently establish additional accepted functional scope; advanced workflow belongs to the wider master plan and is tracked separately. Next: finish and verify the evolving workflow slice, establish administration/setup acceptance evidence, run integrated regression against a stable checkout, and review the uncommitted changes. The morning database-upgrade concern remains unverified rather than confirmed current. Production identity, external delivery, live scanning and deployment acceptance remain open. Only this report was edited by this refresh; no tests, migrations, commits or pushes were performed.
+
+**Timing and estimates:** Reviewed at 7:42 am Europe/London, not the scheduled day-end cutoff. CRM remains **95%**, Portal **85%**, Website/CMS **90%**. No intervening daily entry or delivery date is invented. The new work extends existing CRM/profile capabilities; production dependencies remain open, so no percentage increase or denominator change is justified.
+
+**Implemented since the previous review:** Commit `4d48fd5` includes association-history pagination/retry, shared structured Contact/Account profiles, relationship Department and single-current Main Account selection. Members can edit their own allowlisted name fields; delegated organisation details and relationship fields are read-only. Main Account selection does not grant Portal access or membership. Three additive CRM migrations and requirement/migration-field documentation are committed. See [field delivery and verification](CRM_STRUCTURED_PROFILE_FIELDS.md) and [association-history delivery](STANDARD_FUNCTIONALITY_GAP_ANALYSIS.md).
+
+**Recorded verification, not rerun today:** Final field-delivery notes report 30 focused API/SQL tests with no skips, two architecture tests and three Edge journeys passing, plus TypeScript, focused lint and no pending CRM model changes. Browser coverage includes Account/Contact history and CRM-to-Portal profile, Department and Main Account sharing. SQL replay covers the single-current Main Account constraint. These are focused development/local results; the last recorded full integrated baseline remains 122 API tests and five browser journeys from 24 September. No fresh whole-system, CMS publishing or production deployment acceptance is claimed.
+
+**Repository and blockers:** Git shows only the pre-existing progress-report modification; implementation is committed through `4d48fd5`. Delivery notes explicitly leave the shared running database unmigrated; its current migration state was not queried by this reporting run. Production identity remains deliberately deferred, with external notifications, live antivirus and domain/deployment acceptance still open. Workbook mapping is documented; no workbook import is claimed.
+
+**Next actions:** In a separate implementation session, check the shared local database migration state and complete the normal local upgrade/restart and CRM/Portal acceptance checks. Then scope address purpose/source/history and communication preferences against the agreed field dictionary. Preserve the existing profile permissions and membership rule. This reporting run changed only this report and did not run tests, migrations, services, publishing, commits or pushes.
+
+### 29 September 2026 — Association history and scope review
+
+Current estimates remain **CRM 95%, Portal 85%, Website/CMS 90%**, against the existing bounded functional scope. No percentage increase is justified by today's unverified changes. The new standard-functionality gap analysis and migration-field inventory inform future scope; they do not silently change these denominators or establish completion of the full master plan.
+
+**Implemented/in progress:** The uncommitted CRM association panel now includes pagination, ended-association visibility and explicit load/retry handling. A new browser test file covers Account and Contact association history. The master plan has working-tree revisions alongside the gap analysis and field inventory. These are source/document observations, not passing acceptance results.
+
+**Verification:** Reviewed Git changes, Stage 19 and available logs without running tests. Stage 19 records four passing production portal browser journeys and configuration API/build/model checks for the committed 28 September portal configuration delivery. No new passing result for the association-history test was found in the inspected evidence. The prior full integrated baseline remains 122 API tests and five browser journeys from 24 September.
+
+**Repository/release position:** Latest commit remains `8c82222`; subsequent CRM and strategy changes are uncommitted. Production identity, external message delivery, live antivirus verification and deployment acceptance remain open. Next: verify the association-history changes, reconcile the new gap analysis with the agreed backlog, and review the pending changes for a commit. No application code, databases or Git history were changed by this reporting run.
 
 ### 28 September 2026 — Scheduled catch-up review
 

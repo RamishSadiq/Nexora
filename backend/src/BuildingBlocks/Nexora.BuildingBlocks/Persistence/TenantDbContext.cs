@@ -5,8 +5,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Nexora.BuildingBlocks.Domain;
 using Nexora.BuildingBlocks.Security;
 namespace Nexora.BuildingBlocks.Persistence;
-public abstract class TenantDbContext(DbContextOptions options, IRequestIdentity identity) : DbContext(options)
+public abstract class TenantDbContext(DbContextOptions options, IRequestIdentity identity) : DbContext(options), IWorkflowWriteIdentity
 {
+    public IRequestIdentity WorkflowIdentity=>identity;
     protected Guid? ActiveTenantId => identity.TenantId;
     protected Guid? ActiveUserId => identity.UserId;
     protected EntityTypeBuilder<T> TenantTable<T>(ModelBuilder builder, string table) where T : TenantEntity
@@ -20,6 +21,9 @@ public abstract class TenantDbContext(DbContextOptions options, IRequestIdentity
     }
     protected void ConfigureColumns(ModelBuilder builder)
     {
+        WorkflowOutboxModel.Configure(builder);
+        builder.Entity<WorkflowDomainEvent>().HasQueryFilter(x=>x.TenantId==ActiveTenantId);
+        builder.Entity<WorkflowActionReceipt>().HasQueryFilter(x=>x.TenantId==ActiveTenantId);
         TenantTable<AttributeDefinition>(builder, "AttributeDefinitions");
         TenantTable<AttributeValue>(builder, "AttributeValues");
         builder.Entity<AttributeDefinition>().Property(x => x.Name).HasMaxLength(80);

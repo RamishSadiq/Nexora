@@ -1,0 +1,54 @@
+.workspace button,
+.workspace label[role="menuitem"] {
+  min-height: 30px;
+  padding: 5px 10px;
+  border: 1px solid #e2d9dd;
+  border-radius: 6px;
+  background: #fff;
+  color: #573545;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  box-shadow: none;
+  transition: background-color 150ms, border-color 150ms, color 150ms;
+}
+
+.workspace button:not(:disabled):hover,
+.workspace label[role="menuitem"]:hover {
+  border-color: #c8a5b3;
+  background: #faf3f6;
+  color: #7f2948;
+}
+
+.workspace button[aria-pressed="true"],
+.workspace button[aria-expanded="true"] {
+  border-color: #c8a5b3;
+  background: #f5e8ee;
+  color: #7f2948;
+}
+
+.workspace button:focus-visible,
+.workspace label[role="menuitem"]:focus-within {
+  outline: 2px solid #7f2948;
+  outline-offset: 2px;
+  box-shadow: none;
+}
+
+.workspace button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.workspace button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.workspace [role="menu"] {
+  display: grid;
+  gap: 3px;
+}
+
+.workspace button[data-destructive] {
+  color: #b91c1c;
+}

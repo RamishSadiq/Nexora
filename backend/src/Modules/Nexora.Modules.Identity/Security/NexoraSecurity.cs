@@ -16,7 +16,7 @@ public static class NexoraPermissions
     public const string IdentityManage = "identity.manage";
     public const string AuditRead = "audit.read";
 
-    public static readonly string[] All = [IdentityRead, IdentityManage, AuditRead, "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export", "content.read", "content.manage", "content.publish"];
+    public static readonly string[] All = [IdentityRead, IdentityManage, AuditRead, "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export", "content.read", "content.manage", "content.publish", "workflows.read", "workflows.create", "workflows.edit", "workflows.publish", "workflows.activate", "workflows.delete", "workflows.execute", "workflows.history", "workflows.retry", "workflows.cancel", "workflows.integrations", "workflows.ai", "workflows.approve"];
 }
 
 public interface ITenantContext
@@ -24,11 +24,11 @@ public interface ITenantContext
     Guid? TenantId { get; }
 }
 
-internal sealed class HttpTenantContext(IHttpContextAccessor accessor) : ITenantContext
+internal sealed class HttpTenantContext(IHttpContextAccessor accessor, Nexora.BuildingBlocks.Security.WorkflowExecutionContext execution) : ITenantContext
 {
     public Guid? TenantId => accessor.HttpContext?.User.Identity?.IsAuthenticated == true && Guid.TryParse(
         accessor.HttpContext?.User.FindFirstValue(NexoraClaimTypes.TenantId),
         out var tenantId)
         ? tenantId
-        : null;
+        : execution.Current?.TenantId;
 }

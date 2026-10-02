@@ -19,8 +19,11 @@ public static partial class ContentModule
     private static readonly JsonSerializerOptions Json = new(JsonSerializerDefaults.Web);
     public static IServiceCollection AddNexoraContent(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddDbContext<ContentDbContext>(o => o.UseSqlServer(configuration.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "content")));
+        services.AddDbContext<ContentDbContext>((sp,o) => o.AddInterceptors(sp.GetRequiredService<WorkflowCaptureInterceptor>()).UseSqlServer(configuration.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "content")));
+        services.AddWorkflowEntity<ContentDbContext,Page>("pages","Website pages","content.read","NavigationLabel",null,null,null,new WorkflowRelation("site","sites","siteId"));
+        services.AddWorkflowEntity<ContentDbContext,Site>("sites","Websites","content.read","Name");
         services.AddHostedService<ContentScheduler>();
+        AddWorkflowCommands(services);
         services.AddScoped<IPortalPresentationDirectory, PortalPresentationDirectory>();
         return services;
     }
@@ -88,12 +91,7 @@ public static partial class ContentModule
             var page = await Find(db, id, ct); if (page.Version != r.Version) return Conflict();
             var revisionId = r.RevisionId ?? page.DraftId;
             if (!await db.Versions.AnyAsync(v => v.Id == revisionId && v.PageId == id, ct)) return Results.NotFound();
-            var revision = await db.Versions.SingleAsync(v => v.Id == revisionId && v.PageId == id, ct);
-            await ValidateRevisionMedia(db, page.SiteId, revision, true, ct);
-            await CancelSchedule(db, id, ct);
-            page.PublishedId = revisionId;
-            // Audit and published pointer commit atomically. Public reads are no-store in this first slice.
-            db.Add(new Publication { TenantId = page.TenantId, PageId = id, PageVersionId = revisionId, ActorId = who.UserId!.Value });
+            await PublishRevision(page,revisionId,db,who.UserId!.Value,ct);
             await db.SaveChangesAsync(ct); return Results.Ok(page);
         }).RequireAuthorization("content.publish");
         api.MapPost("/pages/{id:guid}/unpublish", async (Guid id, PublishRequest r, ContentDbContext db, IRequestIdentity who, CancellationToken ct) =>

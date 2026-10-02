@@ -22,11 +22,20 @@ public static partial class CrmModule
 {
     public static IServiceCollection AddNexoraCrm(this IServiceCollection services, IConfiguration configuration)
     {
+        AddWorkflowInspections(services);
+        foreach(var operation in new[]{"create","update","archive"})services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowRecordAction(sp.GetRequiredService<CrmDbContext>(),sp.GetRequiredService<IIdentityDirectory>(),sp.GetRequiredService<IRequestIdentity>(),operation));
         services.AddScoped<ICrmDirectory, CrmDirectory>();
         services.AddScoped<IMemberProfileDirectory, MemberProfileDirectory>();
-        services.AddDbContext<CrmDbContext>(o => o.UseSqlServer(configuration.GetConnectionString("Nexora"),
+        services.AddDbContext<CrmDbContext>((sp,o)=>o.AddInterceptors(sp.GetRequiredService<WorkflowCaptureInterceptor>()).UseSqlServer(configuration.GetConnectionString("Nexora"),
             sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "crm")));
         services.AddScoped<IReportDataset>(sp=>new ReportDataset("contacts","Contacts","crm.read",sp.GetRequiredService<CrmDbContext>().Set<CrmRecord>().AsNoTracking().Where(x=>x.Kind=="contact"&&!x.IsArchived).Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+
+        services.AddWorkflowEntity<CrmDbContext,CrmRecord>("contacts","Contacts","crm.read","Name",x=>x.Kind=="contact"&&!x.IsArchived,"Kind","contact",new WorkflowRelation("profile","contact-profiles","id","recordId",false));
+        services.AddWorkflowEntity<CrmDbContext,CrmRecord>("accounts","Accounts","crm.read","Name",x=>x.Kind=="account"&&!x.IsArchived,"Kind","account",new WorkflowRelation("profile","account-profiles","id","recordId",false));
+        services.AddWorkflowEntity<CrmDbContext,ContactProfile>("contact-profiles","Contact profiles","crm.read","RecordId",null,null,null);
+        services.AddWorkflowEntity<CrmDbContext,AccountProfile>("account-profiles","Account profiles","crm.read","RecordId",null,null,null);
+        services.AddWorkflowEntity<CrmDbContext,CommunicationMethod>("communications","Communications","crm.read","Value",null,null,null,new WorkflowRelation("record","contacts","recordId","id",false));
+        services.AddWorkflowEntity<CrmDbContext,AccountContact>("account-contacts","Organisation relationships","crm.read","JobTitle",null,null,null,new WorkflowRelation("account","accounts","accountId"),new WorkflowRelation("contact","contacts","contactId"));
         return services;
     }
     public static IEndpointRouteBuilder MapNexoraCrm(this IEndpointRouteBuilder endpoints)

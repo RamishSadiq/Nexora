@@ -49,7 +49,12 @@ public sealed partial class CrmEndpointTests
         using (var scope = app.Services.CreateScope())
         {
             var identity = scope.ServiceProvider.GetRequiredService<NexoraIdentityDbContext>(); using var system = identity.BeginSystemAccess();
-            var permission = await identity.RolePermissions.IgnoreQueryFilters().FirstAsync(x => x.Permission == "membership.read"); identity.Remove(permission); await identity.SaveChangesAsync();
+            var user=await identity.Users.SingleAsync(u=>u.Email==IdentityApiFactory.AdminEmail);
+            var originalRoles=await identity.UserRoles.Where(r=>r.UserId==user.Id).ToListAsync();
+            var role=new Nexora.Modules.Identity.Domain.NexoraRole{Id=Guid.NewGuid(),TenantId=user.TenantId,Name="Limited CRM test",NormalizedName="LIMITED CRM TEST",IsSystem=false};identity.Roles.Add(role);
+            var permissions=await identity.RolePermissions.Where(p=>originalRoles.Select(r=>r.RoleId).Contains(p.RoleId)&&p.Permission!="membership.read").Select(p=>p.Permission).Distinct().ToArrayAsync();
+            foreach(var permission in permissions)identity.RolePermissions.Add(new Nexora.Modules.Identity.Domain.RolePermission{RoleId=role.Id,Permission=permission});
+            identity.UserRoles.RemoveRange(originalRoles);identity.UserRoles.Add(new Microsoft.AspNetCore.Identity.IdentityUserRole<Guid>{UserId=user.Id,RoleId=role.Id});await identity.SaveChangesAsync();
         }
         using var restrictedClient = await Login(app);
         Assert.Empty((await Json(await restrictedClient.GetAsync("/api/v1/crm/records?search=Professional")))["items"]!.AsArray());

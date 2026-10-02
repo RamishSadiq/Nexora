@@ -62,7 +62,7 @@ public sealed class SessionBoundaryTests
             (await db.Users.SingleAsync(x => x.Email == IdentityApiFactory.AdminEmail)).IsActive = false;
             await db.SaveChangesAsync();
         }
-        Assert.Equal(HttpStatusCode.Forbidden, (await client.GetAsync("/api/v1/auth/session")).StatusCode);
+        Assert.Equal(HttpStatusCode.Unauthorized, (await client.GetAsync("/api/v1/auth/session")).StatusCode);
     }
 
     [Fact]

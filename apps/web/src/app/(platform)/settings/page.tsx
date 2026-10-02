@@ -1,3 +1,6 @@
+import { EntityHeading } from "@/components/ui/entity-heading";
+import Link from "next/link";
+import type { Route } from "next";
 import { ShieldCheck, UsersRound, UserRoundCog } from "lucide-react";
 import { getAccessOverview, requireSession } from "@/lib/auth/session";
 import { PortalAccessManagement } from "@/features/portal/portal-access-management";
@@ -27,10 +30,11 @@ export default async function AdministrationPage() {
       <div className="mx-auto max-w-6xl space-y-7">
         <div>
           <p className="text-sm font-semibold text-[#405bd8]">{session.tenantName}</p>
-          <h1 className="mt-1 text-3xl font-semibold tracking-[-0.04em] text-[#17213a]">Access administration</h1>
+          <EntityHeading className="mt-1">Nexora Administration</EntityHeading>
           <p className="mt-2 text-sm text-[#667085]">Tenant-scoped users, roles, and teams from the identity service.</p>
         </div>
 
+        <div className="grid gap-3 sm:grid-cols-2">{[["users", "Users"], ["security-groups", "Security groups"]].map(([section, label]) => <Link key={section} href={`/settings/${section}` as Route} className="rounded-xl border border-blue-200 bg-white p-5 font-semibold text-blue-700">{label}</Link>)}</div>
         <section className="grid gap-4 sm:grid-cols-3">
           {cards.map(({ label, value, icon: Icon }) => (
             <div className="rounded-2xl border border-[#e5e9ef] bg-white p-5 shadow-sm" key={label}>

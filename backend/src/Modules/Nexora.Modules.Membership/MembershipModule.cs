@@ -12,8 +12,15 @@ using Nexora.Modules.Membership.Domain;
 using Nexora.Modules.Membership.Infrastructure;
 using static Nexora.BuildingBlocks.Endpoints.ModuleEndpoints;
 namespace Nexora.Modules.Membership;
-public static class MembershipModule
+public static partial class MembershipModule
 {
+    public sealed record SetupValueRequest(string Name, string Description, Guid? Version);
+    private static void ValidateSetupKind(string kind) => Choice(kind, "member-type", "member-category", "member-subscription-band", "member-rate-type", "member-rate", "member-status", "member-application-status");
+    private static void ValidateSetupValue(SetupValueRequest r)
+    {
+        Text(r.Name);
+        Check(r.Description != null && r.Description.Length <= 2000, "Description must not exceed 2000 characters.");
+    }
     private static (int Number, int Size, int Offset) Pagination(string? page, string? pageSize)
     {
         var number = 1;
@@ -28,16 +35,42 @@ public static class MembershipModule
     public static IServiceCollection AddNexoraMembership(this IServiceCollection services, IConfiguration config)
     { services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Membership.Infrastructure.CrmContextProvider>();
         services.AddScoped<Nexora.BuildingBlocks.Security.ICrmContextProvider, Nexora.Modules.Membership.Infrastructure.CrmEvidenceContext>();
-        services.AddDbContext<MembershipDbContext>(o => o.UseSqlServer(config.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory","membership"))); services.AddScoped<IReportDataset>(sp=>new ReportDataset("members","Memberships","membership.read",sp.GetRequiredService<MembershipDbContext>().Set<MemberSubscription>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.ContactName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
+        AddWorkflowCommands(services);
+        services.AddDbContext<MembershipDbContext>((sp,o)=>o.AddInterceptors(sp.GetRequiredService<WorkflowCaptureInterceptor>()).UseSqlServer(config.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory","membership"))); services.AddScoped<IReportDataset>(sp=>new ReportDataset("members","Memberships","membership.read",sp.GetRequiredService<MembershipDbContext>().Set<MemberSubscription>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.ContactName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         services.AddScoped<IMemberMembershipDirectory, MemberMembershipDirectory>();
         services.AddScoped<IMemberApplicationService, MemberApplicationService>();
         services.AddScoped<IPortalNotificationService, PortalNotificationService>();
         services.AddScoped<IApplicationEvidenceService, ApplicationEvidenceService>();
         services.AddScoped<Nexora.BuildingBlocks.Documents.IDocumentScanner, Nexora.BuildingBlocks.Documents.ClamDocumentScanner>();
+
+        services.AddWorkflowEntity<MembershipDbContext,MembershipApplication>("applications","Membership applications","membership.read","ContactName",null,null,null,new WorkflowRelation("contact","contacts","contactId","id",false),new WorkflowRelation("account","accounts","accountId","id",false),new WorkflowRelation("product","membership-products","productId","id",false));
+        services.AddWorkflowEntity<MembershipDbContext,MemberSubscription>("members","Members","membership.read","ContactName",null,null,null,new WorkflowRelation("contact","contacts","contactId","id",false),new WorkflowRelation("account","accounts","accountId","id",false),new WorkflowRelation("product","membership-products","productId","id",false));
+        services.AddWorkflowEntity<MembershipDbContext,MembershipProduct>("membership-products","Membership offerings","membership.read","Name",null,null,null);
         return services; }
     public static IEndpointRouteBuilder MapNexoraMembership(this IEndpointRouteBuilder routes)
     {
         var api = routes.Module("membership").WithAttributes<MembershipDbContext>("membership.manage", typeof(MembershipProduct), typeof(MembershipApplication), typeof(MemberSubscription));
+        api.MapGet("/setup/{kind}", async (string kind, MembershipDbContext db, CancellationToken ct) =>
+        {
+            ValidateSetupKind(kind);
+            return await db.Set<MembershipSetupValue>().AsNoTracking().Where(x => x.Kind == kind).OrderBy(x => x.Name).ToListAsync(ct);
+        });
+        api.MapPost("/setup/{kind}", async (string kind, SetupValueRequest r, MembershipDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
+        {
+            ValidateSetupKind(kind); ValidateSetupValue(r);
+            var row = new MembershipSetupValue { TenantId = who.TenantId!.Value, Kind = kind, Name = Text(r.Name), Description = r.Description.Trim() };
+            db.Add(row); History(db, who, http, row.Id, "setup.created", "Created " + kind + " lookup");
+            await db.SaveChangesAsync(ct); return Results.Ok(row);
+        }).RequireAuthorization("membership.manage");
+        api.MapPatch("/setup/{kind}/{id:guid}", async (string kind, Guid id, SetupValueRequest r, MembershipDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
+        {
+            ValidateSetupKind(kind); ValidateSetupValue(r);
+            var row = await db.Set<MembershipSetupValue>().SingleOrDefaultAsync(x => x.Id == id && x.Kind == kind, ct) ?? throw new KeyNotFoundException();
+            if (row.Version != r.Version) return Conflict();
+            row.Name = Text(r.Name); row.Description = r.Description.Trim();
+            History(db, who, http, id, "setup.updated", "Updated " + kind + " lookup");
+            await db.SaveChangesAsync(ct); return Results.Ok(row);
+        }).RequireAuthorization("membership.manage");
         api.MapMembershipOperations();
         api.MapApplicationEvidence();
         api.MapPut("/products/{id:guid}/portal", async (Guid id, PortalProductSettings r, MembershipDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
@@ -95,26 +128,7 @@ public static class MembershipModule
         {
             var application = await db.Set<MembershipApplication>().SingleOrDefaultAsync(x => x.Id == id,ct) ?? throw new KeyNotFoundException();
             if (application.Version != r.Version) return Conflict(); Choice(r.Decision,"approve","reject"); Check(application.Status == "submitted","This application already has a decision.");
-            application.DecisionReason = Text(r.Reason,500);
-            if (r.Decision == "approve")
-            {
-                Check(await crm.FindActiveAsync(application.ContactId,ct) != null,"The Contact is no longer active.");
-                if (application.AccountId.HasValue)
-                {
-                    Check(await crm.FindActiveAsync(application.AccountId.Value, ct) != null, "The organisation is no longer active.");
-                    Check(await crm.HasCurrentAccountContactAsync(application.AccountId.Value, application.ContactId, ct), "The Contact is no longer linked to this organisation.");
-                }
-                var requestedEnd = application.RequestedEndUtc ?? application.RequestedStartUtc.AddMonths(application.TermMonths);
-                Check(!await db.Set<MemberSubscription>().AnyAsync(x =>
-                    (application.AccountId.HasValue ? x.AccountId == application.AccountId : x.AccountId == null && x.ContactId == application.ContactId)
-                    && x.Status == "active",ct),
-                    "This applicant already has an active membership. End it before activating another membership.");
-                var member = new MemberSubscription { TenantId = who.TenantId!.Value, AccountId = application.AccountId, AccountName = application.AccountName, ContactId = application.ContactId, ContactName = application.ContactName, ProductId = application.ProductId, StartsAtUtc = application.RequestedStartUtc, EndsAtUtc = requestedEnd, Rate = application.QuotedRate, Currency = application.Currency, ApplicationId = application.Id };
-                db.Add(member); application.MembershipId = member.Id; History(db,who,http,member.Id,"membership.activated",r.Reason);
-            }
-            application.Status = r.Decision == "approve" ? "approved" : "rejected"; History(db,who,http,id,"application." + application.Status,r.Reason);
-            var recipient = await recipients.FindPortalUserIdAsync(who.TenantId!.Value, application.ContactId, ct);
-            if (recipient is Guid userId) db.Add(new PortalNotification { TenantId = who.TenantId.Value, RecipientUserId = userId, ApplicationId = application.Id, Kind = "application." + application.Status, Subject = application.Status == "approved" ? "Application approved" : "Application rejected", Body = application.Status == "approved" ? "Your application was approved." : "Your application was rejected.", DeliveryStatus = "queued" });
+            await ApplyDecision(application,r,db,crm,recipients,who,http,ct);
             await db.SaveChangesAsync(ct); return Results.Ok(application);
         }).RequireAuthorization("membership.decide");
         api.MapGet("/members", async (MembershipDbContext db, string? search, string? status, string? page, string? pageSize, CancellationToken ct) =>
@@ -136,6 +150,38 @@ public static class MembershipModule
         {
             var member = await db.Set<MemberSubscription>().SingleOrDefaultAsync(x => x.Id == id,ct) ?? throw new KeyNotFoundException();
             if (r.Version != member.Version) return Conflict(); Choice(action,"renew","cancel","lapse","reinstate"); var reason = Text(r.Reason,500);
+            await ApplyMemberChange(member,action,reason,db,who,http,ct); await db.SaveChangesAsync(ct); return Results.Ok(member);
+        }).RequireAuthorization("membership.manage");
+        api.MapGet("/history/{id:guid}", async (Guid id, MembershipDbContext db, CancellationToken ct) => await db.Set<MembershipHistory>().Where(x => x.SubjectId == id).OrderByDescending(x => x.CreatedAtUtc).Take(100).ToListAsync(ct));
+        return routes;
+    }
+    private static async Task ApplyDecision(MembershipApplication application,DecisionRequest r,MembershipDbContext db,ICrmDirectory crm,IPortalRecipientDirectory recipients,IRequestIdentity who,HttpContext http,CancellationToken ct)
+    {
+        Choice(r.Decision,"approve","reject");Check(application.Status=="submitted","This application already has a decision.");
+            application.DecisionReason = Text(r.Reason,500);
+            if (r.Decision == "approve")
+            {
+                Check(await crm.FindActiveAsync(application.ContactId,ct) != null,"The Contact is no longer active.");
+                if (application.AccountId.HasValue)
+                {
+                    Check(await crm.FindActiveAsync(application.AccountId.Value, ct) != null, "The organisation is no longer active.");
+                    Check(await crm.HasCurrentAccountContactAsync(application.AccountId.Value, application.ContactId, ct), "The Contact is no longer linked to this organisation.");
+                }
+                var requestedEnd = application.RequestedEndUtc ?? application.RequestedStartUtc.AddMonths(application.TermMonths);
+                Check(!await db.Set<MemberSubscription>().AnyAsync(x =>
+                    (application.AccountId.HasValue ? x.AccountId == application.AccountId : x.AccountId == null && x.ContactId == application.ContactId)
+                    && x.Status == "active",ct),
+                    "This applicant already has an active membership. End it before activating another membership.");
+                var member = new MemberSubscription { TenantId = who.TenantId!.Value, AccountId = application.AccountId, AccountName = application.AccountName, ContactId = application.ContactId, ContactName = application.ContactName, ProductId = application.ProductId, StartsAtUtc = application.RequestedStartUtc, EndsAtUtc = requestedEnd, Rate = application.QuotedRate, Currency = application.Currency, ApplicationId = application.Id };
+                db.Add(member); application.MembershipId = member.Id; History(db,who,http,member.Id,"membership.activated",r.Reason);
+            }
+            application.Status = r.Decision == "approve" ? "approved" : "rejected"; History(db,who,http,application.Id,"application." + application.Status,r.Reason);
+            var recipient = await recipients.FindPortalUserIdAsync(who.TenantId!.Value, application.ContactId, ct);
+            if (recipient is Guid userId) db.Add(new PortalNotification { TenantId = who.TenantId.Value, RecipientUserId = userId, ApplicationId = application.Id, Kind = "application." + application.Status, Subject = application.Status == "approved" ? "Application approved" : "Application rejected", Body = application.Status == "approved" ? "Your application was approved." : "Your application was rejected.", DeliveryStatus = "queued" });
+    }
+    private static async Task ApplyMemberChange(MemberSubscription member,string action,string reason,MembershipDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)
+    {
+        Choice(action,"renew","cancel","lapse","reinstate");
             var previousEnd = member.EndsAtUtc;
             if (action is "renew" or "reinstate")
             {
@@ -147,10 +193,7 @@ public static class MembershipModule
                 member.EndsAtUtc = quote.EndsAtUtc; member.Rate = quote.Total; member.Currency = quote.Currency; member.Status = "active";
             }
             else { Check(member.Status == "active","Only active memberships can be cancelled or lapsed."); if (action == "lapse") Check(member.EndsAtUtc <= DateTime.UtcNow,"A membership cannot lapse before its term ends."); member.Status = action == "cancel" ? "cancelled" : "lapsed"; }
-            History(db,who,http,id,"membership." + action,reason,previousEnd,member.EndsAtUtc); await db.SaveChangesAsync(ct); return Results.Ok(member);
-        }).RequireAuthorization("membership.manage");
-        api.MapGet("/history/{id:guid}", async (Guid id, MembershipDbContext db, CancellationToken ct) => await db.Set<MembershipHistory>().Where(x => x.SubjectId == id).OrderByDescending(x => x.CreatedAtUtc).Take(100).ToListAsync(ct));
-        return routes;
+            History(db,who,http,member.Id,"membership." + action,reason,previousEnd,member.EndsAtUtc);
     }
     private static string? TextOptional(string? value, int max) => string.IsNullOrWhiteSpace(value) ? null : Text(value, max);
     private static void ValidateProduct(ProductRequest r) { Text(r.Name); Text(r.Category,80); Check(r.TermMonths is >= 1 and <= 60,"Terms must be between 1 and 60 months."); Check(r.Rate >= 0 && r.Rate < 100000000 && decimal.Round(r.Rate,2) == r.Rate,"Enter a nonnegative rate with two decimal places."); Choice(r.Currency,"GBP","EUR","USD"); }

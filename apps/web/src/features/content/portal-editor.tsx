@@ -1,4 +1,5 @@
 "use client";
+import { EntityHeading } from "@/components/ui/entity-heading";
 import { useEffect, useState } from "react";
 import { moduleApi } from "../shared/module-api";
 import { defaultPresentation, type PortalPresentation } from "../portal/presentation";
@@ -23,7 +24,7 @@ export function PortalEditor({ permissions }: { permissions: string[] }) {
   function move<T>(items: T[], index: number, step: number): T[] { const next = [...items]; [next[index], next[index + step]] = [next[index + step], next[index]]; return next; }
   function patch(change: Partial<PortalPresentation>) { setDraft(d => ({ ...d, ...change })); }
   return <main className="mx-auto max-w-6xl space-y-5 p-5 text-slate-900 sm:p-8">
-    <section aria-label="Portal management introduction" className="rounded-xl bg-white p-6"><p className="text-sm font-semibold text-emerald-700">Member experience</p><h1 className="mt-2 text-3xl font-semibold">Portal management</h1><p className="mt-3 text-sm text-slate-600">Configure your existing portal and add member information pages. Save a draft, review it, then publish.</p><p className="mt-2 text-sm">Menu visibility changes navigation only. Member access, applications and profile rules stay the same.</p></section>
+    <section aria-label="Portal management introduction" className="rounded-xl bg-white p-6"><p className="text-sm font-semibold text-emerald-700">Member experience</p><EntityHeading className="mt-2">Portal management</EntityHeading><p className="mt-3 text-sm text-slate-600">Configure your existing portal and add member information pages. Save a draft, review it, then publish.</p><p className="mt-2 text-sm">Menu visibility changes navigation only. Member access, applications and profile rules stay the same.</p></section>
     {error && <p role="alert" className="rounded-lg bg-red-50 p-4 text-red-900">{error} <button className="underline" onClick={() => { if (!dirty || window.confirm("Discard unsaved changes and reload?")) setReload(n => n + 1); }}>Reload saved portal</button></p>}
     {message && <p role="status" className="rounded-lg bg-emerald-50 p-4">{message}</p>}
     {!state ? <p>Loading portal settings…</p> : <>

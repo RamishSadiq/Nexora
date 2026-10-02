@@ -1,3 +1,4 @@
+using Nexora.Modules.Workflow;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Nexora.BuildingBlocks.Security;
@@ -19,7 +20,7 @@ public sealed class PlatformMigrationTests
   var connection=new SqlConnectionStringBuilder(Environment.GetEnvironmentVariable("NEXORA_TEST_SQLSERVER")){InitialCatalog="NexoraPlatformTest_"+Guid.NewGuid().ToString("N")};
   var identity=new Identity(Guid.NewGuid(),Guid.NewGuid());
   DbContextOptions<T> Options<T>(string? schema=null) where T:DbContext=>new DbContextOptionsBuilder<T>().UseSqlServer(connection.ConnectionString,sql=>{if(schema!=null)sql.MigrationsHistoryTable("__EFMigrationsHistory",schema);}).Options;
-  DbContext[] contexts=[new ContentDbContext(Options<ContentDbContext>("content"),identity),new NexoraIdentityDbContext(Options<NexoraIdentityDbContext>()),new CrmDbContext(Options<CrmDbContext>("crm"),identity),new MembershipDbContext(Options<MembershipDbContext>("membership"),identity),new EventsDbContext(Options<EventsDbContext>("events"),identity),new FinanceDbContext(Options<FinanceDbContext>("finance"),identity),new EngagementDbContext(Options<EngagementDbContext>("engagement"),identity),new WorkDbContext(Options<WorkDbContext>("work"),identity)];
+  DbContext[] contexts=[new WorkflowDbContext(Options<WorkflowDbContext>("workflow"),identity),new ContentDbContext(Options<ContentDbContext>("content"),identity),new NexoraIdentityDbContext(Options<NexoraIdentityDbContext>()),new CrmDbContext(Options<CrmDbContext>("crm"),identity),new MembershipDbContext(Options<MembershipDbContext>("membership"),identity),new EventsDbContext(Options<EventsDbContext>("events"),identity),new FinanceDbContext(Options<FinanceDbContext>("finance"),identity),new EngagementDbContext(Options<EngagementDbContext>("engagement"),identity),new WorkDbContext(Options<WorkDbContext>("work"),identity)];
   try{foreach(var db in contexts)await db.Database.MigrateAsync();foreach(var db in contexts){await db.Database.MigrateAsync();Assert.Empty(await db.Database.GetPendingMigrationsAsync());Assert.False(db.Database.HasPendingModelChanges());}}
   finally{await contexts[0].Database.EnsureDeletedAsync();foreach(var db in contexts)await db.DisposeAsync();}
  }

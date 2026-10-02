@@ -58,7 +58,7 @@ export function ApplicationWorkspace({ onSubmitted, accountId }: { onSubmitted: 
         setDrafts(d => [saved, ...d.filter(x => x.id !== saved.id)]); setMessage("Draft saved. Review the quote and terms before submitting.");
       }); }}>
         <fieldset disabled={busy} className="space-y-5">
-          <label className="block">Membership product<select className={input} value={edit.productId} onChange={e => change({ productId: e.target.value })} required>{products.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
+          <label className="block">Membership product<select aria-label="Membership product" className={input} value={edit.productId} onChange={e => change({ productId: e.target.value })} required>{products.map(p => <option key={p.id} value={p.id}>{p.name}</option>)}</select></label>
           <label className="block">Requested start date<input type="date" className={input} value={edit.date} onChange={e => change({ date: e.target.value })} required /></label>
           <label className="block">Application notes<textarea className={input} rows={4} maxLength={4000} value={edit.notes} onChange={e => change({ notes: e.target.value })} /></label>
           <button className={button}>Save and review draft</button>

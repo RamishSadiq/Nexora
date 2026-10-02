@@ -1,3 +1,4 @@
+import { EntityHeading } from "@/components/ui/entity-heading";
 import { requireSession } from "@/lib/auth/session";
 
 export default async function AssistantPage() {
@@ -16,7 +17,7 @@ export default async function AssistantPage() {
   return (
     <main className="space-y-4 p-5 sm:p-8">
       <header>
-        <h1 className="text-2xl font-semibold text-slate-950">NexOrchestr AI</h1>
+        <EntityHeading>NexOrchestr AI</EntityHeading>
         <p className="mt-2 text-sm text-slate-600">Ask your AI team to research, compare, review or plan.</p>
       </header>
       {appUrl ? (

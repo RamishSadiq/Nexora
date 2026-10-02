@@ -1,4 +1,5 @@
 "use client";
+import { EntityHeading } from "@/components/ui/entity-heading";
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { attributeEntities, entityLabel } from "./attribute-entities";
@@ -20,7 +21,7 @@ export function AutomationController({ module, mode }: { module: string; mode: "
   const kind = config?.types.includes(selected) ? selected : config?.types[0];
   return <main className="mx-auto max-w-4xl space-y-6 p-5 text-slate-800 sm:p-8">
     <Link href={`/automations/${module}`} className="text-indigo-700 underline">Back to automations</Link>
-    <h1 className="text-3xl font-semibold">{mode === "rules" ? "Rules" : "Design"} controller</h1>
+    <EntityHeading>{mode === "rules" ? "Rules" : "Design"} controller</EntityHeading>
     {!config ? <p role="alert">This entity is unavailable.</p> : <>
       <label className="block text-sm font-medium">Entity<select className={inputClass} value={kind} onChange={e => setSelected(e.target.value)}>{config.types.map(t => <option key={t} value={t}>{entityLabel(t)}</option>)}</select></label>
       <ControllerEditor key={`${config.api}-${kind}-${mode}`} module={module} api={config.api} kind={kind} mode={mode} />

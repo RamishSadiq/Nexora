@@ -6,8 +6,9 @@ using Nexora.BuildingBlocks.Security;
 
 namespace Nexora.Modules.Content;
 
-public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options, IRequestIdentity identity) : DbContext(options)
+public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options, IRequestIdentity identity) : DbContext(options), IWorkflowWriteIdentity
 {
+    public IRequestIdentity WorkflowIdentity=>identity;
     private Guid? TenantId => identity.TenantId;
     public DbSet<Site> Sites => Set<Site>();
     public DbSet<Page> Pages => Set<Page>();
@@ -15,7 +16,7 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
     public override int SaveChanges(bool acceptAllChangesOnSuccess) => SaveChangesAsync(acceptAllChangesOnSuccess).GetAwaiter().GetResult();
     protected override void OnModelCreating(ModelBuilder b)
     {
-        b.HasDefaultSchema("content");
+        b.HasDefaultSchema("content");WorkflowOutboxModel.Configure(b);b.Entity<WorkflowDomainEvent>().HasQueryFilter(x=>x.TenantId==TenantId);b.Entity<WorkflowActionReceipt>().HasQueryFilter(x=>x.TenantId==TenantId);
         Configure<Site>(b, "Sites"); Configure<Page>(b, "Pages");
         Configure<PortalConfiguration>(b, "PortalConfigurations");
         b.Entity<PortalConfiguration>().HasIndex(x => x.TenantId).IsUnique();

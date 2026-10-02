@@ -26,7 +26,8 @@ internal sealed class NexoraClaimsPrincipalFactory(
             return identity;
         }
 
-        var permissions = await dbContext.RolePermissions
+        var isAdmin = await dbContext.Roles.AnyAsync(role => role.IsSystem && role.TenantId == user.TenantId && roleNames.Contains(role.Name!));
+        var permissions = isAdmin ? NexoraPermissions.All.ToList() : await dbContext.RolePermissions
             .Where(permission =>
                 permission.Role.TenantId == user.TenantId &&
                 roleNames.Contains(permission.Role.Name!))

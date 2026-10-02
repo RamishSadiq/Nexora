@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import { moduleApi } from "../shared/module-api";
-import { AttributeFields } from "../shared/attribute-fields";
 import { Field, Panel, formData, inputClass as input, primaryClass as primary, buttonClass as button } from "../shared/module-ui";
 
 type Choice = { id: string; name: string };
@@ -57,7 +56,7 @@ export function MembershipOrganisationApplication({ products, busy, canManageCrm
       <Field label="Applicant role"><input className={input} name="applicantRole" maxLength={80} placeholder="For example, membership manager" /></Field>
       <Field label="Applicant notes"><textarea className={input} name="applicantNotes" maxLength={4000} rows={3} /></Field>
       <label className="flex items-center gap-2 text-sm"><input type="checkbox" name="termsAccepted" required /> I confirm the applicant has accepted the membership terms.</label>
-      <AttributeFields module="membership" kind="MembershipApplication" />
+
       <button className={primary} disabled={disabled || (!!accountId && !linked)}>Submit application</button>
     </form>
   </Panel>;

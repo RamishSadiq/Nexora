@@ -11,6 +11,7 @@ public sealed record IdentityDirectory(IReadOnlyList<DirectoryItem> Users, IRead
 public interface IIdentityDirectory
 {
     Task<IdentityDirectory> GetAsync(CancellationToken cancellationToken);
+    Task<Guid[]> GetTeamMembersAsync(Guid teamId,CancellationToken ct)=>Task.FromResult(Array.Empty<Guid>());
     Task<bool> IsValidOwnerAsync(Guid? userId, Guid? teamId, CancellationToken cancellationToken);
 }
 

@@ -15,6 +15,8 @@ public sealed class ContentScheduler(IServiceScopeFactory scopes, ILogger<Conten
         var jobs = await source.Set<ScheduledPublication>().IgnoreQueryFilters().AsNoTracking().Where(j => j.Status == "pending" && j.PublishAtUtc <= now).OrderBy(j => j.PublishAtUtc).Take(50).ToListAsync(ct);
         foreach (var candidate in jobs)
         {
+            var principal=await services.GetRequiredService<IWorkflowPrincipalDirectory>().ResolveAsync(candidate.TenantId,candidate.PublisherId,ct);
+            using var eventIdentity=services.GetRequiredService<WorkflowExecutionContext>().Enter(principal??new(candidate.TenantId,candidate.PublisherId,[]));
             await using var db = new ContentDbContext(services.GetRequiredService<DbContextOptions<ContentDbContext>>(), new Publisher(candidate.TenantId, candidate.PublisherId));
             var job = await db.Set<ScheduledPublication>().SingleOrDefaultAsync(j => j.Id == candidate.Id && j.Status == "pending", ct);
             if (job == null) continue;

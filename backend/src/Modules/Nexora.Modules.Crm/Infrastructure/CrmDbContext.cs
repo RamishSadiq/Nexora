@@ -6,9 +6,10 @@ using Nexora.BuildingBlocks.Persistence;
 
 namespace Nexora.Modules.Crm.Infrastructure;
 
-public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IRequestIdentity identity, IIdentityDirectory? directory = null) : DbContext(options)
+public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IRequestIdentity identity, IIdentityDirectory? directory = null) : DbContext(options), IWorkflowWriteIdentity
 {
     public DbSet<CrmRecord> Records => Set<CrmRecord>();
+    public IRequestIdentity WorkflowIdentity=>identity;
     private Guid? TenantId => identity.TenantId;
     private Guid? UserId => identity.UserId;
     protected override void OnModelCreating(ModelBuilder b)
@@ -78,6 +79,9 @@ public sealed class CrmDbContext(DbContextOptions<CrmDbContext> options, IReques
         foreach (var entity in b.Model.GetEntityTypes())
             foreach (var property in entity.GetProperties().Where(x => x.ClrType == typeof(string) && x.GetMaxLength() == null))
                 property.SetMaxLength(property.Name == "Body" ? 4000 : 500);
+        WorkflowOutboxModel.Configure(b);
+        b.Entity<WorkflowDomainEvent>().HasQueryFilter(x=>x.TenantId==TenantId);
+        b.Entity<WorkflowActionReceipt>().HasQueryFilter(x=>x.TenantId==TenantId);
         Automations.Configure(b);
         b.Entity<AutomationConfiguration>().HasQueryFilter(x => x.TenantId == TenantId);
     }

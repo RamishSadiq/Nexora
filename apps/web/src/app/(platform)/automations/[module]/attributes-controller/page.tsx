@@ -1,4 +1,5 @@
 "use client";
+import { EntityHeading } from "@/components/ui/entity-heading";
 import { use, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { moduleApi } from "@/features/shared/module-api";
@@ -14,7 +15,7 @@ export default function AttributesControllerPage({ params }: { params: Promise<{
   const kind = config?.types.includes(selectedType) ? selectedType : config?.types[0];
   return <main className="mx-auto max-w-3xl space-y-6 p-5 text-slate-800 sm:p-8">
     <Link href={`/automations/${module}`} className="text-indigo-700 underline">Back to automations</Link>
-    <h1 className="text-3xl font-semibold">Manage {module.replaceAll("-", " ")} attributes</h1>
+    <EntityHeading>Manage {module.replaceAll("-", " ")} attributes</EntityHeading>
     {!kind ? <p role="alert">This entity is unavailable.</p> : <>
       <label className="block">Entity<select className={inputClass} value={kind} onChange={e => setSelectedType(e.target.value)}>{config.types.map(t => <option key={t} value={t}>{entityLabel(t)}</option>)}</select></label>
       <AttributesEditor key={`${config.api}-${kind}`} backend={config.api} kind={kind} />

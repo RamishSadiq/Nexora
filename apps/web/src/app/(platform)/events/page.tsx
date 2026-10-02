@@ -1,3 +1,12 @@
+import { notFound, redirect } from "next/navigation";
 import { requireSession } from "@/lib/auth/session";
 import { EventsWorkspace } from "@/features/events/events-workspace";
-export default async function EventsPage(){const session=await requireSession();if(!session.permissions.includes("events.read"))return <main className="p-8"><h1 className="text-2xl font-semibold">Events and learning</h1><p className="mt-4">Ask your administrator for access.</p></main>;return <EventsWorkspace permissions={session.permissions}/>;}
+
+export default async function Page({ params }: { params: Promise<{ section?: string }> }) {
+  const session = await requireSession();
+  const { section } = await params;
+  if (section && !["events", "courses", "exams"].includes(section)) notFound();
+  if (!session.permissions.includes("events.read")) return <main className="p-8">Ask your administrator for access.</main>;
+  if (!section) redirect("/events/events");
+  return <EventsWorkspace key={section} permissions={session.permissions} offeringKind={({ events: "event", courses: "course", exams: "exam" } as Record<string, string>)[section]} />;
+}

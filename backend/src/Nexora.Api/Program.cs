@@ -1,3 +1,4 @@
+using Nexora.Modules.Workflow;
 using Nexora.Modules.Content;
 using Nexora.Api;
 using System.Reflection;
@@ -32,6 +33,7 @@ builder.Services.AddNexoraEvents(builder.Configuration);
 builder.Services.AddNexoraFinance(builder.Configuration);
 builder.Services.AddNexoraWork(builder.Configuration);
 builder.Services.AddNexoraEngagement(builder.Configuration);
+builder.Services.AddNexoraWorkflow(builder.Configuration);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("NexoraWeb", policy =>
@@ -93,6 +95,7 @@ app.MapNexoraEvents();
 app.MapNexoraFinance();
 app.MapNexoraWork();
 app.MapNexoraEngagement();
+app.MapNexoraWorkflow();
 app.MapNexoraReporting();
 app.MapNexoraReadiness();
 
@@ -109,6 +112,7 @@ if (app.Environment.IsDevelopment())
         await scope.ServiceProvider.GetRequiredService<FinanceDbContext>().Database.MigrateAsync();
         await scope.ServiceProvider.GetRequiredService<WorkDbContext>().Database.MigrateAsync();
         await scope.ServiceProvider.GetRequiredService<EngagementDbContext>().Database.MigrateAsync();
+        await scope.ServiceProvider.GetRequiredService<WorkflowDbContext>().Database.MigrateAsync();
     }
 }
 

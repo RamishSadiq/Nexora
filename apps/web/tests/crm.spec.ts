@@ -8,7 +8,7 @@ test("CRM imports reconcile, connected activity stays live and files require sca
   await page.getByRole("button", { name: "Import validated records", exact: true }).click(); await expect(page.getByText("Import complete.", { exact: true })).toBeVisible();
   const csv = await page.request.get("/api/v1/crm/export?kind=contact"); expect(csv.ok()).toBeTruthy(); expect(await csv.text()).toContain("CRM Acceptance Member");
   await page.getByRole("button", { name: "Preview import", exact: true }).click(); await expect(page.getByText("Nothing imported. Resolve the blocked rows.", { exact: true })).toBeVisible();
-  await page.getByRole("textbox", { name: "Search records", exact: true }).fill("crm.acceptance@example.test"); await page.getByRole("button", { name: "Search", exact: true }).click();
+  await page.getByRole("searchbox", { name: "Search records", exact: true }).fill("crm.acceptance@example.test"); await page.getByRole("button", { name: "Search", exact: true }).click();
   await page.getByRole("button", { name: "Edit CRM Acceptance Member", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Applications (0)", exact: true })).toBeVisible();
   const record = (await (await page.request.get("/api/v1/crm/records?search=CRM%20Acceptance%20Member")).json()).items[0];

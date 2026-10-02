@@ -34,6 +34,8 @@ public static class IdentityModule
             configuration.GetValue<bool>("Identity:Provider:LocalDevelopmentEnabled")));
         services.AddScoped<ILocalIdentityAdapter, LocalIdentityAdapter>();
         services.AddHttpContextAccessor();
+        services.AddSingleton<WorkflowExecutionContext>();
+        services.AddScoped<IWorkflowPrincipalDirectory, WorkflowPrincipalDirectory>();
         services.AddScoped<IRequestIdentity, RequestIdentity>();
         services.AddScoped<IIdentityDirectory, IdentityDirectoryService>();
         services.AddScoped<IPortalRecipientDirectory, PortalRecipientDirectory>();
@@ -67,6 +69,29 @@ public static class IdentityModule
 
         services.ConfigureApplicationCookie(options =>
         {
+            options.Events.OnValidatePrincipal = async context =>
+            {
+                // Resolve current tenant-scoped roles on each request: an old cookie must not
+                // retain access after its user or security group has been changed.
+                var previous = context.HttpContext.User;
+                context.HttpContext.User = context.Principal!;
+                try
+                {
+                    var signIn = context.HttpContext.RequestServices.GetRequiredService<SignInManager<NexoraUser>>();
+                    var user = await signIn.ValidateSecurityStampAsync(context.Principal);
+                    if (user == null || !user.IsActive)
+                    {
+                        context.RejectPrincipal();
+                        return;
+                    }
+                    var factory = context.HttpContext.RequestServices.GetRequiredService<IUserClaimsPrincipalFactory<NexoraUser>>();
+                    var refreshed = await factory.CreateAsync(user);
+                    context.ShouldRenew = !context.Principal!.Claims.Select(claim => (claim.Type, claim.Value)).OrderBy(claim => claim.Type).ThenBy(claim => claim.Value)
+                        .SequenceEqual(refreshed.Claims.Select(claim => (claim.Type, claim.Value)).OrderBy(claim => claim.Type).ThenBy(claim => claim.Value));
+                    context.ReplacePrincipal(refreshed);
+                }
+                finally { context.HttpContext.User = previous; }
+            };
             options.Cookie.Name = isDevelopment ? "Nexora.Session" : "__Host-Nexora.Session";
             options.Cookie.HttpOnly = true;
             options.Cookie.SameSite = SameSiteMode.Lax;
@@ -107,7 +132,7 @@ public static class IdentityModule
                     .AddRequirements(activeTenantRequirement)
                     .RequireClaim(NexoraClaimTypes.Permission, NexoraPermissions.AuditRead));
 
-        foreach (var permission in new[] { "crm.read", "crm.manage", "crm.configure", "crm.files", "membership.read", "membership.manage", "membership.decide", "events.read", "events.manage", "events.results", "finance.read", "finance.manage", "finance.post", "finance.export", "engagement.read", "engagement.manage", "engagement.fundraise", "work.read", "work.manage", "work.import", "work.export", "insights.read", "insights.export", "content.read", "content.manage", "content.publish" })
+        foreach (var permission in NexoraPermissions.All.Skip(3))
         {
             services.AddAuthorizationBuilder().AddPolicy(permission, policy => policy.RequireAuthenticatedUser()
                 .AddRequirements(activeTenantRequirement).RequireClaim(NexoraClaimTypes.Permission, permission));
@@ -173,6 +198,7 @@ public static class IdentityModule
             .RequireAuthorization(NexoraPermissions.IdentityRead);
 
         endpoints.MapPortal();
+        endpoints.MapAdministration();
         return endpoints;
     }
 

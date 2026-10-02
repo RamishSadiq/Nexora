@@ -100,6 +100,11 @@ export function useCrmListing(initial: ListState, initialRecord: string, fixedKi
       const changedKind = query.kind !== previous.query.kind;
       commit({ ...previous, query, ...(changedKind ? { columns: defaults, viewId: "", selected: "" } : {}) });
     },
+    scope(ownerUserId = "") {
+      const previous = current.current;
+      const query = { ...initial, kind: previous.query.kind, search: "", status: "", archived: false, page: 1, ownerUserId, ownerTeamId: "", category: "" };
+      setSearch(""); commit({ ...previous, query, selected: "", viewId: "" });
+    },
     setSelected(selected: string) { commit({ ...current.current, selected }); },
     setColumns(update: (columns: string[]) => string[]) {
       commit({ ...current.current, columns: cleanColumns(update(current.current.columns), current.current.query.kind) });

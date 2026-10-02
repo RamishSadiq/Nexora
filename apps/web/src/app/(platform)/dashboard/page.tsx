@@ -18,17 +18,17 @@ const activity = [
 
 export default function DashboardPage() {
   return (
-    <main className="page-enter mx-auto max-w-[1540px] p-5 sm:p-7 lg:p-9">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+    <main className="page-enter mx-auto max-w-[1540px] p-5 sm:px-7 sm:py-6 lg:px-9">
+      <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-center">
         <div>
-          <p className="mb-1 text-sm font-medium text-[#667085]">Friday, 11 September</p>
-          <h1 className="text-[clamp(1.8rem,3vw,2.4rem)] font-semibold tracking-[-0.045em] text-[#17213a]">Good morning, Ramish</h1>
-          <p className="mt-2 text-sm text-[#778296]">Here is what is moving across your organisation today.</p>
+          <p className="mb-1.5 text-[11px] font-medium tracking-[0.02em] text-[#667085]">Friday, 11 September</p>
+          <h1 className="text-[clamp(1.25rem,2vw,1.65rem)] font-semibold leading-tight tracking-[-0.035em] text-[#17213a]">Good morning, Ramish</h1>
+          <p className="mt-1.5 text-xs leading-5 text-[#778296]">Here is what is moving across your organisation today.</p>
         </div>
-        <button className="inline-flex h-10 items-center justify-center gap-2 self-start rounded-xl border border-[#dde2e9] bg-white px-3.5 text-sm font-semibold text-[#445064] shadow-sm hover:bg-[#fafbfc] sm:self-auto">Last 30 days<Clock3 className="size-4 text-[#8490a2]" /></button>
+        <button className="inline-flex h-9 items-center justify-center gap-2 self-start rounded-xl border border-[#dde2e9] bg-white px-3.5 text-xs font-medium transition-colors text-[#445064] shadow-sm hover:bg-[#fafbfc] sm:self-auto">Last 30 days<Clock3 className="size-4 text-[#8490a2]" /></button>
       </div>
 
-      <section className="mt-7 grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Key metrics">
+      <section className="mt-5 grid gap-4 sm:grid-cols-2 xl:grid-cols-4" aria-label="Key metrics">
         {metrics.map((metric) => {
           const Icon = metric.icon;
           return (

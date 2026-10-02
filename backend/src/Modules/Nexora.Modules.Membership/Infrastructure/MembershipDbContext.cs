@@ -59,6 +59,11 @@ public sealed class MembershipDbContext(DbContextOptions<MembershipDbContext> op
         b.Entity<MemberSubscription>().HasIndex(x => new { x.TenantId, x.AccountId })
             .IsUnique().HasFilter("[AccountId] IS NOT NULL AND [Status] = 'active'");
         b.Entity<MembershipHistory>().HasIndex(x => new { x.TenantId, x.SubjectId, x.CreatedAtUtc });
+        TenantTable<MembershipSetupValue>(b, "SetupValues");
+        b.Entity<MembershipSetupValue>().Property(x => x.Kind).HasMaxLength(40);
+        b.Entity<MembershipSetupValue>().Property(x => x.Name).HasMaxLength(160);
+        b.Entity<MembershipSetupValue>().Property(x => x.Description).HasMaxLength(2000);
+        b.Entity<MembershipSetupValue>().HasIndex(x => new { x.TenantId, x.Kind, x.Name }).IsUnique();
         ConfigureColumns(b);
     }
 }

@@ -74,3 +74,10 @@ public sealed class MembershipHistory : TenantEntity, IAppendOnly
     public DateTime? NewEndUtc { get; set; }
 }
 
+
+public sealed class MembershipSetupValue : TenantEntity
+{
+ public string Kind { get; set; } = "";
+ public string Name { get; set; } = "";
+ public string Description { get; set; } = "";
+}

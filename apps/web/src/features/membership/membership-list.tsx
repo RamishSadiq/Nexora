@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { moduleApi } from "../shared/module-api";
+import { FilterViewToolbar } from "../shared/filter-view-toolbar";
+import { ListingSearch } from "../shared/entity-listing-controls";
 import { Field, inputClass, buttonClass } from "../shared/module-ui";
 
 type Query = { page: number; pageSize: number; search: string; status: string };
@@ -43,18 +45,14 @@ export function useMembershipList<T>(path: "members" | "applications", refresh: 
 
 type ListControls = ReturnType<typeof useMembershipList>;
 
-export function MembershipListControls({ label, statuses, list, retry }: {
-  label: string; statuses: string[]; list: ListControls; retry: () => void;
+export function MembershipListControls({ label, statuses, list, retry, actions, columns }: {
+  actions?: ReactNode; columns?: ReactNode; label: string; statuses: string[]; list: ListControls; retry: () => void;
 }) {
   const { query, change, loading, error, totalCount, items } = list;
   const pages = Math.max(1, Math.ceil(totalCount / query.pageSize));
   const first = items.length ? (query.page - 1) * query.pageSize + 1 : 0;
   return <div className="mb-4 space-y-3">
-    <div className="flex flex-wrap items-end gap-3">
-      <Field label={`Search ${label}`}><input type="search" className={inputClass} maxLength={160} value={query.search} onChange={e => change({ search: e.target.value })}/></Field>
-      <Field label={`${label} status`}><select className={inputClass} value={query.status} onChange={e => change({ status: e.target.value })}><option value="">All statuses</option>{statuses.map(status => <option key={status} value={status}>{status}</option>)}</select></Field>
-      <Field label={`${label} page size`}><select className={inputClass} value={query.pageSize} onChange={e => change({ pageSize: Number(e.target.value) })}>{[10,25,50,100].map(size => <option key={size} value={size}>{size}</option>)}</select></Field>
-    </div>
+    <FilterViewToolbar actions={actions} onAllRecords={() => change({search:"",status:""})} search={<ListingSearch label={`Search ${label}`} value={query.search} onChange={value => change({search:value})} onSearch={() => change({search:query.search})} />} filters={<div className="grid gap-3 sm:grid-cols-2"><Field label={`${label} status`}><select className={inputClass} value={query.status} onChange={e => change({ status: e.target.value })}><option value="">All statuses</option>{statuses.map(status => <option key={status}>{status}</option>)}</select></Field><Field label={`${label} page size`}><select className={inputClass} value={query.pageSize} onChange={e => change({ pageSize: Number(e.target.value) })}>{[10,25,50,100].map(size => <option key={size}>{size}</option>)}</select></Field></div>} columns={columns} />
     {error ? <div role="alert">{error} <button className={buttonClass} onClick={retry}>Retry {label}</button></div> : <p role="status" aria-live="polite" className="text-sm text-slate-600">{loading ? `Loading ${label}…` : `Showing ${first}–${items.length ? first + items.length - 1 : 0} of ${totalCount}`}</p>}
     <nav aria-label={`${label} pages`} className="flex items-center gap-3 text-sm">
       <button className={buttonClass} disabled={loading || !!error || query.page <= 1} onClick={() => change({ page: query.page - 1 })}>Previous</button>

@@ -7,9 +7,11 @@ public interface IReportDataset
 {
  string Key {get;} string Title {get;} string Permission {get;}
  Task<ReportPage> QueryAsync(ReportQuery query,CancellationToken ct);
+ Task<ReportRow?> FindAsync(Guid id,CancellationToken ct);
 }
 public sealed class ReportDataset(string key,string title,string permission,IQueryable<ReportRow> source):IReportDataset
 {
+ public Task<ReportRow?> FindAsync(Guid id,CancellationToken ct)=>source.SingleOrDefaultAsync(x=>x.Id==id,ct);
  public string Key=>key;public string Title=>title;public string Permission=>permission;
  public async Task<ReportPage> QueryAsync(ReportQuery request,CancellationToken ct)
  {
