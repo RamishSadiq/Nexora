@@ -1,0 +1,44 @@
+{
+  "verifiedAt": "2026-10-10 17:12:42 UTC",
+  "sent": 3,
+  "verified": 3,
+  "duplicates": 0,
+  "replyCheckComplete": true,
+  "immediateBouncesFound": 0,
+  "messages": [
+    {
+      "messageId": "1a126cdb46a0f8e5",
+      "to": "support@foundster.com",
+      "subject": "Staff-managed website content for The Arabian Dream",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime": "video/mp4",
+        "bytes": 1945313
+      },
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a126cdb46a0f8e5"
+    },
+    {
+      "messageId": "1a126cd3439e26db",
+      "to": "info@ablaqco.com",
+      "subject": "Staff-managed website content for Ablaq",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime": "video/mp4",
+        "bytes": 1945313
+      },
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a126cd3439e26db"
+    },
+    {
+      "messageId": "1a126cc99bcdbf2d",
+      "to": "info@amtc.ae",
+      "subject": "Staff-managed website content for AMTC",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime": "video/mp4",
+        "bytes": 1945313
+      },
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a126cc99bcdbf2d"
+    }
+  ],
+  "deliveryStatus": "Gmail Sent acceptance verified; recipient delivery/read status unknown"
+}

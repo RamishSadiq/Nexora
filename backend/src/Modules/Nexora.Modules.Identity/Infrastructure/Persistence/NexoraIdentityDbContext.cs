@@ -1,3 +1,4 @@
+using Nexora.BuildingBlocks.Persistence;
 using Microsoft.AspNetCore.Identity;
 using Nexora.Modules.Identity.Security;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -16,6 +17,7 @@ public sealed partial class NexoraIdentityDbContext(DbContextOptions<NexoraIdent
     public DbSet<RolePermission> RolePermissions => Set<RolePermission>();
     public DbSet<AuditEvent> AuditEvents => Set<AuditEvent>();
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { base.OnConfiguring(optionsBuilder); optionsBuilder.AddInterceptors(new DataAuditInterceptor(()=>CurrentTenantId)); }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -118,5 +120,6 @@ public sealed partial class NexoraIdentityDbContext(DbContextOptions<NexoraIdent
             entity.Property(x => x.IpAddress).HasMaxLength(64);
             entity.HasIndex(x => new { x.TenantId, x.OccurredAtUtc });
         });
+        DataAuditModel.Configure(builder,()=>CurrentTenantId);
     }
 }

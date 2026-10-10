@@ -1,0 +1,285 @@
+{
+  "updatedAt": "2026-10-09T12:58:36.120743+00:00",
+  "policy": "docs/market/us/CRM-FIRST-TARGETING.md",
+  "scope": "Initial reserve checks plus dated hourly first-system research; not a complete prospect list.",
+  "confirmedNoCrm": 0,
+  "eligibleManualEvidence": 0,
+  "records": [
+    {
+      "organisation": "Flexible Packaging Association",
+      "domain": "flexpack.org",
+      "candidateId": 48,
+      "crmStatus": "existing_system",
+      "confidence": "high",
+      "outreachDecision": "exclude",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [
+        {
+          "url": "https://www.flexpack.org/about-us",
+          "observation": "Official page links Association Management Software to Novi AMS and describes member profile, event and invoice access."
+        }
+      ],
+      "checkedAt": "2026-10-09T11:58:00Z"
+    },
+    {
+      "organisation": "ACRL/NY",
+      "domain": "acrlny.org",
+      "crmStatus": "existing_system",
+      "confidence": "high",
+      "outreachDecision": "exclude",
+      "manualWorkflowEvidence": [
+        {
+          "url": "https://acrlny.org/handbook",
+          "observation": "Handbook also mentions spreadsheets."
+        }
+      ],
+      "existingSystemEvidence": [
+        {
+          "url": "https://acrlny.org/handbook",
+          "observation": "Current handbook names Wild Apricot for membership reports and event registration."
+        }
+      ],
+      "checkedAt": "2026-10-09T11:58:00Z",
+      "note": "A spreadsheet keyword hit is not proof of no CRM."
+    },
+    {
+      "organisation": "Contract Packaging Association",
+      "domain": "contractpackaging.org",
+      "candidateId": 49,
+      "crmStatus": "unknown_system",
+      "confidence": "low",
+      "outreachDecision": "research_only",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [
+        {
+          "url": "https://www.contractpackaging.org/sponsorships",
+          "observation": "Public sponsorship page refers to a members' Info Hub. Further verification is required before assigning a membership-system vendor."
+        }
+      ],
+      "checkedAt": "2026-10-09T11:58:00Z"
+    },
+    {
+      "organisation": "International Wood Products Association",
+      "domain": "iwpawood.org",
+      "candidateId": 76,
+      "crmStatus": "unknown_system",
+      "confidence": "low",
+      "outreachDecision": "research_only",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [
+        {
+          "url": "https://www.iwpawood.org/members/group.aspx?id=250734",
+          "observation": "Search retrieved a public member-login and registration page, but direct retrieval failed. No current no-CRM evidence is established."
+        }
+      ],
+      "checkedAt": "2026-10-09T11:58:00Z"
+    },
+    {
+      "organisation": "Decorative Hardwoods Association",
+      "domain": "decorativehardwoods.org",
+      "candidateId": 69,
+      "crmStatus": "unknown_system",
+      "confidence": "low",
+      "outreachDecision": "research_only",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-09T11:58:00Z",
+      "note": "Public membership information and directory are not evidence of manual records or CRM absence; direct homepage retrieval failed."
+    },
+    {
+      "organisation": "West Virginia PTA",
+      "domain": "westvirginiapta.org",
+      "usPresence": "West Virginia, United States",
+      "membershipModel": "State/local PTA membership and dues administration",
+      "crmStatus": "existing_system",
+      "confidence": "high",
+      "outreachDecision": "exclude",
+      "NexoraFit": "Membership operations fit; existing Givebacks membership software excludes first-system outreach.",
+      "manualWorkflowEvidence": [
+        {
+          "url": "https://westvirginiapta.org/membership/",
+          "observation": "Spreadsheet worksheets offered as a fallback; not proof of CRM absence.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "existingSystemEvidence": [
+        {
+          "url": "https://westvirginiapta.org/membership/",
+          "observation": "Official membership page describes preferred Givebacks automatic member tracking.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        },
+        {
+          "url": "https://westvirginiapta.org/pta-basics/",
+          "observation": "Official procedures require Givebacks for PTAs.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        },
+        {
+          "url": "https://mobile.westvirginiapta.org/memberhub",
+          "observation": "Official page offers Givebacks statewide membership/contact/dues administration.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+    },
+    {
+      "organisation": "Virginia Association of Law Libraries",
+      "domain": "valawlibraries.org",
+      "usPresence": "Virginia, United States",
+      "membershipModel": "Annual individual, institutional, associate, sustaining and student memberships",
+      "administratorContact": {
+        "name": "Victoria Levy",
+        "role": "Vice President / President Elect, 2026-2027",
+        "email": "vlevy@vacourts.gov",
+        "source": "https://www.valawlibraries.org/about/leadership/",
+        "sourceDate": "2026-05-22"
+      },
+      "crmStatus": "existing_system",
+      "confidence": "high",
+      "outreachDecision": "exclude",
+      "NexoraFit": "Annual membership/application/contact workflows fit, but existing membership software excludes first-system campaign.",
+      "manualWorkflowEvidence": [
+        {
+          "url": "https://www.valawlibraries.org/wp-content/uploads/2026/04/VALL-Handbook-04-27-2026.pdf",
+          "observation": "Membership committee procedure directs updates to the Excel membership list (printed page 33).",
+          "sourceDate": "2026-04-27",
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "existingSystemEvidence": [
+        {
+          "url": "https://www.valawlibraries.org/become-a-vall-member/",
+          "observation": "Official current join page supplies s2Member Pro PayPal membership levels and annual term configuration; online membership account, renewal and profile links provide contradictory membership-software evidence.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        },
+        {
+          "url": "https://www.valawlibraries.org/",
+          "observation": "Official homepage advertises immediate access after online joining and member profile/renewal tools.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "note": "Do not infer first-system need from the Excel procedure. Exclusion reflects explicit membership software, not a generic login. Rendered shortcode does not prove that checkout currently works.",
+      "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+    },
+    {
+      "organisation": "Swatara Watershed Association",
+      "domain": "swatarawatershed.org",
+      "usPresence": "Pennsylvania, United States",
+      "membershipModel": "Watershed association membership, renewals and volunteer coordination",
+      "administratorContact": {
+        "name": "Bethany Canner",
+        "email": "bethany@swatarawatershed.org",
+        "role": "Coordinator supervisor listed in volunteer position description",
+        "source": "https://swatarawatershed.org/wp-content/uploads/2026/01/Swatara-Volunteer-and-Membership-Coordinator_Volunteer-Job-Description.pdf"
+      },
+      "crmStatus": "unknown_system",
+      "confidence": "low",
+      "outreachDecision": "research_only",
+      "NexoraFit": "Membership administration is relevant; operational system and commercial fit remain unqualified.",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://swatarawatershed.org/wp-content/uploads/2026/01/Swatara-Volunteer-and-Membership-Coordinator_Volunteer-Job-Description.pdf",
+          "observation": "Current volunteer description covers membership database, dues mailing and renewals. Excel OR database-platform qualifications do not identify the actual records process.",
+          "sourceDate": "2026-01",
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+    },
+    {
+      "organisation": "Funeral Consumers Alliance of Western Pennsylvania",
+      "domain": "funeralconsumerswpa.org",
+      "usPresence": "Pittsburgh, Pennsylvania, United States",
+      "membershipModel": "One-time individual/family membership fees; no annual dues",
+      "administratorContact": {
+        "email": "info@funeralconsumerswpa.org",
+        "role": "Official association contact",
+        "source": "https://funeralconsumerswpa.org/"
+      },
+      "crmStatus": "unknown_system",
+      "confidence": "low",
+      "outreachDecision": "research_only",
+      "NexoraFit": "Member/contact records overlap, but volunteer-only, donation-supported lifetime membership is a weaker commercial fit than recurring-dues trade associations; no pitch selected.",
+      "manualWorkflowEvidence": [
+        {
+          "url": "https://funeralconsumerswpa.org/wp-content/uploads/2025/07/email-newsletter.pdf",
+          "observation": "Spring 2025 newsletter reports cross-checking paper records with a spreadsheet-based database. Historical lead; latest 2026 material does not reconfirm the records system.",
+          "sourceDate": "2025-Spring",
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://funeralconsumerswpa.org/wp-content/uploads/2026/05/spring_2026_email_newsletter.pdf",
+          "observation": "Current spring newsletter describes Google nonprofit email/shared documents, missing member emails and one-time membership fees; does not establish current spreadsheet membership records.",
+          "sourceDate": "2026-Spring",
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        },
+        {
+          "url": "https://funeralconsumerswpa.org/wp-content/uploads/2026/09/Email-Newsletter-Fall-2026-WORD-Version.pdf",
+          "observation": "Fall newsletter appeals for volunteers and donations to sustain operations. Does not confirm CRM absence.",
+          "sourceDate": "2026-Fall",
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        },
+        {
+          "url": "https://funeralconsumerswpa.org/frequently-asked-questions/",
+          "observation": "Official FAQ describes lifetime individual/family membership rather than annual dues.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+    },
+    {
+      "organisation": "Western Wisconsin Sterile Processing Professionals",
+      "domain": "wwspp-hspa.org",
+      "usPresence": "Western Wisconsin, United States",
+      "membershipModel": "Professional chapter membership and educational attendance",
+      "crmStatus": "unknown_system",
+      "confidence": "low",
+      "outreachDecision": "research_only",
+      "NexoraFit": "Chapter membership overlaps, but spreadsheet evidence concerns attendance points; current membership-record system not established.",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://www.wwspp-hspa.org/s/WWSPP-Policies-2025.pdf",
+          "observation": "Policies separately require maintaining membership records and an attendance spreadsheet. Attendance points alone do not establish manual membership-record administration.",
+          "sourceDate": "2025",
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        },
+        {
+          "url": "https://www.wwspp-hspa.org/wwspp-chapter-template-resources/bylaws-policies",
+          "observation": "Official page currently links 2025 policies; membership software check remains incomplete.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+        }
+      ],
+      "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+    }
+  ],
+  "limitations": "Initial direct HTTPS reads timed out. Official pages for FPA, ACRL/NY and CPA were retrieved through web browsing; IWPA and DHA lack a complete current system check. Unknowns are held, not labelled no CRM.",
+  "qualificationRuns": [
+    {
+      "checkedAt": "2026-10-09T12:58:36.120743+00:00",
+      "utcHour": "2026-10-09T12:00:00+00:00",
+      "organisations": [
+        "West Virginia PTA",
+        "Virginia Association of Law Libraries",
+        "Swatara Watershed Association",
+        "Funeral Consumers Alliance of Western Pennsylvania",
+        "Western Wisconsin Sterile Processing Professionals"
+      ],
+      "eligibleCount": 0,
+      "sources": "docs/market/us/outreach/2026-10-09/hourly/12-utc/research.json"
+    }
+  ]
+}

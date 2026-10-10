@@ -1,11 +1,11 @@
 using Nexora.BuildingBlocks.Persistence;
 namespace Nexora.Modules.Workflow;
 
-public sealed record WorkflowTemplateOptions(Guid? ReviewerId=null,Guid? EscalationUserId=null,int ReminderDays=3,int BeforeExpiryDays=30,int GraceDays=7,Guid? EmailConnectorId=null,string? Recipient=null);
+public sealed record WorkflowTemplateOptions(Guid? ReviewerId=null,Guid? EscalationUserId=null,int ReminderDays=3,int BeforeExpiryDays=30,int GraceDays=7,Guid? EmailConnectorId=null,string? Recipient=null,Dictionary<string,string>? Values=null,string RecordKind="contacts",bool EventChanges=false);
 public sealed record WorkflowOperationTemplate(string Key,string Name,string Description,WorkflowGraph Graph);
-public static class WorkflowOperationsTemplates
+public static partial class WorkflowOperationsTemplates
 {
- public static readonly string[] Keys=["application-review","missing-information","member-onboarding","renewal-preparation","renewal-reminders","expiry-lapse","task-escalation","unpaid-invoice","renewal-completion","cancellation-review","reinstatement-review","contact-follow-up","invoice-posting"];
+ public static readonly string[] Keys=["application-review","missing-information","member-onboarding","renewal-preparation","renewal-reminders","expiry-lapse","task-escalation","unpaid-invoice","renewal-completion","cancellation-review","reinstatement-review","contact-follow-up","invoice-posting","application-intake","organisation-checks","data-quality","relationship-change","main-contact-handover","human-approval","portal-access-review","payment-membership","payment-exception","refund-credit","event-registration","event-reminders","post-event","community-membership","content-publication","exception-reporting"];
  public static WorkflowOperationTemplate[] All(Guid actor,WorkflowTemplateOptions? options=null)=>Keys.Select(key=>Build(key,actor,options??new())).ToArray();
  public static WorkflowOperationTemplate Build(string key,Guid actor,WorkflowTemplateOptions config)
  {
@@ -65,10 +65,10 @@ public static class WorkflowOperationsTemplates
    case "cancellation-review":case "reinstatement-review":
     name=key=="cancellation-review"?"Cancellation review":"Reinstatement review";Add(Approval("membership.manage","transition","end"));Add(Action("transition","Execute authorised membership transition","membership.member.transition","confirm",("membershipId","{{record.id}}"),("transition",key=="cancellation-review"?"cancel":"reinstate"),("reason","{{steps.approval.reason}}")));Communicate("confirm",name+" completed","end");Escalate();break;
    case "contact-follow-up":
-    entity="contacts";name="New Contact follow-up";trigger="record.created";Add(Action("assign","Assign record owner","crm.record.update","task",("recordId","{{record.id}}"),("ownerUserId","{{variables.reviewerId}}")));Add(Task("task","Review new Contact and missing information","end"));break;
+    entity=config.RecordKind;name="New "+(entity=="accounts"?"Account":"Contact")+" follow-up";trigger="record.created";Add(Action("assign","Assign record owner","crm.record.update","task",("recordId","{{record.id}}"),("ownerUserId","{{variables.reviewerId}}")));Add(Task("task","Review new record and missing information","end"));break;
    case "invoice-posting":
     entity="orders";name="Invoice preparation and posting";Add(Approval("finance.post","post","end"));Add(Action("post","Post through Finance command","finance.order.post","end",("orderId","{{record.id}}")));Escalate();break;
-   default:throw new System.ComponentModel.DataAnnotations.ValidationException("Choose a supported operations template.");
+   default:return BuildCatalogue(key,actor,config);
   }
   Add(new("end","end","Complete"));description="Review the generated draft before activation. "+(config.EmailConnectorId==null?"Communications create staff follow-up notifications; configure email in this template to send member messages.":"Member messages use the selected approved SMTP connector and recipient expression.");
   return new(key,name,description,new(2,entity,trigger,nodes[0].Id,nodes.ToArray(),schedule,filter,variables));

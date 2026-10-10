@@ -1,0 +1,1030 @@
+{
+  "schemaVersion": 1,
+  "campaignStatus": "active",
+  "createdAt": "2026-10-09T06:41:09.564Z",
+  "timezone": "Europe/London",
+  "scheduledLocalTime": "Every five hours",
+  "cadence": "five_hourly",
+  "hourlyNewOrganisationLimit": 1,
+  "dailyNewOrganisationLimit": 24,
+  "cadenceChangedAt": "2026-10-10T17:18:39.201376+00:00",
+  "hourlyRuns": [
+    {
+      "date": "2026-10-09",
+      "utcHour": "2026-10-09T11:00:00+00:00",
+      "startedAt": "2026-10-09T11:49:17.964966+00:00",
+      "status": "completed",
+      "attemptedRecipient": "gary@smihq.org",
+      "organisation": "Spring Manufacturers Institute",
+      "manifest": "docs/market/us/outreach/2026-10-09/campaign.json",
+      "messageIds": [
+        "1a120800ff0e30ec"
+      ],
+      "replyCheckComplete": true,
+      "sentCount": 1,
+      "updatedAt": "2026-10-09T11:49:50.797180+00:00",
+      "completedAt": "2026-10-09T11:51:27.948927+00:00",
+      "verifiedCount": 1,
+      "duplicateCount": 0,
+      "failedCount": 0,
+      "report": "docs/market/us/outreach/2026-10-09/hourly/11-utc/STATUS.md",
+      "verification": "docs/market/us/outreach/2026-10-09/hourly/11-utc/send-verification.json",
+      "responseSummary": {
+        "positive": 0,
+        "automaticOutOfOffice": 1,
+        "bounces": 0
+      }
+    },
+    {
+      "date": "2026-10-09",
+      "utcHour": "2026-10-09T12:00:00+00:00",
+      "startedAt": "2026-10-09T12:49:15.733508+00:00",
+      "status": "skipped_no_qualified_prospect",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "replyCheckComplete": true,
+      "targetingPolicyVersion": 2,
+      "report": "docs/market/us/outreach/2026-10-09/hourly/12-utc/STATUS.md",
+      "completedAt": "2026-10-09T12:58:36.120743+00:00",
+      "sentCount": 0,
+      "verifiedCount": 0,
+      "failedCount": 0,
+      "duplicateCount": 0,
+      "qualifiedCount": 0,
+      "researchCount": 5,
+      "verification": "docs/market/us/outreach/2026-10-09/hourly/12-utc/reply-and-sent-checks.json",
+      "responseSummary": {
+        "positive": 0,
+        "newReplies": 0,
+        "bounces": 0
+      },
+      "reason": "No new candidate met both current first-system evidence and commercial-fit checks. Existing-system exclusions and research-only holds preserved."
+    },
+    {
+      "date": "2026-10-09",
+      "utcHour": "2026-10-09T13:00:00+00:00",
+      "startedAt": "2026-10-09T13:14:40.414148+00:00",
+      "completedAt": "2026-10-09T13:57:29.059159+00:00",
+      "market": "Middle East",
+      "manualScopeChange": true,
+      "status": "failed_reply_check",
+      "sentCount": 0,
+      "messageIds": [],
+      "attemptedRecipient": null,
+      "replyCheckComplete": false,
+      "report": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/STATUS.md",
+      "verification": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/gmail-check-failure.json",
+      "attemptHistory": [
+        {
+          "date": "2026-10-09",
+          "utcHour": "2026-10-09T13:00:00+00:00",
+          "startedAt": "2026-10-09T13:14:40.414148+00:00",
+          "completedAt": "2026-10-09T13:14:40.414148+00:00",
+          "market": "Middle East",
+          "manualScopeChange": true,
+          "status": "skipped_no_qualified_prospect",
+          "sentCount": 0,
+          "messageIds": [],
+          "attemptedRecipient": null,
+          "replyCheckComplete": true,
+          "report": "docs/market/middle-east/research/2026-10-09/STATUS.md",
+          "verification": "docs/market/middle-east/research/2026-10-09/reply-checks.json"
+        }
+      ],
+      "updatedAt": "2026-10-09T13:57:29.059159+00:00",
+      "targetingPolicyVersion": 4,
+      "sentCheckComplete": false,
+      "verifiedCount": 0,
+      "heldCount": 2,
+      "requalifiedCount": 2,
+      "reason": "Incomplete live Gmail checks; no sends. Two exploratory website/CMS drafts saved with country/permission holds."
+    },
+    {
+      "date": "2026-10-09",
+      "utcHour": "2026-10-09T14:00:00+00:00",
+      "startedAt": "2026-10-09T14:46:25.960+00:00",
+      "status": "interrupted_no_send",
+      "market": "Middle East",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "sentCount": 0,
+      "replyCheckComplete": false,
+      "reconciledAt": "2026-10-10T06:47:36.057119+00:00",
+      "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/gmail-check.json",
+      "report": "docs/market/middle-east/research/2026-10-09/hourly/14-utc/STATUS.md",
+      "reason": "Prior run interrupted before final persistence; live Sent reconciled on next run, no additional sends."
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T06:00:00+00:00",
+      "startedAt": "2026-10-10T06:39:59.368+00:00",
+      "completedAt": "2026-10-10T06:47:36.057119+00:00",
+      "status": "skipped_no_qualified_prospect",
+      "market": "Middle East",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "sentCount": 0,
+      "verifiedCount": 0,
+      "replyCheckComplete": true,
+      "sentCheckComplete": true,
+      "targetingPolicyVersion": 4,
+      "qualifiedCount": 0,
+      "requalifiedCount": 5,
+      "newResearchRecords": 3,
+      "heldDrafts": 2,
+      "todayConfirmedCount": 0,
+      "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/gmail-check.json",
+      "completionVerification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/completion-check.json",
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/STATUS.md",
+      "responseSummary": {
+        "positive": 0,
+        "newReplies": 0,
+        "bounces": 0
+      },
+      "reason": "No current offer-qualified recipient with documented lawful email route. Closed, unsupported or unresolved procurement leads retained as research only."
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T07:00:00+00:00",
+      "startedAt": "2026-10-10T07:30:37+00:00",
+      "completedAt": "2026-10-10T07:39:28.161558+00:00",
+      "status": "skipped_no_qualified_prospect",
+      "manualUserAuthorised": true,
+      "market": "Middle East",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "sentCount": 0,
+      "verifiedCount": 0,
+      "replyCheckComplete": true,
+      "sentCheckComplete": true,
+      "targetingPolicyVersion": 4,
+      "screenedCount": 13,
+      "newResearchRecords": 9,
+      "heldDrafts": 3,
+      "qualifiedCount": 0,
+      "todayConfirmedCount": 0,
+      "verification": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/gmail-check.json",
+      "completionVerification": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/completion-check.json",
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/STATUS.md",
+      "responseSummary": {
+        "positive": 0,
+        "newReplies": 0,
+        "bounces": 0
+      },
+      "reason": "Broader private-business pool prepared; actual supplier need, buyer and lawful email route unresolved. No confirmed send."
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T07:00:00+00:00",
+      "startedAt": "2026-10-10T07:42:30.268+00:00",
+      "completedAt": "2026-10-10T07:47:51+00:00",
+      "attemptType": "heartbeat",
+      "status": "skipped_no_qualified_prospect",
+      "market": "Middle East",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "sentCount": 0,
+      "verifiedCount": 0,
+      "replyCheckComplete": true,
+      "sentCheckComplete": true,
+      "qualifiedCount": 0,
+      "newResearchRecords": 1,
+      "todayConfirmedCount": 0,
+      "verification": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/heartbeat-074230/gmail-check.json",
+      "completionVerification": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/heartbeat-074230/completion-check.json",
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/heartbeat-074230/STATUS.md",
+      "previousAttemptReport": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/STATUS.md",
+      "responseSummary": {
+        "positive": 0,
+        "newReplies": 0,
+        "bounces": 0
+      },
+      "reason": "Same-hour manual research preserved; bounded Arabic/English search found no qualified lawful recipient. Official website project already awarded. No send attempted."
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T08:00:00+00:00",
+      "startedAt": "2026-10-10T08:43:34.075+00:00",
+      "completedAt": "2026-10-10T16:53:18+00:00",
+      "attemptType": "heartbeat",
+      "status": "skipped_no_qualified_prospect",
+      "market": "Middle East",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "sentCount": 0,
+      "verifiedCount": 0,
+      "replyCheckComplete": true,
+      "sentCheckComplete": true,
+      "targetingPolicyVersion": 4,
+      "requalifiedCount": 3,
+      "newResearchRecords": 1,
+      "qualifiedCount": 0,
+      "todayConfirmedCount": 0,
+      "verification": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/gmail-check.json",
+      "completionVerification": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/completion-check.json",
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/STATUS.md",
+      "responseSummary": {
+        "positive": 0,
+        "newReplies": 0,
+        "bounces": 0
+      },
+      "reason": "Three private-business reserves rechecked: buyer/project-stage and lawful email route unresolved. Saudi website-development announcement already credits a vendor; no current matching invitation. No send."
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T16:00:00+00:00",
+      "startedAt": "2026-10-10T16:55:55.331+00:00",
+      "completedAt": "2026-10-10T16:58:07+00:00",
+      "attemptType": "heartbeat",
+      "status": "skipped_no_qualified_prospect",
+      "market": "Middle East",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "sentCount": 0,
+      "verifiedCount": 0,
+      "replyCheckComplete": true,
+      "sentCheckComplete": true,
+      "targetingPolicyVersion": 4,
+      "reviewAttemptCount": 3,
+      "requalifiedCount": 2,
+      "sourceFetchIncompleteCount": 1,
+      "newResearchRecords": 0,
+      "qualifiedCount": 0,
+      "todayConfirmedCount": 0,
+      "verification": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/gmail-check.json",
+      "completionVerification": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/completion-check.json",
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/STATUS.md",
+      "responseSummary": {
+        "positive": 0,
+        "newReplies": 0,
+        "bounces": 0
+      },
+      "reason": "No lawful qualified recipient. Two Saudi reserves freshly read, third official page unavailable; no new matching official project invitation. No send attempted."
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T17:00:00+00:00",
+      "startedAt": "2026-10-10T17:11:27.846368+00:00",
+      "manifest": "docs\\market\\us\\outreach\\2026-10-10\\campaign.json",
+      "messageIds": [
+        "1a126cc99bcdbf2d",
+        "1a126cd3439e26db",
+        "1a126cdb46a0f8e5"
+      ],
+      "status": "completed",
+      "sentCount": 3,
+      "updatedAt": "2026-10-10T17:12:40.284148+00:00",
+      "verifiedCount": 3,
+      "duplicateCount": 0,
+      "completedAt": "2026-10-10T17:13:32.216925+00:00",
+      "manualBatchHourlyException": true,
+      "verification": "docs/market/us/outreach/2026-10-10/send-verification.json"
+    }
+  ],
+  "sender": "ramishqureshi99@gmail.com",
+  "postalAddress": "EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan",
+  "automationId": "nexora-daily-us-sales-outreach",
+  "firstScheduledDate": "2026-10-09",
+  "lastReplyCheckAt": "2026-10-10T16:58:07+00:00",
+  "lastReplyCheck": {
+    "status": "complete",
+    "scope": "All 52 contacted domains and overlapping Nexora/delivery queries including spam/trash; all pages complete; actual known messages reread during regional change. No positive reply or bounce.",
+    "positiveResponses": 0,
+    "knownDeclines": [
+      "1a11bf33395d33a1"
+    ],
+    "automaticReplies": [
+      "1a11f79e78082745",
+      "1a120804f5fbe7f3"
+    ]
+  },
+  "positiveResponses": [],
+  "notifiedPositiveMessageIds": [],
+  "runs": [
+    {
+      "date": "2026-10-09",
+      "status": "completed",
+      "startedAt": "2026-10-09T06:56:12.109Z",
+      "manualStart": true,
+      "manifest": "docs/market/us/outreach/2026-10-09/campaign.json",
+      "sentCount": 10,
+      "messageIds": [
+        "1a11f7678e41f57c",
+        "1a11f76d0e3fea55",
+        "1a11f772a971f528",
+        "1a11f778a20ccaad",
+        "1a11f77ea8a74a8d",
+        "1a11f7848a393b9b",
+        "1a11f78af1ffedf9",
+        "1a11f79086a34070",
+        "1a11f7961e491a65",
+        "1a11f79c15f23dcf"
+      ],
+      "updatedAt": "2026-10-09T07:03:20.421358+00:00",
+      "completedAt": "2026-10-09T07:06:22.054Z",
+      "verifiedCount": 10,
+      "duplicateCount": 0,
+      "skipRemainingSendingToday": false,
+      "report": "docs/market/us/outreach/2026-10-09/STATUS.md",
+      "responseSummary": {
+        "positive": 0,
+        "automaticRetirement": 1,
+        "bounces": 0
+      }
+    }
+  ],
+  "previouslyContacted": [
+    {
+      "organisation": "GTMA",
+      "email": "david@gtma.co.uk",
+      "domain": "gtma.co.uk",
+      "messageId": "1a11bdf55d8130a2",
+      "threadId": "1a11bdf55d8130a2"
+    },
+    {
+      "organisation": "Association of Fencing Industries",
+      "email": "info@theafi.co.uk",
+      "domain": "theafi.co.uk",
+      "messageId": "1a11be73bb6e873b",
+      "threadId": "1a11be73bb6e873b"
+    },
+    {
+      "organisation": "BAFSA",
+      "email": "victoria@bafsa.org.uk",
+      "domain": "bafsa.org.uk",
+      "messageId": "1a11be815953d93d",
+      "threadId": "1a11be815953d93d"
+    },
+    {
+      "organisation": "British Promotional Merchandise Association",
+      "email": "membership@bpma.co.uk",
+      "domain": "bpma.co.uk",
+      "messageId": "1a11be8a50e5deab",
+      "threadId": "1a11be8a50e5deab"
+    },
+    {
+      "organisation": "Commercial Interiors UK",
+      "email": "info@commercial-interiorsuk.com",
+      "domain": "commercial-interiorsuk.com",
+      "messageId": "1a11be92ff3cd6f9",
+      "threadId": "1a11be92ff3cd6f9"
+    },
+    {
+      "organisation": "British Constructional Steelwork Association",
+      "email": "lorraine.mackinder@bcsa.org.uk",
+      "domain": "bcsa.org.uk",
+      "messageId": "1a11be9e7b0beb9b",
+      "threadId": "1a11be9e7b0beb9b"
+    },
+    {
+      "organisation": "British Coatings Federation",
+      "email": "info@bcf.co.uk",
+      "domain": "bcf.co.uk",
+      "messageId": "1a11bea81abaec38",
+      "threadId": "1a11bea81abaec38"
+    },
+    {
+      "organisation": "Society of Independent Brewers and Associates",
+      "email": "membership@siba.co.uk",
+      "domain": "siba.co.uk",
+      "messageId": "1a11beb04274d92a",
+      "threadId": "1a11beb04274d92a"
+    },
+    {
+      "organisation": "British Independent Retailers Association",
+      "email": "membership@bira.co.uk",
+      "domain": "bira.co.uk",
+      "messageId": "1a11bebbfc73d6fe",
+      "threadId": "1a11bebbfc73d6fe"
+    },
+    {
+      "organisation": "Trade Association Forum",
+      "email": "secretariat@taforum.org",
+      "domain": "taforum.org",
+      "messageId": "1a11becb63c3868a",
+      "threadId": "1a11becb63c3868a"
+    },
+    {
+      "organisation": "British Cleaning Council",
+      "email": "info@britishcleaningcouncil.org",
+      "domain": "britishcleaningcouncil.org",
+      "messageId": "1a11bed87d62d77f",
+      "threadId": "1a11bed87d62d77f"
+    },
+    {
+      "organisation": "Wood Component Manufacturers Association",
+      "email": "amy@wcma.com",
+      "domain": "wcma.com",
+      "messageId": "1a11c1181b725d3a",
+      "threadId": "1a11c1181b725d3a"
+    },
+    {
+      "organisation": "Cabinet Makers Association",
+      "email": "director@cabinetmakers.org",
+      "domain": "cabinetmakers.org",
+      "messageId": "1a11c141a7e55e69",
+      "threadId": "1a11c141a7e55e69"
+    },
+    {
+      "organisation": "Graphic Media Alliance",
+      "email": "info@graphicmedia.org",
+      "domain": "graphicmedia.org",
+      "messageId": "1a11c14836da419f",
+      "threadId": "1a11c14836da419f"
+    },
+    {
+      "organisation": "Great Lakes Graphics Association",
+      "email": "info@glga.info",
+      "domain": "glga.info",
+      "messageId": "1a11c14e24744bb3",
+      "threadId": "1a11c14e24744bb3"
+    },
+    {
+      "organisation": "Association of Independent Corrugated Converters",
+      "email": "vreyes@aiccbox.org",
+      "domain": "aiccbox.org",
+      "messageId": "1a11c153e30859e2",
+      "threadId": "1a11c153e30859e2"
+    },
+    {
+      "organisation": "National Tooling and Machining Association",
+      "email": "cmarsico@ntma.org",
+      "domain": "ntma.org",
+      "messageId": "1a11c15996661aa6",
+      "threadId": "1a11c15996661aa6"
+    },
+    {
+      "organisation": "Precision Metalforming Association",
+      "email": "llehman@pma.org",
+      "domain": "pma.org",
+      "messageId": "1a11c15f48fbec90",
+      "threadId": "1a11c15f48fbec90"
+    },
+    {
+      "organisation": "Fabricators and Manufacturers Association",
+      "email": "membership@fmamfg.org",
+      "domain": "fmamfg.org",
+      "messageId": "1a11c16528f62b29",
+      "threadId": "1a11c16528f62b29"
+    },
+    {
+      "organisation": "American Mold Builders Association",
+      "email": "info@amba.org",
+      "domain": "amba.org",
+      "messageId": "1a11c16ad8942eeb",
+      "threadId": "1a11c16ad8942eeb"
+    },
+    {
+      "organisation": "Manufacturers Association for Plastic Processors",
+      "email": "info@mappinc.com",
+      "domain": "mappinc.com",
+      "messageId": "1a11c17068612088",
+      "threadId": "1a11c17068612088"
+    },
+    {
+      "organisation": "Metal Treating Institute",
+      "email": "kristen@heattreat.net",
+      "domain": "heattreat.net",
+      "messageId": "1a11c17634387954",
+      "threadId": "1a11c17634387954"
+    },
+    {
+      "organisation": "National Wood Flooring Association",
+      "email": "anita.howard@nwfa.org",
+      "domain": "nwfa.org",
+      "messageId": "1a11c17bb52abde3",
+      "threadId": "1a11c17bb52abde3"
+    },
+    {
+      "organisation": "Power Transmission Distributors Association",
+      "email": "ptda@ptda.org",
+      "domain": "ptda.org",
+      "messageId": "1a11c181ca8691a6",
+      "threadId": "1a11c181ca8691a6"
+    },
+    {
+      "organisation": "Fluid Power Distributors Association",
+      "email": "info@fpda.org",
+      "domain": "fpda.org",
+      "messageId": "1a11c198ed3fea2e",
+      "threadId": "1a11c198ed3fea2e"
+    },
+    {
+      "organisation": "Bearing Specialists Association",
+      "email": "info@bsahome.org",
+      "domain": "bsahome.org",
+      "messageId": "1a11c19f0bb94c08",
+      "threadId": "1a11c19f0bb94c08"
+    },
+    {
+      "organisation": "Material Handling Equipment Distributors Association",
+      "email": "connect@mheda.org",
+      "domain": "mheda.org",
+      "messageId": "1a11c1a6ad5de964",
+      "threadId": "1a11c1a6ad5de964"
+    },
+    {
+      "organisation": "Industrial Supply Association",
+      "email": "info@isapartners.org",
+      "domain": "isapartners.org",
+      "messageId": "1a11c1ac175b0386",
+      "threadId": "1a11c1ac175b0386"
+    },
+    {
+      "organisation": "National Fastener Distributors Association",
+      "email": "info@nfda-fastener.org",
+      "domain": "nfda-fastener.org",
+      "messageId": "1a11c1b58b9c985a",
+      "threadId": "1a11c1b58b9c985a"
+    },
+    {
+      "organisation": "Precision Machined Products Association",
+      "email": "info@pmpa.org",
+      "domain": "pmpa.org",
+      "messageId": "1a11c1bb06754473",
+      "threadId": "1a11c1bb06754473"
+    },
+    {
+      "organisation": "International Association of Plastics Distribution",
+      "email": "iapd@iapd.org",
+      "domain": "iapd.org",
+      "messageId": "1a11c1c3b2bf39f8",
+      "threadId": "1a11c1c3b2bf39f8"
+    },
+    {
+      "organisation": "Polyurethane Manufacturers Association",
+      "email": "info@pmahome.org",
+      "domain": "pmahome.org",
+      "messageId": "1a11c1c90d01fac1",
+      "threadId": "1a11c1c90d01fac1"
+    },
+    {
+      "organisation": "American Composites Manufacturers Association",
+      "email": "info@acmanet.org",
+      "domain": "acmanet.org",
+      "messageId": "1a11c1e1f2f1e799",
+      "threadId": "1a11c1e1f2f1e799"
+    },
+    {
+      "organisation": "Aluminum Anodizers Council",
+      "email": "mail@anodizing.org",
+      "domain": "anodizing.org",
+      "messageId": "1a11c1e794b80f6a",
+      "threadId": "1a11c1e794b80f6a"
+    },
+    {
+      "organisation": "Aluminum Extruders Council",
+      "email": "mail@aec.org",
+      "domain": "aec.org",
+      "messageId": "1a11c1ed082e39a4",
+      "threadId": "1a11c1ed082e39a4"
+    },
+    {
+      "organisation": "Industrial Packaging Alliance of North America",
+      "email": "info@industrialpackaging.org",
+      "domain": "industrialpackaging.org",
+      "messageId": "1a11c1f2d4b368df",
+      "threadId": "1a11c1f2d4b368df"
+    },
+    {
+      "organisation": "Reusable Packaging Association",
+      "email": "info@reusables.org",
+      "domain": "reusables.org",
+      "messageId": "1a11c1f85aba49a0",
+      "threadId": "1a11c1f85aba49a0"
+    },
+    {
+      "organisation": "Paperboard Packaging Council",
+      "email": "info@paperbox.org",
+      "domain": "paperbox.org",
+      "messageId": "1a11c1fe67945c8d",
+      "threadId": "1a11c1fe67945c8d"
+    },
+    {
+      "organisation": "Tag and Label Manufacturers Institute",
+      "email": "office@tlmi.com",
+      "domain": "tlmi.com",
+      "messageId": "1a11c203d2286c33",
+      "threadId": "1a11c203d2286c33"
+    },
+    {
+      "organisation": "Association of Woodworking and Furnishings Suppliers",
+      "email": "angela@awfs.org",
+      "domain": "awfs.org",
+      "messageId": "1a11c20c97b3046e",
+      "threadId": "1a11c20c97b3046e"
+    },
+    {
+      "organisation": "International Door Association",
+      "email": "info@doors.org",
+      "domain": "doors.org",
+      "messageId": "1a11c212432fee89",
+      "threadId": "1a11c212432fee89"
+    },
+    {
+      "organisation": "American Fence Association",
+      "email": "memberservices@americanfenceassociation.com",
+      "domain": "americanfenceassociation.com",
+      "messageId": "1a11f7678e41f57c",
+      "threadId": "1a11f7678e41f57c",
+      "sentAt": "2026-10-09T06:59:45.196464+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "National Glass Association",
+      "email": "membership@glass.org",
+      "domain": "glass.org",
+      "messageId": "1a11f76d0e3fea55",
+      "threadId": "1a11f76d0e3fea55",
+      "sentAt": "2026-10-09T07:00:08.060317+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Adhesive and Sealant Council",
+      "email": "brian.peters@ascouncil.org",
+      "domain": "ascouncil.org",
+      "messageId": "1a11f772a971f528",
+      "threadId": "1a11f772a971f528",
+      "sentAt": "2026-10-09T07:00:31.070565+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Specialty Tools and Fasteners Distributors Association",
+      "email": "cusher@stafda.org",
+      "domain": "stafda.org",
+      "messageId": "1a11f778a20ccaad",
+      "threadId": "1a11f778a20ccaad",
+      "sentAt": "2026-10-09T07:00:55.596668+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "National Association for Surface Finishing",
+      "email": "info@nasf.org",
+      "domain": "nasf.org",
+      "messageId": "1a11f77ea8a74a8d",
+      "threadId": "1a11f77ea8a74a8d",
+      "sentAt": "2026-10-09T07:01:20.342404+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Fibre Box Association",
+      "email": "fba@fibrebox.org",
+      "domain": "fibrebox.org",
+      "messageId": "1a11f7848a393b9b",
+      "threadId": "1a11f7848a393b9b",
+      "sentAt": "2026-10-09T07:01:44.005649+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Single Ply Roofing Industry",
+      "email": "info@spri.org",
+      "domain": "spri.org",
+      "messageId": "1a11f78af1ffedf9",
+      "threadId": "1a11f78af1ffedf9",
+      "sentAt": "2026-10-09T07:02:10.423742+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Investment Casting Institute",
+      "email": "info@investmentcasting.org",
+      "domain": "investmentcasting.org",
+      "messageId": "1a11f79086a34070",
+      "threadId": "1a11f79086a34070",
+      "sentAt": "2026-10-09T07:02:32.986185+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "North American Die Casting Association",
+      "email": "nadca@diecasting.org",
+      "domain": "diecasting.org",
+      "messageId": "1a11f7961e491a65",
+      "threadId": "1a11f7961e491a65",
+      "sentAt": "2026-10-09T07:02:56.021020+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Metal Powder Industries Federation",
+      "email": "dschember@mpif.org",
+      "domain": "mpif.org",
+      "messageId": "1a11f79c15f23dcf",
+      "threadId": "1a11f79c15f23dcf",
+      "sentAt": "2026-10-09T07:03:20.421358+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "Spring Manufacturers Institute",
+      "email": "gary@smihq.org",
+      "domain": "smihq.org",
+      "messageId": "1a120800ff0e30ec",
+      "threadId": "1a120800ff0e30ec",
+      "sentAt": "2026-10-09T11:49:50.797180+00:00",
+      "localDate": "2026-10-09"
+    },
+    {
+      "organisation": "AMTC Foodservice Equipment LLC",
+      "email": "info@amtc.ae",
+      "domain": "amtc.ae",
+      "messageId": "1a126cc99bcdbf2d",
+      "threadId": "1a126cc99bcdbf2d",
+      "sentAt": "2026-10-10T17:11:27.846368+00:00",
+      "localDate": "2026-10-10",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "manualAuthorisation": "send them",
+      "manualBatchHourlyException": true
+    },
+    {
+      "organisation": "Ablaq Architectural Design Studio",
+      "email": "info@ablaqco.com",
+      "domain": "ablaqco.com",
+      "messageId": "1a126cd3439e26db",
+      "threadId": "1a126cd3439e26db",
+      "sentAt": "2026-10-10T17:12:01.643654+00:00",
+      "localDate": "2026-10-10",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "manualAuthorisation": "send them",
+      "manualBatchHourlyException": true
+    },
+    {
+      "organisation": "The Arabian Dream / Foundster Corporate Services FZCO",
+      "email": "support@foundster.com",
+      "domain": "foundster.com",
+      "messageId": "1a126cdb46a0f8e5",
+      "threadId": "1a126cdb46a0f8e5",
+      "sentAt": "2026-10-10T17:12:40.284148+00:00",
+      "localDate": "2026-10-10",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "manualAuthorisation": "send them",
+      "manualBatchHourlyException": true
+    }
+  ],
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "size_bytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+  },
+  "automationStatus": "ACTIVE",
+  "automationTargetThreadId": "01a11683-f909-7e80-a675-5e3cae66dbdd",
+  "contactsToReview": [
+    {
+      "organisation": "Metal Powder Industries Federation",
+      "retiredAddress": "dschember@mpif.org",
+      "replacementContact": "Stephanie",
+      "replacementEmail": "sgibbs@mpif.org",
+      "sourceMessageId": "1a11f79e78082745",
+      "status": "needs_contact_review",
+      "notes": "Automatic retirement response, not a positive human referral. No second pitch sent; prior-company exclusion remains."
+    }
+  ],
+  "targetingPolicy": {
+    "version": 5,
+    "updatedAt": "2026-10-10T17:18:39.201376+00:00",
+    "file": "docs/market/DUAL-MARKET-CAMPAIGN.md",
+    "focus": "Website/CMS, supported portal, CRM and membership module needs",
+    "eligibleCrmStatuses": [
+      "confirmed_no_crm",
+      "manual_records_evidence"
+    ],
+    "excludedCrmStatuses": [
+      "existing_system"
+    ],
+    "researchOnlyCrmStatuses": [
+      "unknown_system"
+    ],
+    "unknownIsNotNoCrm": true,
+    "skipWhenNoEligibleProspect": true,
+    "previousContactsRemainExcluded": true,
+    "qualificationRegistry": "docs/market/middle-east/research/CRM-QUALIFICATION.json",
+    "countryOutreachRules": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json",
+    "offerTypes": [
+      "website_cms",
+      "portal",
+      "crm",
+      "membership"
+    ],
+    "crmStatusGateAppliesTo": [
+      "crm",
+      "membership_first_system"
+    ],
+    "existingCrmExcludesWebsitePortal": false,
+    "activeMarkets": [
+      "United States",
+      "Middle East"
+    ],
+    "qualificationRegistries": [
+      "docs/market/us/research/CRM-QUALIFICATION.json",
+      "docs/market/middle-east/research/CRM-QUALIFICATION.json"
+    ]
+  },
+  "marketHistory": [
+    {
+      "changedAt": "2026-10-09T13:12:16.373080+00:00",
+      "from": "United States",
+      "to": "Middle East",
+      "instruction": "Go for middle east",
+      "previousPolicy": {
+        "version": 3,
+        "updatedAt": "2026-10-09T13:12:16.373080+00:00",
+        "file": "docs/market/middle-east/CRM-FIRST-TARGETING.md",
+        "focus": "First CRM or dedicated membership system adoption",
+        "eligibleCrmStatuses": [
+          "confirmed_no_crm",
+          "manual_records_evidence"
+        ],
+        "excludedCrmStatuses": [
+          "existing_system"
+        ],
+        "researchOnlyCrmStatuses": [
+          "unknown_system"
+        ],
+        "unknownIsNotNoCrm": true,
+        "skipWhenNoEligibleProspect": true,
+        "previousContactsRemainExcluded": true,
+        "qualificationRegistry": "docs/market/middle-east/research/CRM-QUALIFICATION.json",
+        "countryOutreachRules": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json"
+      }
+    },
+    {
+      "changedAt": "2026-10-10T17:18:39.201376+00:00",
+      "from": "Middle East",
+      "to": [
+        "United States",
+        "Middle East"
+      ],
+      "instruction": "US outreach was not stopped; run both markets"
+    }
+  ],
+  "activeMarket": "United States + Middle East",
+  "targetCountries": [
+    "United States",
+    "United Arab Emirates",
+    "Saudi Arabia",
+    "Qatar",
+    "Bahrain",
+    "Oman",
+    "Kuwait"
+  ],
+  "regionalPlaybook": "docs/market/middle-east/PLAYBOOK.md",
+  "regionalRuns": [
+    {
+      "date": "2026-10-09",
+      "market": "Middle East",
+      "completedAt": "2026-10-09T13:12:16.373080+00:00",
+      "status": "researched_no_eligible_recipient",
+      "researchCount": 5,
+      "sentCount": 0,
+      "positiveResponses": 0,
+      "report": "docs/market/middle-east/research/2026-10-09/STATUS.md"
+    },
+    {
+      "date": "2026-10-09",
+      "utcHour": "2026-10-09T13:00:00+00:00",
+      "market": "Middle East",
+      "status": "failed_reply_check",
+      "completedAt": "2026-10-09T13:57:29.059159+00:00",
+      "requalifiedCount": 2,
+      "heldDrafts": 2,
+      "sentCount": 0,
+      "report": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/STATUS.md"
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T06:00:00+00:00",
+      "completedAt": "2026-10-10T06:47:36.057119+00:00",
+      "status": "skipped_no_qualified_prospect",
+      "market": "Middle East",
+      "sentCount": 0,
+      "requalifiedCount": 5,
+      "newResearchRecords": 3,
+      "heldDrafts": 2,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/STATUS.md"
+    },
+    {
+      "date": "2026-10-10",
+      "utcHour": "2026-10-10T07:00:00+00:00",
+      "completedAt": "2026-10-10T07:39:28.161558+00:00",
+      "status": "skipped_no_qualified_prospect",
+      "manualUserAuthorised": true,
+      "market": "Middle East",
+      "sentCount": 0,
+      "screenedCount": 13,
+      "newResearchRecords": 9,
+      "heldDrafts": 3,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/STATUS.md"
+    }
+  ],
+  "automationName": "Nexora US and Middle East outreach every five hours",
+  "targetingPolicyHistory": [
+    {
+      "version": 3,
+      "updatedAt": "2026-10-09T13:12:16.373080+00:00",
+      "file": "docs/market/middle-east/CRM-FIRST-TARGETING.md",
+      "focus": "First CRM or dedicated membership system adoption",
+      "eligibleCrmStatuses": [
+        "confirmed_no_crm",
+        "manual_records_evidence"
+      ],
+      "excludedCrmStatuses": [
+        "existing_system"
+      ],
+      "researchOnlyCrmStatuses": [
+        "unknown_system"
+      ],
+      "unknownIsNotNoCrm": true,
+      "skipWhenNoEligibleProspect": true,
+      "previousContactsRemainExcluded": true,
+      "qualificationRegistry": "docs/market/middle-east/research/CRM-QUALIFICATION.json",
+      "countryOutreachRules": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json"
+    },
+    {
+      "changedAt": "2026-10-10T17:18:39.201376+00:00",
+      "previousPolicy": {
+        "version": 4,
+        "updatedAt": "2026-10-09T13:18:36.328625+00:00",
+        "file": "docs/market/middle-east/PRODUCT-TARGETING.md",
+        "focus": "Website/CMS, supported portal, CRM and membership module needs",
+        "eligibleCrmStatuses": [
+          "confirmed_no_crm",
+          "manual_records_evidence"
+        ],
+        "excludedCrmStatuses": [
+          "existing_system"
+        ],
+        "researchOnlyCrmStatuses": [
+          "unknown_system"
+        ],
+        "unknownIsNotNoCrm": true,
+        "skipWhenNoEligibleProspect": true,
+        "previousContactsRemainExcluded": true,
+        "qualificationRegistry": "docs/market/middle-east/research/CRM-QUALIFICATION.json",
+        "countryOutreachRules": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json",
+        "offerTypes": [
+          "website_cms",
+          "portal",
+          "crm",
+          "membership"
+        ],
+        "crmStatusGateAppliesTo": [
+          "crm",
+          "membership_first_system"
+        ],
+        "existingCrmExcludesWebsitePortal": false
+      },
+      "instruction": "Both markets remain active; same module-specific capability boundaries"
+    }
+  ],
+  "replyCheckFailures": [
+    {
+      "at": "2026-10-09T13:57:29.059159+00:00",
+      "utcHour": "2026-10-09T13:00:00+00:00",
+      "report": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/STATUS.md",
+      "detail": "Live Gmail search/read sequence did not complete or return usable results within this run's bounded wait; cancelled read-only execution. No Gmail API quota/permission error was returned, so none is asserted."
+    }
+  ],
+  "lastReplyCheckEvidence": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/gmail-check.json",
+  "lastReplyCompletionEvidence": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/completion-check.json",
+  "privateBusinessResearchPriority": {
+    "updatedAt": "2026-10-10T07:39:28.161558+00:00",
+    "instruction": "Broaden smaller private-business research",
+    "playbook": "docs/market/middle-east/PLAYBOOK.md",
+    "screening": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+    "lawfulContactGateUnchanged": true
+  },
+  "manualBatchHistory": [
+    {
+      "at": "2026-10-10T17:13:32.216925+00:00",
+      "userInstruction": "send them",
+      "messageIds": [
+        "1a126cd3439e26db",
+        "1a126cdb46a0f8e5",
+        "1a126cc99bcdbf2d"
+      ],
+      "sentCount": 3,
+      "verifiedCount": 3,
+      "oneTimeHourlyException": true
+    }
+  ],
+  "cadenceHistory": [
+    {
+      "changedAt": "2026-10-10T17:18:39.201376+00:00",
+      "previousCadence": "hourly",
+      "previousScheduledLocalTime": "Every hour at minute 00",
+      "instruction": "hit both simultaneously and send the pitches after every five hours"
+    }
+  ],
+  "intervalHours": 5,
+  "activeMarkets": [
+    "United States",
+    "Middle East"
+  ],
+  "newOrganisationLimitPerInterval": 2,
+  "newOrganisationLimitPerMarketPerInterval": 1,
+  "campaignPolicy": "docs/market/DUAL-MARKET-CAMPAIGN.md",
+  "scheduledRuns": []
+}

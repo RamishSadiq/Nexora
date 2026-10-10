@@ -49,7 +49,12 @@ builder.Services.AddCors(options =>
 var app = builder.Build();
 
 app.UseNexoraTelemetry();
-app.UseExceptionHandler();
+app.UseExceptionHandler(new ExceptionHandlerOptions
+{
+    StatusCodeSelector = exception => exception is BadHttpRequestException badRequest
+        ? badRequest.StatusCode
+        : StatusCodes.Status500InternalServerError
+});
 app.UseHttpsRedirection();
 app.UseCors("NexoraWeb");
 app.UseRateLimiter();

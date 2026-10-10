@@ -1,12 +1,13 @@
 import { randomBytes } from "node:crypto";
 import { test, expect } from "@playwright/test";
+import { submitLogin, retryLogin } from "./browser-login";
 
 test("CRM portal draft publication configures the member experience and custom pages", async ({ page, browser }) => {
   const memberContext = await browser.newContext(); const member = await memberContext.newPage();
   const password = `Portal!${randomBytes(12).toString("hex")}`;
   async function send(path: string, data: unknown, method = "POST") {
     const csrf = await (await page.request.get("/api/v1/auth/csrf")).json();
-    const response = await page.request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": csrf.token } });
+    const response = await retryLogin(() => page.request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": csrf.token } }), path.endsWith("/login"));
     expect(response.ok(), await response.text()).toBeTruthy(); return response.json();
   }
   await send("/api/v1/auth/login", { email: "admin@nexora.local", password: process.env.NEXORA_BROWSER_PASSWORD, rememberMe: false });
@@ -17,18 +18,22 @@ test("CRM portal draft publication configures the member experience and custom p
     await member.goto("/portal");
     await member.getByLabel("Email", { exact: true }).fill("configuration@nexora.test");
     await member.getByLabel("Password", { exact: true }).fill(password);
-    await member.getByRole("button", { name: "Sign in", exact: true }).click();
+    await submitLogin(member, "portal");
     await expect(member.getByRole("heading", { name: "Dashboard", exact: true })).toBeVisible();
     await page.goto("/portal-management");
+    await page.getByRole("button", { name: "Portal settings", exact: true }).click();
     await page.getByLabel("Portal name", { exact: true }).fill("Association member hub");
     await page.getByLabel("Dashboard welcome text", { exact: true }).fill("Your association updates, in one place.");
     await page.getByLabel("Menu label: dashboard", { exact: true }).fill("My dashboard");
     await page.getByLabel("Show notifications", { exact: true }).uncheck();
     await page.getByLabel("Quick links", { exact: true }).uncheck();
+    await page.getByRole("button", { name: "Back to listing", exact: true }).click();
     await page.getByRole("button", { name: "Add member page" }).click();
     await page.getByLabel("Page address", { exact: true }).fill("member-guide");
     await page.getByLabel("Page title", { exact: true }).fill("Your member guide");
     await page.getByLabel("Page content", { exact: true }).fill("Member information maintained by your association.\n<script>window.portalInjection = true</script>");
+    await page.getByRole("button", { name: "Back to listing", exact: true }).click();
+    await page.getByRole("button", { name: "Portal settings", exact: true }).click();
     await page.getByLabel("Menu label: member-guide", { exact: true }).fill("Member guide");
     await page.getByRole("button", { name: "Preview draft" }).click();
     await expect(page.getByRole("region", { name: "Portal draft preview" })).toContainText("Your member guide");
@@ -38,6 +43,7 @@ test("CRM portal draft publication configures the member experience and custom p
     await expect(member.getByRole("heading", { name: "Dashboard", exact: true })).toBeVisible();
     await expect(member.getByRole("link", { name: "Member guide", exact: true })).toHaveCount(0);
     await page.reload();
+    await page.getByRole("button", { name: "Portal settings", exact: true }).click();
     await expect(page.getByLabel("Portal name", { exact: true })).toHaveValue("Association member hub");
     await page.getByRole("button", { name: "Publish portal", exact: true }).click();
     await expect(page.getByRole("status")).toContainText("Portal published");
@@ -57,7 +63,10 @@ test("CRM portal draft publication configures the member experience and custom p
     expect(await member.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
     await member.screenshot({ path: "../../portal-custom-page-mobile.png", fullPage: true });
     page.on("dialog", dialog => dialog.accept());
+    await page.getByRole("button", { name: "Back to listing", exact: true }).click();
+    await page.getByRole("button", { name: "Edit Your member guide", exact: true }).click();
     await page.getByRole("button", { name: "Remove page", exact: true }).click();
+    await page.getByRole("button", { name: "Portal settings", exact: true }).click();
     await page.getByRole("button", { name: "Save portal draft", exact: true }).click();
     await expect(page.getByRole("status")).toContainText("Portal draft saved");
     await page.getByRole("button", { name: "Publish portal", exact: true }).click();

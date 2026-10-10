@@ -1,0 +1,70 @@
+{
+  "checkedAt": "2026-10-10 17:05:04 UTC",
+  "contactedOrganisations": 52,
+  "domainQueryGroups": 3,
+  "domainQueriesCompleted": true,
+  "allPagesComplete": true,
+  "campaignThreadReads": 52,
+  "inboundAndBounceSearchComplete": true,
+  "actualReplies": [
+    {
+      "messageId": "1a120804f5fbe7f3",
+      "classification": "out_of_office",
+      "bodyExcerpt": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact Kari Johnson at UTS at kari@uts.com.\r\n"
+    },
+    {
+      "messageId": "1a11f79e78082745",
+      "classification": "retirement_automatic_reply",
+      "bodyExcerpt": "I have retired. For questions/information please contact the colleagues below:"
+    },
+    {
+      "messageId": "1a11bf33395d33a1",
+      "classification": "decline",
+      "bodyExcerpt": "No Thanks"
+    }
+  ],
+  "positiveHumanReplies": 0,
+  "newSends": 0,
+  "automationUpdate": {
+    "id": "nexora-daily-us-sales-outreach",
+    "status": "ACTIVE",
+    "schedulePreserved": true,
+    "existingTargetPreserved": true
+  },
+  "sourceReviews": [
+    {
+      "url": "https://amtc.ae/",
+      "finding": "New website announced; contact is for commercial kitchen enquiries; no software supplier invitation."
+    },
+    {
+      "url": "https://www.ablaqco.com/",
+      "finding": "New website announced; architectural project enquiries; no verified technology buyer/request."
+    },
+    {
+      "url": "https://arabiandream.com/",
+      "finding": "New website announced; no verified technology buyer/request."
+    }
+  ],
+  "procurementSearch": [
+    {
+      "url": "https://eprocurement.uaeu.ac.ae/p_tender.jsp?tenderCode=12314",
+      "decision": "excluded",
+      "reason": "Submission closed 5 May 2026; broad digital-marketing-agency engagement."
+    },
+    {
+      "url": "https://www.ungm.org/Public/Notice/308771",
+      "decision": "excluded",
+      "reason": "Closed 24 August 2026; LXP/mobile/assessments exceed current supported portal offer."
+    },
+    {
+      "url": "https://www.vendoreye.ae/tenders/ae/design-and-launch-of-the-new-website-for-the-crimea-alliance-for-climate-2026-9facfb62726f",
+      "decision": "unverified_research_only",
+      "reason": "Third-party summary has inconsistent title/deadline across aggregators; original official invitation not verified; outside small-private-business priority."
+    }
+  ],
+  "limitations": [
+    "No eligible recipient contact route established in this review",
+    "No external email or Gmail draft created",
+    "No offer-specific demo recorded or public product page deployed"
+  ]
+}

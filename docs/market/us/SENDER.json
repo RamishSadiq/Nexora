@@ -1,0 +1,10 @@
+{
+ "name": "Ramish Qureshi",
+ "business": "Nexora",
+ "email": "ramishqureshi99@gmail.com",
+ "postalAddress": "EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan",
+ "addressConfirmation": "User confirmed this is an actual mailing address after being asked whether it is authorised and can receive Nexora business mail",
+ "postcodeSource": "https://www.pakpost.gov.pk/postcodes.php",
+ "postcodeNote": "Pakistan Post lists Islamabad I-8/4 as 44790; I-8 Markaz use is corroborated by local businesses' own published addresses. No floor, suite or plot number was invented.",
+ "emailRequirementsSource": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+}

@@ -1,0 +1,55 @@
+[
+  {
+    "url": "https://swissbcq.org/",
+    "checkedAt": "2026-10-09T14:54:25.869161+00:00",
+    "error": "HTTP Error 406: Not Acceptable",
+    "limitations": "No bypass attempted; current page unverified."
+  },
+  {
+    "url": "https://cbcqatar.org/become-a-member/",
+    "checkedAt": "2026-10-09T14:54:25.871654+00:00",
+    "status": 200,
+    "finalUrl": "https://cbcqatar.org/become-a-member/",
+    "observations": [
+      {
+        "term": "website",
+        "text": "efits Annual membership (includes membership for three (3) individuals) Additional corporate members 500QR Corporate Logo on CBCQ website Invitations to events related to Canadian-led trade missions / VIP Events Membership discounts on entrance fees at CBCQ events Ability to contact other Members via the CBCQ portal Membership is under company\u2019s name (includes membership for three (3) individuals). Opportunity to be a Sponsor at selected CBCQ events Corporate listing in online direc"
+      },
+      {
+        "term": "portal",
+        "text": "ed trade missions / VIP Events Membership discounts on entrance fees at CBCQ events Ability to contact other Members via the CBCQ portal Membership is under company\u2019s name (includes membership for three (3) individuals). Opportunity to be a Sponsor at selected CBCQ events Corporate listing in online directory Additional employees of a Corporate Member fees: 500QR each Individual Membership 1,000 QR per year Individual Membership Canadian citizens and Permanent Residents of Canada r"
+      },
+      {
+        "term": "membership",
+        "text": "an Business Council Qatar (CBCQ) Skip to content Search for: Home About CBCQ Board of Directors Founding Members The Constitution Membership News & Events Doing Business in Qatar Search for: Become a Member Become a Member johnadmin 2022-06-29T13:14:06+00:00 Join the CBCQ Community CBCQ extends a warm welcome to new members and encourages active participation at the meetings and its informative events. Working and operating overseas presents many challenges for any business so prospect"
+      },
+      {
+        "term": "contact",
+        "text": "ons to events related to Canadian-led trade missions / VIP Events Membership discounts on entrance fees at CBCQ events Ability to contact other Members via the CBCQ portal Membership is under company\u2019s name (includes membership for three (3) individuals). Opportunity to be a Sponsor at selected CBCQ events Corporate listing in online directory Additional employees of a Corporate Member fees: 500QR each Individual Membership 1,000 QR per year Individual Membership Canadian citizens a"
+      },
+      {
+        "term": "Doha",
+        "text": "ffiliate benefits are the same as Individual benefits. ADDRESS: CBCQ, Canadian Business Council Qatar, Tornado Tower, 35th Floor, Doha, Qatar EMAIL US: [email\u00a0protected] \u00a9 2022 Canadian Business Council Qatar (CBCQ). All Rights Reserved. Page load link Go to Top"
+      },
+      {
+        "term": "Qatar",
+        "text": "Become a Member \u2013 Canadian Business Council Qatar (CBCQ) Skip to content Search for: Home About CBCQ Board of Directors Founding Members The Constitution Membership News & Events Doing Business in Qatar Search for: Become a Member Become a Member johnadmin 2022-06-29T13:14:06+00:00 Join the CBCQ Community CBCQ extends a warm welcome to new members and encourages active participation at the meetin"
+      },
+      {
+        "term": "annual",
+        "text": "tate of Qatar who may attend meetings in the absence of its designated Primary Representative to the CBCQ. See Corporate Benefits Annual membership (includes membership for three (3) individuals) Additional corporate members 500QR Corporate Logo on CBCQ website Invitations to events related to Canadian-led trade missions / VIP Events Membership discounts on entrance fees at CBCQ events Ability to contact other Members via the CBCQ portal Membership is under company\u2019s name (includes"
+      },
+      {
+        "term": "representative",
+        "text": "as may be determined by the Board of Directors), or (3) have a presence in Canada. Each Corporate Member shall nominate a company Representative residing in the State of Qatar to be its Primary Representative to the CBCQ and one Alternate Representative residing in the State of Qatar who may attend meetings in the absence of its designated Primary Representative to the CBCQ. See Corporate Benefits Annual membership (includes membership for three (3) individuals) Additional corporate member"
+      }
+    ],
+    "limitations": "Public workflow only; no member-directory contacts extracted; page does not establish buying intent or permission."
+  },
+  {
+    "url": "https://ibc.qa/en/about",
+    "checkedAt": "2026-10-09T14:54:25.871654+00:00",
+    "error": "<urlopen error _ssl.c:993: The handshake operation timed out>",
+    "limitations": "No bypass attempted; current page unverified."
+  }
+]

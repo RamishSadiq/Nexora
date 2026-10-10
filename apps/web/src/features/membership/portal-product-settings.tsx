@@ -2,8 +2,8 @@
 import { useState } from "react";
 import { moduleApi } from "../shared/module-api";
 type Product = { id: string; name: string; isActive: boolean; portalApplicationsEnabled: boolean; portalOrganisationApplicationsEnabled?: boolean; portalTerms: string; version: string };
-export function PortalProductSettings({ products, onSaved }: { products: Product[]; onSaved: () => void }) {
-  const [id, setId] = useState("");
+export function PortalProductSettings({ products, onSaved, initialProductId = "" }: { products: Product[]; onSaved: () => void; initialProductId?: string }) {
+  const [id, setId] = useState(initialProductId);
   const [message, setMessage] = useState("");
   const product = products.find(p => p.id === id);
   return <section className="rounded-xl border border-slate-200 bg-white p-5" aria-label="Portal application settings">

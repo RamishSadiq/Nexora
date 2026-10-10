@@ -1,12 +1,14 @@
 namespace Nexora.Modules.Crm.Contracts;
 public sealed record RecordRequest(string Kind, string Name, string Status, string? Category, Guid? OwnerUserId, Guid? OwnerTeamId, Guid? Version, Dictionary<Guid, ValueRequest>? Attributes = null);
 public sealed record TransitionRequest(Guid Version);
-public sealed record AddressRequest(string Label, string Line1, string? Line2, string City, string? Region, string PostalCode, string Country);
-public sealed record CommunicationRequest(string Kind, string Value, string Consent, string? ConsentEvidence);
+public sealed record AddressRequest(string Label, string Line1, string? Line2, string City, string? Region, string PostalCode, string Country, string Purpose = "other", string? Line3 = null, string? Line4 = null, string? County = null, string? AddressType = null, string? AccountName = null, string? JobTitle = null, Guid? Version = null);
+public sealed record BillingAddressRequest(Guid Version, bool UseMailingAddress);
+public sealed record CommunicationRequest(string Kind, string Value, string Consent, string? ConsentEvidence, string Priority = "other", Guid? Version = null);
+public sealed record CommunicationUpdateRequest(Guid Version, string Kind, string Value, string Consent, string? ConsentEvidence, string Priority = "other");
 public sealed record RelationshipRequest(Guid TargetRecordId, string Label);
 public sealed record NoteRequest(string Body);
 public sealed record TagRequest(string Name);
-public sealed record FieldRequest(string Name, string Kind, string DataType);
+public sealed record FieldRequest(string Name, string Kind, string DataType, string? Section = null);
 public sealed record FieldOrderRequest(string Kind, Guid[] Ids);
 public sealed record ValueRequest(string? TextValue, decimal? NumberValue, bool? BooleanValue, DateTime? DateValue);
 public sealed record ViewRequest(string Name, string Kind, string Search, string Status, string Sort, bool Archived, string Columns, Guid? OwnerUserId = null, Guid? OwnerTeamId = null, string? Category = null);

@@ -1,0 +1,57 @@
+[
+  {
+    "organisation": "Contract Packaging Association",
+    "page": {
+      "url": "https://www.contractpackaging.org/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-09T11:56:27.062013+00:00",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    "systemClues": [],
+    "textClues": []
+  },
+  {
+    "organisation": "Flexible Packaging Association",
+    "page": {
+      "url": "https://www.flexpack.org/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-09T11:56:27.062013+00:00",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    "systemClues": [],
+    "textClues": []
+  },
+  {
+    "organisation": "Decorative Hardwoods Association",
+    "page": {
+      "url": "https://www.decorativehardwoods.org/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-09T11:56:27.062013+00:00",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    "systemClues": [],
+    "textClues": []
+  },
+  {
+    "organisation": "International Wood Products Association",
+    "page": {
+      "url": "https://www.iwpawood.org/",
+      "status": "unavailable",
+      "checkedAt": "2026-10-09T11:56:27.062013+00:00",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    "systemClues": [],
+    "textClues": []
+  },
+  {
+    "organisation": "ACRL/NY — keyword false-positive check",
+    "page": {
+      "url": "https://acrlny.org/handbook",
+      "status": "unavailable",
+      "checkedAt": "2026-10-09T11:56:27.062013+00:00",
+      "error": "<urlopen error _ssl.c:993: The handshake operation timed out>"
+    },
+    "systemClues": [],
+    "textClues": []
+  }
+]

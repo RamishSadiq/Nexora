@@ -1,0 +1,85 @@
+{
+  "checkedAt": "2026-10-10T16:53:18+00:00",
+  "queries": [
+    "\"تصميم موقع\" \"منافسة\" \"جمعية\" \"2026\"",
+    "\"تطوير الموقع الإلكتروني\" \"جمعية\" \"2026\" عروض",
+    "\"website development\" \"quotation\" \"2026\" \"Dubai\"",
+    "\"website\" \"RFP\" \"2026\" \"Saudi\"",
+    "site:org.sa \"تصميم موقع\" \"المنافسات\" 2026",
+    "site:ae \"website\" \"proposals\" \"submit\" \"2026\" \"procurement\""
+  ],
+  "requalifiedReserves": [
+    {
+      "organisation": "AMTC Foodservice Equipment LLC",
+      "url": "https://amtc.ae/",
+      "observation": "Upcoming website and Dubai office remain published. Mailbox is for commercial-kitchen enquiries; no software supplier invitation or buyer/project-stage clarification.",
+      "decision": "held_project_status_buyer_and_permission"
+    },
+    {
+      "organisation": "Ablaq Architectural Design Studio",
+      "url": "https://www.ablaqco.com/",
+      "observation": "Upcoming website remains published for UAE architectural studio. Contact invitation concerns customers architectural projects, not software proposals.",
+      "decision": "held_project_status_buyer_and_permission"
+    },
+    {
+      "organisation": "The Arabian Dream / Foundster Corporate Services FZCO",
+      "url": "https://arabiandream.com/",
+      "observation": "Upcoming website and Dubai company imprint remain published. Support address is not a verified technology buyer; Saturday/Sunday closed. No proposal permission.",
+      "decision": "held_project_status_buyer_and_permission"
+    }
+  ],
+  "newCandidate": {
+    "organisation": "Al Naeem Education Association (جمعية النعيم للتعليم)",
+    "country": "Saudi Arabia",
+    "domain": "alnaeem.org.sa",
+    "market": "Middle East",
+    "offerType": [
+      "website_cms",
+      "portal"
+    ],
+    "needEvidence": [
+      {
+        "url": "https://www.alnaeem.org.sa/",
+        "sourceDate": "2026-08-10",
+        "checkedAt": "2026-10-10T16:53:18+00:00",
+        "observation": "Jeddah education association announced website development; live site credits Afaq IT, and shows accounts, donations and volunteer services. No open supplier request found."
+      }
+    ],
+    "capabilityFit": "General public content and bounded profile/information pages overlap. No established current buying need; essential donation and volunteer flows cannot be assumed supported.",
+    "unsupportedRequirements": [
+      "Arabic localisation not verified",
+      "Local donation payments not verified",
+      "Arbitrary volunteer/service workflows not verified"
+    ],
+    "crmStatus": "unknown_system",
+    "existingSystemEvidence": [
+      {
+        "url": "https://www.alnaeem.org.sa/",
+        "checkedAt": "2026-10-10T16:53:18+00:00",
+        "observation": "Published website credits Afaq IT. This is existing website-provider evidence, not proof of a CRM or association-management system."
+      }
+    ],
+    "confidence": "high_for_existing_website_provider; unknown_for_CRM_and_buying_need",
+    "outreachDecision": "research_only_existing_website_provider_no_current_request",
+    "consentStatus": "not_established",
+    "permissionEvidence": [],
+    "outreachLegalBasis": "not_established_for_new_email",
+    "countryRulesCheckedAt": "2026-10-10T16:53:18+00:00",
+    "countryRulesCheckScope": "Read persisted Saudi consent gate; no new recipient-specific legal clearance.",
+    "email": null,
+    "contactVerification": "Published email masked; no guessed address or form submission.",
+    "sendEligible": false,
+    "history": []
+  },
+  "eligibleRecipients": 0,
+  "excludedResultCategories": [
+    "Vendor pricing/blog/template material is not a buyer invitation",
+    "Third-party expired/out-of-scope tender excerpts not used as permission",
+    "General UAE procurement registration is not a prospect or unsolicited email permission"
+  ],
+  "routeNote": {
+    "url": "https://u.ae/en/information-and-services/business/public-private-people-partnership/ppp/government-tendering-and-awarding",
+    "sourceDate": "2026-05-19",
+    "observation": "Official procurement overview describes supplier registration before platform bidding. No matching current project or email recipient established; no registration/submission performed."
+  }
+}

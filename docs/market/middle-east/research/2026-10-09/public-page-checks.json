@@ -1,0 +1,33 @@
+[
+  {
+    "url": "https://www.ibpcdubai.com/",
+    "finalUrl": "https://www.ibpcdubai.com/",
+    "membershipLinks": [
+      "membership-application.php",
+      "membership-categories.php",
+      "https://www.ibpcdubai.com/ibpcmember/member_login.php",
+      "contact-us.php"
+    ],
+    "vendorSignals": [],
+    "checkedAt": "2026-10-09T13:09:20.749976+00:00",
+    "officialContactObservation": "Contact Us lists office@ibpcdubai.com (council office)."
+  },
+  {
+    "url": "https://www.sbcuae.com/",
+    "error": "<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1010)>"
+  },
+  {
+    "url": "https://swissbcq.org/",
+    "error": "HTTP Error 406: Not Acceptable"
+  },
+  {
+    "url": "https://gbcqatar.qa/",
+    "finalUrl": "https://gbcqatar.qa/",
+    "membershipLinks": [
+      "#members-link"
+    ],
+    "vendorSignals": [],
+    "checkedAt": "2026-10-09T13:09:38.308335+00:00",
+    "officialContactObservation": "Contact Info lists gbcq@ahkqatar.com (council office)."
+  }
+]

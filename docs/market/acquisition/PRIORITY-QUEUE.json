@@ -1,0 +1,426 @@
+{
+  "generatedAt": "2026-10-10T17:06:36.531505+00:00",
+  "basis": "docs\\market\\middle-east\\research\\2026-10-10\\hourly\\07-utc\\PRIVATE-BUSINESS-SCREENING.json",
+  "queue": [
+    {
+      "organisation": "AMTC Foodservice Equipment LLC",
+      "domain": "amtc.ae",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "source": "https://amtc.ae/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official site announces a new website in progress and lists a Dubai office and factory contacts for commercial-kitchen enquiries.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "info@amtc.ae",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Monitor replies; organisation excluded from new first pitches",
+      "reviewDue": "2026-10-13",
+      "stage": "sent",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks",
+      "messageId": "1a126cc99bcdbf2d"
+    },
+    {
+      "organisation": "Ablaq Architectural Design Studio",
+      "domain": "ablaqco.com",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "source": "https://www.ablaqco.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official site identifies a UAE architectural design studio and announces a forthcoming website while directing architectural project enquiries to its business email.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "info@ablaqco.com",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Monitor replies; organisation excluded from new first pitches",
+      "reviewDue": "2026-10-13",
+      "stage": "sent",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks",
+      "messageId": "1a126cd3439e26db"
+    },
+    {
+      "organisation": "The Arabian Dream / Foundster Corporate Services FZCO",
+      "domain": "arabiandream.com",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "source": "https://arabiandream.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official imprint identifies Foundster Corporate Services FZCO in Dubai Silicon Oasis. The boutique relocation brand announces a new website and publishes weekday hours.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "support@foundster.com",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Monitor replies; organisation excluded from new first pitches",
+      "reviewDue": "2026-10-13",
+      "stage": "sent",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks",
+      "messageId": "1a126cdb46a0f8e5"
+    },
+    {
+      "organisation": "NeoScale",
+      "domain": "neoscalesa.com",
+      "country": "Saudi Arabia",
+      "offerType": "website_cms",
+      "source": "https://www.neoscalesa.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official page lists an operational Riyadh steel-structure business and says its website is under construction. Page has inconsistent establishment years; identity needs further verification.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "Sales@neoscalesa.com",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Verify an open requirement, buyer role and applicable contact route; ask founder for an existing introduction",
+      "reviewDue": "2026-10-13",
+      "stage": "research",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks"
+    },
+    {
+      "organisation": "Zilal Cooling for Trading Co.",
+      "domain": "zilalcooling.com",
+      "country": "Saudi Arabia",
+      "offerType": "website_cms",
+      "source": "https://zilalcooling.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official page says a new site is in progress and lists refrigeration services and Saudi branches. It publishes branch contacts but no technology supplier invitation.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "zilald@zilalcooling.com",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Verify an open requirement, buyer role and applicable contact route; ask founder for an existing introduction",
+      "reviewDue": "2026-10-13",
+      "stage": "research",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks"
+    },
+    {
+      "organisation": "Smart Interfaces Contracting LLC",
+      "domain": "ksa-sic.com",
+      "country": "Saudi Arabia",
+      "offerType": "website_cms",
+      "source": "https://ksa-sic.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official maintenance page says a new website is being prepared and lists Riyadh plus regional offices. Actual requested website functions and procurement contact remain unknown.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "info@ksa-sic.com",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Verify an open requirement, buyer role and applicable contact route; ask founder for an existing introduction",
+      "reviewDue": "2026-10-13",
+      "stage": "research",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks"
+    },
+    {
+      "organisation": "First Engineer for Technology Solutions W.L.L.",
+      "domain": "first-eng.com",
+      "country": "Qatar",
+      "offerType": "website_cms",
+      "source": "https://www.first-eng.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Official page describes a Doha steel/IT company and a new-site announcement carrying a 2025 label. Current website demand and unprotected email are unverified.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": null,
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved",
+        "Official recipient email not verified"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Verify an open requirement, buyer role and applicable contact route; ask founder for an existing introduction",
+      "reviewDue": "2026-10-13",
+      "stage": "research",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks"
+    },
+    {
+      "organisation": "JJR Construction",
+      "domain": "jjrdxb.com",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "source": "https://www.jjrdxb.com/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Indexed official page describes a Dubai construction business announcing a website launch. Full-page retrieval failed; direct DNS lookup failed. Current contact and deadline must be reverified.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": "info@jjrdxb.com",
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 0,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 2,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Verify an open requirement, buyer role and applicable contact route; ask founder for an existing introduction",
+      "reviewDue": "2026-10-13",
+      "stage": "research",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks"
+    },
+    {
+      "organisation": "Head Quarter Building Construction LLC",
+      "domain": "headquarter.ae",
+      "country": "United Arab Emirates",
+      "offerType": "website_cms",
+      "source": "https://headquarter.ae/",
+      "sourceCheckedAt": "2026-10-10T07:35:00+00:00",
+      "observedFact": "Indexed official page says the UAE construction and fit-out company's new website is under construction. Current full-page and DNS retrieval failed; no email was guessed.",
+      "problemHypothesis": "Staff may need to maintain public service or project-information pages",
+      "buyerConfirmedProblem": null,
+      "buyerRole": null,
+      "buyerContact": null,
+      "currentProvider": "unknown",
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "scores": {
+        "need": 0,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 2,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Need/fit/buyer/timing each 0-3; priority only, not purchase probability",
+      "sendEligible": false,
+      "holdReasons": [
+        "Current buyer need and provider appointment unconfirmed",
+        "Relevant decision-maker not verified",
+        "Recipient/channel lawful contact route unresolved",
+        "Official recipient email not verified"
+      ],
+      "owner": "Ramish Qureshi",
+      "nextAction": "Verify an open requirement, buyer role and applicable contact route; ask founder for an existing introduction",
+      "reviewDue": "2026-10-13",
+      "stage": "research",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "history": [
+        {
+          "at": "2026-10-10T17:02:50.363753+00:00",
+          "event": "Baseline from dated private-business screening; no send eligibility inferred"
+        }
+      ],
+      "eligibilityAssessment": "Local preparation utility has not performed live sending checks"
+    }
+  ],
+  "sendEligibleCount": 0
+}

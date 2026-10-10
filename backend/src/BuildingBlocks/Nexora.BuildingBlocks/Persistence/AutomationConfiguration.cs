@@ -48,13 +48,11 @@ public static class Automations
         row.Property(x => x.Version).IsConcurrencyToken();
     }
 
-    public static string[] Sections(string kind) => kind is "contact" or "account"
-        ? ["Addresses", "Communication methods", "Related records", "Notes", "Tags", "Files", "Custom fields", "Activity timeline"]
-        : ["Record selection", "Custom fields"];
+    public static string[] Sections(string kind) => AutomationCatalog.Sections(kind).Select(s => s.Id).ToArray();
 
-    public static AutomationField[] BuiltIns(Type type) => type.GetProperties()
-        .Where(p => new[] { "Name", "Title", "Status", "Category", "CreatedAtUtc", "StartsAtUtc", "EndsAtUtc", "DateOfBirth", "Priority" }.Contains(p.Name))
-        .Select(p => new AutomationField("record:" + p.Name, p.Name, (Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType) == typeof(DateTime) ? "date" : "text", false)).ToArray();
+    public static AutomationField[] BuiltIns(Type type) => EntityFieldCatalog.Properties(type)
+        .Select(p => new AutomationField("record:" + p.Name, EntityFieldCatalog.Label(p.Name),
+            EntityFieldCatalog.DataType(p.PropertyType) is "reference" ? "text" : EntityFieldCatalog.DataType(p.PropertyType)!, false)).ToArray();
 
     public static void Map<TDb>(RouteGroupBuilder api, string permission, Func<string, Type?> resolve,
         Func<TDb, string, CancellationToken, Task<AutomationField[]>> fields) where TDb : DbContext
@@ -63,8 +61,8 @@ public static class Automations
         {
             var type = resolve(entityType) ?? throw new KeyNotFoundException();
             var row = await db.Set<AutomationConfiguration>().SingleOrDefaultAsync(x => x.EntityType == entityType && x.TenantId == who.TenantId, ct);
-            return Results.Ok(new { version = row?.Version, sections = row == null ? Sections(entityType) : JsonSerializer.Deserialize<string[]>(row.SectionsJson),
-                rules = row == null ? [] : ReadRules(row), canManage = http.User.HasClaim("permission", permission), availableSections = Sections(entityType), fields = BuiltIns(type).Concat(await fields(db, entityType, ct)) });
+            return Results.Ok(new { version = row?.Version, sections = AutomationCatalog.Reconcile(row == null ? null : JsonSerializer.Deserialize<string[]>(row.SectionsJson), Sections(entityType)),
+                rules = row == null ? [] : ReadRules(row), canManage = http.User.HasClaim("permission", permission), availableSections = Sections(entityType), sectionDefinitions = AutomationCatalog.Sections(entityType), fields = BuiltIns(type).Concat(await fields(db, entityType, ct)) });
         });
         api.MapPut("/automations/{entityType}", async (string entityType, AutomationRequest request, TDb db, IRequestIdentity who, CancellationToken ct) =>
         {
@@ -72,11 +70,11 @@ public static class Automations
             var row = await db.Set<AutomationConfiguration>().SingleOrDefaultAsync(x => x.EntityType == entityType && x.TenantId == who.TenantId, ct);
             if (request.Version != row?.Version) return Results.Problem(statusCode: 409, title: "Settings changed. Reload before saving.");
             if (request.Sections == null && request.Rules == null) throw new ValidationException("Provide a layout or rules.");
-            if (request.Sections is {} sections && (sections.Length != Sections(entityType).Length || sections.Distinct().Count() != sections.Length || Sections(entityType).Except(sections).Any()))
+            if (request.Sections is {} sections && (sections.Length == 0 || sections.Distinct().Count() != sections.Length || sections.Except(Sections(entityType)).Any()))
                 throw new ValidationException("Include each available section exactly once.");
             if (request.Rules is {} rules) Validate(rules, BuiltIns(type).Concat(await fields(db, entityType, ct)).ToArray());
             if (row == null) { row = new() { TenantId = who.TenantId!.Value, EntityType = entityType, SectionsJson = JsonSerializer.Serialize(Sections(entityType)) }; db.Add(row); }
-            if (request.Sections != null) row.SectionsJson = JsonSerializer.Serialize(request.Sections);
+            if (request.Sections != null) row.SectionsJson = JsonSerializer.Serialize(AutomationCatalog.Reconcile(request.Sections, Sections(entityType)));
             if (request.Rules != null) row.RulesJson = JsonSerializer.Serialize(request.Rules);
             await db.SaveChangesAsync(ct);
             return Results.Ok(new { row.Version });
@@ -145,7 +143,7 @@ public static class Automations
     {
         if (tenant == null) return;
         db.ChangeTracker.DetectChanges();
-        var changed = db.ChangeTracker.Entries().Where(e => e.State is EntityState.Added or EntityState.Modified).Select(e => e.Entity).ToArray();
+        var changed = db.ChangeTracker.Entries().Where(e => e.State is EntityState.Added or EntityState.Modified or EntityState.Deleted).Select(e => e.Entity).ToArray();
         var configurations = await db.Set<AutomationConfiguration>().Where(x => x.TenantId == tenant).ToListAsync(ct);
         foreach (var configuration in configurations)
         {
@@ -154,7 +152,7 @@ public static class Automations
             var type = resolve(configuration.EntityType) ?? throw new ValidationException("Unknown automation entity.");
             var metadata = BuiltIns(type).Concat(await fields(configuration.EntityType, ct)).ToArray();
             rules = Validate(rules, metadata);
-            var ids = changed.OfType<TValue>().Select(x => x.RecordId)
+            var ids = changed.OfType<TValue>().Select(x => x.RecordId).Concat(db is IAutomationRecordSources provider ? provider.ChangedRecordIds(configuration.EntityType, changed) : [])
                 .Concat(changed.Where(x => x.GetType() == type && kindOf(x) == configuration.EntityType).Select(x => (Guid)type.GetProperty("Id")!.GetValue(x)!)).Distinct().ToArray();
             foreach (var id in ids)
             {
@@ -166,8 +164,10 @@ public static class Automations
                 {
                     var sourceField = metadata.Single(f => f.Id == rule.Source);
                     object? source = rule.Source.StartsWith("record:", StringComparison.Ordinal)
-                        ? type.GetProperty(rule.Source[7..])!.GetValue(record)
-                        : values.TryGetValue(Guid.Parse(rule.Source), out var input) ? ReadValue(input, sourceField.DataType) : null;
+                        ? EntityFieldCatalog.RuleValue(type.GetProperty(rule.Source[7..])!.GetValue(record))
+                        : Guid.TryParse(rule.Source, out var sourceId) ? values.TryGetValue(sourceId, out var input) ? ReadValue(input, sourceField.DataType) : null
+                        : db is IAutomationRecordSources sources ? EntityFieldCatalog.RuleValue(await sources.ReadSourceAsync(record, rule.Source, ct))
+                        : throw new ValidationException("Source field is unavailable.");
                     var result = Evaluate(rule, source, sourceField.DataType, DateTime.UtcNow.Date);
                     var targetId = Guid.Parse(rule.Target);
                     if (!values.TryGetValue(targetId, out var target)) { target = new TValue { TenantId = tenant.Value, RecordId = id, DefinitionId = targetId }; db.Add(target); values.Add(targetId, target); }

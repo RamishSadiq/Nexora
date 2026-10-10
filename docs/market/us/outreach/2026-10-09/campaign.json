@@ -1,0 +1,498 @@
+{
+  "campaign": "Nexora daily US outreach",
+  "localDate": "2026-10-09",
+  "dailyCampaign": true,
+  "manualStart": true,
+  "createdAt": "2026-10-09T06:58:58.271Z",
+  "sender": "ramishqureshi99@gmail.com",
+  "postalAddress": "EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan",
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "size_bytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+  },
+  "replyCheck": {
+    "at": "2026-10-09T06:58:58.272Z",
+    "positiveResponses": 0,
+    "knownSuppressedDecline": "BAFSA",
+    "completed": true
+  },
+  "messages": [
+    {
+      "rank": 1,
+      "candidateId": 81,
+      "organisation": "American Fence Association",
+      "shortName": "AFA",
+      "website": "https://www.americanfenceassociation.com/",
+      "sector": "Fencing",
+      "to": "memberservices@americanfenceassociation.com",
+      "contactRole": "Membership services mailbox",
+      "contactSource": "https://www.americanfenceassociation.com/membership/",
+      "membershipSource": "https://www.americanfenceassociation.com/membership/",
+      "checkedAt": "2026-10-09T06:58:58.274Z",
+      "observation": "I noticed AFA membership covers a whole company and its employees, and you already offer MyAFA accounts. That company-and-people relationship is central to Nexora.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for AFA's membership team",
+      "text": "Hi AFA membership team,\n\nI noticed AFA membership covers a whole company and its employees, and you already offer MyAFA accounts. That company-and-people relationship is central to Nexora.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at AFA?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi AFA membership team,</p><p>I noticed AFA membership covers a whole company and its employees, and you already offer MyAFA accounts. That company-and-people relationship is central to Nexora.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at AFA?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T06:59:45.196464+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T06:59:39.393004+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T06:59:45.196464+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f7678e41f57c"
+        }
+      ],
+      "messageId": "1a11f7678e41f57c",
+      "threadId": "1a11f7678e41f57c",
+      "sentAt": "2026-10-09T06:59:45.196464+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 2,
+      "candidateId": 85,
+      "organisation": "National Glass Association",
+      "shortName": "NGA",
+      "website": "https://www.glass.org/",
+      "sector": "Glass",
+      "to": "membership@glass.org",
+      "contactRole": "Membership services mailbox",
+      "contactSource": "https://www.glass.org/membership",
+      "membershipSource": "https://www.glass.org/membership",
+      "checkedAt": "2026-10-09T06:58:58.275Z",
+      "observation": "I noticed NGA membership is company based, with a process for adding subsidiary or additional locations. That connection between member organisations and their contacts is central to Nexora.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for NGA's membership team",
+      "text": "Hi NGA membership team,\n\nI noticed NGA membership is company based, with a process for adding subsidiary or additional locations. That connection between member organisations and their contacts is central to Nexora.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at NGA?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi NGA membership team,</p><p>I noticed NGA membership is company based, with a process for adding subsidiary or additional locations. That connection between member organisations and their contacts is central to Nexora.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at NGA?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:00:08.060317+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:00:01.660064+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:00:08.060317+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f76d0e3fea55"
+        }
+      ],
+      "messageId": "1a11f76d0e3fea55",
+      "threadId": "1a11f76d0e3fea55",
+      "sentAt": "2026-10-09T07:00:08.060317+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 3,
+      "candidateId": 95,
+      "organisation": "Adhesive and Sealant Council",
+      "shortName": "ASC",
+      "website": "https://www.ascouncil.org/",
+      "sector": "Adhesives",
+      "to": "brian.peters@ascouncil.org",
+      "contactRole": "Senior Director of Membership and Industry Programs",
+      "contactSource": "https://www.ascouncil.org/membership-information",
+      "membershipSource": "https://www.ascouncil.org/membership-information",
+      "checkedAt": "2026-10-09T06:58:58.276Z",
+      "observation": "I saw that ASC membership applications go through Board approval and employees of member companies can create their own accounts. I'd like to explore that application-to-member journey with you.",
+      "pitchVariant": "V2-named-membership-workflow",
+      "subject": "Nexora demo for ASC's membership team",
+      "text": "Hi Brian,\n\nI saw that ASC membership applications go through Board approval and employees of member companies can create their own accounts. I'd like to explore that application-to-member journey with you.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nWould a 15-minute look at that membership workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Brian,</p><p>I saw that ASC membership applications go through Board approval and employees of member companies can create their own accounts. I'd like to explore that application-to-member journey with you.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Would a 15-minute look at that membership workflow be useful?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:00:31.070565+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:00:24.497223+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:00:31.070565+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f772a971f528"
+        }
+      ],
+      "messageId": "1a11f772a971f528",
+      "threadId": "1a11f772a971f528",
+      "sentAt": "2026-10-09T07:00:31.070565+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 4,
+      "candidateId": 9,
+      "organisation": "Specialty Tools and Fasteners Distributors Association",
+      "shortName": "STAFDA",
+      "website": "https://www.stafda.org/",
+      "sector": "Distribution",
+      "to": "cusher@stafda.org",
+      "contactRole": "Published company-account and dues support contact",
+      "contactSource": "https://stafda.org/manage-accounts/",
+      "membershipSource": "https://stafda.org/manage-accounts/",
+      "checkedAt": "2026-10-09T06:58:58.276Z",
+      "observation": "I saw that STAFDA already gives each company's Key Contact a way to manage employee users. That company-and-people relationship is central to Nexora.",
+      "pitchVariant": "V2-named-membership-workflow",
+      "subject": "Nexora demo for STAFDA's membership team",
+      "text": "Hi Cathy,\n\nI saw that STAFDA already gives each company's Key Contact a way to manage employee users. That company-and-people relationship is central to Nexora.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nWould a 15-minute look at that membership workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Cathy,</p><p>I saw that STAFDA already gives each company's Key Contact a way to manage employee users. That company-and-people relationship is central to Nexora.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Would a 15-minute look at that membership workflow be useful?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:00:55.596668+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:00:48.482666+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:00:55.596668+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f778a20ccaad"
+        }
+      ],
+      "messageId": "1a11f778a20ccaad",
+      "threadId": "1a11f778a20ccaad",
+      "sentAt": "2026-10-09T07:00:55.596668+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 5,
+      "candidateId": 27,
+      "organisation": "National Association for Surface Finishing",
+      "shortName": "NASF",
+      "website": "https://nasf.org/",
+      "sector": "Surface finishing",
+      "to": "info@nasf.org",
+      "contactRole": "Published association mailbox",
+      "contactSource": "https://nasf.org/",
+      "membershipSource": "https://nasf.org/",
+      "checkedAt": "2026-10-09T06:58:58.277Z",
+      "observation": "I noticed NASF offers membership options for job shops, suppliers and distributors. Keeping those member businesses connected to their people is central to Nexora.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for NASF's membership team",
+      "text": "Hi NASF membership team,\n\nI noticed NASF offers membership options for job shops, suppliers and distributors. Keeping those member businesses connected to their people is central to Nexora.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at NASF?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi NASF membership team,</p><p>I noticed NASF offers membership options for job shops, suppliers and distributors. Keeping those member businesses connected to their people is central to Nexora.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at NASF?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:01:20.342404+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:01:13.420571+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:01:20.342404+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f77ea8a74a8d"
+        }
+      ],
+      "messageId": "1a11f77ea8a74a8d",
+      "threadId": "1a11f77ea8a74a8d",
+      "sentAt": "2026-10-09T07:01:20.342404+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 6,
+      "candidateId": 47,
+      "organisation": "Fibre Box Association",
+      "shortName": "Fibre Box Association",
+      "website": "https://www.fibrebox.org/",
+      "sector": "Packaging",
+      "to": "fba@fibrebox.org",
+      "contactRole": "Published association mailbox",
+      "contactSource": "https://www.fibrebox.org/",
+      "membershipSource": "https://www.fibrebox.org/about-fba",
+      "checkedAt": "2026-10-09T06:58:58.278Z",
+      "observation": "I saw that FBA supports corrugated member companies through data, industry resources and networking. I'd like to explore the company-and-contact administration behind that membership journey.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for Fibre Box Association's membership team",
+      "text": "Hi FBA membership team,\n\nI saw that FBA supports corrugated member companies through data, industry resources and networking. I'd like to explore the company-and-contact administration behind that membership journey.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at Fibre Box Association?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi FBA membership team,</p><p>I saw that FBA supports corrugated member companies through data, industry resources and networking. I'd like to explore the company-and-contact administration behind that membership journey.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at Fibre Box Association?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:01:44.005649+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:01:37.353056+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:01:44.005649+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f7848a393b9b"
+        }
+      ],
+      "messageId": "1a11f7848a393b9b",
+      "threadId": "1a11f7848a393b9b",
+      "sentAt": "2026-10-09T07:01:44.005649+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 7,
+      "candidateId": 91,
+      "organisation": "Single Ply Roofing Industry",
+      "shortName": "SPRI",
+      "website": "https://www.spri.org/",
+      "sector": "Roofing",
+      "to": "info@spri.org",
+      "contactRole": "Published association mailbox",
+      "contactSource": "https://www.spri.org/",
+      "membershipSource": "https://www.spri.org/membership-application/",
+      "checkedAt": "2026-10-09T06:58:58.279Z",
+      "observation": "I noticed SPRI's application collects company representatives and is reviewed by the Board. That link between company records, contacts and application review is central to Nexora.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for SPRI's membership team",
+      "text": "Hi SPRI membership team,\n\nI noticed SPRI's application collects company representatives and is reviewed by the Board. That link between company records, contacts and application review is central to Nexora.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at SPRI?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi SPRI membership team,</p><p>I noticed SPRI's application collects company representatives and is reviewed by the Board. That link between company records, contacts and application review is central to Nexora.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at SPRI?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:02:10.423742+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:02:03.892105+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:02:10.423742+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f78af1ffedf9"
+        }
+      ],
+      "messageId": "1a11f78af1ffedf9",
+      "threadId": "1a11f78af1ffedf9",
+      "sentAt": "2026-10-09T07:02:10.423742+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 8,
+      "candidateId": 22,
+      "organisation": "Investment Casting Institute",
+      "shortName": "Investment Casting Institute",
+      "website": "https://www.investmentcasting.org/",
+      "sector": "Casting",
+      "to": "info@investmentcasting.org",
+      "contactRole": "Published association mailbox",
+      "contactSource": "https://www.investmentcasting.org/",
+      "membershipSource": "https://www.investmentcasting.org/member-rates.html",
+      "checkedAt": "2026-10-09T06:58:58.280Z",
+      "observation": "I saw that ICI has separate company membership categories for foundries and suppliers. I'd like to explore how those member-business records connect to the people using their membership.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for Investment Casting Institute's membership team",
+      "text": "Hi ICI membership team,\n\nI saw that ICI has separate company membership categories for foundries and suppliers. I'd like to explore how those member-business records connect to the people using their membership.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at Investment Casting Institute?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi ICI membership team,</p><p>I saw that ICI has separate company membership categories for foundries and suppliers. I'd like to explore how those member-business records connect to the people using their membership.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at Investment Casting Institute?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:02:32.986185+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:02:26.763090+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:02:32.986185+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f79086a34070"
+        }
+      ],
+      "messageId": "1a11f79086a34070",
+      "threadId": "1a11f79086a34070",
+      "sentAt": "2026-10-09T07:02:32.986185+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 9,
+      "candidateId": 21,
+      "organisation": "North American Die Casting Association",
+      "shortName": "NADCA",
+      "website": "https://www.diecasting.org/",
+      "sector": "Die casting",
+      "to": "nadca@diecasting.org",
+      "contactRole": "Published association mailbox",
+      "contactSource": "https://www.diecasting.org/",
+      "membershipSource": "https://www.diecasting.org/",
+      "checkedAt": "2026-10-09T06:58:58.281Z",
+      "observation": "I noticed NADCA serves both corporate and individual members. I'd like to explore one corporate-membership workflow, particularly how member-company records connect with their contacts.",
+      "pitchVariant": "V2-company-workflow-routing",
+      "subject": "Nexora demo for NADCA's membership team",
+      "text": "Hi NADCA membership team,\n\nI noticed NADCA serves both corporate and individual members. I'd like to explore one corporate-membership workflow, particularly how member-company records connect with their contacts.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nAre you the right person to discuss membership systems at NADCA?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi NADCA membership team,</p><p>I noticed NADCA serves both corporate and individual members. I'd like to explore one corporate-membership workflow, particularly how member-company records connect with their contacts.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Are you the right person to discuss membership systems at NADCA?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "initial",
+      "followUpAllowed": true,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:02:56.021020+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:02:49.042825+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:02:56.021020+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f7961e491a65"
+        }
+      ],
+      "messageId": "1a11f7961e491a65",
+      "threadId": "1a11f7961e491a65",
+      "sentAt": "2026-10-09T07:02:56.021020+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment"
+    },
+    {
+      "rank": 10,
+      "candidateId": 25,
+      "organisation": "Metal Powder Industries Federation",
+      "shortName": "MPIF",
+      "website": "https://www.mpif.org/",
+      "sector": "Powder metallurgy",
+      "to": "dschember@mpif.org",
+      "contactRole": "Manager, Member Services and Standards",
+      "contactSource": "https://www.mpif.org/About/JoinMPIF.aspx",
+      "membershipSource": "https://www.mpif.org/About/JoinMPIF.aspx",
+      "checkedAt": "2026-10-09T06:58:58.282Z",
+      "observation": "I saw that MPIF membership is limited to business entities, with applications for its federated associations. I'd like to explore one company-membership workflow with your team.",
+      "pitchVariant": "V2-named-membership-workflow",
+      "subject": "Nexora demo for MPIF's membership team",
+      "text": "Hi Dora,\n\nI saw that MPIF membership is limited to business entities, with applications for its federated associations. I'd like to explore one company-membership workflow with your team.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.\n\nWould a 15-minute look at that membership workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Dora,</p><p>I saw that MPIF membership is limited to business entities, with applications for its federated associations. I'd like to explore one company-membership workflow with your team.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions. We'd like to explore a focused evaluation of one membership workflow.</p><p>Would a 15-minute look at that membership workflow be useful?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.</p></div>",
+      "status": "sent",
+      "outreachStage": "needs_contact_review",
+      "followUpAllowed": false,
+      "fitStatus": "Workflow fit inferred; buyer interest, scope and budget unverified",
+      "updatedAt": "2026-10-09T07:03:20.421358+00:00",
+      "events": [
+        {
+          "at": "2026-10-09T07:03:15.453742+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T07:03:20.421358+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted individual message with video attachment",
+          "messageId": "1a11f79c15f23dcf"
+        }
+      ],
+      "messageId": "1a11f79c15f23dcf",
+      "threadId": "1a11f79c15f23dcf",
+      "sentAt": "2026-10-09T07:03:20.421358+00:00",
+      "statusReason": "Gmail accepted individual message with video attachment",
+      "response": {
+        "messageId": "1a11f79e78082745",
+        "classification": "automatic_retirement_reply",
+        "positiveInterest": false,
+        "replacementMembershipContact": "sgibbs@mpif.org",
+        "replacementContactStatus": "Not emailed; requires review for any future routing action"
+      }
+    },
+    {
+      "rank": 11,
+      "candidateId": 35,
+      "organisation": "Spring Manufacturers Institute",
+      "shortName": "SMI",
+      "website": "https://smihq.org/",
+      "sector": "Springs",
+      "to": "gary@smihq.org",
+      "contactName": "Gary McCoy",
+      "contactRole": "Executive Director; oversees SMI operations",
+      "contactSource": "https://smihq.org/staffs/gary-mccoy/",
+      "membershipSource": "https://smihq.org/registration/",
+      "checkedAt": "2026-10-09T11:48:21Z",
+      "observation": "SMI has regular membership for North American spring manufacturers and associate membership for suppliers; staff contact applicants after they complete the application. Member Login is already offered.",
+      "pitchVariant": "V2-company-application-named-operations-owner",
+      "subject": "Nexora demo for SMI's membership applications",
+      "text": "Hi Gary,\n\nI noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system. SMI already has a member login; we'd like to explore whether a focused evaluation of one application workflow would be useful.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions.\n\nWould a 15-minute look at that workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Gary,</p><p>I noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system. SMI already has a member login; we'd like to explore whether a focused evaluation of one application workflow would be useful.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions.</p><p>Would a 15-minute look at that workflow be useful?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won't contact you again.</p></div>",
+      "status": "sent",
+      "hourlyCampaign": true,
+      "utcHour": "2026-10-09T11:00:00+00:00",
+      "researchFile": "docs/market/us/outreach/2026-10-09/hourly/11-utc/research-evidence.json",
+      "events": [
+        {
+          "at": "2026-10-09T11:49:17.321Z",
+          "status": "ready",
+          "reason": "Fresh official sources, full reply check and Sent preflight verified; no prior SMI pitch"
+        },
+        {
+          "at": "2026-10-09T11:49:34.702381+00:00",
+          "status": "sending",
+          "reason": "Complete live reply check, official sources and duplicate preflight passed; first pitch for UTC hour 11",
+          "messageId": null
+        },
+        {
+          "at": "2026-10-09T11:49:50.797180+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted the first SMI pitch with narrated MP4",
+          "messageId": "1a120800ff0e30ec"
+        }
+      ],
+      "updatedAt": "2026-10-09T11:49:50.797180+00:00",
+      "statusReason": "Gmail accepted the first SMI pitch with narrated MP4",
+      "messageId": "1a120800ff0e30ec",
+      "threadId": "1a120800ff0e30ec",
+      "sentAt": "2026-10-09T11:49:50.797180+00:00",
+      "outreachStage": "awaiting_response",
+      "response": {
+        "messageId": "1a120804f5fbe7f3",
+        "classification": "automatic_out_of_office",
+        "positiveInterest": false,
+        "returnDate": "2026-10-12",
+        "summary": "Away at SpringWorld 2026; will reply as able after returning. No sales interest expressed.",
+        "replyUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3"
+      },
+      "sentVerifiedAt": "2026-10-09T11:50:23Z",
+      "verificationFile": "docs/market/us/outreach/2026-10-09/hourly/11-utc/send-verification.json"
+    }
+  ]
+}

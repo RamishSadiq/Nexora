@@ -914,3 +914,9 @@ The workbook review refines the earlier sequence by putting the field dictionary
 3. Membership source precedence across Contact, Account and Membership sheets, meaning of Primary Membership under one active entitlement, and separation of payer/invoice recipient from entitlement owner.
 4. Directory address precedence, field-specific consent/suppression semantics, and source handling of balances, tax and currency.
 5. Resolve sample duplicate IDs and unresolved references through import validation; never merge or invent linked records automatically.
+
+### Workflow catalogue delivery — 3 October 2026
+
+The supplied 29-type WFL catalogue now has 29 primary templates and five variants, saved as 34 inactive definitions in the local development tenant. Admin → WFL Designer → Operations exposes catalogue installation and saved-workflow access. Installation is tenant-scoped and idempotent, preserving existing edits. Configuration is required before publication where record IDs or financial references are needed; activation remains explicit.
+
+New module-owned actions cover relationship/data-quality inspection, portal entitlement review, verified-invoice renewal, Finance adjustments/reconciliation, community leave and publication of an explicitly reviewed immutable Content revision. Domain guards, action receipts, permissions and human approval remain in use. Portal grant changes, external provider money transfers and unconfigured email delivery are not implied by catalogue installation. See [Workflow catalogue delivery and boundaries](WORKFLOW_OPERATIONS_TEMPLATE_PACK.md) for the complete mapping and verification evidence.

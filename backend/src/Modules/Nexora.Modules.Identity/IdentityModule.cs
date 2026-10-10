@@ -39,6 +39,8 @@ public static class IdentityModule
         services.AddScoped<IRequestIdentity, RequestIdentity>();
         services.AddScoped<IIdentityDirectory, IdentityDirectoryService>();
         services.AddScoped<IPortalRecipientDirectory, PortalRecipientDirectory>();
+        services.AddScoped<IWorkflowPortalDirectory, WorkflowPortalDirectory>();
+        services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowInspectionAction(new("identity.portal.inspect-contact","Review explicit portal binding and organisation delegation","identity.read",["contactId"],[new("contactId","Contact","reference",true)],["hasLogin","issues","invalidDelegations"],AdditionalPermissions:["crm.read"]),"contactId",async(id,ct)=>{var result=await sp.GetRequiredService<IWorkflowPortalDirectory>().ReviewAsync(id,ct);return new("Portal delegation reviewed without changing grants",new(){{"hasLogin",result.HasLogin?"true":"false"},{"issues",result.Issues},{"invalidDelegations",result.InvalidDelegations.ToString()}});}));
         services.AddScoped<IPublicTenantDirectory, PublicTenantDirectory>();
         services.AddScoped<IScheduledPublisherDirectory, ScheduledPublisherDirectory>();
         services.AddScoped<ITenantContext, HttpTenantContext>();

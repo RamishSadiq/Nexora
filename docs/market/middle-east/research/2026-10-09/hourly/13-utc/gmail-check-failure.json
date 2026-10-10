@@ -1,0 +1,14 @@
+{
+  "utcHour": "2026-10-09T13:00:00+00:00",
+  "startedHeartbeatAt": "2026-10-09T13:49:25.115Z",
+  "recordedAt": "2026-10-09T13:57:29.059159+00:00",
+  "status": "incomplete",
+  "stage": "live_campaign_reply_and_sent_checks",
+  "detail": "Live Gmail search/read sequence did not complete or return usable results within this run's bounded wait; cancelled read-only execution. No Gmail API quota/permission error was returned, so none is asserted.",
+  "lastSuccessfulReplyCheckAdvanced": false,
+  "allRepliesRead": false,
+  "sentReconciliationComplete": false,
+  "newSendAttempted": false,
+  "retryPolicy": "Retry complete checks on the next hourly run before any send; do not infer no replies or resend previous pitches.",
+  "researchSearchFailure": "Two-query public RFP/tender search also stalled and was cancelled without results. No unsupported new tender lead recorded."
+}

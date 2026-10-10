@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-10-10T17:06:36.531505+00:00",
+  "historicalUniqueOrganisationsInLedger": 52,
+  "currentResearchLeads": 9,
+  "currentSendEligible": 0,
+  "revisedHeldPitches": 3,
+  "recordedPositiveResponses": 0,
+  "discoveryCallsHeld": null,
+  "qualifiedOpportunities": null,
+  "proposalsSent": null,
+  "paidClients": null,
+  "unknownExplanation": "No evidence in campaign records; null means unverified, not zero",
+  "confirmedNewSendsFromThisReview": 0,
+  "attachmentVerified": true
+}

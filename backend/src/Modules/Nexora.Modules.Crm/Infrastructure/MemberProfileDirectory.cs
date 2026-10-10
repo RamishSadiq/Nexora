@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using Nexora.BuildingBlocks.Security;
 namespace Nexora.Modules.Crm.Infrastructure;
 
@@ -9,7 +10,7 @@ internal sealed class MemberProfileDirectory(CrmDbContext db, IRequestIdentity w
         var record = await db.Records.Where(x => x.Id == contactId && x.Kind == "contact" && !x.IsArchived && x.Status == "active").SingleOrDefaultAsync(ct);
         if (record == null) return null;
         var address = await db.Set<Nexora.Modules.Crm.Domain.Address>().Where(a => a.RecordId == contactId && a.Label == "Member correspondence")
-            .Select(a => new MemberPostalAddress(a.Line1, a.Line2 ?? "", a.City, a.Region ?? "", a.PostalCode, a.Country)).FirstOrDefaultAsync(ct);
+            .OrderBy(a => a.Id).Select(a => new MemberPostalAddress(a.Line1, a.Line2 ?? "", a.City, a.Region ?? "", a.PostalCode, a.Country)).FirstOrDefaultAsync(ct);
         return new(record.Name, record.Version, address, await RecordProfileFields.ContactAsync(db, contactId, ct));
     }
     public Task<MemberOrganisationAssociation?> ReadAssociationAsync(Guid accountId, Guid contactId, CancellationToken ct) =>
@@ -31,11 +32,23 @@ internal sealed class MemberProfileDirectory(CrmDbContext db, IRequestIdentity w
         if (updateAddress)
         {
             var addresses = await db.Set<Nexora.Modules.Crm.Domain.Address>().Where(a => a.RecordId == contactId && a.Label == "Member correspondence").ToListAsync(ct);
-            db.RemoveRange(addresses);
-            if (postalAddress != null) db.Add(new Nexora.Modules.Crm.Domain.Address {
-                TenantId = record.TenantId, RecordId = contactId, Label = "Member correspondence",
-                Line1 = postalAddress.Line1, Line2 = postalAddress.Line2, City = postalAddress.City,
-                Region = postalAddress.Region, PostalCode = postalAddress.PostalCode, Country = postalAddress.Country });
+            if (postalAddress == null)
+            {
+                if (record.BillingUsesMailingAddress && addresses.Any(a => a.Purpose == "mailing"))
+                    throw new ValidationException("This address is also used for billing. Ask staff to change the billing address before clearing it.");
+                db.RemoveRange(addresses);
+            }
+            else
+            {
+                var address = addresses.OrderBy(a => a.Id).FirstOrDefault();
+                if (address == null)
+                {
+                    address = new Nexora.Modules.Crm.Domain.Address { TenantId = record.TenantId, RecordId = contactId, Label = "Member correspondence" };
+                    db.Add(address);
+                }
+                address.Line1 = postalAddress.Line1; address.Line2 = postalAddress.Line2; address.City = postalAddress.City;
+                address.Region = postalAddress.Region; address.PostalCode = postalAddress.PostalCode; address.Country = postalAddress.Country;
+            }
         }
         if (updateDetails) await RecordProfileFields.ApplyContactAsync(db, record, contactDetails, ct);
         record.Name = name;

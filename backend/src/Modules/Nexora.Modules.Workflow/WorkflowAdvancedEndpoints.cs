@@ -29,6 +29,7 @@ public static partial class WorkflowModule
  private static void MapAdvanced(RouteGroupBuilder api,IEndpointRouteBuilder routes)
  {
   MapOperations(api);
+  MapCatalogue(api);
   api.MapGet("/directory",(IIdentityDirectory directory,CancellationToken ct)=>directory.GetAsync(ct));
   api.MapGet("/published-versions",async(WorkflowDbContext db,WorkflowExpressions expressions,HttpContext http,CancellationToken ct)=>{var versions=await db.Set<WorkflowVersion>().AsNoTracking().OrderByDescending(x=>x.CreatedAtUtc).Take(1000).ToArrayAsync(ct);var names=await db.Set<WorkflowDefinition>().AsNoTracking().Where(x=>!x.IsArchived).ToDictionaryAsync(x=>x.Id,x=>x.Name,ct);return versions.Where(v=>names.ContainsKey(v.DefinitionId)&&Permissions(http).Contains(expressions.Metadata(WorkflowValidation.Parse(v.GraphJson).EntityKey)?.Permission??"unavailable")).Select(v=>new{v.Id,v.Number,name=names[v.DefinitionId]});});
   api.MapGet("/connectors",async(WorkflowDbContext db,CancellationToken ct)=>(await db.Set<WorkflowConnector>().OrderBy(x=>x.Name).ToListAsync(ct)).Select(Connector)).RequireAuthorization("workflows.integrations");
@@ -49,6 +50,7 @@ public static partial class WorkflowModule
   api.MapGet("/templates",(IRequestIdentity who)=>WorkflowTemplates.All.Concat(WorkflowOperationsTemplates.All(who.UserId!.Value).Cast<object>()));
   api.MapPost("/templates/{key}/draft",async(string key,WorkflowTemplateOptions options,IRequestIdentity who,IIdentityDirectory directory,WorkflowDbContext db,WorkflowExpressions expressions,HttpContext http,CancellationToken ct)=>{
    Check(options.ReminderDays is >=1 and <=365&&options.BeforeExpiryDays is >=0 and <=365&&options.GraceDays is >=0 and <=365,"Choose reminder and renewal periods within 0–365 days (reminder at least one day).");
+   Choice(options.RecordKind,"contacts","accounts");Check(options.Values==null||options.Values.Count<=20&&options.Values.All(p=>WorkflowValidation.VariableName(p.Key)&&p.Value.Length<=500),"Provide valid bounded template configuration.");
    Check(await directory.IsValidOwnerAsync(options.ReviewerId??who.UserId,null,ct)&&await directory.IsValidOwnerAsync(options.EscalationUserId??options.ReviewerId??who.UserId,null,ct),"Choose active tenant reviewers and escalation users.");
    if(options.EmailConnectorId!=null){Check(Permissions(http).Contains("workflows.integrations"),"Integration permission is required to configure email.");Check(await db.Set<WorkflowConnector>().AnyAsync(x=>x.Id==options.EmailConnectorId&&x.Kind=="smtp"&&x.IsActive,ct),"Choose an approved active SMTP connector.");Check(!string.IsNullOrWhiteSpace(options.Recipient)&&options.Recipient.Length<=500,"Set the member email address or supported recipient expression.");WorkflowExpressions.CheckExpression(options.Recipient);}
    var template=WorkflowOperationsTemplates.Build(key,who.UserId!.Value,options);expressions.Source(template.Graph.EntityKey,Permissions(http));return Results.Ok(template);

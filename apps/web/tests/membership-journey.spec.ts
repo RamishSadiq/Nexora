@@ -1,10 +1,11 @@
 import { test, expect, type Page } from "@playwright/test";
+import { submitLogin } from "./browser-login";
 
 async function login(page: Page) {
   await page.goto("/login");
   await page.getByLabel("Work email").fill("admin@nexora.local");
   await page.getByLabel("Password", { exact: true }).fill(process.env.NEXORA_BROWSER_PASSWORD!);
-  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await submitLogin(page);
   await expect(page).not.toHaveURL(/\/login/, { timeout: 60_000 });
 }
 
@@ -27,8 +28,8 @@ for (const createContact of [false, true]) {
     const { product, account, post } = await setup(page, suffix);
     const contactName = `Journey applicant ${suffix}`;
     const existingContact = createContact ? null : await post("crm/records", { kind: "contact", name: contactName, status: "active" });
-    await page.goto("/membership");
-    await page.getByRole("button", { name: "Applications", exact: true }).click();
+    await page.goto("/membership/applications");
+    await page.getByRole("button", { name: "Add application", exact: true }).click();
     const form = page.locator("section").filter({ has: page.getByRole("heading", { name: "Submit membership application", exact: true }) });
     await form.getByLabel("Find organisation", { exact: true }).fill(account.name);
     await form.getByRole("button", { name: "Search organisations", exact: true }).click();
@@ -60,18 +61,17 @@ for (const createContact of [false, true]) {
       await expect(form.getByLabel("Applicant notes", { exact: true })).toHaveValue("Insurance and organisation details checked by the applicant.");
     }
     await form.getByRole("button", { name: "Submit application", exact: true }).click();
-    await expect(page.getByText("Application submitted for review.", { exact: true })).toBeVisible();
-    await page.getByLabel("Search applications", { exact: true }).fill(contactName);
+    await expect(page).toHaveURL(/\/membership\/applications\/[a-f0-9-]+$/);
     const application = page.locator("li").filter({ hasText: contactName }).filter({ has: page.getByRole("button", { name: "Record decision", exact: true }) });
     await expect(application).toContainText(account.name);
     await expect(application).toContainText("240.00");
     await application.getByLabel("Decision reason", { exact: true }).fill("Organisation and contact reviewed; approved for membership.");
     await application.getByRole("button", { name: "Record decision", exact: true }).click();
     await expect(page.getByRole("button", { name: "Record decision", exact: true })).toHaveCount(0);
-    await page.getByRole("button", { name: "Members", exact: true }).click();
+    await page.goto("/membership/members");
     await page.getByLabel("Search members", { exact: true }).fill(account.name);
     await page.getByRole("button", { name: account.name, exact: true }).click();
-    await expect(page.getByText("Organisation and contact reviewed; approved for membership.", { exact: true })).toBeVisible();
+    await expect(page.getByRole("region", { name: "Membership history timeline", exact: true }).getByText("Organisation and contact reviewed; approved for membership.", { exact: true })).toBeVisible();
     const links = await (await page.request.get(`/api/v1/crm/records/${account.id}/account-contacts`)).json();
     expect(links.items).toHaveLength(1);
     expect(links.items[0].contactName).toBe(contactName);

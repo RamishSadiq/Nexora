@@ -8,6 +8,8 @@ public abstract class TenantRow
 
 public sealed class CrmRecord : TenantRow
 {
+    public Guid? PhotoFileId { get; set; }
+    public bool BillingUsesMailingAddress { get; set; }
     public string Kind { get; set; } = "contact";
     public string Name { get; set; } = "";
     public string Status { get; set; } = "active";
@@ -27,16 +29,24 @@ public abstract class RecordChild : TenantRow
 public sealed class Address : RecordChild
 {
     public string Label { get; set; } = "";
+    public string Purpose { get; set; } = "other";
+    public string? AddressType { get; set; }
+    public string? AccountName { get; set; }
+    public string? JobTitle { get; set; }
     public string Line1 { get; set; } = "";
     public string? Line2 { get; set; }
+    public string? Line3 { get; set; }
+    public string? Line4 { get; set; }
     public string City { get; set; } = "";
     public string? Region { get; set; }
+    public string? County { get; set; }
     public string PostalCode { get; set; } = "";
     public string Country { get; set; } = "";
 }
 public sealed class CommunicationMethod : RecordChild
 {
     public string Kind { get; set; } = "email";
+    public string Priority { get; set; } = "other";
     public string Value { get; set; } = "";
     public string Consent { get; set; } = "unknown";
     public string? ConsentEvidence { get; set; }
@@ -93,6 +103,7 @@ public sealed class CustomFieldDefinition : TenantRow
     public string Name { get; set; } = "";
     public string Kind { get; set; } = "contact";
     public string DataType { get; set; } = "text";
+    public string Section { get; set; } = "General Information";
 }
 public sealed class CustomFieldValue : RecordChild, Nexora.BuildingBlocks.Persistence.IAutomationValue
 {

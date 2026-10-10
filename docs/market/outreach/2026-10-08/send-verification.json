@@ -1,0 +1,118 @@
+{
+  "verifiedAt": "2026-10-08 14:33:03 UTC",
+  "sender": "ramishqureshi99@gmail.com",
+  "confirmedSent": 11,
+  "recipientDelivery": "Not established; confirmation verifies Sent copies, recipients and attachment metadata",
+  "messages": [
+    {
+      "organisation": "GTMA",
+      "to": "david@gtma.co.uk",
+      "messageId": "1a11bdf55d8130a2",
+      "threadId": "1a11bdf55d8130a2",
+      "subject": "Membership management and AI access for GTMA",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bdf55d8130a2"
+    },
+    {
+      "organisation": "Association of Fencing Industries",
+      "to": "info@theafi.co.uk",
+      "messageId": "1a11be73bb6e873b",
+      "threadId": "1a11be73bb6e873b",
+      "subject": "Nexora: a short demo for AFI's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be73bb6e873b"
+    },
+    {
+      "organisation": "BAFSA",
+      "to": "victoria@bafsa.org.uk",
+      "messageId": "1a11be815953d93d",
+      "threadId": "1a11be815953d93d",
+      "subject": "Nexora demo for BAFSA's membership administration",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be815953d93d"
+    },
+    {
+      "organisation": "British Promotional Merchandise Association",
+      "to": "membership@bpma.co.uk",
+      "messageId": "1a11be8a50e5deab",
+      "threadId": "1a11be8a50e5deab",
+      "subject": "A short Nexora demo for BPMA's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be8a50e5deab"
+    },
+    {
+      "organisation": "Commercial Interiors UK",
+      "to": "info@commercial-interiorsuk.com",
+      "messageId": "1a11be92ff3cd6f9",
+      "threadId": "1a11be92ff3cd6f9",
+      "subject": "A short Nexora demo for Commercial Interiors UK's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be92ff3cd6f9"
+    },
+    {
+      "organisation": "British Constructional Steelwork Association",
+      "to": "lorraine.mackinder@bcsa.org.uk",
+      "messageId": "1a11be9e7b0beb9b",
+      "threadId": "1a11be9e7b0beb9b",
+      "subject": "A short Nexora demo for British Constructional Steelwork Association's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be9e7b0beb9b"
+    },
+    {
+      "organisation": "British Coatings Federation",
+      "to": "info@bcf.co.uk",
+      "messageId": "1a11bea81abaec38",
+      "threadId": "1a11bea81abaec38",
+      "subject": "A short Nexora demo for British Coatings Federation's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bea81abaec38"
+    },
+    {
+      "organisation": "Society of Independent Brewers and Associates",
+      "to": "membership@siba.co.uk",
+      "messageId": "1a11beb04274d92a",
+      "threadId": "1a11beb04274d92a",
+      "subject": "A short Nexora demo for Society of Independent Brewers and Associates's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11beb04274d92a"
+    },
+    {
+      "organisation": "British Independent Retailers Association",
+      "to": "membership@bira.co.uk",
+      "messageId": "1a11bebbfc73d6fe",
+      "threadId": "1a11bebbfc73d6fe",
+      "subject": "A short Nexora demo for British Independent Retailers Association's membership team",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bebbfc73d6fe"
+    },
+    {
+      "organisation": "Trade Association Forum",
+      "to": "secretariat@taforum.org",
+      "messageId": "1a11becb63c3868a",
+      "threadId": "1a11becb63c3868a",
+      "subject": "Introducing Nexora to Trade Association Forum's association network",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11becb63c3868a"
+    },
+    {
+      "organisation": "British Cleaning Council",
+      "to": "info@britishcleaningcouncil.org",
+      "messageId": "1a11bed87d62d77f",
+      "threadId": "1a11bed87d62d77f",
+      "subject": "Introducing Nexora to British Cleaning Council's association network",
+      "attachment": "nexora-product-demo-male.mp4",
+      "attachmentBytes": 1945313,
+      "displayUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bed87d62d77f"
+    }
+  ]
+}

@@ -94,6 +94,9 @@ public static partial class ContentModule
             await PublishRevision(page,revisionId,db,who.UserId!.Value,ct);
             await db.SaveChangesAsync(ct); return Results.Ok(page);
         }).RequireAuthorization("content.publish");
+        api.MapGet("/pages/{id:guid}/preview/{revisionId:guid}",async(Guid id,Guid revisionId,ContentDbContext db,CancellationToken ct)=>{
+            var page=await Find(db,id,ct);var revision=await db.Versions.SingleOrDefaultAsync(x=>x.Id==revisionId&&x.PageId==id,ct);if(revision==null)return Results.NotFound();var site=await db.Sites.SingleAsync(x=>x.Id==page.SiteId,ct);return Results.Ok(new{site,slug=page.Slug,page=ReadRevision(revision),navigation=Array.Empty<object>()});
+        });
         api.MapPost("/pages/{id:guid}/unpublish", async (Guid id, PublishRequest r, ContentDbContext db, IRequestIdentity who, CancellationToken ct) =>
         {
             var page = await Find(db, id, ct); if (page.Version != r.Version) return Conflict();

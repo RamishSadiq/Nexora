@@ -1,6 +1,7 @@
 "use client";
 import { Children, isValidElement, useEffect, useState, type ReactNode } from "react";
 import { moduleApi } from "./module-api";
+import { sectionDefinitions } from "./attribute-entities";
 import type { AutomationSettings } from "./automation-controller";
 
 export function ConfiguredSections({ module, kind, children, className = "grid gap-4" }: { module: string; kind: string; children: ReactNode; className?: string }) {
@@ -15,7 +16,7 @@ export function ConfiguredSections({ module, kind, children, className = "grid g
     const channel = new BroadcastChannel("nexora-automations"); channel.onmessage = load;
     return () => { active = false; channel.close(); window.removeEventListener("focus", load); window.removeEventListener("nexora-automations", load); };
   }, [module, kind]);
-  const sections = layout?.key === `${module}/${kind}` ? layout.sections : [];
+  const sections = layout?.key === `${module}/${kind}` ? layout.sections : sectionDefinitions(kind).map(section => section.id);
   const position = (element: ReactNode) => {
     if (!isValidElement<{ title?: string; "data-section"?: string }>(element)) return sections.length;
     const index = sections.indexOf(element.props["data-section"] ?? element.props.title ?? "");

@@ -57,10 +57,11 @@ export function useCrmListing(initial: ListState, initialRecord: string, fixedKi
       for (const key of ["search", "status", "sort", "ownerUserId", "ownerTeamId", "category"] as const) {
         if (params.has(key)) query[key] = params.get(key)!;
       }
-      if (!["", "active", "prospect", "inactive"].includes(query.status)) query.status = "";
+      if (!["", "active", "prospect", "inactive", "lapsed"].includes(query.status)) query.status = "";
       if (!["name", "-name", "updated"].includes(query.sort)) query.sort = "name";
       if (params.has("archived")) query.archived = params.get("archived") === "true";
       const page = Number(params.get("page") ?? 1);
+      const size=Number(params.get("pageSize")??20); query.pageSize=[10,20,50,100].includes(size)?size:20;
       query.page = Number.isInteger(page) && page > 0 ? Math.min(page, 10000) : 1;
       const requestedColumns = (params.get("columns") ?? view?.columns ?? defaults.join(",")).split(",");
       const columns = cleanColumns(requestedColumns, kind, definitions);

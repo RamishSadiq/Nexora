@@ -1,0 +1,84 @@
+{
+  "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+  "scope": "Operational sending gates, not blanket country legal conclusions",
+  "countries": [
+    {
+      "country": "United Arab Emirates",
+      "status": "hold_pending_recipient_specific_clearance",
+      "sources": [
+        {
+          "url": "https://tdra.gov.ae/-/media/About/regulations-and-ruling/EN/Unsolicited-Elrctronic-Commuincations--pdf.ashx",
+          "observation": "UEC policy covers UAE-linked communications, defines unconsented marketing as spam and requires licensees to minimise transmission. Consent principles apply to licensee customer agreements; mobile annex governs SMS. Do not assert a universal criminal email ban from this policy.",
+          "sourceDate": "2009-12-30",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://u.ae/en/about-the-uae/digital-uae/data/data-protection-laws.",
+          "observation": "Official government overview states personal-data processing generally requires consent, with exceptions; prospect-specific applicability and lawful basis require verification.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        }
+      ],
+      "decision": "No send until consent or a verified applicable lawful route is documented."
+    },
+    {
+      "country": "Saudi Arabia",
+      "status": "consent_required_for_individual_direct_marketing",
+      "sources": [
+        {
+          "url": "https://dgp.sdaia.gov.sa/wps/portal/pdp/knowledgecenter/details/PDPL2/!ut/p/z0/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziPR1dzTwMgw2MDMOcTA3MjH39TE29jY0MQsz1g1Pz9L30o_ArAppiVOTr7JuuH1WQWJKhm5mXlq8fEeAS4GOkX5DtHg4A45XaIQ!!/",
+          "observation": "PDPL implementing regulation Articles 28-29 require documented consent for advertising without prior interaction and direct marketing using personal data; identity and withdrawal required.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        }
+      ],
+      "decision": "Prior permission and contact/channel applicability must be documented. Public named business email is not consent."
+    },
+    {
+      "country": "Qatar",
+      "status": "consent_required_for_individual_direct_marketing",
+      "sources": [
+        {
+          "url": "https://ncsa.gov.qa/shared/document_library/94787172324409/33000/8821/1.0~735ebb9c-e29e-4acb-a7ed-96449884a20b?filename=Law+No.+%2813%29+of+2016+on+Protecting+Personal+Data+Privacy.pdf&mimetype=application%2Fpdf",
+          "observation": "NCSA-hosted English translation Article 22 requires prior consent for electronic direct marketing to an individual and sender identity/marketing label/opt-out address. Translation says Official Gazette Arabic version controls.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        }
+      ],
+      "decision": "Prior permission required for covered individuals; no assumed general-mailbox exemption. Verify official Arabic text/applicability if needed."
+    },
+    {
+      "country": "Oman",
+      "status": "consent_required_for_individual_marketing_current_text_review_pending",
+      "sources": [
+        {
+          "url": "https://mtcit.gov.om/sectors/governance/personal",
+          "observation": "Official MTCIT FAQ requires documentable written consent before commercial advertising/marketing to a data subject; immediate free opt-out.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://www.mtcit.gov.om/sectors?sector=policies_and_governance",
+          "observation": "Official index lists September 2026 PDPL amendment; latest consolidated requirements still need review.",
+          "sourceDate": "2026-09-06",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        }
+      ],
+      "decision": "No send until current recipient-specific consent and current amended-law review complete."
+    },
+    {
+      "country": "Bahrain",
+      "status": "not_reviewed",
+      "sources": [],
+      "decision": "Research/drafts only until official rules and recipient-specific route verified."
+    },
+    {
+      "country": "Kuwait",
+      "status": "not_reviewed",
+      "sources": [],
+      "decision": "Research/drafts only until official rules and recipient-specific route verified."
+    }
+  ],
+  "publicEmailIsNotConsent": true,
+  "unresolvedMeansHold": true
+}

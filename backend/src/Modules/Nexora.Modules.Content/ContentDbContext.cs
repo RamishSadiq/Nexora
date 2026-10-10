@@ -14,6 +14,7 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
     public DbSet<Page> Pages => Set<Page>();
     public DbSet<PageVersion> Versions => Set<PageVersion>();
     public override int SaveChanges(bool acceptAllChangesOnSuccess) => SaveChangesAsync(acceptAllChangesOnSuccess).GetAwaiter().GetResult();
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { base.OnConfiguring(optionsBuilder); optionsBuilder.AddInterceptors(new DataAuditInterceptor(()=>TenantId)); }
     protected override void OnModelCreating(ModelBuilder b)
     {
         b.HasDefaultSchema("content");WorkflowOutboxModel.Configure(b);b.Entity<WorkflowDomainEvent>().HasQueryFilter(x=>x.TenantId==TenantId);b.Entity<WorkflowActionReceipt>().HasQueryFilter(x=>x.TenantId==TenantId);
@@ -52,6 +53,7 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
         foreach (var entity in b.Model.GetEntityTypes())
             foreach (var property in entity.GetProperties().Where(p => p.ClrType == typeof(DateTime)))
                 property.SetValueConverter(new Microsoft.EntityFrameworkCore.Storage.ValueConversion.ValueConverter<DateTime, DateTime>(v => v, v => DateTime.SpecifyKind(v, DateTimeKind.Utc)));
+        DataAuditModel.Configure(b,()=>TenantId);
     }
     private void Configure<T>(ModelBuilder b, string name) where T : TenantEntity
     {

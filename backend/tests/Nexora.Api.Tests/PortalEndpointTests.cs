@@ -314,7 +314,7 @@ public sealed partial class PortalEndpointTests
         {
             using var db = new Nexora.Modules.Membership.Infrastructure.MembershipDbContext(options, new MemberIdentity(tenantId, session.UserId));
             var product = new Nexora.Modules.Membership.Domain.MembershipProduct { TenantId = tenantId, Name = label, Category = "member" };
-            var application = new Nexora.Modules.Membership.Domain.MembershipApplication { TenantId = tenantId, ProductId = product.Id, ContactId = holder, AccountId = account, ApplicationType = account == null ? "individual" : "corporate", Status = "approved", DecisionReason = "PRIVATE STAFF NOTE", ApplicantNotes = "PRIVATE APPLICANT NOTE" };
+            var application = new Nexora.Modules.Membership.Domain.MembershipApplication { TenantId = tenantId, ProductId = product.Id, ContactId = holder, AccountId = account, ApplicationType = account == null ? "individual" : "corporate", Status = "approved", DecisionReason = "PRIVATE STAFF NOTE", ApplicantNotes = "PRIVATE APPLICANT NOTE", StaffRemarks = "PRIVATE APPLICATION REMARKS", Description = "PRIVATE APPLICATION DESCRIPTION", PaymentMethod = "PRIVATE PAYMENT METHOD", RequestedMemberTypeName = "PRIVATE CLASSIFICATION" };
             var subscription = new Nexora.Modules.Membership.Domain.MemberSubscription { TenantId = tenantId, ProductId = product.Id, ApplicationId = application.Id, ContactId = holder, AccountId = account, StartsAtUtc = DateTime.UtcNow.Date, EndsAtUtc = DateTime.UtcNow.Date.AddYears(1) };
             db.AddRange(product, application, subscription); await db.SaveChangesAsync(); return application.Id;
         }
@@ -334,6 +334,7 @@ public sealed partial class PortalEndpointTests
         var legacyReceipt = await Json(await member.GetAsync($"/api/v1/portal/applications/{ownApplication}"));
         Assert.Null(legacyReceipt["acceptedTerms"]); Assert.Null(legacyReceipt["submittedNotes"]);
         Assert.DoesNotContain("PRIVATE", legacyReceipt.ToJsonString());
+        foreach (var field in new[] { "staffRemarks", "description", "requestedMemberTypeName", "paymentMethod", "invoicingAccountId" }) Assert.Null(legacyReceipt[field]);
     }
     [Fact]
     public async Task Disabled_local_adapter_rejects_login_and_provisioning()

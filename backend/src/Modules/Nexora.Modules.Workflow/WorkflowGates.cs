@@ -7,7 +7,7 @@ namespace Nexora.Modules.Workflow;
 public sealed record WorkflowGateResult(bool Pending,bool NewRequest,string Outcome,string? Destination);
 public sealed class WorkflowGates(WorkflowDbContext db,WorkflowExpressions expressions,IIdentityDirectory directory,IEnumerable<IWorkflowActionHandler> handlers)
 {
- public static readonly string[] DecisionPermissions=["membership.decide","membership.manage","finance.post","content.publish","crm.manage","events.manage","work.manage"];
+ public static readonly string[] DecisionPermissions=["membership.decide","membership.manage","finance.post","content.publish","crm.manage","events.manage","engagement.manage","work.manage"];
  public async Task<WorkflowGateResult> ProcessAsync(WorkflowRun run,WorkflowToken token,WorkflowNode node,WorkflowGraph graph,JsonObject context,string[] permissions,CancellationToken ct)
  {
   var gateId=WorkflowProcessor.ActionId(run.Id,token.Scope+":"+node.Id);

@@ -16,6 +16,13 @@ public static partial class CrmModule
     private static void MapCompletion(RouteGroupBuilder api)
     {
         MapTransfer(api);
+        api.MapGet("/records/{id:guid}/memberships", async (Guid id, int? page, int? pageSize, CrmDbContext db, ICrmMembershipDirectory memberships, CancellationToken ct) =>
+        {
+            var record = await RecordAsync(db, id, ct);
+            var number = page ?? 1; var size = pageSize ?? 10;
+            if (number is < 1 or > 10000 || size is < 1 or > 50) throw new ValidationException("Choose a page from 1 to 10000 and page size from 1 to 50.");
+            return Results.Ok(await memberships.ReadAsync(id, record.Kind, number, size, ct));
+        }).RequireAuthorization("membership.read");
         api.MapGet("/records/{id:guid}/context", async (Guid id, CrmDbContext db, IEnumerable<ICrmContextProvider> providers, IAuthorizationService auth, HttpContext http, CancellationToken ct) =>
         {
             var record = await RecordAsync(db, id, ct);

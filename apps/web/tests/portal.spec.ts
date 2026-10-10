@@ -1,12 +1,13 @@
 import { test, expect } from "@playwright/test";
 import { randomBytes } from "node:crypto";
+import { submitLogin, retryLogin } from "./browser-login";
 
 test("organisation permission, application receipt and live revocation", async ({ page, browser }) => {
   const staff = await browser.newContext();
   const request = staff.request;
   async function send(path: string, data?: unknown, method = "POST") {
     const token = await (await request.get("/api/v1/auth/csrf")).json();
-    const response = await request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": token.token } });
+    const response = await retryLogin(() => request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": token.token } }), path.endsWith("/login"));
     expect(response.ok(), await response.text()).toBeTruthy();
     return response.status() === 204 ? null : response.json();
   }
@@ -18,8 +19,8 @@ test("organisation permission, application receipt and live revocation", async (
   const access = await send("/api/v1/admin/portal-access/local-member", { contactId: contact.id, email: "company.member@nexora.test", password });
   const product = await send("/api/v1/membership/products", { name: "Company annual membership", category: "corporate", termMonths: 12, rate: 0, currency: "GBP", isActive: true });
   const staffPage = await staff.newPage();
-  await staffPage.goto("/membership");
-  await staffPage.getByRole("button", { name: "Products", exact: true }).click();
+  await staffPage.goto("/membership/products");
+  await staffPage.getByRole("button", { name: `View ${product.name}`, exact: true }).click();
   await staffPage.getByLabel("Portal product", { exact: true }).selectOption(product.id);
   await staffPage.getByLabel("Allow organisation applications in the member portal").check();
   await staffPage.getByLabel("Member-facing terms").fill("Company application terms.");
@@ -28,7 +29,7 @@ test("organisation permission, application receipt and live revocation", async (
   await page.goto("/portal");
   await page.getByLabel("Email", { exact: true }).fill("company.member@nexora.test");
   await page.getByLabel("Password", { exact: true }).fill(password);
-  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await submitLogin(page, "portal");
   await page.getByRole("navigation", { name: "Member navigation" }).getByRole("link", { name: "My organisations", exact: true }).click();
   await expect(page.getByText("No organisation access has been granted.")).toBeVisible();
   await staffPage.goto("/settings");
@@ -84,7 +85,7 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   const request = staff.request;
   async function send(path: string, data?: unknown, method = "POST") {
     const token = await (await request.get("/api/v1/auth/csrf")).json();
-    const response = await request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": token.token } });
+    const response = await retryLogin(() => request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": token.token } }), path.endsWith("/login"));
     expect(response.ok(), await response.text()).toBeTruthy();
     return response.status() === 204 ? null : response.json();
   }
@@ -95,15 +96,14 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   await send(`/api/v1/membership/applications/${application.id}/decision`, { version: application.version, decision: "approve", reason: "Internal review complete" });
   const openProduct = await send("/api/v1/membership/products", { name: "New member application", category: "individual", termMonths: 12, rate: 25, currency: "GBP", isActive: true });
   const staffPage = await staff.newPage();
-  await staffPage.goto("/membership");
-  await staffPage.getByRole("button", { name: "Products", exact: true }).click();
+  await staffPage.goto("/membership/products");
+  await staffPage.goto(`/membership/products?record=${openProduct.id}`);
   await staffPage.getByLabel("Portal product", { exact: true }).selectOption(openProduct.id);
   await staffPage.getByLabel("Allow personal applications in the member portal").check();
   await staffPage.getByLabel("Member-facing terms").fill("Local demonstration terms. Applications are reviewed by staff.");
   await staffPage.getByRole("button", { name: "Save portal settings" }).click();
   await expect(staffPage.getByRole("status").filter({ hasText: "Portal settings saved" })).toBeVisible();
   await staffPage.reload();
-  await staffPage.getByRole("button", { name: "Products", exact: true }).click();
   await staffPage.getByLabel("Portal product", { exact: true }).selectOption(openProduct.id);
   await expect(staffPage.getByLabel("Allow personal applications in the member portal")).toBeChecked();
   await expect(staffPage.getByLabel("Member-facing terms")).toHaveValue("Local demonstration terms. Applications are reviewed by staff.");
@@ -122,7 +122,7 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   expect(grant).toBeTruthy();
   await page.getByLabel("Email", { exact: true }).fill(`member-${decision}@nexora.test`);
   await page.getByLabel("Password", { exact: true }).fill(password);
-  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await submitLogin(page, "portal");
   await expect(page.getByRole("heading", { name: "Dashboard", exact: true })).toBeVisible();
   await page.getByRole("navigation", { name: "Member navigation" }).getByRole("link", { name: "My applications", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Individual membership", exact: true })).toHaveCount(1);
@@ -160,8 +160,7 @@ test(`member application staff ${decision}, shared profile and revocation`, asyn
   await expect(page.getByText("Local demonstration terms. Applications are reviewed by staff.", { exact: true })).toBeVisible();
   await page.reload();
   await expect(page.getByText(`Please review my personal application: ${decision}.`, { exact: true })).toBeVisible();
-  await staffPage.goto("/membership");
-  await staffPage.getByRole("button", { name: "Applications", exact: true }).click();
+  await staffPage.goto(`/membership/applications/${new URL(receiptUrl).pathname.split("/").at(-1)}`);
   const submitted = staffPage.getByRole("listitem").filter({ hasText: `Please review my personal application: ${decision}.` });
   await expect(submitted).toBeVisible();
   await submitted.getByRole("combobox", { name: /^Decision/ }).selectOption(decision);

@@ -1,0 +1,279 @@
+{
+  "modules": {
+    "contacts": {
+      "api": "crm",
+      "types": [
+        "contact"
+      ]
+    },
+    "accounts": {
+      "api": "crm",
+      "types": [
+        "account"
+      ]
+    },
+    "membership": {
+      "api": "membership",
+      "types": [
+        "MembershipProduct",
+        "MemberSubscription"
+      ]
+    },
+    "applications": {
+      "api": "membership",
+      "types": [
+        "MembershipApplication"
+      ]
+    },
+    "events-and-learning": {
+      "api": "events",
+      "types": [
+        "Offering",
+        "EventSession",
+        "Enrollment",
+        "ExamResult"
+      ]
+    },
+    "sales-and-finance": {
+      "api": "finance",
+      "types": [
+        "CatalogueProduct",
+        "SalesOrder",
+        "PostedInvoice",
+        "Receipt",
+        "Credit",
+        "Allocation",
+        "Refund"
+      ]
+    },
+    "engagement": {
+      "api": "engagement",
+      "types": [
+        "Community",
+        "CommunityMember",
+        "CommunityMeeting",
+        "Campaign",
+        "Fund",
+        "Contribution"
+      ]
+    },
+    "work": {
+      "api": "work",
+      "types": [
+        "WorkItem"
+      ]
+    }
+  },
+  "sections": {
+    "contact": [
+      {
+        "id": "Contact details",
+        "title": "Contact details",
+        "region": "content",
+        "acceptsFields": false
+      },
+      {
+        "id": "Profile",
+        "title": "Profile",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Membership details",
+        "title": "Membership details",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Personal Details",
+        "title": "Personal Details",
+        "region": "details",
+        "acceptsFields": true
+      },
+      {
+        "id": "General Information",
+        "title": "General Information",
+        "region": "details",
+        "acceptsFields": true
+      },
+      {
+        "id": "Social Media Details",
+        "title": "Social Media Details",
+        "region": "details",
+        "acceptsFields": true
+      },
+      {
+        "id": "Communication Permissions",
+        "title": "Communication Permissions",
+        "region": "details",
+        "acceptsFields": true
+      },
+      {
+        "id": "Employers",
+        "title": "Employers",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Addresses",
+        "title": "Addresses",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Communication methods",
+        "title": "Communication methods",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Related records",
+        "title": "Related records",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Notes",
+        "title": "Notes",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Files",
+        "title": "Files",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Activity timeline",
+        "title": "Activity timeline",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Connected Activity",
+        "title": "Connected Activity",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Tags",
+        "title": "Tags",
+        "region": "rail",
+        "acceptsFields": false
+      },
+      {
+        "id": "Data Audit",
+        "title": "Data Audit",
+        "region": "footer",
+        "acceptsFields": false
+      }
+    ],
+    "account": [
+      {
+        "id": "Organisation details",
+        "title": "Organisation details",
+        "region": "content",
+        "acceptsFields": false
+      },
+      {
+        "id": "Profile",
+        "title": "Profile",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Membership details",
+        "title": "Membership details",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Organisation name",
+        "title": "Organisation name",
+        "region": "details",
+        "acceptsFields": true
+      },
+      {
+        "id": "General Information",
+        "title": "General Information",
+        "region": "details",
+        "acceptsFields": true
+      },
+      {
+        "id": "Contacts",
+        "title": "Contacts",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Addresses",
+        "title": "Addresses",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Communication methods",
+        "title": "Communication methods",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Related records",
+        "title": "Related records",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Notes",
+        "title": "Notes",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Files",
+        "title": "Files",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Activity timeline",
+        "title": "Activity timeline",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Connected Activity",
+        "title": "Connected Activity",
+        "region": "content",
+        "acceptsFields": true
+      },
+      {
+        "id": "Tags",
+        "title": "Tags",
+        "region": "rail",
+        "acceptsFields": false
+      },
+      {
+        "id": "Data Audit",
+        "title": "Data Audit",
+        "region": "footer",
+        "acceptsFields": false
+      }
+    ],
+    "default": [
+      {
+        "region": "content",
+        "id": "Record selection",
+        "acceptsFields": false,
+        "title": "Record selection"
+      },
+      {
+        "region": "content",
+        "id": "General Information",
+        "acceptsFields": true,
+        "title": "General Information"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+# Gmail sending policy — checked 8 October 2026
+
+Google measures API activity in quota units, with project and user limits. `messages.send` costs 100 units; `messages.list` costs 5. [Current quota documentation](https://developers.google.com/workspace/gmail/api/reference/quota) lists 1,200,000 units per project per minute and 6,000 per user per project, with earlier projects retaining previous quotas. This connector's actual error named a shared project limit of 12,000,000 units/minute. This is a project API limit, not evidence that this mailbox exceeded its daily email allowance.
+
+[Google's retry guidance](https://developers.google.com/workspace/gmail/api/guides/handle-errors) supports exponential backoff for rate-limit errors. This run used one active Gmail request, 15–20 seconds between successful sends, and retries after approximately 1, 2, 4, 8, 16 and 32 seconds with random jitter. Delays were capped at 32 seconds, and each recipient's retry loop had a bounded attempt count. Pacing was our conservative choice, not a Google-mandated interval. Shared traffic can still cause rejections.
+
+Check Sent before retrying a send with uncertain outcome. Do not repeat a confirmed message. Persist each successful message ID immediately. Retain the approved body and attachment, send separately to each recipient, and verify Sent metadata afterwards. Stop for non-quota errors requiring intervention. No future sending or follow-up automation was created.

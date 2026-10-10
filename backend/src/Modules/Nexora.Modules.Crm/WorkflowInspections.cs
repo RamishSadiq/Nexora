@@ -8,6 +8,7 @@ public static partial class CrmModule
 {
  private static void AddWorkflowInspections(IServiceCollection services)
  {
+  services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowInspectionAction(new("crm.contact.inspect-email","Read consented Contact email","crm.read",["contactId"],[new("contactId","Contact","reference",true)],["email"]),"contactId",async(id,ct)=>new("Existing CRM consent rules checked",new(){{"email",await sp.GetRequiredService<ICrmDirectory>().MarketingEmailAsync(id,ct)}})));
   services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowInspectionAction(new("crm.record.inspect-quality","Review missing details and possible duplicates","crm.read",["recordId"],[new("recordId","Contact or Account","reference",true)],["needsReview","issues","duplicateCount"]),"recordId",async(id,ct)=>{
    var db=sp.GetRequiredService<CrmDbContext>();var row=await db.Records.SingleOrDefaultAsync(x=>x.Id==id&&!x.IsArchived,ct)??throw new KeyNotFoundException();var issues=new List<string>();
    if(string.IsNullOrWhiteSpace(row.Name))issues.Add("Name missing");if(row.OwnerUserId==null&&row.OwnerTeamId==null)issues.Add("Owner missing");if(!await db.Set<CommunicationMethod>().AnyAsync(x=>x.RecordId==id,ct))issues.Add("Communication details missing");

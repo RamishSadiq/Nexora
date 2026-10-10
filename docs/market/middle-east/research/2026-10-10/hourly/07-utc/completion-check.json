@@ -1,0 +1,130 @@
+{
+  "checkedAt": "2026-10-10T07:38:24+00:00",
+  "complete": true,
+  "queries": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com Nexora",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "from": "Gary McCoy gary@smihq.org",
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "receivedAt": "2026-10-09T11:50:40+00:00",
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "from": "Dora Schember dschember@mpif.org",
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "receivedAt": "2026-10-09T07:04:03+00:00",
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745"
+        },
+        {
+          "id": "1a11bf33395d33a1",
+          "from": "Victoria Cuff victoria@bafsa.org.uk",
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "receivedAt": "2026-10-08T14:37:59+00:00",
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:undeliverable}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": [
+        {
+          "id": "1a11bf33395d33a1",
+          "from": "Victoria Cuff victoria@bafsa.org.uk",
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "receivedAt": "2026-10-08T14:37:59+00:00",
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mpif.org from:smihq.org}",
+      "isError": false,
+      "nextPageToken": null,
+      "messages": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "from": "Gary McCoy gary@smihq.org",
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "receivedAt": "2026-10-09T11:50:40+00:00",
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "from": "Dora Schember dschember@mpif.org",
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "receivedAt": "2026-10-09T07:04:03+00:00",
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745"
+        }
+      ]
+    }
+  ],
+  "newMessageIds": []
+}

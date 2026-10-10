@@ -23,7 +23,8 @@ public static partial class CrmModule
             var query = db.Records.Where(x => x.Kind == kind && !x.IsArchived);
             if (await query.CountAsync(ct) > 5000) throw new ValidationException("Exports support up to 5,000 current records per type.");
             var records = await query.OrderBy(x => x.Name).ThenBy(x => x.Id).ToListAsync(ct);
-            var emails = await db.Set<CommunicationMethod>().Where(x => x.Kind == "email" && query.Any(r => r.Id == x.RecordId)).OrderBy(x => x.Id).ToListAsync(ct);
+            var emails = await db.Set<CommunicationMethod>().Where(x => x.Kind == "email" && query.Any(r => r.Id == x.RecordId))
+                .OrderBy(x => x.Priority == "primary" ? 0 : x.Priority == "secondary" ? 1 : 2).ThenBy(x => x.Id).ToListAsync(ct);
             static string Cell(string? value)
             {
                 value ??= "";
@@ -55,7 +56,7 @@ public static partial class CrmModule
                 try
                 {
                     if (cells.Length != 7) throw new ValidationException("Expected seven columns.");
-                    var kind = cells[2]; Choice(kind, "contact", "account"); name = Required(name, 160); Choice(cells[4], "active", "prospect", "inactive"); var category = Optional(cells[5], 100); var email = Optional(cells[6], 320);
+                    var kind = cells[2]; Choice(kind, "contact", "account"); name = Required(name, 160); Choice(cells[4], "active", "prospect", "inactive", "lapsed"); var category = Optional(cells[5], 100); var email = Optional(cells[6], 320);
                     if (!keys.Add(kind + ":" + name)) throw new ValidationException("Duplicate name and type in this CSV; reconcile before importing.");
                     if (email != null && (!new EmailAddressAttribute().IsValid(email) || !emailsInBatch.Add(email))) throw new ValidationException("Invalid or repeated email in this CSV.");
                     CrmRecord record; var creating = string.IsNullOrEmpty(cells[0]);

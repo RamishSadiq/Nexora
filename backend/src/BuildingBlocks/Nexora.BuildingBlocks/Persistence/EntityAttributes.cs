@@ -14,6 +14,7 @@ public sealed class AttributeDefinition : TenantEntity
     public string EntityType { get; set; } = "";
     public string Name { get; set; } = "";
     public string DataType { get; set; } = "text";
+    public string Section { get; set; } = "General Information";
     public int DisplayOrder { get; set; }
 }
 public sealed class AttributeValue : TenantEntity, IAutomationValue
@@ -27,7 +28,7 @@ public sealed class AttributeValue : TenantEntity, IAutomationValue
 }
 public sealed record AttributeInput(string? TextValue, decimal? NumberValue, bool? BooleanValue, DateTime? DateValue);
 public interface IAttributeRequest { Dictionary<Guid, AttributeInput>? Attributes { get; } }
-public sealed record AttributeDefinitionRequest(string Name, string DataType);
+public sealed record AttributeDefinitionRequest(string Name, string DataType, string? Section = null);
 public sealed record AttributeOrderRequest(Guid[] Ids);
 public sealed record AttributeValuesRequest(Dictionary<Guid, AttributeInput> Attributes) : IAttributeRequest;
 
@@ -53,6 +54,7 @@ public static class EntityAttributes
             Resolve(entityType); ValidateDefinition(request);
             if (await Definitions(db, entityType).CountAsync(ct) >= 50) throw new ValidationException("An entity may have at most 50 attributes.");
             var row = new AttributeDefinition { TenantId = who.TenantId!.Value, EntityType = entityType, Name = request.Name.Trim(), DataType = request.DataType,
+                Section = AutomationCatalog.FieldSection(entityType, request.Section),
                 DisplayOrder = (await Definitions(db, entityType).MaxAsync(x => (int?)x.DisplayOrder, ct) ?? -1) + 1 };
             db.Add(row); await db.SaveChangesAsync(ct); return Results.Ok(row);
         }).RequireAuthorization(permission);
@@ -63,6 +65,7 @@ public static class EntityAttributes
             if (row.DataType != request.DataType && await db.Set<AttributeValue>().AnyAsync(x => x.DefinitionId == id, ct))
                 throw new ValidationException("Cannot change data type while saved values exist.");
             row.Name = request.Name.Trim(); row.DataType = request.DataType;
+            row.Section = AutomationCatalog.FieldSection(entityType, request.Section ?? row.Section);
             await db.SaveChangesAsync(ct); return Results.Ok(row);
         }).RequireAuthorization(permission);
         api.MapDelete("/attributes/{entityType}/definitions/{id:guid}", async (string entityType, Guid id, TDb db, CancellationToken ct) =>

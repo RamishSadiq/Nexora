@@ -1,0 +1,3182 @@
+[
+  {
+    "id": 1,
+    "name": "Manufacturers Association for Plastic Processors",
+    "url": "https://www.mappinc.com/",
+    "sector": "Plastics",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 2,
+    "name": "American Mold Builders Association",
+    "url": "https://amba.org/",
+    "sector": "Tooling",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 3,
+    "name": "National Tooling and Machining Association",
+    "url": "https://ntma.org/",
+    "sector": "Machining",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "ratkins@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "dderose@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "dott@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "khrusch@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "jstupica@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "cmarsico@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "sbailey@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "rbasalla@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "bscebbi@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "lwarner@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "btyus@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      },
+      {
+        "email": "rryan@ntma.org",
+        "source": "https://ntma.org/ntma-staff/",
+        "label": "Email"
+      }
+    ],
+    "contactLinks": [
+      "https://ntma.org/ntma-staff/",
+      "https://ntma.org/about/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://ntma.org/",
+        "text": "advocate for our industry and provide learning resources for our members. 1 KMember Companies 26 26 Local Chapters 2142 Employees Trained 8 B8 billion in Annual Member Sales NTMA Events. Partner Events. Webinars.NTMA events provide unparalleled networking and insights for industr"
+      },
+      {
+        "source": "https://ntma.org/membership/",
+        "text": " Wardle, President & CEO, JD Machine More than 1,000 strong, our members are small and medium-sized companies, many of them family owned or privately held. They believe in the NTMA, because for more than 80 years, NTMA has been focused on the strength, growth and future of American manufacturing"
+      },
+      {
+        "source": "https://ntma.org/my-membership-options/",
+        "text": "imary navigation Skip to main content Skip to primary sidebar My Membership Options NTMA members are companies that believe in the future of U.S. manufacturing. They are tool and die makers, precision manufacturers, suppliers and supporters. Join us. Join the largest precision manufacturing trade"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Precision Metalforming Association",
+    "url": "https://www.pma.org/",
+    "sector": "Metalforming",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "mgetsay@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "llehman@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "kstratis@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "ccarmigiano@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "dgutierrez@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "cking@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "bkuvin@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "epeterman@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "dwolf@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "lbailey@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "mberendt@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      },
+      {
+        "email": "bborden@pma.org",
+        "source": "https://www.pma.org/about/staff/",
+        "label": "Send Email"
+      }
+    ],
+    "contactLinks": [
+      "https://www.pma.org/about/staff/",
+      "https://www.pma.org/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.pma.org/",
+        "text": "d success.\" Brian Swanson President & CFO, E&E Manufacturing PMA Member Company Since 1996 Through my membership with PMA, my staff and I are able to connect and align with others leading the way in metalforming. Jeff AznavorianPresident, Clips and Clamps Industries P"
+      },
+      {
+        "source": "https://www.pma.org/",
+        "text": "rming. Jeff AznavorianPresident, Clips and Clamps Industries PMA Member Company Since 1986 Through PMA's executive-level events and training programs, we are able to share best practices and learn about emerging industry technologies. The events offered by PMA address"
+      },
+      {
+        "source": "https://www.pma.org/",
+        "text": "rce. Elisabeth Weissenrieder-BennisPresident, Weiss-Aug GroupPMA Member Company Since 1982 FAQS PMA Questions? If you don\u2019t see your question listed, feel free to reach out\u2014we\u2019re happy to help! Contact Us How do I join PMA? To join PMA, visit the membership page and c"
+      },
+      {
+        "source": "https://www.pma.org/join-pma/",
+        "text": "ers exclusive benefits and networking opportunities to suit your company. When your company becomes a member, every employee at that location is able to take advantage of PMA\u2019s benefits and services as a member. In order to better serve you, tell us about your company, and a PMA representative wil"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Fabricators and Manufacturers Association",
+    "url": "https://www.fmamfg.org/",
+    "sector": "Fabrication",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "jgunderson@fmamfg.org",
+        "source": "https://www.fmamfg.org/membership#join",
+        "label": "Jerry Gunderson"
+      },
+      {
+        "email": "membership@fmamfg.org",
+        "source": "https://www.fmamfg.org/membership#join",
+        "label": "[email protected]"
+      },
+      {
+        "email": "info@fmamfg.org",
+        "source": "https://www.fmamfg.org/contact",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.fmamfg.org/contact"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.fmamfg.org/membership#join",
+        "text": "1695 /year Premier Business Learn More Get all the benefits of a Business membership plus unlimited access to FabCasts and webinars, e-Fab Online Learning Courses, FMA's Pre-Employment Assessment Tool, and one registration, at no charge, to FMA's Annual Meeting. Single Site"
+      },
+      {
+        "source": "https://www.fmamfg.org/membership#join",
+        "text": "ing for all employees Reduced pricing for all employees Enhanced Member Directory Increase your company's visibility to clients and customers with your logo and business description. Learn More Industry Statistics Salary / Wage and Benefit Survey Determine how your employee compensation pack"
+      },
+      {
+        "source": "https://www.fmamfg.org/membership#join",
+        "text": " that, so what we have done for the past 5 years is we include a company level FMA membership with each machine we sell. This gives our customers direct access to training and its been a great way to partner with FMA and introduce people to the value of it. \u2014 Matt Garbarino, Cin"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Precision Machined Products Association",
+    "url": "https://www.pmpa.org/",
+    "sector": "Machining",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@pmpa.org",
+        "source": "https://www.pmpa.org/",
+        "label": "info@pmpa.org"
+      },
+      {
+        "email": "hcenta@pmpa.org",
+        "source": "https://www.pmpa.org/membership-benefits/",
+        "label": "hcenta@pmpa.org"
+      },
+      {
+        "email": "cmiller@pmpa.org",
+        "source": "https://www.pmpa.org/contact-us/",
+        "label": "Email Us"
+      }
+    ],
+    "contactLinks": [
+      "https://www.pmpa.org/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.pmpa.org/",
+        "text": "ve & regulatory Updates National & local events Online Education Member discounts Eligible companies must have a physical facility in the U.S. or Canada. PMPA Mastery Program 2026 October 20-21, 2026 Chicago, Illinois Register Today PMPA Better Together Leadership Forum October 22-23, 2"
+      },
+      {
+        "source": "https://www.pmpa.org/membership-benefits/",
+        "text": "OU BENEFIT? | MEMBERSHIP TYPES/APPLY | AFFINITY PARTNER BENEFITS Join PMPA and experience BETTER TOGETHER for your company. TRY PMPA AT A DISCOUNTED RATE! We are so convinced that you will benefit from a PMPA membership that we are offering new Manufacturing and Associate members half off of dues for one year "
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "National Fastener Distributors Association",
+    "url": "https://www.nfda-fastener.org/",
+    "sector": "Fasteners",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@nfda-fastener.org",
+        "source": "https://www.nfda-fastener.org/contact-us",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.nfda-fastener.org/contact-us"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 8,
+    "name": "Industrial Fasteners Institute",
+    "url": "https://www.indfast.org/",
+    "sector": "Fasteners",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 9,
+    "name": "Specialty Tools and Fasteners Distributors Association",
+    "url": "https://www.stafda.org/",
+    "sector": "Distribution",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 10,
+    "name": "Industrial Supply Association",
+    "url": "https://www.isapartners.org/",
+    "sector": "Distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@isapartners.org",
+        "source": "https://www.isapartners.org/membership/",
+        "label": "info@isapartners.org"
+      },
+      {
+        "email": "bbreen@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact Brendan Breen"
+      },
+      {
+        "email": "jstrobo@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact Joby Strobo"
+      },
+      {
+        "email": "dbarr@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact Destani Barr"
+      },
+      {
+        "email": "cbertino@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact Christina Bertino"
+      },
+      {
+        "email": "john.gunderson@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact John Gunderson"
+      },
+      {
+        "email": "jdibiaggio@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact Jessica Di Biaggio"
+      },
+      {
+        "email": "aaichele@isapartners.org",
+        "source": "https://www.isapartners.org/about/staff/",
+        "label": "Contact Alyssa Aichele"
+      }
+    ],
+    "contactLinks": [
+      "https://www.isapartners.org/contact/",
+      "https://www.isapartners.org/about/staff/",
+      "https://www.isapartners.org/webinar-how-industrial-distribution-leaders-are-adjusting-their-inside-sales-teams-to-grow/",
+      "https://2026-fall-summit.isapartners.org/",
+      "https://isapartners.org/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.isapartners.org/",
+        "text": "igence leaders need to navigate change and drive growth. Explore Membership Schedule a Conversation Trusted by 400+ Companies Across the Channel Built for a Channel That's Changing Fast. The MROP channel is evolving at a rapid pace. Pricing pressure, talent gaps, tech shifts, and rising customer expectations ar"
+      },
+      {
+        "source": "https://www.isapartners.org/",
+        "text": "p talent, and connect across the full channel. How much does ISA membership cost? ISA membership pricing varies based on company type, size, and role in the industrial supply channel. Membership is structured to be accessible and scalable, with dues reflecting the value delivered through business intelligence and re"
+      },
+      {
+        "source": "https://www.isapartners.org/",
+        "text": "able to The ISA Foundation icon/remove x First-Time Attendee Non-Member Rate Policy This policy is for first-time attendees whose company has never been an ISA member or, whose company has not been an ISA member for the past 3 years. Defining \u201cFirst-Time\u201d: First-time denotes the company and not the individual person who is a"
+      },
+      {
+        "source": "https://www.isapartners.org/membership/",
+        "text": "g industrial companies need to navigate change and drive growth. Join ISA Today Schedule a Conversation STRONGER COMPANIES.A STRONGER INDUSTRIAL CHANNEL. Since 1902, ISA has helped industrial companies compete, grow, and lead through change. Today, we help member companies make better-informed decisions, str"
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "National Association of Wholesaler-Distributors",
+    "url": "https://www.naw.org/",
+    "sector": "Distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "Partners@naw.org",
+        "source": "https://www.naw.org/business-solutions/affiliate-program/",
+        "label": "[email protected]"
+      },
+      {
+        "email": "membership@naw.org",
+        "source": "https://www.naw.org/membership-interest-form/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.naw.org/about/naw-team/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.naw.org/membership-interest-form/",
+        "text": "lesaleOther Phone(Required) Email(Required) What Benefits of NAW Membership Interest Your Company Most?(Required) Pro-Business Government Policy Advocacy Peer Networking Benchmarking, Research, and Industry Intelligence Technology Exploration and Integration Leadership Development and "
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "International Association of Plastics Distribution",
+    "url": "https://www.iapd.org/",
+    "sector": "Plastics",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "iapd@iapd.org",
+        "source": "https://www.iapd.org/",
+        "label": "[email protected]"
+      },
+      {
+        "email": "savery@iapd.org",
+        "source": "https://www.iapd.org/IAPD/About/Staff.aspx?hkey=e93aec0b-5530-4f42-a431-4601716f1682",
+        "label": ""
+      },
+      {
+        "email": "jbokath@iapd.org",
+        "source": "https://www.iapd.org/IAPD/About/Staff.aspx?hkey=e93aec0b-5530-4f42-a431-4601716f1682",
+        "label": ""
+      },
+      {
+        "email": "lfredrickson@iapd.org",
+        "source": "https://www.iapd.org/IAPD/About/Staff.aspx?hkey=e93aec0b-5530-4f42-a431-4601716f1682",
+        "label": ""
+      },
+      {
+        "email": "jmcclure@iapd.org",
+        "source": "https://www.iapd.org/IAPD/About/Staff.aspx?hkey=e93aec0b-5530-4f42-a431-4601716f1682",
+        "label": ""
+      }
+    ],
+    "contactLinks": [
+      "https://www.iapd.org/IAPD/About/Staff.aspx?hkey=e93aec0b-5530-4f42-a431-4601716f1682"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 13,
+    "name": "Polyurethane Manufacturers Association",
+    "url": "https://www.pmahome.org/",
+    "sector": "Polymers",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@pmahome.org",
+        "source": "https://www.pmahome.org/membership-benefits",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.pmahome.org/contact-us"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.pmahome.org/",
+        "text": "nament MembershipMembership Meet Our Members Membership Benefits Membership Categories Marketing Resources Membership Application EHSMOCA Defense During TSCA Review PMA Action & Advocacy Fund Public Resources Legal Counsel Self-Certification Program Emission and Extraction"
+      },
+      {
+        "source": "https://www.pmahome.org/membership-application",
+        "text": " PMA Membership Application Here If you would like to review PMA membership categories further, please click here. Quick Links Become a Member Future PMA Meetings TSCA MOCA Defense Review Contribute to the TSCA MOCA Defense Fund Upcoming Events No events View Full Calendar"
+      },
+      {
+        "source": "https://www.pmahome.org/membership-benefits",
+        "text": "Phone: 414-431-3094 \u2022 Fax: 414-276-7704E-mail: [email protected] Membership Categories Quick Links Become a Member Future PMA Meetings TSCA MOCA Defense Review Contribute to the TSCA MOCA Defense Fund Upcoming Events No events View Full Calendar Latest News 2027 Award Nomi"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Rubber Division, American Chemical Society",
+    "url": "https://www.rubber.org/",
+    "sector": "Rubber",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "hmaimone@rubber.org",
+        "source": "https://www.rubber.org/corporate-membership/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.rubber.org/contact-us",
+      "https://www.rubber.org/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.rubber.org/corporate-membership/",
+        "text": "InvolvedJoin a Committee Become a Rubber Division, ACS corporate member and experience the value for your company. Corporate members receive the benefits provided with individual membership, as well as additional corporate member benefits. BECOME A CORPORATE MEMBER Corporate Member Benefits All the be"
+      },
+      {
+        "source": "https://www.rubber.org/corporate-membership/",
+        "text": " MEMBER Corporate Member Benefits All the benefits of individual membership, with added flexibility. Corporate memberships are owned by the company, not the individual, so you can assign memberships to employees and reassign them as staff changes. Individual memberships always follow the person, even if their employer paid for it. Com"
+      },
+      {
+        "source": "https://www.rubber.org/corporate-membership/",
+        "text": "hips to employees and reassign them as staff changes. Individual memberships always follow the person, even if their employer paid for it. Company name on the Corporate Membership page of our website Discounted exhibit space pricing at the Global Polymer Summit Expo \u2013 valuable savings Logo displayed on signage during the Spring Techn"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Association for Rubber Products Manufacturers",
+    "url": "https://arpminc.com/",
+    "sector": "Rubber",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 16,
+    "name": "Plastics Industry Association",
+    "url": "https://www.plasticsindustry.org/",
+    "sector": "Plastics",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "Membership@plasticsindustry.org",
+        "source": "https://www.plasticsindustry.org/become-a-member/",
+        "label": "Membership@plasticsindustry.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.plasticsindustry.org/contact-us/",
+      "https://www.plasticsindustry.org/leadership-team/",
+      "https://access.plasticsindustry.org/cdn-cgi/l/email-protection#6c1a1c09020d0003160d2c1c000d1f18050f1f050208191f181e1542031e0b531f190e06090f18512409001c4c21094c3b0518044c21154c20030b0502"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.plasticsindustry.org/become-a-member/",
+        "text": "ansfer molding, compression molding and other methods. Associate Member Associate members are companies that stock and sell products manufactured by third parties that are utilized by processors in the production of any plastics products. Associate member sub-categories include: Distributo"
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Society of Plastics Engineers",
+    "url": "https://www.4spe.org/",
+    "sector": "Plastics professionals",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.4spe.org/i4a/pages/index.cfm?pageid=3661",
+      "https://www.4spe.org/contact"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 18,
+    "name": "American Composites Manufacturers Association",
+    "url": "https://acmanet.org/",
+    "sector": "Composites",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@acmanet.org",
+        "source": "https://acmanet.org/",
+        "label": "info@acmanet.org"
+      }
+    ],
+    "contactLinks": [
+      "https://acmanet.org/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://acmanet.org/membership-application-form/",
+        "text": "on of supplier. View PDF Application Form Affiliate: Any person, company or corporation not eligible for regular or associate membership in the association, including sole proprietorship consultants, publications, professional and trade associations, end users and other non-profit organizations that service the composite"
+      },
+      {
+        "source": "https://acmanet.org/membership-application-form/",
+        "text": "ntact Name* Primary Contact Title* Phone* Primary Contact Email* Company Website Recommended by (Member Referral Program) Company Address* City* State/Province* ZIP / Postal Code* Country*CountryAfghanistanAlbaniaAlgeriaAmerican SamoaAndorraAngolaAntigua and BarbudaArgentinaArmeniaAustraliaAu"
+      },
+      {
+        "source": "https://acmanet.org/events/membership-awards/",
+        "text": "rations. Awards can be made posthumously. Must have worked for a company that is currently or formerly a member of ACMA. Submit a nomination Kelly DeBuskComposites Compliance, LLC Scott T. HolmesResilient Structures OUTSTANDING VOLUNTEER AWARD Each year, an individual that has gone the extra mile thi"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "International Cast Polymer Association",
+    "url": "https://www.icpa-hq.org/",
+    "sector": "Polymers",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 20,
+    "name": "American Foundry Society",
+    "url": "https://www.afsinc.org/",
+    "sector": "Foundry",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 21,
+    "name": "North American Die Casting Association",
+    "url": "https://www.diecasting.org/",
+    "sector": "Die casting",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "nadca@diecasting.org",
+        "source": "https://www.diecasting.org/",
+        "label": "nadca@diecasting.org"
+      },
+      {
+        "email": "meyer@diecasting.org",
+        "source": "https://www.diecasting.org/web/Contact/Web/About/Contact_Us.aspx?hkey=2355d640-28cf-44b5-9264-48f95ca2d779",
+        "label": "meyer@diecasting.org"
+      },
+      {
+        "email": "brancaleon@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "brancaleon@diecasting.org"
+      },
+      {
+        "email": "catlett@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "catlett@diecasting.org"
+      },
+      {
+        "email": "glim@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "glim@diecasting.org"
+      },
+      {
+        "email": "hutchins@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "hutchins@diecasting.org"
+      },
+      {
+        "email": "margel@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "margel@diecasting.org"
+      },
+      {
+        "email": "ryzner@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "ryzner@diecasting.org"
+      },
+      {
+        "email": "mryzner@diecasting.org",
+        "source": "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx",
+        "label": "mryzner@diecasting.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.diecasting.org/web/Contact/Web/About/Contact_Us.aspx?hkey=2355d640-28cf-44b5-9264-48f95ca2d779",
+      "https://www.diecasting.org/web/Die_Casting/NADCA_Staff/Web/About/NADCA_Staff.aspx"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.diecasting.org/",
+        "text": "nce... Learn More Casting for a Sustainable Future NADCA and its member companies embrace continuous innovation and improvement. We apply sustainability principles in the manufacturing and distribution of die castings... Learn More A Mainstay of American Business The "
+      },
+      {
+        "source": "https://www.diecasting.org/",
+        "text": "zine Find a Die Caster Suppliers Directory See what we are up to Join Our Expansive Network With members from over 750 companies, NADCA\u2019s network will help you find current education opportunities, partners and suppliers, grants and even the latest technology research. Join Us News & Announcements ArtiFlex Holding"
+      },
+      {
+        "source": "https://www.diecasting.org/Web/Membership/Web/Membership/Membership.aspx",
+        "text": "s, engineering consults or even a custom value-analysis seminar. Membership Levels Corporate Membership For any entity (company, partnership, etc.) with a physical presence in North America that is engaged in the manufacturing, design or purchasing of die castings; a supplier to die casting manufacturers; or a manu"
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Investment Casting Institute",
+    "url": "https://www.investmentcasting.org/",
+    "sector": "Casting",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@investmentcasting.org",
+        "source": "https://www.investmentcasting.org/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.investmentcasting.org/contact.html"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.investmentcasting.org/member-rates.html",
+        "text": "ry and the Institute\u2019s activities, but who are not employed by a company eligible for membership. (Full-time students are also eligible to apply.) Membership will be automatically renewed each year unless member requests cancellation in writing on or before November 30 each year. A"
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Steel Founders Society of America",
+    "url": "https://www.sfsa.org/",
+    "sector": "Foundry",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 24,
+    "name": "Forging Industry Association",
+    "url": "https://www.forging.org/",
+    "sector": "Forging",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 25,
+    "name": "Metal Powder Industries Federation",
+    "url": "https://www.mpif.org/",
+    "sector": "Powder metallurgy",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@mpif.org",
+        "source": "https://www.mpif.org/",
+        "label": "info@mpif.org"
+      },
+      {
+        "email": "dschember@mpif.org",
+        "source": "https://www.mpif.org/About/JoinMPIF.aspx",
+        "label": "Dora Schember"
+      },
+      {
+        "email": "jadams@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "James P. Adams"
+      },
+      {
+        "email": "jregan@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": ""
+      },
+      {
+        "email": "psedor@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "Paul Sedor"
+      },
+      {
+        "email": "wabner@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": ""
+      },
+      {
+        "email": "dhaggerty@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "Dia ne A. Haggerty, CMP"
+      },
+      {
+        "email": "tabbott@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": ""
+      },
+      {
+        "email": "sballingall@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "S"
+      },
+      {
+        "email": "sgibbs@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "Stephanie Gibbs"
+      },
+      {
+        "email": "shenry@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "Sherry R. Henry"
+      },
+      {
+        "email": "dstab@mpif.org",
+        "source": "https://www.mpif.org/About/Staff.aspx",
+        "label": "Debby Stab"
+      }
+    ],
+    "contactLinks": [
+      "https://www.mpif.org/About/Staff.aspx",
+      "https://www.mpif.org/ContactUs.aspx"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.mpif.org/",
+        "text": "has been a champion of this innovative technology, providing our member companies with valuable services that help advance the art and science of powder metallurgy while promoting technological benefits to prospective end users. Membership Information Plan today to at"
+      },
+      {
+        "source": "https://www.mpif.org/About/MembershipBenefits.aspx",
+        "text": "e growing powder metallurgy and particulate materials markets by joining with other industry companies to promote programs that influence the awareness and expansion of the technology. MPIF membership can fine tune your management/marketing strategy by providing you with up-to-date indust"
+      },
+      {
+        "source": "https://www.mpif.org/About/MembershipBenefits.aspx",
+        "text": " statistics technology development standards technology transfer Member companies participate in committees and boards such as: Roadmap Committee Standards and Statistics Committees Technical Board Industry Development Board In addition, each individual association ma"
+      },
+      {
+        "source": "https://www.mpif.org/About/MembershipBenefits.aspx",
+        "text": " associations that make up the Federation, there are three other membership options. Corporate Affiliate Membership: Designed for companies that want to be kept abreast of PM technology and industry developments but do not fit within the scope of any of the six associations. Associate/Consultant Membership: These members pro"
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Metal Treating Institute",
+    "url": "https://www.heattreat.net/",
+    "sector": "Heat treating",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "kristen@heattreat.net",
+        "source": "https://www.heattreat.net/membership-information",
+        "label": "kristen@heattreat.net"
+      },
+      {
+        "email": "deanna@heattreat.net",
+        "source": "https://www.heattreat.net/contact-us",
+        "label": "deanna@heattreat.net"
+      },
+      {
+        "email": "amanda@heattreat.net",
+        "source": "https://www.heattreat.net/contact-us",
+        "label": "amanda@heattreat.net"
+      },
+      {
+        "email": "lizzy@heattreat.net",
+        "source": "https://www.heattreat.net/contact-us",
+        "label": "lizzy@heattreat.net"
+      },
+      {
+        "email": "tom@heattreat.net",
+        "source": "https://www.heattreat.net/contact-us",
+        "label": "tom@heattreat.net"
+      }
+    ],
+    "contactLinks": [
+      "https://www.heattreat.net/contact-us"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.heattreat.net/",
+        "text": " Join Now Career Opportunities MTI Online Academy Events See Why Join MTI in 77 Seconds Make 2027 the Year Your Company Becomes MTI Strong News Read More MTI\u2019s Fourth Quarter Webcast Series: Learn and Turn Insights Into Action News Read More Where Members See Growth: How Their Outlook Compares with ITR Econ"
+      },
+      {
+        "source": "https://www.heattreat.net/",
+        "text": "nt Software Copyright \u00a9 2026 - Metal Treating Institute. Legal \u00d7 Membership & Account Access Is Your Company a Member? If your company is already a member, we invite you to set up an online account to: Update Your Profile Register for Events Receive Legislative Updates View & Pay Invoices Access the Member Directory Creat"
+      },
+      {
+        "source": "https://www.heattreat.net/membership-information",
+        "text": "s a non-profit trade association, focused on the success of your company. Being a member of MTI will play a vital role in your productivity, as well as connect you with owners and executives of heat treating companies in over 40 states and Canada. The MTI Board of Trustees are "
+      },
+      {
+        "source": "https://www.heattreat.net/membership-information",
+        "text": " maximize your people, productivity, safety, and quality of your company. If you are not sure of MTI membership, we encourage you to call Tom Morrison, CEO of MTI Management, and let him share the invaluable resources that MTI and its committees are working on to build value in your business and "
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "National Association for Surface Finishing",
+    "url": "https://nasf.org/",
+    "sector": "Surface finishing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@nasf.org",
+        "source": "https://nasf.org/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://nasf.org/contact",
+      "https://nasf.org/aboutnasf/nasf-staff/",
+      "https://nasf.org/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://nasf.org/",
+        "text": "tact Contact Search Search for: Join Renew MembershipMenu Toggle Membership Categories Membership Benefits Renew Your Membership NASF Chapters NASF Member Affinity Programs STERC Access Membership & Products Directory Members-Only Resources EducationMenu Toggle Training & "
+      },
+      {
+        "source": "https://nasf.org/",
+        "text": "ntact Contact Sign In Main Menu Join Renew MembershipMenu Toggle Membership Categories Membership Benefits Renew Your Membership NASF Chapters NASF Member Affinity Programs STERC Access Membership & Products Directory Members-Only Resources EducationMenu Toggle Training & "
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Chemical Coaters Association International",
+    "url": "https://www.ccaiweb.com/",
+    "sector": "Coatings",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 29,
+    "name": "Powder Coating Institute",
+    "url": "https://www.powdercoating.org/",
+    "sector": "Coatings",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 30,
+    "name": "Aluminum Anodizers Council",
+    "url": "https://www.anodizing.org/",
+    "sector": "Aluminum",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "mail@anodizing.org",
+        "source": "https://www.anodizing.org/",
+        "label": "mail@anodizing.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.anodizing.org/contact/",
+      "https://www.anodizing.org/contact"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 31,
+    "name": "Aluminum Extruders Council",
+    "url": "https://www.aec.org/",
+    "sector": "Aluminum",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "mail@aec.org",
+        "source": "https://aec.org/",
+        "label": "mail@aec.org"
+      }
+    ],
+    "contactLinks": [
+      "https://members.aec.org/page/contact-us"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://aec.org/join",
+        "text": "nchmark their operating and financial metrics with those of peer companies. WHY JOIN AEC? Committed to helping its members overcome the challenges that arise in a competitive manufacturing environment, the AEC... Educates designers and manufacturers on the advantages and applications of aluminum extrusions. Pu"
+      },
+      {
+        "source": "https://aec.org/join",
+        "text": "m extrusions. Publishes the yearly Buyers' Guide, a directory of member companies to be used as a buyer's resource. Informs members about emerging technologies and industry trends via publications and educational opportunities* such as training sessions, online progra"
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "name": "Aluminum Association",
+    "url": "https://www.aluminum.org/",
+    "sector": "Aluminum",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 33,
+    "name": "Wire Association International",
+    "url": "https://www.wirenet.org/",
+    "sector": "Wire",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 34,
+    "name": "Wire Fabricators Association",
+    "url": "https://www.wf-a.org/",
+    "sector": "Wire",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 35,
+    "name": "Spring Manufacturers Institute",
+    "url": "https://www.smihq.org/",
+    "sector": "Springs",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.smihq.org/contact-us/",
+      "https://smihq.org/staff-list/",
+      "https://smihq.org/staffs/laura-helmrich-rhodes/",
+      "https://smihq.org/staffs/gabriela-carrasco/",
+      "https://smihq.org/staffs/c-richard-gordon/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://smihq.org/",
+        "text": "ted through SMI\u2019s programs. You are eligible to become a regular member of SMI if you are a North American company or North American branch of an international company that manufactures precision mechanical springs for general sale. You are eligible to become an associate member of SMI if your company "
+      },
+      {
+        "source": "https://smihq.org/",
+        "text": "prings for general sale. You are eligible to become an associate member of SMI if your company supplies materials, equipment, or services directly to firms or corporations who are eligible for regular membership in SMI, and those materials, equipment, or services are incorporated in"
+      },
+      {
+        "source": "https://smihq.org/benefits-of-membership/",
+        "text": "nd their families is available to all full-time employees of SMI member companies. Members click here to apply. Access to the Springmakers Exchange SMIHQ.org helps its members as a way to buy or sell excess equipment, inventory, and other products and services for the"
+      },
+      {
+        "source": "https://smihq.org/benefits-of-membership/",
+        "text": "ectors is the catalyst behind vital industry programs to promote member interests. Discounted Products As a member of SMI, companies receives products at a discount. Available products include Advanced Spring Design Software, Handbook of Spring Design, Encyclopedia of Spring Design and more! Click here to browse our o"
+      }
+    ]
+  },
+  {
+    "id": 36,
+    "name": "Association for Manufacturing Technology",
+    "url": "https://www.amtonline.org/",
+    "sector": "Manufacturing technology",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.amtonline.org/contact-us"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 37,
+    "name": "Association of Equipment Manufacturers",
+    "url": "https://www.aem.org/",
+    "sector": "Equipment",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.aem.org/about/contact-information"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.aem.org/",
+        "text": "+ product lines. Member Groups Member Directory Learn More about Membership Advocacy Advocates for policies that benefit our member companies. Business Intelligence Delivers economic data and actionable insights for growth. Education & Events Presents expert knowledge and networking opportunities to help members adapt and prep"
+      },
+      {
+        "source": "https://www.aem.org/",
+        "text": "assroots campaigns, public affairs, and research, and connecting member companies with policy makers. Business Intelligence Your source for exclusive member insights and market research, macroeconomic trends, and industry data. Safety & Product Leadership Your industr"
+      },
+      {
+        "source": "https://www.aem.org/join",
+        "text": " Momentum Through Membership Grow your business through your AEM Membership Membership Join AEM Today Request Info Top Member Benefits by Company Type Equipment Manfacturers Components Manufacturers Service Providers Resource Spotlight Search the Member Directory AEM is 1,000+ members strong and growing, representing 200+ product li"
+      },
+      {
+        "source": "https://www.aem.org/join",
+        "text": "assroots campaigns, public affairs, and research, and connecting member companies with policy makers. Business Intelligence Your source for exclusive member insights and market research, macroeconomic trends, and industry data. Market Share Statistics Provides partici"
+      }
+    ]
+  },
+  {
+    "id": 38,
+    "name": "Conveyor Equipment Manufacturers Association",
+    "url": "https://www.cemanet.org/",
+    "sector": "Conveyors",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "marketing@cemanet.org",
+        "source": "https://cemanet.org/",
+        "label": "email"
+      }
+    ],
+    "contactLinks": [
+      "https://members.cemanet.org/contact"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://cemanet.org/about-us/",
+        "text": "on. At CEMA\u2019s three in-person and one virtual meeting each year, member companies discuss new developments in conveyor design, technology, and application. Drawing upon the efforts and expertise of our member companies, CEMA provides the conveyor industry with standar"
+      },
+      {
+        "source": "https://cemanet.org/about-us/",
+        "text": ", and application. Drawing upon the efforts and expertise of our member companies, CEMA provides the conveyor industry with standards, technical publications, safety labels, and safety information. CEMA works closely with other organizations, such as the Material Hand"
+      }
+    ]
+  },
+  {
+    "id": 39,
+    "name": "Power Transmission Distributors Association",
+    "url": "https://www.ptda.org/",
+    "sector": "Distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "ptda@ptda.org",
+        "source": "https://www.ptda.org/",
+        "label": "[email protected]"
+      },
+      {
+        "email": "aarnott@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Ann Arnott"
+      },
+      {
+        "email": "jbusk@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Jennifer Busk"
+      },
+      {
+        "email": "klocke@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Khalil Locke,"
+      },
+      {
+        "email": "kkoreman@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Kevin Koreman"
+      },
+      {
+        "email": "ameyer@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Anna Meyer"
+      },
+      {
+        "email": "oobrien@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Olivia O'Brien"
+      },
+      {
+        "email": "oramirez@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Olga Ramirez"
+      },
+      {
+        "email": "szelner@ptda.org",
+        "source": "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx",
+        "label": "Susan Zelner,"
+      }
+    ],
+    "contactLinks": [
+      "https://www.ptda.org/PTDA/ContentAreas/Footer-items/Contact-Us.aspx"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.ptda.org//PTDA/PTDA/Members/Become-a-Member.aspx",
+        "text": "s and criteria for membership by clicking on the links under the member type that best describes your company. Have other questions about membership? We've got the answers. Frequently Asked Questions Distributors: A firm, corporation or partnership whose business is involved in the stocking and di"
+      },
+      {
+        "source": "https://www.ptda.org//PTDA/PTDA/Members/Become-a-Member.aspx",
+        "text": "its customers. Discover the benefits enjoyed by PTDA distributor member companies Criteria & PDF Application Criteria & Online Application Manufacturers: A firm, corporation or partnership which manufactures a power transmission/motion control product line, which oper"
+      },
+      {
+        "source": "https://www.ptda.org//PTDA/PTDA/Members/Become-a-Member.aspx",
+        "text": "distributors. Discover the benefits enjoyed by PTDA manufacturer member companies Criteria & PDF Application Criteria & Online Application Associate: A firm, corporation or individual who provides services directly related to operating a business in the power transmis"
+      }
+    ]
+  },
+  {
+    "id": 40,
+    "name": "Association for Hose and Accessories Distribution",
+    "url": "https://www.nahad.org/",
+    "sector": "Distribution",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 41,
+    "name": "Fluid Power Distributors Association",
+    "url": "https://www.fpda.org/",
+    "sector": "Distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@fpda.org",
+        "source": "https://www.fpda.org/aws/FPDA/pt/sp/home_page",
+        "label": "info@fpda.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.fpda.org/aws/FPDA/pt/sp/contact"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 42,
+    "name": "National Fluid Power Association",
+    "url": "https://www.nfpa.com/",
+    "sector": "Fluid power",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "hnemeth@nfpa.com",
+        "source": "https://www.nfpa.com/",
+        "label": "hnemeth@nfpa.com"
+      },
+      {
+        "email": "kolson@nfpa.com",
+        "source": "https://www.nfpa.com/",
+        "label": "kolson@nfpa.com"
+      },
+      {
+        "email": "dhusenica@nfpa.com",
+        "source": "https://www.nfpa.com/",
+        "label": "\u2709\ufe0f dhusenica@nfpa.com"
+      }
+    ],
+    "contactLinks": [
+      "https://www.nfpa.com/contact-us-1"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.nfpa.com/",
+        "text": " Power Days Start Reading Haley NemethSep 29, '261 min read NFPA Member Companies Engage Students at Purdue University Event Start Reading Upcoming Events SEE ALL EVENTS Read More October 14, 2026 | 10-11AM CT | VirtualThe Buyer/Seller Dance. Are You Working the Right"
+      },
+      {
+        "source": "https://www.nfpa.com/member-directory",
+        "text": "T and Data, Supplier, Associate Supplier, and International. All Members List of Member Companies Search IconA magnifying glass icon. Member Directory Select Alphabet A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Select Member Type Manufacturer International Supplier Distributo"
+      },
+      {
+        "source": "https://www.nfpa.com/member-directory",
+        "text": "nd manufactures custom production machinery and automation. Both companies are small businesses and woman-owned. Read More Alco Mfg Corp LLC Member Type: Supplier 10584 Middle Ave Elyria, OH 44035 Phone: +14404585165 Email: sales@alco.com Website: https://www.alco.com/ Alco Manufacturing Corporation, LLC, based in Elyria, Ohio, is a wo"
+      },
+      {
+        "source": "https://www.nfpa.com/member-directory",
+        "text": "n connection with the use or misuse of such information. List Of Member Companies A.W. Chesterton AAA Products International AAH Fluid Power ACE Controls, Inc. Acme Foundry, Inc. Advance Automation Co. Advanced Cylinders, LLC Advanced Heat Treatment Corp. Aegis Sales "
+      }
+    ]
+  },
+  {
+    "id": 43,
+    "name": "Bearing Specialists Association",
+    "url": "https://www.bsahome.org/",
+    "sector": "Distribution",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 44,
+    "name": "MHI",
+    "url": "https://www.mhi.org/",
+    "sector": "Material handling",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 45,
+    "name": "Material Handling Equipment Distributors Association",
+    "url": "https://www.mheda.org/",
+    "sector": "Distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "connect@mheda.org",
+        "source": "https://www.mheda.org/contact-us/",
+        "label": "connect@mheda.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.mheda.org/meet-the-mheda-team/",
+      "https://www.mheda.org/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.mheda.org/",
+        "text": "sts Education & Professional Development New Employee Onboarding Member to Member Opportunities Share Your Company News & Insights Learn More Subscribe to MHEDA News & Insights Stay up to date with the latest material handling industry news. MHEDA Communities Community Home Industrial Trucks Storage & "
+      },
+      {
+        "source": "https://www.mheda.org/types-of-membership/",
+        "text": "th your industry peers and take your business to the next level. Join our growing community of nearly 600 companies and more than 5,000 individuals. become a member About Our Members MHEDA offers a range of membership types designed to serve every segment of the material handling industry. Explore the"
+      },
+      {
+        "source": "https://www.mheda.org/meet-the-mheda-team/",
+        "text": "ns while steering us into another era of growth and success. Our member companies drive innovation in every segment of our industry. The MHEDA team fosters a culture that encourages new ideas, creative thinking and is agile enough to adapt to new emerging trends to su"
+      }
+    ]
+  },
+  {
+    "id": 46,
+    "name": "Association of Independent Corrugated Converters",
+    "url": "https://www.aiccbox.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@aiccbox.org",
+        "source": "https://www.aiccbox.org/get-involved/join-a-committee/",
+        "label": "[email protected]"
+      },
+      {
+        "email": "vreyes@aiccbox.org",
+        "source": "https://www.aiccbox.org/membership/join-aicc/",
+        "label": "Veronica Reyes"
+      }
+    ],
+    "contactLinks": [
+      "https://www.aiccbox.org/contact/",
+      "https://www.aiccbox.org/cdn-cgi/l/email-protection#deb7b0b8b19ebfb7bdbdbcb1a6f0b1acb9"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.aiccbox.org/",
+        "text": "50 industry specific courses available to every employee at AICC member companies \u2192 Providing our members with education resources, networking opportunities, & advocacy for over 51 years. Member Benefits Join AICC to maximize your employees potential & your company\u2019s "
+      },
+      {
+        "source": "https://www.aiccbox.org/",
+        "text": "sources, networking opportunities, & advocacy for over 51 years. Member Benefits Join AICC to maximize your employees potential & your company\u2019s profit Packaging University Advance your career with 150+ free online courses built for every role & skill level iDirectory Find independent boxmakers who can meet your manufacturing nee"
+      },
+      {
+        "source": "https://www.aiccbox.org/",
+        "text": "nt Packaging Association, announced today that personnel of AICC member companies have completed more than 30,000 courses through AICC's Packaging University, marking a significant milestone in the association\u2019s commitment to... read more AICC Mourns the Passing of Da"
+      },
+      {
+        "source": "https://www.aiccbox.org/membership/join-aicc/",
+        "text": " Scholarship Get Involved Advertising Join A Committee Join AICC Membership Join AICC Create or Find Profile Benefits (For Converter Companies) Become a General Member Apply Online Download Application (For Supplier Companies) Become an Associate Member Apply Online Download Application (For Employees of Member Company) My Comp"
+      }
+    ]
+  },
+  {
+    "id": 47,
+    "name": "Fibre Box Association",
+    "url": "https://www.fibrebox.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "fba@fibrebox.org",
+        "source": "https://www.fibrebox.org/",
+        "label": "Email: fba@fibrebox.org"
+      },
+      {
+        "email": "bmcilvaine@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "bmcilvaine@fibrebox.org"
+      },
+      {
+        "email": "cmartin@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "cmartin@fibrebox.org"
+      },
+      {
+        "email": "csalaverria@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": ""
+      },
+      {
+        "email": "kskapec@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "kskapek@fibrebox.org"
+      },
+      {
+        "email": "arixey@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "arixey@fibrebox.org"
+      },
+      {
+        "email": "jhefferan@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "jhefferan@fibrebox.org"
+      },
+      {
+        "email": "ckammerer@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "ckammerer@fibrebox.org"
+      },
+      {
+        "email": "jverma@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "jverma@fibrebox.org"
+      },
+      {
+        "email": "sdozois@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "sdozois@fibrebox.org"
+      },
+      {
+        "email": "mblum@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "mblum@fibrebox.org"
+      },
+      {
+        "email": "gdivenere@fibrebox.org",
+        "source": "https://www.fibrebox.org/contact-us",
+        "label": "gdivenere@fibrebox.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.fibrebox.org/contact-us",
+      "https://www.fibrebox.org/news/thinking-inside-the-box-fba-staff-go-behind-the-scenes-with-green-bay-packaging/"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 48,
+    "name": "Flexible Packaging Association",
+    "url": "https://www.flexpack.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.flexpack.org/contact-us",
+      "https://www.flexpack.org/fpa-staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.flexpack.org/",
+        "text": "Staff Annual Sponsors Contact Us Membership Membership Directory Membership Categories Dues Structure Advocacy Government Affairs & Strategy Core Industry Issues Member Toolkit & Media Resources FlexPAC\u00ae Sustainability Our Approach The Full Picture Resource Efficiency Circ"
+      },
+      {
+        "source": "https://www.flexpack.org/",
+        "text": "te an Account\" below. This option is also for current individual members and staff of company members who need to login, but do not have a user account set up. Once logged in, you can: Update Your Profile Register for Events View & Pay Invoices Create an Account Applying for Member"
+      },
+      {
+        "source": "https://www.flexpack.org/membership-information",
+        "text": " services. The Flexible Packaging Association | Dues Structure | Membership Categories The Flexible Packaging Association Membership in FPA is open to manufacturers of flexible packaging (converter members) and manufacturers of material, equipment, or supplies related to t"
+      },
+      {
+        "source": "https://www.flexpack.org/membership-information",
+        "text": ". TRADE PRESS MEMBERS Trade Press membership is $2,500 per year. Membership Categories Converter A converter member is categorized by any firm, corporation, or division thereof, engaged in the manufacture and sale within the U.S. of converted forms of paper, film, flexible"
+      }
+    ]
+  },
+  {
+    "id": 49,
+    "name": "Contract Packaging Association",
+    "url": "https://www.contractpackaging.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.contractpackaging.org/about/meet-the-team"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.contractpackaging.org/membership",
+        "text": "s that return value on your membership fees. Learn More View our Membership Brochure cPA Membership Benefits CPA membership is company-based. This means if your company joins the CPA, all individuals within the company are automatically members and can take advantage of our many benefits! Membership Dues are pro-rated thr"
+      },
+      {
+        "source": "https://www.contractpackaging.org/membership",
+        "text": "hip Benefits CPA membership is company-based. This means if your company joins the CPA, all individuals within the company are automatically members and can take advantage of our many benefits! Membership Dues are pro-rated throughout the year and are collected on an Annual basis. Renewals are collected within the 4th Quarter of every "
+      },
+      {
+        "source": "https://www.contractpackaging.org/membership",
+        "text": "rs Contract Manufacturers Those who provide 3PL services Regular Membership Dues pricing is based on your company\u2019s annual revenue in the Contract Packaging sector specifically: Less than $10 Million Annually: $1,995.00 Between $10 and $50 Million Annually: $2,995.00 Over $50 Million Annually: $3,995."
+      },
+      {
+        "source": "https://www.contractpackaging.org/about/meet-the-team",
+        "text": "ll list of CPA staff. View Now Our Mission To serve the needs of member companies through continuing education, market knowledge and customer relationships. Learn More Contract Packaging Association2800 W Higgins Rd, Ste 440Hoffman Estates, IL 60169 Phone: 847-534-990"
+      }
+    ]
+  },
+  {
+    "id": 50,
+    "name": "Industrial Packaging Alliance of North America",
+    "url": "https://industrialpackaging.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@industrialpackaging.org",
+        "source": "https://industrialpackaging.org/online-membership-application/",
+        "label": "info@industrialpackaging.org"
+      }
+    ],
+    "contactLinks": [
+      "https://industrialpackaging.org/contact-details/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://industrialpackaging.org/",
+        "text": "ry and technical issues. These issues can significantly impact a member company\u2019s bottom-line if overlooked. Our Purpose IPANA\u2019s purpose is to be the leading membership organization for manufacturers of new industrial packaging in North America. To this end, IPANA: Ef"
+      },
+      {
+        "source": "https://industrialpackaging.org/",
+        "text": "ucing its environmental impact and promoting a circular economy. Member Companies Manufacturer Member Companies CurTec USA LLC (2) ENGY Southwest Container Products (1, 2, 3) Entegris (2) GEO Plastics (2) Greif Packaging, LLC (1, 2, 3, 4) M&M Industries, Inc. (2) Maus"
+      },
+      {
+        "source": "https://industrialpackaging.org/",
+        "text": " and promoting a circular economy. Member Companies Manufacturer Member Companies CurTec USA LLC (2) ENGY Southwest Container Products (1, 2, 3) Entegris (2) GEO Plastics (2) Greif Packaging, LLC (1, 2, 3, 4) M&M Industries, Inc. (2) Mauser Packaging Solutions (1, 2, "
+      },
+      {
+        "source": "https://industrialpackaging.org/online-membership-application/",
+        "text": "following three steps: Please click here to review the different membership levels and determine which one best describes your company. Review the Industrial Packaging Alliance of North America Governance Documents.Bylaws Antitrust Policy Articles of Incorporation Contact us at info@industrialpackaging.org with your compa"
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "name": "Reusable Packaging Association",
+    "url": "https://www.reusables.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "tdebus@reusables.org",
+        "source": "https://reusables.org/",
+        "label": "Contact"
+      },
+      {
+        "email": "info@reusables.org",
+        "source": "https://reusables.org/",
+        "label": ""
+      }
+    ],
+    "contactLinks": [
+      "https://reusables.org/about-rpa/staff/",
+      "https://reusables.org/cdn-cgi/l/email-protection#f6829293948385b68493838597949a9385d8998491",
+      "https://reusables.org/cdn-cgi/l/email-protection#62420b0c040d221007171103000e07114c0d1005",
+      "https://reusables.org/cdn-cgi/l/email-protection#e6928283849395a69483939587848a8395c8899481",
+      "https://reusables.org/cdn-cgi/l/email-protection#05716160677076457760707664676960762b6a7762"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://reusables.org/",
+        "text": "tudies. View Educational Materials Discover Industry Leaders Our Member Companies For over two decades RPA has been working with member companies to represent and advance the business interests of the reusable transport packaging industry. Check out the membership mar"
+      },
+      {
+        "source": "https://reusables.org/",
+        "text": " Member Companies For over two decades RPA has been working with member companies to represent and advance the business interests of the reusable transport packaging industry. Check out the membership marketplace Join RPA and Become an Industry Leader Become a Member "
+      },
+      {
+        "source": "https://reusables.org/",
+        "text": " Join RPA and Become an Industry Leader Become a Member RPA is a membership-based non-profit global trade organization that includes companies participating in the supply, use, and service of a reusable transport packaging system involving products such as pallets, bulk bins, totes, trays, containers, racks, wraps, and dunnage."
+      },
+      {
+        "source": "https://reusables.org/about-rpa/membership-table/",
+        "text": "ember Membership Benefits Table This table outlines the eligible member programs for each membership category. Regular Members: Companies or Organizations Supplier Businesses A company that processes or supplies raw materials; designs, makes or markets reusable packaging products or associated components; provides pooling "
+      }
+    ]
+  },
+  {
+    "id": 52,
+    "name": "PMMI, Association for Packaging and Processing Technologies",
+    "url": "https://www.pmmi.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@pmmi.org",
+        "source": "https://www.pmmi.org/",
+        "label": "info@pmmi.org"
+      },
+      {
+        "email": "lmoore@pmmi.org",
+        "source": "https://www.pmmi.org/join",
+        "label": "lmoore@pmmi.org"
+      },
+      {
+        "email": "adougherty@pmmi.org",
+        "source": "https://www.pmmi.org/about/meet-the-team",
+        "label": "adougherty@pmmi.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.pmmi.org/about/meet-the-team",
+      "https://www.pmmi.org/contact"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.pmmi.org/",
+        "text": "MI My AccountAccess your account information. Pay OrdersPay your company orders. PMMI Member AppStay up-to-date with all things PMMI. PMMI AdvantageView / download the PMMI Advantage Presentation. Annual HighlightsInformation about PMMI's activities and accomplishments throughout t"
+      },
+      {
+        "source": "https://www.pmmi.org/",
+        "text": "\u200d READ MORE Eight Young Professionals Shaping the Future at PMMI-member companies PMMI News The Industry Comes Together at PACK EXPO International 2026 Show News PMMI Announces Finalists for 2026 Technology Excellence Awards Show News The most reliable and complete on"
+      },
+      {
+        "source": "https://www.pmmi.org/join",
+        "text": "wers to frequently asked questions. Join PMMI Interested in PMMI Membership? To help us direct you to the proper application type for your company's membership, we ask that you complete the Membership Interest Form. Membership Interest Form Membership Categories Application Process Booth Space at PACK EXPO Annual Dues and Fees Member"
+      },
+      {
+        "source": "https://www.pmmi.org/join",
+        "text": " complete the Membership Interest Form. Membership Interest Form Membership Categories Application Process Booth Space at PACK EXPO Annual Dues and Fees Membership Categories General Membership ($1,750) Companies that manufacture Processing Machinery and/or Packaging Machi"
+      }
+    ]
+  },
+  {
+    "id": 53,
+    "name": "Paperboard Packaging Council",
+    "url": "https://www.paperbox.org/",
+    "sector": "Packaging",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@paperbox.org",
+        "source": "https://paperbox.org/contact/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://paperbox.org/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://paperbox.org/become-a-member/",
+        "text": "er of the premier paperboard packaging industry association. PPC membership sustains your company and your industry. Grow your business with a variety of tools, metrics, and educational programs. Build connections throughout the industry. Contribute to the powerful sustainability story"
+      }
+    ]
+  },
+  {
+    "id": 54,
+    "name": "Paper Shipping Sack Manufacturers Association",
+    "url": "https://www.pssma.org/",
+    "sector": "Packaging",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 55,
+    "name": "Packaging Distributors of America",
+    "url": "https://www.pdamerica.org/",
+    "sector": "Distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@pdamerica.org",
+        "source": "https://pdamerica.org/",
+        "label": "info@pdamerica.org"
+      }
+    ],
+    "contactLinks": [
+      "https://pdamerica.org/about-pda/national-staff/"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 56,
+    "name": "Independent Carton Group",
+    "url": "https://www.independentcartongroup.org/",
+    "sector": "Packaging",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 57,
+    "name": "PRINTING United Alliance",
+    "url": "https://www.printing.org/",
+    "sector": "Printing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "assist@printing.org",
+        "source": "https://my.printing.org/NC__Login?startURL=%2Fsetup%2Fsecur%2FRemoteAccessAuthorizationPage.apexp%3Fsource%3DCAAAAaEhJrNAMDAwMDAwMDAwMDAwMDAwAAABBoc-FtrXpuAPRAtCoKP6Il0JEup6wuohvSCjvDlWrSvOlz3EAMrx7OeNRTCZ19fgRVpi-Vaun4POx0EevWWKNAFNQBvudsn5iVys2f973FHi_Ly9XCJ37Y_bkmP4bYekKZMRDZv6kTuQNeSgV2Zf_vCUzRn7e53eByPniA20pvf-YYYZaXmf6SYfit_GhGwLN4NjIf_PFpw61WTsvX_A7qzDvmbiBTsQrtAbCd9XuOlD6_KAqBTYGzZeEFZpTJXDXuhQWL9gNc8ZRuyXv_Fd2gH2rT1Sw8NQKd7z7jgsVs-PsUr30bbbYt85WrveL1gTCVI5CJCpQ6c5YkBtMA7C4E1xU6xbHhyetNtVBFkQ1017Tdr3Gdr22zBwnpfGmcBbJy4TaAUaCu4rvDfAfUtszf8rn1lmgLinmlSXBxPHLQLiIMI5IH2yHN906RRvmsoRhzkP2rGA48Pm8L8hEzbxIsl4NQWDVitK6OuzlkmHb8MLJBvDSR9YUZWRkmg556QyArVoNW5NwTgppavXLcfdW3-SKonaWqckh7eCOc_QYQhJ-b7ANF5UvWJyYRX71rERnBRgHGRY6T6doOCxwqKke1lcf2DD8-m66AANCOM8W11dpncW6dvXS1izXNAFGdiwiwFyZQ8fpBbIAtCB-PhNrT7DTcz4UHE-s-aSy2L7qGebbKCdkYHt_BFbxrG15FBpD6kmiB7N2f0nBBc3o7Aqhe63YeNNATGw5ji-FVbfl6amECterIttg93y9djQ7wQ5tffnInycrFc_vAihidqSLzWWwmHt-Gzr6YmNOTS_hBBnH8n3cUZcHp7lA3u7dJMMIa4cKnR8mk70HILG8KFaSGIBYxMhf617GU3EbWySIXCHms5fcSvmYN7i8N_RdJOiC7Hn6wVmbzWdSef5bn-0K2r6tKgn_bS3lYz-vnCUJ2xZZgyy-lldO-JFz4rjthQpETNf3pWjX7iafzDXoMfBmx8mRLwwndA-WmrOWaBuZ2QCQBGzTcXIZRu3ZX4kRgKnRbncyMbpnsm-rXS4T5H3TdSH6Yi9mTg_JaMw5-WngbyNZSn5XMZ5QPoBFl_AAWcCbf3yu9iNH1WkdPTwLga7BvsSlmczIWyDqQPJ6fr-VMSGryDqvNuUNfsS1VJoruEZLyJqPqM_7sRSCHaFHlSbdgVitMmwQu3wdPLNEqtPU_HhXaJNJmwuu7-GxE2qItqGHBOzhYRMYiP01h26PzkYy9gXrrNa3RvI3q2Ry21l4VxvSQeHg5_FD_-4ks6iQY3rzYER4TBLAGR5U9U6PZXFeEbrCkBIlj1FzmV5KvNnx1hhLarLKdHUt11BJQuDBQ8_ODPYPUOVQklPjoMgAMv_-t9Tf6z4iGgmp_hZUi3CH1eljVROrA9LoduVk7d7xXA0KcFw2gwM6Ns-1mAebNGs8ZA%253D%26display%3Dpage",
+        "label": "assist@printing.org"
+      },
+      {
+        "email": "sbuka@printing.org",
+        "source": "https://www.printing.org/content/2026/10/05/advocating-for-a-strong-postal-system-in-our-nation's-capital",
+        "label": "sbuka@printing.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.printing.org/contact",
+      "https://www.printing.org/content/2026/09/30/sba-leadership-engages-with-printing-industry-at-printing-united-expo"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 58,
+    "name": "Association for Print Technologies",
+    "url": "https://www.printtechnologies.org/",
+    "sector": "Printing",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 59,
+    "name": "National Association of Printing Ink Manufacturers",
+    "url": "https://www.napim.org/",
+    "sector": "Printing",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 60,
+    "name": "Flexographic Technical Association",
+    "url": "https://www.flexography.org/",
+    "sector": "Printing",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.flexography.org/staff/",
+      "https://www.flexography.org/contact/"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 61,
+    "name": "Tag and Label Manufacturers Institute",
+    "url": "https://www.tlmi.com/",
+    "sector": "Labels",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "office@tlmi.com",
+        "source": "https://tlmi.com/",
+        "label": "office@tlmi.com"
+      }
+    ],
+    "contactLinks": [
+      "https://tlmi.com/tlmi/contact-us/",
+      "https://tlmi.com/tlmi/our-team/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://tlmi.com/community/benefits-of-membership/",
+        "text": "tory Access the TLMI Member directory to connect with other TLMI members. Management Ratio Study Benchmark your company\u2019s performance against prior years, your industry peers, or different locations within your organization. Plus, excellence in business management, as measured by this report, can earn you t"
+      },
+      {
+        "source": "https://tlmi.com/community/benefits-of-membership/",
+        "text": "s and includes special converter and end-user highlights. A TLMI member-only resource to help your company navigate the current market conditions and make the best business decisions. Quarterly Trends Report Quarterly Trends Report offers Converter members pulse on the market amongst their peer"
+      }
+    ]
+  },
+  {
+    "id": 62,
+    "name": "Graphic Media Alliance",
+    "url": "https://www.graphicmedia.org/",
+    "sector": "Printing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@graphicmedia.org",
+        "source": "https://www.graphicmedia.org/aws/GMA/pt/sp/home_page",
+        "label": "info@graphicmedia.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.graphicmedia.org/aws/GMA/pt/sp/staff",
+      "https://graphicmedia.org/aws/GMA/pt/sp/staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.graphicmedia.org/aws/GMA/pt/sp/home_page",
+        "text": "dustry\u2019s association, but like any business decision, becoming a member of Graphic Media Alliance should be evaluated based on each company\u2019s assessment of its potential Return On Investment (ROI) for its dues dollar. Of course, every membership needs to take into consideration intangible bene\ufb01ts including networking opportuni"
+      },
+      {
+        "source": "https://www.graphicmedia.org/aws/GMA/pt/sp/home_page",
+        "text": "arning opportunities, hands-on experiences, connections with GMA member companies, site tours, career opportunities, and credentialing to encourage the next generation to explore and immerse themselves in the dynamic field. This initiative is part of GMA's commitment "
+      },
+      {
+        "source": "https://www.graphicmedia.org/aws/GMA/pt/sp/home_page",
+        "text": " Share Your Story! Graphic Media Alliance is proud to launch GMA Member Newsline, a simple and effective way for you to share company updates, milestones, community outreach, innovations, or industry insights directly with our team. Whether it\u2019s a facility expansion, new hires, awards, retirements, or charitable initiati"
+      },
+      {
+        "source": "https://graphicmedia.org/aws/GMA/input_form/display_form_01_show?which_form=71622",
+        "text": "lished by its Board of Directors. We appreciate your interest in joining the GMA Community. Company NameDBA NamePrefixFirst NameLast NameTitle/PositionEmailStreet AddressCityStateZipPhone NumberToll-FreeCell PhoneWebsitePreferred Contact Methodchoose onePhoneEmailText (Cell Number Requir"
+      }
+    ]
+  },
+  {
+    "id": 63,
+    "name": "Great Lakes Graphics Association",
+    "url": "https://www.glga.info/",
+    "sector": "Printing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@glga.info",
+        "source": "https://glga.info/",
+        "label": "info@glga.info"
+      },
+      {
+        "email": "jlyman@glga.info",
+        "source": "https://glga.info/staff/",
+        "label": "Send email"
+      },
+      {
+        "email": "sflick@glga.info",
+        "source": "https://glga.info/staff/",
+        "label": "Send email"
+      },
+      {
+        "email": "broman@glga.info",
+        "source": "https://glga.info/staff/",
+        "label": "Send email"
+      }
+    ],
+    "contactLinks": [
+      "https://glga.info/staff/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://glga.info/",
+        "text": "irectors Staff GLGA Education Foundation GLGA News Maximize GLGA Membership How to Market Your Company Excellence Awards Excellence in Leadership Awards Graphics Excellence Awards Call For Entries GEA Award Winners Join GLGA GLGA Membership Benefits Group Buying Programs Return on Investmen"
+      },
+      {
+        "source": "https://glga.info/join-glga/management-benefits/",
+        "text": "stainability \u2013 Compliancy and certification options to keep your company Green. Anonymous Member-Ask-A-Member Service \u2013 Seek knowledge and share information with your peers throughout the industry. Virtual Peer Group Meetings \u2013 Want to be matched with others you can learn from? We will match you wi"
+      }
+    ]
+  },
+  {
+    "id": 64,
+    "name": "Printing Industries of New England",
+    "url": "https://www.pine.org/",
+    "sector": "Printing",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 65,
+    "name": "Printing Industries of Ohio and Northern Kentucky",
+    "url": "https://www.pianko.org/",
+    "sector": "Printing",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 66,
+    "name": "Printing Industries Alliance",
+    "url": "https://www.pia.org/",
+    "sector": "Printing",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 67,
+    "name": "National Wood Flooring Association",
+    "url": "https://www.nwfa.org/",
+    "sector": "Wood flooring",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "stephanie.owen@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Stephanie"
+      },
+      {
+        "email": "anita.howard@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Anita"
+      },
+      {
+        "email": "dana.rogers@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Dana"
+      },
+      {
+        "email": "sharon.schaller@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Sharon"
+      },
+      {
+        "email": "jayme.diskin@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Jayme"
+      },
+      {
+        "email": "katie.donahue@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Katie"
+      },
+      {
+        "email": "penny.key@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Penny"
+      },
+      {
+        "email": "katherine.norton@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Katie"
+      },
+      {
+        "email": "billy.simmons@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Billy"
+      },
+      {
+        "email": "joy.silinsky@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Joy"
+      },
+      {
+        "email": "john.forbes@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email John"
+      },
+      {
+        "email": "matt.casey@nwfa.org",
+        "source": "https://nwfa.org/contact-us/",
+        "label": "Email Matt"
+      }
+    ],
+    "contactLinks": [
+      "https://nwfa.org/contact-us/"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 68,
+    "name": "Hardwood Manufacturers Association",
+    "url": "https://www.hmabmembers.org/",
+    "sector": "Wood",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 69,
+    "name": "Decorative Hardwoods Association",
+    "url": "https://www.decorativehardwoods.org/",
+    "sector": "Wood",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "jhosen@decorativehardwoods.org",
+        "source": "https://www.decorativehardwoods.org/",
+        "label": "Technical Support"
+      },
+      {
+        "email": "EMentel@DecorativeHardwoods.org",
+        "source": "https://www.decorativehardwoods.org/",
+        "label": "ADVERTISE WITH US"
+      },
+      {
+        "email": "kchristman@decorativehardwoods.org",
+        "source": "https://www.decorativehardwoods.org/contact-us",
+        "label": "Keith Christman"
+      }
+    ],
+    "contactLinks": [
+      "https://www.decorativehardwoods.org/contact-us"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 70,
+    "name": "Architectural Woodwork Institute",
+    "url": "https://www.awinet.org/",
+    "sector": "Woodwork",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 71,
+    "name": "Wood Component Manufacturers Association",
+    "url": "https://www.wcma.com/",
+    "sector": "Wood",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "wcma@wcma.com",
+        "source": "https://wcma.com/",
+        "label": "Mail"
+      },
+      {
+        "email": "amy@wcma.com",
+        "source": "https://wcma.com/our-team/",
+        "label": "amy@wcma.com"
+      }
+    ],
+    "contactLinks": [
+      "https://wcma.com/our-team/",
+      "https://wcma.com/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://wcma.com/",
+        "text": "ods, softwoods, and a variety of engineered wood materials. WCMA member companies are located throughout the United States and Canada. \u200bThe WCMA makes it easy for buyers to find WCMA members who can produce the wood component products they need in both solid and engin"
+      },
+      {
+        "source": "https://wcma.com/",
+        "text": "irectory or fill out the Get\u2013a\u2013Quote form to connect with a WCMA Member company that can produce the exact product to your specifications. You can also call the WCMA office for customized assistance. Member Directory Get-a-Quote Become a Memberor Tech Partner Empoweri"
+      }
+    ]
+  },
+  {
+    "id": 72,
+    "name": "Wood Machinery Manufacturers of America",
+    "url": "https://www.wmma.org/",
+    "sector": "Wood machinery",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 73,
+    "name": "Cabinet Makers Association",
+    "url": "https://www.cabinetmakers.org/",
+    "sector": "Cabinetmaking",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "director@cabinetmakers.org",
+        "source": "https://www.cabinetmakers.org/contact-us",
+        "label": "director@cabinetmakers.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.cabinetmakers.org/contact-us"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.cabinetmakers.org/",
+        "text": " Software Copyright \u00a9 2026 - Cabinet Makers Association. Legal \u00d7 Membership & Account Access Is Your Company a Member? If you are an employee of a CMA member company, we invite you to set up an online account to: Access the Member Directory Register for Events Receive Updates View & Pay Invoices "
+      },
+      {
+        "source": "https://www.cabinetmakers.org/",
+        "text": "sociation. Legal \u00d7 Membership & Account Access Is Your Company a Member? If you are an employee of a CMA member company, we invite you to set up an online account to: Access the Member Directory Register for Events Receive Updates View & Pay Invoices Create an Account Applying for Membership? The members of"
+      },
+      {
+        "source": "https://www.cabinetmakers.org/",
+        "text": "ions for the CMA must be approved by the Board of Directors. All memberships are company based and individuals cannot join CMA. View Membership Information"
+      },
+      {
+        "source": "https://www.cabinetmakers.org/membership-information",
+        "text": " individual whose business is supplying goods or services to the members of the association on behalf of another company. Annual dues are $650/year. Join as Distributor IS YOUR COMPANY A MEMBER? Memberships are company-based. If your company is already a member, then so are you! Create your own account by cl"
+      }
+    ]
+  },
+  {
+    "id": 74,
+    "name": "Kitchen Cabinet Manufacturers Association",
+    "url": "https://www.kcma.org/",
+    "sector": "Cabinetmaking",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://kcma.org/about/staff",
+      "https://kcma.org/contact"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://kcma.org/",
+        "text": "s necessary to promote and grow their cabinet businesses. Footer Join the KCMA Get Certified Company Code Search Member Login Contact Stay connected. Stay informed. \u00a9 , Kitchen Cabinet Manufacturers Association. All Rights Reserved. Privacy Policy | Terms & Conditions"
+      }
+    ]
+  },
+  {
+    "id": 75,
+    "name": "National Wooden Pallet and Container Association",
+    "url": "https://www.palletcentral.com/",
+    "sector": "Wood packaging",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 76,
+    "name": "International Wood Products Association",
+    "url": "https://www.iwpawood.org/",
+    "sector": "Wood",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "baron@iwpawood.org",
+        "source": "https://iwpawood.org/member-benefits",
+        "label": "baron@iwpawood.org"
+      },
+      {
+        "email": "ashley@iwpawood.org",
+        "source": "https://iwpawood.org/team",
+        "label": "ashley@iwpawood.org"
+      },
+      {
+        "email": "joe@iwpawood.org",
+        "source": "https://iwpawood.org/team",
+        "label": "joe@iwpawood.org"
+      },
+      {
+        "email": "stephanie@iwpawood.org",
+        "source": "https://iwpawood.org/team",
+        "label": "stephanie@iwpawood.org"
+      },
+      {
+        "email": "ben@iwpawood.org",
+        "source": "https://iwpawood.org/team",
+        "label": "ben@iwpawood.org"
+      }
+    ],
+    "contactLinks": [
+      "https://iwpawood.org/team",
+      "https://iwpawood.org/contact"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://iwpawood.org/",
+        "text": " a community to promote forest resources and employment Become a Member Today Join our community and grow with us. IWPA represents companies and organizations worldwide. We create value for our members by uniting businesses, providing them with opportunities for improvement and growth, and representing them with a powerful vo"
+      },
+      {
+        "source": "https://iwpawood.org/member-benefits",
+        "text": "y information and tools you require to ensure a bright tomorrow. Members of the International Wood Products Association include companies and organizations worldwide which are involved in the many activities required to produce and import a wood product into the United States. VIEW MEMBERSHIP CATEGORIES What Your Dues Supp"
+      },
+      {
+        "source": "https://iwpawood.org/member-benefits",
+        "text": "o produce and import a wood product into the United States. VIEW MEMBERSHIP CATEGORIES What Your Dues Support Your dues power the advocacy, market insights, and programs that support the wood products industry. Protect Your Ability to Conduct Business IWPA helps keep the U"
+      },
+      {
+        "source": "https://iwpawood.org/member-benefits",
+        "text": "ss flourish and grow. VIEW OUR MOST RECENT ANNUAL REPORT Explore Membership Categories Membership is on a calendar-year cycle (January to December). Dues will be pro-rated the first year for new members who join after March 31. Voting Members Voting Members are companies l"
+      }
+    ]
+  },
+  {
+    "id": 77,
+    "name": "American Home Furnishings Alliance",
+    "url": "https://www.ahfa.us/",
+    "sector": "Furniture",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "nspino@ahfa.us",
+        "source": "https://www.ahfa.us/",
+        "label": "nspino@ahfa.us"
+      },
+      {
+        "email": "pbowling@ahfa.us",
+        "source": "https://www.ahfa.us/media/media-contacts",
+        "label": "pbowling@ahfa.us"
+      },
+      {
+        "email": "mmorris@ahfa.us",
+        "source": "https://www.ahfa.us/media/media-contacts",
+        "label": "mmorris@ahfa.us"
+      }
+    ],
+    "contactLinks": [
+      "https://www.ahfa.us/media/media-contacts",
+      "https://www.ahfa.us/contact-ahfa"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.ahfa.us/",
+        "text": "ference. You can also tailor a contact list of Solution Partners members on your dashboard, giving you a quick link to companies that provide the equipment, supplies or professional services you need. See All Member Benefits Become A Member Today Directories When you need to make a business connection, these membe"
+      },
+      {
+        "source": "https://www.ahfa.us/",
+        "text": "the beginning of each year with contact information for all AHFA member companies, including all ICFA manufacturer/importer members, Solution Partners and Specialized Furniture Carriers. You can access the digital version from anywhere by clicking on the quick link be"
+      },
+      {
+        "source": "https://www.ahfa.us/what-we-do/become-a-member",
+        "text": "s committed to promoting the growth and global leadership of our member companies by providing exceptional advocacy, promoting effective standards, advancing meaningful environmental programs, offering relevant training and development opportunities and serving as the"
+      },
+      {
+        "source": "https://www.ahfa.us/what-we-do/become-a-member",
+        "text": " interests. Regardless of where their products are sourced, AHFA member companies share an interest in: Unity Promoting industry unity through powerful partnerships capable of impacting consumers and influencing the outcome of important industry issues. Access Gaining"
+      }
+    ]
+  },
+  {
+    "id": 78,
+    "name": "Upholstered Furniture Action Council",
+    "url": "https://www.ufac.org/",
+    "sector": "Furniture",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 79,
+    "name": "Business and Institutional Furniture Manufacturers Association",
+    "url": "https://www.bifma.org/",
+    "sector": "Furniture",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 80,
+    "name": "Association of Woodworking and Furnishings Suppliers",
+    "url": "https://www.awfs.org/",
+    "sector": "Wood suppliers",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "angelo@awfs.org",
+        "source": "https://www.awfs.org/about/contact/",
+        "label": "Angelo Gangone"
+      },
+      {
+        "email": "ron@awfs.org",
+        "source": "https://www.awfs.org/about/contact/",
+        "label": "Ron Szmik"
+      },
+      {
+        "email": "krystal@awfs.org",
+        "source": "https://www.awfs.org/about/contact/",
+        "label": "Krystal McCalister"
+      },
+      {
+        "email": "angela@awfs.org",
+        "source": "https://www.awfs.org/about/contact/",
+        "label": "Angela Hernandez"
+      },
+      {
+        "email": "kim@awfs.org",
+        "source": "https://www.awfs.org/about/contact/",
+        "label": "Kim Roehricht"
+      },
+      {
+        "email": "kim.costello@awfs.org",
+        "source": "https://www.awfs.org/about/contact/",
+        "label": "Kim Costello"
+      }
+    ],
+    "contactLinks": [
+      "https://www.awfs.org/about/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.awfs.org/join/",
+        "text": "ion in the U.S. representing the interests of the broad array of companies that supply the home and commercial furnishings industry. Membership Application Any proprietorship, partnership or corporation which supplies products to the woodworking and furnishings manufacturing industry, and whose principal business is not woodwor"
+      },
+      {
+        "source": "https://www.awfs.org/join/",
+        "text": "ad about our member benefits Society of Wood Manufacturing (SWM) Membership is open to all individuals working for AWFS\u00ae member companies. AWFS\u00ae member companies get three (3) complimentary SWM memberships and a special reduced rate of $25 for each additional member. Activ"
+      },
+      {
+        "source": "https://www.awfs.org/join/",
+        "text": "ng (SWM) Membership is open to all individuals working for AWFS\u00ae member companies. AWFS\u00ae member companies get three (3) complimentary SWM memberships and a special reduced rate of $25 for each additional member. Activities include: fund raising, educational, and netwo"
+      }
+    ]
+  },
+  {
+    "id": 81,
+    "name": "American Fence Association",
+    "url": "https://www.americanfenceassociation.com/",
+    "sector": "Fencing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "memberservices@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/",
+        "label": "[email protected]"
+      },
+      {
+        "email": "michael@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Michael"
+      },
+      {
+        "email": "cristina@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Cristina"
+      },
+      {
+        "email": "catherine@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Catherine"
+      },
+      {
+        "email": "liz@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Liz"
+      },
+      {
+        "email": "jim@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Jim"
+      },
+      {
+        "email": "paula@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Paula"
+      },
+      {
+        "email": "sara@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Sara"
+      },
+      {
+        "email": "julie@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Julie"
+      },
+      {
+        "email": "ben@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Ben"
+      },
+      {
+        "email": "hannah@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Hannah"
+      },
+      {
+        "email": "danielle@americanfenceassociation.com",
+        "source": "https://www.americanfenceassociation.com/about/staff/",
+        "label": "Email Danielle"
+      }
+    ],
+    "contactLinks": [
+      "https://www.americanfenceassociation.com/about/staff/",
+      "https://www.americanfenceassociation.com/about/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.americanfenceassociation.com/",
+        "text": "nd perimeter security industry. 10K employees 20 chapters 1,800+ member companies 15 countries 50 states Featured Partners Save the Date Oct 9 Emerging Fence Professionals Monthly Connect Oct 15 Midwest Chapter - Education & Service Event Blue Spring, MO Oct 20 Hispan"
+      },
+      {
+        "source": "https://www.americanfenceassociation.com/membership/",
+        "text": "s Services Legacy Education. Savings. Advocacy. Connections. AFA Membership Advantage An AFA membership gives your entire company access to education, career advancement, local chapters, member-only communities, business discounts, industry research and more. Join the world's largest association for the fence, gate a"
+      },
+      {
+        "source": "https://www.americanfenceassociation.com/membership/",
+        "text": "e in the fence industry. It also lends credibility to your fence company. Bryan Zeigler Phoenix Fence Co. Phoenix, Arizona Membership Type: Contractor Everyone in the fence industry should be taking advantage of the membership benefits of AFA. Mike Gulledge P&M LLC Baton Rouge, Louisiana Membership Type: Supplier/Manu"
+      },
+      {
+        "source": "https://www.americanfenceassociation.com/membership/",
+        "text": "gether, let\u2019s build a brighter future!\u200b Join Questions about AFA Membership?\u200b Our team is here to help! Find out if your company is a current member, discover how to join, learn about membership benefits and ROI, or see how you can become even more engaged as a current member.\u200b Email Us | Call Us: 800-822-4342 Where"
+      }
+    ]
+  },
+  {
+    "id": 82,
+    "name": "National Ornamental and Miscellaneous Metals Association",
+    "url": "https://www.nomma.org/",
+    "sector": "Metalwork",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 83,
+    "name": "Door and Access Systems Manufacturers Association",
+    "url": "https://www.dasma.com/",
+    "sector": "Doors",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 84,
+    "name": "International Door Association",
+    "url": "https://www.doors.org/",
+    "sector": "Doors",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@doors.org",
+        "source": "https://doors.org/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://doors.org/ida-board-staff/",
+      "https://doors.org/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://doors.org/member-programs/member-faqs/",
+        "text": "ber Programs \u00bb Member FAQs How do I renew my IDA membership? IDA membership runs annually from January 1 through December 31. The company administrator (a designated role or the default role for companies with only one point of contact) for active IDA members can login and renew online here. You can also renew by mailing a c"
+      },
+      {
+        "source": "https://doors.org/member-programs/member-faqs/",
+        "text": "company administrator (a designated role or the default role for companies with only one point of contact) for active IDA members can login and renew online here. You can also renew by mailing a check for your annual membership dues to the address below. Please contact [email protected] with any questions. How do I j"
+      }
+    ]
+  },
+  {
+    "id": 85,
+    "name": "National Glass Association",
+    "url": "https://www.glass.org/",
+    "sector": "Glass",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.glass.org/form/contact"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.glass.org/",
+        "text": "es Email Address By signing up, you agree to our Privacy Policy. Member Directory Looking for an NGA member company? Find what you\u2019re looking for here. Search our directory by company name, business type or location. Find a company Store Explore our technical publications, manuals, books, market reports"
+      },
+      {
+        "source": "https://www.glass.org/membership",
+        "text": "signed to save you time, save you money and make you better! Our member community is 1,900+ companies strong and represents all aspects of the glazing and glass building products industry. We are contract glaziers. We are full-service glass companies. We are fabricators, manufacturers an"
+      },
+      {
+        "source": "https://www.glass.org/membership",
+        "text": "day! Image Image Image The NGA Advantage NGA exists to serve our member companies. Learn more about NGA Business Benefits Advocacy, training, technical resources and visibility. Membership Benefits Serving the Industry Education, technical publications, industry news "
+      },
+      {
+        "source": "https://www.glass.org/membership",
+        "text": "s, industry news and trends, events. Our Resource Hub Who Should Join? Companies of any size, who identify as: Glazing Contractors Full-Service Glass Companies Specialty Residential Window and Door Companies Fabricators of Glass, Metals or Components Fabricators/Manu"
+      }
+    ]
+  },
+  {
+    "id": 86,
+    "name": "Glass Manufacturing Industry Council",
+    "url": "https://www.gmic.org/",
+    "sector": "Glass",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://gmic.org/board-of-officers-trustees-staff/",
+      "https://gmic.org/contact-us/",
+      "https://gmic.org/gmic-celebrates-alfred-university-faculty-students-and-alumni-named-to-2026-rd-100-award-winning-research-team/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://gmic.org/",
+        "text": ", productivity, innovation, and the environment. LEARN MORE GMIC members include glass melting companies, glass product suppliers (material, equipment, technology, and services), laboratories, colleges and universities, glass users, industry consultants, and individuals. We connect all segm"
+      },
+      {
+        "source": "https://gmic.org/join-gmic/",
+        "text": " a GMIC representative will be in touch with you to discuss your membership. GMIC membership dues vary and are based on company size and category. \"*\" indicates required fields First Name* Last Name* Email* Phone Message* CAPTCHA Submit Image Courtesy of Gallo Glass \u00a92026 Glass Manufacturing Industry Council3950 Su"
+      }
+    ]
+  },
+  {
+    "id": 87,
+    "name": "Glazing Industry Code Committee",
+    "url": "https://www.glazingcodes.org/",
+    "sector": "Glass",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": [
+      {
+        "source": "https://www.glass.org/membership",
+        "text": "signed to save you time, save you money and make you better! Our member community is 1,900+ companies strong and represents all aspects of the glazing and glass building products industry. We are contract glaziers. We are full-service glass companies. We are fabricators, manufacturers an"
+      },
+      {
+        "source": "https://www.glass.org/membership",
+        "text": "day! Image Image Image The NGA Advantage NGA exists to serve our member companies. Learn more about NGA Business Benefits Advocacy, training, technical resources and visibility. Membership Benefits Serving the Industry Education, technical publications, industry news "
+      },
+      {
+        "source": "https://www.glass.org/membership",
+        "text": "s, industry news and trends, events. Our Resource Hub Who Should Join? Companies of any size, who identify as: Glazing Contractors Full-Service Glass Companies Specialty Residential Window and Door Companies Fabricators of Glass, Metals or Components Fabricators/Manu"
+      }
+    ]
+  },
+  {
+    "id": 88,
+    "name": "International Window Film Association",
+    "url": "https://www.iwfa.com/",
+    "sector": "Window film",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@iwfa.com",
+        "source": "https://iwfa.com/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://iwfa.com/office-staff/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://iwfa.com/",
+        "text": "ilm Association\u2019s Window Tint Law Guide Find Your State Become a Member IWFA member companies are rated for their performance by independent, recognized technical testing and reporting companies which are certified and also do the same types of testing and ratings on windows, doo"
+      }
+    ]
+  },
+  {
+    "id": 89,
+    "name": "Window and Door Manufacturers Association",
+    "url": "https://www.wdma.com/",
+    "sector": "Windows and doors",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.wdma.com/contact-us",
+      "https://www.wdma.com/contact-us-form"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 90,
+    "name": "National Fenestration Rating Council",
+    "url": "https://www.nfrc.org/",
+    "sector": "Windows certification",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 91,
+    "name": "Single Ply Roofing Industry",
+    "url": "https://www.spri.org/",
+    "sector": "Roofing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@spri.org",
+        "source": "https://www.spri.org/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.spri.org/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.spri.org/",
+        "text": "dustry. Jeffrey Steuben Cool Roof Rating Council We enable every member SPRI\u2019s membership includes companies from all aspects of the single-ply roofing industry dedicated to improving the industry through cooperation. View Members Directory Join SPRI BECOME A MEMBER Our Recent Stories Five Code"
+      },
+      {
+        "source": "https://www.spri.org/membership-application/",
+        "text": " Print Membership Application Print Membership Application Print Membership Application Applicant Information Full Name * Title * Company/Business Address * Address Address Address City City State/Province State/Province Zip/Postal Zip/Postal Country AfghanistanAland IslandsAlbaniaAlgeriaAmerican SamoaAndorraAngolaAnguillaAn"
+      },
+      {
+        "source": "https://www.spri.org/membership-application/",
+        "text": "rganization qualifies for one (or more) of the above listed SPRI Membership categories. If the applicant is affiliated with another company/business which would not likely qualify for SPRI Membership, please include sufficient information to establish that the applicant-organization for SPRI Membership is clearly and demonstra"
+      },
+      {
+        "source": "https://www.spri.org/contact/",
+        "text": "name, company, and telephone or email address. Contact Us Name * Company Email * Phone Category * Please SelectGeneralMembershipTechnical Subject * Message * If you are human, leave this field blank. Submit 60 Hickory DriveSuite 6100Waltham, MA 02451Phone: 781-647-7026Fax: 781-647-7222 Our Recent Stories Five Cod"
+      }
+    ]
+  },
+  {
+    "id": 92,
+    "name": "National Roofing Contractors Association",
+    "url": "https://www.nrca.net/",
+    "sector": "Roofing",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "membership@nrca.net",
+        "source": "https://nrca.net/becomeamember",
+        "label": "membership@nrca.net"
+      }
+    ],
+    "contactLinks": [
+      "https://www.nrca.net/about/nrca-staff",
+      "https://nrca.net/about/nrca-staff"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 93,
+    "name": "Roof Coatings Manufacturers Association",
+    "url": "https://www.roofcoatings.org/",
+    "sector": "Coatings",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://members.roofcoatings.org/contactus"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.roofcoatings.org/",
+        "text": "gulatory issues and providing advocacy on behalf of RCMA and its member companies. Government Affairs Committee This committee oversees RCMA's technical affairs, including codes and standards, sustainability, research, and technical data. Communication, Membership, & "
+      },
+      {
+        "source": "https://www.roofcoatings.org/",
+        "text": "Univar Solutions Western Colloid Next Previous RCMA Testimonials Joining RCMA has provided several key benefits to our company: Gaining insight into and responding to various regulations that impact our business. Actively contributing to the development of industry standards and practices. Collaborating as part of"
+      },
+      {
+        "source": "https://www.roofcoatings.org/member-benefits/",
+        "text": "ding essential product data available only to participating RCMA member companies. Communications Program: Industry Communications Program. Stay informed and involved with a robust communications program that highlights the benefits of roof coatings and showcases the "
+      }
+    ]
+  },
+  {
+    "id": 94,
+    "name": "EPDM Roofing Association",
+    "url": "https://www.epdmroofs.org/",
+    "sector": "Roofing",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://epdmroofs.org/about-era/contact/"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 95,
+    "name": "Adhesive and Sealant Council",
+    "url": "https://www.ascouncil.org/",
+    "sector": "Adhesives",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "brian.peters@ascouncil.org",
+        "source": "https://www.ascouncil.org/membership-faqs",
+        "label": "brian.peters@ascouncil.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.ascouncil.org/contact-us",
+      "https://www.ascouncil.org/asc-staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.ascouncil.org/",
+        "text": "nts Seal Bond, Inc. siloxene AG Soprema Techsil Directory of ASC Member Companies View List of ASC Member Companies Our Mission ASC supports its Mission and achieves its Vision through three strategic priorities including: championing member interests and leading with"
+      },
+      {
+        "source": "https://www.ascouncil.org/",
+        "text": "prema Techsil Directory of ASC Member Companies View List of ASC Member Companies Our Mission ASC supports its Mission and achieves its Vision through three strategic priorities including: championing member interests and leading with advocacy excellence; accelerating"
+      },
+      {
+        "source": "https://www.ascouncil.org/",
+        "text": "oftware Copyright \u00a9 2026 - Adhesive and Sealant Council. Legal \u00d7 Membership & Account Access Is Your Company a Member? Employees of ASC member companies receive member benefits Click here to view member company directory We invite all users to set up an online account to: Register for live events"
+      },
+      {
+        "source": "https://www.ascouncil.org/events/lightweight-fillers-for-sustainable-durable-joint-designs",
+        "text": "t Council. Legal \u00d7 Membership & Account Access Is Your Company a Member? Employees of ASC member companies receive member benefits Click here to view member company directory We invite all users to set up an online account to: Register for live events, webinars and forums* Subscribe to the Tr"
+      }
+    ]
+  },
+  {
+    "id": 96,
+    "name": "American Coatings Association",
+    "url": "https://www.paint.org/",
+    "sector": "Coatings",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "memberservices@paint.org",
+        "source": "https://www.paint.org/",
+        "label": "Member Inquiries"
+      }
+    ],
+    "contactLinks": [
+      "https://www.paint.org/aca-member-center/aca-staff-experts/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.paint.org/about/about-membership/",
+        "text": "ence Sponsorship Opportunities Member Login About Membership ACA membership is offered for three broad categories: \u2666 Corporate Companies whose employees receive all of the exclusive benefits of corporate membership at no additional cost \u2666 Coatings Professionals in the paint and coatings industry, who are not employed by A"
+      },
+      {
+        "source": "https://www.paint.org/about/about-membership/",
+        "text": "int and coatings industry, who are not employed by ACA Corporate member companies \u2666 Educators & Students affiliated with University Coatings Programs Discover the Benefits of ACA Membership Watch the Video Corporate Members FULL BENEFITS ACCESS \u2713 Committee Participati"
+      },
+      {
+        "source": "https://www.paint.org/about/about-membership/",
+        "text": ", and you will be contacted by an ACA professional. Name* Title* Company* Phone* Email* Interested in Membership? Please select one of the categories below to indicate type of membership.* Corporate Membership Professional Membership Educator/Student Membership Submit MENUMENU \u00a9 2026 ACA. All righ"
+      }
+    ]
+  },
+  {
+    "id": 97,
+    "name": "Alliance for Chemical Distribution",
+    "url": "https://www.acd-chem.com/",
+    "sector": "Chemicals",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "jjenkins@acd-chem.com",
+        "source": "https://www.acd-chem.com/join/",
+        "label": "jjenkins@acd-chem.com"
+      }
+    ],
+    "contactLinks": [
+      "https://www.acd-chem.com/contact-us/",
+      "https://www.acd-chem.com/about/staff/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.acd-chem.com/industry-resources/membership-directory/",
+        "text": " resource providing comprehensive information about over 400 ACD members and Affiliate companies and helping you connect with them directly. The online ACD Membership Directory includes advanced search functionality to help better match companies to your needs. If you prefer a hard "
+      },
+      {
+        "source": "https://www.acd-chem.com/join/",
+        "text": "bership Chemical Producers Service Providers While many of ACD\u2019s member and Affiliate companies are small, our reach is huge. ACD member and Affiliate companies serve the following industries: adhesives and sealants, agriculture, automotive, cosmetics/personal care, electronics, fo"
+      },
+      {
+        "source": "https://www.acd-chem.com/join/",
+        "text": "member and Affiliate companies are small, our reach is huge. ACD member and Affiliate companies serve the following industries: adhesives and sealants, agriculture, automotive, cosmetics/personal care, electronics, food and beverage, municipal, paints and coatings, pharmaceuticals,"
+      }
+    ]
+  },
+  {
+    "id": 98,
+    "name": "American Cleaning Institute",
+    "url": "https://www.cleaninginstitute.org/",
+    "sector": "Cleaning products",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 99,
+    "name": "ISSA",
+    "url": "https://www.issa.com/",
+    "sector": "Cleaning",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 100,
+    "name": "Building Service Contractors Association International",
+    "url": "https://www.bscai.org/",
+    "sector": "Cleaning contractors",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@bscai.org",
+        "source": "https://www.bscai.org/",
+        "label": "info@bscai.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.bscai.org/About/Staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.bscai.org/",
+        "text": "AI Partners News Awards & Scholarships Sponsorship Opportunities Membership Join Member Resource Center Renew Membership Digital Badging Company Search Member Logo Submission 2026 Education BSCAI Bundles Certification Certified Professionals Search Online Learning Knowledge Center Training Academy Member Advisory Executive Leadersh"
+      },
+      {
+        "source": "https://www.bscai.org/",
+        "text": "ial Cleaning We represent a worldwide network of more than 1,000 member companies from across the United States and 15 countries that provide cleaning, facility maintenance, security, landscaping and other related services to building owners and managers. Join BSCAI Y"
+      },
+      {
+        "source": "https://www.bscai.org/Membership/Join",
+        "text": " community collaborates and consults to support your growth as a company and business owner. Our members represent more than 1,000 companies from across the U.S. and 20 countries worldwide. Meet and learn from leaders in the contract cleaning business to boost your business, outshine competit"
+      },
+      {
+        "source": "https://www.bscai.org/Membership/Join",
+        "text": "y attending one of many BSCAI educational events. Explore Events Join Now Schedule a Call You're in Good Company Subscribe to Our Newsletter 330 North Wabash Avenue, Suite 2000, Chicago, IL 60611 Phone 312.321.5167 info@bscai.org Copyright \u00a9 , Building Service Contractors Association International In"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "Restoration Industry Association",
+    "url": "https://www.restorationindustry.org/",
+    "sector": "Restoration",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@restorationindustry.org",
+        "source": "https://www.restorationindustry.org/",
+        "label": "info@restorationindustry.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.restorationindustry.org/contact",
+      "https://www.restorationindustry.org/RIA-staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.restorationindustry.org/join-ria-your-way",
+        "text": "advisor. RIA Membership Options The RIA offers several different membership categories, each with easy and affordable payment options. Please note that membership dues are nonrefundable. RIA membership dues may be tax deductible as an ordinary and necessary business expens"
+      },
+      {
+        "source": "https://www.restorationindustry.org/join-ria-your-way",
+        "text": "ed first-year rate of $299 or $25 a month. Learn More Contractor MemberFor companies directly providing restoration, mitigation, cleaning, reconstruction, and related services to structures or contents. Learn More Individual Professional MemberOpen to any individual in s"
+      },
+      {
+        "source": "https://www.restorationindustry.org/join-ria-your-way",
+        "text": "ion is only available to US based members. Learn More Enterprise MemberOpen to regional, national or international companies who have multiple locations. This company shall be engaged in providing services involving the restoration, mitigation, reconstruction, remediation, abatement, environmental, cleaning, o"
+      }
+    ]
+  },
+  {
+    "id": 102,
+    "name": "Specialty Food Association",
+    "url": "https://www.specialtyfood.com/",
+    "sector": "Food",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "press@specialtyfood.com",
+        "source": "https://www.specialtyfood.com/",
+        "label": "[email protected]"
+      },
+      {
+        "email": "membership@specialtyfood.com",
+        "source": "https://www.specialtyfood.com/explore-benefits",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.specialtyfood.com/about-us/contact-us/",
+      "https://www.specialtyfood.com/membership/member-relations-contacts/",
+      "https://www.specialtyfood.com/news-media/news-features/member-press-releases/mockups-4-you-accelerates-growth-expands-team-and-production-capabilities/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.specialtyfood.com/member-application/member-company-validation-step/",
+        "text": "Member Company Validation | Specialty Food Association Skip to Main Content Follow Us Facebook TikTok Twitter Instagram LinkedIn Pinterest Youtube Facebook TikTok Twitter Instagram LinkedIn Pinterest You"
+      },
+      {
+        "source": "https://www.specialtyfood.com/member-application/member-company-validation-step/",
+        "text": "he Specialty Food Association member community. Application FAQs Member Benefits Home Apply for SFA Membership Member Company Validation Are you ready to open the door to a world of culinary passion, inspiration, opportunity, and community? We hope so, because we're so ready to welcome you to Specialty Food Assoc"
+      },
+      {
+        "source": "https://www.specialtyfood.com/explore-benefits",
+        "text": "research reports and more, SFA benefits connect and champion our member companies and support the growing specialty food industry. If you're not a member yet, SFA invites you to learn more on this page. You can also always reach us at [email protected] with any questi"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "American Pet Products Association",
+    "url": "https://americanpetproducts.org/",
+    "sector": "Pet products",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://americanpetproducts.org/staff",
+      "https://americanpetproducts.org/contact",
+      "https://americanpetproducts.org/contact?hsLang=en"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 104,
+    "name": "Pet Food Institute",
+    "url": "https://www.petfoodinstitute.org/",
+    "sector": "Pet food",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "Info@PetFoodInstitute.org",
+        "source": "https://www.petfoodinstitute.org/",
+        "label": "[email protected]"
+      }
+    ],
+    "contactLinks": [
+      "https://www.petfoodinstitute.org/about-us/staff/",
+      "https://www.petfoodinstitute.org/about-us/contact-us/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.petfoodinstitute.org/membership/",
+        "text": "Learn More Member Portal Market Tracker News Search Become a PFI Member Inquire About Membership Joining PFI puts your company on the cutting edge of pet food policy and advocacy. However, more than most trade orgs, we actively help our members solve problems while bringing people and companies together to foster "
+      },
+      {
+        "source": "https://www.petfoodinstitute.org/membership/",
+        "text": "vocacy. However, more than most trade orgs, we actively help our members solve problems while bringing people and companies together to foster innovation and move our industry forward. Our 2025 Highlights Analyzed 4,000+ bills, tracked more than 650, monitored 200+ priority bills, and followed 160+ packaging/"
+      },
+      {
+        "source": "https://www.petfoodinstitute.org/membership/",
+        "text": "ills tracked and monitored 75+Congressional offices engaged with Membership Categories Membership in PFI is determined by the type of business you conduct within the pet food or adjacent industries. Producer Member Manufactures commercially prepared dog and/or cat food and"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name": "American Feed Industry Association",
+    "url": "https://www.afia.org/",
+    "sector": "Animal feed",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "afia@afia.org",
+        "source": "https://www.afia.org/",
+        "label": "afia@afia.org"
+      },
+      {
+        "email": "mdicks@afia.org",
+        "source": "https://www.afia.org/join/",
+        "label": "jcameron@afia.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.afia.org/about-afia/staff-directory/",
+      "https://www.afia.org/contact/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.afia.org/join/",
+        "text": "The American Feed Industry Association has provided all of those member benefits and more for more than 100 years to companies searching for just that! AFIA is the largest trade association representing the feed industry. Aside from being the \u201cVoice of the Total Feed Industry,\u201d AFIA will provide an excellent res"
+      },
+      {
+        "source": "https://www.afia.org/join/",
+        "text": "rovides the guidance you need to maintain your competitive edge. Join AFIA today to ensure your company remains at the forefront of industry developments and regulatory changes. We make four promises to our members: You will have a voice as part of the total feed industry association; We wil"
+      }
+    ]
+  },
+  {
+    "id": 106,
+    "name": "National Animal Supplement Council",
+    "url": "https://www.nasc.cc/",
+    "sector": "Animal supplements",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 107,
+    "name": "Pet Industry Distributors Association",
+    "url": "https://www.pida.org/",
+    "sector": "Pet distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "info@pida.org",
+        "source": "https://www.pida.org/",
+        "label": "info@pida.org"
+      },
+      {
+        "email": "nbull@pida.org",
+        "source": "https://www.pida.org/join-pida/",
+        "label": "nbull@pida.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.pida.org/about-pida/staff/",
+      "https://www.pida.org/about-pida/contact-us/",
+      "https://www.pida.org/contact-us1/"
+    ],
+    "membershipEvidence": []
+  },
+  {
+    "id": 108,
+    "name": "Organic Trade Association",
+    "url": "https://www.ota.com/",
+    "sector": "Organic products",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "dcote@ota.com",
+        "source": "https://ota.com/membership",
+        "label": "dcote@ota.com"
+      }
+    ],
+    "contactLinks": [
+      "https://ota.com/about-ota/staff",
+      "https://ota.com/about-ota/employment-opportunities"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://ota.com/membership",
+        "text": "ow your business and strengthen the organic sector. Danielle CoteMember Engagement Manager(202) 524-3896 inherit Webform Name: Company: E-mail: Phone number: How did you hear about OTA? What would you like more information about? inherit Sidebar Menu Member Benefits Join OTA today! Get Involved in Member Communities Farme"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name": "American Herbal Products Association",
+    "url": "https://www.ahpa.org/",
+    "sector": "Herbal products",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "membership@ahpa.org",
+        "source": "https://www.ahpa.org/join_ahpa",
+        "label": "membership@ahpa.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.ahpa.org/staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.ahpa.org/",
+        "text": "ers, ingredient suppliers, and service providers, CRN unites its member companies around a shared commitment to science, transparency, and responsible business practices\u2014advancing a strong, credible marketplace that supports consumer health and industry growth. In an "
+      },
+      {
+        "source": "https://www.ahpa.org/join_ahpa",
+        "text": "the herbal products industry. AHPA is comprised of more than 350 member companies, consisting primarily of domestic and foreign companies doing business as growers, processors, manufacturers and marketers of herbs and herbal products as foods, dietary supplements, cos"
+      },
+      {
+        "source": "https://www.ahpa.org/join_ahpa",
+        "text": "ducts to be readily accessible to and broadly used by consumers. Membership Categories Active Members Growers, importers, processors, marketers, and manufacturers of herbs and/or herbal products whose principal place of business is in the United States are eligible for ful"
+      },
+      {
+        "source": "https://www.ahpa.org/join_ahpa",
+        "text": " - $120 million 0.055%* More than $120 million $66,000 Associate Members Individuals, companies, partnerships, and other organizations serving the herbal products industry may hold a non-voting membership in the American Herbal Products Association. The Associate Member category in"
+      }
+    ]
+  },
+  {
+    "id": 110,
+    "name": "Natural Products Association",
+    "url": "https://www.npainfo.org/",
+    "sector": "Natural products",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 111,
+    "name": "Council for Responsible Nutrition",
+    "url": "https://www.crnusa.org/",
+    "sector": "Supplements",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "gpowers@crnusa.org",
+        "source": "https://www.crnusa.org/plan",
+        "label": "gpowers@crnusa.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.crnusa.org/staff",
+      "https://www.crnusa.org/contact-us"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.crnusa.org/",
+        "text": "rs Explain Take 5 Video Series 4 Things to Know Video Series CRN Member Company Brands and Branded Ingredients Fact Sheets Vitamin & Mineral Safety Handbook Be Label Wise Regulation/Legislation The Supplement OWL Self-Regulation FDA/FTC Regulations Comments/Legal Acti"
+      },
+      {
+        "source": "https://www.crnusa.org/",
+        "text": "rs Explain Take 5 Video Series 4 Things to Know Video Series CRN Member Company Brands and Branded Ingredients Fact Sheets Vitamin & Mineral Safety Handbook Be Label Wise Regulation/Legislation The Supplement OWL Self-Regulation Code of Ethics Voluntary Guidelines/Bes"
+      },
+      {
+        "source": "https://www.crnusa.org/",
+        "text": " the dietary supplement and functional food industry\u2014learn more. COMPANIES: Join CRN.CONSUMERS: See CRN member company brands and branded ingredients. Review our updated Privacy Policy, Terms of Use and Legal Disclaimer here. Find out more about the dietary supplement industry Browse content about C"
+      },
+      {
+        "source": "https://www.crnusa.org/plan",
+        "text": "ember Experience: gpowers@crnusa.org | (202) 204-7682. APPLY FOR MEMBERSHIP TODAY \u2014 50% OFF FIRST YEAR DUES FOR MANY COMPANIES \u2014 \u2014 A PORTION OF YOUR DUES ARE TAX-DEDUCTIBLE \u2014 BENEFITS OF CRN MEMBERSHIP INFORMATION, ACCESS, A VOICE Insightful information and perspective, delivered promptly on critical issues impa"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "American Spice Trade Association",
+    "url": "https://www.astaspice.org/",
+    "sector": "Food ingredients",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 113,
+    "name": "Institute of Shortening and Edible Oils",
+    "url": "https://www.iseo.org/",
+    "sector": "Food ingredients",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": [
+      {
+        "source": "https://edibleoilproducers.org/",
+        "text": " sold and served in the retail and food service industries. EOPA member companies refine both domestic and imported edible oils such as canola, coconut, cottonseed, lard, olive, palm, palm kernel, peanut, safflower, sunflower, soybean, tallow, and wheat germ. EOPA bri"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "National Confectioners Association",
+    "url": "https://www.candyusa.com/",
+    "sector": "Confectionery",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 115,
+    "name": "Flavor and Extract Manufacturers Association",
+    "url": "https://www.femaflavor.org/",
+    "sector": "Flavors",
+    "status": "official_pages_read",
+    "emails": [],
+    "contactLinks": [
+      "https://www.femaflavor.org/contact-form"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.femaflavor.org/",
+        "text": " Extended Navigation Main Menu About back About About Leadership Member Companies Awards back Awards Awards Lifetime Achievement Award Emerging Leader Award President's Excellence in Service Award Dr. Richard L. Hall Distinguished Service Award FEMA Excellence in Flav"
+      },
+      {
+        "source": "https://www.femaflavor.org/",
+        "text": " Questions About Flavors Flavor Facts Membership back Membership Membership Benefits of Membership Membership Classifications Member Companies Meetings & Events back Meetings & Events Meetings & Events Annual Leadership Conference Fall Symposium FEMA GRAS back FEMA GRAS FEMA GRAS About FEMA GRAS Safety and Regulatory Authority "
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "Association for Dressings and Sauces",
+    "url": "https://www.dressings-sauces.org/",
+    "sector": "Food ingredients",
+    "status": "needs_web_verification",
+    "emails": [],
+    "contactLinks": [],
+    "membershipEvidence": []
+  },
+  {
+    "id": 117,
+    "name": "Gases and Welding Distributors Association",
+    "url": "https://www.gawda.org/",
+    "sector": "Gas distribution",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "alevy@gawda.org",
+        "source": "https://www.gawda.org/join/",
+        "label": "alevy@gawda.org"
+      }
+    ],
+    "contactLinks": [
+      "https://www.gawda.org/gawda-headquarters/"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.gawda.org/join/",
+        "text": "ooking to renew your membership online, please click here. GAWDA Membership is open to Distributors, Suppliers, and Manufacturer\u2019s Representatives in the gases and welding industry. We also offer a special individual membership to industry retirees (see below.) Membership "
+      },
+      {
+        "source": "https://www.gawda.org/join/",
+        "text": " special individual membership to industry retirees (see below.) Membership category details and application links can be found below. Visit the GAWDA Member Benefits section for more information on the benefits you\u2019ll have as a GAWDA Member. If you\u2019d like to connect with "
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name": "Compressed Gas Association",
+    "url": "https://www.cganet.com/",
+    "sector": "Gases",
+    "status": "official_pages_read",
+    "emails": [
+      {
+        "email": "cga@cganet.com",
+        "source": "https://www.cganet.com/",
+        "label": "cga@cganet.com"
+      }
+    ],
+    "contactLinks": [
+      "https://www.cganet.com/contact",
+      "https://www.cganet.com/about-us/cga-staff"
+    ],
+    "membershipEvidence": [
+      {
+        "source": "https://www.cganet.com/",
+        "text": "hnical publications is vital to maintaining a safe industry. All member companies have an equal voice in the standards-setting process, no matter your company\u2019s size. Members also enjoy free access to electronic publications and discounts on other products. Access to "
+      },
+      {
+        "source": "https://www.cganet.com/",
+        "text": " an equal voice in the standards-setting process, no matter your company\u2019s size. Members also enjoy free access to electronic publications and discounts on other products. Access to a Network of Experts Our meetings and events are designed to promote conversations about best p"
+      },
+      {
+        "source": "https://www.cganet.com/membership/",
+        "text": "for industry safety. When you make the choice to invest in a CGA membership, you\u2019re investing in a safer tomorrow for your company. Founded in 1913, the Compressed Gas Association (CGA) is the recognized leader in the development of gas and equipment standards in North America and around the world, many of which are r"
+      },
+      {
+        "source": "https://www.cganet.com/membership/",
+        "text": "dustrial and medical gases and their containers. Eligibility CGA membership is open to any company engaged in: the manufacture, sale, transportation, or distribution of industrial or medical gas; the manufacture, sale, transportation, or distribution of equipment, material"
+      }
+    ]
+  }
+]

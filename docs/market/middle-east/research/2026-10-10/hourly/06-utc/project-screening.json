@@ -1,0 +1,50 @@
+{
+  "checkedAt": "2026-10-10T06:44:20+00:00",
+  "sources": [
+    {
+      "organisation": "IIMA Dubai Campus",
+      "country": "United Arab Emirates",
+      "url": "https://tenders.iima.ac.in/tender_documents/RFP_Dubai_Website_Development.pdf",
+      "sourceDate": "2025-12-03",
+      "checkedAt": "2026-10-10T06:44:20+00:00",
+      "deadline": "2025-12-24",
+      "observation": "Official RFP sought a Dubai-campus website with alumni access, CMS and English/Arabic content. It required SAP/Moodle/payment integrations, chatbot, migration and audit. Proposal mailbox dubairfq@iima.ac.in was scoped to that expired RFP.",
+      "decision": "exclude_closed_project_and_unsupported_requirements",
+      "retrieval": "full official PDF"
+    },
+    {
+      "organisation": "Supreme Council for Environment Bahrain",
+      "country": "Bahrain",
+      "url": "https://tenderboard.gov.bh/Ar/tenderdetails/?id=3%2F2026%2FSCE+%28RFP%2FSCE%2F2026%2F03%29",
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T06:44:20+00:00",
+      "observation": "Official Tender Board search excerpt describes website replacement with IGA and UN accessibility/digital-service criteria. Full-page retrieval failed twice; deadline, submission route and detailed scope remain unverified.",
+      "decision": "hold_current_deadline_contact_route_and_capability_unverified",
+      "retrieval": "official indexed excerpt only"
+    },
+    {
+      "organisation": "Real Estate General Authority",
+      "country": "Saudi Arabia",
+      "url": "https://rega.gov.sa/en/rega/competitions-and-purchases/",
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T06:44:20+00:00",
+      "observation": "Official 2026 procurement index includes enterprise/customer-service/e-services projects and directs bidders to Etimad. No specific bounded Nexora website/portal opportunity or email invitation was verified.",
+      "decision": "research_only_no_qualified_current_project",
+      "retrieval": "full official procurement index"
+    }
+  ],
+  "excludedSearchCategories": [
+    "Generic agency or software-vendor sales pages are not evidence about a named prospect's manual records or demand.",
+    "Expired procurement advertisements and completed freelance projects do not authorise a new pitch.",
+    "Supplier registration and tender portals are not blanket email marketing permission."
+  ],
+  "queries": [
+    "\"UAE\" \"website development\" \"request for proposal\" \"2026\"",
+    "\"Saudi Arabia\" \"website\" \"tender\" \"2026\"",
+    "\"website\" \"tender\" site:org.ae",
+    "\"website\" \"RFP\" \"Bahrain\" 2026",
+    "\"membership\" \"spreadsheets\" \"Saudi\" association",
+    "\"membership\" \"spreadsheet\" \"Dubai\" council"
+  ],
+  "sendEligible": 0
+}

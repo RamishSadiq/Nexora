@@ -35,6 +35,7 @@ try {
   if (!site) site = await send("/api/v1/content/site", { name: "Nexora Local Association", tagline: "Explore CRM, Portal and CMS together." });
   const website = await prepareAssociationWebsite({ get, send, site });
   console.log(`Public website: ${website.created.length} pages published, ${website.preserved.length} existing pages preserved.`);
+  fs.mkdirSync(path.join(root, "artifacts"), { recursive: true });
   fs.writeFileSync(path.join(root, "artifacts/local-test-data.json"), JSON.stringify({ contactId: contact.id, accountId: account.id, siteId: site.id, portalEmail: "local.member@nexora.local", publicPath: `/site/${site.id}/home` }, null, 2));
   console.log("Local CRM records, portal member and CMS site are ready. See docs/LOCAL-TESTING.md.");
 } finally { await client.dispose(); }

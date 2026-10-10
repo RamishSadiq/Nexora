@@ -1,0 +1,535 @@
+{
+  "verifiedAt": "2026-10-08T15:28:51.069Z",
+  "expected": 30,
+  "confirmed": 30,
+  "duplicates": [],
+  "failures": [],
+  "videoSha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+  "results": [
+    {
+      "rank": 1,
+      "organisation": "Wood Component Manufacturers Association",
+      "to": "amy@wcma.com",
+      "subject": "Nexora demo for WCMA's membership team",
+      "messageId": "1a11c1181b725d3a",
+      "threadId": "1a11c1181b725d3a",
+      "sentAt": "2026-10-08T15:11:11+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1181b725d3a",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 2,
+      "organisation": "Cabinet Makers Association",
+      "to": "director@cabinetmakers.org",
+      "subject": "Nexora demo for CMA's membership team",
+      "messageId": "1a11c141a7e55e69",
+      "threadId": "1a11c141a7e55e69",
+      "sentAt": "2026-10-08T15:14:01+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c141a7e55e69",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 3,
+      "organisation": "Graphic Media Alliance",
+      "to": "info@graphicmedia.org",
+      "subject": "Nexora demo for Graphic Media Alliance's membership team",
+      "messageId": "1a11c14836da419f",
+      "threadId": "1a11c14836da419f",
+      "sentAt": "2026-10-08T15:14:28+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14836da419f",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 4,
+      "organisation": "Great Lakes Graphics Association",
+      "to": "info@glga.info",
+      "subject": "Nexora demo for GLGA's membership team",
+      "messageId": "1a11c14e24744bb3",
+      "threadId": "1a11c14e24744bb3",
+      "sentAt": "2026-10-08T08:14:53-07:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14e24744bb3",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 5,
+      "organisation": "Association of Independent Corrugated Converters",
+      "to": "vreyes@aiccbox.org",
+      "subject": "Nexora demo for AICC's membership team",
+      "messageId": "1a11c153e30859e2",
+      "threadId": "1a11c153e30859e2",
+      "sentAt": "2026-10-08T15:15:16+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c153e30859e2",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 6,
+      "organisation": "National Tooling and Machining Association",
+      "to": "cmarsico@ntma.org",
+      "subject": "Nexora demo for NTMA's membership team",
+      "messageId": "1a11c15996661aa6",
+      "threadId": "1a11c15996661aa6",
+      "sentAt": "2026-10-08T15:15:39+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15996661aa6",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 7,
+      "organisation": "Precision Metalforming Association",
+      "to": "llehman@pma.org",
+      "subject": "Nexora demo for PMA's membership team",
+      "messageId": "1a11c15f48fbec90",
+      "threadId": "1a11c15f48fbec90",
+      "sentAt": "2026-10-08T15:16:03+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15f48fbec90",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 8,
+      "organisation": "Fabricators and Manufacturers Association",
+      "to": "membership@fmamfg.org",
+      "subject": "Nexora demo for FMA's membership team",
+      "messageId": "1a11c16528f62b29",
+      "threadId": "1a11c16528f62b29",
+      "sentAt": "2026-10-08T15:16:27+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16528f62b29",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 9,
+      "organisation": "American Mold Builders Association",
+      "to": "info@amba.org",
+      "subject": "Nexora demo for AMBA's membership team",
+      "messageId": "1a11c16ad8942eeb",
+      "threadId": "1a11c16ad8942eeb",
+      "sentAt": "2026-10-08T10:16:50-05:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16ad8942eeb",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 10,
+      "organisation": "Manufacturers Association for Plastic Processors",
+      "to": "info@mappinc.com",
+      "subject": "Nexora demo for MAPP's membership team",
+      "messageId": "1a11c17068612088",
+      "threadId": "1a11c17068612088",
+      "sentAt": "2026-10-08T08:17:13-07:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17068612088",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 11,
+      "organisation": "Metal Treating Institute",
+      "to": "kristen@heattreat.net",
+      "subject": "Nexora demo for MTI's membership team",
+      "messageId": "1a11c17634387954",
+      "threadId": "1a11c17634387954",
+      "sentAt": "2026-10-08T15:17:36+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17634387954",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 12,
+      "organisation": "National Wood Flooring Association",
+      "to": "anita.howard@nwfa.org",
+      "subject": "Nexora demo for NWFA's membership team",
+      "messageId": "1a11c17bb52abde3",
+      "threadId": "1a11c17bb52abde3",
+      "sentAt": "2026-10-08T08:17:59-07:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17bb52abde3",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 13,
+      "organisation": "Power Transmission Distributors Association",
+      "to": "ptda@ptda.org",
+      "subject": "Nexora demo for PTDA's membership team",
+      "messageId": "1a11c181ca8691a6",
+      "threadId": "1a11c181ca8691a6",
+      "sentAt": "2026-10-08T15:18:24+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c181ca8691a6",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 14,
+      "organisation": "Fluid Power Distributors Association",
+      "to": "info@fpda.org",
+      "subject": "Nexora demo for FPDA's membership team",
+      "messageId": "1a11c198ed3fea2e",
+      "threadId": "1a11c198ed3fea2e",
+      "sentAt": "2026-10-08T15:19:59+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c198ed3fea2e",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 15,
+      "organisation": "Bearing Specialists Association",
+      "to": "info@bsahome.org",
+      "subject": "Nexora demo for BSA's membership team",
+      "messageId": "1a11c19f0bb94c08",
+      "threadId": "1a11c19f0bb94c08",
+      "sentAt": "2026-10-08T15:20:24+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c19f0bb94c08",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 16,
+      "organisation": "Material Handling Equipment Distributors Association",
+      "to": "connect@mheda.org",
+      "subject": "Nexora demo for MHEDA's membership team",
+      "messageId": "1a11c1a6ad5de964",
+      "threadId": "1a11c1a6ad5de964",
+      "sentAt": "2026-10-08T15:20:55+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1a6ad5de964",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 17,
+      "organisation": "Industrial Supply Association",
+      "to": "info@isapartners.org",
+      "subject": "Nexora demo for ISA's membership team",
+      "messageId": "1a11c1ac175b0386",
+      "threadId": "1a11c1ac175b0386",
+      "sentAt": "2026-10-08T15:21:17+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ac175b0386",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 18,
+      "organisation": "National Fastener Distributors Association",
+      "to": "info@nfda-fastener.org",
+      "subject": "Nexora demo for NFDA's membership team",
+      "messageId": "1a11c1b58b9c985a",
+      "threadId": "1a11c1b58b9c985a",
+      "sentAt": "2026-10-08T15:21:56+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1b58b9c985a",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 19,
+      "organisation": "Precision Machined Products Association",
+      "to": "info@pmpa.org",
+      "subject": "Nexora demo for PMPA's membership team",
+      "messageId": "1a11c1bb06754473",
+      "threadId": "1a11c1bb06754473",
+      "sentAt": "2026-10-08T15:22:19+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1bb06754473",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 20,
+      "organisation": "International Association of Plastics Distribution",
+      "to": "iapd@iapd.org",
+      "subject": "Nexora demo for IAPD's membership team",
+      "messageId": "1a11c1c3b2bf39f8",
+      "threadId": "1a11c1c3b2bf39f8",
+      "sentAt": "2026-10-08T15:22:54+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c3b2bf39f8",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 21,
+      "organisation": "Polyurethane Manufacturers Association",
+      "to": "info@pmahome.org",
+      "subject": "Nexora demo for Polyurethane Manufacturers Association's membership team",
+      "messageId": "1a11c1c90d01fac1",
+      "threadId": "1a11c1c90d01fac1",
+      "sentAt": "2026-10-08T08:23:16-07:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c90d01fac1",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 22,
+      "organisation": "American Composites Manufacturers Association",
+      "to": "info@acmanet.org",
+      "subject": "Nexora demo for ACMA's membership team",
+      "messageId": "1a11c1e1f2f1e799",
+      "threadId": "1a11c1e1f2f1e799",
+      "sentAt": "2026-10-08T15:24:58+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e1f2f1e799",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 23,
+      "organisation": "Aluminum Anodizers Council",
+      "to": "mail@anodizing.org",
+      "subject": "Nexora demo for Aluminum Anodizers Council's membership team",
+      "messageId": "1a11c1e794b80f6a",
+      "threadId": "1a11c1e794b80f6a",
+      "sentAt": "2026-10-08T08:25:21-07:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e794b80f6a",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 24,
+      "organisation": "Aluminum Extruders Council",
+      "to": "mail@aec.org",
+      "subject": "Nexora demo for Aluminum Extruders Council's membership team",
+      "messageId": "1a11c1ed082e39a4",
+      "threadId": "1a11c1ed082e39a4",
+      "sentAt": "2026-10-08T08:25:43-07:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ed082e39a4",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 25,
+      "organisation": "Industrial Packaging Alliance of North America",
+      "to": "info@industrialpackaging.org",
+      "subject": "Nexora demo for IPANA's membership team",
+      "messageId": "1a11c1f2d4b368df",
+      "threadId": "1a11c1f2d4b368df",
+      "sentAt": "2026-10-08T15:26:07+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f2d4b368df",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 26,
+      "organisation": "Reusable Packaging Association",
+      "to": "info@reusables.org",
+      "subject": "Nexora demo for Reusable Packaging Association's membership team",
+      "messageId": "1a11c1f85aba49a0",
+      "threadId": "1a11c1f85aba49a0",
+      "sentAt": "2026-10-08T15:26:29+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f85aba49a0",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 27,
+      "organisation": "Paperboard Packaging Council",
+      "to": "info@paperbox.org",
+      "subject": "Nexora demo for Paperboard Packaging Council's membership team",
+      "messageId": "1a11c1fe67945c8d",
+      "threadId": "1a11c1fe67945c8d",
+      "sentAt": "2026-10-08T10:26:54-05:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1fe67945c8d",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 28,
+      "organisation": "Tag and Label Manufacturers Institute",
+      "to": "office@tlmi.com",
+      "subject": "Nexora demo for TLMI's membership team",
+      "messageId": "1a11c203d2286c33",
+      "threadId": "1a11c203d2286c33",
+      "sentAt": "2026-10-08T15:27:16+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c203d2286c33",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 29,
+      "organisation": "Association of Woodworking and Furnishings Suppliers",
+      "to": "angela@awfs.org",
+      "subject": "Nexora demo for AWFS's membership team",
+      "messageId": "1a11c20c97b3046e",
+      "threadId": "1a11c20c97b3046e",
+      "sentAt": "2026-10-08T10:27:52-05:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c20c97b3046e",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 30,
+      "organisation": "International Door Association",
+      "to": "info@doors.org",
+      "subject": "Nexora demo for International Door Association's membership team",
+      "messageId": "1a11c212432fee89",
+      "threadId": "1a11c212432fee89",
+      "sentAt": "2026-10-08T15:28:16+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c212432fee89",
+      "individualRecipient": true,
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    }
+  ],
+  "incomingAtCheck": [
+    {
+      "id": "1a11bf33395d33a1",
+      "from": "Victoria Cuff victoria@bafsa.org.uk",
+      "subject": "Re: Nexora demo for BAFSA's membership administration",
+      "at": "2026-10-08T14:37:59+00:00"
+    }
+  ],
+  "receiptLimitation": "Confirmed Gmail Sent only; recipient delivery, viewing and interest are not established. No US reply or bounce appeared in the campaign/postmaster search at verification time.",
+  "bodyVerification": {
+    "firstMessageExactMatch": true,
+    "lastMessageExactMatch": false,
+    "lastMessageVisibleTextMatchesPreparedBody": true,
+    "lastMessageLimitation": "Connector redacted the duration, call length and postcode in the returned plain-text view. No raw retrieval was used to bypass that redaction. All 30 recipients/subjects/video metadata passed the Sent check."
+  }
+}

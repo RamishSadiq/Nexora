@@ -80,7 +80,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
                   </Link>}
                   {item.children && expanded && <div id={`navigation-${item.match.slice(1)}`} className="ml-8 mt-1 space-y-1 border-l border-[#dfe5f5] pl-3">
                     {item.children.map((child, index) => {
-                      const childActive = pathname === child.href || (pathname === item.match && index === 0);
+                      const childActive = pathname === child.href || pathname.startsWith(`${child.href}/`) || (pathname === item.match && index === 0);
                       if (child.children) {
                         const setupOpen = openGroups[child.href] ?? pathname.startsWith(child.href);
                         return <div key={child.href}><button type="button" aria-expanded={setupOpen} onClick={() => setOpenGroups(groups => ({...groups, [child.href]: !setupOpen}))} className="flex w-full items-center justify-between rounded-lg px-3 py-2 text-xs font-medium text-[#364fc7]">{child.label}<ChevronDown className={cn("size-3.5", !setupOpen && "-rotate-90")} /></button>{setupOpen && <div className="ml-3 border-l border-[#dfe5f5] pl-2">{child.children.map(lookup => <Link key={lookup.href} href={lookup.href as Route} aria-current={pathname === lookup.href ? "page" : undefined} onClick={() => setMobileOpen(false)} className={cn("block rounded-lg px-3 py-2 text-xs", pathname === lookup.href ? "bg-[#f1f4ff] text-[#364fc7]" : "text-[#7b8798] hover:bg-[#f6f7fa]")}>{lookup.label}</Link>)}</div>}</div>;
@@ -131,6 +131,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
       <div className="lg:pl-[274px]">
         <header className="sticky top-0 z-30 flex h-[56px] items-center gap-4 border-b border-[#e5e9ef] bg-white/90 px-4 backdrop-blur-xl sm:px-7">
           <button className="grid size-10 place-items-center rounded-xl border border-[#e2e6ed] text-[#5d697b] lg:hidden" onClick={() => setMobileOpen(true)} aria-label="Open navigation"><Menu className="size-5" /></button>
+          <div id="workspace-page-heading" className="flex min-w-0 flex-1 items-center justify-between gap-3" />
           <div className="ml-auto flex items-center gap-1.5">
             {session.permissions.includes("work.read") && <Link href={"/work/notifications" as Route} className="grid size-10 place-items-center rounded-xl text-[#687487] transition hover:bg-[#f2f4f8]" aria-label="Notifications"><Bell className="size-[19px]" /></Link>}
           </div>

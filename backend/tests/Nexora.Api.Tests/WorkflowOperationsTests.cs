@@ -43,7 +43,7 @@ public sealed class WorkflowOperationsTests
  }
  [Theory][MemberData(nameof(TemplateKeys))] public async Task Operations_templates_validate_against_actual_registered_fields_and_actions(string key)
  {
-  using var app=new IdentityApiFactory();using var client=await Login(app);var draft=await Json(await Send(client,"/api/v1/workflows/templates/"+key+"/draft",HttpMethod.Post,new{reminderDays=3,beforeExpiryDays=30,graceDays=7}));var validation=await Json(await Send(client,"/api/v1/workflows/validate",HttpMethod.Post,draft["graph"]));Assert.Empty(validation["errors"]!.AsArray());
+  using var app=new IdentityApiFactory();using var client=await Login(app);var draft=await Json(await Send(client,"/api/v1/workflows/templates/"+key+"/draft",HttpMethod.Post,new{reminderDays=3,beforeExpiryDays=30,graceDays=7}));foreach(var keyNode in draft["graph"]!["requiredVariables"]?.AsArray()??new JsonArray()){var required=keyNode!.GetValue<string>();draft["graph"]!["variables"]![required]=required=="amount"?"10":required.EndsWith("Id")?Guid.NewGuid().ToString():"Reviewed reference";}var validation=await Json(await Send(client,"/api/v1/workflows/validate",HttpMethod.Post,draft["graph"]));Assert.Empty(validation["errors"]!.AsArray());
  }
  public static IEnumerable<object[]> TemplateKeys()=>WorkflowOperationsTemplates.Keys.Select(k=>new object[]{k});
  [Fact] public async Task Cancelling_a_run_closes_its_pending_approvals()

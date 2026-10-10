@@ -1,0 +1,12 @@
+[
+  {
+    "url": "https://www.jjrdxb.com/",
+    "checkedAt": "2026-10-10T07:34:59.327544+00:00",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  },
+  {
+    "url": "https://headquarter.ae/",
+    "checkedAt": "2026-10-10T07:34:58.748372+00:00",
+    "error": "<urlopen error [Errno 11001] getaddrinfo failed>"
+  }
+]

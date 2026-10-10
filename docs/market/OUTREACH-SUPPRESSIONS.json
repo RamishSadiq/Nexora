@@ -1,0 +1,25 @@
+{
+  "updatedAt": "2026-10-09",
+  "entries": [
+    {
+      "organisation": "BAFSA",
+      "domain": "bafsa.org.uk",
+      "email": "victoria@bafsa.org.uk",
+      "scope": "Stop further Nexora sales outreach to this organisation",
+      "receivedAt": "2026-10-08T14:37:59Z",
+      "reason": "Recipient replied 'No Thanks' to the pitch, whose footer explicitly offered no further follow-up for that reply",
+      "messageId": "1a11bf33395d33a1",
+      "replyUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1"
+    },
+    {
+      "organisation": "Metal Powder Industries Federation",
+      "email": "dschember@mpif.org",
+      "scope": "address_only",
+      "organisationDomain": "mpif.org",
+      "reason": "Automatic response confirms this staff member is retired. Block this address only; no organisation-wide opt-out was received.",
+      "receivedAt": "2026-10-09T07:04:03Z",
+      "messageId": "1a11f79e78082745",
+      "replyUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745"
+    }
+  ]
+}

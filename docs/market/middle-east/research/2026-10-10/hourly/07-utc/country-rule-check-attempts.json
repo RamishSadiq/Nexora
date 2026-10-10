@@ -1,0 +1,15 @@
+{
+  "sources": [
+    {
+      "url": "https://tdra.gov.ae/-/media/About/regulations-and-ruling/EN/Unsolicited-Elrctronic-Commuincations--pdf.ashx",
+      "checkedAt": "2026-10-10T07:37:08.450158+00:00",
+      "result": "web retrieval timed out; no new recipient clearance"
+    },
+    {
+      "url": "https://u.ae/en/about-the-uae/digital-uae/data/data-protection-laws",
+      "checkedAt": "2026-10-10T07:37:08.450158+00:00",
+      "result": "page returned no readable content; no new recipient clearance"
+    }
+  ],
+  "decision": "Previous documented country/contact gates remain; no assumptions from public email addresses"
+}

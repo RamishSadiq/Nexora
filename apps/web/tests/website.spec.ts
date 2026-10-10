@@ -1,10 +1,11 @@
 import { test, expect, type Page } from "@playwright/test";
+import { submitLogin } from "./browser-login";
 
 async function login(page: Page) {
   await page.goto("/login");
   await page.getByLabel("Work email").fill("admin@nexora.local");
   await page.getByLabel("Password", { exact: true }).fill(process.env.NEXORA_BROWSER_PASSWORD!);
-  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await submitLogin(page);
   await expect(page).not.toHaveURL(/\/login/, { timeout: 60000 });
 }
 
@@ -15,7 +16,7 @@ test("staff draft, preview and publishing are separated from the anonymous assoc
   await page.getByLabel("Association name").fill("Northstar Association");
   await page.getByLabel("Short tagline").fill("People. Purpose. Progress.");
   await page.getByRole("button", { name: "Create website", exact: true }).click();
-  await page.getByRole("button", { name: "New page", exact: true }).click();
+  await page.getByRole("button", { name: "Add website page", exact: true }).click();
   await page.getByLabel("Page title", { exact: true }).fill("A community that moves us forward");
   await page.getByLabel("Heading", { exact: true }).fill("Better connected. Greater possibilities.");
   await page.getByRole("textbox", { name: "Text", exact: true }).fill("Connect with people who share your purpose. Exchange knowledge, build relationships, and shape what comes next for our profession.");
@@ -39,6 +40,8 @@ test("staff draft, preview and publishing are separated from the anonymous assoc
   await visitor.screenshot({ path: process.env.NEXORA_WEBSITE_SCREENSHOT ?? "../../artifacts/association-website.png", fullPage: true });
   await visitor.setViewportSize({ width: 390, height: 844 });
   expect(await visitor.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBeTruthy();
+  await page.getByRole("button", { name: "Back to listing", exact: true }).click();
+  await page.getByRole("button", { name: "Website settings and media", exact: true }).click();
   await page.getByText("Site branding and media", { exact: true }).click();
   await page.getByLabel("Brand colour", { exact: true }).fill("#123456");
   await page.getByRole("button", { name: "Publish site settings", exact: true }).click();
@@ -51,6 +54,8 @@ test("staff draft, preview and publishing are separated from the anonymous assoc
   await expect(asset).toContainText("quarantined");
   await expect(asset.getByRole("button", { name: "Make file public" })).toBeDisabled();
   await page.getByText("Site branding and media", { exact: true }).click();
+  await page.getByRole("button", { name: "Back to listing", exact: true }).click();
+  await page.getByRole("button", { name: "Edit A community that moves us forward", exact: true }).click();
   await page.getByText("Navigation, address and scheduled publishing", { exact: true }).click();
   await page.getByLabel("Menu label", { exact: true }).fill("Home");
   const navigationSaved = page.waitForResponse(r => r.url().endsWith("/navigation") && r.request().method() === "PUT");

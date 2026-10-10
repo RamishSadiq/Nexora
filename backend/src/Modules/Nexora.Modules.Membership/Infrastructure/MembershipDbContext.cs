@@ -38,7 +38,44 @@ public sealed class MembershipDbContext(DbContextOptions<MembershipDbContext> op
         b.Entity<MembershipCommunication>().HasOne<MemberSubscription>().WithMany().HasForeignKey(x => new { x.TenantId, x.MembershipId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         TenantTable<MembershipProduct>(b,"Products").Property(x => x.Name).HasMaxLength(160);
         TenantTable<MembershipApplication>(b,"Applications");
+        b.Entity<MembershipApplication>().Property(x => x.LifecyclePurpose).HasMaxLength(20);
+        b.Entity<MembershipApplication>().Property(x => x.RequestedMemberTypeName).HasMaxLength(160);
+        b.Entity<MembershipApplication>().Property(x => x.RequestedCategoryName).HasMaxLength(160);
+        b.Entity<MembershipApplication>().Property(x => x.RequestedSubscriptionBandName).HasMaxLength(160);
+        b.Entity<MembershipApplication>().Property(x => x.PaymentMethod).HasMaxLength(160);
+        b.Entity<MembershipApplication>().Property(x => x.PaymentFrequency).HasMaxLength(160);
+        b.Entity<MembershipApplication>().Property(x => x.InvoicingAccountName).HasMaxLength(160);
+        b.Entity<MembershipApplication>().Property(x => x.StaffRemarks).HasMaxLength(4000);
+        b.Entity<MembershipApplication>().Property(x => x.Description).HasMaxLength(4000);
+        b.Entity<MembershipApplication>().HasOne<MembershipSetupValue>().WithMany().HasForeignKey(x => new { x.TenantId, x.RequestedMemberTypeId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MembershipApplication>().HasOne<MembershipSetupValue>().WithMany().HasForeignKey(x => new { x.TenantId, x.RequestedCategoryId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MembershipApplication>().HasOne<MembershipSetupValue>().WithMany().HasForeignKey(x => new { x.TenantId, x.RequestedSubscriptionBandId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         TenantTable<MemberSubscription>(b,"Subscriptions");
+        TenantTable<MembershipClassificationChange>(b, "ClassificationChanges");
+        b.Entity<MembershipClassificationChange>().Property(x => x.Kind).HasMaxLength(20);
+        b.Entity<MembershipClassificationChange>().Property(x => x.NameSnapshot).HasMaxLength(160);
+        b.Entity<MembershipClassificationChange>().Property(x => x.Reason).HasMaxLength(500);
+        b.Entity<MembershipClassificationChange>().HasOne<MemberSubscription>().WithMany().HasForeignKey(x => new { x.TenantId, x.MembershipId })
+            .HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MembershipClassificationChange>().HasOne<MembershipSetupValue>().WithMany().HasForeignKey(x => new { x.TenantId, x.DefinitionId })
+            .HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MembershipClassificationChange>().HasIndex(x => new { x.TenantId, x.MembershipId, x.Kind, x.Sequence }).IsUnique();
+        b.Entity<MembershipClassificationChange>().ToTable("ClassificationChanges", t =>
+        {
+            t.HasCheckConstraint("CK_ClassificationChanges_Kind", "[Kind] IN ('member-type', 'category', 'subscription-band')");
+            t.HasCheckConstraint("CK_ClassificationChanges_Sequence", "[Sequence] > 0");
+        });
+        b.Entity<MemberSubscription>().Property(x => x.LegacyMemberReference).HasMaxLength(160);
+        b.Entity<MemberSubscription>().Property(x => x.ResignationReason).HasMaxLength(500);
+        b.Entity<MemberSubscription>().Property(x => x.ArchiveReason).HasMaxLength(500);
+        b.Entity<MemberSubscription>().Property(x => x.PromotionCode).HasMaxLength(160);
+        b.Entity<MemberSubscription>().Property(x => x.PaymentMethod).HasMaxLength(160);
+        b.Entity<MemberSubscription>().Property(x => x.PaymentFrequency).HasMaxLength(160);
+        b.Entity<MemberSubscription>().Property(x => x.PaymentProvider).HasMaxLength(20);
+        b.Entity<MemberSubscription>().Property(x => x.PaidByName).HasMaxLength(160);
+        b.Entity<MemberSubscription>().Property(x => x.PaidByKind).HasMaxLength(20);
+        b.Entity<MemberSubscription>().Property(x => x.InvoicingAccountName).HasMaxLength(160);
+        b.Entity<MemberSubscription>().Property(x => x.Remarks).HasMaxLength(4000);
         TenantTable<MembershipHistory>(b,"History");
         TenantTable<PortalNotification>(b, "PortalNotifications").HasIndex(x => new { x.TenantId, x.RecipientUserId, x.CreatedAtUtc });
         b.Entity<PortalNotification>().Property(x => x.Kind).HasMaxLength(80);
@@ -54,6 +91,9 @@ public sealed class MembershipDbContext(DbContextOptions<MembershipDbContext> op
         b.Entity<MemberSubscription>().Property(x => x.AccountName).HasMaxLength(160);
         b.Entity<MemberSubscription>().HasOne<MembershipApplication>().WithMany().HasForeignKey(x => new { x.TenantId, x.ApplicationId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         b.Entity<MemberSubscription>().HasIndex(x => new { x.TenantId, x.ApplicationId }).IsUnique();
+        b.Entity<MembershipApplication>().HasOne<MemberSubscription>().WithMany().HasForeignKey(x => new { x.TenantId, x.PreviousMembershipId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MemberSubscription>().HasOne<MemberSubscription>().WithMany().HasForeignKey(x => new { x.TenantId, x.PreviousMembershipId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        b.Entity<MemberSubscription>().HasIndex(x => new { x.TenantId, x.PreviousMembershipId }).IsUnique().HasFilter("[PreviousMembershipId] IS NOT NULL");
         b.Entity<MemberSubscription>().HasIndex(x => new { x.TenantId, x.ContactId })
             .IsUnique().HasFilter("[AccountId] IS NULL AND [Status] = 'active'");
         b.Entity<MemberSubscription>().HasIndex(x => new { x.TenantId, x.AccountId })

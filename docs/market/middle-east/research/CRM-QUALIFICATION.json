@@ -1,0 +1,1488 @@
+{
+  "updatedAt": "2026-10-10T16:58:07+00:00",
+  "policy": "docs/market/middle-east/PRODUCT-TARGETING.md",
+  "scope": "Middle East offer-specific research: councils, procurement history and private-business website project signals. No record is send-ready.",
+  "confirmedNoCrm": 0,
+  "eligibleManualEvidence": 0,
+  "sendEligible": 0,
+  "records": [
+    {
+      "organisation": "Indian Business and Professional Council Dubai",
+      "domain": "ibpcdubai.com",
+      "country": "United Arab Emirates",
+      "regionalPresence": "United Arab Emirates",
+      "membershipModel": "Company and professional membership, application and annual renewal",
+      "administratorContact": {
+        "email": "office@ibpcdubai.com",
+        "role": "Official council office",
+        "source": "https://www.ibpcdubai.com/"
+      },
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://www.ibpcdubai.com/",
+          "observation": "Current official homepage offers membership application, membership categories, renewal and member login. Contact Us lists council office.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://www.ibpcdubai.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+          "observation": "Offer requalification: CRM remains informational for website/portal. Current public-page results are recorded separately; no requested project or lawful marketing permission established.",
+          "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+        }
+      ],
+      "confidence": "medium for potential CMS workflow fit; demand and marketing permission unconfirmed",
+      "NexoraFit": "Strong structural fit: member companies and people; software status unverified.",
+      "outreachDecision": "held_need_and_permission",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "note": "Custom member_login.php is a clue, not enough to classify CRM/AMS. No manual-record evidence found. Do not contact member-directory businesses.",
+      "offerReviewStatus": "reviewed_website_fit_held",
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "history": [
+        {
+          "organisation": "Indian Business and Professional Council Dubai",
+          "domain": "ibpcdubai.com",
+          "country": "United Arab Emirates",
+          "regionalPresence": "United Arab Emirates",
+          "membershipModel": "Company and professional membership, application and annual renewal",
+          "administratorContact": {
+            "email": "office@ibpcdubai.com",
+            "role": "Official council office",
+            "source": "https://www.ibpcdubai.com/"
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://www.ibpcdubai.com/",
+              "observation": "Current official homepage offers membership application, membership categories, renewal and member login. Contact Us lists council office.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "low for CRM absence; membership model verified",
+          "NexoraFit": "Strong structural fit: member companies and people; software status unverified.",
+          "outreachDecision": "research_only",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+          "note": "Custom member_login.php is a clue, not enough to classify CRM/AMS. No manual-record evidence found. Do not contact member-directory businesses.",
+          "offerReviewStatus": "pending_offer_specific_requalification",
+          "crmClassificationAppliesTo": "crm_first_system_only"
+        },
+        {
+          "organisation": "Indian Business and Professional Council Dubai",
+          "domain": "ibpcdubai.com",
+          "country": "United Arab Emirates",
+          "regionalPresence": "United Arab Emirates",
+          "membershipModel": "Company and professional membership, application and annual renewal",
+          "administratorContact": {
+            "email": "office@ibpcdubai.com",
+            "role": "Official council office",
+            "source": "https://www.ibpcdubai.com/"
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://www.ibpcdubai.com/",
+              "observation": "Current official homepage offers membership application, membership categories, renewal and member login. Contact Us lists council office.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "medium for potential CMS workflow fit; demand and marketing permission unconfirmed",
+          "NexoraFit": "Strong structural fit: member companies and people; software status unverified.",
+          "outreachDecision": "held_reply_check_and_permission",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+          "note": "Custom member_login.php is a clue, not enough to classify CRM/AMS. No manual-record evidence found. Do not contact member-directory businesses.",
+          "offerReviewStatus": "reviewed_website_fit_held",
+          "crmClassificationAppliesTo": "crm_first_system_only",
+          "offerType": [
+            "website_cms"
+          ],
+          "needEvidence": [
+            {
+              "url": "https://www.ibpcdubai.com/",
+              "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+              "sourceDate": null,
+              "observation": "Existing official council website and published information/contact workflow overlap with Nexora CMS. No explicit new website project or buying intent established.",
+              "evidenceType": "observed_public_workflow"
+            }
+          ],
+          "capabilityFit": "Public branded information pages, navigation and staff publication fit the implemented CMS baseline; no existing-CRM replacement or integration proposed.",
+          "unsupportedRequirements": [
+            "No requested feature set received; ecommerce, booking, arbitrary workflows and integration are not promised."
+          ],
+          "heldDraft": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/held-drafts.json"
+        }
+      ],
+      "offerType": [
+        "website_cms"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://www.ibpcdubai.com/",
+          "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+          "sourceDate": null,
+          "observation": "Existing official council website and published information/contact workflow overlap with Nexora CMS. No explicit new website project or buying intent established.",
+          "evidenceType": "observed_public_workflow"
+        }
+      ],
+      "capabilityFit": "Public branded information pages, navigation and staff publication fit the implemented CMS baseline; no existing-CRM replacement or integration proposed.",
+      "unsupportedRequirements": [
+        "No requested feature set received; ecommerce, booking, arbitrary workflows and integration are not promised."
+      ],
+      "heldDraft": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/held-drafts.json",
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "sendEligible": false,
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+    },
+    {
+      "organisation": "German Business Council Qatar",
+      "domain": "gbcqatar.qa",
+      "country": "Qatar",
+      "regionalPresence": "Qatar",
+      "membershipModel": "Corporate and private memberships; company representatives, directory and member events",
+      "administratorContact": {
+        "email": "gbcq@ahkqatar.com",
+        "role": "Official council contact",
+        "source": "https://gbcqatar.qa/private"
+      },
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://gbcqatar.qa/private",
+          "observation": "Official application page offers annual private membership and public council contact; displayed term 2024-2025 needs refreshing.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://gbcqatar.qa/",
+          "observation": "Current official site includes 2026 council events and official council contact.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://gbcqatar.qa/private",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+          "observation": "Offer requalification: CRM remains informational for website/portal. Current public-page results are recorded separately; no requested project or lawful marketing permission established.",
+          "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+        }
+      ],
+      "confidence": "medium for potential CMS workflow fit; demand and marketing permission unconfirmed",
+      "NexoraFit": "Company/contact membership structure fits; current record administration unknown.",
+      "outreachDecision": "held_need_and_permission",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "note": "Online application or directory alone does not prove CRM absence. No private records or member contacts collected for outreach.",
+      "offerReviewStatus": "reviewed_website_fit_held",
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "history": [
+        {
+          "organisation": "German Business Council Qatar",
+          "domain": "gbcqatar.qa",
+          "country": "Qatar",
+          "regionalPresence": "Qatar",
+          "membershipModel": "Corporate and private memberships; company representatives, directory and member events",
+          "administratorContact": {
+            "email": "gbcq@ahkqatar.com",
+            "role": "Official council contact",
+            "source": "https://gbcqatar.qa/private"
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://gbcqatar.qa/private",
+              "observation": "Official application page offers annual private membership and public council contact; displayed term 2024-2025 needs refreshing.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            },
+            {
+              "url": "https://gbcqatar.qa/",
+              "observation": "Current official site includes 2026 council events and official council contact.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "low for CRM absence; membership model verified",
+          "NexoraFit": "Company/contact membership structure fits; current record administration unknown.",
+          "outreachDecision": "research_only",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+          "note": "Online application or directory alone does not prove CRM absence. No private records or member contacts collected for outreach.",
+          "offerReviewStatus": "pending_offer_specific_requalification",
+          "crmClassificationAppliesTo": "crm_first_system_only"
+        },
+        {
+          "organisation": "German Business Council Qatar",
+          "domain": "gbcqatar.qa",
+          "country": "Qatar",
+          "regionalPresence": "Qatar",
+          "membershipModel": "Corporate and private memberships; company representatives, directory and member events",
+          "administratorContact": {
+            "email": "gbcq@ahkqatar.com",
+            "role": "Official council contact",
+            "source": "https://gbcqatar.qa/private"
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://gbcqatar.qa/private",
+              "observation": "Official application page offers annual private membership and public council contact; displayed term 2024-2025 needs refreshing.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            },
+            {
+              "url": "https://gbcqatar.qa/",
+              "observation": "Current official site includes 2026 council events and official council contact.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "medium for potential CMS workflow fit; demand and marketing permission unconfirmed",
+          "NexoraFit": "Company/contact membership structure fits; current record administration unknown.",
+          "outreachDecision": "held_reply_check_and_permission",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+          "note": "Online application or directory alone does not prove CRM absence. No private records or member contacts collected for outreach.",
+          "offerReviewStatus": "reviewed_website_fit_held",
+          "crmClassificationAppliesTo": "crm_first_system_only",
+          "offerType": [
+            "website_cms"
+          ],
+          "needEvidence": [
+            {
+              "url": "https://gbcqatar.qa/",
+              "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+              "sourceDate": null,
+              "observation": "Existing official council website and published information/contact workflow overlap with Nexora CMS. No explicit new website project or buying intent established.",
+              "evidenceType": "observed_public_workflow"
+            }
+          ],
+          "capabilityFit": "Public branded information pages, navigation and staff publication fit the implemented CMS baseline; no existing-CRM replacement or integration proposed.",
+          "unsupportedRequirements": [
+            "No requested feature set received; ecommerce, booking, arbitrary workflows and integration are not promised."
+          ],
+          "heldDraft": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/held-drafts.json"
+        }
+      ],
+      "offerType": [
+        "website_cms"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://gbcqatar.qa/",
+          "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+          "sourceDate": null,
+          "observation": "Existing official council website and published information/contact workflow overlap with Nexora CMS. No explicit new website project or buying intent established.",
+          "evidenceType": "observed_public_workflow"
+        }
+      ],
+      "capabilityFit": "Public branded information pages, navigation and staff publication fit the implemented CMS baseline; no existing-CRM replacement or integration proposed.",
+      "unsupportedRequirements": [
+        "No requested feature set received; ecommerce, booking, arbitrary workflows and integration are not promised."
+      ],
+      "heldDraft": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/held-drafts.json",
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "sendEligible": false,
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+    },
+    {
+      "organisation": "Swiss Business Council Qatar",
+      "domain": "swissbcq.org",
+      "country": "Qatar",
+      "regionalPresence": "Qatar",
+      "membershipModel": "Corporate, non-resident, associate and individual paid memberships",
+      "administratorContact": {
+        "email": "info@SwissBCQ.org",
+        "role": "Official council office",
+        "source": "https://swissbcq.org/wp-includes/images/member-form.pdf"
+      },
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://swissbcq.org/wp-includes/images/member-form.pdf",
+          "observation": "Official form lists membership categories, fees, committee approval and the council email. Source date not established; search crawl date is not issue date.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://swissbcq.org/wp-includes/images/member-form.pdf",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+          "observation": "Offer requalification: CRM remains informational for website/portal. Current public-page results are recorded separately; no requested project or lawful marketing permission established.",
+          "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+        }
+      ],
+      "confidence": "Low: no current project or permission verified; recent source checks incomplete.",
+      "NexoraFit": "Strong structural fit: company/person categories and staff committee review.",
+      "outreachDecision": "research_only_current_need_or_contact_unverified",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "note": "PDF application is not manual-record evidence. Homepage direct retrieval returned 406; incomplete current-system check, hold.",
+      "offerReviewStatus": "reviewed_no_qualified_current_offer",
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "history": [
+        {
+          "organisation": "Swiss Business Council Qatar",
+          "domain": "swissbcq.org",
+          "country": "Qatar",
+          "regionalPresence": "Qatar",
+          "membershipModel": "Corporate, non-resident, associate and individual paid memberships",
+          "administratorContact": {
+            "email": "info@SwissBCQ.org",
+            "role": "Official council office",
+            "source": "https://swissbcq.org/wp-includes/images/member-form.pdf"
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://swissbcq.org/wp-includes/images/member-form.pdf",
+              "observation": "Official form lists membership categories, fees, committee approval and the council email. Source date not established; search crawl date is not issue date.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "low for CRM absence; membership model verified",
+          "NexoraFit": "Strong structural fit: company/person categories and staff committee review.",
+          "outreachDecision": "research_only",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+          "note": "PDF application is not manual-record evidence. Homepage direct retrieval returned 406; incomplete current-system check, hold.",
+          "offerReviewStatus": "pending_offer_specific_requalification",
+          "crmClassificationAppliesTo": "crm_first_system_only"
+        }
+      ],
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "offerType": [
+        "website_cms",
+        "portal"
+      ],
+      "needEvidence": [],
+      "capabilityFit": "Public content and bounded information access could fit the baseline; no requested project verified.",
+      "unsupportedRequirements": [],
+      "sendEligible": false,
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+    },
+    {
+      "organisation": "Canadian Business Council Qatar",
+      "domain": "cbcqatar.org",
+      "country": "Qatar",
+      "regionalPresence": "Qatar",
+      "membershipModel": "Annual corporate membership with three people, extra employees, individual and affiliate tiers",
+      "administratorContact": {
+        "role": "Official council contact page",
+        "source": "https://cbcqatar.org/become-a-member/",
+        "email": null
+      },
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://cbcqatar.org/become-a-member/",
+          "observation": "Official page specifies corporate representative and alternate, annual memberships, application return and member portal benefits.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://cbcqatar.org/become-a-member/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+          "observation": "Offer requalification: CRM remains informational for website/portal. Current public-page results are recorded separately; no requested project or lawful marketing permission established.",
+          "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+        }
+      ],
+      "confidence": "Low: no current project or permission verified; recent source checks incomplete.",
+      "NexoraFit": "Strong structural fit for company/contacts and representative relationships.",
+      "outreachDecision": "research_only_current_need_or_contact_unverified",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "note": "Portal is a clue requiring vendor/process verification. Rendered contact email obscured; no guessed address. Unknown system, no pitch.",
+      "offerReviewStatus": "reviewed_no_qualified_current_offer",
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "history": [
+        {
+          "organisation": "Canadian Business Council Qatar",
+          "domain": "cbcqatar.org",
+          "country": "Qatar",
+          "regionalPresence": "Qatar",
+          "membershipModel": "Annual corporate membership with three people, extra employees, individual and affiliate tiers",
+          "administratorContact": {
+            "role": "Official council contact page",
+            "source": "https://cbcqatar.org/become-a-member/",
+            "email": null
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://cbcqatar.org/become-a-member/",
+              "observation": "Official page specifies corporate representative and alternate, annual memberships, application return and member portal benefits.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "low for CRM absence; membership model verified",
+          "NexoraFit": "Strong structural fit for company/contacts and representative relationships.",
+          "outreachDecision": "research_only",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+          "note": "Portal is a clue requiring vendor/process verification. Rendered contact email obscured; no guessed address. Unknown system, no pitch.",
+          "offerReviewStatus": "pending_offer_specific_requalification",
+          "crmClassificationAppliesTo": "crm_first_system_only"
+        }
+      ],
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "offerType": [
+        "website_cms",
+        "portal"
+      ],
+      "needEvidence": [],
+      "capabilityFit": "Public content and bounded information access could fit the baseline; no requested project verified.",
+      "unsupportedRequirements": [],
+      "sendEligible": false,
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+    },
+    {
+      "organisation": "International Business Council Conferences and Exhibitions Doha",
+      "domain": "ibc.qa",
+      "country": "Qatar",
+      "regionalPresence": "Qatar",
+      "membershipModel": "Annual business-network membership plus events/incubation and digital services",
+      "administratorContact": {
+        "email": "info@ibc.qa",
+        "role": "Official council contact",
+        "source": "https://ibc.qa/en/about"
+      },
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "researchEvidence": [
+        {
+          "url": "https://ibc.qa/en",
+          "observation": "Official site advertises annual council-network membership and also offers website/platform services.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://ibc.qa/en/about",
+          "observation": "Official council identity, Doha office and corporate contact published.",
+          "sourceDate": null,
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+        },
+        {
+          "url": "https://ibc.qa/en",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+          "observation": "Offer requalification: CRM remains informational for website/portal. Current public-page results are recorded separately; no requested project or lawful marketing permission established.",
+          "verification": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+        }
+      ],
+      "confidence": "Low: no current project or permission verified; recent source checks incomplete.",
+      "NexoraFit": "Potential membership fit; digital-services provider role makes buyer-versus-partner status unclear.",
+      "outreachDecision": "research_only_current_need_or_contact_unverified",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "note": "No manual administration evidence. Do not treat public cooperation invitation as marketing consent or assume it needs its first CRM.",
+      "offerReviewStatus": "reviewed_no_qualified_current_offer",
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "history": [
+        {
+          "organisation": "International Business Council Conferences and Exhibitions Doha",
+          "domain": "ibc.qa",
+          "country": "Qatar",
+          "regionalPresence": "Qatar",
+          "membershipModel": "Annual business-network membership plus events/incubation and digital services",
+          "administratorContact": {
+            "email": "info@ibc.qa",
+            "role": "Official council contact",
+            "source": "https://ibc.qa/en/about"
+          },
+          "crmStatus": "unknown_system",
+          "manualWorkflowEvidence": [],
+          "existingSystemEvidence": [],
+          "researchEvidence": [
+            {
+              "url": "https://ibc.qa/en",
+              "observation": "Official site advertises annual council-network membership and also offers website/platform services.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            },
+            {
+              "url": "https://ibc.qa/en/about",
+              "observation": "Official council identity, Doha office and corporate contact published.",
+              "sourceDate": null,
+              "checkedAt": "2026-10-09T13:12:16.373080+00:00"
+            }
+          ],
+          "confidence": "low for CRM absence; membership model verified",
+          "NexoraFit": "Potential membership fit; digital-services provider role makes buyer-versus-partner status unclear.",
+          "outreachDecision": "research_only",
+          "consentStatus": "not_established",
+          "permissionEvidence": [],
+          "outreachLegalBasis": "not_cleared",
+          "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+          "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+          "note": "No manual administration evidence. Do not treat public cooperation invitation as marketing consent or assume it needs its first CRM.",
+          "offerReviewStatus": "pending_offer_specific_requalification",
+          "crmClassificationAppliesTo": "crm_first_system_only"
+        }
+      ],
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "offerType": [
+        "website_cms",
+        "portal"
+      ],
+      "needEvidence": [],
+      "capabilityFit": "Public content and bounded information access could fit the baseline; no requested project verified.",
+      "unsupportedRequirements": [],
+      "sendEligible": false,
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/public-page-checks.json"
+    },
+    {
+      "organisation": "IIMA Dubai Campus",
+      "country": "United Arab Emirates",
+      "market": "Middle East",
+      "regionalPresence": "United Arab Emirates",
+      "administratorContact": {
+        "role": "Historical RFP proposal mailbox; invitation expired",
+        "email": "dubairfq@iima.ac.in",
+        "source": "https://tenders.iima.ac.in/tender_documents/RFP_Dubai_Website_Development.pdf"
+      },
+      "offerType": [
+        "website_cms",
+        "portal"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://tenders.iima.ac.in/tender_documents/RFP_Dubai_Website_Development.pdf",
+          "sourceDate": "2025-12-03",
+          "checkedAt": "2026-10-10T06:44:20+00:00",
+          "observation": "Official RFP sought a Dubai-campus website with alumni access, CMS and English/Arabic content. It required SAP/Moodle/payment integrations, chatbot, migration and audit. Proposal mailbox dubairfq@iima.ac.in was scoped to that expired RFP.",
+          "retrieval": "full official PDF"
+        }
+      ],
+      "capabilityFit": "Some public pages/content fit; full requested solution is not verified as deliverable.",
+      "unsupportedRequirements": [
+        "Arabic/English localisation",
+        "SAP, Moodle and payment integrations",
+        "Website chatbot",
+        "Automated migration and independent security/compliance acceptance"
+      ],
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "confidence": "High that historical IIMA project is closed; not current sales demand.",
+      "outreachDecision": "exclude_closed_project_and_unsupported_requirements",
+      "consentStatus": "expired_project_invitation_not_current_permission",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": null,
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "sendEligible": false,
+      "history": [],
+      "projectDeadline": "2025-12-24"
+    },
+    {
+      "organisation": "Supreme Council for Environment Bahrain",
+      "country": "Bahrain",
+      "market": "Middle East",
+      "regionalPresence": "Bahrain",
+      "administratorContact": {
+        "role": "No send-authorised contact verified",
+        "email": null,
+        "source": "https://tenderboard.gov.bh/Ar/tenderdetails/?id=3%2F2026%2FSCE+%28RFP%2FSCE%2F2026%2F03%29"
+      },
+      "offerType": [
+        "website_cms"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://tenderboard.gov.bh/Ar/tenderdetails/?id=3%2F2026%2FSCE+%28RFP%2FSCE%2F2026%2F03%29",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:44:20+00:00",
+          "observation": "Official Tender Board search excerpt describes website replacement with IGA and UN accessibility/digital-service criteria. Full-page retrieval failed twice; deadline, submission route and detailed scope remain unverified.",
+          "retrieval": "official indexed excerpt only"
+        }
+      ],
+      "capabilityFit": "Some public pages/content fit; full requested solution is not verified as deliverable.",
+      "unsupportedRequirements": [
+        "Current detailed requirements and baseline acceptance not verified."
+      ],
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "confidence": "Low: opportunity details or module fit incomplete.",
+      "outreachDecision": "hold_current_deadline_contact_route_and_capability_unverified",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": null,
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "sendEligible": false,
+      "history": []
+    },
+    {
+      "organisation": "Real Estate General Authority",
+      "country": "Saudi Arabia",
+      "market": "Middle East",
+      "regionalPresence": "Saudi Arabia",
+      "administratorContact": {
+        "role": "No send-authorised contact verified",
+        "email": null,
+        "source": "https://rega.gov.sa/en/rega/competitions-and-purchases/"
+      },
+      "offerType": [
+        "website_cms"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://rega.gov.sa/en/rega/competitions-and-purchases/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T06:44:20+00:00",
+          "observation": "Official 2026 procurement index includes enterprise/customer-service/e-services projects and directs bidders to Etimad. No specific bounded Nexora website/portal opportunity or email invitation was verified.",
+          "retrieval": "full official procurement index"
+        }
+      ],
+      "capabilityFit": "Some public pages/content fit; full requested solution is not verified as deliverable.",
+      "unsupportedRequirements": [
+        "Current detailed requirements and baseline acceptance not verified."
+      ],
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "confidence": "Low: opportunity details or module fit incomplete.",
+      "outreachDecision": "research_only_no_qualified_current_project",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": null,
+      "rulesReviewedAt": "2026-10-10T06:45:24.370972+00:00",
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "sendEligible": false,
+      "history": []
+    },
+    {
+      "organisation": "AMTC Foodservice Equipment LLC",
+      "domain": "amtc.ae",
+      "country": "United Arab Emirates",
+      "sector": "Commercial kitchen equipment",
+      "url": "https://amtc.ae/",
+      "email": "info@amtc.ae",
+      "role": "Published general business enquiries",
+      "observation": "Official site announces a new website in progress and lists a Dubai office and factory contacts for commercial-kitchen enquiries.",
+      "retrieval": "full official page",
+      "priority": 1,
+      "fit": "Staff-editable company, service and project-information pages; product checkout, quotation forms and booking excluded.",
+      "opening": "I saw AMTC is preparing a new website for its commercial-kitchen business.",
+      "question": "Would a brief look at Nexora's website editor be useful as you plan the new site?",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "held_project_status_buyer_and_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://amtc.ae/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official site announces a new website in progress and lists a Dubai office and factory contacts for commercial-kitchen enquiries.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Staff-editable company, service and project-information pages; product checkout, quotation forms and booking excluded.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "info@amtc.ae",
+        "role": "Published general business enquiries",
+        "source": "https://amtc.ae/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [
+        {
+          "checkedAt": "2026-10-10T16:53:18+00:00",
+          "offerType": [
+            "website_cms"
+          ],
+          "crmStatus": "unknown_system",
+          "outreachDecision": "held_project_status_buyer_and_permission",
+          "consentStatus": "not_established",
+          "observation": "Upcoming website and Dubai office remain published. Mailbox is for commercial-kitchen enquiries; no software supplier invitation or buyer/project-stage clarification.",
+          "source": "https://amtc.ae/",
+          "sourceDate": null,
+          "officialPageRead": true,
+          "report": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/SOURCE-NOTES.json"
+        }
+      ],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+      "heldDraft": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/held-drafts.json",
+      "lastRequalifiedAt": "2026-10-10T16:53:18+00:00"
+    },
+    {
+      "organisation": "Ablaq Architectural Design Studio",
+      "domain": "ablaqco.com",
+      "country": "United Arab Emirates",
+      "sector": "Architecture",
+      "url": "https://www.ablaqco.com/",
+      "email": "info@ablaqco.com",
+      "role": "Published general business enquiries",
+      "observation": "Official site identifies a UAE architectural design studio and announces a forthcoming website while directing architectural project enquiries to its business email.",
+      "retrieval": "full official page",
+      "priority": 2,
+      "fit": "Branded studio, service and project-information pages with staff publishing. Arabic localisation and custom portfolio components not verified.",
+      "opening": "I saw Ablaq is preparing a new website for its architectural studio.",
+      "question": "Would a brief look at managing your studio and project-information pages in Nexora be useful?",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "held_project_status_buyer_and_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://www.ablaqco.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official site identifies a UAE architectural design studio and announces a forthcoming website while directing architectural project enquiries to its business email.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Branded studio, service and project-information pages with staff publishing. Arabic localisation and custom portfolio components not verified.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "info@ablaqco.com",
+        "role": "Published general business enquiries",
+        "source": "https://www.ablaqco.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [
+        {
+          "checkedAt": "2026-10-10T16:53:18+00:00",
+          "offerType": [
+            "website_cms"
+          ],
+          "crmStatus": "unknown_system",
+          "outreachDecision": "held_project_status_buyer_and_permission",
+          "consentStatus": "not_established",
+          "observation": "Upcoming website remains published for UAE architectural studio. Contact invitation concerns customers architectural projects, not software proposals.",
+          "source": "https://www.ablaqco.com/",
+          "sourceDate": null,
+          "officialPageRead": true,
+          "report": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/SOURCE-NOTES.json"
+        }
+      ],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+      "heldDraft": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/held-drafts.json",
+      "lastRequalifiedAt": "2026-10-10T16:53:18+00:00"
+    },
+    {
+      "organisation": "The Arabian Dream / Foundster Corporate Services FZCO",
+      "domain": "arabiandream.com",
+      "aliases": [
+        "foundster.com"
+      ],
+      "country": "United Arab Emirates",
+      "sector": "Boutique relocation and company formation",
+      "url": "https://arabiandream.com/",
+      "email": "support@foundster.com",
+      "role": "Published customer-support contact, not an identified purchasing owner",
+      "observation": "Official imprint identifies Foundster Corporate Services FZCO in Dubai Silicon Oasis. The boutique relocation brand announces a new website and publishes weekday hours.",
+      "retrieval": "full official page",
+      "priority": 3,
+      "fit": "Staff-managed public service and relocation-information pages. Visa, bank, government and case-management integrations are outside this offer.",
+      "opening": "I saw The Arabian Dream is preparing a new website for its Dubai relocation and company-formation services.",
+      "question": "Would a brief look at a staff-managed website for your service information be useful?",
+      "hours": "Mon-Fri 10:00-17:00 GST; Sat-Sun closed",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "held_project_status_buyer_and_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://arabiandream.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official imprint identifies Foundster Corporate Services FZCO in Dubai Silicon Oasis. The boutique relocation brand announces a new website and publishes weekday hours.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Staff-managed public service and relocation-information pages. Visa, bank, government and case-management integrations are outside this offer.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "support@foundster.com",
+        "role": "Published customer-support contact, not an identified purchasing owner",
+        "source": "https://arabiandream.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [
+        {
+          "checkedAt": "2026-10-10T16:53:18+00:00",
+          "offerType": [
+            "website_cms"
+          ],
+          "crmStatus": "unknown_system",
+          "outreachDecision": "held_project_status_buyer_and_permission",
+          "consentStatus": "not_established",
+          "observation": "Upcoming website and Dubai company imprint remain published. Support address is not a verified technology buyer; Saturday/Sunday closed. No proposal permission.",
+          "source": "https://arabiandream.com/",
+          "sourceDate": null,
+          "officialPageRead": true,
+          "report": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/SOURCE-NOTES.json"
+        }
+      ],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+      "heldDraft": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/held-drafts.json",
+      "lastRequalifiedAt": "2026-10-10T16:53:18+00:00"
+    },
+    {
+      "organisation": "JJR Construction",
+      "domain": "jjrdxb.com",
+      "country": "United Arab Emirates",
+      "sector": "Construction",
+      "url": "https://www.jjrdxb.com/",
+      "email": "info@jjrdxb.com",
+      "role": "Published contact in indexed official page; current read failed",
+      "observation": "Indexed official page describes a Dubai construction business announcing a website launch. Full-page retrieval failed; direct DNS lookup failed. Current contact and deadline must be reverified.",
+      "retrieval": "official indexed excerpt; current page unavailable",
+      "priority": 8,
+      "fit": "Potential company/service/project-information CMS only. Construction/project-management workflows unverified.",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "research_only_reverification_or_permission",
+      "confidence": "Low; current source or email not verified.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://www.jjrdxb.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Indexed official page describes a Dubai construction business announcing a website launch. Full-page retrieval failed; direct DNS lookup failed. Current contact and deadline must be reverified.",
+          "retrieval": "official indexed excerpt; current page unavailable",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Potential company/service/project-information CMS only. Construction/project-management workflows unverified.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "info@jjrdxb.com",
+        "role": "Published contact in indexed official page; current read failed",
+        "source": "https://www.jjrdxb.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json"
+    },
+    {
+      "organisation": "Head Quarter Building Construction LLC",
+      "domain": "headquarter.ae",
+      "country": "United Arab Emirates",
+      "sector": "Construction and fit-out",
+      "url": "https://headquarter.ae/",
+      "email": null,
+      "role": "No published email verified; phones only in indexed official page",
+      "observation": "Indexed official page says the UAE construction and fit-out company's new website is under construction. Current full-page and DNS retrieval failed; no email was guessed.",
+      "retrieval": "official indexed excerpt; current page unavailable",
+      "priority": 9,
+      "fit": "Potential public company/service/project-information CMS only; no verified email or requested scope.",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "research_only_reverification_or_permission",
+      "confidence": "Low; current source or email not verified.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://headquarter.ae/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Indexed official page says the UAE construction and fit-out company's new website is under construction. Current full-page and DNS retrieval failed; no email was guessed.",
+          "retrieval": "official indexed excerpt; current page unavailable",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Potential public company/service/project-information CMS only; no verified email or requested scope.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": null,
+        "role": "No published email verified; phones only in indexed official page",
+        "source": "https://headquarter.ae/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json"
+    },
+    {
+      "organisation": "NeoScale",
+      "domain": "neoscalesa.com",
+      "country": "Saudi Arabia",
+      "sector": "Steel structures and metalworks",
+      "url": "https://www.neoscalesa.com/",
+      "email": "Sales@neoscalesa.com",
+      "role": "Published sales enquiries, not verified technology buyer",
+      "observation": "Official page lists an operational Riyadh steel-structure business and says its website is under construction. Page has inconsistent establishment years; identity needs further verification.",
+      "retrieval": "full official page",
+      "priority": 5,
+      "fit": "Staff-managed service and engineering project-information pages only. Engineering/CAD and manufacturing workflows excluded.",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "research_only_reverification_or_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://www.neoscalesa.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official page lists an operational Riyadh steel-structure business and says its website is under construction. Page has inconsistent establishment years; identity needs further verification.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Staff-managed service and engineering project-information pages only. Engineering/CAD and manufacturing workflows excluded.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "Sales@neoscalesa.com",
+        "role": "Published sales enquiries, not verified technology buyer",
+        "source": "https://www.neoscalesa.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [
+        {
+          "checkedAt": "2026-10-10T16:58:07+00:00",
+          "offerType": [
+            "website_cms"
+          ],
+          "crmStatus": "unknown_system",
+          "outreachDecision": "research_only_reverification_or_permission",
+          "consentStatus": "not_established",
+          "observation": "Riyadh steel-business website remains under construction. Sales address concerns engineering/manufacturing enquiries. Establishment years still inconsistent (2025/2026); no software supplier invitation or consent.",
+          "source": "https://www.neoscalesa.com/",
+          "sourceDate": null,
+          "officialPageRead": true,
+          "report": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/SOURCE-NOTES.json"
+        }
+      ],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+      "lastQualificationAttemptAt": "2026-10-10T16:58:07+00:00",
+      "lastRequalifiedAt": "2026-10-10T16:58:07+00:00"
+    },
+    {
+      "organisation": "Zilal Cooling for Trading Co.",
+      "domain": "zilalcooling.com",
+      "country": "Saudi Arabia",
+      "sector": "Commercial and industrial refrigeration",
+      "url": "https://zilalcooling.com/",
+      "email": "zilald@zilalcooling.com",
+      "role": "Published Dammam branch contact; decision-maker not verified",
+      "observation": "Official page says a new site is in progress and lists refrigeration services and Saudi branches. It publishes branch contacts but no technology supplier invitation.",
+      "retrieval": "full official page",
+      "priority": 4,
+      "fit": "Service, branch and brand-information pages managed by staff. Ecommerce, stock management and RFQ automation excluded.",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "research_only_reverification_or_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://zilalcooling.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official page says a new site is in progress and lists refrigeration services and Saudi branches. It publishes branch contacts but no technology supplier invitation.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Service, branch and brand-information pages managed by staff. Ecommerce, stock management and RFQ automation excluded.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "zilald@zilalcooling.com",
+        "role": "Published Dammam branch contact; decision-maker not verified",
+        "source": "https://zilalcooling.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [
+        {
+          "checkedAt": "2026-10-10T16:58:07+00:00",
+          "offerType": [
+            "website_cms"
+          ],
+          "crmStatus": "unknown_system",
+          "outreachDecision": "research_only_reverification_or_permission",
+          "consentStatus": "not_established",
+          "observation": "New website still in progress; Saudi refrigeration business and branch contacts remain published. No current CMS supplier invitation or consent established.",
+          "source": "https://zilalcooling.com/",
+          "sourceDate": null,
+          "officialPageRead": true,
+          "report": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/SOURCE-NOTES.json"
+        }
+      ],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+      "lastQualificationAttemptAt": "2026-10-10T16:58:07+00:00",
+      "lastRequalifiedAt": "2026-10-10T16:58:07+00:00"
+    },
+    {
+      "organisation": "Smart Interfaces Contracting LLC",
+      "domain": "ksa-sic.com",
+      "country": "Saudi Arabia",
+      "sector": "Contracting",
+      "url": "https://ksa-sic.com/",
+      "email": "info@ksa-sic.com",
+      "role": "Published urgent-enquiries mailbox, not a supplier invitation",
+      "observation": "Official maintenance page says a new website is being prepared and lists Riyadh plus regional offices. Actual requested website functions and procurement contact remain unknown.",
+      "retrieval": "full official page",
+      "priority": 6,
+      "fit": "Potential public company/service/project-information website. No custom project or document portal promised.",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "research_only_reverification_or_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://ksa-sic.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official maintenance page says a new website is being prepared and lists Riyadh plus regional offices. Actual requested website functions and procurement contact remain unknown.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Potential public company/service/project-information website. No custom project or document portal promised.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": "info@ksa-sic.com",
+        "role": "Published urgent-enquiries mailbox, not a supplier invitation",
+        "source": "https://ksa-sic.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [
+        {
+          "checkedAt": "2026-10-10T16:58:07+00:00",
+          "offerType": [
+            "website_cms"
+          ],
+          "crmStatus": "unknown_system",
+          "outreachDecision": "research_only_reverification_or_permission",
+          "consentStatus": "not_established",
+          "observation": "Two current official-page fetch attempts failed; second reported timeout. Prior project/contact evidence retained as history, not freshly verified.",
+          "source": "https://ksa-sic.com/",
+          "sourceDate": null,
+          "officialPageRead": false,
+          "report": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/SOURCE-NOTES.json"
+        }
+      ],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json",
+      "lastQualificationAttemptAt": "2026-10-10T16:58:07+00:00"
+    },
+    {
+      "organisation": "First Engineer for Technology Solutions W.L.L.",
+      "domain": "first-eng.com",
+      "country": "Qatar",
+      "sector": "Steel structures and IT infrastructure",
+      "url": "https://www.first-eng.com/",
+      "email": null,
+      "role": "Operations contact is published but email rendered protected; no guessed address",
+      "observation": "Official page describes a Doha steel/IT company and a new-site announcement carrying a 2025 label. Current website demand and unprotected email are unverified.",
+      "retrieval": "full official page",
+      "priority": 7,
+      "fit": "Potential two-division public service-information CMS. IT-provider role, Arabic scope and project status require qualification.",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "headcount": "not_verified",
+      "crmStatus": "unknown_system",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_cleared",
+      "countryRulesCheckedAt": "2026-10-09T13:12:16.373080+00:00",
+      "outreachDecision": "research_only_reverification_or_permission",
+      "confidence": "Medium for published project signal; low for buying intent and recipient eligibility.",
+      "sendEligible": false,
+      "projectStatus": "Website work announced; may already have provider. No request for bids or invitation to Nexora established.",
+      "needEvidence": [
+        {
+          "url": "https://www.first-eng.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T07:35:00+00:00",
+          "observation": "Official page describes a Doha steel/IT company and a new-site announcement carrying a 2025 label. Current website demand and unprotected email are unverified.",
+          "retrieval": "full official page",
+          "evidenceType": "official_website_project_signal_not_vendor_request"
+        }
+      ],
+      "capabilityFit": "Potential two-division public service-information CMS. IT-provider role, Arabic scope and project status require qualification.",
+      "unsupportedRequirements": [
+        "No verified requested scope, budget or buying decision.",
+        "No promise of Arabic localisation, ecommerce, booking, RFQ automation or third-party integration."
+      ],
+      "administratorContact": {
+        "email": null,
+        "role": "Operations contact is published but email rendered protected; no guessed address",
+        "source": "https://www.first-eng.com/"
+      },
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "history": [],
+      "crmClassificationAppliesTo": "crm_first_system_only",
+      "rulesReviewedAt": "2026-10-10T07:37:08.450158+00:00",
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/PRIVATE-BUSINESS-SCREENING.json"
+    },
+    {
+      "organisation": "Embassy of India, Abu Dhabi",
+      "country": "United Arab Emirates",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://www.indembassyuae.gov.in/section/tenders/",
+          "sourceDate": "2026-04-21",
+          "checkedAt": "2026-10-10T07:47:51+00:00",
+          "observation": "February website tender followed by April website-management award notice. October listings concern other procurement. No matching current website invitation established."
+        }
+      ],
+      "capabilityFit": "Public website/CMS potentially related; no current matching request. Tender-specific requirements not assessed because project already awarded.",
+      "unsupportedRequirements": [
+        "Tender requirements not reviewed"
+      ],
+      "crmStatus": "unknown_system",
+      "confidence": "high_for_awarded_project_exclusion",
+      "outreachDecision": "exclude_awarded_project",
+      "consentStatus": "no_current_project_invitation",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_established_for_new_email",
+      "countryRulesCheckedAt": "2026-10-10T07:47:51+00:00",
+      "countryRulesCheckScope": "Persisted UAE gate read; no fresh recipient-specific clearance.",
+      "email": null,
+      "sendEligible": false,
+      "history": []
+    },
+    {
+      "organisation": "Al Naeem Education Association (جمعية النعيم للتعليم)",
+      "country": "Saudi Arabia",
+      "domain": "alnaeem.org.sa",
+      "market": "Middle East",
+      "offerType": [
+        "website_cms",
+        "portal"
+      ],
+      "needEvidence": [
+        {
+          "url": "https://www.alnaeem.org.sa/",
+          "sourceDate": "2026-08-10",
+          "checkedAt": "2026-10-10T16:53:18+00:00",
+          "observation": "Jeddah education association announced website development; live site credits Afaq IT, and shows accounts, donations and volunteer services. No open supplier request found."
+        }
+      ],
+      "capabilityFit": "General public content and bounded profile/information pages overlap. No established current buying need; essential donation and volunteer flows cannot be assumed supported.",
+      "unsupportedRequirements": [
+        "Arabic localisation not verified",
+        "Local donation payments not verified",
+        "Arbitrary volunteer/service workflows not verified"
+      ],
+      "crmStatus": "unknown_system",
+      "existingSystemEvidence": [
+        {
+          "url": "https://www.alnaeem.org.sa/",
+          "checkedAt": "2026-10-10T16:53:18+00:00",
+          "observation": "Published website credits Afaq IT. This is existing website-provider evidence, not proof of a CRM or association-management system."
+        }
+      ],
+      "confidence": "high_for_existing_website_provider; unknown_for_CRM_and_buying_need",
+      "outreachDecision": "research_only_existing_website_provider_no_current_request",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "outreachLegalBasis": "not_established_for_new_email",
+      "countryRulesCheckedAt": "2026-10-10T16:53:18+00:00",
+      "countryRulesCheckScope": "Read persisted Saudi consent gate; no new recipient-specific legal clearance.",
+      "email": null,
+      "contactVerification": "Published email masked; no guessed address or form submission.",
+      "sendEligible": false,
+      "history": []
+    }
+  ],
+  "qualificationRuns": [
+    {
+      "checkedAt": "2026-10-09T13:12:16.373080+00:00",
+      "date": "2026-10-09",
+      "researchedCount": 5,
+      "eligibleCount": 0,
+      "sentCount": 0
+    },
+    {
+      "checkedAt": "2026-10-09T13:57:29.059159+00:00",
+      "utcHour": "2026-10-09T13:00:00+00:00",
+      "policyVersion": 4,
+      "offerTypes": [
+        "website_cms"
+      ],
+      "requalifiedCount": 2,
+      "sendEligible": 0,
+      "heldDrafts": 2,
+      "sentCount": 0,
+      "report": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/STATUS.md"
+    },
+    {
+      "checkedAt": "2026-10-10T06:45:24.370972+00:00",
+      "utcHour": "2026-10-10T06:00:00+00:00",
+      "policyVersion": 4,
+      "offerTypes": [
+        "website_cms",
+        "portal",
+        "crm",
+        "membership"
+      ],
+      "requalifiedCount": 5,
+      "newResearchRecords": 3,
+      "sendEligible": 0,
+      "heldDrafts": 2,
+      "sentCount": 0,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/06-utc/STATUS.md"
+    },
+    {
+      "checkedAt": "2026-10-10T07:37:08.450158+00:00",
+      "utcHour": "2026-10-10T07:00:00+00:00",
+      "manualUserAuthorised": true,
+      "instruction": "Broaden smaller private-business research",
+      "newResearchRecords": 9,
+      "screenedCount": 13,
+      "heldDrafts": 3,
+      "sendEligible": 0,
+      "sentCount": 0,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/STATUS.md"
+    },
+    {
+      "checkedAt": "2026-10-10T07:47:51+00:00",
+      "attemptType": "heartbeat",
+      "utcHour": "2026-10-10T07:00:00+00:00",
+      "reviewedExistingCount": 17,
+      "newQualifiedCount": 0,
+      "excludedOfficialProjectCount": 1,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/heartbeat-074230/SOURCE-NOTES.json",
+      "note": "Existing held decisions unchanged. No fresh revalidation of every old source claimed."
+    },
+    {
+      "checkedAt": "2026-10-10T16:53:18+00:00",
+      "utcHour": "2026-10-10T08:00:00+00:00",
+      "requalifiedCount": 3,
+      "newResearchRecords": 1,
+      "sendEligible": 0,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/08-utc/SOURCE-NOTES.json"
+    },
+    {
+      "checkedAt": "2026-10-10T16:58:07+00:00",
+      "utcHour": "2026-10-10T16:00:00+00:00",
+      "reviewAttemptCount": 3,
+      "requalifiedCount": 2,
+      "sourceFetchIncompleteCount": 1,
+      "newResearchRecords": 0,
+      "sendEligible": 0,
+      "report": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/SOURCE-NOTES.json"
+    }
+  ],
+  "limitations": "Website announcements establish project signals only; provider appointment, buying intent, actual company size and lawful contact remain unverified. CRM is informational for website/portal. Source retrieval failures and identity concerns are recorded.",
+  "policyHistory": [
+    {
+      "at": "2026-10-09T13:18:36.328625+00:00",
+      "correction": "Membership is one module; existing/unknown CRM does not exclude website/portal offers. Initial records still held pending need/capability and country/contact requalification."
+    }
+  ]
+}

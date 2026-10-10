@@ -23,7 +23,10 @@
         "LocalDebug",
         "-p:DebugSymbols=true",
         "-p:DebugType=portable",
-        "-p:Optimize=false"
+        "-p:Optimize=false",
+        "-m:1",
+        "-nr:false",
+        "-p:UseSharedCompilation=false"
       ],
       "problemMatcher": "$msCompile",
       "group": {

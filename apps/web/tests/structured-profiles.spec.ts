@@ -1,13 +1,14 @@
+import { submitLogin, retryLogin } from "./browser-login";
 import { test, expect } from "@playwright/test";
 import { randomBytes } from "node:crypto";
 
 test("CRM name and company fields are shared with the scoped member portal", async ({ page, browser }) => {
-  const staff = await browser.newContext();
+  const staff = await browser.newContext({ baseURL: test.info().project.use.baseURL });
   try {
     const request = staff.request;
     async function send(path: string, data: unknown, method = "POST") {
       const csrf = await (await request.get("/api/v1/auth/csrf")).json();
-      const response = await request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": csrf.token } });
+      const response = await retryLogin(() => request.fetch(path, { method, data, headers: { "X-CSRF-TOKEN": csrf.token } }), path.endsWith("/login"));
       expect(response.ok(), await response.text()).toBeTruthy();
       return response.status() === 204 ? null : response.json();
     }
@@ -24,11 +25,11 @@ test("CRM name and company fields are shared with the scoped member portal", asy
     await staffPage.getByLabel("First name", { exact: true }).fill("Alex");
     await staffPage.getByLabel("Last name", { exact: true }).fill("Smith");
     await staffPage.getByLabel("Post-nominal letters", { exact: true }).fill("PhD");
-    await staffPage.getByRole("button", { name: "Save name details", exact: true }).click();
+    await staffPage.getByRole("button", { name: "Save contact details", exact: true }).click();
     await expect.poll(async () => (await (await request.get(`/api/v1/crm/records/${contact.id}`)).json()).contactDetails?.firstName).toBe("Alex");
     await staffPage.reload();
     await expect(staffPage.getByLabel("First name", { exact: true })).toHaveValue("Alex");
-    await expect(staffPage.getByRole("heading", { name: "Legacy display name", exact: true })).toBeVisible();
+    await expect(staffPage.getByRole("heading", { name: "Alex Smith", exact: true })).toBeVisible();
 
     await staffPage.goto(`/relationships/accounts?search=${encodeURIComponent(account.name)}`);
     await staffPage.getByRole("button", { name: `Edit ${account.name}`, exact: true }).click();
@@ -40,9 +41,11 @@ test("CRM name and company fields are shared with the scoped member portal", asy
     await send(`/api/v1/crm/records/${account.id}/communications`, { kind: "website", value: "https://example.test", consent: "unknown" });
     await send(`/api/v1/crm/accounts/${account.id}/contacts`, { contactId: contact.id, startDate: "2026-01-01", department: "Finance", workClassification: "unknown", roles: [] });
     await staffPage.reload();
+    await staffPage.getByRole("button", { name: "Contacts", exact: true }).click();
     await expect(staffPage.getByText("Department: Finance", { exact: false })).toBeVisible();
     await staffPage.goto(`/relationships/accounts?search=${encodeURIComponent(account.name)}`);
     await staffPage.getByRole("button", { name: `Edit ${account.name}`, exact: true }).click();
+    await staffPage.getByRole("button", { name: "Contacts", exact: true }).click();
     await staffPage.getByRole("button", { name: "Edit association", exact: true }).click();
     const associationForm = staffPage.locator("form").filter({ has: staffPage.getByRole("button", { name: "Save", exact: true }) });
     await associationForm.getByLabel("Department", { exact: true }).fill("Operations");
@@ -56,7 +59,7 @@ test("CRM name and company fields are shared with the scoped member portal", asy
     await page.goto("/portal/profile");
     await page.getByLabel("Email", { exact: true }).fill("profile.member@nexora.test");
     await page.getByLabel("Password", { exact: true }).fill(password);
-    await page.getByRole("button", { name: "Sign in", exact: true }).click();
+    await submitLogin(page, "portal");
     await expect(page.getByLabel("First name", { exact: true })).toHaveValue("Alex");
     await expect(page.getByLabel("Display name", { exact: true })).toHaveValue("Legacy display name");
     await page.getByLabel("Middle name", { exact: true }).fill("Morgan");

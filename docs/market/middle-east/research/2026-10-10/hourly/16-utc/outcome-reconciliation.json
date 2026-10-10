@@ -1,0 +1,11 @@
+{
+  "checkedAt": "2026-10-10T16:58:07+00:00",
+  "complete": true,
+  "pending": [],
+  "externalLedgerCount": 52,
+  "sentTotal": 53,
+  "missingLedgerIds": [],
+  "currentUtcHourIds": [],
+  "localDateIds": [],
+  "sendAttempted": false
+}

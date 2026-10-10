@@ -7,6 +7,7 @@ namespace Nexora.Modules.Workflow;
 public sealed class WorkflowDbContext(DbContextOptions<WorkflowDbContext> options,IRequestIdentity identity):DbContext(options)
 {
  private Guid? TenantId=>identity.TenantId;
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { base.OnConfiguring(optionsBuilder); optionsBuilder.AddInterceptors(new DataAuditInterceptor(()=>TenantId)); }
  protected override void OnModelCreating(ModelBuilder b)
  {
   b.HasDefaultSchema("workflow");Table<WorkflowDefinition>(b,"Definitions");Table<WorkflowVersion>(b,"Versions");Table<WorkflowRun>(b,"Runs");Table<WorkflowStep>(b,"Steps");Table<WorkflowAudit>(b,"Audit");Table<WorkflowToken>(b,"Tokens");Table<WorkflowSchedule>(b,"Schedules");Table<WorkflowConnector>(b,"Connectors");Table<WorkflowEmailTemplate>(b,"EmailTemplates");Table<WorkflowDelivery>(b,"Deliveries");Table<WorkflowWebhook>(b,"Webhooks");
@@ -38,7 +39,8 @@ public sealed class WorkflowDbContext(DbContextOptions<WorkflowDbContext> option
   b.Entity<WorkflowWebhook>().Property(x=>x.ProtectedSecret).HasMaxLength(16000);b.Entity<WorkflowWebhook>().HasOne<WorkflowDefinition>().WithMany().HasForeignKey(x=>new{x.TenantId,x.DefinitionId}).HasPrincipalKey(x=>new{x.TenantId,x.Id}).OnDelete(DeleteBehavior.Restrict);
   var utc=new ValueConverter<DateTime,DateTime>(value=>value,value=>DateTime.SpecifyKind(value,DateTimeKind.Utc));
   foreach(var entity in b.Model.GetEntityTypes())foreach(var property in entity.GetProperties().Where(p=>p.ClrType==typeof(DateTime)||p.ClrType==typeof(DateTime?)))property.SetValueConverter(utc);
- }
+     DataAuditModel.Configure(b,()=>TenantId);
+    }
  private void Table<T>(ModelBuilder b,string name) where T:TenantEntity
  {
   var e=b.Entity<T>();e.HasBaseType((Type?)null);e.ToTable(name);e.HasKey(x=>x.Id);e.HasAlternateKey(x=>new{x.TenantId,x.Id});e.HasQueryFilter(x=>x.TenantId==TenantId);e.Property(x=>x.Version).IsConcurrencyToken();

@@ -9,12 +9,17 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const id = randomUUID().replaceAll("-", "");
 const database = `NexoraWebsiteTest_${id}`;
 const artifacts = path.join(root, "artifacts", `website-${id}`);
-const webRoot = path.join(artifacts, "web");
+// Preserve the repository layout: frontend imports also use the versioned shared catalogue.
+const webRoot = path.join(artifacts, "apps", "web");
 const apiPort = 5095, webPort = 3015;
 const production = process.argv.includes("--production");
 const portal = process.argv.includes("--portal");
 const crm = process.argv.includes("--crm");
 const all = process.argv.includes("--all");
+const requestedTests = process.argv.filter(arg => arg.startsWith("--test=")).map(arg => arg.slice(7));
+for (const file of requestedTests) {
+  if (!/^[a-z0-9][a-z0-9-]*\.spec\.ts$/.test(file) || !fs.existsSync(path.join(root, "apps/web/tests", file))) throw new Error(`Unknown browser test file: ${file}`);
+}
 const configuration = portal ? "PortalTest" : "Website";
 // Override the server only; the runner always owns a uniquely named disposable catalog.
 const sqlServer = process.env.NEXORA_TEST_SQLSERVER_INSTANCE ?? "(localdb)\\MSSQLLocalDB";
@@ -56,19 +61,20 @@ let api, web;
 try {
   await free(apiPort); await free(webPort);
   fs.mkdirSync(webRoot, { recursive: true });
+  fs.cpSync(path.join(root, "shared"), path.join(artifacts, "shared"), { recursive: true });
   for (const name of ["src", "public", "tests", "package.json", "package-lock.json", "tsconfig.json", "next-env.d.ts", "next.config.ts", "postcss.config.mjs", "playwright.config.ts"]) {
     const source = path.join(root, "apps/web", name);
     if (fs.existsSync(source)) fs.cpSync(source, path.join(webRoot, name), { recursive: true });
   }
   fs.symlinkSync(path.join(root, "apps/web/node_modules"), path.join(webRoot, "node_modules"), process.platform === "win32" ? "junction" : "dir");
   await run("dotnet", ["tool", "restore"]);
-  await run("dotnet", ["build", "backend/src/Nexora.Api", "--configuration", configuration]);
+  await run("dotnet", ["build", "backend/src/Nexora.Api", "--configuration", configuration, "-m:1", "-nr:false", "-p:UseSharedCompilation=false"]);
   api = start("dotnet", [`bin/${configuration}/net10.0/Nexora.Api.dll`, "--urls", env.NEXORA_API_URL], path.join(root, "backend/src/Nexora.Api"), "api.log");
   await ready(`${env.NEXORA_API_URL}/health/ready`, api);
   if (production) await run(process.execPath, ["node_modules/next/dist/bin/next", "build", "--webpack"], webRoot);
   web = start(process.execPath, ["node_modules/next/dist/bin/next", ...(production ? ["start"] : ["dev", "--webpack"]), "--port", String(webPort)], webRoot, "web.log");
   await ready(`${env.NEXORA_BROWSER_URL}/login`, web);
-  await run(process.execPath, ["node_modules/@playwright/test/cli.js", "test", ...(all ? ["crm.spec.ts", "portal.spec.ts", "portal-configuration.spec.ts", "website.spec.ts"] : crm ? ["crm.spec.ts"] : portal ? ["portal.spec.ts", "portal-configuration.spec.ts"] : ["website.spec.ts"]), "--output", path.join(artifacts, "results")], webRoot);
+  await run(process.execPath, ["node_modules/@playwright/test/cli.js", "test", ...(requestedTests.length ? requestedTests : all ? [] : crm ? ["crm.spec.ts", "crm-saved-views.spec.ts", "crm-association-history.spec.ts", "structured-profiles.spec.ts", "crm-dual-access.spec.ts"] : portal ? ["portal.spec.ts", "portal-configuration.spec.ts"] : ["website.spec.ts"]), "--output", path.join(artifacts, "results")], webRoot);
 } catch (error) { console.error(error.message); process.exitCode = 1; }
 finally {
   for (const child of [web, api]) if (child && child.exitCode === null) {

@@ -31,6 +31,10 @@
       "name": "Nexora internal CRM web",
       "type": "node",
       "request": "launch",
+      "resolveSourceMapLocations": [
+        "**",
+        "!**/node_modules/**"
+      ],
       "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
       "program": "${workspaceFolder}/apps/web/node_modules/next/dist/bin/next",
       "cwd": "${workspaceFolder}/apps/web",
@@ -62,6 +66,10 @@
       "name": "Nexora internal Portal web",
       "type": "node",
       "request": "launch",
+      "resolveSourceMapLocations": [
+        "**",
+        "!**/node_modules/**"
+      ],
       "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
       "program": "${workspaceFolder}/apps/web/node_modules/next/dist/bin/next",
       "cwd": "${workspaceFolder}/apps/web",
@@ -93,6 +101,10 @@
       "name": "Nexora internal CMS web",
       "type": "node",
       "request": "launch",
+      "resolveSourceMapLocations": [
+        "**",
+        "!**/node_modules/**"
+      ],
       "runtimeExecutable": "C:/Users/ramish/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
       "program": "${workspaceFolder}/apps/web/node_modules/next/dist/bin/next",
       "cwd": "${workspaceFolder}/apps/web",
@@ -144,6 +156,10 @@
       "name": "Nexora CRM Edge",
       "type": "msedge",
       "request": "launch",
+      "resolveSourceMapLocations": [
+        "**",
+        "!**/node_modules/**"
+      ],
       "url": "http://localhost:3017/relationships/contacts",
       "webRoot": "${workspaceFolder}/apps/web",
       "userDataDir": "${workspaceFolder}/artifacts/edge-crm",
@@ -155,6 +171,10 @@
       "name": "Nexora Portal Edge",
       "type": "msedge",
       "request": "launch",
+      "resolveSourceMapLocations": [
+        "**",
+        "!**/node_modules/**"
+      ],
       "url": "http://localhost:3018/portal",
       "webRoot": "${workspaceFolder}/apps/web",
       "userDataDir": "${workspaceFolder}/artifacts/edge-portal",
@@ -166,6 +186,10 @@
       "name": "Nexora CMS Edge",
       "type": "msedge",
       "request": "launch",
+      "resolveSourceMapLocations": [
+        "**",
+        "!**/node_modules/**"
+      ],
       "url": "http://localhost:3019/site/26b20458-a580-40a8-8345-369ad954a54d/home",
       "webRoot": "${workspaceFolder}/apps/web",
       "userDataDir": "${workspaceFolder}/artifacts/edge-cms",

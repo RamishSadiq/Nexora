@@ -9,6 +9,7 @@ public sealed class MembershipPolicy : TenantEntity
     public int YearEndDay { get; set; } = 31;
     public bool Prorate { get; set; }
     public decimal ProcessingFee { get; set; }
+    public decimal JoiningFee { get; set; }
     public decimal Credit { get; set; }
     public bool RequirePayment { get; set; }
     public bool RequireCompliance { get; set; }

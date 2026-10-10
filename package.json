@@ -8,7 +8,8 @@
     "lint:web": "npm --prefix apps/web run lint",
     "test:backend": "dotnet test backend/Nexora.slnx",
     "build:backend": "dotnet build backend/Nexora.slnx --configuration Release",
-    "test:automations": "node scripts/Test-Automations.mjs"
+    "test:automations": "node scripts/Test-Automations.mjs",
+    "verify:automation-catalog": "node scripts/Verify-AutomationCatalog.mjs"
   },
   "engines": {
     "node": ">=24.0.0"

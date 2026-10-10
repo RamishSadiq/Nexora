@@ -13,7 +13,7 @@ export function useListingColumns(labels: string[]) {
   return { controls, show: (label: string) => !hidden.includes(label) };
 }
 
-const searchable = ["name", "description", "title", "contactName", "accountName", "customerName", "number", "reference", "sku", "message", "category", "status", "kind", "venue", "priority", "slug"];
+const searchable = ["name", "displayName", "email", "subject", "purpose", "description", "title", "contactName", "accountName", "customerName", "number", "reference", "sku", "message", "category", "status", "kind", "venue", "priority", "slug"];
 function recordStatus(row: Record<string, unknown>) {
   if (typeof row.status === "string") return row.status;
   if (typeof row.isActive === "boolean") return row.isActive ? "active" : "inactive";
@@ -33,5 +33,5 @@ export function useEntityListing({ records, actions, currentUserId, columns = ["
     return (!status || recordStatus(row) === status) && (!mine || row.assigneeUserId === currentUserId || row.ownerUserId === currentUserId) && (!search || searchable.some(key => String(row[key] ?? "").toLocaleLowerCase().includes(search.toLocaleLowerCase())));
   }
   const toolbar = <FilterViewToolbar search={<ListingSearch value={draft} onChange={setDraft} onSearch={() => setSearch(draft.trim())} />} actions={actions} onAllRecords={() => { setDraft(""); setSearch(""); setStatus(""); setMine(false); }} onMyRecords={currentUserId ? () => { setMine(true); setStatus(""); setSearch(""); setDraft(""); } : undefined} filters={statuses.length ? <label className="block text-sm font-medium">Status<select value={status} onChange={event => setStatus(event.target.value)} className="mt-1 w-full rounded-lg border border-slate-300 bg-white p-2"><option value="">All statuses</option>{statuses.map(value => <option key={value}>{value}</option>)}</select></label> : <p className="text-sm text-slate-600">No additional filters for this listing.</p>} columns={selection.controls} />;
-  return { toolbar, matches, show: selection.show };
+  return { toolbar, matches, show: selection.show, filterKey: JSON.stringify([search,status,mine]) };
 }

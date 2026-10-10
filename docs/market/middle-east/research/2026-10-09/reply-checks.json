@@ -1,0 +1,70 @@
+{
+  "complete": true,
+  "checkedAt": "2026-10-09 13:04:20 UTC",
+  "searches": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com Nexora",
+      "resultCount": 3,
+      "nextPageToken": null,
+      "receivedMessageIds": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745",
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "resultCount": 1,
+      "nextPageToken": null,
+      "receivedMessageIds": [
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "resultCount": 0,
+      "nextPageToken": null,
+      "receivedMessageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org}",
+      "resultCount": 2,
+      "nextPageToken": null,
+      "receivedMessageIds": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mailer-daemon from:postmaster}",
+      "resultCount": 0,
+      "nextPageToken": null,
+      "receivedMessageIds": []
+    },
+    {
+      "query": "in:sent Nexora after:2026/10/07",
+      "resultCount": 53,
+      "nextPageToken": null
+    }
+  ],
+  "messages": [
+    {
+      "id": "1a120804f5fbe7f3",
+      "body": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact Kari Johnson at UTS at kari@uts.com.\r\n",
+      "classification": "automatic_out_of_office"
+    },
+    {
+      "id": "1a11f79e78082745",
+      "body": "I have retired. For questions/information please contact the colleagues below:\r\n\r\nMembership contact Stephanie: sgibbs@mpif.org\r\nStandards contact Wiley: wabner@mpif.org\r\nInternational Journal of Powder Metallurgy contact Debby: dstab@mpif.org\r\nDesign Excellence Awards contact Debby: dstab@mpif.org\r\nAll Other Awards: contact Turner: tabbott@mpif.org\r\nStatistics contact Turner: tabbott@mpif.org\r\n\r\nDora Schember\r\n",
+      "classification": "automatic_retirement"
+    },
+    {
+      "id": "1a11bf33395d33a1",
+      "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n",
+      "classification": "decline"
+    }
+  ],
+  "positiveResponses": 0,
+  "bounces": 0,
+  "newSends": 0
+}

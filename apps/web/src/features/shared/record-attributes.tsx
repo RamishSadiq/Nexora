@@ -2,13 +2,15 @@
 import { useEffect, useState } from "react";
 import { AttributeFields } from "./attribute-fields";
 import { ConfiguredSections } from "./configured-sections";
-import { attributeEntities, entityLabel } from "./attribute-entities";
+import { entityLabel } from "./attribute-entities";
+import { useAttributeEntities } from "./use-attribute-entities";
 import { moduleApi } from "./module-api";
 import { buttonClass, inputClass, primaryClass, formData } from "./module-ui";
 
 export function RecordAttributes({ module, canEdit }: { module: string; canEdit: boolean }) {
-  const types = Object.values(attributeEntities).filter(c => c.api === module).flatMap(c => c.types);
-  const [kind, setKind] = useState(types[0]);
+  const types = useAttributeEntities(module);
+  const [selectedKind, setKind] = useState(types[0]);
+  const kind = types.includes(selectedKind) ? selectedKind : types[0] ?? "";
   const [id, setId] = useState("");
   const [rows, setRows] = useState<{ id: string; name: string }[]>([]);
   const [page, setPage] = useState(1);
@@ -37,12 +39,12 @@ export function RecordAttributes({ module, canEdit }: { module: string; canEdit:
       <button className={buttonClass} disabled={page === 1} onClick={() => { setId(""); setPage(p => p - 1); }}>Previous</button>
       <button className={buttonClass} disabled={rows.length < 50} onClick={() => { setId(""); setPage(p => p + 1); }}>Next</button>
     </div>
-    {id ? <form data-section="Custom fields" key={`${kind}-${id}-${refresh}`} onSubmit={async e => {
+    {id ? <form data-section="General Information" key={`${kind}-${id}-${refresh}`} onSubmit={async e => {
       const values = formData(e); setBusy(true); setNotice("");
       try { await moduleApi(module, `/attributes/${kind}/records/${id}`, "PUT", values); setNotice("Attributes saved."); setRefresh(r => r + 1); }
       catch (e) { setNotice(e instanceof Error ? e.message : "Unable to save."); }
       finally { setBusy(false); }
-    }}><fieldset className="grid gap-4 sm:grid-cols-2" disabled={!canEdit || busy}><AttributeFields module={module} kind={kind} recordId={id} />{canEdit && <button className={primaryClass}>Save attributes</button>}</fieldset></form> : <p data-section="Custom fields">Choose a record to edit its custom fields.</p>}
+    }}><fieldset className="grid gap-4 sm:grid-cols-2" disabled={!canEdit || busy}><AttributeFields module={module} kind={kind} recordId={id} />{canEdit && <button className={primaryClass}>Save attributes</button>}</fieldset></form> : <p data-section="General Information">Choose a record to edit its custom fields.</p>}
     </ConfiguredSections>
   </section>;
 }

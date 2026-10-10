@@ -8,5 +8,5 @@ export default async function Page({ params }: { params: Promise<{ section?: str
   if (section && !["orders", "invoices", "receipts", "catalogue"].includes(section)) notFound();
   if (!session.permissions.includes("finance.read")) return <main className="p-8">Ask your administrator for access.</main>;
   if (!section) redirect("/finance/orders");
-  return <FinanceWorkspace permissions={session.permissions} section={section} />;
+  return <FinanceWorkspace key={section} permissions={session.permissions} section={section} />;
 }

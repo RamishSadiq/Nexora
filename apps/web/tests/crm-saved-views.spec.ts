@@ -1,10 +1,11 @@
+import { submitLogin } from "./browser-login";
 import { test, expect, type Page } from "@playwright/test";
 
 async function login(page: Page) {
   await page.goto("/login");
   await page.getByLabel("Work email").fill("admin@nexora.local");
   await page.getByLabel("Password", { exact: true }).fill(process.env.NEXORA_BROWSER_PASSWORD!);
-  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await submitLogin(page);
   await expect(page).not.toHaveURL(/\/login/);
 }
 async function openFilters(page: Page) {
@@ -107,9 +108,9 @@ test("CRM record deep links survive reload and return to the filtered list", asy
   await login(page);
   const record = await write(page, "/records", { kind: "contact", name: `Deep link ${Date.now()}`, status: "prospect" });
   await page.goto(`/relationships/contacts?record=${record.id}&status=prospect`);
-  await expect(page.getByRole("button", { name: "← Back to contacts", exact: true })).toBeVisible();
+  await expect(page.getByRole("button", { name: "Back to listing", exact: true })).toBeVisible();
   await page.reload();
-  await page.getByRole("button", { name: "← Back to contacts", exact: true }).click();
+  await page.getByRole("button", { name: "Back to listing", exact: true }).click();
   await openFilters(page);
   await expect(page.getByRole("combobox", { name: "Status", exact: true })).toHaveValue("prospect");
   await expect(page.getByRole("button", { name: record.name, exact: true })).toBeVisible();

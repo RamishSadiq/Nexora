@@ -1,0 +1,23 @@
+# Membership rejoin history
+
+4 October 2026. Implements CONTACT EV `Re_Join_Date` as an explicit rejoin approval date with predecessor membership links.
+
+Staff application submission accepts optional `previousMembershipId`. A rejoin predecessor must exist in the active tenant, be cancelled or lapsed, have the same entitlement subject and have no existing successor. Personal membership requires the same Contact and no Account. Organisation membership requires the same Account; a different current applicant Contact is permitted after the existing CRM association checks.
+
+Submission and approval both validate the predecessor. Approval also retains the existing active CRM subject checks, application decision/version rules and one-active-membership checks. An application whose predecessor has been reinstated or already used for rejoining cannot be approved. Multiple pending applications can name the predecessor; only one can create a successor. The tenant-scoped unique successor index and active-membership indexes protect competing approvals at persistence.
+
+Approved rejoining creates a new subscription with a new ID, its own quoted rate/term/application, `PreviousMembershipId`, and `RejoinedOn` set to UTC approval date. It also records an append-only `membership.rejoin` receipt with that effective date and decision reason, alongside activation. Approval grants stored active status immediately, including when the requested term start is future; rejoin date is not inferred from that future start.
+
+The predecessor remains unchanged. A known original join date is copied as evidence into the new subscription; an unknown one remains null. It is a snapshot, not a live propagated value. Administrative details, resignation/reinstatement fields and category/band assignments are not inherited automatically. Renewal and reinstatement remain actions on a subscription, rather than new rejoin events. Once a membership has a rejoin successor, renewing or reinstating that predecessor is rejected; the latest membership owns subsequent lifecycle actions.
+
+Rejoin history forms a sequential chain through predecessor links. Once a successor later becomes inactive, it can be selected for another rejoin. An ordinary application with no explicit predecessor does not fabricate a historical rejoin classification. Migration does not guess predecessor links from subject, dates or past receipt reasons.
+
+`GET /api/v1/membership/rejoin-candidates?contactId=...&accountId=...&page=...` requires inherited Membership read access. It returns eligible inactive memberships for that entitlement subject, with product labels and term dates, ordered by creation date descending and ID, 25 per page, pages 1–10000. Staff application UI includes a paged predecessor selector, clears it on subject changes and shows the link in the application review. Membership detail and CRM Contact/Account projections display rejoin date and link to predecessor history. Portal contracts remain unchanged.
+
+Migration `20261004095526_MembershipRejoinLineage` adds nullable predecessor IDs on Applications and Subscriptions, nullable `RejoinedOn`, same-tenant foreign keys with restricted deletion and a filtered unique predecessor index on Subscriptions. Existing rows remain unlinked. No migration was applied to the shared development database by this task; changes remain uncommitted.
+
+[Membership archive behaviour](MEMBERSHIP_ARCHIVE.md) is now implemented. Historical rejoin import, dedicated member types and fee/lapse policies remain separate slices. This implementation records new explicit operational rejoining, rather than reconstructing prior legacy events.
+
+Verification covers active predecessor rejection, ownership matching, changed eligibility at approval, original-date retention, unchanged predecessor values, sequential rejoining, fork rejection, predecessor reinstatement rejection, candidate pagination validation, changed organisation applicant and CRM projection. SQL checks replay the migration, preserve existing values, exercise candidate query translation/projection and reject duplicate successors, tenant-crossing references and deletion of referenced predecessors. Browser appearance remains unverified.
+
+Verification completed: 14 Membership/Portal API checks and an additional AccountContact rejoining regression passed across the initial regression run and the final rejoin rerun. Two isolated SQL tests passed with no skips. TypeScript, focused ESLint, production build and focused diff checks passed. The build retained seven previously observed generated CSS warnings. An initial organisation fixture expected OK for CRM creation; it was corrected to the existing Created response, then rerun successfully.

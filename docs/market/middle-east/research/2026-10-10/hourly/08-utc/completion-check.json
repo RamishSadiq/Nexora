@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-10-10T16:53:18+00:00",
+  "complete": true,
+  "queries": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com}",
+      "emails": [
+        {
+          "id": "1a11bf33395d33a1",
+          "from": "Victoria Cuff victoria@bafsa.org.uk",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "receivedAt": "2026-10-08T14:37:59+00:00"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org}",
+      "emails": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mpif.org from:smihq.org}",
+      "emails": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "from": "Gary McCoy gary@smihq.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "receivedAt": "2026-10-09T11:50:40+00:00"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "from": "Dora Schember dschember@mpif.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "receivedAt": "2026-10-09T07:04:03+00:00"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent Nexora",
+      "emails": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "from": "Gary McCoy gary@smihq.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "receivedAt": "2026-10-09T11:50:40+00:00"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "from": "Dora Schember dschember@mpif.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "receivedAt": "2026-10-09T07:04:03+00:00"
+        },
+        {
+          "id": "1a11bf33395d33a1",
+          "from": "Victoria Cuff victoria@bafsa.org.uk",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "receivedAt": "2026-10-08T14:37:59+00:00"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:\"Undeliverable\" subject:\"Delivery failure\"}",
+      "emails": []
+    },
+    {
+      "query": "in:sent {to:amtc.ae to:ablaqco.com to:foundster.com to:arabiandream.com to:alnaeem.org.sa}",
+      "emails": []
+    }
+  ],
+  "newMessageIds": [],
+  "reserveSentMatches": []
+}

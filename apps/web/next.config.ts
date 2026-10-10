@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
+import path from "node:path";
 
 const nextConfig: NextConfig = {
+  turbopack: { root: path.resolve(__dirname, "../..") },
   distDir: process.env.NEXORA_NEXT_DIST_DIR ?? ".next",
   poweredByHeader: false,
   reactStrictMode: true,

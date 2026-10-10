@@ -32,8 +32,28 @@ if (!$WaitForApi) {
                 throw "Port 5097 belongs to another process (PID $($listener.OwningProcess)); it was not stopped."
             }
         }
+        if ($listeners.Count) {
+            $sourceFiles = Get-ChildItem "$root/backend/src" -Recurse -File | Where-Object {
+                $_.FullName -notmatch '[\\/](bin|obj)[\\/]' -and $_.Extension -in '.cs', '.csproj', '.props', '.targets', '.json'
+            }
+            $latestSource = $sourceFiles | Sort-Object LastWriteTimeUtc -Descending | Select-Object -First 1
+            $ownerIds = @($listeners.OwningProcess | Select-Object -Unique)
+            $recordedApiId = if (Test-Path "$root/artifacts/local-shared-api.pid") { (Get-Content "$root/artifacts/local-shared-api.pid" -Raw).Trim() } else { '' }
+            foreach ($ownerId in $ownerIds) {
+                $owner = Get-CimInstance Win32_Process -Filter "ProcessId=$ownerId"
+                if ($owner -and $latestSource -and $latestSource.LastWriteTimeUtc -gt $owner.CreationDate.ToUniversalTime()) {
+                    if ($recordedApiId -ne [string]$ownerId -or $owner.CommandLine -notmatch 'bin[/\\]LocalDebug[/\\]net10\.0[/\\]Nexora\.Api\.dll') {
+                        throw "The API on 5097 predates backend changes and was started outside this preparation task. Stop that API debug session, then launch CRM, Portal or CMS again."
+                    }
+                    Write-Output 'Backend changes detected. Rebuilding the shared local API.'
+                    Stop-Process -Id $ownerId
+                    Wait-Process -Id $ownerId -Timeout 15 -ErrorAction SilentlyContinue
+                    $listeners = @()
+                }
+            }
+        }
         if (!$listeners.Count) {
-            dotnet build "$root/backend/src/Nexora.Api/Nexora.Api.csproj" --configuration LocalDebug -p:DebugSymbols=true -p:DebugType=portable -p:Optimize=false
+            dotnet build "$root/backend/src/Nexora.Api/Nexora.Api.csproj" --configuration LocalDebug -m:1 -nr:false -p:UseSharedCompilation=false -p:DebugSymbols=true -p:DebugType=portable -p:Optimize=false
             if ($LASTEXITCODE -ne 0) { throw 'API build failed.' }
             $config = (Get-Content "$root/.vscode/launch.json" -Raw | ConvertFrom-Json).configurations | Where-Object name -eq 'Nexora shared API'
             foreach ($property in $config.env.PSObject.Properties) { [Environment]::SetEnvironmentVariable($property.Name, $property.Value, 'Process') }

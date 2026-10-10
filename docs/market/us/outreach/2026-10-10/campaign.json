@@ -1,0 +1,188 @@
+{
+  "campaign": "Nexora user-directed Middle East proposal batch",
+  "createdAt": "2026-10-10 17:11:04 UTC",
+  "localDate": "2026-10-10",
+  "dailyCampaign": true,
+  "manualStart": true,
+  "manualBatchAuthorisation": {
+    "instruction": "send them",
+    "scope": "Three revised pitches explicitly requested in the current chat",
+    "oneTimeHourlyLimitException": true,
+    "automatedCadenceUnchanged": true
+  },
+  "sender": "ramishqureshi99@gmail.com",
+  "postalAddress": "EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.",
+  "messages": [
+    {
+      "organisation": "AMTC Foodservice Equipment LLC",
+      "domain": "amtc.ae",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "to": "info@amtc.ae",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "cc": [],
+      "bcc": [],
+      "subject": "Staff-managed website content for AMTC",
+      "offerType": "website_cms",
+      "text": "Hello AMTC Foodservice Equipment LLC team,\n\nI saw AMTC's announcement that a new website is in progress.\n\nI'm Ramish, founder of Nexora. Its website CMS lets staff manage branded pages, navigation and published content. A focused evaluation could use three sample service and equipment-information pages and one editor to check draft, preview and publication before agreeing a wider website scope.\n\nI've attached a 90-second narrated introduction to Nexora's wider membership platform. A website-editor walkthrough would focus on your content needs.\n\nWould a 15-minute website-editor walkthrough be useful for your service and equipment-information pages?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div><p>Hello AMTC Foodservice Equipment LLC team,</p><p>I saw AMTC&#x27;s announcement that a new website is in progress.</p><p>I&#x27;m Ramish, founder of Nexora. Its website CMS lets staff manage branded pages, navigation and published content. A focused evaluation could use three sample service and equipment-information pages and one editor to check draft, preview and publication before agreeing a wider website scope.</p><p>I&#x27;ve attached a 90-second narrated introduction to Nexora&#x27;s wider membership platform. A website-editor walkthrough would focus on your content needs.</p><p>Would a 15-minute website-editor walkthrough be useful for your service and equipment-information pages?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#x27;t contact you again.</p></div>",
+      "sourceUrl": "https://amtc.ae/",
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "status": "sent",
+      "sendEligible": true,
+      "holds": [],
+      "attachment": {
+        "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+        "filename": "nexora-product-demo-male.mp4",
+        "mimeType": "video/mp4",
+        "sizeBytes": 1945313,
+        "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+      },
+      "copyRevisedAt": "2026-10-10T17:06:36.531505+00:00",
+      "originalDraftSource": "docs\\market\\middle-east\\research\\2026-10-10\\hourly\\07-utc\\held-drafts.json",
+      "copyVersion": 2,
+      "outreachStage": "initial",
+      "consentStatus": "not_established",
+      "outreachLegalBasis": "not_independently_cleared",
+      "sendDecision": "User expressly directed this three-recipient cold-proposal batch after discussing unresolved contact clearance; do not represent this as recipient consent",
+      "holdsAtPreparation": [
+        "New website announcement may mean a provider is already appointed; current buying need unconfirmed.",
+        "Published enquiries contact is not a verified website buyer.",
+        "No documented recipient-specific lawful proposal route/permission."
+      ],
+      "events": [
+        {
+          "at": "2026-10-10 17:11:04 UTC",
+          "status": "ready",
+          "reason": "Explicit current user instruction to send the three revised pitches"
+        },
+        {
+          "at": "2026-10-10T17:11:27.846368+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted user-directed proposal with narrated MP4",
+          "messageId": "1a126cc99bcdbf2d"
+        }
+      ],
+      "updatedAt": "2026-10-10T17:11:27.846368+00:00",
+      "messageId": "1a126cc99bcdbf2d",
+      "threadId": "1a126cc99bcdbf2d",
+      "sentAt": "2026-10-10T17:11:27.846368+00:00",
+      "statusReason": "Gmail accepted user-directed proposal with narrated MP4"
+    },
+    {
+      "organisation": "Ablaq Architectural Design Studio",
+      "domain": "ablaqco.com",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "to": "info@ablaqco.com",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "cc": [],
+      "bcc": [],
+      "subject": "Staff-managed website content for Ablaq",
+      "offerType": "website_cms",
+      "text": "Hello Ablaq Architectural Design Studio team,\n\nI saw Ablaq's announcement that a new website is coming for the studio.\n\nI'm Ramish, founder of Nexora. Its website CMS lets staff manage branded pages, navigation and published content. A focused evaluation could use three sample studio and project-information pages and one editor to check draft, preview and publication before agreeing a wider website scope.\n\nI've attached a 90-second narrated introduction to Nexora's wider membership platform. A website-editor walkthrough would focus on your content needs.\n\nWould a 15-minute website-editor walkthrough be useful for your studio and project-information pages?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div><p>Hello Ablaq Architectural Design Studio team,</p><p>I saw Ablaq&#x27;s announcement that a new website is coming for the studio.</p><p>I&#x27;m Ramish, founder of Nexora. Its website CMS lets staff manage branded pages, navigation and published content. A focused evaluation could use three sample studio and project-information pages and one editor to check draft, preview and publication before agreeing a wider website scope.</p><p>I&#x27;ve attached a 90-second narrated introduction to Nexora&#x27;s wider membership platform. A website-editor walkthrough would focus on your content needs.</p><p>Would a 15-minute website-editor walkthrough be useful for your studio and project-information pages?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#x27;t contact you again.</p></div>",
+      "sourceUrl": "https://www.ablaqco.com/",
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "status": "sent",
+      "sendEligible": true,
+      "holds": [],
+      "attachment": {
+        "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+        "filename": "nexora-product-demo-male.mp4",
+        "mimeType": "video/mp4",
+        "sizeBytes": 1945313,
+        "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+      },
+      "copyRevisedAt": "2026-10-10T17:06:36.531505+00:00",
+      "originalDraftSource": "docs\\market\\middle-east\\research\\2026-10-10\\hourly\\07-utc\\held-drafts.json",
+      "copyVersion": 2,
+      "outreachStage": "initial",
+      "consentStatus": "not_established",
+      "outreachLegalBasis": "not_independently_cleared",
+      "sendDecision": "User expressly directed this three-recipient cold-proposal batch after discussing unresolved contact clearance; do not represent this as recipient consent",
+      "holdsAtPreparation": [
+        "New website announcement may mean a provider is already appointed; current buying need unconfirmed.",
+        "Published enquiries contact is not a verified website buyer.",
+        "No documented recipient-specific lawful proposal route/permission."
+      ],
+      "events": [
+        {
+          "at": "2026-10-10 17:11:04 UTC",
+          "status": "ready",
+          "reason": "Explicit current user instruction to send the three revised pitches"
+        },
+        {
+          "at": "2026-10-10T17:12:01.643654+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted user-directed proposal with narrated MP4",
+          "messageId": "1a126cd3439e26db"
+        }
+      ],
+      "updatedAt": "2026-10-10T17:12:01.643654+00:00",
+      "messageId": "1a126cd3439e26db",
+      "threadId": "1a126cd3439e26db",
+      "sentAt": "2026-10-10T17:12:01.643654+00:00",
+      "statusReason": "Gmail accepted user-directed proposal with narrated MP4"
+    },
+    {
+      "organisation": "The Arabian Dream / Foundster Corporate Services FZCO",
+      "domain": "arabiandream.com",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "to": "support@foundster.com",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "cc": [],
+      "bcc": [],
+      "subject": "Staff-managed website content for The Arabian Dream",
+      "offerType": "website_cms",
+      "text": "Hello The Arabian Dream team,\n\nI saw The Arabian Dream's announcement that a new website is coming.\n\nI'm Ramish, founder of Nexora. Its website CMS lets staff manage branded pages, navigation and published content. A focused evaluation could use three sample relocation and company-formation service pages and one editor to check draft, preview and publication before agreeing a wider website scope.\n\nI've attached a 90-second narrated introduction to Nexora's wider membership platform. A website-editor walkthrough would focus on your content needs.\n\nWould a 15-minute website-editor walkthrough be useful for your relocation and company-formation service pages?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+      "html": "<div><p>Hello The Arabian Dream team,</p><p>I saw The Arabian Dream&#x27;s announcement that a new website is coming.</p><p>I&#x27;m Ramish, founder of Nexora. Its website CMS lets staff manage branded pages, navigation and published content. A focused evaluation could use three sample relocation and company-formation service pages and one editor to check draft, preview and publication before agreeing a wider website scope.</p><p>I&#x27;ve attached a 90-second narrated introduction to Nexora&#x27;s wider membership platform. A website-editor walkthrough would focus on your content needs.</p><p>Would a 15-minute website-editor walkthrough be useful for your relocation and company-formation service pages?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#x27;t contact you again.</p></div>",
+      "sourceUrl": "https://arabiandream.com/",
+      "checkedAt": "2026-10-10T07:35:00+00:00",
+      "status": "sent",
+      "sendEligible": true,
+      "holds": [],
+      "attachment": {
+        "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+        "filename": "nexora-product-demo-male.mp4",
+        "mimeType": "video/mp4",
+        "sizeBytes": 1945313,
+        "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+      },
+      "copyRevisedAt": "2026-10-10T17:06:36.531505+00:00",
+      "originalDraftSource": "docs\\market\\middle-east\\research\\2026-10-10\\hourly\\07-utc\\held-drafts.json",
+      "copyVersion": 2,
+      "outreachStage": "initial",
+      "consentStatus": "not_established",
+      "outreachLegalBasis": "not_independently_cleared",
+      "sendDecision": "User expressly directed this three-recipient cold-proposal batch after discussing unresolved contact clearance; do not represent this as recipient consent",
+      "holdsAtPreparation": [
+        "New website announcement may mean a provider is already appointed; current buying need unconfirmed.",
+        "Published enquiries contact is not a verified website buyer.",
+        "No documented recipient-specific lawful proposal route/permission."
+      ],
+      "events": [
+        {
+          "at": "2026-10-10 17:11:04 UTC",
+          "status": "ready",
+          "reason": "Explicit current user instruction to send the three revised pitches"
+        },
+        {
+          "at": "2026-10-10T17:12:40.284148+00:00",
+          "status": "sent",
+          "reason": "Gmail accepted user-directed proposal with narrated MP4",
+          "messageId": "1a126cdb46a0f8e5"
+        }
+      ],
+      "updatedAt": "2026-10-10T17:12:40.284148+00:00",
+      "messageId": "1a126cdb46a0f8e5",
+      "threadId": "1a126cdb46a0f8e5",
+      "sentAt": "2026-10-10T17:12:40.284148+00:00",
+      "statusReason": "Gmail accepted user-directed proposal with narrated MP4"
+    }
+  ]
+}

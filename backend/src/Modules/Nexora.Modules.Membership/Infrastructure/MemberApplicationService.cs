@@ -28,7 +28,7 @@ internal sealed class MemberApplicationService(MembershipDbContext db, ICrmDirec
         else if (draft.Version != r.Version || draft.ApplicationId != null) throw new DbUpdateConcurrencyException();
         var policy = await db.Set<MembershipPolicy>().SingleOrDefaultAsync(p => p.ProductId == product.Id, ct);
         var start = DateTime.SpecifyKind(r.StartsAtUtc.Date, DateTimeKind.Utc);
-        var quote = MembershipOperations.Quote(product, policy, start);
+        var quote = MembershipOperations.Quote(product, policy, start, joining: true);
         draft.ProductId = product.Id; draft.StartsAtUtc = start; draft.Notes = r.Notes.Trim();
         draft.ProductVersion = product.Version; draft.PolicyVersion = policy?.Version;
         draft.Total = quote.Total; draft.Currency = quote.Currency; draft.Terms = product.PortalTerms;

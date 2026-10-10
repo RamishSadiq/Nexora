@@ -27,8 +27,8 @@ public sealed class WorkflowAudit:TenantEntity,IAppendOnly
 {
  public Guid DefinitionId{get;set;} public Guid ActorId{get;set;} public string Action{get;set;}=""; public string Detail{get;set;}="";
 }
-public sealed record WorkflowGraph(int SchemaVersion,string EntityKey,string Trigger,string EntryNodeId,WorkflowNode[] Nodes,WorkflowScheduleConfig? Schedule=null,WorkflowPredicate? Filter=null,Dictionary<string,string>? Variables=null,string? TriggerField=null);
-public sealed record WorkflowScheduleConfig(string Mode="interval",int IntervalMinutes=1440,string Time="09:00",string Timezone="UTC",int Weekday=1,DateTime? AtUtc=null,string? AnchorField=null,int OffsetDays=0);
+public sealed record WorkflowGraph(int SchemaVersion,string EntityKey,string Trigger,string EntryNodeId,WorkflowNode[] Nodes,WorkflowScheduleConfig? Schedule=null,WorkflowPredicate? Filter=null,Dictionary<string,string>? Variables=null,string? TriggerField=null,string[]? RequiredVariables=null);
+public sealed record WorkflowScheduleConfig(string Mode="interval",int IntervalMinutes=1440,string Time="09:00",string Timezone="UTC",int Weekday=1,DateTime? AtUtc=null,string? AnchorField=null,int OffsetDays=0,bool Singleton=false);
 public sealed record WorkflowNode(string Id,string Kind,string Label,string? Next=null,string? IfTrue=null,string? IfFalse=null,string? Field=null,string? Operator=null,string? Value=null,string? ActionKey=null,Dictionary<string,string>? Inputs=null,int? DelayMinutes=null,WorkflowPredicate? Predicate=null,string? QueryEntity=null,string? OutputVariable=null,int Limit=100,string? ItemsVariable=null,string? Body=null,string[]? Branches=null,string? WorkflowVersionId=null,string OnError="stop",string? ErrorNext=null,string? WaitUntil=null,double X=0,double Y=0,string? ApproverUserId=null,string? ApproverTeamId=null,string? RequiredPermission=null,int TimeoutMinutes=1440,int PollMinutes=5,string? TimeoutNext=null);
 public sealed record WorkflowSave(string Name,string? Description,WorkflowGraph Graph,Guid? Version);
 public sealed record WorkflowConcurrency(Guid Version);

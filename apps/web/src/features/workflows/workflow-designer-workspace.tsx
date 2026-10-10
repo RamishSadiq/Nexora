@@ -177,6 +177,17 @@ export function WorkflowDesignerWorkspace() {
     };
   }, []);
   useEffect(() => {
+    let active = true;
+    let request = 0;
+    const load = () => {
+      const current = ++request;
+      void api<Metadata>("/metadata").then(value => { if (active && current === request) setMetadata(value); }).catch(error => { if (active && current === request) setError(error.message); });
+    };
+    window.addEventListener("focus", load); window.addEventListener("nexora-attributes", load);
+    const attributes = new BroadcastChannel("nexora-attributes"); attributes.onmessage = load;
+    return () => { active = false; attributes.close(); window.removeEventListener("focus", load); window.removeEventListener("nexora-attributes", load); };
+  }, []);
+  useEffect(() => {
     if (
       view !== "history" ||
       !metadata?.permissions.includes("workflows.history")
@@ -682,7 +693,7 @@ export function WorkflowDesignerWorkspace() {
           </p>
         )}
         {view === "operations" && metadata ? (
-          <WorkflowOperations metadata={metadata} onDraft={loadDraft} onRun={(id) => void action(async () => {setRunDetail(await api<RunDetail>(`/runs/${id}`));setView("history");}, "Run loaded.")} />
+          <WorkflowOperations metadata={metadata} onSaved={reload} onOpen={(id)=>void action(()=>openDefinition(id), "Saved workflow loaded.")} onDraft={loadDraft} onRun={(id) => void action(async () => {setRunDetail(await api<RunDetail>(`/runs/${id}`));setView("history");}, "Run loaded.")} />
         ) : view === "settings" ? (
           <WorkflowSettings canAi={can("ai")} onDraft={loadDraft} />
         ) : view === "designer" ? (

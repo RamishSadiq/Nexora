@@ -30,9 +30,12 @@ public static partial class CrmModule
             sql => sql.MigrationsHistoryTable("__EFMigrationsHistory", "crm")));
         services.AddScoped<IReportDataset>(sp=>new ReportDataset("contacts","Contacts","crm.read",sp.GetRequiredService<CrmDbContext>().Set<CrmRecord>().AsNoTracking().Where(x=>x.Kind=="contact"&&!x.IsArchived).Select(x=>new ReportRow{Id=x.Id,Label=x.Name,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
 
-        services.AddWorkflowEntity<CrmDbContext,CrmRecord>("contacts","Contacts","crm.read","Name",x=>x.Kind=="contact"&&!x.IsArchived,"Kind","contact",new WorkflowRelation("profile","contact-profiles","id","recordId",false));
-        services.AddWorkflowEntity<CrmDbContext,CrmRecord>("accounts","Accounts","crm.read","Name",x=>x.Kind=="account"&&!x.IsArchived,"Kind","account",new WorkflowRelation("profile","account-profiles","id","recordId",false));
+        services.AddWorkflowEntity<CrmDbContext,CrmRecord>("contacts","Contacts","crm.read","Name",x=>x.Kind=="contact"&&!x.IsArchived,"Kind","contact",new WorkflowRelation("profile","contact-profiles","id","recordId",false),new WorkflowRelation("socialProfiles","contact-social-profiles","id","recordId",true),new WorkflowRelation("profiles","profile-assignments","id","recordId",true));
+        services.AddWorkflowEntity<CrmDbContext,CrmRecord>("accounts","Accounts","crm.read","Name",x=>x.Kind=="account"&&!x.IsArchived,"Kind","account",new WorkflowRelation("profile","account-profiles","id","recordId",false),new WorkflowRelation("profiles","profile-assignments","id","recordId",true));
         services.AddWorkflowEntity<CrmDbContext,ContactProfile>("contact-profiles","Contact profiles","crm.read","RecordId",null,null,null);
+        services.AddWorkflowEntity<CrmDbContext,RecordProfileAssignment>("profile-assignments","Assigned profiles","crm.read","Slot",null,null,null,new WorkflowRelation("definition","profile-definitions","definitionId","id",false));
+        services.AddWorkflowEntity<CrmDbContext,ProfileDefinition>("profile-definitions","Profile definitions","crm.read","ChildNode",null,null,null);
+        services.AddWorkflowEntity<CrmDbContext,ContactSocialProfile>("contact-social-profiles","Contact social profiles","crm.read","Identifier",null,null,null);
         services.AddWorkflowEntity<CrmDbContext,AccountProfile>("account-profiles","Account profiles","crm.read","RecordId",null,null,null);
         services.AddWorkflowEntity<CrmDbContext,CommunicationMethod>("communications","Communications","crm.read","Value",null,null,null,new WorkflowRelation("record","contacts","recordId","id",false));
         services.AddWorkflowEntity<CrmDbContext,AccountContact>("account-contacts","Organisation relationships","crm.read","JobTitle",null,null,null,new WorkflowRelation("account","accounts","accountId"),new WorkflowRelation("contact","contacts","contactId"));
@@ -58,10 +61,13 @@ public static partial class CrmModule
             catch (TenantBoundaryException) { return Results.Forbid(); }
             catch (DbUpdateException) { return Results.Problem(statusCode: 409, title: "The change conflicts with existing data. Reload and check related records."); }
         });
+        api.MapGet("/attribute-entities", () => new[] { "contact", "account" });
         api.MapGet("/directory", (IIdentityDirectory directory, CancellationToken ct) => directory.GetAsync(ct));
         api.MapAccountContacts();
         MapCompletion(api);
         MapProfiles(api);
+        MapProfileTaxonomy(api);
+        MapRecordPresentation(api);
         Automations.Map<CrmDbContext>(api, "crm.manage", kind => kind is "contact" or "account" ? typeof(CrmRecord) : null, (db, kind, ct) => db.AutomationFieldsAsync(kind, ct));
         // Legacy query-string tokens did not enforce current user permissions.
         // Fail closed until the assistant has a scoped, revocable integration identity.
@@ -82,20 +88,8 @@ public static partial class CrmModule
             var offset = Math.Clamp(page ?? 1, 1, 10000);
             return Results.Ok(await db.Set<Activity>().Where(x => x.RecordId == id).OrderByDescending(x => x.CreatedAtUtc).ThenBy(x => x.Id).Skip((offset - 1) * 50).Take(50).ToListAsync(ct));
         });
-        api.MapPost("/records/{id:guid}/addresses", async (Guid id, AddressRequest r, CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
-        {
-            var row = new Address { Label = Required(r.Label, 80), Line1 = Required(r.Line1, 200), Line2 = Optional(r.Line2, 200), City = Required(r.City, 100), Region = Optional(r.Region, 100), PostalCode = Required(r.PostalCode, 30), Country = Required(r.Country, 80) };
-            return await AddChildAsync(id, row, "address.added", db, who, http, ct);
-        }).RequireAuthorization("crm.manage");
-        api.MapPost("/records/{id:guid}/communications", async (Guid id, CommunicationRequest r, CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
-        {
-            Choice(r.Kind, "email", "phone", "website"); Choice(r.Consent, "unknown", "granted", "denied");
-            var value = Required(r.Value, 320);
-            if (r.Kind == "email" && !new EmailAddressAttribute().IsValid(value)) throw new ValidationException("Enter a valid email address.");
-            if (r.Kind == "website" && (!Uri.TryCreate(value, UriKind.Absolute, out var uri) || uri.Scheme is not ("https" or "http"))) throw new ValidationException("Enter an HTTP or HTTPS website.");
-            var evidence = r.Consent == "unknown" ? Optional(r.ConsentEvidence, 500) : Required(r.ConsentEvidence, 500);
-            return await AddChildAsync(id, new CommunicationMethod { Kind = r.Kind, Value = value, Consent = r.Consent, ConsentEvidence = evidence }, "communication.added", db, who, http, ct);
-        }).RequireAuthorization("crm.manage");
+        MapAddresses(api);
+        MapCommunications(api);
         api.MapPost("/records/{id:guid}/relationships", async (Guid id, RelationshipRequest r, CrmDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
         {
             var target = await RecordAsync(db, r.TargetRecordId, ct, true);
@@ -120,7 +114,7 @@ public static partial class CrmModule
         {
             Choice(r.Kind, "contact", "account"); Choice(r.DataType, "text", "number", "boolean", "date");
             if (await db.Set<CustomFieldDefinition>().CountAsync(ct) >= 50) throw new ValidationException("A tenant can define up to 50 CRM fields.");
-            var field = new CustomFieldDefinition { TenantId = who.TenantId!.Value, Name = Required(r.Name, 80), Kind = r.Kind, DataType = r.DataType };
+            var field = new CustomFieldDefinition { TenantId = who.TenantId!.Value, Name = Required(r.Name, 80), Kind = r.Kind, DataType = r.DataType, Section = AutomationCatalog.FieldSection(r.Kind, r.Section) };
             field.DisplayOrder = (await db.Set<CustomFieldDefinition>().Where(x => x.Kind == r.Kind).MaxAsync(x => (int?)x.DisplayOrder, ct) ?? -1) + 1;
             db.Add(field); await db.SaveChangesAsync(ct); return Results.Ok(field);
         }).RequireAuthorization("crm.configure");
@@ -138,6 +132,7 @@ public static partial class CrmModule
             if (r.DataType != field.DataType && await db.Set<CustomFieldValue>().AnyAsync(x => x.DefinitionId == id, ct))
                 throw new ValidationException("The data type cannot change while this attribute has saved values.");
             field.Name = Required(r.Name, 80); field.DataType = r.DataType;
+            field.Section = AutomationCatalog.FieldSection(field.Kind, r.Section ?? field.Section);
             await db.SaveChangesAsync(ct); return Results.Ok(field);
         }).RequireAuthorization("crm.configure");
         api.MapPut("/fields/order", async (FieldOrderRequest r, CrmDbContext db, CancellationToken ct) =>
@@ -180,7 +175,7 @@ public static partial class CrmModule
 
     private static async Task ApplyViewAsync(SavedView row, ViewRequest r, CrmDbContext db, CancellationToken ct)
     {
-        Choice(r.Kind, "contact", "account"); Choice(r.Sort, "name", "-name", "updated"); Choice(r.Status, "", "active", "prospect", "inactive");
+        Choice(r.Kind, "contact", "account"); Choice(r.Sort, "name", "-name", "updated"); Choice(r.Status, "", "active", "prospect", "inactive", "lapsed");
         var columns = Required(r.Columns, 4000).Split(',');
         if (columns.Length > 54 || columns.Distinct().Count() != columns.Length || !columns.Contains("name"))
             throw new ValidationException("Choose up to 54 distinct columns, including Name.");
@@ -200,7 +195,7 @@ public static partial class CrmModule
     {
         kind ??= "contact"; sort ??= "name";
         Choice(kind, "contact", "account"); Choice(sort, "name", "-name", "updated");
-        if (!string.IsNullOrEmpty(status)) Choice(status, "active", "prospect", "inactive");
+        if (!string.IsNullOrEmpty(status)) Choice(status, "active", "prospect", "inactive", "lapsed");
         var term = Optional(search, 160);
         var query = db.Records.AsNoTracking().Where(x => x.Kind == kind && x.IsArchived == (archived ?? false));
         var connectedIds = new HashSet<Guid>();
@@ -214,7 +209,7 @@ public static partial class CrmModule
                 if (connectedIds.Count > 1000) throw new ValidationException("This connected search is too broad. Use a more specific term.");
             }
         }
-        if (!string.IsNullOrEmpty(term)) query = query.Where(x => connectedIds.Contains(x.Id) || x.Name.Contains(term) || db.Set<CommunicationMethod>().Any(c => c.RecordId == x.Id && c.Value.Contains(term)) || db.Set<RecordTag>().Any(t => t.RecordId == x.Id && t.Name.Contains(term)) || db.Set<CustomFieldValue>().Any(v => v.RecordId == x.Id && v.TextValue != null && v.TextValue.Contains(term)));
+        if (!string.IsNullOrEmpty(term)) query = query.Where(x => connectedIds.Contains(x.Id) || x.Name.Contains(term) || db.Set<CommunicationMethod>().Any(c => c.RecordId == x.Id && c.Value.Contains(term)) || db.Set<RecordTag>().Any(t => t.RecordId == x.Id && t.Name.Contains(term)) || (from assignment in db.Set<RecordProfileAssignment>() join definition in db.Set<ProfileDefinition>() on assignment.DefinitionId equals definition.Id where assignment.RecordId == x.Id && (definition.ParentNode.Contains(term) || definition.ChildNode.Contains(term)) select assignment.Id).Any() || db.Set<CustomFieldValue>().Any(v => v.RecordId == x.Id && v.TextValue != null && v.TextValue.Contains(term)));
         if (!string.IsNullOrEmpty(status)) query = query.Where(x => x.Status == status);
         static Guid? OwnerFilter(string? value) => string.IsNullOrEmpty(value) ? null : Guid.TryParse(value, out var id) ? id : throw new ValidationException("Invalid owner filter.");
         var userFilter = OwnerFilter(ownerUserId); var teamFilter = OwnerFilter(ownerTeamId);
@@ -234,16 +229,25 @@ public static partial class CrmModule
     private static async Task<IResult> DetailAsync(Guid id, CrmDbContext db, CancellationToken ct)
     {
         var record = await RecordAsync(db, id, ct);
+        var addresses = await db.Set<Address>().Where(x => x.RecordId == id).ToListAsync(ct);
         return Results.Ok(new
         {
             record,
             contactDetails = record.Kind == "contact" ? await RecordProfileFields.ContactAsync(db, id, ct) : null,
+            generalInformation = record.Kind == "contact" ? await RecordProfileFields.GeneralInformationAsync(db, id, ct) : null,
+            communicationPermissions = record.Kind == "contact" ? await RecordProfileFields.CommunicationPermissionsAsync(db, id, ct) : null,
+            socialMediaDetails = record.Kind == "contact" ? await ContactSocialFields.ReadAsync(db, id, ct) : null,
             accountDetails = record.Kind == "account" ? await RecordProfileFields.AccountAsync(db, id, ct) : null,
-            addresses = await db.Set<Address>().Where(x => x.RecordId == id).ToListAsync(ct),
+            accountGeneralInformation = record.Kind == "account" ? await RecordProfileFields.AccountGeneralInformationAsync(db, id, ct) : null,
+            addresses,
+            effectiveBillingAddress = addresses.SingleOrDefault(x => x.Purpose == (record.BillingUsesMailingAddress ? "mailing" : "billing")),
             communications = await db.Set<CommunicationMethod>().Where(x => x.RecordId == id).ToListAsync(ct),
             relationships = await (from link in db.Set<RecordRelationship>() join target in db.Records on link.TargetRecordId equals target.Id where link.RecordId == id select new { link.Id, link.Label, link.TargetRecordId, target.Name }).ToListAsync(ct),
             notes = await db.Set<Note>().Where(x => x.RecordId == id).OrderByDescending(x => x.CreatedAtUtc).ToListAsync(ct),
             tags = await db.Set<RecordTag>().Where(x => x.RecordId == id).OrderBy(x => x.Name).ToListAsync(ct),
+            profiles = await (from assignment in db.Set<RecordProfileAssignment>() join definition in db.Set<ProfileDefinition>() on assignment.DefinitionId equals definition.Id
+                where assignment.RecordId == id orderby assignment.Slot
+                select new { assignment.Slot, assignment.DefinitionId, definition.ParentNode, definition.ChildNode, definition.IsArchived }).ToListAsync(ct),
             files = await db.Set<RecordFile>().Where(x => x.RecordId == id).Select(x => new { x.Id, x.Name, x.CreatedAtUtc, x.Version, x.ScanStatus, x.ScannedAtUtc }).ToListAsync(ct),
             fields = await db.Set<CustomFieldValue>().Where(x => x.RecordId == id).ToListAsync(ct)
         });
@@ -295,6 +299,8 @@ public static partial class CrmModule
             _ => null
         };
         if (row == null) throw new KeyNotFoundException();
+        if (row is Address { Purpose: "mailing" } && parent.BillingUsesMailingAddress)
+            throw new ValidationException("Turn off billing same as mailing before removing the mailing address.");
         db.Remove(row); Audit(db, who, http, id, collection + ".removed"); await db.SaveChangesAsync(ct); return Results.NoContent();
     }
     private static async Task<IResult> UploadAsync(Guid id, CrmDbContext db, IRequestIdentity who, HttpContext http, IDocumentScanner scanner, CancellationToken ct)
@@ -337,7 +343,7 @@ public static partial class CrmModule
     }
     private static async Task ValidateAsync(RecordRequest r, IIdentityDirectory directory, CancellationToken ct)
     {
-        Choice(r.Kind, "contact", "account"); Choice(r.Status, "active", "prospect", "inactive"); Required(r.Name, 160); Optional(r.Category, 100);
+        Choice(r.Kind, "contact", "account"); Choice(r.Status, "active", "prospect", "inactive", "lapsed"); Required(r.Name, 160); Optional(r.Category, 100);
         if (!await directory.IsValidOwnerAsync(r.OwnerUserId, r.OwnerTeamId, ct)) throw new ValidationException("Choose an active owner and team from your tenant.");
     }
     private static void Apply(CrmRecord row, RecordRequest r)

@@ -46,6 +46,7 @@
   ],
   "exclude": [
     "node_modules",
-    ".next-website-debug"
+    ".next-website-debug",
+    ".next-*/**"
   ]
 }

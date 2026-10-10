@@ -22,7 +22,7 @@ export function attributeValues(data: Record<string, string>) {
   return values;
 }
 
-export function AttributeFields({ kind, recordId, module = "crm" }: { kind: string; recordId?: string; module?: string }) {
+export function useAttributeFields(kind: string, recordId?: string, module = "crm") {
   const [fields, setFields] = useState<Field[]>([]);
   const [values, setValues] = useState<FieldValue[]>([]);
   const [error, setError] = useState("");
@@ -40,23 +40,34 @@ export function AttributeFields({ kind, recordId, module = "crm" }: { kind: stri
     };
     load();
     window.addEventListener("focus", load);
+    window.addEventListener("nexora-attributes", load);
     const channel = new BroadcastChannel("nexora-attributes");
     channel.onmessage = load;
     const automationChannel = new BroadcastChannel("nexora-automations"); automationChannel.onmessage = load;
-    return () => { active = false; window.removeEventListener("focus", load); channel.close(); automationChannel.close(); };
+    return () => { active = false; window.removeEventListener("focus", load); window.removeEventListener("nexora-attributes", load); channel.close(); automationChannel.close(); };
   }, [kind, recordId, module]);
-  if (loading || loadedFor !== `${module}/${kind}/${recordId ?? "new"}` || error) return <div className="sm:col-span-2" role={error ? "alert" : "status"}>
-    {error || "Loading attributes…"}
+  return { fields, values, targets, error, loading: loading || loadedFor !== `${module}/${kind}/${recordId ?? "new"}` };
+}
+
+export function AttributeFields({ kind, recordId, module = "crm", section }: { kind: string; recordId?: string; module?: string; section?: string }) {
+  const data = useAttributeFields(kind, recordId, module);
+  if (data.loading || data.error) return <div className="sm:col-span-2" role={data.error ? "alert" : "status"}>
+    {data.error || "Loading attributes…"}
     <input aria-label="Attributes unavailable" required value="" onChange={() => {}} className="sr-only" />
   </div>;
+  const fields = section ? data.fields.filter(field => (field.section || "General Information") === section) : data.fields;
+  return <AttributeInputs fields={fields} values={data.values} targets={data.targets} recordId={recordId} />;
+}
+
+export function AttributeInputs({ fields, values, targets, recordId, formId, disabled = false, revision = "" }: { fields: Field[]; values: FieldValue[]; targets: string[]; recordId?: string; formId?: string; disabled?: boolean; revision?: string }) {
   return fields.map(field => {
     const value = values.find(v => v.definitionId === field.id);
     const name = `attribute:${field.id}:${field.dataType}`;
     const calculated = targets.includes(field.id);
-    return <Label key={`${field.id}-${field.dataType}-${recordId ?? "new"}-${calculated}`} label={field.name}>
-      {field.dataType === "boolean" ? <select aria-label={field.name} disabled={calculated} className={inputClass} name={name} defaultValue={value?.booleanValue == null ? "" : String(value.booleanValue)}>
+    return <Label key={`${field.id}-${field.dataType}-${recordId ?? "new"}-${calculated}-${revision}`} label={field.name}>
+      {field.dataType === "boolean" ? <select aria-label={field.name} form={formId} disabled={disabled || calculated} className={inputClass} name={name} defaultValue={value?.booleanValue == null ? "" : String(value.booleanValue)}>
         <option value="">Not set</option><option value="true">Yes</option><option value="false">No</option>
-      </select> : <input aria-label={field.name} readOnly={calculated} className={inputClass} name={name} maxLength={500} type={field.dataType === "date" ? "date" : field.dataType === "number" ? "number" : "text"} step={field.dataType === "number" ? "0.0001" : undefined}
+      </select> : <input aria-label={field.name} form={formId} disabled={disabled} readOnly={calculated} className={inputClass} name={name} maxLength={500} type={field.dataType === "date" ? "date" : field.dataType === "number" ? "number" : "text"} step={field.dataType === "number" ? "0.0001" : undefined}
         defaultValue={field.dataType === "date" ? value?.dateValue?.slice(0, 10) ?? "" : value?.textValue ?? value?.numberValue ?? ""} />}
       {calculated && <span className="text-xs text-slate-500">Calculated when saved</span>}
     </Label>;

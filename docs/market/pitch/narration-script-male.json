@@ -1,0 +1,19 @@
+{
+  "engine": "edge-tts",
+  "voice": "en-US-AndrewMultilingualNeural",
+  "language": "en-US",
+  "rate": "+0%",
+  "direction": "Male American voice. Warm, conversational and confident, with contractions and short pauses. Speak at the voice's normal pace; do not artificially lower pitch or rush to fit. Synthetic narration, not a human recording.",
+  "sceneSeconds": 10,
+  "scenes": [
+    "Too much member admin? Meet Nexora. We've built it to bring your association's people, memberships, and everyday work together in one place.",
+    "Start with your people and organisations. Company records, contacts, and member information, all connected, so your team can find what they need.",
+    "Open a member's profile, and the details come together. See their organisation, relationships, and activity, giving your team the context they need.",
+    "Next, the membership journey. Set up your products, collect application details, and give staff a clear place to review and manage applications.",
+    "And your members? They've got their own portal. Authorised members can access their profiles, applications, and receipts, through one convenient place.",
+    "Members and staff share the same contact context. In the portal or CRM, you've got a connected view of the person.",
+    "Your website is part of the picture. Manage content alongside member services, and give visitors a clear way into your community.",
+    "There's visual workflow design, too. And when enabled, your team can use an AI assistant right inside their CRM workspace.",
+    "Want to see how Nexora could fit your association? Reply to book a fifteen-minute demo, and we'll walk you through it."
+  ]
+}

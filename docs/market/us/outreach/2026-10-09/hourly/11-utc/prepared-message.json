@@ -1,0 +1,30 @@
+{
+  "rank": 11,
+  "candidateId": 35,
+  "organisation": "Spring Manufacturers Institute",
+  "shortName": "SMI",
+  "website": "https://smihq.org/",
+  "sector": "Springs",
+  "to": "gary@smihq.org",
+  "contactName": "Gary McCoy",
+  "contactRole": "Executive Director; oversees SMI operations",
+  "contactSource": "https://smihq.org/staffs/gary-mccoy/",
+  "membershipSource": "https://smihq.org/registration/",
+  "checkedAt": "2026-10-09T11:48:21Z",
+  "observation": "SMI has regular membership for North American spring manufacturers and associate membership for suppliers; staff contact applicants after they complete the application. Member Login is already offered.",
+  "pitchVariant": "V2-company-application-named-operations-owner",
+  "subject": "Nexora demo for SMI's membership applications",
+  "text": "Hi Gary,\n\nI noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system. SMI already has a member login; we'd like to explore whether a focused evaluation of one application workflow would be useful.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions.\n\nWould a 15-minute look at that workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+  "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Gary,</p><p>I noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application.</p><p>We've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system. SMI already has a member login; we'd like to explore whether a focused evaluation of one application workflow would be useful.</p><p>An optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.</p><p>I've attached a 90-second narrated demo with captions.</p><p>Would a 15-minute look at that workflow be useful?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won't contact you again.</p></div>",
+  "status": "ready",
+  "hourlyCampaign": true,
+  "utcHour": "2026-10-09T11:00:00+00:00",
+  "researchFile": "docs/market/us/outreach/2026-10-09/hourly/11-utc/research-evidence.json",
+  "events": [
+    {
+      "at": "2026-10-09T11:49:17.321Z",
+      "status": "ready",
+      "reason": "Fresh official sources, full reply check and Sent preflight verified; no prior SMI pitch"
+    }
+  ]
+}

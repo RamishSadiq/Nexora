@@ -3,6 +3,7 @@ import { EntityHeading } from "@/components/ui/entity-heading";
 import { use, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { moduleApi } from "@/features/shared/module-api";
+import { useAttributeEntities } from "@/features/shared/use-attribute-entities";
 import { attributeEntities, entityLabel } from "@/features/shared/attribute-entities";
 import type { Field } from "@/features/crm/types";
 import { buttonClass, inputClass, primaryClass } from "@/features/shared/module-ui";
@@ -12,12 +13,13 @@ export default function AttributesControllerPage({ params }: { params: Promise<{
   const { module } = use(params);
   const config = attributeEntities[module];
   const [selectedType, setSelectedType] = useState("");
-  const kind = config?.types.includes(selectedType) ? selectedType : config?.types[0];
+  const types = useAttributeEntities(config?.api ?? "", config?.types);
+  const kind = types.includes(selectedType) ? selectedType : types[0];
   return <main className="mx-auto max-w-3xl space-y-6 p-5 text-slate-800 sm:p-8">
     <Link href={`/automations/${module}`} className="text-indigo-700 underline">Back to automations</Link>
     <EntityHeading>Manage {module.replaceAll("-", " ")} attributes</EntityHeading>
     {!kind ? <p role="alert">This entity is unavailable.</p> : <>
-      <label className="block">Entity<select className={inputClass} value={kind} onChange={e => setSelectedType(e.target.value)}>{config.types.map(t => <option key={t} value={t}>{entityLabel(t)}</option>)}</select></label>
+      <label className="block">Entity<select className={inputClass} value={kind} onChange={e => setSelectedType(e.target.value)}>{types.map(t => <option key={t} value={t}>{entityLabel(t)}</option>)}</select></label>
       <AttributesEditor key={`${config.api}-${kind}`} backend={config.api} kind={kind} />
     </>}
   </main>;
@@ -31,6 +33,7 @@ function AttributesEditor({ backend, kind }: { backend: string; kind: string }) 
   const [busy, setBusy] = useState(false);
   const [loading, setLoading] = useState(true);
   const [canManage, setCanManage] = useState(false);
+  const [sections, setSections] = useState<AutomationSettings["sectionDefinitions"]>([]);
   const [retry, setRetry] = useState(0);
   async function reload() {
     const rows = await crm<Field[]>(base);
@@ -38,12 +41,12 @@ function AttributesEditor({ backend, kind }: { backend: string; kind: string }) 
   }
   useEffect(() => {
     let active = true;
-    void Promise.all([crm<Field[]>(base), crm<AutomationSettings>(`/automations/${kind}`)]).then(([rows, settings]) => { if (active) { setFields(rows.filter(f => backend !== "crm" || f.kind === kind)); setCanManage(settings.canManage); setError(""); setLoading(false); } }).catch(e => { if (active) { setError(e.message); setLoading(false); } });
+    void Promise.all([crm<Field[]>(base), crm<AutomationSettings>(`/automations/${kind}`)]).then(([rows, settings]) => { if (active) { setFields(rows.filter(f => backend !== "crm" || f.kind === kind)); setSections(settings.sectionDefinitions.filter(section => section.acceptsFields)); setCanManage(settings.canManage); setError(""); setLoading(false); } }).catch(e => { if (active) { setError(e.message); setLoading(false); } });
     return () => { active = false; };
   }, [kind, backend, base, crm, retry]);
   async function change(action: () => Promise<unknown>) {
     setBusy(true); setError("");
-    try { await action(); await reload(); const channel = new BroadcastChannel("nexora-attributes"); channel.postMessage("changed"); channel.close(); }
+    try { await action(); await reload(); window.dispatchEvent(new Event("nexora-attributes")); const channel = new BroadcastChannel("nexora-attributes"); channel.postMessage("changed"); channel.close(); }
     catch (e) { setError(e instanceof Error ? e.message : "Unable to save attributes."); }
     finally { setBusy(false); }
   }
@@ -59,19 +62,21 @@ function AttributesEditor({ backend, kind }: { backend: string; kind: string }) 
         {!canManage && <p>Editing requires module management permission.</p>}
         <form className="flex flex-wrap items-end gap-3" onSubmit={event => {
           event.preventDefault(); const form = event.currentTarget; const data = new FormData(form);
-          void change(async () => { await crm(base, "POST", { kind, name: data.get("name"), dataType: data.get("dataType") }); form.reset(); });
+          void change(async () => { await crm(base, "POST", { kind, name: data.get("name"), dataType: data.get("dataType"), section: data.get("section") }); form.reset(); });
         }}>
           <label>Name<input name="name" required maxLength={80} className={inputClass} /></label>
           <label>Data type<select name="dataType" className={inputClass}>{["text","number","boolean","date"].map(t => <option key={t}>{t}</option>)}</select></label>
+          <label>Display in section<select name="section" required defaultValue="" className={inputClass}><option value="" disabled>Choose a section</option>{sections.map(section => <option key={section.id} value={section.id}>{section.title}</option>)}</select></label>
           <button disabled={busy} className={primaryClass}>Add attribute</button>
         </form>
         <ul className="space-y-3">{fields.map((field, index) => <li key={field.id} className="rounded-xl border bg-white p-4">
           <form className="flex flex-wrap items-end gap-3" onSubmit={event => {
             event.preventDefault(); const data = new FormData(event.currentTarget);
-            void change(() => crm(`${base}/${field.id}`, "PATCH", { kind, name: data.get("name"), dataType: data.get("dataType") }));
+            void change(() => crm(`${base}/${field.id}`, "PATCH", { kind, name: data.get("name"), dataType: data.get("dataType"), section: data.get("section") }));
           }}>
             <label>Name<input key={field.name} name="name" defaultValue={field.name} required maxLength={80} className={inputClass} /></label>
             <label>Data type<select key={field.dataType} name="dataType" defaultValue={field.dataType} className={inputClass}>{["text","number","boolean","date"].map(t => <option key={t}>{t}</option>)}</select></label>
+            <label>Display in section<select key={field.section} name="section" required defaultValue={field.section || "General Information"} className={inputClass}>{sections.map(section => <option key={section.id} value={section.id}>{section.title}</option>)}</select></label>
             <button disabled={busy} className={buttonClass}>Save</button>
             <button type="button" disabled={busy || index === 0} className={buttonClass} onClick={() => move(index, -1)} aria-label={`Move ${field.name} up`}>Up</button>
             <button type="button" disabled={busy || index === fields.length - 1} className={buttonClass} onClick={() => move(index, 1)} aria-label={`Move ${field.name} down`}>Down</button>
@@ -81,6 +86,5 @@ function AttributesEditor({ backend, kind }: { backend: string; kind: string }) 
       </fieldset>}
   </>;
 }
-
 
 

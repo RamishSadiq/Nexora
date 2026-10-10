@@ -7,4 +7,5 @@
   </PropertyGroup>
 
   <ItemGroup><FrameworkReference Include="Microsoft.AspNetCore.App" /><PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.12" /></ItemGroup>
+  <ItemGroup><EmbeddedResource Include="../../../../shared/automation-catalog.json" LogicalName="Nexora.AutomationCatalog.json" /></ItemGroup>
 </Project>

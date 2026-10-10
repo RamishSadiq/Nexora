@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-10-10T16:58:07+00:00",
+  "reviews": [
+    {
+      "organisation": "NeoScale",
+      "url": "https://www.neoscalesa.com/",
+      "officialPageRead": true,
+      "sourceDate": null,
+      "observation": "Riyadh steel-business website remains under construction. Sales address concerns engineering/manufacturing enquiries. Establishment years still inconsistent (2025/2026); no software supplier invitation or consent.",
+      "decision": "research_only_reverification_or_permission"
+    },
+    {
+      "organisation": "Zilal Cooling for Trading Co.",
+      "url": "https://zilalcooling.com/",
+      "officialPageRead": true,
+      "sourceDate": null,
+      "observation": "New website still in progress; Saudi refrigeration business and branch contacts remain published. No current CMS supplier invitation or consent established.",
+      "decision": "research_only_reverification_or_permission"
+    },
+    {
+      "organisation": "Smart Interfaces Contracting LLC",
+      "url": "https://ksa-sic.com/",
+      "officialPageRead": false,
+      "sourceDate": null,
+      "observation": "Two current official-page fetch attempts failed; second reported timeout. Prior project/contact evidence retained as history, not freshly verified.",
+      "decision": "research_only_reverification_or_permission"
+    }
+  ],
+  "queries": [
+    "\"Saudi Arabia\" \"website redesign\" \"request for proposals\" \"2026\"",
+    "\"UAE\" \"website CMS\" \"tender\" \"October\" \"2026\""
+  ],
+  "eligibleRecipients": 0,
+  "newCandidates": 0,
+  "limitations": "Bounded current search, not exhaustive. Results were out-of-market tenders, vendor/job listings and third-party platform content. None established an official matching project and lawful email channel. Site announcements alone do not prove supplier demand.",
+  "suggestedUserRoute": "Use an existing business relationship or introduction to establish whether a relevant buyer wants a CMS walkthrough. Save their actual invitation and channel before any pitch; no alternate-channel outreach performed."
+}

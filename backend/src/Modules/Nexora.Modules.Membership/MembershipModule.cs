@@ -27,7 +27,7 @@ public static partial class MembershipModule
         var size = 25;
         Check(page == null || int.TryParse(page, out number), "Page must be a whole number.");
         Check(pageSize == null || int.TryParse(pageSize, out size), "Page size must be a whole number.");
-        Check(number >= 1 && size is >= 1 and <= 100, "Use a page of at least 1 and a page size of 1–100.");
+        Check(number >= 1 && size is >= 1 and <= 100, "Use a page of at least 1 and a page size of 1â€“100.");
         var offset = ((long)number - 1) * size;
         Check(offset <= int.MaxValue, "The requested page is too large.");
         return (number, size, (int)offset);
@@ -38,6 +38,7 @@ public static partial class MembershipModule
         AddWorkflowCommands(services);
         services.AddDbContext<MembershipDbContext>((sp,o)=>o.AddInterceptors(sp.GetRequiredService<WorkflowCaptureInterceptor>()).UseSqlServer(config.GetConnectionString("Nexora"), sql => sql.MigrationsHistoryTable("__EFMigrationsHistory","membership"))); services.AddScoped<IReportDataset>(sp=>new ReportDataset("members","Memberships","membership.read",sp.GetRequiredService<MembershipDbContext>().Set<MemberSubscription>().AsNoTracking().Select(x=>new ReportRow{Id=x.Id,Label=x.ContactName,Status=x.Status,CreatedAtUtc=x.CreatedAtUtc})));
         services.AddScoped<IMemberMembershipDirectory, MemberMembershipDirectory>();
+        services.AddScoped<ICrmMembershipDirectory, CrmMembershipDirectory>();
         services.AddScoped<IMemberApplicationService, MemberApplicationService>();
         services.AddScoped<IPortalNotificationService, PortalNotificationService>();
         services.AddScoped<IApplicationEvidenceService, ApplicationEvidenceService>();
@@ -72,6 +73,15 @@ public static partial class MembershipModule
             await db.SaveChangesAsync(ct); return Results.Ok(row);
         }).RequireAuthorization("membership.manage");
         api.MapMembershipOperations();
+        api.MapRejoinCandidates();
+        MapMembershipAdministration(api);
+        MapMembershipApplicationDetails(api);
+        MapMembershipArchive(api);
+        MapMembershipOptions(api);
+        MapMembershipTimeline(api);
+        MapMembershipFinancialArrangement(api);
+        MapMembershipJoinDate(api);
+        MapMembershipClassifications(api);
         api.MapApplicationEvidence();
         api.MapPut("/products/{id:guid}/portal", async (Guid id, PortalProductSettings r, MembershipDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
         {
@@ -119,6 +129,7 @@ public static partial class MembershipModule
             var items = await q.OrderByDescending(x => x.CreatedAtUtc).ThenBy(x => x.Id).Skip(offset).Take(size).ToListAsync(ct);
             return Results.Ok(new { items, totalCount, page = number, pageSize = size });
         });
+        api.MapGet("/applications/{id:guid}", async (Guid id, MembershipDbContext db, CancellationToken ct) => await db.Set<MembershipApplication>().AsNoTracking().SingleOrDefaultAsync(x => x.Id == id, ct) is { } application ? Results.Ok(application) : Results.NotFound());
         api.MapPost("/applications", async (ApplicationRequest r, MembershipDbContext db, ICrmDirectory crm, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
         {
             var application = await MembershipApplicationCommand.CreateAsync(r, db, crm, who, http.TraceIdentifier, ct);
@@ -131,10 +142,12 @@ public static partial class MembershipModule
             await ApplyDecision(application,r,db,crm,recipients,who,http,ct);
             await db.SaveChangesAsync(ct); return Results.Ok(application);
         }).RequireAuthorization("membership.decide");
-        api.MapGet("/members", async (MembershipDbContext db, string? search, string? status, string? page, string? pageSize, CancellationToken ct) =>
+        api.MapGet("/members", async (MembershipDbContext db, string? search, string? status, string? archive, string? page, string? pageSize, CancellationToken ct) =>
         {
             var (number, size, offset) = Pagination(page, pageSize);
             var q = db.Set<MemberSubscription>().AsNoTracking();
+            var archiveFilter = string.IsNullOrWhiteSpace(archive) ? "current" : archive; Choice(archiveFilter,"current","archived","all");
+            if (archiveFilter != "all") q = q.Where(x => x.IsArchived == (archiveFilter == "archived"));
             if (!string.IsNullOrWhiteSpace(search)) { var term = Text(search); q = q.Where(x => (x.ContactName.Contains(term) || (x.AccountName != null && x.AccountName.Contains(term)))); }
             if (!string.IsNullOrWhiteSpace(status)) { Choice(status,"active","cancelled","lapsed"); q = q.Where(x => x.Status == status); }
             var totalCount = await q.CountAsync(ct);
@@ -149,8 +162,8 @@ public static partial class MembershipModule
         api.MapPost("/members/{id:guid}/{action}", async (Guid id, string action, ChangeRequest r, MembershipDbContext db, IRequestIdentity who, HttpContext http, CancellationToken ct) =>
         {
             var member = await db.Set<MemberSubscription>().SingleOrDefaultAsync(x => x.Id == id,ct) ?? throw new KeyNotFoundException();
-            if (r.Version != member.Version) return Conflict(); Choice(action,"renew","cancel","lapse","reinstate"); var reason = Text(r.Reason,500);
-            await ApplyMemberChange(member,action,reason,db,who,http,ct); await db.SaveChangesAsync(ct); return Results.Ok(member);
+            if (r.Version != member.Version) return Conflict(); Choice(action,"renew","cancel","resign","lapse","reinstate"); var reason = Text(r.Reason,500);
+            await ApplyMemberChange(member,action,reason,db,who,http,ct,r.EffectiveOn); await db.SaveChangesAsync(ct); return Results.Ok(member);
         }).RequireAuthorization("membership.manage");
         api.MapGet("/history/{id:guid}", async (Guid id, MembershipDbContext db, CancellationToken ct) => await db.Set<MembershipHistory>().Where(x => x.SubjectId == id).OrderByDescending(x => x.CreatedAtUtc).Take(100).ToListAsync(ct));
         return routes;
@@ -167,21 +180,35 @@ public static partial class MembershipModule
                     Check(await crm.FindActiveAsync(application.AccountId.Value, ct) != null, "The organisation is no longer active.");
                     Check(await crm.HasCurrentAccountContactAsync(application.AccountId.Value, application.ContactId, ct), "The Contact is no longer linked to this organisation.");
                 }
+                var previous = await MembershipRejoin.ValidateAsync(application.PreviousMembershipId, application.ContactId, application.AccountId, db, ct);
                 var requestedEnd = application.RequestedEndUtc ?? application.RequestedStartUtc.AddMonths(application.TermMonths);
                 Check(!await db.Set<MemberSubscription>().AnyAsync(x =>
                     (application.AccountId.HasValue ? x.AccountId == application.AccountId : x.AccountId == null && x.ContactId == application.ContactId)
                     && x.Status == "active",ct),
                     "This applicant already has an active membership. End it before activating another membership.");
-                var member = new MemberSubscription { TenantId = who.TenantId!.Value, AccountId = application.AccountId, AccountName = application.AccountName, ContactId = application.ContactId, ContactName = application.ContactName, ProductId = application.ProductId, StartsAtUtc = application.RequestedStartUtc, EndsAtUtc = requestedEnd, Rate = application.QuotedRate, Currency = application.Currency, ApplicationId = application.Id };
-                db.Add(member); application.MembershipId = member.Id; History(db,who,http,member.Id,"membership.activated",r.Reason);
+                var member = new MemberSubscription { FreeMembership = application.FreeMembership, ExemptJoiningFee = application.ExemptJoiningFee, PreviousMembershipId = previous?.Id, RejoinedOn = previous != null ? DateOnly.FromDateTime(DateTime.UtcNow) : null, OriginalJoinDate = previous?.OriginalJoinDate, StatusEffectiveOn = DateOnly.FromDateTime(DateTime.UtcNow), TenantId = who.TenantId!.Value, AccountId = application.AccountId, AccountName = application.AccountName, ContactId = application.ContactId, ContactName = application.ContactName, ProductId = application.ProductId, StartsAtUtc = application.RequestedStartUtc, EndsAtUtc = requestedEnd, Rate = application.QuotedRate, Currency = application.Currency, ApplicationId = application.Id };
+                db.Add(member);
+                await ApplicationDetailsFields.ApplyApprovalAsync(application, member, db, crm, who, ct);
+                application.MembershipId = member.Id; History(db,who,http,member.Id,"membership.activated",r.Reason,effectiveOn: member.StatusEffectiveOn);
+                if (previous != null) History(db,who,http,member.Id,"membership.rejoin",application.DecisionReason,effectiveOn: member.RejoinedOn);
             }
-            application.Status = r.Decision == "approve" ? "approved" : "rejected"; History(db,who,http,application.Id,"application." + application.Status,r.Reason);
+            application.Status = r.Decision == "approve" ? "approved" : "rejected"; application.StatusEffectiveOn = DateOnly.FromDateTime(DateTime.UtcNow); History(db,who,http,application.Id,"application." + application.Status,r.Reason,effectiveOn: application.StatusEffectiveOn);
             var recipient = await recipients.FindPortalUserIdAsync(who.TenantId!.Value, application.ContactId, ct);
             if (recipient is Guid userId) db.Add(new PortalNotification { TenantId = who.TenantId.Value, RecipientUserId = userId, ApplicationId = application.Id, Kind = "application." + application.Status, Subject = application.Status == "approved" ? "Application approved" : "Application rejected", Body = application.Status == "approved" ? "Your application was approved." : "Your application was rejected.", DeliveryStatus = "queued" });
     }
-    private static async Task ApplyMemberChange(MemberSubscription member,string action,string reason,MembershipDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct)
+    private static async Task ApplyMemberChange(MemberSubscription member,string action,string reason,MembershipDbContext db,IRequestIdentity who,HttpContext http,CancellationToken ct,DateOnly? effectiveOn = null)
     {
-        Choice(action,"renew","cancel","lapse","reinstate");
+        Choice(action,"renew","cancel","resign","lapse","reinstate");
+            Check(!member.IsArchived,"Restore the membership before changing its lifecycle.");
+            var today = DateOnly.FromDateTime(DateTime.UtcNow);
+            var effective = effectiveOn ?? today;
+            Check(effective != DateOnly.MinValue && effective <= today,"Choose a valid effective date on or before today.");
+            Check(action is not ("renew" or "reinstate") || effective == today,"Renewal and reinstatement use today's effective date and current term policy.");
+            var previousEffective = await db.Set<MembershipHistory>().Where(x => x.SubjectId == member.Id && x.EffectiveOn != null).MaxAsync(x => x.EffectiveOn, ct);
+            Check(member.OriginalJoinDate == null || effective >= member.OriginalJoinDate,"Effective date cannot precede the recorded original join date.");
+            Check(member.StatusEffectiveOn == null || effective >= member.StatusEffectiveOn,"Effective date cannot precede the current status date.");
+            Check(previousEffective == null || effective >= previousEffective,"Effective date cannot precede the latest recorded lifecycle date.");
+            var previousStatus = member.Status;
             var previousEnd = member.EndsAtUtc;
             if (action is "renew" or "reinstate")
             {
@@ -189,19 +216,23 @@ public static partial class MembershipModule
                 Check(!await db.Set<MemberSubscription>().AnyAsync(x => x.Id != member.Id && x.Status == "active" &&
                     (member.AccountId.HasValue ? x.AccountId == member.AccountId : x.AccountId == null && x.ContactId == member.ContactId), ct),
                     "This applicant already has an active membership. End it before activating another membership.");
+                Check(!await db.Set<MemberSubscription>().AnyAsync(x => x.PreviousMembershipId == member.Id, ct), "This membership has a rejoin successor. Renew or reinstate the latest membership instead.");
                 var quote = await MembershipOperations.RenewalQuoteAsync(db, member, action == "reinstate", ct);
                 member.EndsAtUtc = quote.EndsAtUtc; member.Rate = quote.Total; member.Currency = quote.Currency; member.Status = "active";
             }
-            else { Check(member.Status == "active","Only active memberships can be cancelled or lapsed."); if (action == "lapse") Check(member.EndsAtUtc <= DateTime.UtcNow,"A membership cannot lapse before its term ends."); member.Status = action == "cancel" ? "cancelled" : "lapsed"; }
-            History(db,who,http,member.Id,"membership." + action,reason,previousEnd,member.EndsAtUtc);
+            else { Check(member.Status == "active","Only active memberships can be cancelled or lapsed."); if (action == "lapse") Check(member.ExcludedFromLapse != true,"This membership is excluded from lapse. Update its options first."); if (action == "lapse") Check(member.EndsAtUtc <= DateTime.UtcNow,"A membership cannot lapse before its term ends."); if (action == "lapse") Check(effective >= DateOnly.FromDateTime(member.EndsAtUtc),"Lapse effective date cannot precede the term end."); member.Status = action is "cancel" or "resign" ? "cancelled" : "lapsed"; }
+            if (member.Status != previousStatus) member.StatusEffectiveOn = effective;
+            if (action == "resign") { member.ResignedOn = effective; member.ResignationReason = reason; }
+            if (action == "reinstate") member.ReinstatedOn = effective;
+            History(db,who,http,member.Id,"membership." + action,reason,previousEnd,member.EndsAtUtc,effective);
     }
     private static string? TextOptional(string? value, int max) => string.IsNullOrWhiteSpace(value) ? null : Text(value, max);
     private static void ValidateProduct(ProductRequest r) { Text(r.Name); Text(r.Category,80); Check(r.TermMonths is >= 1 and <= 60,"Terms must be between 1 and 60 months."); Check(r.Rate >= 0 && r.Rate < 100000000 && decimal.Round(r.Rate,2) == r.Rate,"Enter a nonnegative rate with two decimal places."); Choice(r.Currency,"GBP","EUR","USD"); }
-    private static void History(MembershipDbContext db, IRequestIdentity who, HttpContext http, Guid id, string action, string reason, DateTime? previous = null, DateTime? next = null) => db.Add(new MembershipHistory { TenantId = who.TenantId!.Value, SubjectId = id, ActorUserId = who.UserId!.Value, Action = action, Reason = reason, CorrelationId = http.TraceIdentifier, PreviousEndUtc = previous, NewEndUtc = next });
+    private static void History(MembershipDbContext db, IRequestIdentity who, HttpContext http, Guid id, string action, string reason, DateTime? previous = null, DateTime? next = null, DateOnly? effectiveOn = null) => db.Add(new MembershipHistory { TenantId = who.TenantId!.Value, SubjectId = id, ActorUserId = who.UserId!.Value, Action = action, Reason = reason, CorrelationId = http.TraceIdentifier, PreviousEndUtc = previous, NewEndUtc = next, EffectiveOn = effectiveOn });
 }
 public sealed record ProductRequest(string Name,string Category,int TermMonths,decimal Rate,string Currency,bool IsActive,Guid? Version) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
-public sealed record ApplicationRequest(Guid ContactId,Guid? AccountId,Guid ProductId,DateTime StartsAtUtc,string ApplicationType="corporate",string? ApplicantRole=null,bool TermsAccepted=false,string? ApplicantNotes=null) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
+public sealed record ApplicationRequest(Guid ContactId,Guid? AccountId,Guid ProductId,DateTime StartsAtUtc,string ApplicationType="corporate",string? ApplicantRole=null,bool TermsAccepted=false,string? ApplicantNotes=null,Guid? PreviousMembershipId=null,bool? ExemptJoiningFee=null,bool? FreeMembership=null, ApplicationRequestedDetails? RequestedDetails=null, string? LifecyclePurpose=null) : IAttributeRequest { public Dictionary<Guid, AttributeInput>? Attributes { get; init; } }
 public sealed record DecisionRequest(Guid Version,string Decision,string Reason);
 public sealed record PortalProductSettings(Guid Version, bool Enabled, string Terms, bool OrganisationEnabled = false);
-public sealed record ChangeRequest(Guid Version,string Reason);
+public sealed record ChangeRequest(Guid Version,string Reason,DateOnly? EffectiveOn = null);
 

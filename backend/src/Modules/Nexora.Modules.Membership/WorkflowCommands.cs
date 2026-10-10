@@ -11,6 +11,7 @@ public static partial class MembershipModule
  private static void AddWorkflowCommands(IServiceCollection services)
  {
   AddWorkflowInspections(services);
+  AddWorkflowPaymentCommand(services);
   services.AddScoped<IWorkflowActionHandler>(sp=>
   {
    var db=sp.GetRequiredService<MembershipDbContext>();var who=sp.GetRequiredService<IRequestIdentity>();

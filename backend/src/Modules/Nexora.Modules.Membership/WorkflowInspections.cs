@@ -10,6 +10,11 @@ public static partial class MembershipModule
 {
  private static void AddWorkflowInspections(IServiceCollection services)
  {
+  services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowInspectionAction(new("membership.member.inspect-access","Review membership and explicit portal entitlements","membership.read",["membershipId"],[new("membershipId","Membership","reference",true)],["needsReview","issues","hasLogin"],AdditionalPermissions:["identity.read","crm.read"]),"membershipId",async(id,ct)=>{
+   var db=sp.GetRequiredService<MembershipDbContext>();var member=await db.Set<MemberSubscription>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();var review=await sp.GetRequiredService<IWorkflowPortalDirectory>().ReviewAsync(member.ContactId,ct);var active=member.Status=="active"&&member.EndsAtUtc>DateTime.UtcNow;var issues=review.Issues;
+   if(!active&&review.HasLogin)issues+="; Membership is inactive or expired: review module entitlements, retaining valid application access.";if(active&&!review.HasLogin)issues+="; Active member has no explicit login binding: administrator review required.";
+   return new("Portal access reviewed; no grants created or revoked",new(){{"needsReview",!string.IsNullOrWhiteSpace(issues)?"true":"false"},{"issues",issues.Trim(';',' ')},{"hasLogin",review.HasLogin?"true":"false"}});
+  }));
   services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowInspectionAction(new("membership.application.inspect","Check application and organisation prerequisites","membership.read",["applicationId"],[new("applicationId","Application","reference",true)],["ready","missingInformation","organisationAuthorityRequiresReview","existingActiveMembership"]),"applicationId",async(id,ct)=>{
    var db=sp.GetRequiredService<MembershipDbContext>();var crm=sp.GetRequiredService<ICrmDirectory>();var row=await db.Set<MembershipApplication>().SingleOrDefaultAsync(x=>x.Id==id,ct)??throw new KeyNotFoundException();var issues=new List<string>();
    if(row.Status!="submitted")issues.Add("Application already decided");if(await crm.FindActiveAsync(row.ContactId,ct)==null)issues.Add("Active Contact required");if(!await db.Set<MembershipProduct>().AnyAsync(x=>x.Id==row.ProductId&&x.IsActive,ct))issues.Add("Active membership offering required");if(!row.TermsAccepted)issues.Add("Terms acceptance required");

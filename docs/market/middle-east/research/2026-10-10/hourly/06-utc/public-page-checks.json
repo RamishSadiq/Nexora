@@ -1,0 +1,72 @@
+[
+  {
+    "url": "https://www.ibpcdubai.com/",
+    "checkedAt": "2026-10-10T06:43:45.447610+00:00",
+    "status": 200,
+    "observations": [
+      {
+        "term": "membership",
+        "text": "complimentary newsletters Subscribe About Us Events Be a Member Renew Membership News & Media Reports and Legislations Contact Us FAQs Privacy Policy @2026 Indian Business & Professional Council Content powered by Stuti Sinha Designed & Developed by Creative Chutney"
+      },
+      {
+        "term": "news",
+        "text": "2003 under the aegis of Dubai Chamber. Subscribe to our complimentary newsletters Subscribe About Us Events Be a Member Renew Membership News & Media Reports and Legislations Contact Us FAQs Privacy Policy @2026 Indian Business & Professional Council Content powered by Stuti Sinha Designed & Developed by Creative"
+      },
+      {
+        "term": "events",
+        "text": " as UAE # 1 Export Partner UAE tariffs dropped by 97 % for India PAST EVENTS Physical 2026-09-28 10:30:00 Seva Pakhwada 2026 \u2013 Tree Plantation Drive 28-09-2026 BITS PILANI Dubai Physical 2026-09-26 10:30:00 AI Masterclass for Business Leaders led by Prof. Saravana Jaikumar 26-09-2026 TAJ JLT Physical 2026-09-25 10:"
+      },
+      {
+        "term": "office@ibpcdubai.com",
+        "text": "1-802 Mobile +971-55-343-3524 +971-50-558-5745 +971-58-675-1664 Email office@ibpcdubai.com sm@ibpcdubai.com admin@ibpcdubai.com IBPC Dubai is the largest association of Indian businessmen & professionals established in 2003 under the aegis of Dubai Chamber. Subscribe to our complimentary newsletters Subscribe About Us Events Be "
+      }
+    ],
+    "limit": "Public council-level workflow only; no member contacts extracted; not proof of buying intent or marketing consent."
+  },
+  {
+    "url": "https://gbcqatar.qa/",
+    "checkedAt": "2026-10-10T06:43:45.454260+00:00",
+    "status": 200,
+    "observations": [
+      {
+        "term": "membership",
+        "text": "t 08 Mar 2020 View all past events MEMBERS BECOME A MEMBER! The GBCQs membership is growing since its foundation, however we are welcoming new members in order to increase and improve the scope of our activities, i.e. GBCQ is closely cooperating with the German Industry and Commerce Office Qatar (AHK). Premium Membersh"
+      },
+      {
+        "term": "events",
+        "text": "German Business Council Qatar About Us Objectives Board Events Members Become a member GBCQ Facebook About Us Objectives Board Events Members Become a member Bringing Germany & Qatar Together ABOUT US The GBCQ was founded in December 2002 in Doha being a non-governmental and non-profit seeking associa"
+      },
+      {
+        "term": "website",
+        "text": " will be placed at all GBCQ Events Your logo will appear: On the GBCQ website with a direct link to your website in our e-mail signatures with a direct link to your website in our e-mail invitations to Council events on all name badges at all Council events on a dedicated signboard at the AHK/GBCQ office Apply Corpo"
+      },
+      {
+        "term": "cooperation",
+        "text": "as well as social events in order to enhance mutual communication and cooperation BOARD The Board of the German Business Council Qatar is the cooperative executive body of the association. Taking into account the decisions of the Annual General Meeting, the Board supports the fulfilment of the objectives of the GBCQ and"
+      },
+      {
+        "term": "gbcq@ahkqatar.com",
+        "text": "learn how you and your business will be impacted.\r\nTo register email: gbcq@ahkqatar.com Annual General Assembly September 27, 2021 The current Board cordially invites all GBCQ members to attend the Annual General Assembly. Please note this is a members exclusive event. GBCQ Webcast Series: Qatar Labor & Employment Reforms Apr"
+      }
+    ],
+    "limit": "Public council-level workflow only; no member contacts extracted; not proof of buying intent or marketing consent."
+  },
+  {
+    "url": "https://swissbcq.org/",
+    "checkedAt": "2026-10-10T06:43:45.455968+00:00",
+    "error": "HTTP Error 406: Not Acceptable",
+    "limit": "Current page unverified; no bypass attempted."
+  },
+  {
+    "url": "https://cbcqatar.org/become-a-member/",
+    "checkedAt": "2026-10-10T06:43:45.455968+00:00",
+    "error": "<urlopen error timed out>",
+    "limit": "Current page unverified; no bypass attempted."
+  },
+  {
+    "url": "https://ibc.qa/en/about",
+    "checkedAt": "2026-10-10T06:43:45.455968+00:00",
+    "error": "<urlopen error timed out>",
+    "limit": "Current page unverified; no bypass attempted."
+  }
+]

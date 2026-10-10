@@ -1,5 +1,8 @@
 "use client";
-import { EntityHeading } from "@/components/ui/entity-heading";
+import { WorkspaceHeading } from "@/components/ui/workspace-heading";
+import { RecordListing } from "../shared/record-listing";
+import listingStyles from "../crm/record-listing.module.css";
+import { ArrowLeft, Plus } from "lucide-react";
 
 import { useEffect, useRef, useState } from "react";
 import { useEntityListing } from "../shared/entity-listing-controls";
@@ -24,6 +27,7 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
   const [draft, setDraft] = useState<Draft>(blank);
   const [saved, setSaved] = useState("");
   const [editing, setEditing] = useState(false);
+  const [settings, setSettings] = useState(false);
   const [preview, setPreview] = useState(false);
   const [restoreId, setRestoreId] = useState("");
   const request = useRef(0);
@@ -61,7 +65,8 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
     });
   }
   return <main className="mx-auto max-w-7xl space-y-5 p-5 sm:p-8">
-    <header className="rounded-xl bg-white p-6 text-slate-900"><p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">Association website</p><EntityHeading className="mt-2">Your website, in your words.</EntityHeading><p className="mt-2 text-sm text-slate-600">Build pages, review a draft, then publish when you’re ready.</p></header>
+    <WorkspaceHeading actions={state.site&&!editing&&!settings&&canEdit?<button type="button" className={listingStyles.create} aria-label="Add website page" onClick={()=>{++request.current;setDetail(null);setDraft({...blank,slug:state.pages.length?"":"home"});setSaved("");setEditing(true);setPreview(false);setMessage("");}}><Plus size={18}/></button>:undefined}>Website pages</WorkspaceHeading>
+    {(editing||settings)&&<button className={button} aria-label="Back to listing" onClick={()=>{if(editing&&dirty&&!window.confirm("Discard unsaved page changes?"))return;++request.current;setEditing(false);setSettings(false);setPreview(false);}}><ArrowLeft size={16}/></button>}
     {error && <div role="alert" className="rounded-lg bg-red-50 p-4 text-red-800">{error} <button className={button} onClick={() => { setReload(n => n + 1); if (detail) void open(detail.page.id); }}>Reload</button></div>}
     {message && <p role="status" className="rounded-lg bg-emerald-50 p-4 text-emerald-900">{message}</p>}
     {!ready && !error && <p role="status" className="rounded-lg bg-white p-4">Loading website…</p>}
@@ -69,15 +74,9 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
       e.preventDefault(); const data = new FormData(e.currentTarget);
       void action(async () => { await moduleApi("content", "/site", "POST", { name: data.get("name"), tagline: data.get("tagline") }); setMessage("Website created. Add your first page and publish it when ready."); });
     }}><h2 className="text-xl font-semibold">Create your association website</h2><label className="block text-sm">Association name<input name="name" className={input} required maxLength={100} /></label><label className="block text-sm">Short tagline<input name="tagline" className={input} maxLength={200} /></label><button className={primary} disabled={busy || !canEdit}>Create website</button></form>}
-    {state.site && listing.toolbar}
-    {state.site && <CmsSettings site={state.site} media={media} canEdit={canEdit} canPublish={canPublish} changed={() => setReload(n => n + 1)} />}
-    {state.site && <div className="grid items-start gap-5 lg:grid-cols-[260px_1fr]">
-      <section className="space-y-4 rounded-xl bg-white p-5 text-slate-900" aria-label="Website pages"><h2 className="font-semibold">{state.site.name}</h2>
-        {state.pages.some(p => p.slug === "home" && p.publishedId) && <a className={`${button} block text-center`} href={`/site/${state.site.id}/home`} target="_blank" rel="noreferrer">Open public website ↗</a>}
-        {state.pages.length === 0 && <p className="text-sm text-slate-500">Start with a home page, then add information about your association and membership.</p>}
-        {state.pages.filter(page=>listing.matches({...page,status:page.publishedId?"published":"draft"})).map(p => <button key={p.id} disabled={busy} onClick={() => void open(p.id)} className={`block w-full rounded-lg border p-3 text-left ${p.id === detail?.page.id ? "border-emerald-700 bg-emerald-50" : "border-slate-200"}`}><span className="block font-medium">{p.title}</span><span hidden={!listing.show("Details")} className="text-xs text-slate-500">/{p.slug} · {p.publishedId ? "Published" : "Draft"}{p.publishedId && p.publishedId !== p.draftId ? " · Unpublished changes" : ""}</span></button>)}
-        {canEdit && <button className={button} disabled={busy} onClick={() => { if (editing && dirty && !window.confirm("Discard unsaved changes?")) return; ++request.current; setDetail(null); setDraft({ ...blank, slug: state.pages.length ? "" : "home" }); setSaved(""); setEditing(true); setPreview(false); setMessage(""); }}>New page</button>}
-      </section>
+    {state.site&&!editing&&!settings&&<>{listing.toolbar}<RecordListing label="Website pages" rows={state.pages.filter(page=>listing.matches({...page,status:page.publishedId?"published":"draft"}))} filterKey={listing.filterKey} loading={busy} name={row=>row.title} onView={row=>void open(row.id)} onEdit={canEdit?row=>void open(row.id):undefined} columns={[{key:"page",label:"Page",render:row=>row.title},{key:"details",label:"Details",hidden:!listing.show("Details"),render:row=>`/${row.slug} · ${row.publishedId?"Published":"Draft"}${row.publishedId&&row.publishedId!==row.draftId?" · Unpublished changes":""}`}]}/><button className={button} onClick={()=>setSettings(true)}>Website settings and media</button>{state.pages.some(p=>p.slug==="home"&&p.publishedId)&&<a className={button} href={`/site/${state.site.id}/home`} target="_blank" rel="noreferrer">Open public website ↗</a>}</>}
+    {state.site&&settings&&<CmsSettings site={state.site} media={media} canEdit={canEdit} canPublish={canPublish} changed={()=>setReload(n=>n+1)}/>}
+    {state.site && <div>
       {editing ? <section className="space-y-5 rounded-xl bg-white p-6 text-slate-900">
         <div className="flex flex-wrap items-center gap-2"><h2 className="mr-auto text-xl font-semibold">{detail ? "Edit page" : "New page"}</h2><button className={button} onClick={() => setPreview(!preview)}>{preview ? "Back to editor" : "Preview draft"}</button>{detail?.page.publishedId && <a className={button} href={`/site/${state.site.id}/${detail.page.slug}`} target="_blank" rel="noreferrer">View published page ↗</a>}</div>
         {preview ? <SiteRenderer preview content={{ site: state.site, slug: draft.slug, page: { ...draft, id: detail?.revision.id ?? "preview" }, navigation: [] }} /> : <form className="space-y-4" onSubmit={e => { e.preventDefault(); void action(async () => {
@@ -101,7 +100,7 @@ export function ContentWorkspace({ permissions }: { permissions: string[] }) {
         {detail && canPublish && <div className="space-y-3 border-t border-slate-200 pt-4"><p className="text-sm text-slate-600">{dirty ? "Save draft changes before publishing." : "Publishing makes this saved version visible to everyone."}</p><div className="flex flex-wrap gap-2"><button className={primary} disabled={busy || dirty} onClick={() => void publish()}>Publish saved draft</button>{detail.page.publishedId && <button className={button} disabled={busy || dirty} onClick={() => void publish(true)}>Unpublish page</button>}</div>
           {!!detail.history?.length && <div className="flex flex-wrap items-end gap-2"><label className="text-sm">Previous version<select className={input} value={restoreId} onChange={e => setRestoreId(e.target.value)}><option value="">Choose a saved version</option>{detail.history.map(v => <option key={v.id} value={v.id}>{v.title} · {new Date(v.createdAtUtc).toLocaleString()}</option>)}</select></label><button className={button} disabled={busy || dirty || !restoreId} onClick={() => void publish(false, restoreId)}>Publish selected version</button></div>}
         </div>}
-      </section> : <div className="rounded-xl bg-white p-8 text-slate-600">Choose a page to edit, or create your first page.</div>}
+      </section> : null}
     </div>}
   </main>;
 }

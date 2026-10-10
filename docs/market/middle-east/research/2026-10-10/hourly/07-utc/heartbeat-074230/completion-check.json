@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-10T07:47:51+00:00",
+  "complete": true,
+  "queries": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com}",
+      "messageIds": [
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org}",
+      "messageIds": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mpif.org from:smihq.org}",
+      "messageIds": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent Nexora",
+      "messageIds": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745",
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:\"Undeliverable\" subject:\"Delivery failure\"}",
+      "messageIds": []
+    }
+  ],
+  "newMessageIds": []
+}

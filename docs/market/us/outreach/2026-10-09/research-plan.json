@@ -1,0 +1,84 @@
+[
+  {
+    "candidateId": 81,
+    "urls": [
+      "https://www.americanfenceassociation.com/",
+      "https://www.americanfenceassociation.com/membership/"
+    ],
+    "name": "American Fence Association"
+  },
+  {
+    "candidateId": 85,
+    "urls": [
+      "https://www.glass.org/membership",
+      "https://www.glass.org/form/contact"
+    ],
+    "name": "National Glass Association"
+  },
+  {
+    "candidateId": 95,
+    "urls": [
+      "https://www.ascouncil.org/membership-information",
+      "https://www.ascouncil.org/membership-faqs"
+    ],
+    "name": "Adhesive and Sealant Council"
+  },
+  {
+    "candidateId": 9,
+    "urls": [
+      "https://stafda.org/manage-accounts/",
+      "https://stafda.org/contact-us/"
+    ],
+    "name": "Specialty Tools and Fasteners Distributors Association"
+  },
+  {
+    "candidateId": 27,
+    "urls": [
+      "https://nasf.org/",
+      "https://nasf.org/membership-categories/",
+      "https://nasf.org/contact/"
+    ],
+    "name": "National Association for Surface Finishing"
+  },
+  {
+    "candidateId": 47,
+    "urls": [
+      "https://www.fibrebox.org/",
+      "https://www.fibrebox.org/about-fba",
+      "https://members.fibrebox.org/?l=become_a_member"
+    ],
+    "name": "Fibre Box Association"
+  },
+  {
+    "candidateId": 91,
+    "urls": [
+      "https://www.spri.org/",
+      "https://www.spri.org/membership-application/"
+    ],
+    "name": "Single Ply Roofing Industry"
+  },
+  {
+    "candidateId": 22,
+    "urls": [
+      "https://www.investmentcasting.org/",
+      "https://www.investmentcasting.org/member-rates.html"
+    ],
+    "name": "Investment Casting Institute"
+  },
+  {
+    "candidateId": 21,
+    "urls": [
+      "https://www.diecasting.org/",
+      "https://www.diecasting.org/web/Contact/Web/About/Contact_Us.aspx?hkey=2355d640-28cf-44b5-9264-48f95ca2d779"
+    ],
+    "name": "North American Die Casting Association"
+  },
+  {
+    "candidateId": 25,
+    "urls": [
+      "https://www.mpif.org/",
+      "https://www.mpif.org/About/JoinMPIF.aspx"
+    ],
+    "name": "Metal Powder Industries Federation"
+  }
+]

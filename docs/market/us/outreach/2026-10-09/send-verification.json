@@ -1,0 +1,185 @@
+{
+  "verifiedAt": "2026-10-09T07:06:22.054Z",
+  "localDate": "2026-10-09",
+  "expected": 10,
+  "confirmed": 10,
+  "duplicates": [],
+  "failures": [],
+  "attachmentSha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+  "results": [
+    {
+      "rank": 1,
+      "organisation": "American Fence Association",
+      "to": "memberservices@americanfenceassociation.com",
+      "messageId": "1a11f7678e41f57c",
+      "threadId": "1a11f7678e41f57c",
+      "subject": "Nexora demo for AFA's membership team",
+      "sentAt": "2026-10-09T09:00:20+02:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7678e41f57c",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 2,
+      "organisation": "National Glass Association",
+      "to": "membership@glass.org",
+      "messageId": "1a11f76d0e3fea55",
+      "threadId": "1a11f76d0e3fea55",
+      "subject": "Nexora demo for NGA's membership team",
+      "sentAt": "2026-10-09T09:00:42+02:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f76d0e3fea55",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 3,
+      "organisation": "Adhesive and Sealant Council",
+      "to": "brian.peters@ascouncil.org",
+      "messageId": "1a11f772a971f528",
+      "threadId": "1a11f772a971f528",
+      "subject": "Nexora demo for ASC's membership team",
+      "sentAt": "2026-10-09T09:01:05+02:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f772a971f528",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 4,
+      "organisation": "Specialty Tools and Fasteners Distributors Association",
+      "to": "cusher@stafda.org",
+      "messageId": "1a11f778a20ccaad",
+      "threadId": "1a11f778a20ccaad",
+      "subject": "Nexora demo for STAFDA's membership team",
+      "sentAt": "2026-10-09T09:01:30+02:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f778a20ccaad",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 5,
+      "organisation": "National Association for Surface Finishing",
+      "to": "info@nasf.org",
+      "messageId": "1a11f77ea8a74a8d",
+      "threadId": "1a11f77ea8a74a8d",
+      "subject": "Nexora demo for NASF's membership team",
+      "sentAt": "2026-10-09T07:01:55+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f77ea8a74a8d",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 6,
+      "organisation": "Fibre Box Association",
+      "to": "fba@fibrebox.org",
+      "messageId": "1a11f7848a393b9b",
+      "threadId": "1a11f7848a393b9b",
+      "subject": "Nexora demo for Fibre Box Association's membership team",
+      "sentAt": "2026-10-09T07:02:18+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7848a393b9b",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 7,
+      "organisation": "Single Ply Roofing Industry",
+      "to": "info@spri.org",
+      "messageId": "1a11f78af1ffedf9",
+      "threadId": "1a11f78af1ffedf9",
+      "subject": "Nexora demo for SPRI's membership team",
+      "sentAt": "2026-10-09T09:02:45+02:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f78af1ffedf9",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 8,
+      "organisation": "Investment Casting Institute",
+      "to": "info@investmentcasting.org",
+      "messageId": "1a11f79086a34070",
+      "threadId": "1a11f79086a34070",
+      "subject": "Nexora demo for Investment Casting Institute's membership team",
+      "sentAt": "2026-10-09T07:03:07+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79086a34070",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 9,
+      "organisation": "North American Die Casting Association",
+      "to": "nadca@diecasting.org",
+      "messageId": "1a11f7961e491a65",
+      "threadId": "1a11f7961e491a65",
+      "subject": "Nexora demo for NADCA's membership team",
+      "sentAt": "2026-10-09T07:03:30+00:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7961e491a65",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    },
+    {
+      "rank": 10,
+      "organisation": "Metal Powder Industries Federation",
+      "to": "dschember@mpif.org",
+      "messageId": "1a11f79c15f23dcf",
+      "threadId": "1a11f79c15f23dcf",
+      "subject": "Nexora demo for MPIF's membership team",
+      "sentAt": "2026-10-09T09:03:55+02:00",
+      "sentUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79c15f23dcf",
+      "attachment": {
+        "filename": "nexora-product-demo-male.mp4",
+        "mime_type": "video/mp4",
+        "size_bytes": 1945313
+      },
+      "pass": true
+    }
+  ],
+  "receivedResponses": [
+    {
+      "id": "1a11f79e78082745",
+      "threadId": "1a11f79c15f23dcf",
+      "organisation": "Metal Powder Industries Federation",
+      "classification": "automatic_retirement_reply",
+      "positiveInterest": false,
+      "receivedAt": "2026-10-09T07:04:03Z",
+      "receivedLocal": "9 October 2026, 08:04 BST",
+      "replacementMembershipContact": "sgibbs@mpif.org",
+      "replacementContactStatus": "Named in automatic reply; not sent a pitch"
+    }
+  ],
+  "deliveryLimitation": "Gmail acceptance and Sent metadata verified; delivery and viewing not established. MPIF returned an automatic retirement response. No positive human campaign reply or bounce found at final check."
+}

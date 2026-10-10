@@ -1,0 +1,3451 @@
+{
+  "utcHour": "2026-10-09T12:00:00+00:00",
+  "initialChecks": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com Nexora",
+      "emails": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "thread_id": "1a120804f5fbe7f3",
+          "from_": "Gary McCoy gary@smihq.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "snippet": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact",
+          "labels": [
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "has_attachment": false,
+          "attachments": [],
+          "inline_images": [],
+          "email_ts": "2026-10-09T11:50:40+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3",
+          "display_title": "Automatic reply: Nexora demo for SMI's membership applications"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "thread_id": "1a11f79e78082745",
+          "from_": "Dora Schember dschember@mpif.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "snippet": "I have retired. For questions/information please contact the colleagues below: Membership contact Stephanie: sgibbs@mpif.org Standards contact Wiley: wabner@mpif.org International Journal of Powder",
+          "labels": [
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "has_attachment": false,
+          "attachments": [],
+          "inline_images": [],
+          "email_ts": "2026-10-09T07:04:03+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745",
+          "display_title": "Automatic reply: Nexora demo for MPIF's membership team"
+        },
+        {
+          "id": "1a11bf33395d33a1",
+          "thread_id": "1a11be815953d93d",
+          "from_": "Victoria Cuff victoria@bafsa.org.uk",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "snippet": "No Thanks Kind regards, Vicky photo Victoria Cuff BAFSA Membership Manager BAFSA (British Automatic Fire Sprinkler Association) (0) 7989 568 050 | victoria@bafsa.org.uk www.bafsa.org.uk From:",
+          "labels": [
+            "IMPORTANT",
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "has_attachment": false,
+          "attachments": [],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:37:59+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1",
+          "display_title": "Re: Nexora demo for BAFSA's membership administration"
+        }
+      ],
+      "next_page_token": null
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "emails": [
+        {
+          "id": "1a11bf33395d33a1",
+          "thread_id": "1a11be815953d93d",
+          "from_": "Victoria Cuff victoria@bafsa.org.uk",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "snippet": "No Thanks Kind regards, Vicky photo Victoria Cuff BAFSA Membership Manager BAFSA (British Automatic Fire Sprinkler Association) (0) 7989 568 050 | victoria@bafsa.org.uk www.bafsa.org.uk From:",
+          "labels": [
+            "IMPORTANT",
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "has_attachment": false,
+          "attachments": [],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:37:59+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1",
+          "display_title": "Re: Nexora demo for BAFSA's membership administration"
+        }
+      ],
+      "next_page_token": null
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "emails": [],
+      "next_page_token": null
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org}",
+      "emails": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "thread_id": "1a120804f5fbe7f3",
+          "from_": "Gary McCoy gary@smihq.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "snippet": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact",
+          "labels": [
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "has_attachment": false,
+          "attachments": [],
+          "inline_images": [],
+          "email_ts": "2026-10-09T11:50:40+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3",
+          "display_title": "Automatic reply: Nexora demo for SMI's membership applications"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "thread_id": "1a11f79e78082745",
+          "from_": "Dora Schember dschember@mpif.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "snippet": "I have retired. For questions/information please contact the colleagues below: Membership contact Stephanie: sgibbs@mpif.org Standards contact Wiley: wabner@mpif.org International Journal of Powder",
+          "labels": [
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "has_attachment": false,
+          "attachments": [],
+          "inline_images": [],
+          "email_ts": "2026-10-09T07:04:03+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745",
+          "display_title": "Automatic reply: Nexora demo for MPIF's membership team"
+        }
+      ],
+      "next_page_token": null
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mailer-daemon from:postmaster}",
+      "emails": [],
+      "next_page_token": null
+    },
+    {
+      "query": "in:sent Nexora after:2026/10/07",
+      "emails": [
+        {
+          "id": "1a120800ff0e30ec",
+          "thread_id": "1a120800ff0e30ec",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "gary@smihq.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for SMI's membership applications",
+          "snippet": "Hi Gary, I noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application. We've built Nexora to connect member-company records, employee",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-FBHb6Ujg3InOXfgC3pSxTGE-YqSKkorQTz9FEpT6_X5SCEdzgTb5_1K_CqMTilznvOzOM5UqO5LBZQA1b4zT0Bhb8K1RWPhDGgFKXRZf8f-gpbxbtx9YzlaZanGjcq5EynpO48fpjFiPiyR0xnIUko8xh96eyhUN-oH70omPF81IpjoFSWS5O8RtXjJ505nbPEaPzJsHMIew1iwByxdM3v7MsxshiCGebckt24puoYGGsWS-pBdkHHpmOPunLwSRaMmhLmDCcXe0lFRX3_yqFjepRVv8Q4jmTNkJMYK4nkE3EZ9MeUbW6b8okvRveFRR8BZcvydMpiYmzCTSnoFu9jthDoq10Vdf1LgrGZRDUB773WBadVkZWc_vZQur_IL9VhNuUbmMA5rWA",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T11:50:25+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120800ff0e30ec",
+          "display_title": "Nexora demo for SMI's membership applications"
+        },
+        {
+          "id": "1a11f79c15f23dcf",
+          "thread_id": "1a11f79c15f23dcf",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "dschember@mpif.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for MPIF's membership team",
+          "snippet": "Hi Dora, I saw that MPIF membership is limited to business entities, with applications for its federated associations. I'd like to explore one company-membership workflow with your team. We've",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-QrxBRR9CVLAYDzv-uDnFPVUpaFNpwv6XslV-tSzC06svL4WuShvcbokcQdhvNl029xfvoOE5rxeAhZQV9eVfqOhEFvrUTVg3pl1S3u-kCVcp-LTN1pQzWy4SQIvqSMDYxJbM138i9AMcE9KftYTB0k0a3xY22LXc7UzvKK3B1lvC3MmrnzsdR231dn--fb5TstQH89cWPf6YtF5LQN08pBpFJxlWmAK7OGUP_1oCo0YqJvIroWIW2HI4ptb0WkfOAs1VV6iQngSWEcSDm75KybXZiXSFo_G326H2Pjtsrvryb7CzyK47-LJCrKKb2NX5q-IRb6BCQmAANcTzDZD6SvRzS2DRn_oA26F_nEf6Dsedt1h51oHEvY2SSPn0Ps5PVxsqr5P94Rqfp",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T09:03:55+02:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79c15f23dcf",
+          "display_title": "Nexora demo for MPIF's membership team"
+        },
+        {
+          "id": "1a11f7961e491a65",
+          "thread_id": "1a11f7961e491a65",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "nadca@diecasting.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for NADCA's membership team",
+          "snippet": "Hi NADCA membership team, I noticed NADCA serves both corporate and individual members. I'd like to explore one corporate-membership workflow, particularly how member-company records connect with",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9pAWhe5seiyn4jXgO-ypyNWEvQ6RS-E2eIOiakMhGxOVQFeRXoWfQkOhy21WXDDyk9W2RZimSQpRMyzLfbx5jbdWgt7vZrLf1rp1LBCQoChAgGJPpnwz0rBWYB4O2unZNq17ZwZwI40FoLmn3vvQn7ZYmTqIFTWZY47Mve4-k2N3m4XThivNLd6rockIXy4mmdvJ-zDRCdrXHomA3liOyLwyZHrLEclcL4No_QA27zc1wvSHqNLQud9EEoqq4yjQ2uXfyv916m8O12Hu_XbJWd36prsTFX7MnncFVtFCDAB-I6Sl5DpoJP8xn_d2dbwf8Y4soeazjx2LRM2WANFU8i9DPW8E8nDBwe6DgWf9I-yyTznyd39SiAXcLp2esWHkx00wBB3yfgCman",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T07:03:30+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7961e491a65",
+          "display_title": "Nexora demo for NADCA's membership team"
+        },
+        {
+          "id": "1a11f79086a34070",
+          "thread_id": "1a11f79086a34070",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@investmentcasting.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Investment Casting Institute's membership team",
+          "snippet": "Hi ICI membership team, I saw that ICI has separate company membership categories for foundries and suppliers. I'd like to explore how those member-business records connect to the people using",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_qG8S8ZcVvWjrJlrtWcBXt3Y_AALtcmrvoVML0tMR70Pn0nMI6nINrs15l8PR5oSRbY2rf2YUn5_Miboa1-oKNzKoL_jgolN6MLT9gzZlB3gKMtJDRc7_2T7a-m8q5ulWgOraWOoVyyoqA67YtncieCG5VuMrSvAme8ndIs4PnA18gCnRqqPihBQo-bhgoOrpZzFYPPBB6ilb8VhQ9DzmG1Tvcmf_C-n7LSbtLCQ6MLMJJ-H4Zb97_yt3IO9eoeTTeiOG3ifrHP76rwhh1rfAgB54fAJ99mpdhrxgxCYPT9t2hSdCX-yvAQH_vRLMm1ir5isoJJJaYxqZk02Ipv9x3pu1Yj6ZyBXC5jNRKHaFh1pNKF6WmUknBLzUAJHTsKtP9FC0WTlOI2q9J",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T07:03:07+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79086a34070",
+          "display_title": "Nexora demo for Investment Casting Institute's membership team"
+        },
+        {
+          "id": "1a11f78af1ffedf9",
+          "thread_id": "1a11f78af1ffedf9",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@spri.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for SPRI's membership team",
+          "snippet": "Hi SPRI membership team, I noticed SPRI's application collects company representatives and is reviewed by the Board. That link between company records, contacts and application review is central to",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-PpFzQLa5HKJ6Dry_VlsXqgUGZhjgE9qhWRPE-OxtZD7X6xtkAG3_YEJmLkQqK00kADXCY_SFhx9txHlPis4YVba78vNLSm_wbwVjAwuJEGCz5NVuGcicamfHWl8U2BfibdGZpUN1up6sms4FhHKXzOIY8S4iMEWHoHSo_M7icKlSFd0yocudG0qg2UWs2zkQ1IaDEWdNYghCPXyfe_d-VsLcok8JbbymdCwxAUZoDd9e0tG5NN3pmtCbAeJEWLQGW1ANi0BtPUJmVNty0KcY4VVQnVmE_66WWxjE-NGu62NwnjqSYFk3fGlL-bNScjqeg392TUpgu8q-xbw4A50ZuC2oXo5kLhOBBFHFENpxKeukWvGFLqaNcqYZHsjfO_F-rXAoOGpF3AG2J",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T09:02:45+02:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f78af1ffedf9",
+          "display_title": "Nexora demo for SPRI's membership team"
+        },
+        {
+          "id": "1a11f7848a393b9b",
+          "thread_id": "1a11f7848a393b9b",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "fba@fibrebox.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Fibre Box Association's membership team",
+          "snippet": "Hi FBA membership team, I saw that FBA supports corrugated member companies through data, industry resources and networking. I'd like to explore the company-and-contact administration behind that",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ853eBqEv6PqUC-0BXd15xi-YGr6b9EtHbiGLextmPl_gpOyxvLwtDPZEo8fYujS-Qvl19VlB4Xh-1Ay689Q5u30KoRJu8MQMsNYdOBBqMyXlCrskldZBVunHhgitDTnyKo9dE_G57TwAKQa2irg_kFDU7k5-74rtpBMsBQHtjH9ch_C0K2xmhgdHjXjoqupHEPBdE_hv09OornyPa9DqTNFN7x2sBUwfcVD9tEF-jGARnu4vueFyyd1O_zJzRqMinDCyUNNK3wAe-4JjQOX2fTpSxWQ_mkoe4Gh-PaVX6VH0Of0dVBbgbPusuz7zdpV7B2vIeq86G6IdhAv7TA_b89tT1ETmqZZw49UBR5xeLfaRgaLxWp7o2Lh1K6MH02ISBQRZKs_wSDan1T",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T07:02:18+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7848a393b9b",
+          "display_title": "Nexora demo for Fibre Box Association's membership team"
+        },
+        {
+          "id": "1a11f77ea8a74a8d",
+          "thread_id": "1a11f77ea8a74a8d",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@nasf.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for NASF's membership team",
+          "snippet": "Hi NASF membership team, I noticed NASF offers membership options for job shops, suppliers and distributors. Keeping those member businesses connected to their people is central to Nexora. We've",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9a9k8Qi3qFzZr0Flv6t3YG3haVHKSWT9pRXE5iOai_LM68Ji52ajXPGnh4rNLXNqCKxFQGalHWw1a1Rj043eOC7AOdH3AP6Ceb3WGKUX66mr7Z4Hmu6XZL0mQHHR19Y100xbJh5cjhTwjT5F1V2-8VBGgLBt2ep04msLXCYQXY_9D2rkMPNsCteZGoYZQeB2hIsiX-U-9mIOQT6Qb6YgTCSUwqwKvUjHjdi8M9OaRHetFEVRqcW8UjSI8Em9df-Cf3Ht-tTjbL_opAAV52-Twqf16rFbBeiw-KtQ8vhhv6YS3Z2DVYsxzL9mcJkBPlkqJClJPKTjubNtWOLqL_UvFmYXGZu95KQh4UX9ejs6914988v3jzJZ_zwMuOrIK8kfzpUj1OCql4JDHP",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T07:01:55+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f77ea8a74a8d",
+          "display_title": "Nexora demo for NASF's membership team"
+        },
+        {
+          "id": "1a11f778a20ccaad",
+          "thread_id": "1a11f778a20ccaad",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "cusher@stafda.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for STAFDA's membership team",
+          "snippet": "Hi Cathy, I saw that STAFDA already gives each company's Key Contact a way to manage employee users. That company-and-people relationship is central to Nexora. We've built Nexora to connect",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8U0AjwjtOND5ZXMTnurkw4KKgbeKCd1zD1SmdlcDfr7MKNJaoowPM4HxNY9qdZYOdvfBZybQTXMX4b2C04iBlp0xQh24quLJ3u3DmrcU8gNVArD89M7S_6fcL1ri7ywlOmdwCTU5Ji59_rafcO5jWMOv7VZvFw1kqeNwUGEdMytEfC-e1jWCIWnDm61qraRSajhCzhwbx7nxcVCuawSlcr71_YSSchsjHK3Q1BV6ffthGSRnjjq2hPyKqdO0MjOVXcwamnhI_2VRkh3gk8VZzc_DtjjvTY08mw7kmIbMqhEW-tGnn_maEEMvEes1QH4cN7MUAAZ0mB4jYEYdFlVF4wJjs_mJDb5VcfvnwIFSbHNdbc_tzrMcpKLcuQ9f3F4-0g0ugD97lmOP2H",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T09:01:30+02:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f778a20ccaad",
+          "display_title": "Nexora demo for STAFDA's membership team"
+        },
+        {
+          "id": "1a11f772a971f528",
+          "thread_id": "1a11f772a971f528",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "brian.peters@ascouncil.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for ASC's membership team",
+          "snippet": "Hi Brian, I saw that ASC membership applications go through Board approval and employees of member companies can create their own accounts. I'd like to explore that application-to-member journey",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-BgopFFQYwJJg-wLvBv_JDVhWBDFzTCZmG0sfIym3y31pqLujMokw1tFbM3KIGnCDmmiRm_aKbnGAnFi2HkdXGFW5aG926rARJm3zcPoh02oZ1ZztTCTzMQosni4F5Zp4wjFKAUaqxMgwAZ_fsksfsYA82x4W2D8NBzQuDYsSZDni7NSSpIfMxuphXW2W-WyT1TD0WfrmSw1dt5OUvnajzsOFmh7edijyYeef-lWZBeTmvbqHNGvCyeqBRTZ8LF2MYnxAHWNkhJfqwI2Hbkp48a3TD-7WgHeZSgrPBQnkStiOvJCzTD98uJVztypbzbV-qGC4LanJ9OSmjRnosPQTQZSXdufLHSoKZhYX8gcbQD0jDYbQMA9z1fnoo9cQHn7IrBJbOkm7iMK8z",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T09:01:05+02:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f772a971f528",
+          "display_title": "Nexora demo for ASC's membership team"
+        },
+        {
+          "id": "1a11f76d0e3fea55",
+          "thread_id": "1a11f76d0e3fea55",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@glass.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for NGA's membership team",
+          "snippet": "Hi NGA membership team, I noticed NGA membership is company based, with a process for adding subsidiary or additional locations. That connection between member organisations and their contacts is",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8qDu8zd8Hx_MbdqBYXi_wlN1b_F4OCKA_TBLrhNl1kX1OjVVvQpCO0z0BcEjPfSjJU-ffTq-RO9V_I91WpjPeF_iBBdjA2YtJRCrCIZEZJcT58LKw7ZXWSoKESI1N1MOawRePUMhgVbfeLlY4iHpJu_klXtmGN0WYmy7SK4PB_LyxPR8_CSVNrZbFNkxOvo1QBA4X0wNxSknZHhrSMjmYb1zf_uMclBqjLRBO3h_IN99u-3gpnPo1xlg-e4jI4vAGde1Dvcijfhng0XUXeMOYMqWhcnNrtdcRUTwZqQPi4wqMVwAywyyJhVZdJfM9fpMVSs04hKK_juZOkmC-8kIGJF_wpdAQJbwzMAiguT1ahq2DPL-o-t0EAT86ASrXNPTCJgVpKiNVMLYhv",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T09:00:42+02:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f76d0e3fea55",
+          "display_title": "Nexora demo for NGA's membership team"
+        },
+        {
+          "id": "1a11f7678e41f57c",
+          "thread_id": "1a11f7678e41f57c",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "memberservices@americanfenceassociation.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for AFA's membership team",
+          "snippet": "Hi AFA membership team, I noticed AFA membership covers a whole company and its employees, and you already offer MyAFA accounts. That company-and-people relationship is central to Nexora. We've",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_O6aEG31odmDXbhleGmtIO5JvlKBfsyBpx9ya10F23LMVVAbcZxwu3uYw8Co-UJzYRouhtZCPn0IHAo3wvd0ixXS4TWtDyKjM7oQynULqeBU5aVYqP1fPlANcauzaqRexhAY9qDFZacMyWyXbwdYrfUFZKuP3GDtMjmHHnIwuYrMWuEp6npS_ihGa_2wicV2Rqmk4Mc4AhXwRhXrbgwL_1yGW2_F9mqFMLOqI53wwM7jAaq0nCUEVWUPR40syYqraERsW003kqf3g5d-yN8DWbt1mZByIgToAZk8hqweROSI3eqoMQ9PsEW78_ZU_6aPCpcmSMpBpDTj6wJc875PjckYNG6hBB5qSxD48XufAJhfvfQL6mmirHT15Rx51onzwlbCdgvQ7jpMH2",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-09T09:00:20+02:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7678e41f57c",
+          "display_title": "Nexora demo for AFA's membership team"
+        },
+        {
+          "id": "1a11c212432fee89",
+          "thread_id": "1a11c212432fee89",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@doors.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for International Door Association's membership team",
+          "snippet": "Hi IDA membership team, I saw that IDA gives member companies an administrator role for managing their annual membership renewal. I'd be interested to understand how your team keeps member-company",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ81w1oiIeqG0IbdFtgMDY7uBKUiqCRE0fqIo-ZV9z4nA5vvvNtgxRjTpDoqaoetnNibjrOGl6ZFHeorhRIoWMR_3JU5CzA-gbTCIz1TKlytwDpYzCkO3gPzDbawxWpNpjShQMV-KGVYwLKJnmrC3tz6hqJeu7t_F0VMWIig3dtcBOlzB0ORd2oMCg7qAntN-U503g1cW8iNGAN4pjgg1xqaG4UtFA2vXls_q6V3BUoHwTmbuFX4Nco9hPQ_Hodl0jE6YFcZna2lK6_JY4Bwo0XGeK_ZZy1LNfyZinz0FtoddOuZFOZgOIXJ5efOUbfQGBlmv8va8rV-hqWSWZ_JQt0gGep96H35ri9U0UqppW5kt4C_pGNQiAHL2md8uypbPDmYQWaYf6aICy7t",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:28:16+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c212432fee89",
+          "display_title": "Nexora demo for International Door Association's membership team"
+        },
+        {
+          "id": "1a11c20c97b3046e",
+          "thread_id": "1a11c20c97b3046e",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "angela@awfs.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for AWFS's membership team",
+          "snippet": "Hi Angela, AWFS memberships are built around companies supplying the woodworking and furnishings industry, and member companies can also involve their employees in SWM. I'd be interested to",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8IWV4x038vjBqpAfd2wzn6eUKfEo5ocB1wzA6eCuXQBiSO6GVAM0nm5XMNm6Edan-b26aAVRDoivs2S4mI_S8ArC6vOoxjt6UPKzPt6TraldHSSnbVx5_VyknZXBHA6YyBu5IbEC3OSEiLOf3x6fqjtYLplcEJi03M2CImyVAjYKn20TpQIYizYBm4Q72X5GkvoUzhMQidhF1cNVIRQvk2ztnFzZHUOtE3TQPoZRKQiEoyeIWGl34hhUJexwumJU9XIl0RvqBfw6Q2W8uiu_EbvO3Ocr4J46xQ0nfH_rKAA05Lz8D-aK1hMm1JH9ESyz39dWVZ-YAksmYXvXRictSYIWSWUodnIlpRbUEsR0ivwSDx9qbxhJ-rGD_ZtpouwXLAQIXdOmlr6CvX",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T10:27:52-05:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c20c97b3046e",
+          "display_title": "Nexora demo for AWFS's membership team"
+        },
+        {
+          "id": "1a11c203d2286c33",
+          "thread_id": "1a11c203d2286c33",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "office@tlmi.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for TLMI's membership team",
+          "snippet": "Hi TLMI membership team, TLMI offers converter and supplier members industry resources, company benchmarking and a member directory. I'd be interested to understand how your team keeps member-",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_hxs0XgGRcOQflD9kG8ITnXI_SGw5Srgk5MlTSaOH38JXbR8SwSxVpy7OhNptW4JGCzg1GwDs8_JrlXZe8XIArRyNM4cAu5R4xAvpKgdIGIYENM3sBW20mdBnHI5YIHbYNvhA1wPCJPX6TdE4QoowEt_xOzfwdyK1vpDWse2DqwmGWylaMmb8_obEEAhDgeWWvPnwc-OQauPsUjpxJ9ZTR7OGEcKEMjX9qyCXqxsd9D6OVZxETRZRwu1a2DchkZLsf0ypvJzc_A4rfkAWyKIDPKjwJJ0fjC2FTox-fntKpyYHnvr5IBE7nuMoeg5XRDw0TsyRwO6-Jq0Tdxb0xweFj_HA6l7PMje7eekjnID3gVQoSJ6p6fCyXHHLascJ0D1gZWlsnPAeJAzTq",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:27:16+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c203d2286c33",
+          "display_title": "Nexora demo for TLMI's membership team"
+        },
+        {
+          "id": "1a11c1fe67945c8d",
+          "thread_id": "1a11c1fe67945c8d",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@paperbox.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Paperboard Packaging Council's membership team",
+          "snippet": "Hi PPC membership team, PPC's membership programmes focus on paperboard packaging companies and the people who run and work in them. I'd be interested to understand how your team keeps member-",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9P0sLFPYi6ynoRdpSMxnqnO7-Ydm3iFAjUM1TsU_YrNwJ5QdMhPvSLnzXQzjTX_0qQVpXe9v5o-oQtfSv8N8hqxUQ3BOitoNcooGhgWtBr6DiXjnpxKiYIT37pebR1Z9Z46G5GSDz-6pkJZcmL2hnp9tw7c1-a_C90aI7NbDXQVIA4BVhZZxp66Pu2fCpHnfRK0lyO_rZrj_7jg2r8CYlUAzP7oiOMv_cGTOxtQEgrLyx0yIRPKDCJrFMMHA9y7QjK64drU7BjDswkEwwWtpFFUD7bvKW539eCsQYFsNgdFRqCjs1yaAynRlPvay0FUw1qkWCzQ0xjbrNjJK7MH_rgCKAGX_mUIxDZ0icr4xyRnB4r7svaQnrWokdE5UH1gyMs3C_inKzY6CO2",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T10:26:54-05:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1fe67945c8d",
+          "display_title": "Nexora demo for Paperboard Packaging Council's membership team"
+        },
+        {
+          "id": "1a11c1f85aba49a0",
+          "thread_id": "1a11c1f85aba49a0",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@reusables.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Reusable Packaging Association's membership team",
+          "snippet": "Hi RPA membership team, RPA's membership community brings together companies working in reusable transport packaging. I'd be interested to understand how your team keeps member-company records",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-9ql5NMEIUoi5PqIlszMWBM8DGvtmqInm7Fn4EqP0JWpewGsCz2XqiyeggEJve9x_Q1BNySEVKVQDs0DgUWxmFLqsC711l-JvK-av5vfUy5aI3sRzPGpUjpZhJiYj-_gcAl2ou9bJuR_ZJpPe1eRotx-6ZPMSnepWEd3oqJxTzyL4dw8gpuoekyYyqXtiEtB0TJtsEuNcDeVg62HnR10_SK2EF2VZOK2-ej55f_xJJR2aNHmJIEWHkGTC4TWugUYsH3cqwDqvF-OZSqlQC7OHVQ8EK8Tk9WXzwq5QLowZ6SVX8yUeGnMt7QJEJ8aZppTNqDX8Gq9eV2c2IGsdm_iRK3s-kv2fJY-s6chZ1lMaexj6VIw848rmGd_fcDV0Jy9JMqyFIO2h0Dfbw",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:26:29+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f85aba49a0",
+          "display_title": "Nexora demo for Reusable Packaging Association's membership team"
+        },
+        {
+          "id": "1a11c1f2d4b368df",
+          "thread_id": "1a11c1f2d4b368df",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@industrialpackaging.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for IPANA's membership team",
+          "snippet": "Hi IPANA membership team, IPANA has an online membership application for companies in the industrial packaging sector. I'd be interested to understand how your team keeps member-company records and",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8MFq7pufhrFrg1yhmSoVUdiqObfANq9C2hUicydzKR7ILcRAi5NIN6DTpOqCAaR2wA3bwlnJY4vOiWEUPi4GpURpDZ-3HYo7ETeAa0DbzGmAMnSxNtG0g9hpQI3wvD46oTt3mNta4H8K1USMCYBtwVPwquKZSfDD6Q8Ekih0A2BBeASYFvACLHZqMtezYZA6uKqp22nebEHX4lBUg53G2eqaxA2HV1DSzjMtbmgxdo1XcP6LbotH5LbJMfPXWacfXFDIgyblurftqzbYovXlbUbKRxLOKH-DIZ3-3s740GwujvGeWKK8qXeQTFJ3eLpexj1F3Lx52iJE6OMkazwzeg1miu_044ymaoK8bwIkReVXOLnBssopwEdFU5mRjPY8anAYQv8hgF1ev6",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:26:07+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f2d4b368df",
+          "display_title": "Nexora demo for IPANA's membership team"
+        },
+        {
+          "id": "1a11c1ed082e39a4",
+          "thread_id": "1a11c1ed082e39a4",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "mail@aec.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Aluminum Extruders Council's membership team",
+          "snippet": "Hi AEC membership team, AEC offers member companies industry resources and a Buyers' Guide that helps make those businesses visible. I'd be interested to understand how your team keeps member-",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9gxv01VZUaD0ZAr8PlXSyIle2y_PoeDz-ciBvZZgjza8JGLhzYRTpV9Hxl8LGqbMJgVp-DLV0FNlvPE44PSLgUKG0eJ3Z26C6IW69C7KSJ0pNWkxfd-XdjNIQNC7Hy-94t1pdJzRgVw1ongiKNXoXjzY6q6mqAZbJEVdQk6_dX-392CIie6-SKzVYJwUo7dE5PB-qzoI6Oe_N-H8B57AY5o42ymVRP4LWgCOjGdOJ7LQ_4YnIWJAMZI8QHMH8QVgnegT1HGnBoLyY8tbcY2531wBIXD2TPb__cIopi0_i6kMfHRf1yESHOwKvD6sHdiXVfvbPyZraFxnaD-u1hGI9xyCNFlox1Vxn4gYRdDqPgge2im_GMBcudzL9Ax74SDvIzcbOhC2Ug7Pb5",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T08:25:43-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ed082e39a4",
+          "display_title": "Nexora demo for Aluminum Extruders Council's membership team"
+        },
+        {
+          "id": "1a11c1e794b80f6a",
+          "thread_id": "1a11c1e794b80f6a",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "mail@anodizing.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Aluminum Anodizers Council's membership team",
+          "snippet": "Hi AAC membership team, AAC's membership community centres on firms involved in aluminum anodizing and the suppliers that support them. I'd be interested to understand how your team keeps",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-fwFBvHlaDgLKxLFdZPBzIFxR9oYpBZsk6_cyQq5T45XN7d2tFKZbZv2a3DKIo9PZpy8Fwx0qws5lJKs-AZgkv3cCesp0grVYPbg_WYzycQ2QUj6hIFGudfcF7olrv-un_ymz01pqtSkMiFextG7iWKeYBK4S56VJVv-6_TgbMAtpH9vjvF2CPhjnuvXdpUmUajD9UGhDrlUcNUICEVqh4mmGr1zpvAKTjPHFkX0DzespBbW_gXXWejACkycFAwxvS32Clolemv1vzaLGKZGgU2OcL17aDLDxlpbjJYm01GPRSHQfwEkMEWojXrhEv11HJovAfxHWPC2orwbtyqVqrf35PTGeP8YgsU_V1ZXtuBCzaFxnrIatoPxaPPWXJ4DX9kqeYlMnzwljy",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T08:25:21-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e794b80f6a",
+          "display_title": "Nexora demo for Aluminum Anodizers Council's membership team"
+        },
+        {
+          "id": "1a11c1e1f2f1e799",
+          "thread_id": "1a11c1e1f2f1e799",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@acmanet.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for ACMA's membership team",
+          "snippet": "Hi ACMA membership team, ACMA's membership application connects company details with a named primary contact, across several membership categories. I'd be interested to understand how your team",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8xnEB5z2E0j8KvLhN0ZzmVDKgE331fZKcxz9R8RMT6mQ-QPNf_5HpL_tqX9doqJK7vxJHJnVe4-MtndRKvH3dNR9HadayEa8cexvYFf4J5OgR_IuVJG_KCHcALpNFGz1PTLgBkF0OreGYwLBv_RR9SwbZX610f9UEpVPG-lT9Du-1mHcksMFvMBvD0hmyB6CirBSq-uX3gBpSPAdg4zQ6EhYcnpUBxKhiqzGVA7u8sMO_5Tw0ABosNgD6GZK0lSi-NRQHIjjvUxGKVMpCimWRZRyiQAOyy7L7fZF6h3v7VqCdK6Cb2y8rZcVYrz26EzV6kLPFwII9SLBPMdXBsUgCQeYv1t-_IxFuMbnGTPufV5WpMbg9DIBv7JqA5Pg9frM58rxBbANNne5np",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:24:58+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e1f2f1e799",
+          "display_title": "Nexora demo for ACMA's membership team"
+        },
+        {
+          "id": "1a11c1c90d01fac1",
+          "thread_id": "1a11c1c90d01fac1",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@pmahome.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Polyurethane Manufacturers Association's membership team",
+          "snippet": "Hi PMA membership team, I saw that the Polyurethane Manufacturers Association has several membership categories and a dedicated membership application. I'd be interested to understand how your team",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8d6HN6UkbrnKTo33OKXVhMngmOSe7TBRHgRe37qq2XakFy6KcHMZhI8ZqM_t6kg2-HDM3kgsRl5Fm-aKz9YnOtqxfJwAXEC5h3qaeE-c2q387tBGb7g-t1HzNuaIrC2P2H1Gy7Td9Zn2B-jcI314oSL_J42WKoztFi-d-JMF4LJx9IBP3U5aa72hNT02UKSxKKJYSuGnB99_MMpFbaMwzoSpgeN_LRhNexdXJ3HHQ-SiGBE5rrAVJfOWyZkgSF8xwLLY_gPtDM_ZGCGciY0Njkbs3MoTBDvGQjEj50r80QA65rgixtecdMe_OMEPMshnPhoBR5ZqmSQxDPYVnR2OshTJerBnBTvPSBH3z35w6hYYDdYCn6GPfgtwqaXY5jxLbAPX_snxy8Gdi7",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T08:23:16-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c90d01fac1",
+          "display_title": "Nexora demo for Polyurethane Manufacturers Association's membership team"
+        },
+        {
+          "id": "1a11c1c3b2bf39f8",
+          "thread_id": "1a11c1c3b2bf39f8",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "iapd@iapd.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for IAPD's membership team",
+          "snippet": "Hi IAPD membership team, IAPD brings together distributors, fabricators, manufacturers and other businesses across the performance plastics supply chain. I'd be interested to understand how your",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9u27JOoJrktlWqJSq-2Y4xdkFXGtCjLNV41e-qQK-BRlTNfwupP9sG5EWYxMB7XDuuIGehT96iuLKcypMv1OFinViROivDncW6jEo5oHMEQDCOzLi3AREIgZei7Gsn2UZx2XcivMBc5Zs-X6tCIJ7uJZS3szPl7RhtWTuzde23H1a5xVRBVafiUcpcmVSlYxWQ1KlKn2DMsPpx6yk33ua7g5cyrrpoHxrfZZkB59mU1u0YRHHsAP7IzDl5zJudrugtlADagfHh7QVhUNysPh8MTH86Qa77sm-uYD-lnZnSwr3xn4BVQ4Fb9X8FgUIlPdtXmsfdlo_cbK-wOZM7C0Gx0OTH5Orfuzj0XTgZp6a-tiQV9menoZDl3ycVxaZrizrQRr5q5hWKL8I9",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:22:54+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c3b2bf39f8",
+          "display_title": "Nexora demo for IAPD's membership team"
+        },
+        {
+          "id": "1a11c1bb06754473",
+          "thread_id": "1a11c1bb06754473",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@pmpa.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for PMPA's membership team",
+          "snippet": "Hi PMPA membership team, PMPA offers manufacturing and associate memberships, with benefits for the companies in its precision machining community. I'd be interested to understand how your team",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9PygPCv9jYiLMXkPXFTYYlG-9eh4G80nFi4kkWaUjxnsS6wSNh6J9DYfLqOoZnRrq1P5PxMpVdzqMCXAEYk3yRn4FpZ1DZfUUJuETdL7ErSUG_Rn-w6qhKF2MUDdkUDmDjpAWDqB3ZA4FCAu-s6XmMB0gpudRfuQpbNzPr6_Ujsjfdzknidznp3euvOS--pm4OImNGyjar39WH6Ovh0NETLzEwr7sGof1nfOHl6XpmTvdf49k7e72X7s3h6HVcDb0nYmD-SNGHZxfAfKuPpa_qrY9fOUmWlXcWVGDJG_IVZuMOxfnBV8db91qD8Q-jrqDR6g8-ce5DPbDJ4lZh8vIA0FXIgv5Q5CuEgRi2LXL8uM23_-E2lN40MaFCznNhOgljYxKJRRTxgL6B",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:22:19+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1bb06754473",
+          "display_title": "Nexora demo for PMPA's membership team"
+        },
+        {
+          "id": "1a11c1b58b9c985a",
+          "thread_id": "1a11c1b58b9c985a",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@nfda-fastener.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for NFDA's membership team",
+          "snippet": "Hi NFDA membership team, I saw that NFDA membership benefits extend to the member company and each of its employees. I'd be interested to understand how your team keeps member-company records and",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_hUqLHV9o8ld6H1hfqrPu15Q8iA_uLgxZU1WtW3zRSxRCjMifRNAVu93KVlJ3W84Uuf9q_uaq6mz3AOntbNzwLtoJiT-VlnNXP4oWVs0OMmR8zz68r7F6g-m2ZY6hCEpvUjx-pzLD0ZiyNAVdf6i9A6GUu-04xdzWQ5WxQFT13kaGuq5yI0yZwBxYXncduTEhmvtP3Zq2BaIoc_Cba09FrhzEBZAN9v1AcSt0e1WyfTZbI5GulBlCBstPjoVGjk1F5pgoFMqxtwQfYs_JkitEL14rOBAPgS1GfCytRFzyJfCbxmWqCjG2nmtKqjt0XHlIRPYyWFYJdLdQCIW9rqRKLjU45mG1SmSENhSHUOxNEP7p8_XtyGRSTXjtx_9B_PFwN4jVio0IJSt59",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:21:56+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1b58b9c985a",
+          "display_title": "Nexora demo for NFDA's membership team"
+        },
+        {
+          "id": "1a11c1ac175b0386",
+          "thread_id": "1a11c1ac175b0386",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@isapartners.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for ISA's membership team",
+          "snippet": "Hi ISA membership team, ISA structures membership around company type and role in the industrial supply channel. I'd be interested to understand how your team keeps member-company records and their",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-RLLCoe4-Ecgd_WTj_AF3epO35wyUfkBEOwTK6rWjd7M6cwHIR8-4HfodKRPmaoKX_bzurrW_emlSF8nN4f1QTNplQUbwcyly-mcYRkrY9rEGC4v98EMnqNQgCgOncvngUn1vB34pkjjNdNThEb0drQRdM8qLNwYB4j-SHXcn_s46lwbcLULIDFhbw9lwcwheDeQA-nrqGhJ-nUt_N1B0nVKf4bhcvV9Nir4uIe-61bB2joKYiHVRzBHMrmslT3zdEFuaylv52YfvAHvmHf-wAExkSjr9iJybuLz51dRsY6D1Ej2c3ATOUfMplKknzaWG5hlbYlXhslyu3hrbpuc2ggKwyEoQhrupa11piqFiSJBQfbSYajBgbypHGJRnjfu5hgNCd1TtoRoWR",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:21:17+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ac175b0386",
+          "display_title": "Nexora demo for ISA's membership team"
+        },
+        {
+          "id": "1a11c1a6ad5de964",
+          "thread_id": "1a11c1a6ad5de964",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "connect@mheda.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for MHEDA's membership team",
+          "snippet": "Hi MHEDA membership team, MHEDA serves member companies and their employees through several membership types across the material handling industry. I'd be interested to understand how your team",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9H3LMRD2FR3GLH12FaeV998FSEB8T__Ulr7eF2L_1wy4ZbVQIcjAMpImGSrit6d2-M2JV1s5begkcNYB0WfIbX04T3UOzy2hTTWl0aAKDYDLtXR-tdPwMVtMNPsAvgDOS8v_mho4h1lL1CKd-G0tEHXhcGglzc9-PiUxxFZpmAo7OoynAjsV-UHL4FHNtXmToquGJocItsimRI9JzIv1z8Y5Ib-1ryNLkQEVRMMXtn1zKrfBTpxqXi8x0vdhc2kC9MiqWnLE4La1UbvVieW8cpak5mDg6V1TPNiy9rRo1maiM-cbSZaVxni3P0y8b_98UJTkoR-9ulO38_mxgyzLsEtuiJabe4Uu_iu3GYn2ByyOGOkGVF-ZjrQJb4cBYlwXBbmiM8Muurl_C4",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:20:55+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1a6ad5de964",
+          "display_title": "Nexora demo for MHEDA's membership team"
+        },
+        {
+          "id": "1a11c19f0bb94c08",
+          "thread_id": "1a11c19f0bb94c08",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@bsahome.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for BSA's membership team",
+          "snippet": "Hi BSA membership team, BSA connects bearing distributors and participating manufacturers, including key people from member companies. I'd be interested to understand how your team keeps member-",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-DpSx0y_5BtRZ1imBS1907bctkbKd7WcWRg_QSoZi3TqmZOMAMcsRfjGG3yfjuIpi1sqCwDlM1bsE6inhhlsVSgiZkjkv-Crvst-tX7ks3jNrrdAf9wM3iOgPjAX3gYmnGQRIvJem6OIoi-vLWlEQxiXwf3EAvTWzmkT4xrUXeLdk9ob0hYy9GWbU2BdihJSzaWdzG4QYePN7AzUvs6rIAsH5S126OTK3E8jylYpHSEJv5jOCADo_B0VzJHOqXEWYkjVu8-T8yG_dK1gZ9qagRCP_p-JEa4aU8-Ue4Ouu_pFTmwESTvXURIErcQZR_oppc4vRYm2r5IKtUE0HXvJglxZ7ByDPKaa8IRAjdhnKrX6KFa9d1xcJcYxiBqF5NoZTu2RR8C7FRKn4b",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:20:24+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c19f0bb94c08",
+          "display_title": "Nexora demo for BSA's membership team"
+        },
+        {
+          "id": "1a11c198ed3fea2e",
+          "thread_id": "1a11c198ed3fea2e",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@fpda.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for FPDA's membership team",
+          "snippet": "Hi FPDA membership team, FPDA's membership categories cover distributors, manufacturers and service providers, with eligibility requirements for each. I'd be interested to understand how your",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8zfqyVOPG89Y5uBqA8zvz12-oW2bFH22c_JXqqBkPe8Sizve764mJBVgHU3VXOcOrhHlgN1bxaj9FNkpN88yJcUEsn5M3m8VOH41eDyrLxnGrUnt2FAs6NidF03VM2k45MAWCelpp0cnPJRk-tYKPrb6626eOuBXBz3AqqqC2spRMI-geoiC2E-IVCbkNH5Vqg4y1_NQgcBhiPxTiIpgdcL_XQ0z_oDDGXz3oM5ejtUG4uZ9BNPVib7CsmtI6Aa0UowMD3nSE-Uq-bf-gYjN9zXh5bHJgQCkA3TOsFK9TxnmcAc3yUUCKu2IHufcJCF5ZEPgNLBrMMiTEYxSL5hFpLEoJP0duawe_Fgk05DQBk65-RWgwegXTtQOcJ64clr_keQ9ZCoTY1-g_q",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:19:59+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c198ed3fea2e",
+          "display_title": "Nexora demo for FPDA's membership team"
+        },
+        {
+          "id": "1a11c181ca8691a6",
+          "thread_id": "1a11c181ca8691a6",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "ptda@ptda.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for PTDA's membership team",
+          "snippet": "Hi PTDA membership team, PTDA has separate company membership paths for distributors and manufacturers, each with its own application criteria. I'd be interested to understand how your team keeps",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8Tvy6baKQ76p6jRMlUxYexgK41Bmyn90dP7SMpW_KyQd1-z_Z94FRO3VhLa-8LXr1uEAokzbZqihbZyKwG7PRNTjPIbUZzUxO5PDBWxVNGeqbXIco6Ekhkpr_AKtQUQpt7of5FZ0kMu9cppn4kvdPJRNmWuUHJNwvouc7EW2enZTITAvPckCaTVWHbXPjHEgw93Zlw0leS8fBqrbBOo0XYYgYBsO7J67ElqQj-yHVQ7nq-3tl-8uHE1I3ZRkOEOG8S7Lqpu9pEKtje52KTY-XITsgnOQbr0WME2lja50yZ9gFTOBBSZDUqcbKo1euh-9tzbJmXeQ3HG2duYCDUQT3u9h863jSflXwJIxUeYtAo8wU3Rfl4jAr_HtU-XSfm8kP5J_62mXVKWmIh",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:18:24+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c181ca8691a6",
+          "display_title": "Nexora demo for PTDA's membership team"
+        },
+        {
+          "id": "1a11c17bb52abde3",
+          "thread_id": "1a11c17bb52abde3",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "anita.howard@nwfa.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for NWFA's membership team",
+          "snippet": "Hi Anita, I saw that NWFA links individual employee registrations to company accounts for access to NWFA University. I'd be interested to understand how your team keeps member-company records and",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8rACNnqdURwslNCO_MmMraTZ6KkU8ezdtaNSezrq1_iGhEIvuoCrAcy7TcQ7b1MWRKX4F5VyBbIT0pOvVMKeOjIf0vYK9q4cidsHSJcYjAdHYYy1pYDhEV3NzzcJKwZ4Tau8Bd6KRcA-Wu2yS37BUS-_xU56kEwDjDJ75N_hry7_yxCo4kCUvxOjuvKXisPHsL7OWmKAHkUDwuqBuMfz5bsUrMnxS9smCmboChDUWe89yrzGbpv5EhEA-_UxXJumCjRbff_TihgvsUemfuJBTrl82wAg1vyGn7AwLsb_CRq0cQ89FlJWnLdtB45Rfg6jdBt3fI3jkzZDztYjDdKU9u5U7LsW1Zav-s1IH1-q1B0oTMsJf1H8-teedO4PzCwR2_jKD5IiYsVKmf",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T08:17:59-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17bb52abde3",
+          "display_title": "Nexora demo for NWFA's membership team"
+        },
+        {
+          "id": "1a11c17634387954",
+          "thread_id": "1a11c17634387954",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "kristen@heattreat.net"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for MTI's membership team",
+          "snippet": "Hi Kristen, I saw that MTI reviews membership applications for Board approval and already offers online accounts for employees of member companies. I'd be interested to understand how your team",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8bqEwYcA1UFGBnBrc7bIsIgePMSWgS7Vh7elL782qgSyuU6pZD6Fu5OAMCCEnKPwXMxvDWBYJN0ev9j5PNEh7wRPpbDd0AFjfpTXdT5kzGXeJmv0sEDcOOKyferQNHoyPUCw7uTPXu9TW8IZWhLmMuPPEZkeQ95bdGC8T9Y_dI_KmmW5R6RdEpsIHe6zkxpT3KVA1U7OM7Yl2M7LlNOZ-xFzC-_QRaytAARroXVe9v3xa31AB3vJvRVipBN3X9EoR5EmKm3JSfXd6YhNI-nsC3QaOXPT5u5b_8I9QcoaJukRx8vbTa8_FklzVAi8SmI7FevNPHcSjCL-6sOnsr3HlvKlYDmwypFUjSHjA9mIGJ55_eIeSRAeF40BU4XM-YuXpq2p-MMxW0fxaE",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:17:36+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17634387954",
+          "display_title": "Nexora demo for MTI's membership team"
+        },
+        {
+          "id": "1a11c17068612088",
+          "thread_id": "1a11c17068612088",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@mappinc.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for MAPP's membership team",
+          "snippet": "Hi MAPP membership team, I saw that MAPP membership covers a facility, and that your membership team contacts applicants after they submit an application. I'd be interested to understand how your",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_Vo9vi36PlFNn6lFh1lN0UlAeOGzt5CNS-H8ZGEw1ycK432SqUlEGNSvgCC-ELAslJcuIuT1eJFNOeCjLrnvvUKf0ZWCv6QnHYDyeYVhSycOnm76U8AptpZNH72VuvHXUgyQR-oxWmhN_B2Y8ytMXEgL9TbgZ1E10DPpPV5VeFEdoc--yrfeVC_Y3jdmM_NDN5yg2ArlhdyeiZwkxCp9ySgpNqYUo3YbVH3afA4Q31KB72bsvA-y6w3Zx6w1g9wJTYmcBTVyYeBRlXn0HPULo6oXbrtEkICuI8vMqtjylSxtc7ANsRrRkrVXgOjCiq90oyPckpDOmlfoBCQDm2lrBrt57x_Cgi9QD0VfnsfneV15IFwESXaIFk6_9s2gO2SbivEwAIJhfB2Ffl",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T08:17:13-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17068612088",
+          "display_title": "Nexora demo for MAPP's membership team"
+        },
+        {
+          "id": "1a11c16ad8942eeb",
+          "thread_id": "1a11c16ad8942eeb",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@amba.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for AMBA's membership team",
+          "snippet": "Hi AMBA membership team, AMBA's application gathers company information before moving on to employee information, which looks relevant to Nexora's focus on organisations and their people. I",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-u7oKLsQdurHz_jD9U66_YHRH1hLHDm4xd9QRjX9q7NgirsYULefQhQS4xu8bk1-0XoAj2nrDcfOKRIuK1lNep2_g6UsPQckcAA1dwW7DRqq_Lc08MmaYEhvTD2YlC9Dx_FKrn4RKPOF6L8eM1AFqKYOkntczq4F0izTdtEggNTCBKQdRxhi0rV8Jwu3niJ-J2qNJqbl5LOZQpCYjgaOfBc74Lo0pROkp7sJD2Ss5_V8nzaEzH475Rju3wo0V1kQWQLzLowHlnyxVWJB9nf6QIT71fBStM4IA3Seeo9S2HUxeEsTuXkKMT8FtWLbi7MiULYlHFeYllk3jv5hbM3vyApr2ez-wq4gZ9goI4gkM3tV6EVuRNbGmUYg2Z70imx-zoALtZt3y_CnmC",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T10:16:50-05:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16ad8942eeb",
+          "display_title": "Nexora demo for AMBA's membership team"
+        },
+        {
+          "id": "1a11c16528f62b29",
+          "thread_id": "1a11c16528f62b29",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@fmamfg.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for FMA's membership team",
+          "snippet": "Hi FMA membership team, FMA's business memberships extend benefits to employees across a member company. I'd be interested to understand how your team keeps member-company records and their",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9_aV0Z4w6z0459goeeIfGyHxzfM-eRaEXRN2uRA66uSsqf08FA5JX5eOMSDtizv-dMjOYyMPyE1R32650P6QT_QHfB5eYYnJQJptXYW-RhlXEFv_O0YJFLmcnZFLuSSeNABUPmrw24tMnWtoWsiMAZ1V3x_Hzyqeo-QptYNT15hTaAGNUVyxsQ1WiufddpXIqziOVl1xUuBfwjIOVNodsOXz-mBlgh8ncVeCs8_PidEkhIgegIk-shFif3uGi1aDQM6bZ869kZAebQsAHNtruvl0ZSiwd29JjbPMpxx-9Olf4Cja0hWi2AyefUB2qtqOXpI2JHs9G2Mbc4N2MxkfoiHYzottnqxkEBZArrn5h-5ELU0Px0hBtd4U8N1rZPRLvFFq7RzbEUXjaW",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:16:27+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16528f62b29",
+          "display_title": "Nexora demo for FMA's membership team"
+        },
+        {
+          "id": "1a11c15f48fbec90",
+          "thread_id": "1a11c15f48fbec90",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "llehman@pma.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for PMA's membership team",
+          "snippet": "Hi Lisa, I saw that you lead membership and engagement at PMA, whose community brings together metalforming businesses and their teams. I'd be interested to understand how your team keeps member-",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-_JRdD_GfLqZQXYwJWxqPdZTiuLG2KhxDUDZK_a2JDGfT7PjdB7n-3y10Z0miEuhO5qhMtUg8SQsfxSWkT5xVwsJjOZU-Gz1gU0BbiHmVCZlCy-PpmDrn2XXxbaWXIN1w1ChJUWvDD6dKXpIM4IS6Evtq05LMYQ8kEZtWYZJluYuLKHMg2w6tjXMtz8CfQfyHJu569VfPwY6ROhgStojB_XiVcMmM4sjL31in_Khe7JB5-NvPew6CAc8jUDZkCxRD-XboLyKfzo4esBbfpPtLE91Jz0Vny4S2bLVZ3L6WUC7qrNxF4A4nw4-8lIH0z8ZLlHkiJAR4j7Fcn-O3aoRfYp9ob-iQYafd_zy4ba7wyq5Hbsvcge4etzKdf_lwewHUKn0RNPbMsYXZC",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:16:03+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15f48fbec90",
+          "display_title": "Nexora demo for PMA's membership team"
+        },
+        {
+          "id": "1a11c15996661aa6",
+          "thread_id": "1a11c15996661aa6",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "cmarsico@ntma.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for NTMA's membership team",
+          "snippet": "Hi Carrie, NTMA supports member companies through both the national association and local chapters, and I saw that you handle membership and chapter relations. I'd be interested to understand how",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8sJtzou-aKsyHqJyImoQexyBc_13_49ftWvIAmP2bPjqVrgnK-DVZjbDdFBqExhpU_wnBTLBpFw-gKW-RMcfItjzrYk-TlpGHZxz2s2g93fWECE8CY7Od4xmiL1xo1axAPZU0F_WpdLAH2-2FAtbexEEb0t9sCJ0QfTV8MZ-fiZCHrW2ql-xavIPxCRQfrbdMWq_0YHcG-qEw8_7fin62JC9UBWVZDgdhsoKzXhUSWfnURRUXPSGHxWOsfJlfCGqW9YpWsMXyS9PyauoHTjIFWEi2txkcPAL5AGPfDzRD2PFFUOg3ta1jg1DEv3mt4uIqZqQc4DSpFN3ZkyDWzpJ8toQM7BCZm6ZPxEnUAhrh3t5ylbh0qsAa2nKelQ8trZP-WYkSWjHx-7Xdn",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:15:39+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15996661aa6",
+          "display_title": "Nexora demo for NTMA's membership team"
+        },
+        {
+          "id": "1a11c153e30859e2",
+          "thread_id": "1a11c153e30859e2",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "vreyes@aiccbox.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for AICC's membership team",
+          "snippet": "Hi Veronica, I saw that AICC makes its education resources available to every employee at member companies. I'd be interested to understand how your team keeps member-company records and their",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-gQK3R1uJ1lPB4xpP-D0rPQLWGIc8ts5Vo41enK0iWMSQYcAbOXyVfA-cYqFDs0_LdZFpS6cms9GDm2vP-IL_pQUA6Zz9dUJBmiRvmOwBzRCLwt1DmYA6F-4tJp2FEQCdUuY8pXfxrLB6m4hh15JxhUt_vU3XYnA1xTYdcECL1wEXk_Ft63XGG7J8Bzg6aqaH_gMaV9zcFBXDQ8hGf9bhzOKUVcY_K1nWK7gOU9Y-BtqNCQoH6SR8exOMyR2Afh3VO4k0Ub0J4xeMoZHLARUcKbhNsNBZEMX3VR6tCsP5ZzeoUHVKJLefcvUPzYGqhIjVvO0e6l5rO9fmEzUxTt0tWCSVK8AX4c6cU2RjAj9P6wvGB2QzZbwQOR2j4PZVlYbgapdiGTkpVNDOO",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:15:16+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c153e30859e2",
+          "display_title": "Nexora demo for AICC's membership team"
+        },
+        {
+          "id": "1a11c14e24744bb3",
+          "thread_id": "1a11c14e24744bb3",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@glga.info"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for GLGA's membership team",
+          "snippet": "Hi GLGA team, GLGA offers member companies management resources and opportunities to connect with peers across the graphics industry. I'd be interested to understand how your team keeps member-",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8s76ZJnr08t62QK7l7ukmHxykf-kq0VXJ3KcPP1zj1f1G0n1CyvhheYqh3obQ92Zd5rVw9FA8uRnooKxcU7TtGGQu6qeWU7coLc0Ob4iCRwgRvRa7jnfxysSQLpbpIikT83YASFNC1awP_noZo6U81dMwlbEUp55yLM-78vtxRhZdGv_oiIb3A8fMc6h_vO8Vu_Ej4u_HkX-74y3mkNauRroOXQyT4QPgen4ykY4Hl40UsXWTxShQmPQHBFEaUKTyAIuQkHUSxVAgmK_q1wVXNxVrEtX2TNacyc3aQeQdbSZuEFC-vc_wQiw7NtNUHuw84x5Bu8p1DUmjVzZLkGXmOcxUZw-ak0tYNPBANIHDFcztzqwUOWAB9K-t45y9LD2ItFYEE37itJF2_",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T08:14:53-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14e24744bb3",
+          "display_title": "Nexora demo for GLGA's membership team"
+        },
+        {
+          "id": "1a11c14836da419f",
+          "thread_id": "1a11c14836da419f",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@graphicmedia.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for Graphic Media Alliance's membership team",
+          "snippet": "Hi Graphic Media Alliance team, Graphic Media Alliance's services are organised around member businesses and the people working in them. I'd be interested to understand how your team keeps",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8K_r21v95TdmmDC8l396lmZUv2y5CXIqvlQmJLyUTz9nc7z2EI8r5b7Mes2rl3f_EsN5tuNMHbBPZfarUe78kO2vC2dLMKQW-xgkN1dMvkCK-ecJdqlcFqqHXodiQj-J2ZMNAOijRrueUulFXFjX-1gB9V9CqVpuNZepLRyXBUiv5FCvAJRRZCJyiqqQRMvakaCORVJlzQT2fw0IuAErxu37_Cr4ZqbwHt9nAbt_g-7zn1nv7UMbFf7IZYB4J3-XIemjTo3LWB6DvSYv965Y9QHcvXpCHxgKWzLUS1FVz2aM54RXPu_xlp_7dbgfA5jl7M2C4mxIUfqzbcAjxrh7zI_OAnfrChJb_gjsVlAmwmSb2zpEI4CLZ0RVNfrpEdNOihUuZvf2kREaEG",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:14:28+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14836da419f",
+          "display_title": "Nexora demo for Graphic Media Alliance's membership team"
+        },
+        {
+          "id": "1a11c141a7e55e69",
+          "thread_id": "1a11c141a7e55e69",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "director@cabinetmakers.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for CMA's membership team",
+          "snippet": "Hi CMA membership team, I saw that employees of CMA member companies can create their own accounts to access member resources and services. I'd be interested to understand how your team keeps",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ800XnzX5d36Xq77A_3Tcr4ziH0X-VCZVeq_eqFvYxe08G2NwtvPPoU8qSqzkj-ZY55bJzKK1RdnjaL_tTJrODkxMRTqObQjRw1l9hcCq-gHC8OGSvBFSOxOzEHiQbc0gQMk7OD4_mP_YzDHRBHQJUrLK_KPxS3DYwQi_9cFYH-vVrsVnZAUxgQ4helyKuv15nXyoxR8tv0tA1fu9DiBEWE7hKmRNMVA0IJ0Q50k9pKCdk1FBgEYx-UvxODUtnlMtRtHtWgI_F8Bl2gces2CEvoOhtjXsB87wQuCBtvrgj-lL8GRRxPbQ1nC339o-L2JZlEyY0p5kP0EVE2nmbQZMO6_j7A_lItJBZ8AQ58-vdsUsIadF_Ajmc12lizgjEydi3NBNl0GogTAy9R",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:14:01+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c141a7e55e69",
+          "display_title": "Nexora demo for CMA's membership team"
+        },
+        {
+          "id": "1a11c1181b725d3a",
+          "thread_id": "1a11c1181b725d3a",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "amy@wcma.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for WCMA's membership team",
+          "snippet": "Hi Amy, WCMA brings together wood component manufacturers and technology partners, with membership built around companies and their people. I'd be interested to understand how your team keeps",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-tMi-ibX9d7NnjADj0XAsIVlroiCNd1JAAxp6yGdrhANcf4TkR-6CNefiq40ucRuz0rQXVAzhRYyADq0Jx2NAtXU4hdNXrRgSR9jku8iFVR4eoDErUe5S4NmM4WkuaCv2rS_OaoHmhiHt8H5bC4M6udeoQsSa3o0sW_mu8lm3ICUoNHAHpyCSg_I42EXnZ7D9h7UKCfCYbKY-nwOQ26q6pLLMh_sEcuq3xTCV7LTLA0SwyEiKYQRQlvX4PQY4m75_7XXgOAemn7y_xFpgh4i7XMdKGrMeBFKoaa7zFlaX76S1YSC2DlSMLo8VTib4bAhW04e9pDFF2t9Z4PplcZz3GZ509m_nu43tutl535vrMwvNy4nFDBcleKwnqQ_ooUSlRUoztBnrZxVik",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T15:11:11+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1181b725d3a",
+          "display_title": "Nexora demo for WCMA's membership team"
+        },
+        {
+          "id": "1a11bed87d62d77f",
+          "thread_id": "1a11bed87d62d77f",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@britishcleaningcouncil.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Introducing Nexora to British Cleaning Council's association network",
+          "snippet": "Hi British Cleaning Council team, I saw that the British Cleaning Council brings together trade and membership associations across cleaning, hygiene and waste. I'm looking to connect with teams",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_1jkVlgWvP9aSxG44FTUtwE4gsI8xAPCtiafs2lfQqW7Miwju4H6CRbJcSQpFsZ2TowiNkNonKFJlY1zTrfgvPe2anojFs5hmNXEDDce6RFXqdXCwvoWTGmtZ9BsxCGaso1eeH9hSN0yHzJrDRwZR30KWgJY9_O3dr6UB6If7rYKyIcEFSQcJuzMFQlqUVNuXpfNwOKhTP2JHBt-tYN59_vD7ANM24jfgJGYqNZskpK_BQdUwCkrbwUBrYc-z6RzdNpzEqB638M3mtFEf9cv7ntDyj-HjIapeUPjTSMomlrItxNFB8uxAH64e778Y8rK1e5g-nBaZn5hAV0wxR3Dhc4e5cFPXksZYov2JleSDSEUo9IjeSrwNiDiwizAQ1N3EMvsYKL6hkGuwl",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T07:31:53-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bed87d62d77f",
+          "display_title": "Introducing Nexora to British Cleaning Council's association network"
+        },
+        {
+          "id": "1a11becb63c3868a",
+          "thread_id": "1a11becb63c3868a",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "secretariat@taforum.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Introducing Nexora to Trade Association Forum's association network",
+          "snippet": "Hi TAF team, TAF's work with trade associations across different sectors looks like a relevant place to start conversations about membership operations. We've built Nexora, a membership",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8gOsdDzdrqd0js-B_LwdGQ082uQsrF1FQ5WJmCbcY3pxcY5yNth8x0z7HwkdGndd5y6RIHv7C_lnUYCJOm1U5SvvQVbknZhKritJSwVeSWs6Tevyol3kaoTezao73rRylDNZkBl3RygA2TOO9LfT1Z4ePkIbyzhXSs3vrvklyFHSRfHh3MvKe-s8VrsfbZy2-BGj6YwB3-3iDEFVAWBhlWz2J50Tusl-a1bJ3n_QpC3aM852SCIniwbVSi05EwfU-q9k0OKuRfBEpWgdSsSbFT8Ie3frjQCHSFZ6_v0flP9QqV7bnMd3ZUBJZ8B828PeAjfcry4ynX9-YAHSSQArYwZTg_pAHehceiPDZrt9k_krAGyLOWA95LdYDdDxd2QERHmIFBHTZjGLG5",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:31:00+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11becb63c3868a",
+          "display_title": "Introducing Nexora to Trade Association Forum's association network"
+        },
+        {
+          "id": "1a11bebbfc73d6fe",
+          "thread_id": "1a11bebbfc73d6fe",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@bira.co.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A short Nexora demo for British Independent Retailers Association's membership team",
+          "snippet": "Hi Bira membership team, I saw that Bira provides independent retailers with a member area and a range of services. I'd be interested to understand how member information stays aligned across your",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8QdBC9I71HW9uAr2Tnoq7qD81dKPn2buarNHfu68udwdXCSiEuEJRRAJrM2dYGz2gY49Oael_dhDfEMSKZavCmN7j7p8JxYPmyMnEcZ4nXx_gdlOz8KVbpadRRj6wba0b78M6it8ysH3vQH5uYwqkec-2gnwpkA-y7A4tg_3bs-DeHMUct-2LVXbGPuYSYmmLdQxhb96RyS3M3XVaUll7obryJ8GYQD7KXd1k6arrUDcuc293p5azl1liING5zv_Am3Lt0OHTcSHKSMcMymZd7GvjIsv-2DRdnKn-nd-8MZswEYExmjDuBqw8lFMoWFKWnSB6_TTdBuvGusyT7Duec2ZVnSK3N8cWvGUTVNgpNnPIjXSm9F0eb6WzoB0RsRyO1QjlIt5Ji91bc",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:29:56+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bebbfc73d6fe",
+          "display_title": "A short Nexora demo for British Independent Retailers Association's membership team"
+        },
+        {
+          "id": "1a11beb04274d92a",
+          "thread_id": "1a11beb04274d92a",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@siba.co.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A short Nexora demo for Society of Independent Brewers and Associates's membership team",
+          "snippet": "Hi SIBA membership team, I saw that SIBA supports both breweries and supplier associates and already offers a member toolbox. I'd be interested to understand how those member services connect with",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_4gTSXav-TeOE30EQ-b49DkB5opqousAq4izxzyo749BOu5HRBlaf3eXrOIc_BOQaT7msxP8mgcYWiK_8Tew3G1PAKvVlSjTJQdR_SGdspZTc8FjlGv3jGvU7zOkLwLY_JAc0LDt-jII38e9PdjbBp-_XP7v5KhfapowJdCPSq_q8d9IT58AgTgsF8hhC3nlRLH91OKw7OweeXwzM1rNrGVvpoSfBJLDd5xH68VejETe2IOjtIZzG-r3K6h-pllFfF4YV7rr_-MIFRuIUBVSz4ZD06mXEO1OJcviOtOdP6bWsJ5_2kSOEBogsvhHOPgsVlOOJ4cuEgf9J5Z1Pe0sbWCSwmSJyiMj2BiCoyGvjBeyPRsqwYgwlXB3QOy48GASOmdOS2vFJlJF_z",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:29:09+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11beb04274d92a",
+          "display_title": "A short Nexora demo for Society of Independent Brewers and Associates's membership team"
+        },
+        {
+          "id": "1a11bea81abaec38",
+          "thread_id": "1a11bea81abaec38",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@bcf.co.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A short Nexora demo for British Coatings Federation's membership team",
+          "snippet": "Hi BCF team, BCF brings together businesses across coatings, inks and wallcoverings. I'd be interested to understand how your team keeps member-company records and their contacts connected with",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_QGOOYw_2huRT3dEMgfkRBcyp9zdH9F1Wg2wWo7e19s7gKKvyIXWKUeQdJDZI8L7yIvHJPLsBecC2PJDeljL9MulGbksf2wRbRemS7PiL-hgJExQ5eX4kX6hNpkR5-JtxrUhISTTd22IJld5bOOeWd0gusV4mgOzBJ6emSFd0mJtlx96xk0RUrm_UtBG3xNMrXtoMJEH7OxhxVyamXDgJmY8x2vPAPJWHIer7XkJEmrionFNqXx10fs9Nq_14mSN8BcmpK57K-AVOE_VcR62X8-tkFEVLIgBArX3fcI8r4bNPlBSsGOjqaY-sJ2puQpN1yDefw9aVAew9fKJ3jgnvdndFWysjpd57Zq9YSsig18ggwJXyn9wr3iC6AGSWnXvI71zxrxhOk-AXF",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:28:35+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bea81abaec38",
+          "display_title": "A short Nexora demo for British Coatings Federation's membership team"
+        },
+        {
+          "id": "1a11be9e7b0beb9b",
+          "thread_id": "1a11be9e7b0beb9b",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "lorraine.mackinder@bcsa.org.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A short Nexora demo for British Constructional Steelwork Association's membership team",
+          "snippet": "Hi Lorraine, I saw that you handle BCSA's membership and new-member administration. I'm contacting you about the connection between member-company records, their contacts and the application",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9Od2KX7n1O9UQoLLIXolS_G0i0Mf_DzdFWsw0S-JeI6nR-enyj_ze6r5MP_s34wyazuy2xcLqaMFCkOcafnMNU0fa216A8fhsN4KavO0c2D7xhfMWjJ4HO-RWGHhxP1hhtXCEikRIKeRV88cfy7IcH9yZ1E9hiCZCyAy3fv10UVQCCzMSJ_iYqoZmaOJMU-X7AYMkZuOX9fMxn2AOSftugHUCQV728tybAnShppR-HsMdMTSp_GSdtBYhxP_aKxfCDyLmkGsUR0dv2XHNJX5Skxh10IaABivmSgQrSgP-FcYvM04Go7Y41N6bXtlcKH7oDVeAaBV0Wm6JVduNsdI0oVgjCr4R6yDsi7pkVSM-d_ey-tPhlkdVPpv_bI3Srbofm460lrxeOnQpE",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T07:27:55-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be9e7b0beb9b",
+          "display_title": "A short Nexora demo for British Constructional Steelwork Association's membership team"
+        },
+        {
+          "id": "1a11be92ff3cd6f9",
+          "thread_id": "1a11be92ff3cd6f9",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@commercial-interiorsuk.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A short Nexora demo for Commercial Interiors UK's membership team",
+          "snippet": "Hi Commercial Interiors UK team, I saw that your membership process combines an application with a Code of Practice. I'd be interested to understand how application review connects with your",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8TBK2Zk0ilaG0vLxv5Ffop2l_i2Q8podK9UnUF26gU349XMI8UKBAiLwKhaz3ZRcsKFKhTajKLMAxpbIij-P0yfybkot5e9wmAUhjcI7pMssMV-CcvaIWTGMsqgS4uPrEGKh85sApxblK5H8rSxEyJIyj0OoWyqOWGFSWDXsu9OW5lMAfyk9wQO567Zuh87PV5XiRNe1qqT5RTKTQA4GJvyB6C1qST4Pos9LCyVtiaCyPSajWeu0E_-G5NZtLMInu7Py15bT5SaZycReFcF4msDtUNDmPSZVsdSxppD41jTNWlyerHmTbIVrWRsEE_AVb4cAkA-7bkXjFaY0CrqqnL80r_EaW31iivtufj4dLLcwQyZCGDWifCTg-Xa-aKOeKdJd1ARyP0bxq0",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:27:08+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be92ff3cd6f9",
+          "display_title": "A short Nexora demo for Commercial Interiors UK's membership team"
+        },
+        {
+          "id": "1a11be8a50e5deab",
+          "thread_id": "1a11be8a50e5deab",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@bpma.co.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A short Nexora demo for BPMA's membership team",
+          "snippet": "Hi BPMA membership team, Your distributor and supplier membership community looks like a relevant fit for Nexora's focus on member organisations and their people. We've built Nexora, a",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_k4YyUqTIjQKawBhctBd1bAT_0XStmS7y8PnT4F2SNab9tAuVr5RvrGYRdGlflVxXF7X8EGVoDnl1xDbFPyuS1bWqeDEnlnLe4BQoVfIUFHZs_9L6JCDFqU4iWZyrEc3Yh2tl6lRQgHSgfAi8GPwFuZ9sN2O2-hhz-5flsIUH48ykfFYbInKmmvBGFYpWUg-_OcEMkEiEP1K0Kn8KrKA189pYF-7gmrAUHpnthdzQ3_daOyAWFbfjelrExldHAJQ5QVqBpyHu-V4Zgw5Gh987YNBZsitnqXF0X5LWC50ssBEUgKcZ4bgJxeAOFG8BQvBmBWiCJYNvLSjnaSoBTiM9JCbXfoHk-3LnxY07lUioAeKsdvkeeRwUk_YGJqd8CZwjz2dV3gYYdLbsv",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:26:33+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be8a50e5deab",
+          "display_title": "A short Nexora demo for BPMA's membership team"
+        },
+        {
+          "id": "1a11be815953d93d",
+          "thread_id": "1a11be815953d93d",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "victoria@bafsa.org.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for BAFSA's membership administration",
+          "snippet": "Hi Victoria, I'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services. We've built Nexora,",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9GmeBWyq0lz3yZZ7KaTbdHg_VYW8As0YQ30i6eIaIqP4N_kPX0BS0uZhC-ZvKMAip_9hTsJOQlkU8h9Y0mYmbp6F4RPkcaMcKPoHNCgoe0mhsOqAFXoF78sI_7thq6lYfrimqivGz7ubKyYh_T60pxx1OBr-fAThNjSO_YlGfm4ou5Hk-3-N3uOXbAwvWcJcFuBmYMuOMnpMQ150WlpzpdQId9bhBQs5NTG7xlpHWLVzv40zQXDKe9A_weFQCp35HEZwlcADVsG_1NpasUoF3It9C55Mf4b34_c7o14BqOgOv7WeDFonRK5xHw7kxweLBnKyZagkd4P5FX3K_VbiU9YMZem45V0EX4sKWEcs6f2JUxBu8LWNLkHqKPjo6xKwRfzGWGTFcN0-ph",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:25:56+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be815953d93d",
+          "display_title": "Nexora demo for BAFSA's membership administration"
+        },
+        {
+          "id": "1a11be73bb6e873b",
+          "thread_id": "1a11be73bb6e873b",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@theafi.co.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora: a short demo for AFI's membership team",
+          "snippet": "Hi AFI team, With contractors, manufacturers and suppliers in your membership network, keeping company records and their contacts connected is an important part of membership administration. We've",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-hbt4UyzBEx0yH4IM2UnsBr9c2OgiOCipvVHFlbuUh5bHKCLE4nVHAeP-TjHyMu4uhh43boZ4X6sZfgwJA4hX3ooX7uAIfHrfeR_ZkSYd_61blmeW62gIq081ZPE4nLkeb0hYP0N_K7xYqWLzl11yKYv14cj-fvLRH4_vEBsS5CKuIHVFZ1uImFWPjZwmGqDdmI9p1MkUAgVyfuQIF73tjn90Y_b3Q21ixW1L6mPb6kQvkjUPNjF_19DbxJx_q5CLYnVJcHkuiE4Qw8Jj-OrI2H-0uNy7qga7cysAFzpQuRphP4Y3pv2RaTptUwJq02TU_3ZNNXJWo6_SceDK6bwORPRKstWUG2eILlofrauh8q0wnGg_5uQgjV3XQbZNZ-cMvoihs544YvMgx",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:25:00+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be73bb6e873b",
+          "display_title": "Nexora: a short demo for AFI's membership team"
+        },
+        {
+          "id": "1a11bdf55d8130a2",
+          "thread_id": "1a11bdf55d8130a2",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "david@gtma.co.uk"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Membership management and AI access for GTMA",
+          "snippet": "Hi David, GTMA brings together a network of manufacturing businesses, each with its own people and membership information to manage. We've built Nexora, a membership management platform for",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ8pWFSwwqXsdBrPgaBWCGFjEw9X2DKdqgmm-X5YNqTS1As4SoRYC7n_IeKFQ_Sk35HST9Ghscyi6L1a1XlF5o1ZBoGif9ALRAEtPt96pR_6WjiN_bdPEwltmlJpeUoTHWkOYbdJis1VrhUYAcBqm5aI7b7yj-TJ38OIC5aNVHHMjfi9I-KX9KLR9Nz3msr9ozML8mPdvuEQn9dTNhwRie3VwYRAPeWUQk5OmWwnrXxNlZhD5wERFLD5hWSUGiJKwFSTQcCviM2xPMCPZRN6iTpG8DX67mBQRR3IoHsuug0qP38W7AQL5_Q6osci0l03cUsMfGRprmO_aqMGkRiYputX8jaIvFAdYca8c5aELzPgnKI2Uh9XGMUUwnumX7RY85HsQ45Su1zDXs1P",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T14:16:23+00:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bdf55d8130a2",
+          "display_title": "Membership management and AI access for GTMA"
+        },
+        {
+          "id": "1a11bc874d72d032",
+          "thread_id": "1a11bc874d72d032",
+          "from_": "Ramish Qureshi ramishqureshi99@gmail.com",
+          "to": [
+            "ramishqureshi99@gmail.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora: membership management and AI access for your association",
+          "snippet": "Hi Ramish, Keeping member records, applications and day-to-day admin in sync can take more time than it should. We've built Nexora, a membership management platform for associations. It brings",
+          "labels": [
+            "SENT",
+            "INBOX"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9kZwn8bfLyJeyS_dVlj9CimVgjVNmEZjh-qZ55_AMOx9khOwgyKWd_Ml2oX-KipXHl-ZHyC4glGf2X2KN8Y2dGNSWfeaqEc0ba1pRS2plWNh0OJ-aSyrADNdk4wHRlT--Qe_6SRPDD0oqXFQH7x9G2WE9HKYhmfNDnDuLVeOPoTqbjnFleszZAoKpvprI44oeYH5KGwviZxauyNqoYGPWP_fidpFbCLw34Ekr-msdMcBwaEQ4fFCdbFGuY_PFwivndsR7dB2rc1fm1CFlM_Xocsb7rVd4mhYAmJ_Bouhr5HPTsfbnOISfS1Dayn0vUozGKbYu4AJtgmFrelbMRltNbw4SZ8xIr2aXQ5el3RJfASF94d9aFW4uMS3ERPJtL-ONh5uN8mCb2UgcV",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-08T06:51:23-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bc874d72d032",
+          "display_title": "Nexora: membership management and AI access for your association"
+        }
+      ],
+      "next_page_token": null
+    }
+  ],
+  "actualReplyBodies": [
+    {
+      "id": "1a11bf33395d33a1",
+      "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n"
+    },
+    {
+      "id": "1a11f79e78082745",
+      "body": "I have retired. For questions/information please contact the colleagues below:\r\n\r\nMembership contact Stephanie: sgibbs@mpif.org\r\nStandards contact Wiley: wabner@mpif.org\r\nInternational Journal of Powder Metallurgy contact Debby: dstab@mpif.org\r\nDesign Excellence Awards contact Debby: dstab@mpif.org\r\nAll Other Awards: contact Turner: tabbott@mpif.org\r\nStatistics contact Turner: tabbott@mpif.org\r\n\r\nDora Schember\r\n\n"
+    },
+    {
+      "id": "1a120804f5fbe7f3",
+      "body": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact Kari Johnson at UTS at kari@uts.com.\r\n\n"
+    }
+  ],
+  "completion": {
+    "complete": true,
+    "checkedAt": "2026-10-09 12:57:21 UTC",
+    "checks": [
+      {
+        "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com Nexora",
+        "emails": [
+          {
+            "id": "1a120804f5fbe7f3",
+            "thread_id": "1a120804f5fbe7f3",
+            "from_": "Gary McCoy gary@smihq.org",
+            "to": [
+              "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+            "snippet": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact",
+            "labels": [
+              "CATEGORY_PERSONAL",
+              "INBOX"
+            ],
+            "has_attachment": false,
+            "attachments": [],
+            "inline_images": [],
+            "email_ts": "2026-10-09T11:50:40+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3",
+            "display_title": "Automatic reply: Nexora demo for SMI's membership applications"
+          },
+          {
+            "id": "1a11f79e78082745",
+            "thread_id": "1a11f79e78082745",
+            "from_": "Dora Schember dschember@mpif.org",
+            "to": [
+              "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+            "snippet": "I have retired. For questions/information please contact the colleagues below: Membership contact Stephanie: sgibbs@mpif.org Standards contact Wiley: wabner@mpif.org International Journal of Powder",
+            "labels": [
+              "CATEGORY_PERSONAL",
+              "INBOX"
+            ],
+            "has_attachment": false,
+            "attachments": [],
+            "inline_images": [],
+            "email_ts": "2026-10-09T07:04:03+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745",
+            "display_title": "Automatic reply: Nexora demo for MPIF's membership team"
+          },
+          {
+            "id": "1a11bf33395d33a1",
+            "thread_id": "1a11be815953d93d",
+            "from_": "Victoria Cuff victoria@bafsa.org.uk",
+            "to": [
+              "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Re: Nexora demo for BAFSA's membership administration",
+            "snippet": "No Thanks Kind regards, Vicky photo Victoria Cuff BAFSA Membership Manager BAFSA (British Automatic Fire Sprinkler Association) (0) 7989 568 050 | victoria@bafsa.org.uk www.bafsa.org.uk From:",
+            "labels": [
+              "IMPORTANT",
+              "CATEGORY_PERSONAL",
+              "INBOX"
+            ],
+            "has_attachment": false,
+            "attachments": [],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:37:59+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1",
+            "display_title": "Re: Nexora demo for BAFSA's membership administration"
+          }
+        ],
+        "next_page_token": null
+      },
+      {
+        "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+        "emails": [
+          {
+            "id": "1a11bf33395d33a1",
+            "thread_id": "1a11be815953d93d",
+            "from_": "Victoria Cuff victoria@bafsa.org.uk",
+            "to": [
+              "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Re: Nexora demo for BAFSA's membership administration",
+            "snippet": "No Thanks Kind regards, Vicky photo Victoria Cuff BAFSA Membership Manager BAFSA (British Automatic Fire Sprinkler Association) (0) 7989 568 050 | victoria@bafsa.org.uk www.bafsa.org.uk From:",
+            "labels": [
+              "IMPORTANT",
+              "CATEGORY_PERSONAL",
+              "INBOX"
+            ],
+            "has_attachment": false,
+            "attachments": [],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:37:59+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1",
+            "display_title": "Re: Nexora demo for BAFSA's membership administration"
+          }
+        ],
+        "next_page_token": null
+      },
+      {
+        "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+        "emails": [],
+        "next_page_token": null
+      },
+      {
+        "query": "in:anywhere after:2026/10/07 -in:sent -from:ramishqureshi99@gmail.com {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org}",
+        "emails": [
+          {
+            "id": "1a120804f5fbe7f3",
+            "thread_id": "1a120804f5fbe7f3",
+            "from_": "Gary McCoy gary@smihq.org",
+            "to": [
+              "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+            "snippet": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact",
+            "labels": [
+              "CATEGORY_PERSONAL",
+              "INBOX"
+            ],
+            "has_attachment": false,
+            "attachments": [],
+            "inline_images": [],
+            "email_ts": "2026-10-09T11:50:40+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3",
+            "display_title": "Automatic reply: Nexora demo for SMI's membership applications"
+          },
+          {
+            "id": "1a11f79e78082745",
+            "thread_id": "1a11f79e78082745",
+            "from_": "Dora Schember dschember@mpif.org",
+            "to": [
+              "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+            "snippet": "I have retired. For questions/information please contact the colleagues below: Membership contact Stephanie: sgibbs@mpif.org Standards contact Wiley: wabner@mpif.org International Journal of Powder",
+            "labels": [
+              "CATEGORY_PERSONAL",
+              "INBOX"
+            ],
+            "has_attachment": false,
+            "attachments": [],
+            "inline_images": [],
+            "email_ts": "2026-10-09T07:04:03+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745",
+            "display_title": "Automatic reply: Nexora demo for MPIF's membership team"
+          }
+        ],
+        "next_page_token": null
+      },
+      {
+        "query": "in:anywhere after:2026/10/07 -in:sent {from:mailer-daemon from:postmaster}",
+        "emails": [],
+        "next_page_token": null
+      },
+      {
+        "query": "in:sent Nexora after:2026/10/07",
+        "emails": [
+          {
+            "id": "1a120800ff0e30ec",
+            "thread_id": "1a120800ff0e30ec",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "gary@smihq.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for SMI's membership applications",
+            "snippet": "Hi Gary, I noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application. We've built Nexora to connect member-company records, employee",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ91WgXLNhK2r4bKSdc7d4QYAasOgWHGMhhyysPBiyHh1uuZN1IxM3XT0asVl4sVGAjIU0ObPrFMjHtkEiiEaP70v6jlCHmvamI6SQrAjzJeZWb0Jkb8KDhw7n_MAUxVRuL4-cAUqJJdybJZb42B76QIw7jIfrYBjikAs-Gvt8JNipcjC61xxvRew28IPE5i6pJg-mZcJhA5JCaJn9MBW4TE_F0M6mIEd6GOBHtt0Fqr3um5gsLEcM2by4jCVhF4s9jHpbMQ9OlfM-43oU-c0xNmB-joypdIelhjXd6mvCYZ5bOa2WtlxambPQypMti3vjblbvtrt1PBEzoCtTTmDNloMfiqbwj7SQFoMxmAZKSsIUhb9GfhUBl_FmgZGVv5nO69Q13PxIsaw5eC",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T11:50:25+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120800ff0e30ec",
+            "display_title": "Nexora demo for SMI's membership applications"
+          },
+          {
+            "id": "1a11f79c15f23dcf",
+            "thread_id": "1a11f79c15f23dcf",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "dschember@mpif.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for MPIF's membership team",
+            "snippet": "Hi Dora, I saw that MPIF membership is limited to business entities, with applications for its federated associations. I'd like to explore one company-membership workflow with your team. We've",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_KumvcAuO5EQr_M8jC62ocIo8NH0mGHoXQ_JyveifiNxVdWbJcJp_CysmXTadrQ1BBIP0BcKIVDniYkI4TFnvQLWf4mqoY6xk4Y0FdFrElSHYNPa_hYqX_gueq--Hzf2aGq9jN57bBZaUmPAWbLDYFZFIQudNI3L6EHSFpzZw7uwTvOpgxLPFSvMZp9C4vkTJo3h55pPPQx3Mhtu_g08AAgFnRu4KDWTX4nZjCMTM_8YN3Ho-1DjiNGg4yu6C2jtKqrIYWWTfJk0u1Iyn_pSYGpvVnCAJX3CKR0Y6XAM3oEyvLtUr3c3gtFz3F9WIUX7Ho3lTe9f2VCn-9eg3vFIv0pXIbogbTfyxRsDx_nN3DIG4p-d-WF6QL-U48DZOZtZhq7lHPTyFT_Hgc",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T09:03:55+02:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79c15f23dcf",
+            "display_title": "Nexora demo for MPIF's membership team"
+          },
+          {
+            "id": "1a11f7961e491a65",
+            "thread_id": "1a11f7961e491a65",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "nadca@diecasting.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for NADCA's membership team",
+            "snippet": "Hi NADCA membership team, I noticed NADCA serves both corporate and individual members. I'd like to explore one corporate-membership workflow, particularly how member-company records connect with",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9rJw37hF752SkOA4FLv-1dwdRFz4KwUFt7qgDiwMwt8NybLj1Cy9ZaZqg-nBIheGxBREDRwD29dBBhnqilxxezBGAsvRFIPSGNA-lGtbpT0fondDj-RsAskEnjdnpyOHMiF1o69SkTS5O_riMrGyFmK9SkbNO8aWl-E1kAkYUB7rK84ZEsaK-U6IceofG3ws90NkTeDW2ard8AEEWjJ7wKh0XeKN5ZTOStdEDUUvECYGH4A70sl5N6FJEz9r3nj3ypAbzArug3OQ1Fk8OB5kFo1qBjLPgEuAj2AofeGgWRLyQyF6P0ND_tRFUH1kg-D6r_smwjF-djfqiC410t6spKsAK_V5fwLmRmHKGqxb2tlVhHWg_sRmdfwYCQSs-OeTLA1yxZI5aYMm9d",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T07:03:30+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7961e491a65",
+            "display_title": "Nexora demo for NADCA's membership team"
+          },
+          {
+            "id": "1a11f79086a34070",
+            "thread_id": "1a11f79086a34070",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@investmentcasting.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Investment Casting Institute's membership team",
+            "snippet": "Hi ICI membership team, I saw that ICI has separate company membership categories for foundries and suppliers. I'd like to explore how those member-business records connect to the people using",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_ZK8nK8OLRc0hX9egR4hD01DzSlHZ1_IU9sUg4mz2Ij58MBxrffC1UwPeXoR5qExNGmSZT7muV5Q1RK4rk6Imh1haK0l9IUl7E-OSFQqgvMF_c6dc5KAPv7v6poiu4BZ-oZpz-PBdQ86gNDo5WPWaeUYJEqP8XIQ8UtP5Se2Xn-Flpfef_uzq7fJzG3czP8-HaMISb9hu4zON8NBHLhnAK1IqLXqDhARNht0KdlQ0ZuE8WinvQkPXtGziLrR4u7QtF9F3GPgwHY8DsQbh9IXatljijjwjotYD8At8P0H874PGUV_Srq2K7lINoxEY-tuKzuPxmKTa7TKNgiP_fo4VFnDJVjLr8i7YfK1Bfkd_AO34lTKzC439nI2MH1GYFdg3fZmtuVx-eFgx0",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T07:03:07+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79086a34070",
+            "display_title": "Nexora demo for Investment Casting Institute's membership team"
+          },
+          {
+            "id": "1a11f78af1ffedf9",
+            "thread_id": "1a11f78af1ffedf9",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@spri.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for SPRI's membership team",
+            "snippet": "Hi SPRI membership team, I noticed SPRI's application collects company representatives and is reviewed by the Board. That link between company records, contacts and application review is central to",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8HfSifI5CGeAga_FZoGLklM5IMFchKs9PKQdWyxeL318KI_jDRppdWo0M-FTd8fXdK7II0L8pOWuAZaKfjb2989vps04IAsOb-nV2u3XVAi_c4-nweqWnLy8zhkeGVOmlTCWh5j8USiFXAYpFojcpp7j5Wauxmj_tSdaYWi5Y9xk3TGq2VhH7beASMeToiGzGvPvTMAUmuwH3BnnKZAhWMg3wYYKtMLqsTnXXtlporLHvohJqfqcVYVoYsmrF1zB61dCQhIJXp1-AtdHBCL_OwEhvLg6iS4zxeSQLPhnKzy2CCBAPY1ymCt4na7iKiu-_H8wYmO-ZNpcFPdKqtXfqkkhCNCvs1Gygk0HobTK8O8I0bCfYSPyFYubZNcyft2kRDD2LN_ytWSxoJ",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T09:02:45+02:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f78af1ffedf9",
+            "display_title": "Nexora demo for SPRI's membership team"
+          },
+          {
+            "id": "1a11f7848a393b9b",
+            "thread_id": "1a11f7848a393b9b",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "fba@fibrebox.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Fibre Box Association's membership team",
+            "snippet": "Hi FBA membership team, I saw that FBA supports corrugated member companies through data, industry resources and networking. I'd like to explore the company-and-contact administration behind that",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_xc5FxSaaDu3XqAgN1TOQEHHNbfokeWjb8_7zeY54q9ZlN9uJj0dIVw7_bO0lgmbeDmbATqBh95kZflMxOgIwpKgPxVCkxbmGIPR-u32V66b5SQUHwy0exuVqzCJqcufHAyga17R97Kh9YqrJx9yrWjdnQkZUSu5dcYrtndZKYoia_-XLrHW0SoxbOH0pbJheqF1jbr5m0peuv5qAJ8tSuMmt4fPe3BGCwl0Mg64Un7i-kiYDUkzPeht7jCJtmPPgLAOftTYrwd2FYLCCj89NgfubHFrgCDQpu4cXBAws_UDnT9WF3FMt9Q12CE_pY1s89w0H-EkwUnY0KomY0oPvzd_XVwLOJpSIDz7LbAM_iEbF_6_TZ-xrSE7caLhSuzJmvtH-s11MEQj4a",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T07:02:18+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7848a393b9b",
+            "display_title": "Nexora demo for Fibre Box Association's membership team"
+          },
+          {
+            "id": "1a11f77ea8a74a8d",
+            "thread_id": "1a11f77ea8a74a8d",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@nasf.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for NASF's membership team",
+            "snippet": "Hi NASF membership team, I noticed NASF offers membership options for job shops, suppliers and distributors. Keeping those member businesses connected to their people is central to Nexora. We've",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8b8SRL5nG4TxrW3Oigjmb6drLn4oQ_VfPgO4Ml-Qv3wBgwGv9PbO9B3KzggxJhAnHQnCWnZw09Qm37RRkJdENHkyO0PIudUosgckEqN4HPt7yEtUyZrcJ37dISno9q88yzYpkQQkhwSDvUKhfhWcygu9NzQFCmVsDOQss72P_WNnUjK5TqPjocFip3Jn8UDpFkwoADStpfTp9pGFy7kdC_LyPmCXTY9bBYE-LKppolS4eKzyoXKu1VwsL2f7IfPX64VE0yA70YiXxYxwzoKx5k8kkgCYPyW63iVVsUkzath5vqENofVguC14hBXTwHH42DYsUINhtjvxq22wPHuCCRPDPgmD5a61LqQT-3jGxSH_R4rb-_sqZ9wIP0KNoBjGPgN2uaFYwMtagh",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T07:01:55+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f77ea8a74a8d",
+            "display_title": "Nexora demo for NASF's membership team"
+          },
+          {
+            "id": "1a11f778a20ccaad",
+            "thread_id": "1a11f778a20ccaad",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "cusher@stafda.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for STAFDA's membership team",
+            "snippet": "Hi Cathy, I saw that STAFDA already gives each company's Key Contact a way to manage employee users. That company-and-people relationship is central to Nexora. We've built Nexora to connect",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8jsE6kYtJgJzKL_27b0ev0TCE3GKq-crIOk3RmtoXWFU51ZdWL1tI1Mzvp3H4pYMVCvGCzMhaVoforYcTH5e22sS2VRV0rvpfjqgtvH63wLXBvVWJvwwBdOQLheC3wxIHywW6h3JFzb330nl2UC8feZJvgZXiyisXsXuhDQwNj58JcjDwxQ8CB40XQkxGmDUtFXCP6qzFcvG-rEVhUmGW_wfTyTHfhQcD4sx3IwdAsNW55d5rq9MZRmVWkdT3LtuNy0J0TdcWd-s2khmALJIXLGpjemFH-ytU4_k8p4ciQ2qlMaNvEEEKd8Q2a5FBVBkC93Z-QCEGkxx7qdRhCLogO2n1uXCKtXAJBuYbAwsdWKPZec62YC3ThBg9EhPR-U26oXGTW0TpQAEYG",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T09:01:30+02:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f778a20ccaad",
+            "display_title": "Nexora demo for STAFDA's membership team"
+          },
+          {
+            "id": "1a11f772a971f528",
+            "thread_id": "1a11f772a971f528",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "brian.peters@ascouncil.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for ASC's membership team",
+            "snippet": "Hi Brian, I saw that ASC membership applications go through Board approval and employees of member companies can create their own accounts. I'd like to explore that application-to-member journey",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8PDsV6uaJ99AINxIfx3qMdiroN9HCVGLZEurRyuJAEKeRrOczvWsC9Ve9G2rE3SG0cYByUS22SZBDAkj0m9hD_FYA8suzjmOT2FnFWHy_dIRubr1uRrmXs1wAWM486uPXfvsVn37vAj-kCHk8U7MH2BS33XxVR6gUTiIRBUaR2tiKzP28ssU0bDHJWHqxyzN5Gh00epDTTWTLPKoVQJXwKmL7vmg2xl1he7IRRidMXayARjEV0XS_NanNx_BXL2dMseP7xoG3RTR-gH4FbJkUKAyQf5xlM09GyjxrrT0DCsbMRm1q7oJv8-f-tI7eVJJxtgOXHNCK3gtXhLVcsQcDhr7cTx0n679kfupaNIHvCFEkM9WrRuNuGoSWjR7OFCJAB2lA7yLCnkk5x",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T09:01:05+02:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f772a971f528",
+            "display_title": "Nexora demo for ASC's membership team"
+          },
+          {
+            "id": "1a11f76d0e3fea55",
+            "thread_id": "1a11f76d0e3fea55",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "membership@glass.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for NGA's membership team",
+            "snippet": "Hi NGA membership team, I noticed NGA membership is company based, with a process for adding subsidiary or additional locations. That connection between member organisations and their contacts is",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-C8kkB_x_ieVkNj96XS04Vj1VBUNKVZQmrlxOadkVEzQ8ObzrBM89dVm69LjqK44mMMBWW67b9ZdcRfk1wzujJ4irfWZqpW8wlQ5qBMCec_yjkpzst90LRrYDnZviGER4loxidozk530-qyoNaeCLP2kqiL8Lnn6r5j-Gq-o27-1qHjYbeZZKx27flCOMSBOikjSdRN-KJ0Z8Gm7NeywATT1rJcEWT_ZjV1mk1S7wAXO_subxw6TQBJ_gL4w5cYPjBdzt0GlvT-1DuxlsC9bemgaJyiOfjvcC_gVQIEtlPtKTGs1vu9TRvtYbMWTA0MbNhXDzmLez8DrmfnaRG8LviXSijEtrPktJUB0Jyins64MlBDeBSaFqiBEXnEMeejQLJnyXxW3LY76vJ",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T09:00:42+02:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f76d0e3fea55",
+            "display_title": "Nexora demo for NGA's membership team"
+          },
+          {
+            "id": "1a11f7678e41f57c",
+            "thread_id": "1a11f7678e41f57c",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "memberservices@americanfenceassociation.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for AFA's membership team",
+            "snippet": "Hi AFA membership team, I noticed AFA membership covers a whole company and its employees, and you already offer MyAFA accounts. That company-and-people relationship is central to Nexora. We've",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_xbnsHrMl55pDmqmVgYvBSL-cgCLGV5ozACJOgpV2B8-pApzypWhbYg-LULMUyQES8bc9_IAjpfZcS5z6ucG9j9FrRYef2mdyd_SpLOTmeiTIjzqnV3EjDjHkC5_bEdnLbh4t30vjD7ISsyq5zhQJipETe_6Eei1C2OToHgE6TVZpm_OQy4VMwtngiNW_2rUTQqmCrho4Xvz0_ZlIiSaSng1GIxYGxOrRkCXfLpN9HT9Dtkx1FHEaU_Qy6fF3bsgyF8yA8fgsHELp9D0SdhlNhFg5STx5rV54r6gBtVi3H2K1_-jijPSFaGH4JTpR_x6f99TfbNyxdigEQX918dlR-DSt-sJeoXQLnB6EX4MnIVt4RICJBmTjBmGdVzacFxP7orp5HDnwznGiV",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-09T09:00:20+02:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7678e41f57c",
+            "display_title": "Nexora demo for AFA's membership team"
+          },
+          {
+            "id": "1a11c212432fee89",
+            "thread_id": "1a11c212432fee89",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@doors.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for International Door Association's membership team",
+            "snippet": "Hi IDA membership team, I saw that IDA gives member companies an administrator role for managing their annual membership renewal. I'd be interested to understand how your team keeps member-company",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_1nTo5-h213AfyexZj2vdF3tkz5i9SrD3pfGyFTZKc2ymF3xQ85povoGF3E4LJJPMYO1nMQoTCpfpvH88MJLGTAsjd0gt1mG-wjsNFWaIKQUAjapDhImWPZlXETqZvtUdUimIkc3KJez1JhCfBTJ9yrCIK5xb17ozXe3W1QQFnxQQDyZfl0FzOlbG2WmhLY1oCaBMm4ARaw5aR925TPrm3BLMK-7lhwLGvjVwhMnWIKArEsgN62L5uJea5l7ZePKXBQa89MQEGGunNkU2JkHz7pmHI5xf6-2qA_x-DyXC1AzxVUrnZjkkN_EHzq2Tc7Y2SApjFGKL7PKRPUXbH7Rm7NgBr_D-U-bK9Z5cDQpFYFWH8Ui_ExW_giKU2z_Tu5fGiwP7N38azAMKS",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:28:16+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c212432fee89",
+            "display_title": "Nexora demo for International Door Association's membership team"
+          },
+          {
+            "id": "1a11c20c97b3046e",
+            "thread_id": "1a11c20c97b3046e",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "angela@awfs.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for AWFS's membership team",
+            "snippet": "Hi Angela, AWFS memberships are built around companies supplying the woodworking and furnishings industry, and member companies can also involve their employees in SWM. I'd be interested to",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_8LBdYLwrKqbyUOLfpz2pQww7z4zfDEo06a7Nw61RindTI3MGG-iWe_UJEs8Y2v0hvzjs8ZbVkje6wIA1Q76r9sGUuV-EkWcyIZgYdvJ-TYFrFdk9XkGVAkNUHU9zpmgD3UQ23T4J0Kh1vHMMpk7GP6B4J52IEZFY066xNZriTxGpWBkBXzB6Q8Yz8yOwOA-19MjNS2OrwIIRj838ANBGl8Jpk1Se8rZYKu2w2dSrLywYcsQ6xYrMnOoV4mzO3NK-XQlByjDTc1qe92Hkx6Feed7gu8p6rs0zZuDuVLCWmx_zMu9oSB8lagV-qrhzLEm8yMoPVrqplVOfrtgynsROPA0LsFtvKDkQxzqnMQy0gUsZZMXqxu2-I7qnWmJw9GkOpOaOLCuijut3v",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T10:27:52-05:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c20c97b3046e",
+            "display_title": "Nexora demo for AWFS's membership team"
+          },
+          {
+            "id": "1a11c203d2286c33",
+            "thread_id": "1a11c203d2286c33",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "office@tlmi.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for TLMI's membership team",
+            "snippet": "Hi TLMI membership team, TLMI offers converter and supplier members industry resources, company benchmarking and a member directory. I'd be interested to understand how your team keeps member-",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_N3XC0005CNKF62UqKucxhirnHoyepZHxFfrpnTILnjGEZYonsPvKtgqPDA4AY52o2HkmOXnRuAQZFZ0QYp4J7UWmaxm4QWlxEvRODrze5m65YaCNbvH4hs87J5v2jQTNx3IcgsFChyagAMqlho7mbOZM2wA8T3ZLdb3rNW3fbMX3Y5PnpKc9noLa5mPN1reQk5Ax2joDZUOOlUOBcqlmpG56ugQKsFhvga1TMKCYImc_0KHBRHW021W3I341alSgEJaql1unQ8Dg2MRpPt3G0g_Uz4ekMQlBwy__IrNCUphh17AtjtOc72HHfltZEoWJdMFFooq25BNU5GmEd7yF4CgI-Mz6KeiIEGVIZYchGxvP-FmD54fFW-Cs5HKokLQtF0BYeNALD44aX",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:27:16+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c203d2286c33",
+            "display_title": "Nexora demo for TLMI's membership team"
+          },
+          {
+            "id": "1a11c1fe67945c8d",
+            "thread_id": "1a11c1fe67945c8d",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@paperbox.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Paperboard Packaging Council's membership team",
+            "snippet": "Hi PPC membership team, PPC's membership programmes focus on paperboard packaging companies and the people who run and work in them. I'd be interested to understand how your team keeps member-",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9o4oMg_ANWODjAGMqozIX3hMoOAPOxVeHxMH_ethOqtquNi0IkQoN0YfROaa0DGIuWMez-3NYs2ppLqSA-GJwu1jXNKQHbROPg9C-ZiYH5q2c3lSQ4zyDgBLw5_uEHNxnNqnoD9fzaGm72QuJmM7XTNozpwbt4LL7tA_x02E0V5A822EPO5TC50cKpyNwSplcqvuF5HdkuObmjXrVJVjCXPpy1E8TNtTsUuoW73YlXjcJ3fq0OVcz9GbZB1mP7CUxm4CTV8wtRuCv24dFl8gfrlms4CzHg41gZYlG_j-saH_wB_JRSTaM-D7XtvRwsDnAnX2-fI41s-Cswn8alk5lXvzPNjJTJQ58Vp2P61BWledkFwAPVzKtvYJy9Zz5A7OTVtMFSpuI5-c3C",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T10:26:54-05:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1fe67945c8d",
+            "display_title": "Nexora demo for Paperboard Packaging Council's membership team"
+          },
+          {
+            "id": "1a11c1f85aba49a0",
+            "thread_id": "1a11c1f85aba49a0",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@reusables.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Reusable Packaging Association's membership team",
+            "snippet": "Hi RPA membership team, RPA's membership community brings together companies working in reusable transport packaging. I'd be interested to understand how your team keeps member-company records",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8IUVdMSi39tUiQsNSb9BIdHackMUnmHyH6n01DPkQa4d6Z-UVERw4xsT9YgouoBn4QjGqOI4-YjtDfQSg97DpoqNpPfdfRiKbg7lTRvLdjSDRWxDXBHD1Rnbokk-Z-aRZyIa73dv-9iNxZ7LaCinKuGuLXeOTsPvJADIqJoh6EDYDGDxDt2cnsDi45eQNIqqlKWrIHEyMZsWMfqxKL-Ud5XJkqFXDQ_f5e4s1w9OJwHWh1yk7bPPAYGfnwaeERKG1EbmORTvkX5stCGwlhQHpkjutZa1naJ26k63ekbxM9gFQZ8dQ1m21GEXKlCnxgwfULUfyHvRI7hs6XnbDWujxjErglzYQSnewmgze31DUa8SJ0Q24Ywr1ojNBmT6mkpOHfhgdniCFvWWLh",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:26:29+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f85aba49a0",
+            "display_title": "Nexora demo for Reusable Packaging Association's membership team"
+          },
+          {
+            "id": "1a11c1f2d4b368df",
+            "thread_id": "1a11c1f2d4b368df",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@industrialpackaging.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for IPANA's membership team",
+            "snippet": "Hi IPANA membership team, IPANA has an online membership application for companies in the industrial packaging sector. I'd be interested to understand how your team keeps member-company records and",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_v457JG28xuVjwlg9kItVRpvmiTQZ6bJD9huG_7LSdZEvjTMxJFK3ojE5VRFDKR-2hoO6bHVAC-fFp6tXdNsqgjvqhzRzZcgYsMs15HeLlhJsf6LK50P55ZeDkHsVK4J6XDmrVYp4c4yL579Qb3boyzGA9gBKW52LDoe8JXCI5aKyoHCN23ByX5uIewLiHpa_pWbIa0fSv-X131vcsv6BgCCZIRdyysZ30xV6Tpi8IG2syt-b61RGjJCB4w7sGHSreUf8bfcXO86x-P1wBiwm6nd4Kl4ARpiP9ZjJ3fbbvsurQde7WLxOkVknvoXC4cigEF_3vtrdJVIKPql-l3C8iiEsNlPACfkro6KqPC4vu-nbZq0Vlccx1arDN61ZNLxM_L-iPFuKSgU68",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:26:07+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f2d4b368df",
+            "display_title": "Nexora demo for IPANA's membership team"
+          },
+          {
+            "id": "1a11c1ed082e39a4",
+            "thread_id": "1a11c1ed082e39a4",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "mail@aec.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Aluminum Extruders Council's membership team",
+            "snippet": "Hi AEC membership team, AEC offers member companies industry resources and a Buyers' Guide that helps make those businesses visible. I'd be interested to understand how your team keeps member-",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-FC9kjjdu6ZgC8blRjxd4krCOStv_q5xeNeYANNX2jSI3gQroYZsqCzASTfluaiFvhshp9Wsxq0wFMQHQyTC0lPdwUM6tPnY5O8BcbT3w6OykC1fzRt99Qr2FzdhXx7oPgIb7yd0QyElVrRXQHl-jzCbaRNENdhiShiHopYm9-Jk2z_RlCxc32NbpPXDaXX2FqHk8jv6uUuVk94hbjYnKiPHonuBN2EVZ0MlvK2XfPrA7cXkIphrMfqwBDBzDZ9DpCBVyeopAmVI7AmNPx5HVI6FoeTUAtCAmXP9nvjq__qYmHPs2g3085M_xpkXzxc_bVEh5-faOCTayVkloqB7rHinMTQxso9EjyDtJPD13aMre2buEPKpE1zkvtEn2MbIszUmmQmmR6lgu7",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T08:25:43-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ed082e39a4",
+            "display_title": "Nexora demo for Aluminum Extruders Council's membership team"
+          },
+          {
+            "id": "1a11c1e794b80f6a",
+            "thread_id": "1a11c1e794b80f6a",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "mail@anodizing.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Aluminum Anodizers Council's membership team",
+            "snippet": "Hi AAC membership team, AAC's membership community centres on firms involved in aluminum anodizing and the suppliers that support them. I'd be interested to understand how your team keeps",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_vMY_K9U4omoW_DMq_IeHVLPfovLsLCjxk4SXeuHM2v2L5wMn4KmyINvcBBgqB3XRyuikd_YWfOnSY71w722zcT02FmV0WU0RkoCJ55zgx1-FobF2CHY0ix0iWJEhnSWEOM6NAJqqv5sC1rME72b08V-ZV-LT3iz6hDWwVtbbFZS-DsD_98XyDWW5yBYeL6SrOLSEVYiNVkdf8gEda8Avq4pp3BvCa1BG79rxIVFnork4t8pj1UdBIAf_GSEafDcJ9Yc4s-DUItQKGUvvqV5W9Zke5EUvieDPTpr0nx6AhsX-jqfwux6Jc1GjV8zKA7SHvlBb9aa1LSbQdbNqCLCdnkz8tLtshnM2eAwxCzZycpqcnvxzBedRHerNaSlkmxk8gsAggkJeRTAXz",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T08:25:21-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e794b80f6a",
+            "display_title": "Nexora demo for Aluminum Anodizers Council's membership team"
+          },
+          {
+            "id": "1a11c1e1f2f1e799",
+            "thread_id": "1a11c1e1f2f1e799",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@acmanet.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for ACMA's membership team",
+            "snippet": "Hi ACMA membership team, ACMA's membership application connects company details with a named primary contact, across several membership categories. I'd be interested to understand how your team",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ85pDcrtnTWkCpnk2vM8rj5w2boljnPgWv5cdkXxaoy1yYnpIWxruuT-fBkL_YKxk_uGRDi09tbhNjgr30Gx9eq29TEuC7v6kS1X5wnXTHSr5aMO1VjZrHXGczKhKk-rr9-ld_lOb1UX2QEnd9cJRw-HqMf0QoyCfH5iY0z255aZ32fUfCsOFrXTHj9kwPODx0z0IrMrLn2QHqe6BStUEwMRCMhR99l3LxjN50UOpc8giXs5aVWmXv5TGSolaeJbMO1yVVfkl1eVf1NJpQSlpsJj8g3F_7apLG3Gsr72aDlx5W8FSXCgYBoALo2-urfZshP6T0jW3W4aDLJIlLeEIDU6paRAWugsgP2bRFztyqaMg2gpZrpqAZ2f3zx5idP_G9d9bnnXbotxHPP",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:24:58+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e1f2f1e799",
+            "display_title": "Nexora demo for ACMA's membership team"
+          },
+          {
+            "id": "1a11c1c90d01fac1",
+            "thread_id": "1a11c1c90d01fac1",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@pmahome.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Polyurethane Manufacturers Association's membership team",
+            "snippet": "Hi PMA membership team, I saw that the Polyurethane Manufacturers Association has several membership categories and a dedicated membership application. I'd be interested to understand how your team",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9oApxLu5sY17RSFCYzFybWSwW3G_XUEM-DXQPBKfsFxD7NP4nE2RSvr9MPO5RhGmrkt_OMLnvXbi2j_EpILcaNRAmjOaZd000X-OKoyPNvkA-HlHGQBu0pR53ndl2KNOR3ecBeXNjfT8PxYDxSb9OeE6mHt0ahcg-dJkt0D4okNPCzo4R2_-NlamVe5Ro47dqK8sJejB6O2gUPMzRdL_3Jyf-aXPZTdc5dvXZkvRdX2Ud1E3NW5OnCBDmstZOgcGZH0UJhQTniNDk5yHYWZres7l9Xk_4pgomEXnVeEjeG7Bz2YJqPlZmFQ9fMsTTwproF7pHaxOFjFtj0NqJUM1IhzEknydQWpRzBISFsEFoVizQg-O4r7AYeF7l93jmNZcsLJqZigq76zOLJ",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T08:23:16-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c90d01fac1",
+            "display_title": "Nexora demo for Polyurethane Manufacturers Association's membership team"
+          },
+          {
+            "id": "1a11c1c3b2bf39f8",
+            "thread_id": "1a11c1c3b2bf39f8",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "iapd@iapd.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for IAPD's membership team",
+            "snippet": "Hi IAPD membership team, IAPD brings together distributors, fabricators, manufacturers and other businesses across the performance plastics supply chain. I'd be interested to understand how your",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8EhpPNUc16XrMqteWR3YMSj05UeT3SJFPHABy7ZUoh3ZQFg14hyMTUFRQ9QMF3SLAwq1khHkGQEO4AvHwWmFzNV0oU5IVCZrTb1FDSzZ0rtU3q0U2BL0Gf-XVZtdlVGFxiCk7mev_anhhO285U0rUx_d-pnMYFqNjS95BQl5AeN9-ysvY5JGSPaFtumjE-tdyLakMMJkf-wss6Y2B1tbY5LErFTiYWwzlj-eiIDbXXgyMHxo6bIiIGiLC3f7jH6C23pEz73ktRz5936lwv8syzwn2Z9xyam8r6r0zF5hVcxH64dYYMkJg7egkqMTsQzgfhGEpV9n1xJjngIhagWUgcf2VoYBBCcHYvURcttsnn7DbPC6yxLsGy6P_Z8lNQSUYrESItQyHekaLG",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:22:54+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c3b2bf39f8",
+            "display_title": "Nexora demo for IAPD's membership team"
+          },
+          {
+            "id": "1a11c1bb06754473",
+            "thread_id": "1a11c1bb06754473",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@pmpa.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for PMPA's membership team",
+            "snippet": "Hi PMPA membership team, PMPA offers manufacturing and associate memberships, with benefits for the companies in its precision machining community. I'd be interested to understand how your team",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_EKzYCRZRA2CS4NzL5iQrLZzoU-rA40bscUG5Ga-HEoo77Q1Xo4VO73tkMs5jXiR0BT_aLLh2PPz3sGJgg4CN3B6FdzoHWddtxbgUGQsu0l_iiNjKWreEGLnR899pkJLK6rD8t1JKbVQ2dw0l5coVDHs0Ooehf06xQvuuIrlia2a5a6-rK4QJO8qYzwQpKID3itYwIoZgkzLxNQgI7zaTEaAe17XX-E1d-UidcUWzqVXQHADgoM1XYzTnj_BQcBf8wbp7Sjo5pCd66FlY4zdYZ3cbW0M9H_ovjlD8SQge8foEpaoZmB9b-OQaFMf8cr3OZDg_wTLnvc-lp7P0egH1K3L4q1F2o3nnFI8htDCXaH5-MtFjhfy_vXVvN3gwU0Q-mYEygabmqbh7r",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:22:19+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1bb06754473",
+            "display_title": "Nexora demo for PMPA's membership team"
+          },
+          {
+            "id": "1a11c1b58b9c985a",
+            "thread_id": "1a11c1b58b9c985a",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@nfda-fastener.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for NFDA's membership team",
+            "snippet": "Hi NFDA membership team, I saw that NFDA membership benefits extend to the member company and each of its employees. I'd be interested to understand how your team keeps member-company records and",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9gTWQEbkZ1ncV8CgT4RSHMRZtktB-kAm7PsnPGjcinGKKtH98nVSanGn2SohSXi41pjZCHAvUD4zIqKsY5DHH6u7lD6DyylCL95LTpuPRT7YF3UIYGytctbrylZ9H1vJYB-T_3c8aa-rXLSty1zol88-ghnYbdtddyCNSxIPUvUzBNXYGqMVtLusLnRQjXoJGlmoOK0DjwH168IXhW8hvedBmjd5GBxSoXm2hXitcJbZW2NVcAaRYQUmD76p_kJggTuzWqauq2V2n5G8uOJsFEiqS5AuuWWSkgjOjcrm5qQ_3B7F5cPmy2JON5LgZ7Y1YMLlWoSu0r-df-LkEKoe_TIrnllg32BF5gZ40RheOTrsAZuhI2A8STCwWFXoDBcdgNawqHR9GYgUfx",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:21:56+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1b58b9c985a",
+            "display_title": "Nexora demo for NFDA's membership team"
+          },
+          {
+            "id": "1a11c1ac175b0386",
+            "thread_id": "1a11c1ac175b0386",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@isapartners.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for ISA's membership team",
+            "snippet": "Hi ISA membership team, ISA structures membership around company type and role in the industrial supply channel. I'd be interested to understand how your team keeps member-company records and their",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-czdke28Jry-do4IUxV48mFZOAODGCV72sYm997DvJ2mFGae0BgM613jeYlRZc7di3ucwgooRGb-hIPbWaWACJiVmTB4N2pmm4O7FWNOqsq3Kc5OPn8gjXb5S4H4JX0Z4gK7VaTK2IxhaNdb-vXSt1AeXlZZkpgz0XQTWlaAg4xvbx6EN1N7GvXOTY2z7M-Mg0PHPZfFxY_d60x7S4EqVLqdYiiUN5DMk6A_hepseZNCzFWJoypKQWizd06Pv8P3sOdiFQOvmbZxBxd133YJMHKbhD9eHy4wfHoyTt2h5Q4KTH8qXEinzdQ9mmTeu_WAkc5ilztzSwHkjcNvYFA23AsulA29ucFcOtWxE7aC4B0UEZu_3MFwEuFzFRWeFKaLbylCB5jYVfZq8N",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:21:17+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ac175b0386",
+            "display_title": "Nexora demo for ISA's membership team"
+          },
+          {
+            "id": "1a11c1a6ad5de964",
+            "thread_id": "1a11c1a6ad5de964",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "connect@mheda.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for MHEDA's membership team",
+            "snippet": "Hi MHEDA membership team, MHEDA serves member companies and their employees through several membership types across the material handling industry. I'd be interested to understand how your team",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_0Biu3V5jFmxfjdxwGnnJJb3itJUF8X_WxWZuCetPFLeonnldfZxPaN0beIeh3w-FjCNCeeOnHIJH74B1PFWo8swxzcRzIF_yMCv1eQ17LmFNnSbcZS5KzfI_Z7t8V4_hiCFbQ5wBREGiW9OWilGUScz_0EblH9wONZo8YaW3Dy7BVNoVQKDccGurZAWKPslGZo0m7wCH8Pmhy78QvhGnG79ebBddTZHbWz_AicxUH7-M-y1LMndy1HgdAU2XxQs21TLTXpZBW1MB-5etGHjhmPGbkxrZjSqcKiwu9Eb5wbXQOV5N31WQwi8KlcXU1P8LPvdx3gxxj9qkO2h0KbpZ0-0-UsUL4Ym_T00LqUkjVEvHSCZZKcWjaEoeGRkjEFwe7utITpEVvYont",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:20:55+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1a6ad5de964",
+            "display_title": "Nexora demo for MHEDA's membership team"
+          },
+          {
+            "id": "1a11c19f0bb94c08",
+            "thread_id": "1a11c19f0bb94c08",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@bsahome.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for BSA's membership team",
+            "snippet": "Hi BSA membership team, BSA connects bearing distributors and participating manufacturers, including key people from member companies. I'd be interested to understand how your team keeps member-",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9phUWSKziyNdEmradrhohNSgXndDWv7q--DvM8pdpO6JkD7ZvV5Z_0BP1iYJwHTC20ZYC5G0VrblyM8ykmEfzPDrMxTgbrKPSDy6rA-bpEejSRoz7TFw4qAg8v1SmjNnZIL7AS9SRKwf6o4Ifhs4nYk7Ub-77JSN1bX-B0sbgtQGbwFs_bVuF-MRJnjPzgGw0uKA6idfhU7ZEMeaJ-chUoP7IsUT7dYsxOX3QSJ467Wm3AXa6sHYZVIqMO8Qqi0kBcn6f2aAc7_VffbNOpO3vfYrKgBGMrQrxN0n_eqpBcHqA5wNwzhHOhT5wejU49WGYWQI_k3djLktx3v4w9VbUo9wX9uvwiKSFcwlsX6PCGIpVGOdEzTPYd-9m6s1hIkD85nMwgU-J9TLje",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:20:24+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c19f0bb94c08",
+            "display_title": "Nexora demo for BSA's membership team"
+          },
+          {
+            "id": "1a11c198ed3fea2e",
+            "thread_id": "1a11c198ed3fea2e",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@fpda.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for FPDA's membership team",
+            "snippet": "Hi FPDA membership team, FPDA's membership categories cover distributors, manufacturers and service providers, with eligibility requirements for each. I'd be interested to understand how your",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9ApZoXfZgOSrVmW8JT4AMD4aFOZgZh4zXENjXdmJuKQRaBlGBvYPWvW_6zhMSShaPxrskbc5MoJSAUjCFZKkxJPU24L8csfbZsY5o0ef-C-NoJSwWzIk-1qQQ-PKdkLVidp_pt9vklciAZB-7ePjMtpisQwDXFNZEXXgVxBrQnjPw8bGrpxI7L6MJ1UMEH6z_12sPrA0fMezRtskjvzngXTq7JpvrM1N7FVOVWD2DDsZvxzW-5CQzA6NkcrQQx_dvyjDs-iaslFQIDquXk831iI8Z0_NQEPiLG57PuNtVxgbtPLxgjKsbXy1eGfpWHtRwqGpCxlp-5ONRA0i7A4Q9HJ7RdfXnmKJ6eZAp_nFdWTxjrVA2I0xCVizAfdvFADY6m3zD2e0H2D4pN",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:19:59+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c198ed3fea2e",
+            "display_title": "Nexora demo for FPDA's membership team"
+          },
+          {
+            "id": "1a11c181ca8691a6",
+            "thread_id": "1a11c181ca8691a6",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "ptda@ptda.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for PTDA's membership team",
+            "snippet": "Hi PTDA membership team, PTDA has separate company membership paths for distributors and manufacturers, each with its own application criteria. I'd be interested to understand how your team keeps",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8sw-RESzreLdgsOFd6zvVaUocqphwkQlN0Q-sfb67jXt86IYMsOBrPTxoXwAc8y6oDPMN9t1Q74ExELGcFwX3E3P3YMFcZGR9TH21sFr9Kg9WzYIsLzLR-8Oxh91PztJ7CXiAnDCw-KD384uMDNjOPAFFArryI-0fBsCLc_WXAPAjobPKL3t8do3LtuWCDOBegPxl6vWPSO8k47j_sybI6tRhICftvTUgPo3NDpW5oKvnY3EoSjVdkEBLPs0jBPBSTsdGGNJ8ZJt3rf4cNMjM9Q36WOrTkeJeClupWjUVdb6HVbh7cZhT_WJtmd2Ntt1qEtCKFbpqUK9ESiEbXKn_NYAbPr0SfdRT1l1Gd9yAB1NFmd03qQG8hKmibNiqd8nnJMv0YcYm8J6Gz",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:18:24+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c181ca8691a6",
+            "display_title": "Nexora demo for PTDA's membership team"
+          },
+          {
+            "id": "1a11c17bb52abde3",
+            "thread_id": "1a11c17bb52abde3",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "anita.howard@nwfa.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for NWFA's membership team",
+            "snippet": "Hi Anita, I saw that NWFA links individual employee registrations to company accounts for access to NWFA University. I'd be interested to understand how your team keeps member-company records and",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-ybmtTkcj5WkiQOPplxli_l87kgEnji3cMsHEYJ4Ujane4J2oP3WGR-aWB_XVa0F7Vc1vKwRdMUSsZssP_OoDcp8Y663pQ0Rvu5YhNJ-577FWN0fagTONsslRC4zaoDxACOutLDL7GrSCYMwmQNPHv6lZPYMVmHsuM6v0rx4aHGYwReqYwG_GbH7MADzewr4OvZy2lGMR2AY7CfxFdSC-_N7kQ7s8_bLnt8JssFAEgSJFn9uqyVTWuOmQuMG6voLqjQIVOd3c3jO4AE8PB8U-dJUcMmO1mgIMV1TOpGhxNB7wSCl1im2GmAFCMbWO1Jj05qZbfNiLQs6LZSZjhLc2hrKwIvhPj-FPhBDRuXjArubnygs4kTfcH89pMV5qBYCmbxRlUpdLN8HiM",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T08:17:59-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17bb52abde3",
+            "display_title": "Nexora demo for NWFA's membership team"
+          },
+          {
+            "id": "1a11c17634387954",
+            "thread_id": "1a11c17634387954",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "kristen@heattreat.net"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for MTI's membership team",
+            "snippet": "Hi Kristen, I saw that MTI reviews membership applications for Board approval and already offers online accounts for employees of member companies. I'd be interested to understand how your team",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_dmtAyEvanacDotZpAOzZ_9BYBOudViKR0imy-tjBmX1bPy5AHNjVxTbilU-vKfO8rj6L17TV7K2StlzOK4xONDIe_zJkJEd6Tmlj3UJJrjM-ROhTdWixR-gRiTosejQjOf3ZLSELEm6nA0F8YepELOF4vKn3CVvdpq5dOpE13GISe3d62hKvYyMu2FWBCaSWCA_lsLR3S7J3NmN9mXBCzyHxI6Hgd7t-SZalztsJd1fEqv8YqD20d1kEJye5S9w9xqOA-50jV148TM9ZDJ4j3OeLWIsRbx3E0xnc6jG47M6P_EjJgbun6_jSy4q5FX_IRJhpIL_QdPMlwsnd3su4rjC92yvdyv5ad0nzI4Lhqe2NE2Vd6VWFMyJlYmqbnMUhIczlg3MXiFdEz",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:17:36+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17634387954",
+            "display_title": "Nexora demo for MTI's membership team"
+          },
+          {
+            "id": "1a11c17068612088",
+            "thread_id": "1a11c17068612088",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@mappinc.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for MAPP's membership team",
+            "snippet": "Hi MAPP membership team, I saw that MAPP membership covers a facility, and that your membership team contacts applicants after they submit an application. I'd be interested to understand how your",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_vd0rUV_ltxs-jiKIp0a-1EdDuec2t0f1S-CfADjl9nOTCPHFGwiwjfV4TzOIAxCDmmiBAWdjdCkq5qn3iXs6SwGCba5syNP1mVoP7arCrpKd_YTJT6P_dsO58LgzdZ1CXJUxjp6Co4VVhpcyTDs-3q4_sIqcxfmgA5YOOY_oNspbs5rTNOh3PzgdBnMs1Eug92XZWaiqmaVBWTaUu7pQTmBMjRr4WtWyk6dTFKAQQF_PUw_bH7xDaHgXxeRJwUIKYVpeLL1O-8JTTbG44kMpfSiCsARsgCC6gBTZzSFbZSWMjGZj99dY1GfellEQ3h0g9WL3tyqq0zjfYIezjURAtFdubnUkRbesG17sKMa6lFrtbxyCqjiOMiWk7moGvIQeu0lk0M_jNpiev",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T08:17:13-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17068612088",
+            "display_title": "Nexora demo for MAPP's membership team"
+          },
+          {
+            "id": "1a11c16ad8942eeb",
+            "thread_id": "1a11c16ad8942eeb",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@amba.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for AMBA's membership team",
+            "snippet": "Hi AMBA membership team, AMBA's application gathers company information before moving on to employee information, which looks relevant to Nexora's focus on organisations and their people. I",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-paQTjF4pJhCRpO2n0S02CEMy0ExY4UxWqjRPJ2QMi5OXT2J_v1Z7pcKIJSMuXCoEEMy4_TDAfAA7WMVvKQYX8QLpExALxwZWWpgmbuNz66h74Dt3ne705gdPvj-n-iyad6aIYrk42iQ5O45ZnkO9dUT57aB8ZO4NpYPygUH_LAxUCcCiC-QusZgX3jn4Mo6Vb-njBiG3ROEWmh3e1Mx2nUwrNWsWyN7Sgd0CLTYclFrI0JtZnzRQc00ELrfoomnD9MKOxb8JEJs5N7iuLdPBF97xC-sSXjAqFoHYe8L1jXZzWnYeAgwfp-7iJTPwinSxm-Ev-x97Rj18dclXSidixgI3RyuWPJH1847yiwjlxWFoJoqBlMoifjZC-MEWTUIrGfcVK6Yk8vG9u",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T10:16:50-05:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16ad8942eeb",
+            "display_title": "Nexora demo for AMBA's membership team"
+          },
+          {
+            "id": "1a11c16528f62b29",
+            "thread_id": "1a11c16528f62b29",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "membership@fmamfg.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for FMA's membership team",
+            "snippet": "Hi FMA membership team, FMA's business memberships extend benefits to employees across a member company. I'd be interested to understand how your team keeps member-company records and their",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ91xVpxTFiHupVRAawRMryWmyFE-94HyENJcMp5ui3Qe64uWFSpuQIFv10QZH88VGnomHM6SZlaDQnguLDvQjhzXk5U4cyDzlEokJVO82w6aou1AKqfPiolzQOivtLNBuNEKWa0HkWfjtDUdOviiGyqJ_MXys60RBffNw0z2FXZLhXHxPP1la5uWZXVZpCcwVnpejYDJO6ii21MUfn34pnmlBud9K56lPU-75lwn1Pj4PMBT9fTIImnK_gboKUNX3NqyFJrwjiGBJ1GUbO0U0mYc2eUF7w6IXCJT92L2r3xBrXCHMd_Q5c_ZSjOcaQ6USXcKmfr_XyDuaPUD8r8DYR3K07YUrfGBrN04gQcw_IBGdqbNiAI0RPm_n3Y0v73bb6NZWCVFrpQsjuH",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:16:27+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16528f62b29",
+            "display_title": "Nexora demo for FMA's membership team"
+          },
+          {
+            "id": "1a11c15f48fbec90",
+            "thread_id": "1a11c15f48fbec90",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "llehman@pma.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for PMA's membership team",
+            "snippet": "Hi Lisa, I saw that you lead membership and engagement at PMA, whose community brings together metalforming businesses and their teams. I'd be interested to understand how your team keeps member-",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-sdcf5W2WxO56VvHrpXD5xm7vytodKx7PqKZAy3F86842sVNbhVpzDKeCr650QIOdj-2vL0jaL5wrbg1_kR8-ftHvKsUhdSnlYF6cZPdndgOdYQWwrp2g21WSzBTTY6q2-yzujHz74gD3MGFh8bC_d3MGnaQle6aGgHm0OT4Cy3ZG27UZYVYxeTzrvJT3Sl0uTBBmQgYcNxiW0xSHsuGIQEqC9z1tt2FpOHJraTKFoWxyovhNf5oDJcrimMIqxaA4ZPRwJW2OToJF-PhYQ_AygJ5H9R3DdVvamSyyyqJi0QiZFVSO76D1O_oX6O_2NeeCP3-anaqCYUZ_JaSIStBINdOU-r_b5Q8dn5tV7GvkH7jbeyJOCKwWP0PeY10sfRvXtGU6N5AIhe1Gg",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:16:03+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15f48fbec90",
+            "display_title": "Nexora demo for PMA's membership team"
+          },
+          {
+            "id": "1a11c15996661aa6",
+            "thread_id": "1a11c15996661aa6",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "cmarsico@ntma.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for NTMA's membership team",
+            "snippet": "Hi Carrie, NTMA supports member companies through both the national association and local chapters, and I saw that you handle membership and chapter relations. I'd be interested to understand how",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_GSFAPkaIMpyTW5NfwX8g4vEBgyQls9KrlXOb6L0doJvee6t-MmBeX6JER6O0Zm-NxaEeQ8HYTc6gynS-pqTuEk4Zs7a2O3APezTytLWYkfyfHLcB43Lz3K5-d9nXj35nzfnUujqO0cj6CH2PajVcFbV_U2Ips7GiQFitkgcgbLCmk_SlPZXYaiIwmlmf1soamNkdaacPJKHDrwgaCB2suoB3_lsFRcd1ogjD-HQepHjvlVhgdjKJ200Xu8rHpocy4bE98jR0Gj6T59JRL7Xf3j1WndJdNzjZ7oMlMaSRTlCwdtpbcLkArhvpqSTMR8CuaX8DP5mde593pgYP-lBv9XzrTq0DG5IcILUqNq9of7R1ISlngBL50r-5ENPcS_vxpixN_LPVVFSjS",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:15:39+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15996661aa6",
+            "display_title": "Nexora demo for NTMA's membership team"
+          },
+          {
+            "id": "1a11c153e30859e2",
+            "thread_id": "1a11c153e30859e2",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "vreyes@aiccbox.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for AICC's membership team",
+            "snippet": "Hi Veronica, I saw that AICC makes its education resources available to every employee at member companies. I'd be interested to understand how your team keeps member-company records and their",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-k8EBbHpgkcethrZ2dhXmiDVHLM7Wi76PTWb_r65bHTLn0RnTeniBwFB61pm3qsFV9JM6BbdblIFK9ZePhDVUEM-Vzqq2h81cLdjNeiufZJmPcwEwSG6bjSJ6EVFs2plaUQtazvYr7Q81PTuXAzxckk6m8540BkBU9U44QOjdv03E-FANQovKAYKNz37k7Xjyxe9jVIpe2Z5npYwErTE2n2tix8_V2JjlxF5xsxg-2HKuBhItx4fXQTmjnTeeXBJm0rhpaC0J_q-JtPyQfKihVBGUwkQ-k65UoftM2FuJK_RUflfttW-3fTTrXmJvno_fReTLYPE4Ma7u1en6bCaJpnIrOGjVMZkP7wirmAGrOD3Q-ipnmrZdMBhQmwI6dzL7_7Kylk9Ig9eFQ",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:15:16+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c153e30859e2",
+            "display_title": "Nexora demo for AICC's membership team"
+          },
+          {
+            "id": "1a11c14e24744bb3",
+            "thread_id": "1a11c14e24744bb3",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@glga.info"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for GLGA's membership team",
+            "snippet": "Hi GLGA team, GLGA offers member companies management resources and opportunities to connect with peers across the graphics industry. I'd be interested to understand how your team keeps member-",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-_Q2Sz5D563EU4VDopx2ScGpo6XaqispKBURknQDJxvjLtIM3ZWemdIjvOMWeBSvZ4wY5QJpzouyUwfZ1OKyLmWI-l7AYogJqKeHHUxiNkSH4cxR1EbXyafTgH7WE1JQINRgt5LCnda57T_9MLSK-xTr-UzyNrgh9EOqOLrwLWNIUgSK9j_5a7-iIJvmlAYXK8guCWpB1afpH8d1yhfhNJVDUlsAS5PV9EJhnu7sL-dTnTPgYgrSsmfO0WnUIlB9CkRdTKcigvXhY4CcY9yFEeianw0WWTzQc3kpp4WkOpAaTXRdqiVMJSCI-xB2XaxUZ44E72IC2pHIpJLWroH17kHtKdrVhid7wMF0PDOKpZkBeyWVdTB2xldLspP1nQcKwTHK6tjptvruaj",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T08:14:53-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14e24744bb3",
+            "display_title": "Nexora demo for GLGA's membership team"
+          },
+          {
+            "id": "1a11c14836da419f",
+            "thread_id": "1a11c14836da419f",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@graphicmedia.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for Graphic Media Alliance's membership team",
+            "snippet": "Hi Graphic Media Alliance team, Graphic Media Alliance's services are organised around member businesses and the people working in them. I'd be interested to understand how your team keeps",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-60NcO9DdUCuLx38kBQ77shZbBnEwFga66CPA6STPmyRVQo0AmUwC_cjKU3sYCs8ehGqk1rgxrVArW-EraBTzgQtIxTQfXH4zM6aXts0sz5aaGnRdlQGS29BUWOQarfZHUND5IdEzeR_mu4DKfPY1xJ2o-YxL8insiWZGgk5ptaxlK-_k04YJH73fipddFN0AsvraIxxjFJ8k2W1Exv2bj2JTslzmmq_6g3IVrgDozMkTSnGw14UAJEBG0UePR1WDOpvIY8jfFmji3qynsi8LaKoa2ICj01wUZru36ap4wZtDehFbpl9VJ7VAPzJz0ezGidnBg8U1-kA96xckNwZ5rbFsENubll9rrr_qjV6fl06ZASFNceezN162zhj7Y7HZpwnpi9yahd6IC",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:14:28+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14836da419f",
+            "display_title": "Nexora demo for Graphic Media Alliance's membership team"
+          },
+          {
+            "id": "1a11c141a7e55e69",
+            "thread_id": "1a11c141a7e55e69",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "director@cabinetmakers.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for CMA's membership team",
+            "snippet": "Hi CMA membership team, I saw that employees of CMA member companies can create their own accounts to access member resources and services. I'd be interested to understand how your team keeps",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_iicJ4eVkWjOGifSuQIQg0-pKLGhnP4NxZmQC9ufG0IA-D38OuObcp8aPaGZxftjKLWincuWESR-ajSsTzxrPCzmhFFGdUOMsGsqUOLK5oiAp25xUsRVmlH4lhLN8YLNbfnClXhynA_Oybu7LF9wQAnpSNaYVaqYIjC_Ig_7pJPzryxQ4f5Bf3Bpl5vMudCJBd_Rav2x6dGIIQHLcCepAr32tUOo0GEAfO4DDpz--Dj3jS5ohL5zw9OAZD8Nr91klRbQRbhhW8AgCvlL5cFW2m2vTgjOYs7rbfGalQ51u8rDvhorztGRihvNWku34SQo3YvWlNzSzznSvG9GO03CZTYhBB3jbY7Ep1-VWzH9ZPBhQfcEh0c5aFHGNcu9rQcTeZVcuXCyTJWLIY",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:14:01+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c141a7e55e69",
+            "display_title": "Nexora demo for CMA's membership team"
+          },
+          {
+            "id": "1a11c1181b725d3a",
+            "thread_id": "1a11c1181b725d3a",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "amy@wcma.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for WCMA's membership team",
+            "snippet": "Hi Amy, WCMA brings together wood component manufacturers and technology partners, with membership built around companies and their people. I'd be interested to understand how your team keeps",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-CEqi2qRNT3AC34CX1bR2nB69P-nc1qXsJTGBPpfZcpW3z4xDj21tMnXmhI56SdmBgZLq_rAVl2OJQcctoNmFArQnXxsBRRa0ire3ep_atGzZ3g1tiTD3QEFapOEpIyWS2nrGhvQ_kX4rPGMNS88v1fg2Bj4RDzqr9GVoLbhD7n6oDKqL3aXO2L_bULCW0MT4Jfbxk8bN-cqH7GNG1NDWorEW656Hsp2NO3npG66HwDcqlKlylJfDQPKewUZSqmHIPyqkNv1UvaW71Ghcu1AzgpWEh3duomM7uSL4Hd9SektjIjSdimRwXTs22NEdqZLSTU00mtR1B2OyAg-iit8ULTgI0XihSVP7-9dcI0ixC5KMFe_ZAi7vc2rrB3-c9ODMK4h5tb7ztndUB",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T15:11:11+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1181b725d3a",
+            "display_title": "Nexora demo for WCMA's membership team"
+          },
+          {
+            "id": "1a11bed87d62d77f",
+            "thread_id": "1a11bed87d62d77f",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@britishcleaningcouncil.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Introducing Nexora to British Cleaning Council's association network",
+            "snippet": "Hi British Cleaning Council team, I saw that the British Cleaning Council brings together trade and membership associations across cleaning, hygiene and waste. I'm looking to connect with teams",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-x24v9l3xvSgjvmBDMxyWAnV-6_VnKQNdtBNh2S8iNEpPXNnV1_WskZ3Cy7enHZcoKGiWLCKOT2YOJ46T7bMd0rUlaDrXUscuwR9C7hPE-HVwFFj68Wj_BKAjlUhpwZZ847_bCnu6x_xO6lTmsnqIMGTBN_TWeMZmqrcTtJXkkBDkF6lbWqh0LOkNeNfX0r6IHXoip8E60bfC3jABOTs2dNyzoTyK4m46KhmJ5nn1XqS9caNtBFzKGVkm1L4HyvZin4w1VHSAfkfuV2nHP68AEmsTsgfzLmOwcbS0DppwIVGZ_R3rBQvlbRE2MhXXj1xW02as_kl7DrZpStPrmAyyYIN2ZxPs1bF7PTb2Wf6aIcoGBBVtEvBxDwOgnojHFF7FurdWwozZ0cHEX",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T07:31:53-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bed87d62d77f",
+            "display_title": "Introducing Nexora to British Cleaning Council's association network"
+          },
+          {
+            "id": "1a11becb63c3868a",
+            "thread_id": "1a11becb63c3868a",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "secretariat@taforum.org"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Introducing Nexora to Trade Association Forum's association network",
+            "snippet": "Hi TAF team, TAF's work with trade associations across different sectors looks like a relevant place to start conversations about membership operations. We've built Nexora, a membership",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_2bRq-l6hzTHkxE3wMdc2MSWMnxrTOuRQL5FYtOGXSIMnkYKkSd_k-PoMhfRBx9XEg2t7kdsGMhHSJ10WiCfmX-EMcyeyWAKSpQZFZmRTRSs95YUMOHz5KsbLI4tvMPR0lsaWGnfzv9WTBTnA_L_Wr14rKbzQpk2jqNLUq2Fp8SdqxPfh2r4EeE15OADyHM74kNAab-tAJ3b0rcDuHDz8BptYeV3NS6FCrr3dIzLrNoaT9yNBZXDPMSPoevZYt0_ZTDXa60AGvaAPpv-t27c6zoDggoAVwj5SXTun0j1L3lXVgQGQVIOcGAAgfAIkS_jnzEWsmmJIOcg8-9XRCfNZ4Ql36n1-uNbev9IQNUuQ0Encx2e1g3EQgGAIA-f01tdbX-DiPWuOHBKMM",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:31:00+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11becb63c3868a",
+            "display_title": "Introducing Nexora to Trade Association Forum's association network"
+          },
+          {
+            "id": "1a11bebbfc73d6fe",
+            "thread_id": "1a11bebbfc73d6fe",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "membership@bira.co.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A short Nexora demo for British Independent Retailers Association's membership team",
+            "snippet": "Hi Bira membership team, I saw that Bira provides independent retailers with a member area and a range of services. I'd be interested to understand how member information stays aligned across your",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-Koio8i3ILYImSKwlpHJ5tLTItdBAUAj216sTRfNUqZb2GTHcZCE9R6M1V9sdTXFuyb3BB5cCDBJQm25bRuXWDnypunhkRAhlEwr6ajd5nGY1kxv7ZabAQnAgrZB6kEbc9SuENI9GpRyPzLl0P1XaAB-KfLfUUUYuOeSqdRtzQw49FPBcU-e0GYiiKGDKderyXkex6Kh13rV1wBzvJISpwnkb8aMdR156CltLVEGbTuFxNtLqfzGG5Qw-tdy5cZbpAnkhoh3fvhpljGtDkS7mlprRm_scy_Y-oWORU9SWapcewqBORA19rOlmgTfQMukT5NeoDdhzABHyPQGQnLuUuPNy-yp9d6HnRVU54gL5mJqwEQzc2ThhRmPqVowA6cXk_ZfKv6XnERZpz",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:29:56+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bebbfc73d6fe",
+            "display_title": "A short Nexora demo for British Independent Retailers Association's membership team"
+          },
+          {
+            "id": "1a11beb04274d92a",
+            "thread_id": "1a11beb04274d92a",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "membership@siba.co.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A short Nexora demo for Society of Independent Brewers and Associates's membership team",
+            "snippet": "Hi SIBA membership team, I saw that SIBA supports both breweries and supplier associates and already offers a member toolbox. I'd be interested to understand how those member services connect with",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8j9oq1svn6lk-kzd9lNnF3S2vogo5A6bCZWBkwifbqENf77zlPKuWsRgmZuIs3k0NSG0RgDq6a1o06PFTkhbsT_ST3WKjrvq47ZTPB9O47NiQ2u48Lr7j63h3afRhwI80aRV8iUxHt3bxknIY5tQ9RgXYAp8EL18TYSCsDUZhYEPcj5LhH66wsmMeLOvxt6BdEajVemnq2P5VcNBsB4FumVtMTnjZmp7SYWxaqtnzYunyq58F40wbMjpau7Y4kGfhsevO_tP29bdiGFx_e9mplNJhtVjd1rf3nk2goS_ww7l_-GRSyRho4H9WsU9YzXVWOYBFiOJQXM67EyBqJVpmvw0KcgCaKCyL3kzCD9QN1_MMxwABz4S4gQH54GqJr2QGevIOlHpJM7Y6V",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:29:09+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11beb04274d92a",
+            "display_title": "A short Nexora demo for Society of Independent Brewers and Associates's membership team"
+          },
+          {
+            "id": "1a11bea81abaec38",
+            "thread_id": "1a11bea81abaec38",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@bcf.co.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A short Nexora demo for British Coatings Federation's membership team",
+            "snippet": "Hi BCF team, BCF brings together businesses across coatings, inks and wallcoverings. I'd be interested to understand how your team keeps member-company records and their contacts connected with",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-5SYd1S-UUWwZkw2MoGnXf9XpikMNbescjBJG7hEQ3Gqg4lmnNhHX9-z0E0HVtHfM0Bdo6VV97vzfy5PocCBKKQwlALvoK3yKsl08GHmQvOPVtdIcEbqC7AHAD-8QM5GsasrlVKhm-FZ25TW9bUyzR7saEQp8NA15GwOW4Kfy4Hn_OmLW0dAA9C98nke0M77A19o-i-V9axMGbTwCrRJB54lLYObnTcB5ISRmsKqApZ6p6SgJhiDY8sF_SDtOD773KfKhZ2XYER6KftVhzHAHGEf8fehjVMWfzoVn3ELj6pUigSbXsGl5ybUQaZ4T9EZnraIcd1YSq7Uci8JjNxGxM1eHDyXMDgMDnJCO3I40QcktoXI9LGMitx5rvPMTsYzhOiWv6wHYnK-wQ",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:28:35+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bea81abaec38",
+            "display_title": "A short Nexora demo for British Coatings Federation's membership team"
+          },
+          {
+            "id": "1a11be9e7b0beb9b",
+            "thread_id": "1a11be9e7b0beb9b",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "lorraine.mackinder@bcsa.org.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A short Nexora demo for British Constructional Steelwork Association's membership team",
+            "snippet": "Hi Lorraine, I saw that you handle BCSA's membership and new-member administration. I'm contacting you about the connection between member-company records, their contacts and the application",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8sSWtcM89UeOi1Za5OLoL07L6Lgddb3ixLcT7lahcVV2A79KrjMVpgHa7AwYZCrv7in9awPQFXrwEym3aTR_sCXMjmdkBzlEnNbxAcyExRh_oKskgYrsVgu1DSYJPOvcCZNeqy5aTrvVMzu8hOh2rM2i4G5zzw2dLrROEXymSAOMGtR9a4-GORK1bAysuyYxtZen3r1HulRFwpX5CLt6qiw0Tp_Ijy2BdLv29MYK9ORliCETu6q-bbmbLhD6Zbcxl64k3kIp8O3uBXmHzW3IoDN_RlZvYhkg4LeWmsKIQHrufwUiEtuyhmiRAYpT2gk8yYzUfqgqjcyEVgrrythJnPShpDTzwllQrsEiyaoQgWEgbXMI9J1Ear_vQUYqrE85sjQWSff8ITxJD7",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T07:27:55-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be9e7b0beb9b",
+            "display_title": "A short Nexora demo for British Constructional Steelwork Association's membership team"
+          },
+          {
+            "id": "1a11be92ff3cd6f9",
+            "thread_id": "1a11be92ff3cd6f9",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@commercial-interiorsuk.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A short Nexora demo for Commercial Interiors UK's membership team",
+            "snippet": "Hi Commercial Interiors UK team, I saw that your membership process combines an application with a Code of Practice. I'd be interested to understand how application review connects with your",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_LdxTqpHjr5WqBx-EXQ1-byI82Fa56eu8kBicMBorDdCgKP-GVEFMziKjzEYt21mGE9gkQiqqc7RoTN0I64UCPFI8MDzL05-LqN6rDGB1XmLUWQ4oXpsrAilf_G28lpPjzrZFhUtUkPK39HuG8U3K_A5Z9wMzry0sUn6diTfbLCO91bz1kEjOmXG3r6ukHaH3wa83Vkme-_BTS32mPgp7neWJk4K_kzTae9KNnspAOhOxN03sEDQitpNk032oU3jH_-AU2sL6I9PfrXcC7Q2p2R47kp4jhueQRSN-B1pqK6Fs6kDRjwt42weDzzOGGFHR9Dp2oUxKylXJ9ElXH184qzrpCPeXYCyPiNXzJwrojBA0njo8u9cVlKHY51hXdwoEdqr6Ao3-VJllB",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:27:08+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be92ff3cd6f9",
+            "display_title": "A short Nexora demo for Commercial Interiors UK's membership team"
+          },
+          {
+            "id": "1a11be8a50e5deab",
+            "thread_id": "1a11be8a50e5deab",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "membership@bpma.co.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A short Nexora demo for BPMA's membership team",
+            "snippet": "Hi BPMA membership team, Your distributor and supplier membership community looks like a relevant fit for Nexora's focus on member organisations and their people. We've built Nexora, a",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-JBadoNpa4iV8pQn37wH62OPsuMsnbKTWQSHQREoQaiqMxdygU68ZgrDsnwI2uoA1L5NDFTCdz8tRMAln9tvPIa9R_TEo2A54Ne9_EHqrPMOESqtWVMnz45miCV3SGnOdfawDrGu-0LDNsLgzY9La0yeHpHsrAdRw0-FuCA88qRRfY3oK-Vs69xA4W-FxVG3Q_VyQdaDmsjTmUeoFyVZZkDaw9oB4nTQJFzFz-ZBmyaiK8SmhouyMkT6QAYl9lILtuFQdTIPDxaazRL-pR1zsV-8sdo69fx-mXu3BJtzIjZN2a4_qJcY2buFGQmImui96UnQrbK-mNG_ttAZfX2Zh2ETA8NlaTADPSpPrWXaln7rNLODZ8Wf6KyvYJ4SU-MKR4l8QHJdszKOtx",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:26:33+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be8a50e5deab",
+            "display_title": "A short Nexora demo for BPMA's membership team"
+          },
+          {
+            "id": "1a11be815953d93d",
+            "thread_id": "1a11be815953d93d",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "victoria@bafsa.org.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora demo for BAFSA's membership administration",
+            "snippet": "Hi Victoria, I'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services. We've built Nexora,",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ80CExRDf_c6OoCcFpYavSkMm3TMZ98C9uAJrXJhoV2sj7WoB00F3UmSQcXZhki7BTcklgQF55xPfRB-q59aRDdHzRB9SGYAsRUvhF6CwrmcbTuU8RVdUNMPR9ND6RRvJxjON3z0yHst74KFZiAvG3bhKtnWRndUOnCWYLJzMSMuEs7KvTbIR_0OqqZPPBVXTzAz7FAmZSATwMrw0e5_JbbuafnZ249ReQDjC_ZUtMFtUBMu3QWD6P3Y-et6MJCHgE6h_FdysZ6DI7OAstQ131bn9MO5V-Be-1wtGIeA4I664ljAtWioi5IimBi_qIngN5JlO9am5RRdvQAlumUwkVqpLbBjgcZhB1grwdbVkg6c8bwDzzgwQWbexjtMrAdE-3H3mXc3ZdZq5kf",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:25:56+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be815953d93d",
+            "display_title": "Nexora demo for BAFSA's membership administration"
+          },
+          {
+            "id": "1a11be73bb6e873b",
+            "thread_id": "1a11be73bb6e873b",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@theafi.co.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora: a short demo for AFI's membership team",
+            "snippet": "Hi AFI team, With contractors, manufacturers and suppliers in your membership network, keeping company records and their contacts connected is an important part of membership administration. We've",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ89I9dkZezA4qhmuok9kySyGAwVEnoE8Q1K72qhHtsKjeaXkRDr5tzDXB1dtiTGx0qlhcUkSN6cdnor2gbUFuOAX5flIjI05SZRuPJ6yv5fytYMyt_11uQf8IeSVozxmFfGuvT46cSGRb7WPnF7FzMPNcVlHp0bIoKsL5dC7cBNSJ0FLmPe95sP_dGufuZxkQKptjvYA6PPpDQ15UemiMmWM0GMQ4cnGyVtCJy0ZpGlcaxBGb0T_qLqxP3yZ_yB9dFfcnLI059NWk8_G6fFalWuemiUR_AIO0Si99l8m2k5zWiUBoqqsVPeGH7jnKBmc1EO2_QuMwzbiAOoFeIIathYClfBhIaTnGftvu574CPTMoY_CpKqwz_YZ0jVLirh6gPBf8GaCLFB7RgR",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:25:00+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be73bb6e873b",
+            "display_title": "Nexora: a short demo for AFI's membership team"
+          },
+          {
+            "id": "1a11bdf55d8130a2",
+            "thread_id": "1a11bdf55d8130a2",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "david@gtma.co.uk"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Membership management and AI access for GTMA",
+            "snippet": "Hi David, GTMA brings together a network of manufacturing businesses, each with its own people and membership information to manage. We've built Nexora, a membership management platform for",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8SfLIJ4-SgogofbYRYPvlbcDqhW_eQY_dn8DyliYUNvFE_shKutYncFYjm19iWRrkzjBzRJhRsDOvFpeUOF1TZxDAFUQ9x5c5qWGLYCwtsVTTpIfczifQBZFP_GjxMCfHIEdVMcl5ZJSjg28zJsNLb2u6SNG7tGYhKBRDEs4Autk4ldJDk0DdGi5QKTKEOwFOOZ8FW60Du4MedOi33shDREUPi4P0IMc_qltSBiuojMXJJm9SZQt2CpbLnV4RkqZ3BE3qs9meEKUt47nO2HAhu5ec6Babx5sj_VwQ-kY3zjDhOWviL71fU3QZFXq1-t09QlT1IZIYY4tpsGamODBAU5c_EhWA_dy_xdgWFkrXZfdb5seMK7JLTA-5uPYPi2IJjqCAzaMRhqiaF",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T14:16:23+00:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bdf55d8130a2",
+            "display_title": "Membership management and AI access for GTMA"
+          },
+          {
+            "id": "1a11bc874d72d032",
+            "thread_id": "1a11bc874d72d032",
+            "from_": "Ramish Qureshi ramishqureshi99@gmail.com",
+            "to": [
+              "ramishqureshi99@gmail.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "Nexora: membership management and AI access for your association",
+            "snippet": "Hi Ramish, Keeping member records, applications and day-to-day admin in sync can take more time than it should. We've built Nexora, a membership management platform for associations. It brings",
+            "labels": [
+              "SENT",
+              "INBOX"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ8Wwd093-pQvCMhuFlDINrWGjs_28LVMWK1IBcXx6JTVF8aeWpkxVDEFDhhshE0vxqP4jbTtjUnXFqEIlJTuBitZTGSW5CFdEaGf8WBMSl-3Xm8j8wHYeB-ezJPqvT243Na3zSTJiV-GtUviqYVFaqJyc6E4OogOXG5XRq41IcQexh4KZWz7yYBOqwhkFj7Ou6tfz28_uJxdNEJuzcv35aMsoYwDvBBuKjcwQt5hWTauaAoPr5yUx8L_iXUJJJ_5ArdCscHbleFgnSkusCc2EFhjOIYFGnCyUhc5C09jTuUE_1ia-BfPSJ8Yao-nMXM1Ct1QMj9D38dU7w3yP7imMSv_5zIa1prURo-FyuKpHJ3oovwr5du97PFM9cJ0HydWNZxIwlc95WCD3fq",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-08T06:51:23-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bc874d72d032",
+            "display_title": "Nexora: membership management and AI access for your association"
+          }
+        ],
+        "next_page_token": null
+      }
+    ]
+  },
+  "classification": {
+    "positive": 0,
+    "declines": [
+      "1a11bf33395d33a1"
+    ],
+    "automaticRetirement": [
+      "1a11f79e78082745"
+    ],
+    "automaticOutOfOffice": [
+      "1a120804f5fbe7f3"
+    ],
+    "bounces": 0
+  },
+  "newSendCount": 0
+}

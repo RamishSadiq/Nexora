@@ -1,0 +1,9 @@
+# Hourly US outreach: 9 October 2026, 13:00 UK / 12:00 UTC slot
+
+Outcome: skipped_no_qualified_prospect. No pitch drafted, attempted or sent. Campaign remains active; no positive human response found.
+
+Complete live Gmail checks covered Nexora inbound, all 52 contacted domains in groups of at most 20, delivery-failure senders and Sent, with date overlap including spam/trash. All search pages completed. Actual known replies were read: BAFSA decline (suppressed), MPIF automatic retirement, SMI automatic out-of-office. Completion check found no new replies, no bounces and the same 53 Sent messages (52 external plus self-test). No confirmed send occurred in this UTC hour. There are 11 confirmed new organisations today; previous history remains unchanged.
+
+Five official-source candidates were recorded. West Virginia PTA uses Givebacks and is excluded. Virginia Association of Law Libraries has a current Excel membership procedure but explicit s2Member membership configuration and online profile/renewal access; excluded from first-system outreach. Swatara Watershed Association describes Excel OR database skills without identifying its actual system; research only. Funeral Consumers Alliance of Western Pennsylvania has historical spreadsheet evidence but current records process and commercial fit remain unresolved; its lifetime membership and volunteer/donation model are a weaker fit. Western Wisconsin Sterile Processing Professionals documents an attendance spreadsheet, which does not prove spreadsheet membership records; research only.
+
+See research.json and reply-and-sent-checks.json for URLs, checked/source dates and live verification. CRM-QUALIFICATION.json now retains these dated findings alongside prior records. No suppression, campaign manifest, application code or automation schedule changed. No attachment was sent, so video pre-send verification was not invoked.

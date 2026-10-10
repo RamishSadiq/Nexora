@@ -23,11 +23,13 @@ public sealed class WorkflowValidation(IEnumerable<IReportDataset> datasets,IEnu
   if(graph.Nodes.Any(n=>n.Kind==null||n.Label==null||n.Label.Length>160||n.Inputs?.Count>50||n.Inputs?.Any(p=>p.Value==null||p.Value.Length>16000)==true))return ["Node values are invalid or too long."];
   if(graph.Variables?.Any(p=>p.Value==null||p.Value.Length>16000)==true)return ["Variable values are invalid or too long."];
   if(graph.Variables?.Count>50)return ["At most 50 initial variables are allowed."];
+  if(graph.RequiredVariables?.Any(x=>!VariableName(x))==true)return ["Required configuration names must be valid variable names."];
   return [];
  }
  public async Task<string[]> ValidateAsync(WorkflowGraph graph,string[] permissions,CancellationToken ct,bool checkLiteralValues=true)
  {
   var structural=Structure(graph);if(structural.Length>0)return structural;var errors=new List<string>();
+  if(checkLiteralValues)foreach(var key in graph.RequiredVariables??[])if(string.IsNullOrWhiteSpace(graph.Variables?.GetValueOrDefault(key)))errors.Add("Configure required variable: "+key);
   var entity=sources.SingleOrDefault(x=>x.Metadata.Key==graph.EntityKey&&permissions.Contains(x.Metadata.Permission));
   if(entity==null&&!datasets.Any(x=>x.Key==graph.EntityKey&&permissions.Contains(x.Permission)))errors.Add("Choose an accessible entity.");
   if(!Triggers.Contains(graph.Trigger))errors.Add("Trigger type is unsupported.");

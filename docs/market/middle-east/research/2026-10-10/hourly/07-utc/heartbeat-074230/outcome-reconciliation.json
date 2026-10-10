@@ -1,0 +1,12 @@
+{
+  "checkedAt": "2026-10-10T07:47:51+00:00",
+  "complete": true,
+  "pending": [],
+  "sentTotal": 53,
+  "externalLedgerCount": 52,
+  "missingLedgerIds": [],
+  "currentUtcHourIds": [],
+  "localDateIds": [],
+  "localDateTimezone": "Europe/London; BST for 2026-10-10",
+  "sendAttempted": false
+}

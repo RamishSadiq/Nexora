@@ -1,10 +1,11 @@
 import { test, expect, type Page } from "@playwright/test";
+import { submitLogin } from "./browser-login";
 
 async function login(page: Page) {
   await page.goto("/login");
   await page.getByLabel("Work email").fill("admin@nexora.local");
   await page.getByLabel("Password", { exact: true }).fill(process.env.NEXORA_BROWSER_PASSWORD!);
-  await page.getByRole("button", { name: "Sign in", exact: true }).click();
+  await submitLogin(page);
   await expect(page).not.toHaveURL(/\/login/);
 }
 
@@ -21,25 +22,33 @@ test("membership pages preserve filters and recover after decisions and cancella
     const contact = await post("crm/records", { kind: "contact", name: `Paging person ${String(i).padStart(2,"0")}`, status: "active" });
     await post("membership/applications", { contactId: contact.id, productId: product.id, applicationType: "individual", termsAccepted: true, startsAtUtc: new Date().toISOString().slice(0,10) + "T00:00:00Z" });
   }
-  await page.goto("/membership");
-  await page.getByRole("button", { name: "Applications", exact: true }).click();
+  await page.goto("/membership/applications");
   await page.getByLabel("Search applications", { exact: true }).fill("Paging person");
+  await page.getByRole("button", { name: "Filter view", exact: true }).click();
+  await page.getByRole("button", { name: "Filters", exact: true }).click();
   await page.getByRole("combobox", { name: "applications status", exact: true }).selectOption("submitted");
   await page.getByRole("combobox", { name: "applications page size", exact: true }).selectOption("10");
+  await page.getByRole("button", { name: "Filter view", exact: true }).click();
   const applicationPages = page.getByRole("navigation", { name: "applications pages" });
   await expect(page.getByText("Showing 1–10 of 11", { exact: true })).toBeVisible();
   await applicationPages.getByRole("button", { name: "Next" }).click();
   await expect(page.getByText("Showing 11–11 of 11", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: /^Review Paging person / }).click();
   await page.getByLabel("Decision reason", { exact: true }).fill("Accepted for browser check");
   await page.getByRole("button", { name: "Record decision", exact: true }).click();
+  await expect(page.getByRole("button", { name: "Record decision", exact: true })).toHaveCount(0);
+  await page.getByRole("button", { name: "Back to listing", exact: true }).click();
   await expect(page.getByText("Showing 1–10 of 10", { exact: true })).toBeVisible();
   await expect(applicationPages).toContainText("Page 1 of 1");
   const remaining = await (await page.request.get("/api/v1/membership/applications?search=Paging%20person&status=submitted&pageSize=100")).json();
   for (const application of remaining.items) await post(`membership/applications/${application.id}/decision`, { version: application.version, decision: "approve", reason: "Accepted" });
-  await page.reload();
+  await page.goto("/membership/members");
   await page.getByLabel("Search members", { exact: true }).fill("Paging person");
+  await page.getByRole("button", { name: "Filter view", exact: true }).click();
+  await page.getByRole("button", { name: "Filters", exact: true }).click();
   await page.getByRole("combobox", { name: "members status", exact: true }).selectOption("active");
   await page.getByRole("combobox", { name: "members page size", exact: true }).selectOption("10");
+  await page.getByRole("button", { name: "Filter view", exact: true }).click();
   const memberPages = page.getByRole("navigation", { name: "members pages" });
   await expect(page.getByText("Showing 1–10 of 11", { exact: true })).toBeVisible();
   await memberPages.getByRole("button", { name: "Next" }).click();
@@ -48,9 +57,14 @@ test("membership pages preserve filters and recover after decisions and cancella
   await page.getByRole("combobox", { name: "Membership action", exact: true }).selectOption("cancel");
   await page.getByLabel("Reason", { exact: true }).fill("Member request");
   await page.getByRole("button", { name: "Apply change", exact: true }).click();
+  await expect(page.getByRole("combobox", { name: "Membership action", exact: true })).toHaveValue("reinstate");
+  await page.getByRole("button", { name: "Back to listing", exact: true }).click();
   await expect(page.getByText("Showing 1–10 of 10", { exact: true })).toBeVisible();
   await expect(memberPages).toContainText("Page 1 of 1");
+  await page.getByRole("button", { name: "Filter view", exact: true }).click();
+  await page.getByRole("button", { name: "Filters", exact: true }).click();
   await expect(page.getByRole("combobox", { name: "members status", exact: true })).toHaveValue("active");
+  await page.getByRole("button", { name: "Filter view", exact: true }).click();
   await page.getByLabel("Search members", { exact: true }).fill("No such person");
   await expect(page.getByText("Showing 0–0 of 0", { exact: true })).toBeVisible();
   await expect(memberPages.getByRole("button", { name: "Next" })).toBeDisabled();

@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-10-10T07:47:51+00:00",
+  "queries": [
+    "\"تصميم موقع\" \"طلب عروض\" \"2026\" الإمارات",
+    "\"تطوير الموقع الإلكتروني\" \"عروض\" \"2026\" جمعية",
+    "\"website\" \"request for proposal\" \"October 2026\" \"UAE\"",
+    "\"موقع إلكتروني\" \"عروض أسعار\" \"2026\" السعودية"
+  ],
+  "eligibleRecipients": 0,
+  "limitations": "Bounded search, not exhaustive. Vendor blogs, pricing and request templates are not buyer invitations. Earlier held leads have no newly established need/buyer/permission.",
+  "findings": [
+    {
+      "organisation": "Embassy of India, Abu Dhabi",
+      "country": "United Arab Emirates",
+      "url": "https://www.indembassyuae.gov.in/section/tenders/",
+      "officialPageRead": true,
+      "sourceDates": [
+        "2026-02-05",
+        "2026-04-10",
+        "2026-04-21"
+      ],
+      "observation": "February website tender followed by April website-management award notice. October listings concern other procurement. No matching current website invitation established.",
+      "decision": "exclude_awarded_project"
+    }
+  ]
+}

@@ -23,18 +23,18 @@ public sealed class WorkTaskCommands(WorkDbContext db,IIdentityDirectory directo
 }
 public sealed class WorkflowTaskAction(WorkTaskCommands commands):IWorkflowActionHandler
 {
- public WorkflowActionDescriptor Descriptor=>new("work.task.create","Create task","work.manage",["title","description","priority","assigneeUserId","teamId","dueInDays"],[new("title","Title","text",true),new("description","Description"),new("priority","Priority","choice",false,["low","normal","high"]),new("assigneeUserId","Assignee","reference"),new("teamId","Team","reference"),new("dueInDays","Due in days","number")],["taskId"]);
+ public WorkflowActionDescriptor Descriptor=>new("work.task.create","Create task","work.manage",["title","description","priority","assigneeUserId","teamId","dueInDays","contactId"],[new("title","Title","text",true),new("description","Description"),new("priority","Priority","choice",false,["low","normal","high"]),new("assigneeUserId","Assignee","reference"),new("teamId","Team","reference"),new("dueInDays","Due in days","number"),new("contactId","Related Contact","reference")],["taskId"]);
  private static WorkRequest Request(Dictionary<string,string> inputs,string recordLabel)
  {
   string Get(string key,string fallback="")=>inputs.GetValueOrDefault(key,fallback);
   Guid? Id(string key){var value=Get(key);if(string.IsNullOrWhiteSpace(value))return null;Check(Guid.TryParse(value,out _),"Choose a valid user/team.");return Guid.Parse(value);}
   var title=Get("title").Replace("{{record.label}}",recordLabel);var desc=Get("description").Replace("{{record.label}}",recordLabel);
   var due=Get("dueInDays");DateTime? dueAt=null;if(due!=""){Check(int.TryParse(due,out var days)&&days is >=0 and <=3650,"Due date must be 0–3650 days from execution.");dueAt=DateTime.UtcNow.AddDays(int.Parse(due));}
-  return new(title,desc,"open",Get("priority","normal"),dueAt,Id("assigneeUserId"),Id("teamId"),null,null);
+  return new(title,desc,"open",Get("priority","normal"),dueAt,Id("assigneeUserId"),Id("teamId"),Id("contactId"),null);
  }
  public Task ValidateAsync(Dictionary<string,string> inputs,CancellationToken ct)
  {
-  Check(inputs.Count<=6&&inputs.Keys.All(Descriptor.Inputs.Contains),"Unsupported action input.");Check(inputs.Values.All(x=>x!=null&&x.Length<=500),"Action inputs are too long.");
+  Check(inputs.Count<=7&&inputs.Keys.All(Descriptor.Inputs.Contains),"Unsupported action input.");Check(inputs.Values.All(x=>x!=null&&x.Length<=500),"Action inputs are too long.");
   return commands.ValidateAsync(Request(inputs,"Record"),ct);
  }
  public async Task<WorkflowActionResult> ExecuteDetailedAsync(WorkflowActionContext context,Dictionary<string,string> inputs,CancellationToken ct){var task=await commands.CreateAsync(Request(inputs,context.RecordLabel),context.ActionId,"workflow:"+context.RunId,ct);return new("Task created: "+task.Id,new(){{"taskId",task.Id.ToString()}});}

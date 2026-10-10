@@ -16,6 +16,7 @@ public static partial class WorkflowModule
 {
  public static IServiceCollection AddNexoraWorkflow(this IServiceCollection services,IConfiguration config)
  {
+  AddCatalogueInspection(services);
   services.AddDbContext<WorkflowDbContext>(o=>o.UseSqlServer(config.GetConnectionString("Nexora"),sql=>sql.MigrationsHistoryTable("__EFMigrationsHistory","workflow")));
   services.AddScoped<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>();services.AddScoped<WorkflowConnections>();services.AddScoped<IWorkflowTransport,WorkflowTransport>();services.AddScoped<WorkflowPreview>();foreach(var kind in new[]{"http","email"})services.AddScoped<IWorkflowActionHandler>(sp=>new WorkflowDeliveryAction(sp.GetRequiredService<WorkflowDbContext>(),sp.GetRequiredService<WorkflowConnections>(),sp.GetRequiredService<IRequestIdentity>(),kind,sp.GetRequiredService<IWorkflowTransport>()));services.AddRateLimiter(o=>o.AddPolicy("workflow-hooks",http=>System.Threading.RateLimiting.RateLimitPartition.GetFixedWindowLimiter(http.Connection.RemoteIpAddress?.ToString()??"unknown",_=>new System.Threading.RateLimiting.FixedWindowRateLimiterOptions{PermitLimit=30,Window=TimeSpan.FromMinutes(1),QueueLimit=0})));services.AddScoped<WorkflowExpressions>();services.AddScoped<WorkflowValidation>();services.AddScoped<WorkflowGates>();services.AddScoped<WorkflowProcessor>();services.AddScoped<WorkflowTriggers>();services.AddHostedService<WorkflowWorker>();return services;
  }

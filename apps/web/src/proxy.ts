@@ -21,7 +21,7 @@ export async function proxy(request: NextRequest) {
     }
   }
   const hasSession = sessionCookieNames.some((name) => request.cookies.has(name));
-  const isLogin = request.nextUrl.pathname === "/login";
+  const isLogin = pathname === "/login" || pathname === "/login/help";
 
   const isPublicSite = request.nextUrl.pathname.startsWith("/site/") || request.nextUrl.pathname === "/portal" || request.nextUrl.pathname.startsWith("/portal/");
 
