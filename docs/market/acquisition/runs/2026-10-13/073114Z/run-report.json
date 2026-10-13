@@ -1,0 +1,347 @@
+{
+  "runId": "four-country-20261013T073114Z",
+  "startedAt": "2026-10-13T07:31:14.036Z",
+  "localDate": "2026-10-13",
+  "status": "draft_send_permission_denied_confirmed_unsent",
+  "followups": [
+    {
+      "entryId": "mpif-stephanie-2026-10-13",
+      "organisation": "MPIF",
+      "to": "sgibbs@mpif.org",
+      "draftId": "r6151705065138909456",
+      "status": "blocked_unsent",
+      "attempts": 1,
+      "messageIds": [],
+      "sentReconciliationComplete": true
+    },
+    {
+      "entryId": "smi-gary-mccoy-2026-10-13",
+      "organisation": "SMI",
+      "to": "gary@smihq.org",
+      "draftId": "r-4894002651180659563",
+      "status": "queued",
+      "attempts": 0,
+      "messageIds": [],
+      "sentReconciliationComplete": true
+    }
+  ],
+  "markets": {
+    "United States": {
+      "status": "approved_pair_pending_no_additional_first_pitch"
+    },
+    "Australia": {
+      "status": "oldest_eligible_prepared_current_send_denial",
+      "organisation": "JAE Engineering Group"
+    },
+    "Canada": {
+      "status": "prepared_current_send_denial",
+      "organisation": "Smith + Andersen"
+    },
+    "New Zealand": {
+      "status": "held_recipient_country_and_contact_route",
+      "organisation": "Lockton New Zealand"
+    }
+  },
+  "reservedFollowupSlots": 2,
+  "maximumOtherFirstPitches": 2,
+  "sentCount": 0,
+  "confirmedMessageIds": [],
+  "report": "docs/market/acquisition/runs/2026-10-13/073114Z/run-report.json",
+  "completedAt": "2026-10-13T07:56:01.565616+00:00",
+  "firstPitchSentCount": 0,
+  "followupSentCount": 0,
+  "sendToolCalls": 1,
+  "verification": {
+    "initialReplyComplete": true,
+    "completionReplyComplete": true,
+    "historicalExternalMessagesVerified": 59,
+    "sentFilenameMatchesIncludingSelfTest": 60,
+    "keywordSearchIndexDiscrepancy": "52 keyword matches; complete filename search contains all historical IDs",
+    "newPositiveReplies": 0,
+    "newOptOuts": 0,
+    "newBounces": 0,
+    "followupAlreadySentMatches": 0,
+    "approvedDraftsRemainPresent": true
+  },
+  "automationId": "nexora-daily-us-sales-outreach",
+  "timezone": "Europe/London",
+  "localStartedAt": "2026-10-13T08:31:14.036+01:00",
+  "localCompletedAt": "2026-10-13T08:56:01.565616+01:00",
+  "pendingQueue": "docs/market/us/daily/ONE-TIME-FOLLOWUPS.json",
+  "actualSendFailure": {
+    "at": "2026-10-13 07:40:42 UTC",
+    "entryId": "mpif-stephanie-2026-10-13",
+    "draftId": "r6151705065138909456",
+    "to": "sgibbs@mpif.org",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "MCP tool call requires approval, but approval policy is never"
+        }
+      ],
+      "isError": true
+    }
+  },
+  "research": {
+    "at": "2026-10-13T07:45:39Z",
+    "markets": {
+      "Australia": {
+        "organisation": "JAE Engineering Group",
+        "domain": "jaeaust.com.au",
+        "buyerContact": "marketing@jaeaust.com.au",
+        "offerType": "website_cms",
+        "segment": "mining_engineering_service_firms",
+        "observedFact": "Official public pages cover manufacturing, engineering and major refurbishment; corporate/general queries route to the published marketing inbox.",
+        "sources": [
+          {
+            "url": "https://www.jaeaust.com.au/",
+            "sourceDate": null,
+            "checkedAt": "2026-10-13T07:45:39Z"
+          },
+          {
+            "url": "https://www.jaeaust.com.au/contact/",
+            "sourceDate": null,
+            "checkedAt": "2026-10-13T07:45:39Z"
+          }
+        ],
+        "qualificationEligible": true,
+        "holdReasons": [
+          "Current actual draft-send approval denial prevents sending in this run"
+        ],
+        "nextAction": "Reconcile pending follow-up queue first; repeat current replies, route, caps and Sent checks after scheduled send access recovers.",
+        "nextActionDue": "2026-10-20",
+        "selection": "Oldest currently qualified eligible unsent Australian prospect; prior sender hold revisited to assess current access"
+      },
+      "United States": {
+        "organisation": "MPIF / SMI approved pair",
+        "offerType": "membership",
+        "acquisitionChannel": "one_time_authorised_followup",
+        "observedFact": "Dora's retirement message names Stephanie for membership; Gary's OOO states October 12 return; saved draft identities and copy match approved queue.",
+        "qualificationEligible": true,
+        "holdReasons": [
+          "Actual send_draft denial for MPIF; SMI not attempted after current denial"
+        ],
+        "noAdditionalFirstPitch": true
+      },
+      "New Zealand": {
+        "organisation": "Lockton New Zealand",
+        "domain": "lockton.com",
+        "domains": [
+          "lockton.com",
+          "global.lockton.com"
+        ],
+        "buyerContact": "tiffany.eastland@lockton.com",
+        "buyerRole": "Tiffany Eastland, Head of Marketing - Pacific",
+        "recipientCountry": null,
+        "offerType": "website_cms",
+        "segment": "risk_advisory_firms",
+        "observedFact": "Official July 15 announcement describes Queenstown office opening; names Pacific marketing lead and publishes her work email with Australian +61 phone.",
+        "problemHypothesis": "Public office/service/news content may fit a bounded CMS evaluation; need and buying intent unknown.",
+        "sources": [
+          {
+            "url": "https://global.lockton.com/nz/en/news-insights/lockton-strengthens-new-zealand-offering-with-new-queenstown-office",
+            "sourceDate": "2026-07-15",
+            "checkedAt": "2026-10-13T07:45:39Z"
+          },
+          {
+            "url": "https://global.lockton.com/nz/en/contact-us",
+            "sourceDate": null,
+            "checkedAt": "2026-10-13T07:45:39Z"
+          },
+          {
+            "url": "https://global.lockton.com/nz/en/nz-privacy-statement",
+            "sourceDate": null,
+            "checkedAt": "2026-10-13T07:45:39Z"
+          }
+        ],
+        "qualificationEligible": false,
+        "crmStatus": "unknown_system",
+        "consentStatus": "unresolved_recipient_country_and_publication_route",
+        "outreachLegalBasis": "NZ business presence verified, but published Pacific marketing contact's actual country/category is not verified; no blanket public-email consent. Contact form not used. Complete applicable recipient-country route before sending.",
+        "permissionEvidence": [
+          {
+            "url": "https://global.lockton.com/nz/en/news-insights/lockton-strengthens-new-zealand-offering-with-new-queenstown-office",
+            "checkedAt": "2026-10-13T07:45:39Z",
+            "address": "tiffany.eastland@lockton.com",
+            "function": "Head of Marketing - Pacific",
+            "countryUnresolved": true
+          }
+        ],
+        "holdReasons": [
+          "Actual recipient country for Pacific marketing contact unverified; +61 telephone is a signal rather than proof of residence",
+          "Current actual send-action approval denial"
+        ],
+        "nextAction": "Verify NZ-specific responsible content contact or actual Pacific buyer location and applicable route; avoid privacy-only inbox, calls or form submission.",
+        "nextActionDue": "2026-10-20",
+        "scores": {
+          "need": 1,
+          "capabilityFit": 2,
+          "buyerAccess": 1,
+          "timing": 1
+        },
+        "researchPriorityScore": 5
+      },
+      "Canada": {
+        "organisation": "Smith + Andersen",
+        "domain": "smithandandersen.com",
+        "buyerContact": "Brian.Brett@smithandandersen.com",
+        "buyerRole": "Brian Brett, Director of Marketing and Communications",
+        "offerType": "website_cms",
+        "segment": "engineering_consultancies",
+        "observedFact": "Official October 1 release announces Victoria office opening and publishes Director of Marketing and Communications Brian Brett's email.",
+        "problemHypothesis": "Marketing staff may find staff-managed office/service/news information relevant; no dissatisfaction, budget or active purchase confirmed.",
+        "sources": [
+          {
+            "url": "https://smithandandersen.com/news/press-release/smith-andersen-opens-office-victoria-bc",
+            "sourceDate": "2026-10-01",
+            "checkedAt": "2026-10-13T07:45:39Z"
+          },
+          {
+            "url": "https://smithandandersen.com/",
+            "sourceDate": null,
+            "checkedAt": "2026-10-13T07:45:39Z"
+          },
+          {
+            "url": "https://smithandandersen.com/privacy",
+            "sourceDate": "2024-03-15",
+            "checkedAt": "2026-10-13T07:45:39Z"
+          },
+          {
+            "url": "https://crtc.gc.ca/eng/com500/faq500.htm",
+            "sourceDate": null,
+            "checkedAt": "2026-10-13T07:45:39Z"
+          }
+        ],
+        "qualificationEligible": true,
+        "crmStatus": "unknown_system",
+        "consentStatus": "implied_qualifying_conspicuous_publication_assessed",
+        "outreachLegalBasis": "Direct organisation-owned public release attributes this work email to the marketing/communications director. No accompanying no-CEM refusal found on release, home or official privacy notice. Exact proposed public office/service/news CMS evaluation relates to his published marketing/communications function. This is a recipient-specific assessment, not blanket consent or buyer interest.",
+        "permissionEvidence": [
+          {
+            "url": "https://smithandandersen.com/news/press-release/smith-andersen-opens-office-victoria-bc",
+            "sourceDate": "2026-10-01",
+            "checkedAt": "2026-10-13T07:45:39Z",
+            "address": "Brian.Brett@smithandandersen.com",
+            "publishedBy": "Smith + Andersen official website",
+            "function": "Director of Marketing and Communications",
+            "refusalFound": false,
+            "exactOfferRelevance": "Staff draft/preview/publication of company office/service/news information"
+          }
+        ],
+        "publicationNoticeChecks": [
+          {
+            "url": "https://smithandandersen.com/news/press-release/smith-andersen-opens-office-victoria-bc",
+            "checkedAt": "2026-10-13T07:45:39Z",
+            "complete": true,
+            "refusalFound": false
+          },
+          {
+            "url": "https://smithandandersen.com/",
+            "checkedAt": "2026-10-13T07:45:39Z",
+            "complete": true,
+            "refusalFound": false
+          },
+          {
+            "url": "https://smithandandersen.com/privacy",
+            "checkedAt": "2026-10-13T07:45:39Z",
+            "sourceDate": "2024-03-15",
+            "complete": true,
+            "refusalFound": false
+          }
+        ],
+        "holdReasons": [
+          "Current actual send-action approval denial"
+        ],
+        "nextAction": "After pending pair and access are reconciled, requalify recipient/publication conditions, full replies, caps and Sent before one first pitch.",
+        "nextActionDue": "2026-10-20",
+        "scores": {
+          "need": 1,
+          "capabilityFit": 2,
+          "buyerAccess": 2,
+          "timing": 1
+        },
+        "researchPriorityScore": 6
+      }
+    },
+    "duplicateChecks": [
+      {
+        "query": "in:sent {to:smithandandersen.com}",
+        "complete": true,
+        "ids": []
+      },
+      {
+        "query": "in:sent {to:lockton.com}",
+        "complete": true,
+        "ids": []
+      },
+      {
+        "query": "in:sent {to:jaeaust.com.au}",
+        "complete": true,
+        "ids": []
+      }
+    ],
+    "attachment": {
+      "sizeBytes": 1945313,
+      "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+      "matchesState": true
+    },
+    "capacity": {
+      "reservedFollowupSlots": 2,
+      "maximumOtherFirstPitches": 2,
+      "overallRollingUsedBeforeRun": 0,
+      "overallDailyUsedBeforeRun": 0,
+      "firstPitchCountryLimit": 1,
+      "unusedSlotsTransfer": false,
+      "USFirstPitchDeferred": "No additional United States first pitch in the run processing the approved pair",
+      "remainingCapacityDeferral": "Actual permission denial; no sends or catch-up slots accumulated"
+    },
+    "weeklyReviewDue": "2026-10-17"
+  },
+  "capsTests": {
+    "cases": [
+      {
+        "case": "rolling_total",
+        "passed": true,
+        "result": "Five-hour overall message limit reached (including one-time follow-ups)"
+      },
+      {
+        "case": "daily_total",
+        "passed": true,
+        "result": "Daily overall message limit reached (including one-time follow-ups)"
+      },
+      {
+        "case": "market_cap",
+        "passed": true,
+        "result": "Five-hour market organisation limit reached"
+      },
+      {
+        "case": "remaining_capacity",
+        "passed": true,
+        "result": "Allowed with remaining capacity; only synthetic fixture updated"
+      },
+      {
+        "case": "unknown_followup",
+        "passed": true,
+        "result": "Reconcile pending follow-up outcomes before a new first pitch"
+      }
+    ],
+    "allPassed": true,
+    "liveCampaignModifiedByChecks": false
+  },
+  "weeklyReview": {
+    "performed": false,
+    "nextDue": "2026-10-17"
+  },
+  "proofDeliverables": [
+    "Dedicated CMS demonstration outstanding",
+    "Dedicated portal demonstration outstanding",
+    "Truthful public product page outstanding"
+  ],
+  "restrictions": "No sender/channel bypass, follow-up expansion, auto replies, meetings, forms, deployments, application edits, commits or pushes",
+  "partnerResearch": {
+    "queuePreserved": true,
+    "messagesSent": 0
+  },
+  "notificationRequired": true
+}

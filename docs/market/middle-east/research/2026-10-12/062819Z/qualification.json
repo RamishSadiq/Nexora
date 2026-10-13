@@ -1,0 +1,113 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "checkedAt": "2026-10-12T06:33:49.591Z",
+  "sourceCheckedAt": "2026-10-12T06:33:49.591Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "User-authorised dual-market first pitches; heartbeat 2026-10-12T06:28:19.133Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-19",
+  "reviewDue": "2026-10-19",
+  "pitchVersion": "website-cms-v2-consultancy-expansion",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Wider membership introduction only; dedicated CMS/portal demos and truthful public product page outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 1
+  },
+  "researchPriorityScore": 4,
+  "scoreMaximum": 12,
+  "capabilityFit": "Staff-managed public office/service/project-information pages with draft, preview and publication.",
+  "unsupportedRequirements": [
+    "Engineering/project-delivery systems, CAD/document workflows, custom enquiry forms, booking and external CRM integrations outside evaluated scope",
+    "Arabic/local hosting, automated migration, payments and production acceptance not promised"
+  ],
+  "liveDuplicateCheckComplete": true,
+  "buyerContactPurpose": "General project/business enquiries; responsible CMS buyer access unconfirmed",
+  "countryRulesCheckedAt": null,
+  "market": "Middle East",
+  "country": "United Arab Emirates",
+  "segment": "engineering_design_studio_expansion",
+  "organisation": "SharpMinds Consulting Engineers",
+  "domain": "sharpmindsce.com",
+  "domains": [
+    "sharpmindsce.com"
+  ],
+  "stage": "research_only",
+  "source": "https://sharpmindsce.com/insights/sharpminds-consulting-engineers-opens-new-dubai-studio-to-support-integrated-design-and-engineering-solutions/",
+  "sourceDate": "2026-07-27",
+  "observedFact": "Official July article announces Jumeirah Dubai studio; contact page lists Dubai and Abu Dhabi offices.",
+  "signal": "Dated Dubai studio expansion; current service/project/insight information workflow, no buying request assumed.",
+  "problemHypothesis": "A public studio/service/project-information publishing evaluation may fit; not a confirmed content problem.",
+  "needEvidence": [
+    {
+      "url": "https://sharpmindsce.com/insights/sharpminds-consulting-engineers-opens-new-dubai-studio-to-support-integrated-design-and-engineering-solutions/",
+      "sourceDate": "2026-07-27",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "Dated new Dubai studio article names founder/CEO Amir H. Greiss."
+    },
+    {
+      "url": "https://sharpmindsce.com/contact/",
+      "sourceDate": null,
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "Official contact page lists Jumeirah Terrace Building Office 211, Dubai, and Makeen Tower Office 1101, Abu Dhabi."
+    }
+  ],
+  "buyerRole": "Founder/CEO Amir H. Greiss identified; actual CMS buyer role/contact unverified",
+  "buyerContact": null,
+  "buyerContactEvidence": [
+    {
+      "url": "https://sharpmindsce.com/contact/",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "Email link renders [email protected]; exact published email not verified. No guess, form submission or access bypass."
+    }
+  ],
+  "currentProvider": "Unknown; existing public site is operating",
+  "outreachDecision": "held_unverified_contact_and_recipient_lawful_route",
+  "holdReasons": [
+    "Exact published relevant email not verified",
+    "UAE recipient/category/channel lawful route not established; public contact not consent",
+    "Existing Gmail send-approval restriction persists"
+  ],
+  "outreachLegalBasis": "Unresolved UAE route. Read operational country gate; current UAE legislation URL fetch returned Internal Error. No blanket invitation requirement or generic-mailbox exemption asserted.",
+  "countryRulesOperationalRecordReadAt": "2026-10-12T06:33:49.591Z",
+  "countryRulesVerificationAttemptAt": "2026-10-12T06:33:49.591Z",
+  "countryRulesEvidence": [
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "verification": "Internal Error; no current official legal text verified"
+    }
+  ],
+  "nextAction": "When due or new evidence arrives, verify exact relevant published email and specific UAE channel/recipient lawful route from current official sources; actual founder introduction/opt-in if available. No automatic permission-request marketing.",
+  "history": [
+    {
+      "at": "2026-10-12T06:33:49.591Z",
+      "event": "Fresh UAE engineering-studio/CMS cohort from dated official article; local presence verified, obscured contact and specific lawful basis held."
+    }
+  ],
+  "localLedgerDuplicateCheck": {
+    "complete": true,
+    "manifestCount": 4,
+    "confirmedHistory": 55,
+    "matches": []
+  },
+  "preSendChecks": {
+    "replyChecksComplete": true,
+    "liveSentAndDuplicateChecksComplete": true,
+    "at": "2026-10-12T06:32:12.757Z",
+    "sendPermissionAvailable": false
+  }
+}

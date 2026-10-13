@@ -6,11 +6,12 @@ import type { AccountDetails } from "../shared/profile-fields";
 import { portal } from "./api";
 import { ApplicationWorkspace } from "./application-workspace";
 import { portalDate } from "./application-receipt";
+import { OrganisationRequests } from "./organisation-requests";
 
 type Organisation = { id: string; name: string; canSubmitApplications: boolean };
 type OrganisationProfile = { name: string; accountDetails: AccountDetails | null; websites: string[] };
 type Overview = { memberships: { id: string; product: string; status: string; startsAtUtc: string; endsAtUtc: string }[]; applications: { id: string; product: string; status: string }[] };
-export function OrganisationWorkspace() {
+export function OrganisationWorkspace({ allowRequests = false }: { allowRequests?: boolean }) {
   const [organisations, setOrganisations] = useState<Organisation[] | null>(null);
   const [selected, setSelected] = useState("");
   const [error, setError] = useState("");
@@ -28,6 +29,7 @@ export function OrganisationWorkspace() {
       <div><label htmlFor="portal-organisation" className="block">Organisation</label><select id="portal-organisation" className="mt-2 w-full rounded-lg border border-slate-300 p-3" value={selected} onChange={e => setSelected(e.target.value)}><option value="">Choose an organisation</option>{organisations.map(o => <option key={o.id} value={o.id}>{o.name}</option>)}</select></div>
       {organisation && <OrganisationDetails key={organisation.id} organisation={organisation} />}
     </>}
+    <OrganisationRequests enabled={allowRequests} />
   </section>;
 }
 function OrganisationDetails({ organisation }: { organisation: Organisation }) {
@@ -54,7 +56,7 @@ function OrganisationDetails({ organisation }: { organisation: Organisation }) {
       {association && <section aria-label="Your organisation relationship" className="rounded-lg border border-slate-200 p-4"><h4 className="font-semibold">Your organisation relationship</h4>{association.isMainAccount && <p className="mt-2 font-semibold">Your main account</p>}<dl className="mt-3 space-y-2"><div><dt>Department</dt><dd>{association.department || "Not recorded"}</dd></div><div><dt>Job title</dt><dd>{association.jobTitle || "Not recorded"}</dd></div></dl><p className="mt-3 text-sm text-slate-600">Contact the membership team to update your relationship details.</p></section>}
       <h4 className="font-semibold">Company memberships</h4>
       {!overview.memberships.length && <p>No company memberships.</p>}
-      {overview.memberships.map(m => <article key={m.id} className="rounded-lg bg-[#eef3df] p-4"><p className="font-semibold">{m.product}</p><p className="capitalize">{m.status}</p><p className="text-sm">{portalDate(m.startsAtUtc)} – {portalDate(m.endsAtUtc)}</p></article>)}
+      {overview.memberships.map(m => <article key={m.id} className="portal-tinted rounded-lg bg-[#eef3df] p-4"><p className="font-semibold">{m.product}</p><p className="capitalize">{m.status}</p><p className="text-sm">{portalDate(m.startsAtUtc)} – {portalDate(m.endsAtUtc)}</p></article>)}
       <h4 className="font-semibold">Company applications</h4>
       {!overview.applications.length && <p>No company applications.</p>}
       {overview.applications.map(a => <article key={a.id} className="rounded-lg border border-slate-200 p-4"><p className="font-semibold">{a.product}</p><p className="capitalize">{a.status === "submitted" ? "Awaiting review" : a.status}</p><Link className="text-sm underline" href={`/portal/applications/${a.id}?organisation=${organisation.id}` as Route}>View company application receipt</Link></article>)}

@@ -1,0 +1,123 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "checkedAt": "2026-10-12T11:29:32.815Z",
+  "sourceCheckedAt": "2026-10-12T11:29:32.815Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "Five-hour dual-market first pitches authorised by user; heartbeat 2026-10-12T11:24:25.827Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-19",
+  "reviewDue": "2026-10-19",
+  "pitchVersion": "website-cms-v2-public-information",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Required membership-platform introduction is not a dedicated CMS/portal demo; dedicated demos and public product page outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 1
+  },
+  "researchPriorityScore": 4,
+  "scoreMaximum": 12,
+  "capabilityFit": "Bounded public information pages with staff draft, preview and publication.",
+  "unsupportedRequirements": [
+    "Inventory, checkout, financing, booking, arbitrary enquiries/document workflows and external CRM integration excluded",
+    "No automated migration, Arabic localisation, local hosting or production acceptance promised"
+  ],
+  "liveDuplicateCheckComplete": true,
+  "countryRulesCheckedAt": "2026-10-12T11:29:32.815Z",
+  "currentProvider": "Footer credits Hudson Valley Web Girl for website design/maintenance and WordPress; CRM unknown",
+  "market": "United States",
+  "country": "United States",
+  "segment": "fitness_equipment_showrooms",
+  "organisation": "Fitness Showrooms",
+  "domain": "fitnessshowrooms.com",
+  "domains": [
+    "fitnessshowrooms.com",
+    "fitshowrooms.com"
+  ],
+  "stage": "held_sender_approval",
+  "source": "https://fitnessshowrooms.com/new-york-showrooms/",
+  "sourceDate": "2026 plan year; page publication date unknown",
+  "observedFact": "Official New York showroom page lists a planned Huntington storefront for 2026 and current location/hours information.",
+  "signal": "Year-specific physical storefront plan; completion, website project and buyer decision window unknown.",
+  "problemHypothesis": "A focused evaluation of staff-managed showroom/service information may be relevant; not an established website requirement.",
+  "needEvidence": [
+    {
+      "url": "https://fitnessshowrooms.com/new-york-showrooms/",
+      "sourceDate": "2026 plan year",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Huntington storefront plan and public showroom information."
+    }
+  ],
+  "buyerRole": "Website/marketing/content owner, unverified; published general showroom inbox can route enquiry",
+  "buyerContact": "info@fitshowrooms.com",
+  "buyerContactEvidence": [
+    {
+      "url": "https://fitnessshowrooms.com/new-york-showrooms/",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Public showroom team email repeated across New York locations; responsible purchasing role unconfirmed."
+    }
+  ],
+  "leadershipEvidence": [
+    {
+      "url": "https://fitnessshowrooms.com/new-york-showrooms/",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Historical 2017 showroom narrative calls Fabio Ravasi president/owner; not treated as verified current CMS decision-maker."
+    },
+    {
+      "url": "https://fitnessshowrooms.com/meet-the-team/",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Current page describes leadership/manager functions without naming a verified CMS buyer."
+    }
+  ],
+  "localContactHours": "Huntington Monday-Friday 10am-9pm, Saturday 10am-6pm, Sunday 11am-5pm; local New York",
+  "providerEvidence": [
+    {
+      "url": "https://fitnessshowrooms.com/meet-the-team/",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Existing website provider/publishing system observed; informational for separate scoped CMS evaluation, no dissatisfaction or vacant provider inferred."
+    }
+  ],
+  "outreachDecision": "held_sender_approval",
+  "holdReasons": [
+    "Existing Gmail send-approval restriction persists; no configuration change, no send attempted"
+  ],
+  "outreachLegalBasis": "US commercial-email route assessed using current FTC guide; prepared truthful headers/subject, advertisement, user-confirmed actual postal address and reply-based opt-out. No recipient consent inferred.",
+  "countryRulesEvidence": [
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Current official commercial-email guidance applies to B2B messages and states identification/postal/opt-out obligations."
+    }
+  ],
+  "nextAction": "Once sending approval is available, recheck current contact/fact, complete live replies/Sent, suppressions and caps before any first pitch.",
+  "history": [
+    {
+      "at": "2026-10-12T11:29:32.815Z",
+      "event": "Fresh equipment-showroom/CMS research; storefront plan remains a plan, existing maintenance provider retained, buyer need unknown."
+    }
+  ],
+  "localLedgerDuplicateCheck": {
+    "complete": true,
+    "manifestCount": 4,
+    "confirmedHistory": 55,
+    "matches": []
+  },
+  "preSendChecks": {
+    "replyChecksComplete": true,
+    "liveSentAndDuplicateChecksComplete": true,
+    "at": "2026-10-12T11:28:05.459Z",
+    "sendPermissionAvailable": false
+  }
+}

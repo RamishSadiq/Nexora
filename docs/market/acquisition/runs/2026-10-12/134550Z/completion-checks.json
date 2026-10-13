@@ -1,0 +1,242 @@
+{
+  "checkedAt": "2026-10-12T13:53:26.585Z",
+  "sentVerification": [
+    {
+      "country": "Australia",
+      "organisation": "Berg Engineering",
+      "id": "1a1306111691b931",
+      "recipient": "marketing@bergengineering.com.au",
+      "verified": true,
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a1306111691b931",
+      "date": "2026-10-12T06:50:29-07:00",
+      "subject": "A focused website-content demo for Berg Engineering",
+      "attachment": [
+        {
+          "filename": "nexora-product-demo-male.mp4",
+          "mime_type": "video/mp4",
+          "size_bytes": 1945313
+        }
+      ],
+      "duplicateCount": 1
+    },
+    {
+      "country": "United States",
+      "organisation": "REGA Engineering Group",
+      "id": "1a130622ea0350f7",
+      "recipient": "info@regaeng.com",
+      "verified": true,
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a130622ea0350f7",
+      "date": "2026-10-12T09:51:43-04:00",
+      "subject": "A focused website-content demo for REGA",
+      "attachment": [
+        {
+          "filename": "nexora-product-demo-male.mp4",
+          "mime_type": "video/mp4",
+          "size_bytes": 1945313
+        }
+      ],
+      "duplicateCount": 1
+    },
+    {
+      "country": "New Zealand",
+      "organisation": "Rawlinsons",
+      "id": "1a13062917b76b72",
+      "recipient": "info@rawlinsons.co.nz",
+      "verified": true,
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062917b76b72",
+      "date": "2026-10-12T09:52:08-04:00",
+      "subject": "A focused website-content demo for Rawlinsons",
+      "attachment": [
+        {
+          "filename": "nexora-product-demo-male.mp4",
+          "mime_type": "video/mp4",
+          "size_bytes": 1945313
+        }
+      ],
+      "duplicateCount": 1
+    },
+    {
+      "country": "Canada",
+      "organisation": "NewFields Canada Inc.",
+      "id": "1a13062fb2f2ffa6",
+      "recipient": "CanadaMarketing@newfields.com",
+      "verified": true,
+      "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062fb2f2ffa6",
+      "date": "2026-10-12T06:52:35-07:00",
+      "subject": "A focused website-content demo for NewFields Canada",
+      "attachment": [
+        {
+          "filename": "nexora-product-demo-male.mp4",
+          "mime_type": "video/mp4",
+          "size_bytes": 1945313
+        }
+      ],
+      "duplicateCount": 1
+    }
+  ],
+  "allSent": {
+    "count": 60,
+    "ids": [
+      "1a13062fb2f2ffa6",
+      "1a13062917b76b72",
+      "1a130622ea0350f7",
+      "1a1306111691b931",
+      "1a126cdb46a0f8e5",
+      "1a126cd3439e26db",
+      "1a126cc99bcdbf2d",
+      "1a120800ff0e30ec",
+      "1a11f79c15f23dcf",
+      "1a11f7961e491a65",
+      "1a11f79086a34070",
+      "1a11f78af1ffedf9",
+      "1a11f7848a393b9b",
+      "1a11f77ea8a74a8d",
+      "1a11f778a20ccaad",
+      "1a11f772a971f528",
+      "1a11f76d0e3fea55",
+      "1a11f7678e41f57c",
+      "1a11c212432fee89",
+      "1a11c20c97b3046e",
+      "1a11c203d2286c33",
+      "1a11c1fe67945c8d",
+      "1a11c1f85aba49a0",
+      "1a11c1f2d4b368df",
+      "1a11c1ed082e39a4",
+      "1a11c1e794b80f6a",
+      "1a11c1e1f2f1e799",
+      "1a11c1c90d01fac1",
+      "1a11c1c3b2bf39f8",
+      "1a11c1bb06754473",
+      "1a11c1b58b9c985a",
+      "1a11c1ac175b0386",
+      "1a11c1a6ad5de964",
+      "1a11c19f0bb94c08",
+      "1a11c198ed3fea2e",
+      "1a11c181ca8691a6",
+      "1a11c17bb52abde3",
+      "1a11c17634387954",
+      "1a11c17068612088",
+      "1a11c16ad8942eeb",
+      "1a11c16528f62b29",
+      "1a11c15f48fbec90",
+      "1a11c15996661aa6",
+      "1a11c153e30859e2",
+      "1a11c14e24744bb3",
+      "1a11c14836da419f",
+      "1a11c141a7e55e69",
+      "1a11c1181b725d3a",
+      "1a11bed87d62d77f",
+      "1a11becb63c3868a",
+      "1a11bebbfc73d6fe",
+      "1a11beb04274d92a",
+      "1a11bea81abaec38",
+      "1a11be9e7b0beb9b",
+      "1a11be92ff3cd6f9",
+      "1a11be8a50e5deab",
+      "1a11be815953d93d",
+      "1a11be73bb6e873b",
+      "1a11bdf55d8130a2",
+      "1a11bc874d72d032"
+    ],
+    "nextPage": null
+  },
+  "replyChecks": [
+    {
+      "query": "in:anywhere after:2026/10/10 -in:sent {from:ablaqco.com from:acmanet.org from:aec.org from:aiccbox.org from:amba.org from:americanfenceassociation.com from:amtc.ae from:anodizing.org from:ascouncil.org from:awfs.org from:bafsa.org.uk from:bcf.co.uk from:bcsa.org.uk from:bira.co.uk from:bpma.co.uk from:britishcleaningcouncil.org from:bsahome.org from:cabinetmakers.org from:commercial-interiorsuk.com from:diecasting.org}",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "message_ids": [],
+          "next_page_token": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "query": "in:anywhere after:2026/10/10 -in:sent {from:doors.org from:fibrebox.org from:fmamfg.org from:foundster.com from:fpda.org from:glass.org from:glga.info from:graphicmedia.org from:gtma.co.uk from:heattreat.net from:iapd.org from:industrialpackaging.org from:investmentcasting.org from:isapartners.org from:mappinc.com from:mheda.org from:mpif.org from:nasf.org from:nfda-fastener.org from:ntma.org}",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "message_ids": [],
+          "next_page_token": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "query": "in:anywhere after:2026/10/10 -in:sent {from:nwfa.org from:paperbox.org from:pma.org from:pmahome.org from:pmpa.org from:ptda.org from:reusables.org from:siba.co.uk from:smihq.org from:spri.org from:stafda.org from:taforum.org from:theafi.co.uk from:tlmi.com from:wcma.com from:bergengineering.com.au from:bergengineering.com from:regaeng.com from:rawlinsons.co.nz from:newfieldscanada.ca}",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "message_ids": [],
+          "next_page_token": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "query": "in:anywhere after:2026/10/10 -in:sent {from:newfields.com}",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "message_ids": [],
+          "next_page_token": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "query": "in:anywhere after:2026/10/10 -in:sent Nexora",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "message_ids": [],
+          "next_page_token": null
+        },
+        "isError": false
+      }
+    },
+    {
+      "query": "in:anywhere after:2026/10/10 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:\"Undeliverable\" subject:\"Delivery failure\"}",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "message_ids": [],
+          "next_page_token": null
+        },
+        "isError": false
+      }
+    }
+  ],
+  "checksComplete": true
+}

@@ -1,9 +1,14 @@
-export type Block = { type: "hero" | "text" | "feature" | "cta" | "image" | "download"; heading: string; text: string; linkLabel?: string; linkUrl?: string; mediaId?: string | null };
+export type WebsiteMotion = { effect: "none" | "fade" | "rise" | "slide" | "scale" | "blur"; trigger: "enter" | "load"; durationMs: number; delayMs: number; distance: number; easing: "ease" | "ease-in" | "ease-out" | "ease-in-out" | "linear"; hover: "none" | "lift" | "glow" };
+export type BlockLayout = { span: "full" | "half" | "third"; alignment: "left" | "center"; surface: "plain" | "card" | "accent" | "glass"; spacing: "compact" | "normal" | "spacious"; eyebrow: string; hidden: boolean };
+export type BlockItem = { heading: string; text: string; mediaId?: string | null; linkLabel?: string; linkUrl?: string };
+export type Block = { type: "hero" | "text" | "feature" | "cta" | "image" | "download" | "feature-grid" | "showcase" | "gallery" | "faq"; heading: string; text: string; linkLabel?: string; linkUrl?: string; mediaId?: string | null; layout?: BlockLayout | null; motion?: WebsiteMotion | null; items?: BlockItem[] | null };
+export type WebsiteDesign = { theme: "studio" | "classic"; backgroundColor: string; textColor: string; accentColor: string; secondaryAccentColor: string; font: "sans" | "serif" | "mono"; headingSize: "small" | "medium" | "large"; contentWidth: number; sectionGap: number; cornerRadius: number; stickyHeader: boolean; showTagline: boolean; showPortalLink: boolean; portalLabel: string; portalUrl: string; showFooter: boolean; footerText: string; motionEnabled: boolean; motion: WebsiteMotion; ambientEffect: "none" | "float" | "glow"; ambientDurationMs: number; pauseAmbientOnHover: boolean };
+export type WebsiteDesignState = { version: string | null; draft: WebsiteDesign; published: WebsiteDesign; hasUnpublishedChanges: boolean };
 export type Site = { id: string; name: string; tagline: string; version?: string; brandColor?: string; logoMediaId?: string | null };
 export type Media = { id: string; name: string; version: string; scanStatus: string; isPublic: boolean; size: number; contentType: string };
 export type Revision = { createdAtUtc?: string; id: string; title: string; description: string; blocks: Block[] };
 export type PageRecord = { id: string; siteId: string; slug: string; version: string; draftId: string; publishedId: string | null; navigationLabel?: string; navigationOrder?: number; showInNavigation?: boolean };
 export type PageDetail = { page: PageRecord; revision: Revision; history?: { id: string; title: string; createdAtUtc: string }[] };
-export type SiteState = { site: Site | null; pages: (PageRecord & { title: string })[] };
-export type PublicPage = { site: Site; slug: string; page: Revision; navigation: { slug: string; title: string }[]; basePath?: string; canonical?: string | null };
+export type SiteState = { site: Site | null; pages: (PageRecord & { title: string })[]; design?: WebsiteDesignState };
+export type PublicPage = { site: Site; slug: string; page: Revision; navigation: { slug: string; title: string }[]; basePath?: string; canonical?: string | null; design?: WebsiteDesign };
 export type Draft = { slug: string; title: string; description: string; blocks: Block[] };

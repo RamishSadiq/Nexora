@@ -285,18 +285,14 @@
   "postalAddress": "EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan",
   "automationId": "nexora-daily-us-sales-outreach",
   "firstScheduledDate": "2026-10-09",
-  "lastReplyCheckAt": "2026-10-10T16:58:07+00:00",
+  "lastReplyCheckAt": "2026-10-13T07:46:54Z",
   "lastReplyCheck": {
-    "status": "complete",
-    "scope": "All 52 contacted domains and overlapping Nexora/delivery queries including spam/trash; all pages complete; actual known messages reread during regional change. No positive reply or bounce.",
+    "at": "2026-10-12T13:55:50.186851+00:00",
+    "complete": true,
     "positiveResponses": 0,
-    "knownDeclines": [
-      "1a11bf33395d33a1"
-    ],
-    "automaticReplies": [
-      "1a11f79e78082745",
-      "1a120804f5fbe7f3"
-    ]
+    "optOuts": 0,
+    "deliveryFailures": 0,
+    "source": "Four-country run; all historical/new domains with overlap, spam/trash and body/conversation checks"
   },
   "positiveResponses": [],
   "notifiedPositiveMessageIds": [],
@@ -331,6 +327,21 @@
         "automaticRetirement": 1,
         "bounces": 0
       }
+    },
+    {
+      "date": "2026-10-12",
+      "startedAt": "2026-10-12T13:49:54.818794+00:00",
+      "manualStart": true,
+      "status": "completed_with_send_permission_hold",
+      "messageIds": [
+        "1a1306111691b931",
+        "1a130622ea0350f7",
+        "1a13062917b76b72",
+        "1a13062fb2f2ffa6"
+      ],
+      "sentCount": 4,
+      "updatedAt": "2026-10-12T21:43:26.046629+00:00",
+      "completedAt": "2026-10-12T13:55:50.186851+00:00"
     }
   ],
   "previouslyContacted": [
@@ -761,6 +772,54 @@
       "offerType": "website_cms",
       "manualAuthorisation": "send them",
       "manualBatchHourlyException": true
+    },
+    {
+      "organisation": "Berg Engineering",
+      "email": "marketing@bergengineering.com.au",
+      "domain": "bergengineering.com.au",
+      "messageId": "1a1306111691b931",
+      "threadId": "1a1306111691b931",
+      "sentAt": "2026-10-12T13:49:54.818794+00:00",
+      "localDate": "2026-10-12",
+      "market": "Australia",
+      "country": "Australia",
+      "offerType": "website_cms"
+    },
+    {
+      "organisation": "REGA Engineering Group",
+      "email": "info@regaeng.com",
+      "domain": "regaeng.com",
+      "messageId": "1a130622ea0350f7",
+      "threadId": "1a130622ea0350f7",
+      "sentAt": "2026-10-12T13:51:08.035197+00:00",
+      "localDate": "2026-10-12",
+      "market": "United States",
+      "country": "United States",
+      "offerType": "website_cms"
+    },
+    {
+      "organisation": "Rawlinsons",
+      "email": "info@rawlinsons.co.nz",
+      "domain": "rawlinsons.co.nz",
+      "messageId": "1a13062917b76b72",
+      "threadId": "1a13062917b76b72",
+      "sentAt": "2026-10-12T13:51:32.708626+00:00",
+      "localDate": "2026-10-12",
+      "market": "New Zealand",
+      "country": "New Zealand",
+      "offerType": "website_cms"
+    },
+    {
+      "organisation": "NewFields Canada Inc.",
+      "email": "CanadaMarketing@newfields.com",
+      "domain": "newfields.com",
+      "messageId": "1a13062fb2f2ffa6",
+      "threadId": "1a13062fb2f2ffa6",
+      "sentAt": "2026-10-12T13:51:59.741215+00:00",
+      "localDate": "2026-10-12",
+      "market": "Canada",
+      "country": "Canada",
+      "offerType": "website_cms"
     }
   ],
   "attachment": {
@@ -858,17 +917,41 @@
         "Middle East"
       ],
       "instruction": "US outreach was not stopped; run both markets"
+    },
+    {
+      "at": "2026-10-12T13:38:39.729389+00:00",
+      "previous": {
+        "activeMarkets": [
+          "United States",
+          "Middle East"
+        ],
+        "targetCountries": [
+          "United States",
+          "United Arab Emirates",
+          "Saudi Arabia",
+          "Qatar",
+          "Bahrain",
+          "Oman",
+          "Kuwait"
+        ],
+        "campaignPolicy": "docs/market/DUAL-MARKET-CAMPAIGN.md",
+        "newOrganisationLimitPerInterval": 2
+      },
+      "activeMarkets": [
+        "Australia",
+        "United States",
+        "New Zealand",
+        "Canada"
+      ],
+      "reason": "User requested four countries and explicitly excluded further Middle East pitches"
     }
   ],
-  "activeMarket": "United States + Middle East",
+  "activeMarket": "Australia + United States + New Zealand + Canada",
   "targetCountries": [
+    "Australia",
     "United States",
-    "United Arab Emirates",
-    "Saudi Arabia",
-    "Qatar",
-    "Bahrain",
-    "Oman",
-    "Kuwait"
+    "New Zealand",
+    "Canada"
   ],
   "regionalPlaybook": "docs/market/middle-east/PLAYBOOK.md",
   "regionalRuns": [
@@ -919,7 +1002,7 @@
       "report": "docs/market/middle-east/research/2026-10-10/hourly/07-utc/STATUS.md"
     }
   ],
-  "automationName": "Nexora US and Middle East outreach every five hours",
+  "automationName": "Nexora Australia, US, New Zealand and Canada outreach every five hours",
   "targetingPolicyHistory": [
     {
       "version": 3,
@@ -985,10 +1068,19 @@
       "utcHour": "2026-10-09T13:00:00+00:00",
       "report": "docs/market/middle-east/research/2026-10-09/hourly/13-utc/STATUS.md",
       "detail": "Live Gmail search/read sequence did not complete or return usable results within this run's bounded wait; cancelled read-only execution. No Gmail API quota/permission error was returned, so none is asserted."
+    },
+    {
+      "at": "2026-10-11T03:30:00.325Z",
+      "runId": "dual-20261011T032405Z",
+      "phase": "fresh_candidate_duplicate_and_completion_checks",
+      "reason": "Gmail transport request failed",
+      "initialReplyCheckCompleteAt": "2026-10-11T03:25:26.395Z",
+      "evidence": "docs/market/acquisition/runs/2026-10-11/032405Z/completion-checks.json",
+      "notification": "new_meaningful_failure"
     }
   ],
-  "lastReplyCheckEvidence": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/gmail-check.json",
-  "lastReplyCompletionEvidence": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/completion-check.json",
+  "lastReplyCheckEvidence": "docs/market/acquisition/runs/2026-10-13/073114Z/run-input.json",
+  "lastReplyCompletionEvidence": "docs/market/acquisition/runs/2026-10-13/073114Z/completion-checks.json",
   "privateBusinessResearchPriority": {
     "updatedAt": "2026-10-10T07:39:28.161558+00:00",
     "instruction": "Broaden smaller private-business research",
@@ -1016,15 +1108,803 @@
       "previousCadence": "hourly",
       "previousScheduledLocalTime": "Every hour at minute 00",
       "instruction": "hit both simultaneously and send the pitches after every five hours"
+    },
+    {
+      "at": "2026-10-12T13:38:39.729389+00:00",
+      "cadence": "five_hourly",
+      "intervalHours": 5,
+      "activeMarkets": [
+        "Australia",
+        "United States",
+        "New Zealand",
+        "Canada"
+      ],
+      "perMarket": 1,
+      "totalPerInterval": 4,
+      "dailyMaximum": 24,
+      "reason": "12 October four-country user instruction"
     }
   ],
   "intervalHours": 5,
   "activeMarkets": [
+    "Australia",
     "United States",
-    "Middle East"
+    "New Zealand",
+    "Canada"
   ],
-  "newOrganisationLimitPerInterval": 2,
+  "newOrganisationLimitPerInterval": 4,
   "newOrganisationLimitPerMarketPerInterval": 1,
-  "campaignPolicy": "docs/market/DUAL-MARKET-CAMPAIGN.md",
-  "scheduledRuns": []
+  "campaignPolicy": "docs/market/MULTI-MARKET-CAMPAIGN.md",
+  "scheduledRuns": [
+    {
+      "runId": "dual-20261010T221900Z",
+      "startedAt": "2026-10-10T22:19:00.575Z",
+      "localDate": "2026-10-10",
+      "status": "send_blocked",
+      "manifest": "docs/market/us/outreach/2026-10-10/campaign.json",
+      "markets": {
+        "United States": {
+          "status": "held_sender_approval",
+          "organisation": "G&S Restaurant Equipment",
+          "recipient": "sales@gsrestaurantequipment.com",
+          "attempted": true,
+          "messageIds": [],
+          "verification": "Candidate absent in live Gmail after blocked attempt; no send executed; Nexora Sent remains 56 including self-test",
+          "failure": "MCP tool call requires approval, but approval policy is never"
+        },
+        "Middle East": {
+          "status": "research_held",
+          "organisation": "DMW General Trading",
+          "attempted": false,
+          "messageIds": [],
+          "reasons": [
+            "Full official page/contact verification failed; .com website and .ae mailbox relationship not fully verified",
+            "Recipient-specific category/channel lawful basis unresolved; public contact is not consent"
+          ]
+        }
+      },
+      "completedAt": "2026-10-10T22:31:10.544Z",
+      "confirmedMessageIds": [],
+      "sentCount": 0,
+      "report": "docs/market/acquisition/runs/2026-10-10/221900Z/run-report.json"
+    },
+    {
+      "runId": "dual-20261011T032405Z",
+      "startedAt": "2026-10-11T03:24:05.048Z",
+      "completedAt": "2026-10-11T03:30:00.325Z",
+      "localDate": "2026-10-11",
+      "status": "completion_checks_failed",
+      "manifest": null,
+      "drafts": "docs/market/acquisition/runs/2026-10-11/032405Z/held-drafts.json",
+      "markets": {
+        "United States": {
+          "status": "held",
+          "selectedUnsentReserve": "G&S Restaurant Equipment",
+          "reservePitch": "docs/market/acquisition/runs/2026-10-10/221900Z/prepared-pitch.eml",
+          "reserveVerifiedAbsentInSentAt": "2026-10-11T03:25:26.395Z",
+          "senderHold": "MCP tool call requires approval, but approval policy is never",
+          "freshResearch": "APD Engineering & Architecture",
+          "freshHold": [
+            "No relevant published email verified; contact forms/calls are not authorised",
+            "Existing sender approval block remains",
+            "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+          ],
+          "messageIds": [],
+          "attemptedRecipient": null
+        },
+        "Middle East": {
+          "status": "research_held",
+          "freshResearch": "Neatsmith Dubai",
+          "freshHold": [
+            "No relevant published email verified; forms not authorised",
+            "Country/category/channel lawful route unresolved; public pages do not establish recipient consent",
+            "Existing sender approval block remains",
+            "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+          ],
+          "messageIds": [],
+          "attemptedRecipient": null
+        }
+      },
+      "sentCount": 0,
+      "confirmedMessageIds": [],
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": false,
+        "initialSentCount": 56,
+        "initialExternalIdsVerified": 55
+      },
+      "report": "docs/market/acquisition/runs/2026-10-11/032405Z/run-report.json"
+    },
+    {
+      "runId": "dual-20261011T082039Z",
+      "startedAt": "2026-10-11T08:20:39.795Z",
+      "completedAt": "2026-10-11T08:29:48.090493Z",
+      "localDate": "2026-10-11",
+      "status": "completion_checks_failed",
+      "manifest": null,
+      "drafts": "docs/market/acquisition/runs/2026-10-11/082039Z/held-drafts.json",
+      "markets": {
+        "United States": {
+          "status": "research_held",
+          "freshResearch": "Atlas Restaurant Equipment",
+          "holdReasons": [
+            "Published relevant email not verified; official contact fetch failed; do not guess",
+            "Existing Gmail send-approval restriction; no configuration change",
+            "Completion reply checks failed after three bounded transport attempts",
+            "New-candidate live Gmail duplicate checks incomplete"
+          ],
+          "qualification": "docs/market/us/research/2026-10-11/082039Z/qualification.json",
+          "attemptedRecipient": null,
+          "messageIds": []
+        },
+        "Middle East": {
+          "status": "research_held",
+          "freshResearch": "Honeypot Furniture UAE",
+          "holdReasons": [
+            "Full official page fetch failed; .ae/.co.uk contact routing unresolved",
+            "Recipient-specific UAE country/category/channel lawful route not established; public email is not consent",
+            "Existing Gmail send-approval restriction; no configuration change",
+            "Completion reply checks failed after three bounded transport attempts",
+            "New-candidate live Gmail duplicate checks incomplete"
+          ],
+          "qualification": "docs/market/middle-east/research/2026-10-11/082039Z/qualification.json",
+          "attemptedRecipient": null,
+          "messageIds": []
+        }
+      },
+      "sentCount": 0,
+      "sendToolCalls": 0,
+      "confirmedMessageIds": [],
+      "verification": {
+        "initialReplyComplete": true,
+        "initialReplyAt": "2026-10-11T08:22:33.757Z",
+        "completionReplyComplete": false,
+        "initialExternalIdsVerified": 55,
+        "initialSentCount": 56,
+        "freshCandidateLiveDuplicatesComplete": false
+      },
+      "report": "docs/market/acquisition/runs/2026-10-11/082039Z/run-report.json"
+    },
+    {
+      "runId": "dual-20261012T062819Z",
+      "startedAt": "2026-10-12T06:28:19.133Z",
+      "completedAt": "2026-10-12T06:35:47.210199Z",
+      "localDate": "2026-10-12",
+      "status": "held_sender_approval",
+      "sentCount": 0,
+      "sendToolCalls": 0,
+      "confirmedMessageIds": [],
+      "markets": {
+        "United States": {
+          "status": "held_sender_approval",
+          "freshResearch": "REGA Engineering Group",
+          "holdReasons": [
+            "Previously observed Gmail send-approval restriction persists; approval policy never and no authorised configuration change"
+          ],
+          "qualification": "docs/market/us/research/2026-10-12/062819Z/qualification.json",
+          "attemptedRecipient": null,
+          "preparedRecipient": "info@regaeng.com",
+          "messageIds": []
+        },
+        "Middle East": {
+          "status": "research_only",
+          "freshResearch": "SharpMinds Consulting Engineers",
+          "holdReasons": [
+            "Exact published relevant email not verified",
+            "UAE recipient/category/channel lawful route not established; public contact not consent",
+            "Existing Gmail send-approval restriction persists"
+          ],
+          "qualification": "docs/market/middle-east/research/2026-10-12/062819Z/qualification.json",
+          "attemptedRecipient": null,
+          "preparedRecipient": null,
+          "messageIds": []
+        }
+      },
+      "manifest": null,
+      "drafts": "docs/market/acquisition/runs/2026-10-12/062819Z/held-drafts.json",
+      "report": "docs/market/acquisition/runs/2026-10-12/062819Z/run-report.json",
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "priorExternalIdsVerified": 55,
+        "liveSentCountIncludingSelfTest": 56,
+        "newPositiveReplies": 0,
+        "newDeliveryFailures": 0,
+        "candidateDuplicatesComplete": true
+      }
+    },
+    {
+      "runId": "dual-20261012T112425Z",
+      "startedAt": "2026-10-12T11:24:25.827Z",
+      "completedAt": "2026-10-12T11:30:21.464997Z",
+      "localDate": "2026-10-12",
+      "status": "held_sender_approval",
+      "sentCount": 0,
+      "sendToolCalls": 0,
+      "confirmedMessageIds": [],
+      "markets": {
+        "United States": {
+          "status": "held_sender_approval",
+          "freshResearch": "Fitness Showrooms",
+          "holdReasons": [
+            "Existing Gmail send-approval restriction persists; no configuration change, no send attempted"
+          ],
+          "qualification": "docs/market/us/research/2026-10-12/112425Z/qualification.json",
+          "attemptedRecipient": null,
+          "preparedRecipient": "info@fitshowrooms.com",
+          "messageIds": []
+        },
+        "Middle East": {
+          "status": "research_only",
+          "freshResearch": "MOMA International",
+          "holdReasons": [
+            "Named UAE recipient/channel lawful route and consent not established",
+            "Existing Gmail send-approval restriction persists"
+          ],
+          "qualification": "docs/market/middle-east/research/2026-10-12/112425Z/qualification.json",
+          "attemptedRecipient": null,
+          "preparedRecipient": "r.morales@moma.design",
+          "messageIds": []
+        }
+      },
+      "manifest": null,
+      "drafts": "docs/market/acquisition/runs/2026-10-12/112425Z/held-drafts.json",
+      "report": "docs/market/acquisition/runs/2026-10-12/112425Z/run-report.json",
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "priorExternalIdsVerified": 55,
+        "liveSentCountIncludingSelfTest": 56,
+        "newPositiveReplies": 0,
+        "newDeliveryFailures": 0,
+        "candidateDuplicatesComplete": true
+      }
+    },
+    {
+      "runId": "four-country-20261012T134550Z",
+      "startedAt": "2026-10-12T13:45:50.786810+00:00",
+      "localDate": "2026-10-12",
+      "status": "completed_sent_verified",
+      "manifest": "docs/market/us/outreach/2026-10-12/campaign.json",
+      "report": "docs/market/acquisition/runs/2026-10-12/134550Z/run-report.json",
+      "markets": {
+        "Australia": {
+          "organisation": "Berg Engineering",
+          "recipient": "marketing@bergengineering.com.au",
+          "status": "sent_verified",
+          "messageIds": [
+            "1a1306111691b931"
+          ],
+          "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a1306111691b931",
+          "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+        },
+        "United States": {
+          "organisation": "REGA Engineering Group",
+          "recipient": "info@regaeng.com",
+          "status": "sent_verified",
+          "messageIds": [
+            "1a130622ea0350f7"
+          ],
+          "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a130622ea0350f7",
+          "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+        },
+        "New Zealand": {
+          "organisation": "Rawlinsons",
+          "recipient": "info@rawlinsons.co.nz",
+          "status": "sent_verified",
+          "messageIds": [
+            "1a13062917b76b72"
+          ],
+          "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062917b76b72",
+          "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+        },
+        "Canada": {
+          "organisation": "NewFields Canada Inc.",
+          "recipient": "CanadaMarketing@newfields.com",
+          "status": "sent_verified",
+          "messageIds": [
+            "1a13062fb2f2ffa6"
+          ],
+          "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062fb2f2ffa6",
+          "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+        }
+      },
+      "sentCount": 4,
+      "confirmedMessageIds": [
+        "1a1306111691b931",
+        "1a130622ea0350f7",
+        "1a13062917b76b72",
+        "1a13062fb2f2ffa6"
+      ],
+      "sourceAndContactChecksComplete": true,
+      "newPositiveReplies": 0,
+      "completedAt": "2026-10-12T13:55:50.186851+00:00",
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "newPositiveReplies": 0,
+        "newDeliveryFailures": 0,
+        "liveSentCountIncludingSelfTest": 60,
+        "totalExternalConfirmedSends": 59,
+        "attachmentVerified": true,
+        "duplicateCheckComplete": true,
+        "sendPermissionRecovered": true
+      }
+    },
+    {
+      "runId": "four-country-20261012T162329Z",
+      "startedAt": "2026-10-12T16:23:29.573Z",
+      "completedAt": "2026-10-12T16:32:14.265132Z",
+      "localDate": "2026-10-12",
+      "status": "skipped_rolling_interval_full",
+      "manifest": null,
+      "sentCount": 0,
+      "sendToolCalls": 0,
+      "confirmedMessageIds": [],
+      "markets": {
+        "Australia": {
+          "status": "held_interval_cap",
+          "organisation": "MGAC",
+          "additionalHoldReasons": [
+            "No verified published relevant email or attributable role-specific publication",
+            "Linked relevant contact/privacy notices and publication-consent applicability remain unchecked"
+          ],
+          "preparedRecipient": null,
+          "attemptedRecipient": null,
+          "messageIds": [],
+          "earliestEligibility": {
+            "eligibleAfterUTC": "2026-10-12T18:49:54.818794+00:00",
+            "eligibleAfterLondon": "2026-10-12T19:49:54.818794+01:00",
+            "consumedByMessageId": "1a1306111691b931"
+          }
+        },
+        "United States": {
+          "status": "held_interval_cap",
+          "organisation": "G&S Restaurant Equipment",
+          "additionalHoldReasons": [],
+          "preparedRecipient": "sales@gsrestaurantequipment.com",
+          "attemptedRecipient": null,
+          "messageIds": [],
+          "earliestEligibility": {
+            "eligibleAfterUTC": "2026-10-12T18:51:08.035197+00:00",
+            "eligibleAfterLondon": "2026-10-12T19:51:08.035197+01:00",
+            "consumedByMessageId": "1a130622ea0350f7"
+          }
+        },
+        "New Zealand": {
+          "status": "held_interval_cap",
+          "organisation": "North Projects",
+          "additionalHoldReasons": [
+            "Exact relevant published address and recipient-specific consent route not verified",
+            "Contact/privacy refusal-notice inspection incomplete"
+          ],
+          "preparedRecipient": null,
+          "attemptedRecipient": null,
+          "messageIds": [],
+          "earliestEligibility": {
+            "eligibleAfterUTC": "2026-10-12T18:51:32.708626+00:00",
+            "eligibleAfterLondon": "2026-10-12T19:51:32.708626+01:00",
+            "consumedByMessageId": "1a13062917b76b72"
+          }
+        },
+        "Canada": {
+          "status": "held_interval_cap",
+          "organisation": "Prism Engineering",
+          "additionalHoldReasons": [
+            "Generic office mailbox: specific CMS recipient role/relevance and linked refusal/privacy notices not fully assessed"
+          ],
+          "preparedRecipient": "info@prismengineering.com",
+          "attemptedRecipient": null,
+          "messageIds": [],
+          "earliestEligibility": {
+            "eligibleAfterUTC": "2026-10-12T18:51:59.741215+00:00",
+            "eligibleAfterLondon": "2026-10-12T19:51:59.741215+01:00",
+            "consumedByMessageId": "1a13062fb2f2ffa6"
+          }
+        }
+      },
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "priorExternalIdsVerified": 59,
+        "liveSentCountIncludingSelfTest": 60,
+        "newPositiveReplies": 0,
+        "newDeliveryFailures": 0,
+        "candidateDuplicatesComplete": true
+      },
+      "drafts": "docs/market/acquisition/runs/2026-10-12/162329Z/held-drafts.json",
+      "report": "docs/market/acquisition/runs/2026-10-12/162329Z/run-report.json"
+    },
+    {
+      "runId": "four-country-20261012T213234Z",
+      "startedAt": "2026-10-12T21:32:34.430Z",
+      "localDate": "2026-10-12",
+      "status": "send_permission_denied_confirmed_unsent",
+      "markets": {
+        "Australia": {
+          "organisation": "JAE Engineering Group",
+          "status": "failed_unsent_permission",
+          "preparedRecipient": "marketing@jaeaust.com.au",
+          "attemptedRecipient": "marketing@jaeaust.com.au",
+          "sendToolCalls": 1,
+          "messageIds": [],
+          "holdReasons": [
+            "Fresh scheduled-session denial: MCP tool call requires approval, but approval policy is never"
+          ]
+        },
+        "United States": {
+          "organisation": "G&S Restaurant Equipment",
+          "status": "held_current_permission_denial",
+          "preparedRecipient": "sales@gsrestaurantequipment.com",
+          "attemptedRecipient": null,
+          "sendToolCalls": 0,
+          "messageIds": [],
+          "holdReasons": [
+            "Fresh scheduled-session denial: MCP tool call requires approval, but approval policy is never"
+          ]
+        },
+        "New Zealand": {
+          "organisation": "Employers and Manufacturers Association (EMA)",
+          "status": "held_recipient_route",
+          "preparedRecipient": null,
+          "attemptedRecipient": null,
+          "sendToolCalls": 0,
+          "messageIds": [],
+          "holdReasons": [
+            "No verified relevant marketing/content email",
+            "Recipient-specific publication/notice/consent assessment incomplete"
+          ]
+        },
+        "Canada": {
+          "organisation": "Inline Group Inc.",
+          "status": "held_recipient_route",
+          "preparedRecipient": "marketing@inlinegroupinc.ca",
+          "attemptedRecipient": null,
+          "sendToolCalls": 0,
+          "messageIds": [],
+          "holdReasons": [
+            "Linked relevant privacy/terms inspection incomplete; recipient-specific implied-consent route held"
+          ]
+        }
+      },
+      "sentCount": 0,
+      "confirmedMessageIds": [],
+      "manifest": "docs/market/us/outreach/2026-10-12/campaign.json",
+      "report": "docs/market/acquisition/runs/2026-10-12/213234Z/run-report.json",
+      "completedAt": "2026-10-12T21:43:26.046629+00:00",
+      "sendToolCalls": 1,
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "priorExternalIdsVerified": 59,
+        "liveSentIncludingSelfTest": 60,
+        "newPositiveReplies": 0,
+        "newBounces": 0,
+        "reconciliationComplete": true,
+        "deniedSendAbsentInSent": true
+      }
+    },
+    {
+      "runId": "four-country-20261013T023039Z",
+      "startedAt": "2026-10-13T02:30:39.188Z",
+      "localDate": "2026-10-13",
+      "status": "send_permission_denied_confirmed_unsent",
+      "markets": {
+        "Australia": {
+          "organisation": "JAE Engineering Group",
+          "status": "held_current_permission_denial",
+          "preparedRecipient": "marketing@jaeaust.com.au",
+          "attemptedRecipient": null,
+          "sendToolCalls": 0,
+          "messageIds": [],
+          "holdReasons": [
+            "Current scheduled-session denial: MCP tool call requires approval, but approval policy is never"
+          ]
+        },
+        "United States": {
+          "organisation": "G&S Restaurant Equipment",
+          "status": "failed_unsent_permission",
+          "preparedRecipient": "sales@gsrestaurantequipment.com",
+          "attemptedRecipient": "sales@gsrestaurantequipment.com",
+          "sendToolCalls": 1,
+          "messageIds": [],
+          "holdReasons": [
+            "Current scheduled-session denial: MCP tool call requires approval, but approval policy is never"
+          ]
+        },
+        "New Zealand": {
+          "organisation": "North Projects",
+          "status": "held_recipient_route",
+          "preparedRecipient": null,
+          "attemptedRecipient": null,
+          "sendToolCalls": 0,
+          "messageIds": [],
+          "holdReasons": [
+            "Official contact page provides a form instead of a verified relevant email. No deemed-consent route established."
+          ]
+        },
+        "Canada": {
+          "organisation": "Prism Engineering",
+          "status": "held_recipient_route",
+          "preparedRecipient": "info@prismengineering.com",
+          "attemptedRecipient": null,
+          "sendToolCalls": 0,
+          "messageIds": [],
+          "holdReasons": [
+            "Linked official privacy-policy page unavailable on direct and link checks; publication/refusal assessment incomplete.",
+            "Published head-office inbox does not establish specific CMS buyer-role relevance."
+          ]
+        }
+      },
+      "sentCount": 0,
+      "confirmedMessageIds": [],
+      "manifest": "docs/market/us/outreach/2026-10-13/campaign.json",
+      "report": "docs/market/acquisition/runs/2026-10-13/023039Z/run-report.json",
+      "completedAt": "2026-10-13T02:45:37.451149+00:00",
+      "sendToolCalls": 1,
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "priorExternalIdsVerified": 59,
+        "liveSentIncludingSelfTest": 60,
+        "newPositiveReplies": 0,
+        "newBounces": 0,
+        "reconciliationComplete": true,
+        "deniedSendAbsentInSent": true,
+        "pluginAllowAllVerified": true
+      }
+    },
+    {
+      "runId": "four-country-20261013T073114Z",
+      "startedAt": "2026-10-13T07:31:14.036Z",
+      "localDate": "2026-10-13",
+      "status": "draft_send_permission_denied_confirmed_unsent",
+      "followups": [
+        {
+          "entryId": "mpif-stephanie-2026-10-13",
+          "organisation": "MPIF",
+          "to": "sgibbs@mpif.org",
+          "draftId": "r6151705065138909456",
+          "status": "blocked_unsent",
+          "attempts": 1,
+          "messageIds": [],
+          "sentReconciliationComplete": true
+        },
+        {
+          "entryId": "smi-gary-mccoy-2026-10-13",
+          "organisation": "SMI",
+          "to": "gary@smihq.org",
+          "draftId": "r-4894002651180659563",
+          "status": "queued",
+          "attempts": 0,
+          "messageIds": [],
+          "sentReconciliationComplete": true
+        }
+      ],
+      "markets": {
+        "United States": {
+          "status": "approved_pair_pending_no_additional_first_pitch"
+        },
+        "Australia": {
+          "status": "oldest_eligible_prepared_current_send_denial",
+          "organisation": "JAE Engineering Group"
+        },
+        "Canada": {
+          "status": "prepared_current_send_denial",
+          "organisation": "Smith + Andersen"
+        },
+        "New Zealand": {
+          "status": "held_recipient_country_and_contact_route",
+          "organisation": "Lockton New Zealand"
+        }
+      },
+      "reservedFollowupSlots": 2,
+      "maximumOtherFirstPitches": 2,
+      "sentCount": 0,
+      "confirmedMessageIds": [],
+      "report": "docs/market/acquisition/runs/2026-10-13/073114Z/run-report.json",
+      "completedAt": "2026-10-13T07:56:01.565616+00:00",
+      "firstPitchSentCount": 0,
+      "followupSentCount": 0,
+      "sendToolCalls": 1,
+      "verification": {
+        "initialReplyComplete": true,
+        "completionReplyComplete": true,
+        "historicalExternalMessagesVerified": 59,
+        "sentFilenameMatchesIncludingSelfTest": 60,
+        "keywordSearchIndexDiscrepancy": "52 keyword matches; complete filename search contains all historical IDs",
+        "newPositiveReplies": 0,
+        "newOptOuts": 0,
+        "newBounces": 0,
+        "followupAlreadySentMatches": 0,
+        "approvedDraftsRemainPresent": true
+      }
+    }
+  ],
+  "lastReplyCheckComplete": true,
+  "lastWeeklyCohortReviewDate": "2026-10-10",
+  "lastWeeklyCohortReviewAt": "2026-10-10T22:28:24.350Z",
+  "nextWeeklyCohortReviewDate": "2026-10-17",
+  "senderBlock": {
+    "active": true,
+    "at": "2026-10-13 07:40:42 UTC",
+    "reason": "MCP tool call requires approval, but approval policy is never",
+    "action": "Scheduled execution must permit authorized Gmail send actions. Current approval policy never blocked the draft despite standing user authority; do not bypass restrictions or change sender.",
+    "notified": true,
+    "scope": "current scheduled session saved-draft send action",
+    "confirmedUnsentRecipient": "sgibbs@mpif.org",
+    "evidence": "docs/market/acquisition/runs/2026-10-13/073114Z/outcome-evidence.json",
+    "sendAttempts": 1,
+    "pluginPermissionReportedAllowAll": true,
+    "previousVerifiedResolution": {
+      "resolvedAt": "2026-10-12T13:55:50.186851+00:00",
+      "permissionUpdatedAt": "2026-10-12T13:38:39.729389+00:00",
+      "resolution": "Gmail permission updated under explicit user authorization; four actual sends and Sent metadata verified",
+      "confirmedRecoveryMessageIds": [
+        "1a1306111691b931",
+        "1a130622ea0350f7",
+        "1a13062917b76b72",
+        "1a13062fb2f2ffa6"
+      ],
+      "runtimeSendVerified": true
+    },
+    "recommendationLimit": "Availability and managed requirements can restrict modes; changing reviewer does not guarantee a particular send will be approved.",
+    "pluginPermissionVerifiedAt": "2026-10-13T02:39:16Z",
+    "officialPermissionSources": [
+      "https://learn.chatgpt.com/docs/agent-approvals-security",
+      "https://learn.chatgpt.com/docs/permission-modes"
+    ]
+  },
+  "sendFailures": [
+    {
+      "at": "2026-10-10T22:31:10.544Z",
+      "runId": "dual-20261010T221900Z",
+      "recipient": "sales@gsrestaurantequipment.com",
+      "reason": "MCP tool call requires approval, but approval policy is never",
+      "outcome": "confirmed_not_sent"
+    },
+    {
+      "runId": "four-country-20261012T213234Z",
+      "at": "2026-10-12T21:40:35.666Z",
+      "market": "Australia",
+      "recipient": "marketing@jaeaust.com.au",
+      "reason": "MCP tool call requires approval, but approval policy is never",
+      "attempts": 1,
+      "acceptedMessageId": null,
+      "sentReconciliationComplete": true,
+      "confirmedAbsentInSent": true
+    },
+    {
+      "runId": "four-country-20261013T023039Z",
+      "at": "2026-10-13 02:42:35 UTC",
+      "market": "United States",
+      "recipient": "sales@gsrestaurantequipment.com",
+      "reason": "MCP tool call requires approval, but approval policy is never",
+      "attempts": 1,
+      "acceptedMessageId": null,
+      "sentReconciliationComplete": true,
+      "confirmedAbsentInSent": true
+    },
+    {
+      "runId": "four-country-20261013T073114Z",
+      "at": "2026-10-13 07:40:42 UTC",
+      "market": "United States",
+      "recipient": "sgibbs@mpif.org",
+      "messageType": "one_time_followup",
+      "draftId": "r6151705065138909456",
+      "reason": "MCP tool call requires approval, but approval policy is never",
+      "attempts": 1,
+      "acceptedMessageId": null,
+      "sentReconciliationComplete": true,
+      "confirmedAbsentInSent": true
+    }
+  ],
+  "lastSuccessfulReplyCheckAt": "2026-10-13T07:46:54Z",
+  "lastCampaignRunAt": "2026-10-13T07:56:01.565616+00:00",
+  "lastReplyCheckFailure": null,
+  "lastGmailReadRecoveryAt": "2026-10-12T06:32:12.757Z",
+  "countryRules": "docs/market/COUNTRY-OUTREACH-RULES.json",
+  "scopeChangedAt": "2026-10-12T13:38:39.729389+00:00",
+  "userSendAuthority": {
+    "at": "2026-10-12T13:38:39.729389+00:00",
+    "countries": [
+      "Australia",
+      "United States",
+      "New Zealand",
+      "Canada"
+    ],
+    "perEmailApprovalRequired": false,
+    "instruction": "go for Australia, US, newzeeland, Canda no need of approval, and send every 5 hours to all countries",
+    "scopeClarification": "Only the four countries I just named"
+  },
+  "senderBlockHistory": [
+    {
+      "at": "2026-10-10T22:31:10.544Z",
+      "reason": "MCP tool call requires approval, but approval policy is never",
+      "action": "Enable/allow Gmail send approvals for this scheduled session. Reconnect only if Gmail permissions require it; do not switch accounts or use another channel to bypass the restriction.",
+      "notified": true,
+      "confirmedUnsentRecipient": "sales@gsrestaurantequipment.com",
+      "evidence": "docs/market/acquisition/runs/2026-10-10/221900Z/completion-checks.json",
+      "lastSeenAt": "2026-10-11T03:30:00.325Z",
+      "lastPolicyObservedAt": "2026-10-12T11:30:21.464997Z"
+    },
+    {
+      "at": "2026-10-13T02:45:37.451149+00:00",
+      "event": "Current live plugin permission and scheduled action rechecked; previous denial retained as history",
+      "previous": {
+        "active": true,
+        "at": "2026-10-12T21:40:35.666Z",
+        "reason": "MCP tool call requires approval, but approval policy is never",
+        "action": "Scheduled execution must support authorization for Gmail send. Plugin Allow all actions did not remove this actual session approval-policy denial. Do not bypass or switch accounts/channels.",
+        "notified": true,
+        "scope": "current scheduled session send action",
+        "confirmedUnsentRecipient": "marketing@jaeaust.com.au",
+        "evidence": "docs/market/acquisition/runs/2026-10-12/213234Z/outcome-evidence.json",
+        "sendAttempts": 1,
+        "pluginPermissionReportedAllowAll": true,
+        "previousVerifiedResolution": {
+          "resolvedAt": "2026-10-12T13:55:50.186851+00:00",
+          "permissionUpdatedAt": "2026-10-12T13:38:39.729389+00:00",
+          "resolution": "Gmail permission updated under explicit user authorization; four actual sends and Sent metadata verified",
+          "confirmedRecoveryMessageIds": [
+            "1a1306111691b931",
+            "1a130622ea0350f7",
+            "1a13062917b76b72",
+            "1a13062fb2f2ffa6"
+          ],
+          "runtimeSendVerified": true
+        }
+      }
+    },
+    {
+      "at": "2026-10-13T07:56:01.565616+00:00",
+      "event": "Current authorized saved-draft send access tested",
+      "previous": {
+        "active": true,
+        "at": "2026-10-13 02:42:35 UTC",
+        "reason": "MCP tool call requires approval, but approval policy is never",
+        "action": "Check this chat's permission control and select Approve for me if available, so eligible approval requests can reach automatic review. Keep the workspace sandbox; do not bypass restrictions.",
+        "notified": true,
+        "scope": "current scheduled session send action",
+        "confirmedUnsentRecipient": "sales@gsrestaurantequipment.com",
+        "evidence": "docs/market/acquisition/runs/2026-10-13/023039Z/outcome-evidence.json",
+        "sendAttempts": 1,
+        "pluginPermissionReportedAllowAll": true,
+        "previousVerifiedResolution": {
+          "resolvedAt": "2026-10-12T13:55:50.186851+00:00",
+          "permissionUpdatedAt": "2026-10-12T13:38:39.729389+00:00",
+          "resolution": "Gmail permission updated under explicit user authorization; four actual sends and Sent metadata verified",
+          "confirmedRecoveryMessageIds": [
+            "1a1306111691b931",
+            "1a130622ea0350f7",
+            "1a13062917b76b72",
+            "1a13062fb2f2ffa6"
+          ],
+          "runtimeSendVerified": true
+        },
+        "recommendationLimit": "Availability and managed requirements can restrict modes; changing reviewer does not guarantee a particular send will be approved.",
+        "pluginPermissionVerifiedAt": "2026-10-13T02:39:16Z",
+        "officialPermissionSources": [
+          "https://learn.chatgpt.com/docs/agent-approvals-security",
+          "https://learn.chatgpt.com/docs/permission-modes"
+        ]
+      }
+    }
+  ],
+  "gmailPermission": {
+    "at": "2026-10-12T13:38:39.729389+00:00",
+    "plugin": "Gmail",
+    "permissionMode": "full_access",
+    "readBackVerified": true,
+    "globalPermissionsChanged": false,
+    "runtimeSendVerified": true,
+    "runtimeVerifiedAt": "2026-10-12T13:55:50.186851+00:00",
+    "verifiedMessageIds": [
+      "1a1306111691b931",
+      "1a130622ea0350f7",
+      "1a13062917b76b72",
+      "1a13062fb2f2ffa6"
+    ]
+  },
+  "activeSendingRun": null
 }

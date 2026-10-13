@@ -1,0 +1,71 @@
+{
+  "runId": "four-country-20261012T134550Z",
+  "startedAt": "2026-10-12T13:45:50.786810+00:00",
+  "localDate": "2026-10-12",
+  "status": "completed_sent_verified",
+  "manifest": "docs/market/us/outreach/2026-10-12/campaign.json",
+  "report": "docs/market/acquisition/runs/2026-10-12/134550Z/run-report.json",
+  "markets": {
+    "Australia": {
+      "organisation": "Berg Engineering",
+      "recipient": "marketing@bergengineering.com.au",
+      "status": "sent_verified",
+      "messageIds": [
+        "1a1306111691b931"
+      ],
+      "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a1306111691b931",
+      "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+    },
+    "United States": {
+      "organisation": "REGA Engineering Group",
+      "recipient": "info@regaeng.com",
+      "status": "sent_verified",
+      "messageIds": [
+        "1a130622ea0350f7"
+      ],
+      "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a130622ea0350f7",
+      "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+    },
+    "New Zealand": {
+      "organisation": "Rawlinsons",
+      "recipient": "info@rawlinsons.co.nz",
+      "status": "sent_verified",
+      "messageIds": [
+        "1a13062917b76b72"
+      ],
+      "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062917b76b72",
+      "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+    },
+    "Canada": {
+      "organisation": "NewFields Canada Inc.",
+      "recipient": "CanadaMarketing@newfields.com",
+      "status": "sent_verified",
+      "messageIds": [
+        "1a13062fb2f2ffa6"
+      ],
+      "gmailUrl": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062fb2f2ffa6",
+      "verification": "Recipient/subject/MP4/single-recipient/duplicates verified"
+    }
+  },
+  "sentCount": 4,
+  "confirmedMessageIds": [
+    "1a1306111691b931",
+    "1a130622ea0350f7",
+    "1a13062917b76b72",
+    "1a13062fb2f2ffa6"
+  ],
+  "sourceAndContactChecksComplete": true,
+  "newPositiveReplies": 0,
+  "completedAt": "2026-10-12T13:55:50.186851+00:00",
+  "verification": {
+    "initialReplyComplete": true,
+    "completionReplyComplete": true,
+    "newPositiveReplies": 0,
+    "newDeliveryFailures": 0,
+    "liveSentCountIncludingSelfTest": 60,
+    "totalExternalConfirmedSends": 59,
+    "attachmentVerified": true,
+    "duplicateCheckComplete": true,
+    "sendPermissionRecovered": true
+  }
+}

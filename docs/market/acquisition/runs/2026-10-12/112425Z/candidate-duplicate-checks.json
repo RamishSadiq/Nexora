@@ -1,0 +1,12 @@
+[
+  {
+    "query": "in:anywhere {to:fitnessshowrooms.com from:fitnessshowrooms.com to:fitshowrooms.com from:fitshowrooms.com}",
+    "emails": [],
+    "complete": true
+  },
+  {
+    "query": "in:anywhere {to:moma.design from:moma.design}",
+    "emails": [],
+    "complete": true
+  }
+]

@@ -1,8 +1,8 @@
 # Nexora UK market launch pack
 
-**Latest campaign instruction, 10 October:** [US and Middle East campaign](DUAL-MARKET-CAMPAIGN.md) runs both markets every five hours, aiming for one fresh prospect per market per run. This replaces the earlier regional switch and hourly cadence described below.
+**Latest campaign instruction, 12 October:** [Australia, US, New Zealand and Canada](MULTI-MARKET-CAMPAIGN.md) are the only active countries, every five hours, aiming for one suitable fresh prospect per country and four total per run. The user authorised sends without repeated approval. New Middle East pitches stop; all historical replies and suppressions remain monitored. This replaces earlier dual-market/regional/hourly scope below.
 
-Current campaign improvements, 10 October 2026: [client acquisition plan](CLIENT-ACQUISITION-PLAN.md), [focused offers](OFFER-BRIEFS.md) and [Middle East revised pitches](middle-east/PITCH-V2.md). New outreach follows the active Middle East policy below; historical UK materials remain for reference.
+Current campaign improvements, 10 October 2026: [client acquisition plan](CLIENT-ACQUISITION-PLAN.md), [focused offers](OFFER-BRIEFS.md) and [Middle East revised pitches](middle-east/PITCH-V2.md). New outreach follows the international policy above and country-specific rules; earlier UK/US/Middle East materials below remain historical reference where their scope or cadence conflicts.
 
 Prepared 7 October 2026. Target: UK professional and trade associations with company memberships, a small administration team, and roughly 200–2,000 member organisations or individuals. These are targeting hypotheses, not verified capacity limits.
 

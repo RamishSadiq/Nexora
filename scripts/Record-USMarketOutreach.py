@@ -26,9 +26,18 @@ daily_state = json.loads(daily_path.read_text(encoding='utf-8')) if campaign.get
 if daily_state and args.status == 'sending':
     if daily_state['campaignStatus'] != 'active':
         raise RuntimeError('Daily campaign is stopped; sending is not allowed')
+    followup_path = root / 'docs/market/us/daily/ONE-TIME-FOLLOWUPS.json'
+    followup_queue = json.loads(followup_path.read_text(encoding='utf-8')) if followup_path.exists() else {}
+    followups = followup_queue.get('entries', [])
+    if any(e.get('status') in ['sending', 'unknown', 'sent_pending_verification'] for e in followups):
+        raise RuntimeError('Reconcile pending follow-up outcomes before a new first pitch')
+    first_pitch_ids = {c.get('messageId') for c in daily_state['previouslyContacted']}
+    confirmed_followups = {e['messageId']: e for e in followups
+                           if e.get('messageId') and e.get('sentAt') and e['messageId'] not in first_pitch_ids}
     already_today = sum(c.get('localDate') == campaign['localDate'] for c in daily_state['previouslyContacted'])
-    if already_today >= daily_state['dailyNewOrganisationLimit']:
-        raise RuntimeError('Daily organisation limit reached')
+    followups_today = sum(e.get('localDate') == campaign['localDate'] for e in confirmed_followups.values())
+    if already_today + followups_today >= daily_state['dailyNewOrganisationLimit']:
+        raise RuntimeError('Daily overall message limit reached (including one-time follow-ups)')
     if daily_state.get('cadence') == 'hourly':
         current_hour = datetime.now(timezone.utc).replace(minute=0, second=0, microsecond=0)
         confirmed_this_hour = sum(
@@ -42,11 +51,13 @@ if daily_state and args.status == 'sending':
         cutoff = datetime.now(timezone.utc) - timedelta(hours=daily_state['intervalHours'])
         recent = [c for c in daily_state['previouslyContacted'] if c.get('sentAt') and
                   datetime.fromisoformat(c['sentAt'].replace('Z', '+00:00')).astimezone(timezone.utc) > cutoff]
+        recent_followups = [e for e in confirmed_followups.values() if
+                            datetime.fromisoformat(e['sentAt'].replace('Z', '+00:00')).astimezone(timezone.utc) > cutoff]
         market = message.get('market')
         if market not in daily_state['activeMarkets']:
             raise RuntimeError('A current market label is required')
-        if len(recent) >= daily_state['newOrganisationLimitPerInterval']:
-            raise RuntimeError('Five-hour total organisation limit reached')
+        if len(recent) + len(recent_followups) >= daily_state['newOrganisationLimitPerInterval']:
+            raise RuntimeError('Five-hour overall message limit reached (including one-time follow-ups)')
         if sum(c.get('market') == market for c in recent) >= daily_state['newOrganisationLimitPerMarketPerInterval']:
             raise RuntimeError('Five-hour market organisation limit reached')
 if message['status'] == 'sent' and args.status != 'sent':

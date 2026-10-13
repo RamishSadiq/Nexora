@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "batchId": "2026-10-13-mpif-smi-followups",
+  "automationId": "nexora-daily-us-sales-outreach",
+  "queuedAt": "2026-10-13T06:58:59Z",
+  "authorization": {
+    "date": "2026-10-13",
+    "timezone": "Europe/London",
+    "instruction": "send them as part of next compaign been scheduled",
+    "scope": "Send only the two saved MPIF and SMI Gmail drafts once, during the next scheduled campaign run. This supersedes the earlier draft-only instruction for these two messages."
+  },
+  "timing": "next_scheduled_campaign_run",
+  "batchStatus": "blocked_unsent",
+  "overallMessageLimitPerRollingFiveHours": 4,
+  "overallMessageLimitPerLondonDate": 24,
+  "schedulingPolicy": "Prioritize this pair within the existing overall limits, reserving two available message slots. For the run processing the pair, send no additional United States pitch and at most two eligible first pitches from the other active markets. First pitches retain their one-per-country limit. Log capacity deferrals and do not accumulate catch-up slots. After this pair is complete, resume the normal campaign. If checks or access block a send, keep only the unsent entry queued for the next eligible scheduled run.",
+  "draftPolicy": "Send the existing Gmail drafts as saved using gmail_send_draft. Do not recreate, materially rewrite, add recipients, or attach a new demo. Missing or changed drafts require a hold and reconciliation. Record returned Gmail IDs immediately and confirm in Sent before marking verified. Never resend a confirmed follow-up.",
+  "entries": [
+    {
+      "id": "mpif-stephanie-2026-10-13",
+      "organisation": "MPIF",
+      "market": "United States",
+      "country": "United States",
+      "offerType": "membership",
+      "contactName": "Stephanie",
+      "to": "sgibbs@mpif.org",
+      "from": "ramishqureshi99@gmail.com",
+      "subject": "Nexora demo for MPIF's membership team",
+      "draftId": "r6151705065138909456",
+      "draftMessageId": "1a13402e4f170fd3",
+      "draftThreadId": "1a13402e4f170fd3",
+      "originalPitchMessageId": "1a11f79c15f23dcf",
+      "contextMessageId": "1a11f79e78082745",
+      "context": "Dora's October 9 retirement auto-reply names Stephanie, sgibbs@mpif.org, as the membership contact. This is automated routing information, not demonstrated buyer interest.",
+      "sentMatchText": "I emailed Dora on October 9 about Nexora; her retirement auto-reply listed you",
+      "status": "blocked_unsent",
+      "events": [
+        {
+          "at": "2026-10-13T06:58:59Z",
+          "status": "queued",
+          "reason": "User authorized the saved draft for the next scheduled campaign run."
+        },
+        {
+          "at": "2026-10-13T07:39:52.007800+00:00",
+          "status": "queued",
+          "reason": "Exact authorized saved draft and immutable message/thread ID, sender, recipient, subject, body, no CC/BCC, no new attachment verified. Complete global checks and no Sent body match."
+        },
+        {
+          "at": "2026-10-13T07:40:42.131091+00:00",
+          "status": "sending",
+          "reason": "One current authorized saved-draft send; complete replies, suppressions, Sent and cap checks passed"
+        },
+        {
+          "at": "2026-10-13T07:41:40.873537+00:00",
+          "status": "blocked_unsent",
+          "reason": "MCP tool call requires approval, but approval policy is never",
+          "confirmedAbsentInSent": true,
+          "runId": "four-country-20261013T073114Z"
+        }
+      ],
+      "lastVerifiedAt": "2026-10-13T07:39:52.007800+00:00",
+      "verifiedBodySHA256": "c1b0581144d92cfbd8ebce6a9839ade46c941926b3f565af7286477e38fef7e0",
+      "lastVerifiedRunId": "four-country-20261013T073114Z",
+      "attemptedAt": "2026-10-13T07:40:42.131091+00:00",
+      "attemptedRunId": "four-country-20261013T073114Z",
+      "lastError": "MCP tool call requires approval, but approval policy is never",
+      "sentReconciliation": {
+        "checkedAt": "2026-10-13T07:41:40.873537+00:00",
+        "complete": true,
+        "exactRecipientSubjectMatches": 0,
+        "acceptedMessageId": null
+      }
+    },
+    {
+      "id": "smi-gary-mccoy-2026-10-13",
+      "organisation": "SMI",
+      "market": "United States",
+      "country": "United States",
+      "offerType": "membership",
+      "contactName": "Gary McCoy",
+      "to": "gary@smihq.org",
+      "from": "ramishqureshi99@gmail.com",
+      "subject": "Re: Nexora demo for SMI's membership applications",
+      "draftId": "r-4894002651180659563",
+      "draftMessageId": "1a134034195cc4f2",
+      "draftThreadId": "1a120800ff0e30ec",
+      "originalPitchMessageId": "1a120800ff0e30ec",
+      "contextMessageId": "1a120804f5fbe7f3",
+      "notBeforeLondonDate": "2026-10-13",
+      "context": "Gary's October 9 SpringWorld out-of-office reply says he would return on Monday, October 12. The draft follows up after that return and stays in the original application-demo thread.",
+      "sentMatchText": "I hope SpringWorld went well. Your auto-reply mentioned an October 12 return",
+      "status": "queued",
+      "events": [
+        {
+          "at": "2026-10-13T06:58:59Z",
+          "status": "queued",
+          "reason": "User authorized the saved draft for the next scheduled campaign run."
+        },
+        {
+          "at": "2026-10-13T07:39:52.007800+00:00",
+          "status": "queued",
+          "reason": "Exact authorized saved draft and immutable message/thread ID, sender, recipient, subject, body, no CC/BCC, no new attachment verified. Complete global checks and no Sent body match."
+        },
+        {
+          "at": "2026-10-13T07:41:40.873537+00:00",
+          "status": "queued",
+          "reason": "Not attempted after current actual draft-send denial; keep approved draft queued for next eligible run",
+          "runId": "four-country-20261013T073114Z"
+        }
+      ],
+      "lastVerifiedAt": "2026-10-13T07:39:52.007800+00:00",
+      "verifiedBodySHA256": "0442e4c902272cdf7597458c412b3feac74f1601fe594928eab31fc9c5af286c",
+      "lastVerifiedRunId": "four-country-20261013T073114Z"
+    }
+  ],
+  "lastAttemptedRunId": "four-country-20261013T073114Z",
+  "pendingEntryIds": [
+    "mpif-stephanie-2026-10-13",
+    "smi-gary-mccoy-2026-10-13"
+  ],
+  "lastUpdatedAt": "2026-10-13T07:56:01.565616+00:00",
+  "lastCompletedRunId": "four-country-20261013T073114Z",
+  "lastCompletionCheckAt": "2026-10-13T07:46:54Z"
+}

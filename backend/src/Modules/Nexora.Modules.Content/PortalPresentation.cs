@@ -43,12 +43,19 @@ public static partial class ContentModule
         if (!Regex.IsMatch(value.BrandColor ?? "", "^#[0-9a-fA-F]{6}$")) throw new ValidationException("Choose a six-digit brand colour.");
         double Channel(int offset) { var c = Convert.ToInt32(value.BrandColor!.Substring(offset, 2), 16) / 255d; return c <= .04045 ? c / 12.92 : Math.Pow((c + .055) / 1.055, 2.4); }
         if (.2126 * Channel(1) + .7152 * Channel(3) + .0722 * Channel(5) > .16) throw new ValidationException("Choose a darker brand colour so white text stays readable.");
+        var design = value.Design ?? new PortalDesign();
+        Choice(design.Theme, "classic", "neon");
+        var background = Luminance(design.BackgroundColor); var foreground = Luminance(design.TextColor);
+        Luminance(design.AccentColor); Luminance(design.SecondaryAccentColor);
+        if ((Math.Max(background, foreground) + .05) / (Math.Min(background, foreground) + .05) < 4.5)
+            throw new ValidationException("Portal text and background must have at least 4.5:1 contrast.");
+        Range(design.CornerRadius, 0, 32); Range(design.GlowStrength, 0, 60); Range(design.MotionDurationMs, 100, 1000);
         if (value.Pages == null || value.Pages.Length > 30 || value.Menu == null || value.DashboardSections == null)
             throw new ValidationException("Provide navigation, dashboard sections and at most 30 custom pages.");
         var keys = PortalPresentation.Default.Menu.Select(m => m.Key).ToHashSet();
         foreach (var page in value.Pages)
         {
-            if (page == null || !Regex.IsMatch(page.Slug ?? "", "^[a-z][a-z0-9-]{0,59}$") || !keys.Add(page.Slug!) || page.Slug is "api" or "login" or "logout" or "csrf")
+            if (page == null || !Regex.IsMatch(page.Slug ?? "", "^[a-z][a-z0-9-]{0,59}$") || !keys.Add(page.Slug!) || page.Slug is "api" or "login" or "logout" or "csrf" or "signup" or "register")
                 throw new ValidationException("Use unique page addresses with letters, numbers and hyphens; built-in addresses are reserved.");
             Text(page.Title, 120); Text(page.Body, 10000, false);
         }

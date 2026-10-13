@@ -1,0 +1,21 @@
+{
+  "dailyCampaign": true,
+  "localDate": "2026-10-13",
+  "messages": [
+    {
+      "to": "fixture@example.invalid",
+      "market": "Australia",
+      "organisation": "Synthetic cap check",
+      "status": "sending",
+      "updatedAt": "2026-10-13T07:43:31.876289+00:00",
+      "events": [
+        {
+          "at": "2026-10-13T07:43:31.876289+00:00",
+          "status": "sending",
+          "reason": null,
+          "messageId": null
+        }
+      ]
+    }
+  ]
+}

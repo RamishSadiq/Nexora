@@ -11,6 +11,37 @@ using static Nexora.Api.Tests.WorkflowTestClient;
 namespace Nexora.Api.Tests;
 public sealed partial class PortalEndpointTests
 {
+    private sealed record AppearanceWriteIdentity(Guid? TenantId, Guid? UserId) : IRequestIdentity;
+    [Fact]
+    public async Task Public_portal_appearance_is_published_branding_only_and_host_bound()
+    {
+        using var app = new IdentityApiFactory(); using var staff = await Login(app); using var visitor = app.CreateClient();
+        await Json(await Send(staff, "/api/v1/content/site", HttpMethod.Post, new { name = "Our association", tagline = "Together" }));
+        var defaults = PortalPresentation.Default;
+        var draft = defaults with { Name = "Our member space", Design = new PortalDesign { Theme = "neon", AccentColor = "#50f5d6", SecondaryAccentColor = "#9255ff" },
+            Pages = [new("private-guide", "Private guide", "Members only information")], Menu = [.. defaults.Menu, new("private-guide", "Guide", true)] };
+        var saved = await Json(await Send(staff, "/api/v1/content/portal", HttpMethod.Put, new ContentModule.PortalConfigurationRequest(null, draft)));
+        Assert.Equal("classic", (await Json(await visitor.GetAsync("/api/v1/public/portal-appearance")))["design"]!["theme"]!.GetValue<string>());
+        await Json(await Send(staff, "/api/v1/content/portal/publish", HttpMethod.Post, new { version = Version(saved), configuration = draft }));
+        var response = await visitor.GetAsync("/api/v1/public/portal-appearance");
+        Assert.Equal("no-store", response.Headers.CacheControl!.ToString());
+        var appearance = await Json(response);
+        Assert.Equal(draft.Name, appearance["name"]!.GetValue<string>());
+        Assert.Equal("neon", appearance["design"]!["theme"]!.GetValue<string>());
+        Assert.Equal("#50f5d6", appearance["design"]!["accentColor"]!.GetValue<string>());
+        Assert.Equal("#9255ff", appearance["design"]!["secondaryAccentColor"]!.GetValue<string>());
+        Assert.Equal(4, appearance.AsObject().Count);
+        Assert.Null(appearance["pages"]); Assert.Null(appearance["menu"]); Assert.Null(appearance["welcomeText"]);
+        Assert.Equal(HttpStatusCode.Unauthorized, (await visitor.GetAsync("/api/v1/portal/configuration")).StatusCode);
+        using var unknownHost = new HttpRequestMessage(HttpMethod.Get, "/api/v1/public/portal-appearance"); unknownHost.Headers.Host = "unconfigured.example";
+        Assert.Equal(HttpStatusCode.NotFound, (await visitor.SendAsync(unknownHost)).StatusCode);
+        using var scope = app.Services.CreateScope();
+        var identity = new AppearanceWriteIdentity(Guid.NewGuid(), Guid.NewGuid());
+        using var db = new ContentDbContext(scope.ServiceProvider.GetRequiredService<DbContextOptions<ContentDbContext>>(), identity);
+        db.Sites.Add(new Site { TenantId = identity.TenantId!.Value, Name = "Another tenant site", Tagline = "" }); await db.SaveChangesAsync();
+        Assert.Equal(HttpStatusCode.NotFound, (await visitor.GetAsync("/api/v1/public/portal-appearance")).StatusCode);
+    }
+
     [Fact]
     public async Task Portal_configuration_is_published_only_versioned_and_requires_active_member_access()
     {
@@ -41,6 +72,11 @@ public sealed partial class PortalEndpointTests
         var d = PortalPresentation.Default;
         foreach (var invalid in new[] {
             d with { BrandColor = "#ffffff" }, d with { DashboardSections = ["unknown"] },
+            d with { Design = new PortalDesign { Theme = "unknown" } },
+            d with { Design = new PortalDesign { AccentColor = "red;display:none" } },
+            d with { Design = new PortalDesign { SecondaryAccentColor = "#fff" } },
+            d with { Design = new PortalDesign { BackgroundColor = "#ffffff", TextColor = "#ffffff" } },
+            d with { Design = new PortalDesign { GlowStrength = 999 } },
             d with { Menu = d.Menu.Select(m => m with { Visible = false }).ToArray() },
             d with { Menu = [d.Menu[0], d.Menu[0]] },
             d with { Pages = [new("profile", "Overwrite", "Bad")] },

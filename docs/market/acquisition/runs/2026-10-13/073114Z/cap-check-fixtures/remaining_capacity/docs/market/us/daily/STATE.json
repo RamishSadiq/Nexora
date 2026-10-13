@@ -1,0 +1,1 @@
+{"campaignStatus": "active", "previouslyContacted": [], "dailyNewOrganisationLimit": 24, "cadence": "five_hourly", "intervalHours": 5, "activeMarkets": ["Australia", "United States", "New Zealand", "Canada"], "newOrganisationLimitPerInterval": 4, "newOrganisationLimitPerMarketPerInterval": 1}

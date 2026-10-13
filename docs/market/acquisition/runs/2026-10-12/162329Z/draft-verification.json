@@ -1,0 +1,30 @@
+[
+  {
+    "market": "Australia",
+    "recipientSelected": false,
+    "MIMEVerified": false,
+    "attachmentHashVerified": false,
+    "sent": false
+  },
+  {
+    "market": "United States",
+    "recipientSelected": true,
+    "MIMEVerified": true,
+    "attachmentHashVerified": true,
+    "sent": false
+  },
+  {
+    "market": "New Zealand",
+    "recipientSelected": false,
+    "MIMEVerified": false,
+    "attachmentHashVerified": false,
+    "sent": false
+  },
+  {
+    "market": "Canada",
+    "recipientSelected": false,
+    "MIMEVerified": false,
+    "attachmentHashVerified": false,
+    "sent": false
+  }
+]

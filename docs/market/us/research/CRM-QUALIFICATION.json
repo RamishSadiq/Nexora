@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T12:58:36.120743+00:00",
+  "updatedAt": "2026-10-12T11:30:21.464997Z",
   "policy": "docs/market/us/CRM-FIRST-TARGETING.md",
   "scope": "Initial reserve checks plus dated hourly first-system research; not a complete prospect list.",
   "confirmedNoCrm": 0,
@@ -264,6 +264,522 @@
         }
       ],
       "checkedAt": "2026-10-09T12:58:36.120743+00:00"
+    },
+    {
+      "market": "United States",
+      "country": "United States",
+      "segment": "commercial_kitchen_equipment_suppliers",
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "sourceCheckedAt": "2026-10-10T22:26:08.736Z",
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "buyerRole": null,
+      "owner": "Ramish Qureshi",
+      "nextAction": "Restore permitted Gmail sending, then recheck replies/Sent/rolling caps and retry this unsent first pitch; no channel/account bypass",
+      "nextActionDue": null,
+      "pitchVersion": "website-cms-v2-cohort-1",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "No dedicated website/CMS video or truthful public product page has been delivered; attached video introduces wider membership platform.",
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "User-authorised individual first pitches in both markets every five hours; latest heartbeat 2026-10-10T22:19Z",
+      "outreachLegalBasis": "US B2B first commercial pitch under CAN-SPAM: accurate headers/subject, advertisement, actual postal address, easy reply opt-out and enforced global suppression; prior consent not asserted.",
+      "countryRulesSource": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "countryRulesCheckedAt": "2026-10-10T22:26:08.736Z",
+      "organisation": "G&S Restaurant Equipment",
+      "domain": "gsrestaurantequipment.com",
+      "domains": [
+        "gsrestaurantequipment.com",
+        "gsequipmentinc.com"
+      ],
+      "source": "https://gsequipmentinc.com/news/2026/7/we-re-moving-come-see-the-new-g-s.html",
+      "sourceDate": "2026-07-06",
+      "signal": "Announced September 14 showroom opening and expanded demonstration space; current official home/contact page lists 4680 Blanding Boulevard, Jacksonville FL.",
+      "observedFact": "Official announcement describes a September 14 new-showroom opening with expanded cooking demonstration areas.",
+      "problemHypothesis": "Staff may value managing showroom, service and news information pages; no dissatisfaction or buying intent established.",
+      "needEvidence": [
+        {
+          "url": "https://gsequipmentinc.com/news/2026/7/we-re-moving-come-see-the-new-g-s.html",
+          "sourceDate": "2026-07-06",
+          "checkedAt": "2026-10-10T22:26:08.736Z",
+          "observation": "Announced showroom opening and expanded cooking-demonstration space."
+        },
+        {
+          "url": "https://gsequipmentinc.com/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-10T22:26:08.736Z",
+          "observation": "Home page lists September 14 2026 opening and current Jacksonville address."
+        }
+      ],
+      "buyerContact": "sales@gsrestaurantequipment.com",
+      "buyerContactEvidence": [
+        {
+          "url": "https://gsequipmentinc.com/contact-us/",
+          "checkedAt": "2026-10-10T22:26:08.736Z",
+          "observation": "Official sales contact and Jacksonville Florida address published; general routing inbox, not a verified owner/marketing decision maker."
+        }
+      ],
+      "buyerRoleSought": "Owner or person responsible for public website content; not named on inspected official pages",
+      "regionalPresence": "Jacksonville, Florida",
+      "localBusinessHours": "Official contact: Monday-Friday 08:30-17:00 local; current send is outside listed opening hours; asynchronous first email, no meeting assumed.",
+      "currentProvider": "Beedash, verified website footer; CRM provider unknown",
+      "capabilityFit": "Bounded public information-page editing, draft, preview and publication; membership optional.",
+      "unsupportedRequirements": [
+        "Existing ecommerce/catalogue/checkout functionality not included in proposed evaluation",
+        "No migration or external provider/CRM integration promised"
+      ],
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "scoreMaximum": 12,
+      "scoreMeaning": "Research priority, not purchase probability",
+      "sendEligible": false,
+      "outreachDecision": "qualified_held_sender_approval",
+      "stage": "ready",
+      "holdReasons": [],
+      "history": [
+        {
+          "at": "2026-10-10T22:26:08.736Z",
+          "event": "Official local identity, published contact and showroom/content facts verified; unknown buying intent retained. Existing website vendor is acknowledged; CMS scope excludes commerce."
+        },
+        {
+          "at": "2026-10-10T22:28:24.350Z",
+          "event": "Gmail send blocked by approval policy; candidate absent in live Sent, no confirmed message or external send"
+        }
+      ],
+      "qualificationEligible": true,
+      "senderHold": [
+        "Sender approval required but this session approval policy is never"
+      ]
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "sourceCheckedAt": "2026-10-11T03:27:28.339Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "Five-hour dual-market first-pitch campaign; heartbeat 2026-10-11T03:24:05Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-18",
+      "reviewDue": "2026-10-18",
+      "stage": "research_only",
+      "pitchVersion": "website-cms-v2-expansion-cohort",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Required video demonstrates wider membership platform. Dedicated CMS/portal videos and public product page remain outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "capabilityFit": "Bounded public office/showroom, service and news pages with staff draft/preview/publication",
+      "unsupportedRequirements": [
+        "No booking, ecommerce, custom forms or third-party CRM integration",
+        "No Arabic localisation, regional hosting or automated migration promised"
+      ],
+      "market": "United States",
+      "country": "United States",
+      "segment": "architecture_and_engineering_firms",
+      "organisation": "APD Engineering & Architecture",
+      "domain": "apd.com",
+      "domains": [
+        "apd.com"
+      ],
+      "source": "https://www.apd.com/apd-pulse-network-may-edition/",
+      "sourceDate": "2026-05-11",
+      "observedFact": "Dated official newsletter reports relocating to 290 Woodcliff Drive in Fairport NY and sharing project/news updates.",
+      "signal": "Office expansion/change signal from May 2026; no active CMS buying request established.",
+      "problemHypothesis": "Staff may value maintaining office/service/news information pages; current content system quality, dissatisfaction and buying intent unknown.",
+      "needEvidence": [
+        {
+          "url": "https://www.apd.com/apd-pulse-network-may-edition/",
+          "sourceDate": "2026-05-11",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Official dated office-relocation and news-content fact."
+        }
+      ],
+      "buyerRole": "Website/content owner or marketing/operations role; unverified",
+      "buyerContact": null,
+      "buyerContactEvidence": [
+        {
+          "url": "https://www.apd.com/contact/",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Official Fairport address/telephone and consultation form; no email address published in inspected text. Example johnsmith@gmail.com is an input placeholder and must not be used."
+        }
+      ],
+      "leadershipEvidence": [
+        {
+          "url": "https://www.apd.com/apd-pulse-network-may-edition/",
+          "sourceDate": "2026-05-11",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Dan Sargent listed as CEO & President; his responsibility for CMS buying and business email are unverified."
+        }
+      ],
+      "existingSystemEvidence": [],
+      "currentProvider": "unknown",
+      "outreachDecision": "hold_no_verified_published_email_and_sender_approval",
+      "holdReasons": [
+        "No relevant published email verified; contact forms/calls are not authorised",
+        "Existing sender approval block remains",
+        "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+      ],
+      "outreachLegalBasis": "Not assessed for a specific email recipient because none is verified; no send planned.",
+      "countryRulesCheckedAt": null,
+      "nextAction": "Verify an officially published responsible business email or actual founder introduction when due; retain general contact channel limits; no guessing or form submission",
+      "history": [
+        {
+          "at": "2026-10-11T03:27:28.339Z",
+          "event": "Fresh US architecture/CMS cohort researched from official dated newsletter and contact page; no buying intent or email invented."
+        },
+        {
+          "at": "2026-10-11T03:28:45.344Z",
+          "event": "Gmail duplicate check unavailable; research-only hold retained, no sending attempted."
+        }
+      ],
+      "liveDuplicateCheckComplete": false
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-11T08:28:22.493Z",
+      "sourceCheckedAt": "2026-10-11T08:28:22.493Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "User-authorised five-hour dual-market campaign; heartbeat 2026-10-11T08:20:39.795Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-18",
+      "reviewDue": "2026-10-18",
+      "stage": "research_only",
+      "pitchVersion": "website-cms-v2-showroom-content",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Required video introduces wider membership platform. Dedicated CMS/portal demonstrations and public product page remain outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "capabilityFit": "Bounded showroom/service/news information pages with staff draft, preview and publishing; no replacement of transactional functions.",
+      "unsupportedRequirements": [
+        "Ecommerce/checkout, booking, arbitrary forms and external CRM integrations unverified and excluded from this evaluation",
+        "No automated migration, Arabic localisation or regional hosting promised"
+      ],
+      "liveDuplicateCheckComplete": false,
+      "currentProvider": "Unknown; no dissatisfaction or vacant provider assumed",
+      "market": "United States",
+      "country": "United States",
+      "segment": "restaurant_equipment_showrooms",
+      "organisation": "Atlas Restaurant Equipment",
+      "domain": "atlasrest.com",
+      "domains": [
+        "atlasrest.com"
+      ],
+      "source": "https://www.atlasrest.com/resources/news/new-showroom-concord-ma/",
+      "sourceDate": "2026-06-11",
+      "observedFact": "Official June announcement describes relocation to a 10,000-square-foot showroom/test-kitchen/office/warehouse in Concord, Massachusetts.",
+      "signal": "Dated showroom relocation; current content workflow may fit CMS evaluation, buying intent unknown.",
+      "problemHypothesis": "Staff may benefit from maintaining showroom, service and news information pages; not a confirmed buyer problem.",
+      "needEvidence": [
+        {
+          "url": "https://www.atlasrest.com/resources/news/new-showroom-concord-ma/",
+          "sourceDate": "2026-06-11",
+          "checkedAt": "2026-10-11T08:28:22.493Z",
+          "verification": "Official article/search content inspected before transport failure",
+          "observation": "Concord showroom and test-kitchen relocation announcement."
+        }
+      ],
+      "buyerRole": "Owner Emre Yetistirici named in official announcement; responsibility for CMS purchasing unconfirmed",
+      "buyerContact": null,
+      "buyerContactEvidence": [],
+      "outreachDecision": "hold_contact_verification_and_gmail_checks",
+      "holdReasons": [
+        "Published relevant email not verified; official contact fetch failed; do not guess",
+        "Existing Gmail send-approval restriction; no configuration change",
+        "Completion reply checks failed after three bounded transport attempts",
+        "New-candidate live Gmail duplicate checks incomplete"
+      ],
+      "outreachLegalBasis": "US commercial-email footer prepared; recipient identity/contact and complete pre-send checks still required. No permission assumed.",
+      "countryRulesCheckedAt": null,
+      "nextAction": "When due or new evidence arrives, verify published owner/content/operations business contact and current official pages; repeat complete reply/Sent/cap checks in an approval-enabled session.",
+      "history": [
+        {
+          "at": "2026-10-11T08:28:22.493Z",
+          "event": "Fresh US showroom/CMS cohort; owner and expansion signal recorded without inferring buyer dissatisfaction; contact verification held due web transport failure."
+        }
+      ],
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "manifestCount": 4,
+        "priorConfirmedIds": 55,
+        "matches": []
+      }
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "sourceCheckedAt": "2026-10-12T06:33:49.591Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "User-authorised dual-market first pitches; heartbeat 2026-10-12T06:28:19.133Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-19",
+      "reviewDue": "2026-10-19",
+      "pitchVersion": "website-cms-v2-consultancy-expansion",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction only; dedicated CMS/portal demos and truthful public product page outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "scoreMaximum": 12,
+      "capabilityFit": "Staff-managed public office/service/project-information pages with draft, preview and publication.",
+      "unsupportedRequirements": [
+        "Engineering/project-delivery systems, CAD/document workflows, custom enquiry forms, booking and external CRM integrations outside evaluated scope",
+        "Arabic/local hosting, automated migration, payments and production acceptance not promised"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "buyerContactPurpose": "General project/business enquiries; responsible CMS buyer access unconfirmed",
+      "countryRulesCheckedAt": "2026-10-12T06:33:49.591Z",
+      "market": "United States",
+      "country": "United States",
+      "segment": "engineering_consultancy_office_expansion",
+      "organisation": "REGA Engineering Group",
+      "domain": "regaeng.com",
+      "domains": [
+        "regaeng.com"
+      ],
+      "stage": "held_sender_approval",
+      "source": "https://www.regaeng.com/about",
+      "sourceDate": "2026 (year only; exact opening/publication date unverified)",
+      "observedFact": "Official history records an Omaha office opened in 2026; official page lists info@regaeng.com for Lincoln, Omaha and Houston.",
+      "signal": "2026 Omaha office expansion; no website dissatisfaction or open procurement claimed.",
+      "problemHypothesis": "A bounded office/service/project-information CMS evaluation could fit current public-content workflow; not a confirmed buyer need.",
+      "needEvidence": [
+        {
+          "url": "https://www.regaeng.com/about",
+          "sourceDate": "2026 (year only)",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "Official 2026 Omaha expansion entry and office/service information."
+        }
+      ],
+      "buyerRole": "President Nathaniel Burnett is identified in official company history; CMS ownership unconfirmed. General inbox as routing channel.",
+      "buyerContact": "info@regaeng.com",
+      "buyerContactEvidence": [
+        {
+          "url": "https://www.regaeng.com/about",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "General published business inbox repeated for three US offices."
+        }
+      ],
+      "currentProvider": "Official footer credits True North Technologies as website developer; current contract/provider scope unverified",
+      "providerEvidence": [
+        {
+          "url": "https://www.regaeng.com/about",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "Website developer credit links www.go-tnt.com. Existing provider is not itself a CMS-offer exclusion; no integration/replacement readiness assumed."
+        }
+      ],
+      "outreachDecision": "held_sender_approval",
+      "holdReasons": [
+        "Previously observed Gmail send-approval restriction persists; approval policy never and no authorised configuration change"
+      ],
+      "outreachLegalBasis": "US commercial-email first-pitch route evaluated against current FTC guide: accurate From/Reply-To/subject, advertisement, actual user-confirmed postal address and reply opt-out. Recipient consent not inferred.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "Commercial-email obligations include B2B messages and truthful headers/subject, ad identification, valid postal address and clear opt-out."
+        }
+      ],
+      "nextAction": "When session send approvals are enabled, recheck complete live replies, Sent, suppression, caps and current recipient facts before any send. Do not retry/bypass the known restriction.",
+      "history": [
+        {
+          "at": "2026-10-12T06:33:49.591Z",
+          "event": "Fresh US engineering-consultancy/CMS cohort researched; published general inbox and existing website developer recorded; no guessed buyer need."
+        }
+      ],
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "manifestCount": 4,
+        "confirmedHistory": 55,
+        "matches": []
+      },
+      "preSendChecks": {
+        "replyChecksComplete": true,
+        "liveSentAndDuplicateChecksComplete": true,
+        "at": "2026-10-12T06:32:12.757Z",
+        "sendPermissionAvailable": false
+      }
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "sourceCheckedAt": "2026-10-12T11:29:32.815Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "Five-hour dual-market first pitches authorised by user; heartbeat 2026-10-12T11:24:25.827Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-19",
+      "reviewDue": "2026-10-19",
+      "pitchVersion": "website-cms-v2-public-information",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Required membership-platform introduction is not a dedicated CMS/portal demo; dedicated demos and public product page outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "scoreMaximum": 12,
+      "capabilityFit": "Bounded public information pages with staff draft, preview and publication.",
+      "unsupportedRequirements": [
+        "Inventory, checkout, financing, booking, arbitrary enquiries/document workflows and external CRM integration excluded",
+        "No automated migration, Arabic localisation, local hosting or production acceptance promised"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "countryRulesCheckedAt": "2026-10-12T11:29:32.815Z",
+      "currentProvider": "Footer credits Hudson Valley Web Girl for website design/maintenance and WordPress; CRM unknown",
+      "market": "United States",
+      "country": "United States",
+      "segment": "fitness_equipment_showrooms",
+      "organisation": "Fitness Showrooms",
+      "domain": "fitnessshowrooms.com",
+      "domains": [
+        "fitnessshowrooms.com",
+        "fitshowrooms.com"
+      ],
+      "stage": "held_sender_approval",
+      "source": "https://fitnessshowrooms.com/new-york-showrooms/",
+      "sourceDate": "2026 plan year; page publication date unknown",
+      "observedFact": "Official New York showroom page lists a planned Huntington storefront for 2026 and current location/hours information.",
+      "signal": "Year-specific physical storefront plan; completion, website project and buyer decision window unknown.",
+      "problemHypothesis": "A focused evaluation of staff-managed showroom/service information may be relevant; not an established website requirement.",
+      "needEvidence": [
+        {
+          "url": "https://fitnessshowrooms.com/new-york-showrooms/",
+          "sourceDate": "2026 plan year",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Huntington storefront plan and public showroom information."
+        }
+      ],
+      "buyerRole": "Website/marketing/content owner, unverified; published general showroom inbox can route enquiry",
+      "buyerContact": "info@fitshowrooms.com",
+      "buyerContactEvidence": [
+        {
+          "url": "https://fitnessshowrooms.com/new-york-showrooms/",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Public showroom team email repeated across New York locations; responsible purchasing role unconfirmed."
+        }
+      ],
+      "leadershipEvidence": [
+        {
+          "url": "https://fitnessshowrooms.com/new-york-showrooms/",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Historical 2017 showroom narrative calls Fabio Ravasi president/owner; not treated as verified current CMS decision-maker."
+        },
+        {
+          "url": "https://fitnessshowrooms.com/meet-the-team/",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Current page describes leadership/manager functions without naming a verified CMS buyer."
+        }
+      ],
+      "localContactHours": "Huntington Monday-Friday 10am-9pm, Saturday 10am-6pm, Sunday 11am-5pm; local New York",
+      "providerEvidence": [
+        {
+          "url": "https://fitnessshowrooms.com/meet-the-team/",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Existing website provider/publishing system observed; informational for separate scoped CMS evaluation, no dissatisfaction or vacant provider inferred."
+        }
+      ],
+      "outreachDecision": "held_sender_approval",
+      "holdReasons": [
+        "Existing Gmail send-approval restriction persists; no configuration change, no send attempted"
+      ],
+      "outreachLegalBasis": "US commercial-email route assessed using current FTC guide; prepared truthful headers/subject, advertisement, user-confirmed actual postal address and reply-based opt-out. No recipient consent inferred.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Current official commercial-email guidance applies to B2B messages and states identification/postal/opt-out obligations."
+        }
+      ],
+      "nextAction": "Once sending approval is available, recheck current contact/fact, complete live replies/Sent, suppressions and caps before any first pitch.",
+      "history": [
+        {
+          "at": "2026-10-12T11:29:32.815Z",
+          "event": "Fresh equipment-showroom/CMS research; storefront plan remains a plan, existing maintenance provider retained, buyer need unknown."
+        }
+      ],
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "manifestCount": 4,
+        "confirmedHistory": 55,
+        "matches": []
+      },
+      "preSendChecks": {
+        "replyChecksComplete": true,
+        "liveSentAndDuplicateChecksComplete": true,
+        "at": "2026-10-12T11:28:05.459Z",
+        "sendPermissionAvailable": false
+      }
     }
   ],
   "limitations": "Initial direct HTTPS reads timed out. Official pages for FPA, ACRL/NY and CPA were retrieved through web browsing; IWPA and DHA lack a complete current system check. Unknowns are held, not labelled no CRM.",
@@ -280,6 +796,32 @@
       ],
       "eligibleCount": 0,
       "sources": "docs/market/us/outreach/2026-10-09/hourly/12-utc/research.json"
+    },
+    {
+      "runId": "dual-20261011T082039Z",
+      "at": "2026-10-11T08:29:48.090493Z",
+      "candidate": "Atlas Restaurant Equipment",
+      "offerType": "website_cms",
+      "eligible": false,
+      "reason": "hold_contact_verification_and_gmail_checks",
+      "fullContactFetchComplete": false
+    },
+    {
+      "runId": "dual-20261012T062819Z",
+      "at": "2026-10-12T06:35:47.210199Z",
+      "candidate": "REGA Engineering Group",
+      "offerType": "website_cms",
+      "sendEligible": false,
+      "decision": "held_sender_approval"
+    },
+    {
+      "runId": "dual-20261012T112425Z",
+      "at": "2026-10-12T11:30:21.464997Z",
+      "candidate": "Fitness Showrooms",
+      "offerType": "website_cms",
+      "sendEligible": false,
+      "decision": "held_sender_approval"
     }
-  ]
+  ],
+  "offerPolicy": "docs/market/middle-east/PRODUCT-TARGETING.md"
 }

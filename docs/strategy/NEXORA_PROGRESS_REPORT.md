@@ -1,6 +1,6 @@
 # NEXORA — PROJECT PROGRESS REPORT
 
-**Latest assessment:** 10 October 2026, 7:39 am catch-up review (Europe/London)<br>
+**Latest assessment:** 12 October 2026, 9:02 pm daily review (Europe/London)<br>
 **Reporting baseline:** Revised delivery priority: a tangible, working CRM, association website and member portal.  
 **Daily update:** 9:00 pm Europe/London; scheduled in the current Codex task.  
 **Companion documents:** [Master plan](NEXORA_PRODUCT_ARCHITECTURE_MASTER_PLAN.md) · [Execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md)
@@ -71,7 +71,7 @@ The entries below summarize recorded delivery evidence. Current CRM and integrat
 | Integrated CRM/Portal/CMS browser journeys | All 5 passed, 24 September | CRM import/search/context/files, 3 portal journeys and CMS publishing against one isolated production frontend. No public deployment. |
 | TypeScript/targeted lint | Full TypeScript and changed CRM/test lint passed, 24 September | Prior CMS/proxy/routes checks also passed; no blanket full-repository lint claim. |
 | Production frontend build | Passed on 24 September | Isolated `next build --webpack` and browser verification against `next start`. API uses Development local identity; production identity/deployment remain unverified. |
-| Git integration | Latest commit `f82db09`, 2 October; subsequent CRM and workflow catalogue changes remain uncommitted | Passing delivery evidence does not verify the entire evolving checkout. |
+| Git integration | Latest commit `539a446`, 10 October; subsequent Portal/Website work is uncommitted | The 10 October integration checkpoint is committed; newer work has scoped evidence rather than a fresh whole-system regression. |
 
 **Release position:** Working local product slices; full MVP acceptance and commercial readiness are not complete. Production staff identity remains disabled. The confirmed personal/company one-active-membership rule now has application checks and passing SQL concurrency coverage; live provider and antivirus operations remain release dependencies. These concerns are tracked independently from functional percentages.
 
@@ -99,7 +99,21 @@ This is a proposed next-work order, not authorization to launch a production ser
 
 ## 7. Daily progress log
 
+### 12 October 2026 — Website design controls and Portal theme
+
+**Implemented:** The [website design delivery](PUBLIC-WEBSITE-DESIGN-2026-10-12.md) records structured feature-grid/showcase/gallery/FAQ sections, a studio renderer, independently drafted/published global design, per-section layout/motion controls and cyan/violet styling. The [Portal delivery](PORTAL-NEON-DESIGN-2026-10-12.md) adds configurable classic/neon appearance, copying published website colours into a Portal draft, restricted public sign-in branding, reduced-motion/print handling and a persistent shared Portal layout to remove navigation flashes. Website and Portal publication remain independent.
+
+**Recorded verification:** Website notes record 13 distinct API/migration checks across scoped runs, frontend typecheck/lint/build, a production browser design/publishing journey and anonymous desktop/mobile checks across nine pages, ten links, Portal navigation and sitemap. Portal notes record four API checks, frontend checks/build and a production configuration journey covering persistence, publication, private-page boundaries, mobile overflow and reduced motion. The notes record local NexoraDev website migration and theme publication; this reporting run performed neither. Screenshots supplement these checks but do not establish full application regression. The 7 October broad backend baseline remains the latest full-suite evidence reviewed.
+
+**Navigation follow-up evidence:** Portal delivery notes additionally record all four production browser journeys passing after the shared-layout repair, including delayed navigation/sign-out, personal approval/rejection, organisation receipts and live access revocation. This is newer Portal-specific evidence, not completion of the separate retained ten-member review or a new full CRM/Portal/CMS run.
+
+**Estimates and repository:** CRM **95%**, Portal **85%**, Website/CMS **90%**, unchanged. These are meaningful presentation/configuration improvements, recorded separately without silently expanding the original bounded scope or marking remaining production requirements complete. Latest commit remains `539a446`; subsequent Portal/Website changes are uncommitted. The earlier clean-tree statement describes the 10 October integration checkpoint only.
+
+**Remaining and next actions:** Review the new theme/layout changes for integration and preserve their scoped verification boundaries; finish retained Portal acceptance in its owning task and continue agreed field/import/settlement requirements. Production identity, live provider/scanning, deployment/restore, migration reconciliation and the recorded development-dependency advisory review remain open. No code, tests, services, databases, content publication or Git history were changed by this reporting run; only this report was updated.
+
 ### 10 October 2026 — Morning catch-up
+
+**8:57 pm same-day integration update:** Commit `539a446` (`Integrate CRM, membership, workflow and interface updates`, 6:36 pm Europe/London) now incorporates the previously pending work. Git status was clean before this report refresh. This supersedes the morning's uncommitted-baseline observation and closes that repository-integration action for the committed scope. No newer completed test evidence was found; committing the work does not rerun or extend the 7 October API/browser results. CRM **95%**, Portal **85%**, Website/CMS **90%** remain unchanged. Retained Portal acceptance, remaining field/import/settlement scope, production services and operational acceptance remain open. Next: assess the committed baseline against those remaining acceptance requirements and retain the existing test qualifications. This run edited only the report and did not test, migrate, deploy, commit or push.
 
 **Product position:** CRM **95%**, Portal **85%**, Website/CMS **90%**, unchanged. Reviewed Git history/status, delivery documents and available artifact timestamps. Latest commit remains `f82db09`; subsequent implementation and market material remain uncommitted. No newer completed application regression or verified product delivery was found beyond the 7 October baseline. The later shared-API log timestamp is runtime activity, not acceptance evidence. This is a morning catch-up, not a completed day-end review; no missing-date delivery entries are invented.
 

@@ -39,10 +39,11 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
 
     private readonly Nexora.BuildingBlocks.Documents.IDocumentScanner? _scanner;
     private readonly IWorkflowTransport? _transport;
+    private readonly bool _sharedCrmIdentity;
     public IdentityApiFactory() : this(null) { }
-    internal IdentityApiFactory(Nexora.BuildingBlocks.Documents.IDocumentScanner? scanner,IWorkflowTransport? transport=null)
+    internal IdentityApiFactory(Nexora.BuildingBlocks.Documents.IDocumentScanner? scanner,IWorkflowTransport? transport=null, bool sharedCrmIdentity=false)
     {
-        _scanner = scanner;_transport=transport;
+        _scanner = scanner;_transport=transport;_sharedCrmIdentity=sharedCrmIdentity;
         _connection.Open();
         _workflowConnection.Open();
         _contentConnection.Open();
@@ -87,7 +88,7 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
             services.AddDbContext<MembershipDbContext>((sp,options) => options.UseSqlite(_membershipConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<CrmDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<CrmDbContext>>();
-            services.AddDbContext<CrmDbContext>((sp,options) => options.UseSqlite(_crmConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
+            services.AddDbContext<CrmDbContext>((sp,options) => options.UseSqlite(_sharedCrmIdentity ? _connection : _crmConnection).AddInterceptors(sp.GetRequiredService<Nexora.BuildingBlocks.Persistence.WorkflowCaptureInterceptor>()));
             services.RemoveAll<DbContextOptions<NexoraIdentityDbContext>>();
             services.RemoveAll<IDbContextOptionsConfiguration<NexoraIdentityDbContext>>();
             services.AddDbContext<NexoraIdentityDbContext>(options =>
@@ -114,7 +115,8 @@ public sealed class IdentityApiFactory : WebApplicationFactory<Program>
         await scope.ServiceProvider.GetRequiredService<EngagementDbContext>().Database.EnsureCreatedAsync();
         var context = scope.ServiceProvider.GetRequiredService<NexoraIdentityDbContext>();
         using var systemAccess = context.BeginSystemAccess();
-        await context.Database.EnsureCreatedAsync();
+        if (_sharedCrmIdentity) await context.GetService<Microsoft.EntityFrameworkCore.Storage.IRelationalDatabaseCreator>().CreateTablesAsync();
+        else await context.Database.EnsureCreatedAsync();
 
         var primaryTenant = new Tenant { Name = "Northstar Group", Slug = "northstar" };
         var secondaryTenant = new Tenant { Name = "Outside Tenant", Slug = "outside" };

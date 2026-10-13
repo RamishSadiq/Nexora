@@ -1,0 +1,147 @@
+{
+  "runId": "dual-20261012T112425Z",
+  "startedAt": "2026-10-12T11:24:25.827Z",
+  "completedAt": "2026-10-12T11:30:21.464997Z",
+  "localDate": "2026-10-12",
+  "status": "held_sender_approval",
+  "sentCount": 0,
+  "sendToolCalls": 0,
+  "confirmedMessageIds": [],
+  "markets": {
+    "United States": {
+      "status": "held_sender_approval",
+      "freshResearch": "Fitness Showrooms",
+      "holdReasons": [
+        "Existing Gmail send-approval restriction persists; no configuration change, no send attempted"
+      ],
+      "qualification": "docs/market/us/research/2026-10-12/112425Z/qualification.json",
+      "attemptedRecipient": null,
+      "preparedRecipient": "info@fitshowrooms.com",
+      "messageIds": []
+    },
+    "Middle East": {
+      "status": "research_only",
+      "freshResearch": "MOMA International",
+      "holdReasons": [
+        "Named UAE recipient/channel lawful route and consent not established",
+        "Existing Gmail send-approval restriction persists"
+      ],
+      "qualification": "docs/market/middle-east/research/2026-10-12/112425Z/qualification.json",
+      "attemptedRecipient": null,
+      "preparedRecipient": "r.morales@moma.design",
+      "messageIds": []
+    }
+  },
+  "manifest": null,
+  "drafts": "docs/market/acquisition/runs/2026-10-12/112425Z/held-drafts.json",
+  "report": "docs/market/acquisition/runs/2026-10-12/112425Z/run-report.json",
+  "verification": {
+    "initialReplyComplete": true,
+    "completionReplyComplete": true,
+    "priorExternalIdsVerified": 55,
+    "liveSentCountIncludingSelfTest": 56,
+    "newPositiveReplies": 0,
+    "newDeliveryFailures": 0,
+    "candidateDuplicatesComplete": true
+  },
+  "automationId": "nexora-daily-us-sales-outreach",
+  "timezone": "Europe/London",
+  "localStartedAt": "2026-10-12T12:24:25.827+01:00",
+  "localCompletedAt": "2026-10-12T12:30:21.464997+01:00",
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "sizeBytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+    "matchesState": true
+  },
+  "draftVerification": [
+    {
+      "organisation": "Fitness Showrooms",
+      "recipient": "info@fitshowrooms.com",
+      "MIMEVerified": true,
+      "attachmentHashVerified": true,
+      "bytes": 2665219,
+      "sent": false
+    },
+    {
+      "organisation": "MOMA International",
+      "recipient": null,
+      "MIMEVerified": false,
+      "reason": "Held body only; recipient-specific UAE lawful route unresolved, To deliberately not selected",
+      "sent": false
+    }
+  ],
+  "localGuards": {
+    "manifestCount": 4,
+    "pendingSendingUnknownOutcomes": 0,
+    "senderLockAbsent": true,
+    "activeSendingRun": null,
+    "rollingFiveHourConfirmedSends": 0,
+    "confirmedToday": 0,
+    "perMarketLimit": 1,
+    "totalIntervalLimit": 2,
+    "dailyLimit": 24
+  },
+  "senderBlock": {
+    "reason": "MCP tool call requires approval, but approval policy is never",
+    "alreadyNotified": true,
+    "sendCallRetried": false,
+    "reasonNotRetried": "Known approval policy restriction; no configuration change. Read recovery does not imply send permission."
+  },
+  "weeklyReview": {
+    "performed": false,
+    "lastDate": "2026-10-10",
+    "nextDue": "2026-10-17"
+  },
+  "proofDeliverables": [
+    {
+      "asset": "Dedicated CMS demonstration",
+      "status": "outstanding",
+      "nextAction": "Verify editor draft/preview/publication of three sample pages"
+    },
+    {
+      "asset": "Dedicated supported portal demonstration",
+      "status": "outstanding",
+      "nextAction": "Verify granted private-page/profile access and denial/revocation"
+    },
+    {
+      "asset": "Truthful public product page",
+      "status": "outstanding_not_published",
+      "nextAction": "Prepare accurate module outcomes and real founder/contact details; no deployment enabled"
+    }
+  ],
+  "partnerResearch": {
+    "organisation": "Hudson Valley Web Girl",
+    "domain": "hudsonvalleywebgirl.com",
+    "market": "United States",
+    "country": "United States",
+    "sector": "Website and graphic design",
+    "source": "https://hudsonvalleywebgirl.com/",
+    "sourceDate": null,
+    "checkedAt": "2026-10-12T11:29:32.815Z",
+    "observedFact": "Official page describes custom website/graphic design; Fitness Showrooms footer credits this provider for design and maintenance.",
+    "complementaryOffer": "Design/content work could complement bounded Nexora CMS or supported information portals; may overlap existing services and suitability/willingness unknown.",
+    "relationshipSource": null,
+    "relationshipStatus": "no_known_founder_relationship",
+    "willingness": null,
+    "buyerIntroduction": null,
+    "publicContact": null,
+    "stage": "research_only",
+    "acquisitionChannel": "partner_research_only",
+    "sendAllowed": false,
+    "countsAsSalesOpportunity": false,
+    "owner": "Ramish Qureshi",
+    "nextAction": "Founder may supply an actual existing relationship/intro. Only prepare a specific request once that relationship and willingness are established; no automated partner messages.",
+    "nextActionDue": "2026-10-19"
+  },
+  "referralPreparation": {
+    "template": "docs/market/acquisition/INTRODUCTION-REQUEST.md",
+    "actualFounderRelationships": "None provided/verified",
+    "specificIntroductionPrepared": false,
+    "messagesSent": 0
+  },
+  "nextAction": "Enable Gmail send approval in the authorised session. Before any send repeat full replies, outcomes, suppression, duplicate and cap checks; ME also needs verified published recipient and specific lawful channel route.",
+  "notification": "Initial and completion Gmail checks complete; no new positive response. Sender restriction unchanged; no notification needed.",
+  "changes": "Market documents/state/pipeline/local drafts only; no application or sibling edits, external messages, deployment, purchases, commit or push."
+}

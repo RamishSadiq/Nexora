@@ -62,6 +62,7 @@ internal static partial class PortalEndpoints
             return Results.Ok(new CsrfResponse(csrf.GetAndStoreTokens(http).RequestToken!));
         });
         portal.MapPost("/login", Login).RequireRateLimiting("identity-login");
+        MapRegistration(portal);
         var own = portal.MapGroup("").RequireAuthorization(Scheme);
         own.AddEndpointFilter(async (context, next) =>
         {
@@ -81,6 +82,7 @@ internal static partial class PortalEndpoints
             return await next(context);
         });
         MapOrganisations(own);
+        MapOrganisationRequests(own);
         own.MapGet("/configuration", async (IPortalPresentationDirectory directory, CancellationToken ct) => Results.Ok(await directory.ReadAsync(ct)));
         MapEvidence(own);
         own.MapGet("/profile", async (HttpContext http, IMemberProfileDirectory directory, CancellationToken ct) =>
@@ -171,9 +173,12 @@ internal static partial class PortalEndpoints
                 try { await context.HttpContext.RequestServices.GetRequiredService<IAntiforgery>().ValidateRequestAsync(context.HttpContext); }
                 catch (AntiforgeryValidationException) { return Results.BadRequest(); }
             }
-            try { return await next(context); } catch (DbUpdateException) { return Results.Conflict(); }
+            try { return await next(context); }
+            catch (DbUpdateException) { return Results.Conflict(); }
+            catch (System.ComponentModel.DataAnnotations.ValidationException e) { return Results.Problem(statusCode: 400, title: e.Message); }
         });
         MapOrganisationAdministration(grants);
+        MapOrganisationRequestReview(grants);
         grants.MapGet("", async (string? page, NexoraIdentityDbContext db, IMemberProfileDirectory contacts,
             LocalIdentitySettings settings, CancellationToken ct) =>
         {

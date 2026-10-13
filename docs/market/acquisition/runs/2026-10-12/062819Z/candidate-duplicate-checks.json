@@ -1,0 +1,12 @@
+[
+  {
+    "query": "in:anywhere {to:regaeng.com from:regaeng.com}",
+    "emails": [],
+    "complete": true
+  },
+  {
+    "query": "in:anywhere {to:sharpmindsce.com from:sharpmindsce.com}",
+    "emails": [],
+    "complete": true
+  }
+]

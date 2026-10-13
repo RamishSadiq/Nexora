@@ -536,6 +536,47 @@ namespace Nexora.Modules.Identity.Infrastructure.Persistence.Migrations
                     b.ToTable("PortalOrganisationGrantsDataAudit", "identity");
                 });
 
+            modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.DataAudit<Nexora.Modules.Identity.Domain.PortalOrganisationRequest>", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ChangedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ChangesJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EntityId")
+                        .IsRequired()
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("Operation")
+                        .IsRequired()
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)");
+
+                    b.Property<Guid?>("OtherParentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ParentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "EntityId", "ChangedAtUtc");
+
+                    b.HasIndex("TenantId", "ParentId", "ChangedAtUtc");
+
+                    b.ToTable("PortalOrganisationRequestsDataAudit", "identity");
+                });
+
             modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.DataAudit<Nexora.Modules.Identity.Domain.RolePermission>", b =>
                 {
                     b.Property<Guid>("Id")
@@ -937,6 +978,78 @@ namespace Nexora.Modules.Identity.Infrastructure.Persistence.Migrations
                     b.ToTable("PortalOrganisationGrants", "identity");
                 });
 
+            modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalOrganisationRequest", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("AccountId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<bool>("CanSubmitApplications")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DecidedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("DecidedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DecisionMessage")
+                        .IsRequired()
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
+
+                    b.Property<string>("JobTitle")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
+
+                    b.Property<string>("NormalizedName")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<string>("OrganisationName")
+                        .IsRequired()
+                        .HasMaxLength(160)
+                        .HasColumnType("nvarchar(160)");
+
+                    b.Property<Guid>("PortalAccessId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "PortalAccessId", "NormalizedName")
+                        .IsUnique()
+                        .HasFilter("[Status] = 'pending'");
+
+                    b.HasIndex("TenantId", "Status", "CreatedAtUtc");
+
+                    b.ToTable("PortalOrganisationRequests", "identity");
+                });
+
             modelBuilder.Entity("Nexora.Modules.Identity.Domain.RolePermission", b =>
                 {
                     b.Property<Guid>("RoleId")
@@ -1113,6 +1226,16 @@ namespace Nexora.Modules.Identity.Infrastructure.Persistence.Migrations
                 });
 
             modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalOrganisationGrant", b =>
+                {
+                    b.HasOne("Nexora.Modules.Identity.Domain.PortalAccess", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "PortalAccessId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Identity.Domain.PortalOrganisationRequest", b =>
                 {
                     b.HasOne("Nexora.Modules.Identity.Domain.PortalAccess", null)
                         .WithMany()

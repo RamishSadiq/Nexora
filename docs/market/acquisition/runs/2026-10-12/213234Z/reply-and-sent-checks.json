@@ -1,0 +1,2405 @@
+{
+  "complete": true,
+  "at": "2026-10-12T21:33:45.509Z",
+  "overlapAfter": "2026/10/11",
+  "searches": [
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:bergengineering.com.au from:regaeng.com from:rawlinsons.co.nz from:newfields.com from:arabiandream.com}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:newfieldscanada.ca}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent Nexora",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:Undeliverable subject:\"Delivery failure\"}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:sent Nexora",
+      "complete": true,
+      "count": 60,
+      "ids": [
+        "1a13062fb2f2ffa6",
+        "1a13062917b76b72",
+        "1a130622ea0350f7",
+        "1a1306111691b931",
+        "1a126cdb46a0f8e5",
+        "1a126cd3439e26db",
+        "1a126cc99bcdbf2d",
+        "1a120800ff0e30ec",
+        "1a11f79c15f23dcf",
+        "1a11f7961e491a65",
+        "1a11f79086a34070",
+        "1a11f78af1ffedf9",
+        "1a11f7848a393b9b",
+        "1a11f77ea8a74a8d",
+        "1a11f778a20ccaad",
+        "1a11f772a971f528",
+        "1a11f76d0e3fea55",
+        "1a11f7678e41f57c",
+        "1a11c212432fee89",
+        "1a11c20c97b3046e",
+        "1a11c203d2286c33",
+        "1a11c1fe67945c8d",
+        "1a11c1f85aba49a0",
+        "1a11c1f2d4b368df",
+        "1a11c1ed082e39a4",
+        "1a11c1e794b80f6a",
+        "1a11c1e1f2f1e799",
+        "1a11c1c90d01fac1",
+        "1a11c1c3b2bf39f8",
+        "1a11c1bb06754473",
+        "1a11c1b58b9c985a",
+        "1a11c1ac175b0386",
+        "1a11c1a6ad5de964",
+        "1a11c19f0bb94c08",
+        "1a11c198ed3fea2e",
+        "1a11c181ca8691a6",
+        "1a11c17bb52abde3",
+        "1a11c17634387954",
+        "1a11c17068612088",
+        "1a11c16ad8942eeb",
+        "1a11c16528f62b29",
+        "1a11c15f48fbec90",
+        "1a11c15996661aa6",
+        "1a11c153e30859e2",
+        "1a11c14e24744bb3",
+        "1a11c14836da419f",
+        "1a11c141a7e55e69",
+        "1a11c1181b725d3a",
+        "1a11bed87d62d77f",
+        "1a11becb63c3868a",
+        "1a11bebbfc73d6fe",
+        "1a11beb04274d92a",
+        "1a11bea81abaec38",
+        "1a11be9e7b0beb9b",
+        "1a11be92ff3cd6f9",
+        "1a11be8a50e5deab",
+        "1a11be815953d93d",
+        "1a11be73bb6e873b",
+        "1a11bdf55d8130a2",
+        "1a11bc874d72d032"
+      ]
+    },
+    {
+      "query": "in:sent filename:nexora-product-demo-male.mp4",
+      "complete": true,
+      "count": 60,
+      "ids": [
+        "1a13062fb2f2ffa6",
+        "1a13062917b76b72",
+        "1a130622ea0350f7",
+        "1a1306111691b931",
+        "1a126cdb46a0f8e5",
+        "1a126cd3439e26db",
+        "1a126cc99bcdbf2d",
+        "1a120800ff0e30ec",
+        "1a11f79c15f23dcf",
+        "1a11f7961e491a65",
+        "1a11f79086a34070",
+        "1a11f78af1ffedf9",
+        "1a11f7848a393b9b",
+        "1a11f77ea8a74a8d",
+        "1a11f778a20ccaad",
+        "1a11f772a971f528",
+        "1a11f76d0e3fea55",
+        "1a11f7678e41f57c",
+        "1a11c212432fee89",
+        "1a11c20c97b3046e",
+        "1a11c203d2286c33",
+        "1a11c1fe67945c8d",
+        "1a11c1f85aba49a0",
+        "1a11c1f2d4b368df",
+        "1a11c1ed082e39a4",
+        "1a11c1e794b80f6a",
+        "1a11c1e1f2f1e799",
+        "1a11c1c90d01fac1",
+        "1a11c1c3b2bf39f8",
+        "1a11c1bb06754473",
+        "1a11c1b58b9c985a",
+        "1a11c1ac175b0386",
+        "1a11c1a6ad5de964",
+        "1a11c19f0bb94c08",
+        "1a11c198ed3fea2e",
+        "1a11c181ca8691a6",
+        "1a11c17bb52abde3",
+        "1a11c17634387954",
+        "1a11c17068612088",
+        "1a11c16ad8942eeb",
+        "1a11c16528f62b29",
+        "1a11c15f48fbec90",
+        "1a11c15996661aa6",
+        "1a11c153e30859e2",
+        "1a11c14e24744bb3",
+        "1a11c14836da419f",
+        "1a11c141a7e55e69",
+        "1a11c1181b725d3a",
+        "1a11bed87d62d77f",
+        "1a11becb63c3868a",
+        "1a11bebbfc73d6fe",
+        "1a11beb04274d92a",
+        "1a11bea81abaec38",
+        "1a11be9e7b0beb9b",
+        "1a11be92ff3cd6f9",
+        "1a11be8a50e5deab",
+        "1a11be815953d93d",
+        "1a11be73bb6e873b",
+        "1a11bdf55d8130a2",
+        "1a11bc874d72d032"
+      ]
+    }
+  ],
+  "conversations": [
+    {
+      "id": "1a11bdf55d8130a2",
+      "messageIds": [
+        "1a11bdf55d8130a2"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11bdf55d8130a2",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Membership management and AI access for GTMA"
+            },
+            {
+              "name": "To",
+              "value": "david@gtma.co.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:16:23 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11be73bb6e873b",
+      "messageIds": [
+        "1a11be73bb6e873b"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11be73bb6e873b",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora: a short demo for AFI's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@theafi.co.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:25:00 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11be815953d93d",
+      "messageIds": [
+        "1a11be815953d93d",
+        "1a11bf33395d33a1"
+      ],
+      "inbound": [
+        {
+          "id": "1a11bf33395d33a1",
+          "headers": [
+            {
+              "name": "From",
+              "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+            },
+            {
+              "name": "Subject",
+              "value": "Re: Nexora demo for BAFSA's membership administration"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+            }
+          ],
+          "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n"
+        }
+      ],
+      "sent": [
+        {
+          "id": "1a11be815953d93d",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for BAFSA's membership administration"
+            },
+            {
+              "name": "To",
+              "value": "victoria@bafsa.org.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:25:56 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11be8a50e5deab",
+      "messageIds": [
+        "1a11be8a50e5deab"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11be8a50e5deab",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A short Nexora demo for BPMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "membership@bpma.co.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:26:33 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11be92ff3cd6f9",
+      "messageIds": [
+        "1a11be92ff3cd6f9"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11be92ff3cd6f9",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A short Nexora demo for Commercial Interiors UK's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@commercial-interiorsuk.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:27:08 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11be9e7b0beb9b",
+      "messageIds": [
+        "1a11be9e7b0beb9b"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11be9e7b0beb9b",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A short Nexora demo for British Constructional Steelwork Association's membership team"
+            },
+            {
+              "name": "To",
+              "value": "lorraine.mackinder@bcsa.org.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 07:27:55 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11bea81abaec38",
+      "messageIds": [
+        "1a11bea81abaec38"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11bea81abaec38",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A short Nexora demo for British Coatings Federation's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@bcf.co.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:28:35 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11beb04274d92a",
+      "messageIds": [
+        "1a11beb04274d92a"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11beb04274d92a",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A short Nexora demo for Society of Independent Brewers and Associates's membership team"
+            },
+            {
+              "name": "To",
+              "value": "membership@siba.co.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:29:09 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11bebbfc73d6fe",
+      "messageIds": [
+        "1a11bebbfc73d6fe"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11bebbfc73d6fe",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A short Nexora demo for British Independent Retailers Association's membership team"
+            },
+            {
+              "name": "To",
+              "value": "membership@bira.co.uk"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:29:56 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11becb63c3868a",
+      "messageIds": [
+        "1a11becb63c3868a"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11becb63c3868a",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Introducing Nexora to Trade Association Forum's association network"
+            },
+            {
+              "name": "To",
+              "value": "secretariat@taforum.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:31:00 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11bed87d62d77f",
+      "messageIds": [
+        "1a11bed87d62d77f"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11bed87d62d77f",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Introducing Nexora to British Cleaning Council's association network"
+            },
+            {
+              "name": "To",
+              "value": "info@britishcleaningcouncil.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 07:31:53 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1181b725d3a",
+      "messageIds": [
+        "1a11c1181b725d3a"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1181b725d3a",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for WCMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "amy@wcma.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:11:11 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c141a7e55e69",
+      "messageIds": [
+        "1a11c141a7e55e69"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c141a7e55e69",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for CMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "director@cabinetmakers.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:14:01 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c14836da419f",
+      "messageIds": [
+        "1a11c14836da419f"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c14836da419f",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Graphic Media Alliance's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@graphicmedia.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:14:28 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c14e24744bb3",
+      "messageIds": [
+        "1a11c14e24744bb3"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c14e24744bb3",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for GLGA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@glga.info"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 08:14:53 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c153e30859e2",
+      "messageIds": [
+        "1a11c153e30859e2"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c153e30859e2",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for AICC's membership team"
+            },
+            {
+              "name": "To",
+              "value": "vreyes@aiccbox.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:15:16 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c15996661aa6",
+      "messageIds": [
+        "1a11c15996661aa6"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c15996661aa6",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for NTMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "cmarsico@ntma.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:15:39 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c15f48fbec90",
+      "messageIds": [
+        "1a11c15f48fbec90"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c15f48fbec90",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for PMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "llehman@pma.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:16:03 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c16528f62b29",
+      "messageIds": [
+        "1a11c16528f62b29"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c16528f62b29",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for FMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "membership@fmamfg.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:16:27 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c16ad8942eeb",
+      "messageIds": [
+        "1a11c16ad8942eeb"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c16ad8942eeb",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for AMBA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@amba.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 10:16:50 -0500"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c17068612088",
+      "messageIds": [
+        "1a11c17068612088"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c17068612088",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for MAPP's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@mappinc.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 08:17:13 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c17634387954",
+      "messageIds": [
+        "1a11c17634387954"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c17634387954",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for MTI's membership team"
+            },
+            {
+              "name": "To",
+              "value": "kristen@heattreat.net"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:17:36 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c17bb52abde3",
+      "messageIds": [
+        "1a11c17bb52abde3"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c17bb52abde3",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for NWFA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "anita.howard@nwfa.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 08:17:59 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c181ca8691a6",
+      "messageIds": [
+        "1a11c181ca8691a6"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c181ca8691a6",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for PTDA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "ptda@ptda.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:18:24 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c198ed3fea2e",
+      "messageIds": [
+        "1a11c198ed3fea2e"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c198ed3fea2e",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for FPDA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@fpda.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:19:59 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c19f0bb94c08",
+      "messageIds": [
+        "1a11c19f0bb94c08"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c19f0bb94c08",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for BSA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@bsahome.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:20:24 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1a6ad5de964",
+      "messageIds": [
+        "1a11c1a6ad5de964"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1a6ad5de964",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for MHEDA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "connect@mheda.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:20:55 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1ac175b0386",
+      "messageIds": [
+        "1a11c1ac175b0386"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1ac175b0386",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for ISA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@isapartners.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:21:17 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1b58b9c985a",
+      "messageIds": [
+        "1a11c1b58b9c985a"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1b58b9c985a",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for NFDA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@nfda-fastener.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:21:56 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1bb06754473",
+      "messageIds": [
+        "1a11c1bb06754473"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1bb06754473",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for PMPA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@pmpa.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:22:19 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1c3b2bf39f8",
+      "messageIds": [
+        "1a11c1c3b2bf39f8"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1c3b2bf39f8",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for IAPD's membership team"
+            },
+            {
+              "name": "To",
+              "value": "iapd@iapd.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:22:54 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1c90d01fac1",
+      "messageIds": [
+        "1a11c1c90d01fac1"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1c90d01fac1",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Polyurethane Manufacturers Association's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@pmahome.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 08:23:16 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1e1f2f1e799",
+      "messageIds": [
+        "1a11c1e1f2f1e799"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1e1f2f1e799",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for ACMA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@acmanet.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:24:58 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1e794b80f6a",
+      "messageIds": [
+        "1a11c1e794b80f6a"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1e794b80f6a",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Aluminum Anodizers Council's membership team"
+            },
+            {
+              "name": "To",
+              "value": "mail@anodizing.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 08:25:21 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1ed082e39a4",
+      "messageIds": [
+        "1a11c1ed082e39a4"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1ed082e39a4",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Aluminum Extruders Council's membership team"
+            },
+            {
+              "name": "To",
+              "value": "mail@aec.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 08:25:43 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1f2d4b368df",
+      "messageIds": [
+        "1a11c1f2d4b368df"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1f2d4b368df",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for IPANA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@industrialpackaging.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:26:07 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1f85aba49a0",
+      "messageIds": [
+        "1a11c1f85aba49a0"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1f85aba49a0",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Reusable Packaging Association's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@reusables.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:26:29 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c1fe67945c8d",
+      "messageIds": [
+        "1a11c1fe67945c8d"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c1fe67945c8d",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Paperboard Packaging Council's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@paperbox.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 10:26:54 -0500"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c203d2286c33",
+      "messageIds": [
+        "1a11c203d2286c33"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c203d2286c33",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for TLMI's membership team"
+            },
+            {
+              "name": "To",
+              "value": "office@tlmi.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:27:16 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c20c97b3046e",
+      "messageIds": [
+        "1a11c20c97b3046e"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c20c97b3046e",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for AWFS's membership team"
+            },
+            {
+              "name": "To",
+              "value": "angela@awfs.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 10:27:52 -0500"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11c212432fee89",
+      "messageIds": [
+        "1a11c212432fee89"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11c212432fee89",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for International Door Association's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@doors.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 15:28:16 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f7678e41f57c",
+      "messageIds": [
+        "1a11f7678e41f57c"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f7678e41f57c",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for AFA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "memberservices@americanfenceassociation.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 09:00:20 +0200"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f76d0e3fea55",
+      "messageIds": [
+        "1a11f76d0e3fea55"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f76d0e3fea55",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for NGA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "membership@glass.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 09:00:42 +0200"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f772a971f528",
+      "messageIds": [
+        "1a11f772a971f528"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f772a971f528",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for ASC's membership team"
+            },
+            {
+              "name": "To",
+              "value": "brian.peters@ascouncil.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 09:01:05 +0200"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f778a20ccaad",
+      "messageIds": [
+        "1a11f778a20ccaad"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f778a20ccaad",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for STAFDA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "cusher@stafda.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 09:01:30 +0200"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f77ea8a74a8d",
+      "messageIds": [
+        "1a11f77ea8a74a8d"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f77ea8a74a8d",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for NASF's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@nasf.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 07:01:55 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f7848a393b9b",
+      "messageIds": [
+        "1a11f7848a393b9b"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f7848a393b9b",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Fibre Box Association's membership team"
+            },
+            {
+              "name": "To",
+              "value": "fba@fibrebox.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 07:02:18 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f78af1ffedf9",
+      "messageIds": [
+        "1a11f78af1ffedf9"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f78af1ffedf9",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for SPRI's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@spri.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 09:02:45 +0200"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f79086a34070",
+      "messageIds": [
+        "1a11f79086a34070"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f79086a34070",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for Investment Casting Institute's membership team"
+            },
+            {
+              "name": "To",
+              "value": "info@investmentcasting.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 07:03:07 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f7961e491a65",
+      "messageIds": [
+        "1a11f7961e491a65"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f7961e491a65",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for NADCA's membership team"
+            },
+            {
+              "name": "To",
+              "value": "nadca@diecasting.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 07:03:30 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a11f79c15f23dcf",
+      "messageIds": [
+        "1a11f79c15f23dcf"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a11f79c15f23dcf",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for MPIF's membership team"
+            },
+            {
+              "name": "To",
+              "value": "dschember@mpif.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 09:03:55 +0200"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a120800ff0e30ec",
+      "messageIds": [
+        "1a120800ff0e30ec"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a120800ff0e30ec",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Nexora demo for SMI's membership applications"
+            },
+            {
+              "name": "To",
+              "value": "gary@smihq.org"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Fri, 9 Oct 2026 11:50:25 +0000"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a126cc99bcdbf2d",
+      "messageIds": [
+        "1a126cc99bcdbf2d"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a126cc99bcdbf2d",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Staff-managed website content for AMTC"
+            },
+            {
+              "name": "To",
+              "value": "info@amtc.ae"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 10 Oct 2026 13:11:44 -0400"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a126cd3439e26db",
+      "messageIds": [
+        "1a126cd3439e26db"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a126cd3439e26db",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Staff-managed website content for Ablaq"
+            },
+            {
+              "name": "To",
+              "value": "info@ablaqco.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 10 Oct 2026 13:12:24 -0400"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a126cdb46a0f8e5",
+      "messageIds": [
+        "1a126cdb46a0f8e5"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a126cdb46a0f8e5",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "Staff-managed website content for The Arabian Dream"
+            },
+            {
+              "name": "To",
+              "value": "support@foundster.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Sat, 10 Oct 2026 13:12:57 -0400"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a1306111691b931",
+      "messageIds": [
+        "1a1306111691b931"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a1306111691b931",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A focused website-content demo for Berg Engineering"
+            },
+            {
+              "name": "To",
+              "value": "marketing@bergengineering.com.au"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Mon, 12 Oct 2026 06:50:29 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a130622ea0350f7",
+      "messageIds": [
+        "1a130622ea0350f7"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a130622ea0350f7",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A focused website-content demo for REGA"
+            },
+            {
+              "name": "To",
+              "value": "info@regaeng.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Mon, 12 Oct 2026 09:51:43 -0400"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a13062917b76b72",
+      "messageIds": [
+        "1a13062917b76b72"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a13062917b76b72",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A focused website-content demo for Rawlinsons"
+            },
+            {
+              "name": "To",
+              "value": "info@rawlinsons.co.nz"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Mon, 12 Oct 2026 09:52:08 -0400"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1a13062fb2f2ffa6",
+      "messageIds": [
+        "1a13062fb2f2ffa6"
+      ],
+      "inbound": [],
+      "sent": [
+        {
+          "id": "1a13062fb2f2ffa6",
+          "headers": [
+            {
+              "name": "Subject",
+              "value": "A focused website-content demo for NewFields Canada"
+            },
+            {
+              "name": "To",
+              "value": "CanadaMarketing@newfields.com"
+            },
+            {
+              "name": "From",
+              "value": "ramishqureshi99@gmail.com"
+            },
+            {
+              "name": "Date",
+              "value": "Mon, 12 Oct 2026 06:52:35 -0700"
+            }
+          ],
+          "video": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime": "video/mp4",
+              "size": 1945313
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "actualMessages": [
+    {
+      "id": "1a11bf33395d33a1",
+      "threadId": "1a11be815953d93d",
+      "headers": [
+        {
+          "name": "From",
+          "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Nexora demo for BAFSA's membership administration"
+        },
+        {
+          "name": "Date",
+          "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+        }
+      ],
+      "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n"
+    }
+  ],
+  "positiveCount": 0,
+  "bounceCount": 0
+}

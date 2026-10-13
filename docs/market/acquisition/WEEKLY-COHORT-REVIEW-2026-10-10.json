@@ -1,0 +1,225 @@
+{
+  "reviewDate": "2026-10-10",
+  "reviewedAt": "2026-10-10T22:28:24.350Z",
+  "timezone": "Europe/London",
+  "nextReviewDate": "2026-10-17",
+  "window": {
+    "fromLocalDate": "2026-10-08",
+    "throughLocalDate": "2026-10-10",
+    "cutoffUTC": "2026-10-10T22:28:24.350Z"
+  },
+  "uniqueConfirmedExternalSends": 55,
+  "excludedSelfTests": 1,
+  "confirmedNewSendsThisRun": 0,
+  "byMarket": [
+    {
+      "market": "United Kingdom",
+      "uniqueSends": 11,
+      "qualifiedHumanReplies": 0,
+      "denominator": 11
+    },
+    {
+      "market": "United States",
+      "uniqueSends": 41,
+      "qualifiedHumanReplies": 0,
+      "denominator": 41
+    },
+    {
+      "market": "Middle East",
+      "uniqueSends": 3,
+      "qualifiedHumanReplies": 0,
+      "denominator": 3
+    }
+  ],
+  "qualifiedHumanReplies": {
+    "numerator": 0,
+    "denominator": 55,
+    "evidence": "All actual reply bodies and 55 associated conversations read; overlapping complete live searches at completion."
+  },
+  "otherResponses": {
+    "humanDeclines": 1,
+    "retirementAutoReplies": 1,
+    "outOfOfficeReplies": 1,
+    "hardBounces": 0
+  },
+  "discoveryCallsHeld": null,
+  "qualifiedOpportunities": null,
+  "proposals": null,
+  "acceptedPilots": null,
+  "payingClients": null,
+  "unknownExplanation": "No verified outcomes at these stages; null means unverified, not zero. A researched prospect or cold pitch is not a qualified buyer opportunity/proposal.",
+  "cohorts": [
+    {
+      "market": "United Kingdom",
+      "segment": "trade_associations",
+      "offerType": "membership",
+      "channel": "individual_cold_email",
+      "pitchVersion": "legacy_unversioned",
+      "uniqueSends": 11,
+      "messageIds": [
+        "1a11bdf55d8130a2",
+        "1a11be73bb6e873b",
+        "1a11be815953d93d",
+        "1a11be8a50e5deab",
+        "1a11be92ff3cd6f9",
+        "1a11be9e7b0beb9b",
+        "1a11bea81abaec38",
+        "1a11beb04274d92a",
+        "1a11bebbfc73d6fe",
+        "1a11becb63c3868a",
+        "1a11bed87d62d77f"
+      ],
+      "qualifiedHumanReplies": 0,
+      "discoveryCallsHeld": null,
+      "qualifiedOpportunities": null,
+      "proposals": null,
+      "acceptedPilots": null,
+      "payingClients": null
+    },
+    {
+      "market": "United States",
+      "segment": "trade_associations",
+      "offerType": "membership",
+      "channel": "individual_cold_email",
+      "pitchVersion": "legacy_unversioned",
+      "uniqueSends": 30,
+      "messageIds": [
+        "1a11c1181b725d3a",
+        "1a11c141a7e55e69",
+        "1a11c14836da419f",
+        "1a11c14e24744bb3",
+        "1a11c153e30859e2",
+        "1a11c15996661aa6",
+        "1a11c15f48fbec90",
+        "1a11c16528f62b29",
+        "1a11c16ad8942eeb",
+        "1a11c17068612088",
+        "1a11c17634387954",
+        "1a11c17bb52abde3",
+        "1a11c181ca8691a6",
+        "1a11c198ed3fea2e",
+        "1a11c19f0bb94c08",
+        "1a11c1a6ad5de964",
+        "1a11c1ac175b0386",
+        "1a11c1b58b9c985a",
+        "1a11c1bb06754473",
+        "1a11c1c3b2bf39f8",
+        "1a11c1c90d01fac1",
+        "1a11c1e1f2f1e799",
+        "1a11c1e794b80f6a",
+        "1a11c1ed082e39a4",
+        "1a11c1f2d4b368df",
+        "1a11c1f85aba49a0",
+        "1a11c1fe67945c8d",
+        "1a11c203d2286c33",
+        "1a11c20c97b3046e",
+        "1a11c212432fee89"
+      ],
+      "qualifiedHumanReplies": 0,
+      "discoveryCallsHeld": null,
+      "qualifiedOpportunities": null,
+      "proposals": null,
+      "acceptedPilots": null,
+      "payingClients": null
+    },
+    {
+      "market": "United States",
+      "segment": "trade_associations",
+      "offerType": "membership",
+      "channel": "individual_cold_email",
+      "pitchVersion": "V2-company-workflow-routing",
+      "uniqueSends": 7,
+      "messageIds": [
+        "1a11f7678e41f57c",
+        "1a11f76d0e3fea55",
+        "1a11f77ea8a74a8d",
+        "1a11f7848a393b9b",
+        "1a11f78af1ffedf9",
+        "1a11f79086a34070",
+        "1a11f7961e491a65"
+      ],
+      "qualifiedHumanReplies": 0,
+      "discoveryCallsHeld": null,
+      "qualifiedOpportunities": null,
+      "proposals": null,
+      "acceptedPilots": null,
+      "payingClients": null
+    },
+    {
+      "market": "United States",
+      "segment": "trade_associations",
+      "offerType": "membership",
+      "channel": "individual_cold_email",
+      "pitchVersion": "V2-named-membership-workflow",
+      "uniqueSends": 3,
+      "messageIds": [
+        "1a11f772a971f528",
+        "1a11f778a20ccaad",
+        "1a11f79c15f23dcf"
+      ],
+      "qualifiedHumanReplies": 0,
+      "discoveryCallsHeld": null,
+      "qualifiedOpportunities": null,
+      "proposals": null,
+      "acceptedPilots": null,
+      "payingClients": null
+    },
+    {
+      "market": "United States",
+      "segment": "trade_associations",
+      "offerType": "membership",
+      "channel": "individual_cold_email",
+      "pitchVersion": "V2-company-application-named-operations-owner",
+      "uniqueSends": 1,
+      "messageIds": [
+        "1a120800ff0e30ec"
+      ],
+      "qualifiedHumanReplies": 0,
+      "discoveryCallsHeld": null,
+      "qualifiedOpportunities": null,
+      "proposals": null,
+      "acceptedPilots": null,
+      "payingClients": null
+    },
+    {
+      "market": "Middle East",
+      "segment": "legacy_private_business_unspecified",
+      "offerType": "website_cms",
+      "channel": "individual_cold_email",
+      "pitchVersion": "copy-v2",
+      "uniqueSends": 3,
+      "messageIds": [
+        "1a126cc99bcdbf2d",
+        "1a126cd3439e26db",
+        "1a126cdb46a0f8e5"
+      ],
+      "qualifiedHumanReplies": 0,
+      "discoveryCallsHeld": null,
+      "qualifiedOpportunities": null,
+      "proposals": null,
+      "acceptedPilots": null,
+      "payingClients": null
+    }
+  ],
+  "metadataCaveat": "Legacy segment/offer inferred only from explicit manifest/text; historical pitch versions remain legacy_unversioned when absent. Unspecified supplier subsegments remain unknown.",
+  "eligibilityCaveat": "Three UAE manual sends are historical and do not establish recipient consent or future eligibility.",
+  "businessDayMaturity": "No cohort has seven business days of response time since October 8. No failure conclusion or volume increase justified.",
+  "reviewTrigger": {
+    "heuristic": "15-20 relevant eligible pitches plus >=7 business days without positive replies triggers targeting/buyer/offer/proof review before increasing volume.",
+    "triggered": false
+  },
+  "decisions": [
+    "Keep positive-response stop, five-hour market caps and suppression checks",
+    "Restore permitted Gmail sending before retrying qualified unsent US CMS pitch",
+    "Hold fresh UAE lead pending source/contact/lawful-route verification",
+    "Prioritise dedicated website/CMS and supported-portal demos and truthful public product page"
+  ],
+  "sources": [
+    "docs/market/outreach/2026-10-08/campaign.json",
+    "docs/market/us/outreach/2026-10-08/campaign.json",
+    "docs/market/us/outreach/2026-10-09/campaign.json",
+    "docs/market/us/outreach/2026-10-10/campaign.json"
+  ],
+  "replyEvidence": "docs/market/acquisition/runs/2026-10-10/221900Z/reply-and-sent-checks.json",
+  "completionEvidence": "docs/market/acquisition/runs/2026-10-10/221900Z/completion-checks.json"
+}

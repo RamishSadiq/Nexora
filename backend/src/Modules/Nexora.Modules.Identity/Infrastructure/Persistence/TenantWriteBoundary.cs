@@ -9,7 +9,7 @@ public sealed partial class NexoraIdentityDbContext
     private Guid? CurrentTenantId => tenantContext?.TenantId;
     internal bool SystemAccess { get; private set; }
 
-    // Restricted to identity bootstrap and credential verification, never request input.
+    // Restricted to bootstrap, credential verification and host-resolved registration, never a caller-supplied tenant.
     internal IDisposable BeginSystemAccess()
     {
         var previous = SystemAccess;

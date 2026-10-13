@@ -1,0 +1,148 @@
+{
+  "runId": "dual-20261012T062819Z",
+  "startedAt": "2026-10-12T06:28:19.133Z",
+  "completedAt": "2026-10-12T06:35:47.210199Z",
+  "localDate": "2026-10-12",
+  "status": "held_sender_approval",
+  "sentCount": 0,
+  "sendToolCalls": 0,
+  "confirmedMessageIds": [],
+  "markets": {
+    "United States": {
+      "status": "held_sender_approval",
+      "freshResearch": "REGA Engineering Group",
+      "holdReasons": [
+        "Previously observed Gmail send-approval restriction persists; approval policy never and no authorised configuration change"
+      ],
+      "qualification": "docs/market/us/research/2026-10-12/062819Z/qualification.json",
+      "attemptedRecipient": null,
+      "preparedRecipient": "info@regaeng.com",
+      "messageIds": []
+    },
+    "Middle East": {
+      "status": "research_only",
+      "freshResearch": "SharpMinds Consulting Engineers",
+      "holdReasons": [
+        "Exact published relevant email not verified",
+        "UAE recipient/category/channel lawful route not established; public contact not consent",
+        "Existing Gmail send-approval restriction persists"
+      ],
+      "qualification": "docs/market/middle-east/research/2026-10-12/062819Z/qualification.json",
+      "attemptedRecipient": null,
+      "preparedRecipient": null,
+      "messageIds": []
+    }
+  },
+  "manifest": null,
+  "drafts": "docs/market/acquisition/runs/2026-10-12/062819Z/held-drafts.json",
+  "report": "docs/market/acquisition/runs/2026-10-12/062819Z/run-report.json",
+  "verification": {
+    "initialReplyComplete": true,
+    "completionReplyComplete": true,
+    "priorExternalIdsVerified": 55,
+    "liveSentCountIncludingSelfTest": 56,
+    "newPositiveReplies": 0,
+    "newDeliveryFailures": 0,
+    "candidateDuplicatesComplete": true
+  },
+  "automationId": "nexora-daily-us-sales-outreach",
+  "timezone": "Europe/London",
+  "localStartedAt": "2026-10-12T07:28:19.133+01:00",
+  "localCompletedAt": "2026-10-12T07:35:47.210199+01:00",
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "sizeBytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+    "matchesState": true
+  },
+  "draftVerification": [
+    {
+      "organisation": "REGA Engineering Group",
+      "recipient": "info@regaeng.com",
+      "MIMEVerified": true,
+      "attachmentHashVerified": true,
+      "bytes": 2665168,
+      "sent": false
+    },
+    {
+      "organisation": "SharpMinds Consulting Engineers",
+      "recipient": null,
+      "MIMEVerified": false,
+      "reason": "Held body only; published recipient not verified",
+      "sent": false
+    }
+  ],
+  "localGuards": {
+    "manifestCount": 4,
+    "pendingSendingUnknownOutcomes": 0,
+    "senderLockAbsent": true,
+    "activeSendingRun": null,
+    "rollingFiveHourConfirmedSends": 0,
+    "confirmedToday": 0,
+    "perMarketLimit": 1,
+    "totalIntervalLimit": 2,
+    "dailyLimit": 24
+  },
+  "senderBlock": {
+    "reason": "MCP tool call requires approval, but approval policy is never",
+    "alreadyNotified": true,
+    "sendCallRetried": false,
+    "reasonNotRetried": "Known approval policy restriction; no configuration change. Read recovery does not imply send permission."
+  },
+  "weeklyReview": {
+    "performed": false,
+    "lastDate": "2026-10-10",
+    "nextDue": "2026-10-17"
+  },
+  "proofDeliverables": [
+    {
+      "asset": "Dedicated CMS demonstration",
+      "status": "outstanding",
+      "nextAction": "Verify editor draft/preview/publication of three sample pages"
+    },
+    {
+      "asset": "Dedicated supported portal demonstration",
+      "status": "outstanding",
+      "nextAction": "Verify granted private-page/profile access and denial/revocation"
+    },
+    {
+      "asset": "Truthful public product page",
+      "status": "outstanding_not_published",
+      "nextAction": "Prepare accurate module outcomes and real founder/contact details; no deployment enabled"
+    }
+  ],
+  "partnerResearch": {
+    "organisation": "True North Technologies",
+    "domain": "go-tnt.com",
+    "market": "United States",
+    "country": "United States",
+    "sector": "Digital marketing, branding and website design",
+    "source": "https://www.go-tnt.com/",
+    "sourceDate": null,
+    "checkedAt": "2026-10-12T06:33:49.591Z",
+    "observedFact": "Official Lincoln agency page describes website/branding services; REGA official site credits this agency as website developer.",
+    "complementaryOffer": "Design/brand/content work could complement a supported Nexora CMS or information portal, but may overlap its current offerings; commercial complement and willingness unknown.",
+    "relationshipSource": null,
+    "relationshipStatus": "no_known_founder_relationship",
+    "willingness": null,
+    "buyerIntroduction": null,
+    "publicContact": "hello@go-tnt.com",
+    "stage": "research_only",
+    "acquisitionChannel": "partner_research_only",
+    "sendAllowed": false,
+    "countsAsSalesOpportunity": false,
+    "owner": "Ramish Qureshi",
+    "nextAction": "Founder may identify an actual existing relationship or introduction. Prepare a specific introduction request only once relationship/recipient willingness is established; no automatic messages.",
+    "nextActionDue": "2026-10-19"
+  },
+  "referralPreparation": {
+    "template": "docs/market/acquisition/INTRODUCTION-REQUEST.md",
+    "actualFounderRelationships": "None provided/verified",
+    "specificIntroductionPrepared": false,
+    "messagesSent": 0
+  },
+  "nextAction": "Enable Gmail send approval in the authorised session. Before any send repeat full replies, outcomes, suppression, duplicate and cap checks; ME also needs verified published recipient and specific lawful channel route.",
+  "notification": "Initial and completion Gmail checks have recovered; no new positive response. Send-approval block remains unchanged.",
+  "changes": "Market documents/state/pipeline/local drafts only; no application or sibling edits, external messages, deployment, purchases, commit or push."
+}

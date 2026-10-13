@@ -1,0 +1,17 @@
+[
+  {
+    "organisation": "REGA Engineering Group",
+    "recipient": "info@regaeng.com",
+    "MIMEVerified": true,
+    "attachmentHashVerified": true,
+    "bytes": 2665168,
+    "sent": false
+  },
+  {
+    "organisation": "SharpMinds Consulting Engineers",
+    "recipient": null,
+    "MIMEVerified": false,
+    "reason": "Held body only; published recipient not verified",
+    "sent": false
+  }
+]

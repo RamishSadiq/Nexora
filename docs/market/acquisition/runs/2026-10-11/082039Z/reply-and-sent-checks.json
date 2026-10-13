@@ -1,0 +1,655 @@
+{
+  "complete": true,
+  "completedAt": "2026-10-11T08:22:33.757Z",
+  "searches": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "complete": true,
+      "count": 1,
+      "ids": [
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:arabiandream.com}",
+      "complete": true,
+      "count": 2,
+      "ids": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent Nexora",
+      "complete": true,
+      "count": 3,
+      "ids": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745",
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:Undeliverable subject:\"Delivery failure\"}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    },
+    {
+      "query": "in:sent Nexora",
+      "complete": true,
+      "count": 56,
+      "ids": [
+        "1a126cdb46a0f8e5",
+        "1a126cd3439e26db",
+        "1a126cc99bcdbf2d",
+        "1a120800ff0e30ec",
+        "1a11f79c15f23dcf",
+        "1a11f7961e491a65",
+        "1a11f79086a34070",
+        "1a11f78af1ffedf9",
+        "1a11f7848a393b9b",
+        "1a11f77ea8a74a8d",
+        "1a11f778a20ccaad",
+        "1a11f772a971f528",
+        "1a11f76d0e3fea55",
+        "1a11f7678e41f57c",
+        "1a11c212432fee89",
+        "1a11c20c97b3046e",
+        "1a11c203d2286c33",
+        "1a11c1fe67945c8d",
+        "1a11c1f85aba49a0",
+        "1a11c1f2d4b368df",
+        "1a11c1ed082e39a4",
+        "1a11c1e794b80f6a",
+        "1a11c1e1f2f1e799",
+        "1a11c1c90d01fac1",
+        "1a11c1c3b2bf39f8",
+        "1a11c1bb06754473",
+        "1a11c1b58b9c985a",
+        "1a11c1ac175b0386",
+        "1a11c1a6ad5de964",
+        "1a11c19f0bb94c08",
+        "1a11c198ed3fea2e",
+        "1a11c181ca8691a6",
+        "1a11c17bb52abde3",
+        "1a11c17634387954",
+        "1a11c17068612088",
+        "1a11c16ad8942eeb",
+        "1a11c16528f62b29",
+        "1a11c15f48fbec90",
+        "1a11c15996661aa6",
+        "1a11c153e30859e2",
+        "1a11c14e24744bb3",
+        "1a11c14836da419f",
+        "1a11c141a7e55e69",
+        "1a11c1181b725d3a",
+        "1a11bed87d62d77f",
+        "1a11becb63c3868a",
+        "1a11bebbfc73d6fe",
+        "1a11beb04274d92a",
+        "1a11bea81abaec38",
+        "1a11be9e7b0beb9b",
+        "1a11be92ff3cd6f9",
+        "1a11be8a50e5deab",
+        "1a11be815953d93d",
+        "1a11be73bb6e873b",
+        "1a11bdf55d8130a2",
+        "1a11bc874d72d032"
+      ]
+    },
+    {
+      "query": "in:sent filename:nexora-product-demo-male.mp4",
+      "complete": true,
+      "count": 56,
+      "ids": [
+        "1a126cdb46a0f8e5",
+        "1a126cd3439e26db",
+        "1a126cc99bcdbf2d",
+        "1a120800ff0e30ec",
+        "1a11f79c15f23dcf",
+        "1a11f7961e491a65",
+        "1a11f79086a34070",
+        "1a11f78af1ffedf9",
+        "1a11f7848a393b9b",
+        "1a11f77ea8a74a8d",
+        "1a11f778a20ccaad",
+        "1a11f772a971f528",
+        "1a11f76d0e3fea55",
+        "1a11f7678e41f57c",
+        "1a11c212432fee89",
+        "1a11c20c97b3046e",
+        "1a11c203d2286c33",
+        "1a11c1fe67945c8d",
+        "1a11c1f85aba49a0",
+        "1a11c1f2d4b368df",
+        "1a11c1ed082e39a4",
+        "1a11c1e794b80f6a",
+        "1a11c1e1f2f1e799",
+        "1a11c1c90d01fac1",
+        "1a11c1c3b2bf39f8",
+        "1a11c1bb06754473",
+        "1a11c1b58b9c985a",
+        "1a11c1ac175b0386",
+        "1a11c1a6ad5de964",
+        "1a11c19f0bb94c08",
+        "1a11c198ed3fea2e",
+        "1a11c181ca8691a6",
+        "1a11c17bb52abde3",
+        "1a11c17634387954",
+        "1a11c17068612088",
+        "1a11c16ad8942eeb",
+        "1a11c16528f62b29",
+        "1a11c15f48fbec90",
+        "1a11c15996661aa6",
+        "1a11c153e30859e2",
+        "1a11c14e24744bb3",
+        "1a11c14836da419f",
+        "1a11c141a7e55e69",
+        "1a11c1181b725d3a",
+        "1a11bed87d62d77f",
+        "1a11becb63c3868a",
+        "1a11bebbfc73d6fe",
+        "1a11beb04274d92a",
+        "1a11bea81abaec38",
+        "1a11be9e7b0beb9b",
+        "1a11be92ff3cd6f9",
+        "1a11be8a50e5deab",
+        "1a11be815953d93d",
+        "1a11be73bb6e873b",
+        "1a11bdf55d8130a2",
+        "1a11bc874d72d032"
+      ]
+    },
+    {
+      "query": "in:anywhere {to:gsrestaurantequipment.com to:gsequipmentinc.com from:gsrestaurantequipment.com from:gsequipmentinc.com}",
+      "complete": true,
+      "count": 0,
+      "ids": []
+    }
+  ],
+  "conversations": [
+    {
+      "id": "1a11bdf55d8130a2",
+      "messageIds": [
+        "1a11bdf55d8130a2"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11be73bb6e873b",
+      "messageIds": [
+        "1a11be73bb6e873b"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11be815953d93d",
+      "messageIds": [
+        "1a11be815953d93d",
+        "1a11bf33395d33a1"
+      ],
+      "inboundIds": [
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "id": "1a11be8a50e5deab",
+      "messageIds": [
+        "1a11be8a50e5deab"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11be92ff3cd6f9",
+      "messageIds": [
+        "1a11be92ff3cd6f9"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11be9e7b0beb9b",
+      "messageIds": [
+        "1a11be9e7b0beb9b"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11bea81abaec38",
+      "messageIds": [
+        "1a11bea81abaec38"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11beb04274d92a",
+      "messageIds": [
+        "1a11beb04274d92a"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11bebbfc73d6fe",
+      "messageIds": [
+        "1a11bebbfc73d6fe"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11becb63c3868a",
+      "messageIds": [
+        "1a11becb63c3868a"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11bed87d62d77f",
+      "messageIds": [
+        "1a11bed87d62d77f"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1181b725d3a",
+      "messageIds": [
+        "1a11c1181b725d3a"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c141a7e55e69",
+      "messageIds": [
+        "1a11c141a7e55e69"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c14836da419f",
+      "messageIds": [
+        "1a11c14836da419f"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c14e24744bb3",
+      "messageIds": [
+        "1a11c14e24744bb3"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c153e30859e2",
+      "messageIds": [
+        "1a11c153e30859e2"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c15996661aa6",
+      "messageIds": [
+        "1a11c15996661aa6"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c15f48fbec90",
+      "messageIds": [
+        "1a11c15f48fbec90"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c16528f62b29",
+      "messageIds": [
+        "1a11c16528f62b29"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c16ad8942eeb",
+      "messageIds": [
+        "1a11c16ad8942eeb"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c17068612088",
+      "messageIds": [
+        "1a11c17068612088"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c17634387954",
+      "messageIds": [
+        "1a11c17634387954"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c17bb52abde3",
+      "messageIds": [
+        "1a11c17bb52abde3"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c181ca8691a6",
+      "messageIds": [
+        "1a11c181ca8691a6"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c198ed3fea2e",
+      "messageIds": [
+        "1a11c198ed3fea2e"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c19f0bb94c08",
+      "messageIds": [
+        "1a11c19f0bb94c08"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1a6ad5de964",
+      "messageIds": [
+        "1a11c1a6ad5de964"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1ac175b0386",
+      "messageIds": [
+        "1a11c1ac175b0386"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1b58b9c985a",
+      "messageIds": [
+        "1a11c1b58b9c985a"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1bb06754473",
+      "messageIds": [
+        "1a11c1bb06754473"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1c3b2bf39f8",
+      "messageIds": [
+        "1a11c1c3b2bf39f8"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1c90d01fac1",
+      "messageIds": [
+        "1a11c1c90d01fac1"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1e1f2f1e799",
+      "messageIds": [
+        "1a11c1e1f2f1e799"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1e794b80f6a",
+      "messageIds": [
+        "1a11c1e794b80f6a"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1ed082e39a4",
+      "messageIds": [
+        "1a11c1ed082e39a4"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1f2d4b368df",
+      "messageIds": [
+        "1a11c1f2d4b368df"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1f85aba49a0",
+      "messageIds": [
+        "1a11c1f85aba49a0"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c1fe67945c8d",
+      "messageIds": [
+        "1a11c1fe67945c8d"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c203d2286c33",
+      "messageIds": [
+        "1a11c203d2286c33"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c20c97b3046e",
+      "messageIds": [
+        "1a11c20c97b3046e"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11c212432fee89",
+      "messageIds": [
+        "1a11c212432fee89"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f7678e41f57c",
+      "messageIds": [
+        "1a11f7678e41f57c"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f76d0e3fea55",
+      "messageIds": [
+        "1a11f76d0e3fea55"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f772a971f528",
+      "messageIds": [
+        "1a11f772a971f528"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f778a20ccaad",
+      "messageIds": [
+        "1a11f778a20ccaad"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f77ea8a74a8d",
+      "messageIds": [
+        "1a11f77ea8a74a8d"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f7848a393b9b",
+      "messageIds": [
+        "1a11f7848a393b9b"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f78af1ffedf9",
+      "messageIds": [
+        "1a11f78af1ffedf9"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f79086a34070",
+      "messageIds": [
+        "1a11f79086a34070"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f7961e491a65",
+      "messageIds": [
+        "1a11f7961e491a65"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a11f79c15f23dcf",
+      "messageIds": [
+        "1a11f79c15f23dcf"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a120800ff0e30ec",
+      "messageIds": [
+        "1a120800ff0e30ec"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a126cc99bcdbf2d",
+      "messageIds": [
+        "1a126cc99bcdbf2d"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a126cd3439e26db",
+      "messageIds": [
+        "1a126cd3439e26db"
+      ],
+      "inboundIds": []
+    },
+    {
+      "id": "1a126cdb46a0f8e5",
+      "messageIds": [
+        "1a126cdb46a0f8e5"
+      ],
+      "inboundIds": []
+    }
+  ],
+  "actualMessages": [
+    {
+      "id": "1a11bf33395d33a1",
+      "threadId": "1a11be815953d93d",
+      "headers": [
+        {
+          "name": "From",
+          "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Nexora demo for BAFSA's membership administration"
+        },
+        {
+          "name": "Date",
+          "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+        }
+      ],
+      "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n"
+    },
+    {
+      "id": "1a120804f5fbe7f3",
+      "threadId": "1a120804f5fbe7f3",
+      "headers": [
+        {
+          "name": "From",
+          "value": "Gary McCoy <gary@smihq.org>"
+        },
+        {
+          "name": "Subject",
+          "value": "Automatic reply: Nexora demo for SMI's membership applications"
+        },
+        {
+          "name": "Date",
+          "value": "Fri, 9 Oct 2026 11:50:40 +0000"
+        },
+        {
+          "name": "auto-submitted",
+          "value": "auto-generated"
+        }
+      ],
+      "body": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact Kari Johnson at UTS at kari@uts.com.\r\n"
+    },
+    {
+      "id": "1a11f79e78082745",
+      "threadId": "1a11f79e78082745",
+      "headers": [
+        {
+          "name": "From",
+          "value": "Dora Schember <dschember@mpif.org>"
+        },
+        {
+          "name": "Subject",
+          "value": "Automatic reply: Nexora demo for MPIF's membership team"
+        },
+        {
+          "name": "Date",
+          "value": "Fri, 9 Oct 2026 07:04:03 +0000"
+        },
+        {
+          "name": "auto-submitted",
+          "value": "auto-generated"
+        }
+      ],
+      "body": "I have retired. For questions/information please contact the colleagues below:\r\n\r\nMembership contact Stephanie: sgibbs@mpif.org\r\nStandards contact Wiley: wabner@mpif.org\r\nInternational Journal of Powder Metallurgy contact Debby: dstab@mpif.org\r\nDesign Excellence Awards contact Debby: dstab@mpif.org\r\nAll Other Awards: contact Turner: tabbott@mpif.org\r\nStatistics contact Turner: tabbott@mpif.org\r\n\r\nDora Schember\r\n"
+    }
+  ],
+  "classification": [
+    {
+      "messageId": "1a11bf33395d33a1",
+      "type": "decline",
+      "action": "organisation suppression preserved"
+    },
+    {
+      "messageId": "1a11f79e78082745",
+      "type": "automatic_retirement",
+      "action": "address-only block preserved"
+    },
+    {
+      "messageId": "1a120804f5fbe7f3",
+      "type": "out_of_office",
+      "action": "no positive, no automatic reply"
+    }
+  ],
+  "positiveCount": 0,
+  "bounceCount": 0,
+  "priorExternalIdsVerified": 55,
+  "sentIncludingSelfTest": 56
+}

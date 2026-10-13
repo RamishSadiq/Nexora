@@ -1,0 +1,22 @@
+{
+  "status": "held_not_sent",
+  "newGmailDraftsCreated": 0,
+  "Canada": {
+    "to": "Brian.Brett@smithandandersen.com",
+    "subject": "Staff-managed office and service content for Smith + Andersen",
+    "requiredAttachment": {
+      "sizeBytes": 1945313,
+      "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+      "matchesState": true
+    },
+    "mimeNotBuilt": true
+  },
+  "Australia": {
+    "reusedPreparation": "australia-held.eml",
+    "oldestEligibleUnsent": true
+  },
+  "New Zealand": {
+    "draftNotAddressed": true,
+    "reason": "Recipient country and contact route unresolved"
+  }
+}

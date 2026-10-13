@@ -1,0 +1,97 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "checkedAt": "2026-10-11T03:27:28.339Z",
+  "sourceCheckedAt": "2026-10-11T03:27:28.339Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "Five-hour dual-market first-pitch campaign; heartbeat 2026-10-11T03:24:05Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-18",
+  "reviewDue": "2026-10-18",
+  "stage": "research_only",
+  "pitchVersion": "website-cms-v2-expansion-cohort",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Required video demonstrates wider membership platform. Dedicated CMS/portal videos and public product page remain outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 0
+  },
+  "researchPriorityScore": 3,
+  "scoreMaximum": 12,
+  "capabilityFit": "Bounded public office/showroom, service and news pages with staff draft/preview/publication",
+  "unsupportedRequirements": [
+    "No booking, ecommerce, custom forms or third-party CRM integration",
+    "No Arabic localisation, regional hosting or automated migration promised"
+  ],
+  "market": "United States",
+  "country": "United States",
+  "segment": "architecture_and_engineering_firms",
+  "organisation": "APD Engineering & Architecture",
+  "domain": "apd.com",
+  "domains": [
+    "apd.com"
+  ],
+  "source": "https://www.apd.com/apd-pulse-network-may-edition/",
+  "sourceDate": "2026-05-11",
+  "observedFact": "Dated official newsletter reports relocating to 290 Woodcliff Drive in Fairport NY and sharing project/news updates.",
+  "signal": "Office expansion/change signal from May 2026; no active CMS buying request established.",
+  "problemHypothesis": "Staff may value maintaining office/service/news information pages; current content system quality, dissatisfaction and buying intent unknown.",
+  "needEvidence": [
+    {
+      "url": "https://www.apd.com/apd-pulse-network-may-edition/",
+      "sourceDate": "2026-05-11",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Official dated office-relocation and news-content fact."
+    }
+  ],
+  "buyerRole": "Website/content owner or marketing/operations role; unverified",
+  "buyerContact": null,
+  "buyerContactEvidence": [
+    {
+      "url": "https://www.apd.com/contact/",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Official Fairport address/telephone and consultation form; no email address published in inspected text. Example johnsmith@gmail.com is an input placeholder and must not be used."
+    }
+  ],
+  "leadershipEvidence": [
+    {
+      "url": "https://www.apd.com/apd-pulse-network-may-edition/",
+      "sourceDate": "2026-05-11",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Dan Sargent listed as CEO & President; his responsibility for CMS buying and business email are unverified."
+    }
+  ],
+  "existingSystemEvidence": [],
+  "currentProvider": "unknown",
+  "outreachDecision": "hold_no_verified_published_email_and_sender_approval",
+  "holdReasons": [
+    "No relevant published email verified; contact forms/calls are not authorised",
+    "Existing sender approval block remains",
+    "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+  ],
+  "outreachLegalBasis": "Not assessed for a specific email recipient because none is verified; no send planned.",
+  "countryRulesCheckedAt": null,
+  "nextAction": "Verify an officially published responsible business email or actual founder introduction when due; retain general contact channel limits; no guessing or form submission",
+  "history": [
+    {
+      "at": "2026-10-11T03:27:28.339Z",
+      "event": "Fresh US architecture/CMS cohort researched from official dated newsletter and contact page; no buying intent or email invented."
+    },
+    {
+      "at": "2026-10-11T03:28:45.344Z",
+      "event": "Gmail duplicate check unavailable; research-only hold retained, no sending attempted."
+    }
+  ],
+  "liveDuplicateCheckComplete": false
+}

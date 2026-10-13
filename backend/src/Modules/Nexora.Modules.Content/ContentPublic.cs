@@ -20,8 +20,33 @@ public static partial class ContentModule
         var site = await db.Sites.IgnoreQueryFilters().AsNoTracking().SingleOrDefaultAsync(s => s.Id == siteId, ct);
         return site != null && await tenants.IsActiveAsync(site.TenantId, ct) ? site : null;
     }
+    internal static async Task<Site?> ResolvePortalSite(ContentDbContext db, IPublicTenantDirectory tenants, IConfiguration config, IHostEnvironment env, HttpContext http, CancellationToken ct)
+    {
+        var host = http.Request.Host.Host;
+        var matches = config.GetSection("Content:Domains").GetChildren().Where(d => string.Equals(d["Host"], host, StringComparison.OrdinalIgnoreCase)).ToArray();
+        if (matches.Length > 1) return null;
+        Guid siteId;
+        if (!Guid.TryParse(matches.SingleOrDefault()?["SiteId"], out siteId))
+        {
+            if (!(env.IsDevelopment() && host is "localhost" or "127.0.0.1" or "::1")) return null;
+            var ids = await db.Sites.IgnoreQueryFilters().AsNoTracking().Select(s => s.Id).Take(2).ToListAsync(ct);
+            if (ids.Count != 1) return null;
+            siteId = ids[0];
+        }
+        return await PublicSite(siteId, db, tenants, config, env, http, ct);
+    }
     private static void MapPublic(IEndpointRouteBuilder endpoints)
     {
+        endpoints.MapGet("/api/v1/public/portal-appearance", async (ContentDbContext db, IPublicTenantDirectory tenants, IConfiguration config, IHostEnvironment env, HttpContext http, CancellationToken ct) =>
+        {
+            http.Response.Headers.CacheControl = "no-store";
+            var site = await ResolvePortalSite(db, tenants, config, env, http, ct);
+            if (site == null) return Results.NotFound();
+            var json = await db.Set<PortalConfiguration>().IgnoreQueryFilters().AsNoTracking().Where(x => x.TenantId == site.TenantId).Select(x => x.PublishedJson).SingleOrDefaultAsync(ct);
+            var presentation = json == null ? PortalPresentation.Default : JsonSerializer.Deserialize<PortalPresentation>(json)!;
+            // Only sign-in branding is public. Member pages and navigation remain protected.
+            return Results.Ok(new { presentation.Name, presentation.Tagline, presentation.BrandColor, design = presentation.Design ?? new PortalDesign() });
+        }).AllowAnonymous();
         endpoints.MapGet("/api/v1/public/resolve-site", async (ContentDbContext db, IPublicTenantDirectory tenants, IConfiguration config, HttpContext http, CancellationToken ct) =>
         {
             http.Response.Headers.CacheControl = "no-store";
@@ -64,11 +89,15 @@ public static partial class ContentModule
                 return target == null ? Results.NotFound() : Results.Ok(new { redirectSlug = target.Page.Slug, basePath = Domain(config, http.Request.Host.Host, siteId) ? "" : $"/site/{siteId}" });
             }
             var publicMedia = await db.Set<MediaAsset>().IgnoreQueryFilters().Where(m => m.SiteId == siteId && m.TenantId == site.TenantId && m.IsPublic && m.ScanStatus == "clean").Select(m => m.Id).ToListAsync(ct);
-            var blocks = (JsonSerializer.Deserialize<ContentBlock[]>(result.Revision.BlocksJson, Json) ?? []).Where(b => b.Type is not ("image" or "download") || b.MediaId.HasValue && publicMedia.Contains(b.MediaId.Value));
+            var blocks = (JsonSerializer.Deserialize<ContentBlock[]>(result.Revision.BlocksJson, Json) ?? [])
+                .Where(b => b.Layout?.Hidden != true && (b.Type is not ("image" or "download") || b.MediaId.HasValue && publicMedia.Contains(b.MediaId.Value)))
+                .Select(b => b with { MediaId = b.MediaId.HasValue && publicMedia.Contains(b.MediaId.Value) ? b.MediaId : null,
+                    Items = b.Items?.Select(i => i with { MediaId = i.MediaId.HasValue && publicMedia.Contains(i.MediaId.Value) ? i.MediaId : null }).ToArray() });
+            var designJson = await db.Set<WebsiteConfiguration>().IgnoreQueryFilters().Where(x => x.SiteId == siteId && x.TenantId == site.TenantId).Select(x => x.PublishedJson).SingleOrDefaultAsync(ct);
             var root = Domain(config, http.Request.Host.Host, siteId); var basePath = root ? "" : $"/site/{siteId}";
             var canonical = root ? $"https://{http.Request.Host.Host}{(slug == "home" ? "/" : "/" + slug)}" : null;
             return Results.Ok(new { site = new { site.Id, site.Name, site.Tagline, site.BrandColor, logoMediaId = site.LogoMediaId.HasValue && publicMedia.Contains(site.LogoMediaId.Value) ? site.LogoMediaId : null }, slug, basePath, canonical,
-                page = new { result.Revision.Id, result.Revision.Title, result.Revision.Description, result.Revision.CreatedAtUtc, blocks },
+                design = ReadWebsiteDesign(designJson), page = new { result.Revision.Id, result.Revision.Title, result.Revision.Description, result.Revision.CreatedAtUtc, blocks },
                 navigation = published.Where(p => p.Page.ShowInNavigation).OrderBy(p => p.Page.NavigationOrder).ThenBy(p => p.Page.Slug).Select(p => new { p.Page.Slug, title = string.IsNullOrEmpty(p.Page.NavigationLabel) ? p.Revision.Title : p.Page.NavigationLabel }) });
         }).AllowAnonymous();
     }

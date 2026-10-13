@@ -433,6 +433,47 @@ namespace Nexora.Modules.Content.Migrations
                     b.ToTable("SitesDataAudit", "content");
                 });
 
+            modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.DataAudit<Nexora.Modules.Content.WebsiteConfiguration>", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("ChangedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ChangesJson")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EntityId")
+                        .IsRequired()
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
+
+                    b.Property<string>("Operation")
+                        .IsRequired()
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)");
+
+                    b.Property<Guid?>("OtherParentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ParentId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId", "EntityId", "ChangedAtUtc");
+
+                    b.HasIndex("TenantId", "ParentId", "ChangedAtUtc");
+
+                    b.ToTable("WebsiteConfigurationsDataAudit", "content");
+                });
+
             modelBuilder.Entity("Nexora.BuildingBlocks.Persistence.WorkflowActionReceipt", b =>
                 {
                     b.Property<Guid>("Id")
@@ -914,6 +955,47 @@ namespace Nexora.Modules.Content.Migrations
                     b.ToTable("Sites", "content");
                 });
 
+            modelBuilder.Entity("Nexora.Modules.Content.WebsiteConfiguration", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("CreatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("DraftJson")
+                        .IsRequired()
+                        .HasMaxLength(10000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PublishedJson")
+                        .HasMaxLength(10000)
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("SiteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("TenantId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("UpdatedAtUtc")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("Version")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasAlternateKey("TenantId", "Id");
+
+                    b.HasIndex("TenantId", "SiteId")
+                        .IsUnique();
+
+                    b.ToTable("WebsiteConfigurations", "content");
+                });
+
             modelBuilder.Entity("Nexora.Modules.Content.MediaAsset", b =>
                 {
                     b.HasOne("Nexora.Modules.Content.Site", null)
@@ -969,6 +1051,16 @@ namespace Nexora.Modules.Content.Migrations
                     b.HasOne("Nexora.Modules.Content.Page", null)
                         .WithMany()
                         .HasForeignKey("TenantId", "PageId")
+                        .HasPrincipalKey("TenantId", "Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Nexora.Modules.Content.WebsiteConfiguration", b =>
+                {
+                    b.HasOne("Nexora.Modules.Content.Site", null)
+                        .WithMany()
+                        .HasForeignKey("TenantId", "SiteId")
                         .HasPrincipalKey("TenantId", "Id")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();

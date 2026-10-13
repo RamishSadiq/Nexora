@@ -8,7 +8,7 @@ type Product = { id: string; name: string };
 type Draft = { id: string; version: string; productId: string; startsAtUtc: string; notes: string; total: number; currency: string; terms: string; applicationId: string | null };
 type Edit = { id: string; version: string | null; productId: string; date: string; notes: string };
 const input = "mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-slate-900";
-const button = "rounded-full bg-[var(--portal-brand,#183a31)] px-6 py-3 font-semibold text-white disabled:opacity-50";
+const button = "portal-action rounded-full bg-[var(--portal-brand,#183a31)] px-6 py-3 font-semibold text-white disabled:opacity-50";
 export function ApplicationWorkspace({ onSubmitted, accountId }: { onSubmitted: () => void; accountId?: string }) {
   const scope = accountId ? `/organisations/${accountId}` : "";
   const [products, setProducts] = useState<Product[]>([]);
@@ -68,7 +68,7 @@ export function ApplicationWorkspace({ onSubmitted, accountId }: { onSubmitted: 
         setEdit(value => value ? { ...value, version } : value); setReview(value => value ? { ...value, version } : value);
         setDrafts(values => values.map(d => d.id === edit.id ? { ...d, version } : d)); setAccepted(false);
       }} />}
-      {review && <section className="max-w-2xl space-y-4 rounded-xl bg-[#f7f7f2] p-6" aria-label="Review application">
+      {review && <section className="portal-tinted max-w-2xl space-y-4 rounded-xl bg-[#f7f7f2] p-6" aria-label="Review application">
         <h3 className="text-xl font-semibold">Review your application</h3>
         <p>Quoted total: <strong>{new Intl.NumberFormat("en-GB", { style: "currency", currency: review.currency }).format(review.total)}</strong></p>
         <h4 className="font-semibold">Membership terms</h4><p className="whitespace-pre-wrap text-sm leading-7">{review.terms}</p>

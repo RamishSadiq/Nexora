@@ -1,0 +1,155 @@
+{
+  "runId": "four-country-20261013T023039Z",
+  "startedAt": "2026-10-13T02:30:39.188Z",
+  "localDate": "2026-10-13",
+  "status": "send_permission_denied_confirmed_unsent",
+  "markets": {
+    "Australia": {
+      "organisation": "JAE Engineering Group",
+      "status": "held_current_permission_denial",
+      "preparedRecipient": "marketing@jaeaust.com.au",
+      "attemptedRecipient": null,
+      "sendToolCalls": 0,
+      "messageIds": [],
+      "holdReasons": [
+        "Current scheduled-session denial: MCP tool call requires approval, but approval policy is never"
+      ]
+    },
+    "United States": {
+      "organisation": "G&S Restaurant Equipment",
+      "status": "failed_unsent_permission",
+      "preparedRecipient": "sales@gsrestaurantequipment.com",
+      "attemptedRecipient": "sales@gsrestaurantequipment.com",
+      "sendToolCalls": 1,
+      "messageIds": [],
+      "holdReasons": [
+        "Current scheduled-session denial: MCP tool call requires approval, but approval policy is never"
+      ]
+    },
+    "New Zealand": {
+      "organisation": "North Projects",
+      "status": "held_recipient_route",
+      "preparedRecipient": null,
+      "attemptedRecipient": null,
+      "sendToolCalls": 0,
+      "messageIds": [],
+      "holdReasons": [
+        "Official contact page provides a form instead of a verified relevant email. No deemed-consent route established."
+      ]
+    },
+    "Canada": {
+      "organisation": "Prism Engineering",
+      "status": "held_recipient_route",
+      "preparedRecipient": "info@prismengineering.com",
+      "attemptedRecipient": null,
+      "sendToolCalls": 0,
+      "messageIds": [],
+      "holdReasons": [
+        "Linked official privacy-policy page unavailable on direct and link checks; publication/refusal assessment incomplete.",
+        "Published head-office inbox does not establish specific CMS buyer-role relevance."
+      ]
+    }
+  },
+  "sentCount": 0,
+  "confirmedMessageIds": [],
+  "manifest": "docs/market/us/outreach/2026-10-13/campaign.json",
+  "report": "docs/market/acquisition/runs/2026-10-13/023039Z/run-report.json",
+  "completedAt": "2026-10-13T02:45:37.451149+00:00",
+  "sendToolCalls": 1,
+  "verification": {
+    "initialReplyComplete": true,
+    "completionReplyComplete": true,
+    "priorExternalIdsVerified": 59,
+    "liveSentIncludingSelfTest": 60,
+    "newPositiveReplies": 0,
+    "newBounces": 0,
+    "reconciliationComplete": true,
+    "deniedSendAbsentInSent": true,
+    "pluginAllowAllVerified": true
+  },
+  "automationId": "nexora-daily-us-sales-outreach",
+  "timezone": "Europe/London",
+  "localStartedAt": "2026-10-13T03:30:39.188+01:00",
+  "localCompletedAt": "2026-10-13T03:45:37.451149+01:00",
+  "currentPolicy": "docs/market/MULTI-MARKET-CAMPAIGN.md",
+  "localGuards": {
+    "at": "2026-10-13T02:42:07.359596+00:00",
+    "externalHistory": 59,
+    "manifestsChecked": 5,
+    "pendingOutcomes": 0,
+    "recentFiveHourCount": 0,
+    "todayCount": 0,
+    "attachment": {
+      "sizeBytes": 1945313,
+      "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+      "matchesState": true
+    },
+    "positiveReplies": 0,
+    "replyComplete": true
+  },
+  "actualSendFailure": {
+    "at": "2026-10-13 02:42:35 UTC",
+    "recipient": "sales@gsrestaurantequipment.com",
+    "market": "United States",
+    "subject": "Keeping G&S showroom and service pages current",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "MCP tool call requires approval, but approval policy is never"
+        }
+      ],
+      "isError": true
+    }
+  },
+  "permissionFindings": {
+    "pluginAllowAllVerified": true,
+    "sessionApprovalPolicy": "never",
+    "actualSendDenied": true,
+    "automaticReviewNotAttempted": true,
+    "recommendedUserAction": "Check this chat's permission control and select Approve for me if available, so eligible approval requests can reach automatic review. Keep the workspace sandbox; do not bypass restrictions.",
+    "recommendationLimit": "Availability and managed requirements can restrict modes; changing reviewer does not guarantee a particular send will be approved."
+  },
+  "officialPermissionSources": [
+    "https://learn.chatgpt.com/docs/agent-approvals-security",
+    "https://learn.chatgpt.com/docs/permission-modes"
+  ],
+  "retryPolicy": "Denied action not retried; Sent checked. No account/channel switch.",
+  "attachmentVerification": [
+    {
+      "market": "Australia",
+      "recipient": "marketing@jaeaust.com.au",
+      "filename": "nexora-product-demo-male.mp4",
+      "mime": "video/mp4",
+      "bytes": 1945313,
+      "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+      "prepared": true
+    },
+    {
+      "market": "United States",
+      "recipient": "sales@gsrestaurantequipment.com",
+      "filename": "nexora-product-demo-male.mp4",
+      "mime": "video/mp4",
+      "bytes": 1945313,
+      "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+      "prepared": true
+    }
+  ],
+  "weeklyReview": {
+    "performed": false,
+    "lastDate": "2026-10-10",
+    "nextDue": "2026-10-17"
+  },
+  "proofDeliverables": [
+    "Dedicated CMS demonstration outstanding",
+    "Dedicated supported portal demonstration outstanding",
+    "Truthful public product page unpublished"
+  ],
+  "partnerResearch": {
+    "queuePreserved": true,
+    "relationshipUnknown": true,
+    "messagesSent": 0
+  },
+  "newMiddleEastPitches": 0,
+  "notification": "NOTIFY: actionable current diagnosis, Gmail already Allow all actions but scheduled chat policy never rejects required connector approval. Suggest current chat Approve for me when available; no bypass."
+}

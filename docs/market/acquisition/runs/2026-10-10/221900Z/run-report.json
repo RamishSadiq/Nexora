@@ -1,0 +1,935 @@
+{
+  "runId": "dual-20261010T221900Z",
+  "automationId": "nexora-daily-us-sales-outreach",
+  "startedAt": "2026-10-10T22:19:00.575Z",
+  "completedAt": "2026-10-10T22:31:10.544Z",
+  "timezone": "Europe/London",
+  "localDate": "2026-10-10",
+  "status": "send_blocked",
+  "markets": {
+    "United States": {
+      "organisation": "G&S Restaurant Equipment",
+      "recipient": "sales@gsrestaurantequipment.com",
+      "offerType": "website_cms",
+      "status": "qualified_pitch_held_sender_approval",
+      "attempted": true,
+      "confirmedMessageIds": [],
+      "qualificationEvidence": "docs/market/us/research/2026-10-10/221900Z/qualification.json",
+      "pitch": "docs/market/acquisition/runs/2026-10-10/221900Z/prepared-pitch.json",
+      "failure": "MCP tool call requires approval, but approval policy is never",
+      "sentCheck": "All candidate domains searched in:anywhere after failure: 0 messages; Nexora Sent remains 56 including one self-test."
+    },
+    "Middle East": {
+      "organisation": "DMW General Trading",
+      "offerType": "website_cms",
+      "status": "research_held",
+      "attempted": false,
+      "confirmedMessageIds": [],
+      "qualificationEvidence": "docs/market/middle-east/research/2026-10-10/221900Z/qualification.json",
+      "heldReasons": [
+        "Full official page/contact verification failed; .com website and .ae mailbox relationship not fully verified",
+        "Recipient-specific category/channel lawful basis unresolved; public contact is not consent"
+      ]
+    }
+  },
+  "replyVerification": {
+    "initialAt": "2026-10-10T22:20:30+00:00",
+    "preSendAt": "2026-10-10T22:26:44.351Z",
+    "completedAt": "2026-10-10T22:28:24.350Z",
+    "associatedConversationsRead": 55,
+    "allSearchPaginationComplete": true,
+    "spamTrashIncluded": true,
+    "knownActualMessagesRead": [
+      "1a11bf33395d33a1",
+      "1a11f79e78082745",
+      "1a120804f5fbe7f3"
+    ],
+    "newHumanInterest": 0,
+    "newBounces": 0,
+    "newOptOuts": 0,
+    "suppressionRetained": true
+  },
+  "newSendCount": 0,
+  "priorExternalConfirmedSends": 55,
+  "caps": {
+    "rollingHours": 5,
+    "recentAtPreparation": 0,
+    "perMarket": 1,
+    "total": 2,
+    "daily": 24,
+    "confirmedToday": 3
+  },
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "mimeType": "video/mp4",
+    "sizeBytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+  },
+  "completionSearches": [
+    {
+      "query": "in:anywhere {to:gsrestaurantequipment.com to:gsequipmentinc.com from:gsrestaurantequipment.com from:gsequipmentinc.com}",
+      "messages": []
+    },
+    {
+      "query": "in:sent Nexora",
+      "messages": [
+        {
+          "id": "1a126cdb46a0f8e5",
+          "threadId": "1a126cdb46a0f8e5",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "support@foundster.com"
+          ],
+          "subject": "Staff-managed website content for The Arabian Dream",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a126cdb46a0f8e5"
+        },
+        {
+          "id": "1a126cd3439e26db",
+          "threadId": "1a126cd3439e26db",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@ablaqco.com"
+          ],
+          "subject": "Staff-managed website content for Ablaq",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a126cd3439e26db"
+        },
+        {
+          "id": "1a126cc99bcdbf2d",
+          "threadId": "1a126cc99bcdbf2d",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@amtc.ae"
+          ],
+          "subject": "Staff-managed website content for AMTC",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a126cc99bcdbf2d"
+        },
+        {
+          "id": "1a120800ff0e30ec",
+          "threadId": "1a120800ff0e30ec",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "gary@smihq.org"
+          ],
+          "subject": "Nexora demo for SMI's membership applications",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120800ff0e30ec"
+        },
+        {
+          "id": "1a11f79c15f23dcf",
+          "threadId": "1a11f79c15f23dcf",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "dschember@mpif.org"
+          ],
+          "subject": "Nexora demo for MPIF's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79c15f23dcf"
+        },
+        {
+          "id": "1a11f7961e491a65",
+          "threadId": "1a11f7961e491a65",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "nadca@diecasting.org"
+          ],
+          "subject": "Nexora demo for NADCA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7961e491a65"
+        },
+        {
+          "id": "1a11f79086a34070",
+          "threadId": "1a11f79086a34070",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@investmentcasting.org"
+          ],
+          "subject": "Nexora demo for Investment Casting Institute's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79086a34070"
+        },
+        {
+          "id": "1a11f78af1ffedf9",
+          "threadId": "1a11f78af1ffedf9",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@spri.org"
+          ],
+          "subject": "Nexora demo for SPRI's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f78af1ffedf9"
+        },
+        {
+          "id": "1a11f7848a393b9b",
+          "threadId": "1a11f7848a393b9b",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "fba@fibrebox.org"
+          ],
+          "subject": "Nexora demo for Fibre Box Association's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7848a393b9b"
+        },
+        {
+          "id": "1a11f77ea8a74a8d",
+          "threadId": "1a11f77ea8a74a8d",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@nasf.org"
+          ],
+          "subject": "Nexora demo for NASF's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f77ea8a74a8d"
+        },
+        {
+          "id": "1a11f778a20ccaad",
+          "threadId": "1a11f778a20ccaad",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "cusher@stafda.org"
+          ],
+          "subject": "Nexora demo for STAFDA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f778a20ccaad"
+        },
+        {
+          "id": "1a11f772a971f528",
+          "threadId": "1a11f772a971f528",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "brian.peters@ascouncil.org"
+          ],
+          "subject": "Nexora demo for ASC's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f772a971f528"
+        },
+        {
+          "id": "1a11f76d0e3fea55",
+          "threadId": "1a11f76d0e3fea55",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@glass.org"
+          ],
+          "subject": "Nexora demo for NGA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f76d0e3fea55"
+        },
+        {
+          "id": "1a11f7678e41f57c",
+          "threadId": "1a11f7678e41f57c",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "memberservices@americanfenceassociation.com"
+          ],
+          "subject": "Nexora demo for AFA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f7678e41f57c"
+        },
+        {
+          "id": "1a11c212432fee89",
+          "threadId": "1a11c212432fee89",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@doors.org"
+          ],
+          "subject": "Nexora demo for International Door Association's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c212432fee89"
+        },
+        {
+          "id": "1a11c20c97b3046e",
+          "threadId": "1a11c20c97b3046e",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "angela@awfs.org"
+          ],
+          "subject": "Nexora demo for AWFS's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c20c97b3046e"
+        },
+        {
+          "id": "1a11c203d2286c33",
+          "threadId": "1a11c203d2286c33",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "office@tlmi.com"
+          ],
+          "subject": "Nexora demo for TLMI's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c203d2286c33"
+        },
+        {
+          "id": "1a11c1fe67945c8d",
+          "threadId": "1a11c1fe67945c8d",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@paperbox.org"
+          ],
+          "subject": "Nexora demo for Paperboard Packaging Council's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1fe67945c8d"
+        },
+        {
+          "id": "1a11c1f85aba49a0",
+          "threadId": "1a11c1f85aba49a0",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@reusables.org"
+          ],
+          "subject": "Nexora demo for Reusable Packaging Association's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f85aba49a0"
+        },
+        {
+          "id": "1a11c1f2d4b368df",
+          "threadId": "1a11c1f2d4b368df",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@industrialpackaging.org"
+          ],
+          "subject": "Nexora demo for IPANA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1f2d4b368df"
+        },
+        {
+          "id": "1a11c1ed082e39a4",
+          "threadId": "1a11c1ed082e39a4",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "mail@aec.org"
+          ],
+          "subject": "Nexora demo for Aluminum Extruders Council's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ed082e39a4"
+        },
+        {
+          "id": "1a11c1e794b80f6a",
+          "threadId": "1a11c1e794b80f6a",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "mail@anodizing.org"
+          ],
+          "subject": "Nexora demo for Aluminum Anodizers Council's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e794b80f6a"
+        },
+        {
+          "id": "1a11c1e1f2f1e799",
+          "threadId": "1a11c1e1f2f1e799",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@acmanet.org"
+          ],
+          "subject": "Nexora demo for ACMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1e1f2f1e799"
+        },
+        {
+          "id": "1a11c1c90d01fac1",
+          "threadId": "1a11c1c90d01fac1",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@pmahome.org"
+          ],
+          "subject": "Nexora demo for Polyurethane Manufacturers Association's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c90d01fac1"
+        },
+        {
+          "id": "1a11c1c3b2bf39f8",
+          "threadId": "1a11c1c3b2bf39f8",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "iapd@iapd.org"
+          ],
+          "subject": "Nexora demo for IAPD's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1c3b2bf39f8"
+        },
+        {
+          "id": "1a11c1bb06754473",
+          "threadId": "1a11c1bb06754473",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@pmpa.org"
+          ],
+          "subject": "Nexora demo for PMPA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1bb06754473"
+        },
+        {
+          "id": "1a11c1b58b9c985a",
+          "threadId": "1a11c1b58b9c985a",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@nfda-fastener.org"
+          ],
+          "subject": "Nexora demo for NFDA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1b58b9c985a"
+        },
+        {
+          "id": "1a11c1ac175b0386",
+          "threadId": "1a11c1ac175b0386",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@isapartners.org"
+          ],
+          "subject": "Nexora demo for ISA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1ac175b0386"
+        },
+        {
+          "id": "1a11c1a6ad5de964",
+          "threadId": "1a11c1a6ad5de964",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "connect@mheda.org"
+          ],
+          "subject": "Nexora demo for MHEDA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1a6ad5de964"
+        },
+        {
+          "id": "1a11c19f0bb94c08",
+          "threadId": "1a11c19f0bb94c08",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@bsahome.org"
+          ],
+          "subject": "Nexora demo for BSA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c19f0bb94c08"
+        },
+        {
+          "id": "1a11c198ed3fea2e",
+          "threadId": "1a11c198ed3fea2e",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@fpda.org"
+          ],
+          "subject": "Nexora demo for FPDA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c198ed3fea2e"
+        },
+        {
+          "id": "1a11c181ca8691a6",
+          "threadId": "1a11c181ca8691a6",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "ptda@ptda.org"
+          ],
+          "subject": "Nexora demo for PTDA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c181ca8691a6"
+        },
+        {
+          "id": "1a11c17bb52abde3",
+          "threadId": "1a11c17bb52abde3",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "anita.howard@nwfa.org"
+          ],
+          "subject": "Nexora demo for NWFA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17bb52abde3"
+        },
+        {
+          "id": "1a11c17634387954",
+          "threadId": "1a11c17634387954",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "kristen@heattreat.net"
+          ],
+          "subject": "Nexora demo for MTI's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17634387954"
+        },
+        {
+          "id": "1a11c17068612088",
+          "threadId": "1a11c17068612088",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@mappinc.com"
+          ],
+          "subject": "Nexora demo for MAPP's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c17068612088"
+        },
+        {
+          "id": "1a11c16ad8942eeb",
+          "threadId": "1a11c16ad8942eeb",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@amba.org"
+          ],
+          "subject": "Nexora demo for AMBA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16ad8942eeb"
+        },
+        {
+          "id": "1a11c16528f62b29",
+          "threadId": "1a11c16528f62b29",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@fmamfg.org"
+          ],
+          "subject": "Nexora demo for FMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c16528f62b29"
+        },
+        {
+          "id": "1a11c15f48fbec90",
+          "threadId": "1a11c15f48fbec90",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "llehman@pma.org"
+          ],
+          "subject": "Nexora demo for PMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15f48fbec90"
+        },
+        {
+          "id": "1a11c15996661aa6",
+          "threadId": "1a11c15996661aa6",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "cmarsico@ntma.org"
+          ],
+          "subject": "Nexora demo for NTMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c15996661aa6"
+        },
+        {
+          "id": "1a11c153e30859e2",
+          "threadId": "1a11c153e30859e2",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "vreyes@aiccbox.org"
+          ],
+          "subject": "Nexora demo for AICC's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c153e30859e2"
+        },
+        {
+          "id": "1a11c14e24744bb3",
+          "threadId": "1a11c14e24744bb3",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@glga.info"
+          ],
+          "subject": "Nexora demo for GLGA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14e24744bb3"
+        },
+        {
+          "id": "1a11c14836da419f",
+          "threadId": "1a11c14836da419f",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@graphicmedia.org"
+          ],
+          "subject": "Nexora demo for Graphic Media Alliance's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c14836da419f"
+        },
+        {
+          "id": "1a11c141a7e55e69",
+          "threadId": "1a11c141a7e55e69",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "director@cabinetmakers.org"
+          ],
+          "subject": "Nexora demo for CMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c141a7e55e69"
+        },
+        {
+          "id": "1a11c1181b725d3a",
+          "threadId": "1a11c1181b725d3a",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "amy@wcma.com"
+          ],
+          "subject": "Nexora demo for WCMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11c1181b725d3a"
+        },
+        {
+          "id": "1a11bed87d62d77f",
+          "threadId": "1a11bed87d62d77f",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@britishcleaningcouncil.org"
+          ],
+          "subject": "Introducing Nexora to British Cleaning Council's association network",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bed87d62d77f"
+        },
+        {
+          "id": "1a11becb63c3868a",
+          "threadId": "1a11becb63c3868a",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "secretariat@taforum.org"
+          ],
+          "subject": "Introducing Nexora to Trade Association Forum's association network",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11becb63c3868a"
+        },
+        {
+          "id": "1a11bebbfc73d6fe",
+          "threadId": "1a11bebbfc73d6fe",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@bira.co.uk"
+          ],
+          "subject": "A short Nexora demo for British Independent Retailers Association's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bebbfc73d6fe"
+        },
+        {
+          "id": "1a11beb04274d92a",
+          "threadId": "1a11beb04274d92a",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@siba.co.uk"
+          ],
+          "subject": "A short Nexora demo for Society of Independent Brewers and Associates's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11beb04274d92a"
+        },
+        {
+          "id": "1a11bea81abaec38",
+          "threadId": "1a11bea81abaec38",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@bcf.co.uk"
+          ],
+          "subject": "A short Nexora demo for British Coatings Federation's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bea81abaec38"
+        },
+        {
+          "id": "1a11be9e7b0beb9b",
+          "threadId": "1a11be9e7b0beb9b",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "lorraine.mackinder@bcsa.org.uk"
+          ],
+          "subject": "A short Nexora demo for British Constructional Steelwork Association's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be9e7b0beb9b"
+        },
+        {
+          "id": "1a11be92ff3cd6f9",
+          "threadId": "1a11be92ff3cd6f9",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@commercial-interiorsuk.com"
+          ],
+          "subject": "A short Nexora demo for Commercial Interiors UK's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be92ff3cd6f9"
+        },
+        {
+          "id": "1a11be8a50e5deab",
+          "threadId": "1a11be8a50e5deab",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "membership@bpma.co.uk"
+          ],
+          "subject": "A short Nexora demo for BPMA's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be8a50e5deab"
+        },
+        {
+          "id": "1a11be815953d93d",
+          "threadId": "1a11be815953d93d",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "victoria@bafsa.org.uk"
+          ],
+          "subject": "Nexora demo for BAFSA's membership administration",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be815953d93d"
+        },
+        {
+          "id": "1a11be73bb6e873b",
+          "threadId": "1a11be73bb6e873b",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@theafi.co.uk"
+          ],
+          "subject": "Nexora: a short demo for AFI's membership team",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11be73bb6e873b"
+        },
+        {
+          "id": "1a11bdf55d8130a2",
+          "threadId": "1a11bdf55d8130a2",
+          "from": "ramishqureshi99@gmail.com",
+          "to": [
+            "david@gtma.co.uk"
+          ],
+          "subject": "Membership management and AI access for GTMA",
+          "labels": [
+            "SENT"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bdf55d8130a2"
+        },
+        {
+          "id": "1a11bc874d72d032",
+          "threadId": "1a11bc874d72d032",
+          "from": "Ramish Qureshi ramishqureshi99@gmail.com",
+          "to": [
+            "ramishqureshi99@gmail.com"
+          ],
+          "subject": "Nexora: membership management and AI access for your association",
+          "labels": [
+            "SENT",
+            "INBOX"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bc874d72d032"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent Nexora",
+      "messages": [
+        {
+          "id": "1a120804f5fbe7f3",
+          "threadId": "1a120804f5fbe7f3",
+          "from": "Gary McCoy gary@smihq.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Automatic reply: Nexora demo for SMI's membership applications",
+          "labels": [
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a120804f5fbe7f3"
+        },
+        {
+          "id": "1a11f79e78082745",
+          "threadId": "1a11f79e78082745",
+          "from": "Dora Schember dschember@mpif.org",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Automatic reply: Nexora demo for MPIF's membership team",
+          "labels": [
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11f79e78082745"
+        },
+        {
+          "id": "1a11bf33395d33a1",
+          "threadId": "1a11be815953d93d",
+          "from": "Victoria Cuff victoria@bafsa.org.uk",
+          "to": [
+            "\"ramishqureshi99@gmail.com\" ramishqureshi99@gmail.com"
+          ],
+          "subject": "Re: Nexora demo for BAFSA's membership administration",
+          "labels": [
+            "IMPORTANT",
+            "CATEGORY_PERSONAL",
+            "INBOX"
+          ],
+          "url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a11bf33395d33a1"
+        }
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:\"Undeliverable\" subject:\"Delivery failure\"}",
+      "messages": []
+    }
+  ],
+  "completionDomainQueries": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com}",
+      "ids": [
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org}",
+      "ids": []
+    },
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:arabiandream.com}",
+      "ids": [
+        "1a120804f5fbe7f3",
+        "1a11f79e78082745"
+      ]
+    }
+  ],
+  "senderAction": "Enable/allow Gmail send approvals for this scheduled session. Reconnect only if Gmail permissions require it; do not switch accounts or use another channel to bypass the restriction.",
+  "nextRun": "Recheck complete live replies/Sent and caps before retrying the held US pitch once send access is restored; do not consume a market slot for this failed attempt.",
+  "proofDeliverables": [
+    {
+      "asset": "Dedicated website/CMS demo",
+      "status": "outstanding",
+      "nextAction": "Show sample editor draft/preview/publish workflow; no app changes or production claims in this send run."
+    },
+    {
+      "asset": "Dedicated supported-portal demo",
+      "status": "outstanding",
+      "nextAction": "Demonstrate allowed profile/private-page access and blocked unauthorised access."
+    },
+    {
+      "asset": "Truthful public product page",
+      "status": "outstanding_not_published",
+      "nextAction": "Prepare module outcomes and founder details; publication is outside this run."
+    }
+  ],
+  "weeklyReview": "docs/market/acquisition/WEEKLY-COHORT-REVIEW-2026-10-10.json",
+  "partnerResearch": "docs/market/acquisition/PARTNER-RESEARCH.json",
+  "changesLimitedTo": "Campaign docs, research, acquisition pipeline and shared records; no application/sibling code, deployment, commit or push.",
+  "lastReplyCompletionAt": "2026-10-10T22:28:24.350Z"
+}

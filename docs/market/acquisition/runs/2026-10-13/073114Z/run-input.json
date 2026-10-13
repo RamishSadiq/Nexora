@@ -1,0 +1,911 @@
+{
+  "runId": "four-country-20261013T073114Z",
+  "startedAt": "2026-10-13T07:31:14.036Z",
+  "date": "2026-10-13",
+  "initial": {
+    "at": "2026-10-13T07:37:38Z",
+    "complete": true,
+    "searches": [
+      {
+        "query": "in:anywhere after:2026/10/12 -in:sent -in:drafts {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [],
+        "count": 0
+      },
+      {
+        "query": "in:anywhere after:2026/10/12 -in:sent -in:drafts {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [],
+        "count": 0
+      },
+      {
+        "query": "in:anywhere after:2026/10/12 -in:sent -in:drafts {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:bergengineering.com.au from:regaeng.com from:rawlinsons.co.nz from:newfields.com from:arabiandream.com}",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [],
+        "count": 0
+      },
+      {
+        "query": "in:anywhere after:2026/10/12 -in:sent -in:drafts {from:newfieldscanada.ca}",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [],
+        "count": 0
+      },
+      {
+        "query": "in:anywhere after:2026/10/12 -in:sent -in:drafts Nexora",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [],
+        "count": 0
+      },
+      {
+        "query": "in:anywhere after:2026/10/12 -in:sent -in:drafts {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:\"Undeliverable\" subject:\"Delivery failure\"}",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [],
+        "count": 0
+      },
+      {
+        "query": "in:sent Nexora",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931",
+          "1a126cdb46a0f8e5",
+          "1a126cd3439e26db",
+          "1a126cc99bcdbf2d",
+          "1a120800ff0e30ec",
+          "1a11f79c15f23dcf",
+          "1a11f7961e491a65",
+          "1a11f79086a34070",
+          "1a11f78af1ffedf9",
+          "1a11f7848a393b9b",
+          "1a11f77ea8a74a8d",
+          "1a11f778a20ccaad",
+          "1a11f772a971f528",
+          "1a11f76d0e3fea55",
+          "1a11f7678e41f57c",
+          "1a11c212432fee89",
+          "1a11c20c97b3046e",
+          "1a11c203d2286c33",
+          "1a11c1fe67945c8d",
+          "1a11c1f85aba49a0",
+          "1a11c1f2d4b368df",
+          "1a11c1ed082e39a4",
+          "1a11c1e794b80f6a",
+          "1a11c1e1f2f1e799",
+          "1a11c1c90d01fac1",
+          "1a11c1c3b2bf39f8",
+          "1a11c1bb06754473",
+          "1a11c1b58b9c985a",
+          "1a11c1ac175b0386",
+          "1a11c1a6ad5de964",
+          "1a11c19f0bb94c08",
+          "1a11c198ed3fea2e",
+          "1a11c181ca8691a6",
+          "1a11c17bb52abde3",
+          "1a11c17634387954",
+          "1a11c17068612088",
+          "1a11c16ad8942eeb",
+          "1a11c16528f62b29",
+          "1a11c15f48fbec90",
+          "1a11c15996661aa6",
+          "1a11c153e30859e2",
+          "1a11c14e24744bb3",
+          "1a11c14836da419f",
+          "1a11c141a7e55e69",
+          "1a11c1181b725d3a",
+          "1a11bed87d62d77f",
+          "1a11becb63c3868a",
+          "1a11bebbfc73d6fe",
+          "1a11beb04274d92a",
+          "1a11bea81abaec38",
+          "1a11be9e7b0beb9b",
+          "1a11be92ff3cd6f9",
+          "1a11be8a50e5deab",
+          "1a11be815953d93d",
+          "1a11be73bb6e873b",
+          "1a11bdf55d8130a2",
+          "1a11bc874d72d032"
+        ],
+        "count": 60
+      },
+      {
+        "query": "in:sent filename:nexora-product-demo-male.mp4",
+        "complete": true,
+        "paginationComplete": true,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931",
+          "1a126cdb46a0f8e5",
+          "1a126cd3439e26db",
+          "1a126cc99bcdbf2d",
+          "1a120800ff0e30ec",
+          "1a11f79c15f23dcf",
+          "1a11f7961e491a65",
+          "1a11f79086a34070",
+          "1a11f78af1ffedf9",
+          "1a11f7848a393b9b",
+          "1a11f77ea8a74a8d",
+          "1a11f778a20ccaad",
+          "1a11f772a971f528",
+          "1a11f76d0e3fea55",
+          "1a11f7678e41f57c",
+          "1a11c212432fee89",
+          "1a11c20c97b3046e",
+          "1a11c203d2286c33",
+          "1a11c1fe67945c8d",
+          "1a11c1f85aba49a0",
+          "1a11c1f2d4b368df",
+          "1a11c1ed082e39a4",
+          "1a11c1e794b80f6a",
+          "1a11c1e1f2f1e799",
+          "1a11c1c90d01fac1",
+          "1a11c1c3b2bf39f8",
+          "1a11c1bb06754473",
+          "1a11c1b58b9c985a",
+          "1a11c1ac175b0386",
+          "1a11c1a6ad5de964",
+          "1a11c19f0bb94c08",
+          "1a11c198ed3fea2e",
+          "1a11c181ca8691a6",
+          "1a11c17bb52abde3",
+          "1a11c17634387954",
+          "1a11c17068612088",
+          "1a11c16ad8942eeb",
+          "1a11c16528f62b29",
+          "1a11c15f48fbec90",
+          "1a11c15996661aa6",
+          "1a11c153e30859e2",
+          "1a11c14e24744bb3",
+          "1a11c14836da419f",
+          "1a11c141a7e55e69",
+          "1a11c1181b725d3a",
+          "1a11bed87d62d77f",
+          "1a11becb63c3868a",
+          "1a11bebbfc73d6fe",
+          "1a11beb04274d92a",
+          "1a11bea81abaec38",
+          "1a11be9e7b0beb9b",
+          "1a11be92ff3cd6f9",
+          "1a11be8a50e5deab",
+          "1a11be815953d93d",
+          "1a11be73bb6e873b",
+          "1a11bdf55d8130a2",
+          "1a11bc874d72d032"
+        ],
+        "count": 60
+      }
+    ],
+    "threads": [
+      {
+        "id": "1a11bdf55d8130a2",
+        "messageIds": [
+          "1a11bdf55d8130a2"
+        ]
+      },
+      {
+        "id": "1a11be73bb6e873b",
+        "messageIds": [
+          "1a11be73bb6e873b"
+        ]
+      },
+      {
+        "id": "1a11be815953d93d",
+        "messageIds": [
+          "1a11be815953d93d",
+          "1a11bf33395d33a1"
+        ]
+      },
+      {
+        "id": "1a11be8a50e5deab",
+        "messageIds": [
+          "1a11be8a50e5deab"
+        ]
+      },
+      {
+        "id": "1a11be92ff3cd6f9",
+        "messageIds": [
+          "1a11be92ff3cd6f9"
+        ]
+      },
+      {
+        "id": "1a11be9e7b0beb9b",
+        "messageIds": [
+          "1a11be9e7b0beb9b"
+        ]
+      },
+      {
+        "id": "1a11bea81abaec38",
+        "messageIds": [
+          "1a11bea81abaec38"
+        ]
+      },
+      {
+        "id": "1a11beb04274d92a",
+        "messageIds": [
+          "1a11beb04274d92a"
+        ]
+      },
+      {
+        "id": "1a11bebbfc73d6fe",
+        "messageIds": [
+          "1a11bebbfc73d6fe"
+        ]
+      },
+      {
+        "id": "1a11becb63c3868a",
+        "messageIds": [
+          "1a11becb63c3868a"
+        ]
+      },
+      {
+        "id": "1a11bed87d62d77f",
+        "messageIds": [
+          "1a11bed87d62d77f"
+        ]
+      },
+      {
+        "id": "1a11c1181b725d3a",
+        "messageIds": [
+          "1a11c1181b725d3a"
+        ]
+      },
+      {
+        "id": "1a11c141a7e55e69",
+        "messageIds": [
+          "1a11c141a7e55e69"
+        ]
+      },
+      {
+        "id": "1a11c14836da419f",
+        "messageIds": [
+          "1a11c14836da419f"
+        ]
+      },
+      {
+        "id": "1a11c14e24744bb3",
+        "messageIds": [
+          "1a11c14e24744bb3"
+        ]
+      },
+      {
+        "id": "1a11c153e30859e2",
+        "messageIds": [
+          "1a11c153e30859e2"
+        ]
+      },
+      {
+        "id": "1a11c15996661aa6",
+        "messageIds": [
+          "1a11c15996661aa6"
+        ]
+      },
+      {
+        "id": "1a11c15f48fbec90",
+        "messageIds": [
+          "1a11c15f48fbec90"
+        ]
+      },
+      {
+        "id": "1a11c16528f62b29",
+        "messageIds": [
+          "1a11c16528f62b29"
+        ]
+      },
+      {
+        "id": "1a11c16ad8942eeb",
+        "messageIds": [
+          "1a11c16ad8942eeb"
+        ]
+      },
+      {
+        "id": "1a11c17068612088",
+        "messageIds": [
+          "1a11c17068612088"
+        ]
+      },
+      {
+        "id": "1a11c17634387954",
+        "messageIds": [
+          "1a11c17634387954"
+        ]
+      },
+      {
+        "id": "1a11c17bb52abde3",
+        "messageIds": [
+          "1a11c17bb52abde3"
+        ]
+      },
+      {
+        "id": "1a11c181ca8691a6",
+        "messageIds": [
+          "1a11c181ca8691a6"
+        ]
+      },
+      {
+        "id": "1a11c198ed3fea2e",
+        "messageIds": [
+          "1a11c198ed3fea2e"
+        ]
+      },
+      {
+        "id": "1a11c19f0bb94c08",
+        "messageIds": [
+          "1a11c19f0bb94c08"
+        ]
+      },
+      {
+        "id": "1a11c1a6ad5de964",
+        "messageIds": [
+          "1a11c1a6ad5de964"
+        ]
+      },
+      {
+        "id": "1a11c1ac175b0386",
+        "messageIds": [
+          "1a11c1ac175b0386"
+        ]
+      },
+      {
+        "id": "1a11c1b58b9c985a",
+        "messageIds": [
+          "1a11c1b58b9c985a"
+        ]
+      },
+      {
+        "id": "1a11c1bb06754473",
+        "messageIds": [
+          "1a11c1bb06754473"
+        ]
+      },
+      {
+        "id": "1a11c1c3b2bf39f8",
+        "messageIds": [
+          "1a11c1c3b2bf39f8"
+        ]
+      },
+      {
+        "id": "1a11c1c90d01fac1",
+        "messageIds": [
+          "1a11c1c90d01fac1"
+        ]
+      },
+      {
+        "id": "1a11c1e1f2f1e799",
+        "messageIds": [
+          "1a11c1e1f2f1e799"
+        ]
+      },
+      {
+        "id": "1a11c1e794b80f6a",
+        "messageIds": [
+          "1a11c1e794b80f6a"
+        ]
+      },
+      {
+        "id": "1a11c1ed082e39a4",
+        "messageIds": [
+          "1a11c1ed082e39a4"
+        ]
+      },
+      {
+        "id": "1a11c1f2d4b368df",
+        "messageIds": [
+          "1a11c1f2d4b368df"
+        ]
+      },
+      {
+        "id": "1a11c1f85aba49a0",
+        "messageIds": [
+          "1a11c1f85aba49a0"
+        ]
+      },
+      {
+        "id": "1a11c1fe67945c8d",
+        "messageIds": [
+          "1a11c1fe67945c8d"
+        ]
+      },
+      {
+        "id": "1a11c203d2286c33",
+        "messageIds": [
+          "1a11c203d2286c33"
+        ]
+      },
+      {
+        "id": "1a11c20c97b3046e",
+        "messageIds": [
+          "1a11c20c97b3046e"
+        ]
+      },
+      {
+        "id": "1a11c212432fee89",
+        "messageIds": [
+          "1a11c212432fee89"
+        ]
+      },
+      {
+        "id": "1a11f7678e41f57c",
+        "messageIds": [
+          "1a11f7678e41f57c"
+        ]
+      },
+      {
+        "id": "1a11f76d0e3fea55",
+        "messageIds": [
+          "1a11f76d0e3fea55"
+        ]
+      },
+      {
+        "id": "1a11f772a971f528",
+        "messageIds": [
+          "1a11f772a971f528"
+        ]
+      },
+      {
+        "id": "1a11f778a20ccaad",
+        "messageIds": [
+          "1a11f778a20ccaad"
+        ]
+      },
+      {
+        "id": "1a11f77ea8a74a8d",
+        "messageIds": [
+          "1a11f77ea8a74a8d"
+        ]
+      },
+      {
+        "id": "1a11f7848a393b9b",
+        "messageIds": [
+          "1a11f7848a393b9b"
+        ]
+      },
+      {
+        "id": "1a11f78af1ffedf9",
+        "messageIds": [
+          "1a11f78af1ffedf9"
+        ]
+      },
+      {
+        "id": "1a11f79086a34070",
+        "messageIds": [
+          "1a11f79086a34070"
+        ]
+      },
+      {
+        "id": "1a11f7961e491a65",
+        "messageIds": [
+          "1a11f7961e491a65"
+        ]
+      },
+      {
+        "id": "1a11f79c15f23dcf",
+        "messageIds": [
+          "1a11f79c15f23dcf"
+        ]
+      },
+      {
+        "id": "1a120800ff0e30ec",
+        "messageIds": [
+          "1a120800ff0e30ec",
+          "1a134034195cc4f2"
+        ]
+      },
+      {
+        "id": "1a126cc99bcdbf2d",
+        "messageIds": [
+          "1a126cc99bcdbf2d"
+        ]
+      },
+      {
+        "id": "1a126cd3439e26db",
+        "messageIds": [
+          "1a126cd3439e26db"
+        ]
+      },
+      {
+        "id": "1a126cdb46a0f8e5",
+        "messageIds": [
+          "1a126cdb46a0f8e5"
+        ]
+      },
+      {
+        "id": "1a1306111691b931",
+        "messageIds": [
+          "1a1306111691b931"
+        ]
+      },
+      {
+        "id": "1a130622ea0350f7",
+        "messageIds": [
+          "1a130622ea0350f7"
+        ]
+      },
+      {
+        "id": "1a13062917b76b72",
+        "messageIds": [
+          "1a13062917b76b72"
+        ]
+      },
+      {
+        "id": "1a13062fb2f2ffa6",
+        "messageIds": [
+          "1a13062fb2f2ffa6"
+        ]
+      }
+    ],
+    "bodyReads": [
+      {
+        "id": "1a11bf33395d33a1",
+        "threadId": "1a11be815953d93d",
+        "labels": [
+          "IMPORTANT",
+          "CATEGORY_PERSONAL",
+          "INBOX"
+        ],
+        "internalDate": "1791470279000",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+          },
+          {
+            "name": "To",
+            "value": "\"ramishqureshi99@gmail.com\" <ramishqureshi99@gmail.com>"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Nexora demo for BAFSA's membership administration"
+          },
+          {
+            "name": "Date",
+            "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+          },
+          {
+            "name": "References",
+            "value": "<CAM7y_D8qJbeo=-XyepebnUnM6FFEUrku01otrv6+Bn=03z6gUQ@mail.gmail.com>"
+          },
+          {
+            "name": "In-Reply-To",
+            "value": "<CAM7y_D8qJbeo=-XyepebnUnM6FFEUrku01otrv6+Bn=03z6gUQ@mail.gmail.com>"
+          }
+        ],
+        "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n"
+      }
+    ],
+    "contextReads": [
+      {
+        "id": "1a11f79e78082745",
+        "threadId": "1a11f79e78082745",
+        "labels": [
+          "CATEGORY_PERSONAL",
+          "INBOX"
+        ],
+        "internalDate": "1791529443000",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Dora Schember <dschember@mpif.org>"
+          },
+          {
+            "name": "To",
+            "value": "\"ramishqureshi99@gmail.com\" <ramishqureshi99@gmail.com>"
+          },
+          {
+            "name": "Subject",
+            "value": "Automatic reply: Nexora demo for MPIF's membership team"
+          },
+          {
+            "name": "Date",
+            "value": "Fri, 9 Oct 2026 07:04:03 +0000"
+          },
+          {
+            "name": "References",
+            "value": "<CAM7y_D-eFY+oiLLrxJX3RsxuvP-3_o_rO-1d-SMJS9WK-sxzWA@mail.gmail.com>"
+          },
+          {
+            "name": "In-Reply-To",
+            "value": "<CAM7y_D-eFY+oiLLrxJX3RsxuvP-3_o_rO-1d-SMJS9WK-sxzWA@mail.gmail.com>"
+          }
+        ],
+        "body": "I have retired. For questions/information please contact the colleagues below:\r\n\r\nMembership contact Stephanie: sgibbs@mpif.org\r\nStandards contact Wiley: wabner@mpif.org\r\nInternational Journal of Powder Metallurgy contact Debby: dstab@mpif.org\r\nDesign Excellence Awards contact Debby: dstab@mpif.org\r\nAll Other Awards: contact Turner: tabbott@mpif.org\r\nStatistics contact Turner: tabbott@mpif.org\r\n\r\nDora Schember\r\n\n"
+      },
+      {
+        "id": "1a120804f5fbe7f3",
+        "threadId": "1a120804f5fbe7f3",
+        "labels": [
+          "CATEGORY_PERSONAL",
+          "INBOX"
+        ],
+        "internalDate": "1791546640000",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Gary McCoy <gary@smihq.org>"
+          },
+          {
+            "name": "To",
+            "value": "\"ramishqureshi99@gmail.com\" <ramishqureshi99@gmail.com>"
+          },
+          {
+            "name": "Subject",
+            "value": "Automatic reply: Nexora demo for SMI's membership applications"
+          },
+          {
+            "name": "Date",
+            "value": "Fri, 9 Oct 2026 11:50:40 +0000"
+          },
+          {
+            "name": "References",
+            "value": "<CAM7y_D-SQ1HvuSd-3PhV1GBfaoaY5OqG1gLD+G2jMS+JZ9rf9Q@mail.gmail.com>"
+          },
+          {
+            "name": "In-Reply-To",
+            "value": "<CAM7y_D-SQ1HvuSd-3PhV1GBfaoaY5OqG1gLD+G2jMS+JZ9rf9Q@mail.gmail.com>"
+          }
+        ],
+        "body": "I am currently away from the office at SpringWorld 2026. I will return on Monday, Oct. 12. I will reply to your message as I am able. For help with any ASD7 software related issues, please contact Kari Johnson at UTS at kari@uts.com.\r\n\n"
+      }
+    ],
+    "drafts": [
+      {
+        "id": "1a13402e4f170fd3",
+        "threadId": "1a13402e4f170fd3",
+        "labels": [
+          "DRAFT"
+        ],
+        "internalDate": "1791873967000",
+        "headers": [
+          {
+            "name": "Subject",
+            "value": "Nexora demo for MPIF's membership team"
+          },
+          {
+            "name": "To",
+            "value": "Stephanie <sgibbs@mpif.org>"
+          },
+          {
+            "name": "From",
+            "value": "ramishqureshi99@gmail.com"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 13 Oct 2026 02:46:07 -0400"
+          }
+        ],
+        "body": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Stephanie,</p><p>I emailed Dora on October 9 about Nexora; her retirement auto-reply listed you as MPIF&#39;s membership contact.</p><p>For MPIF&#39;s business-entity membership across its federated associations, Nexora connects company records, employee contacts, applications and staff review in one system.</p><p>Would a 15-minute walkthrough of one company-membership application workflow be useful? I can also send you the 90-second narrated, captioned demo I shared with Dora.</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p style=\"font-size:12px;color:#5f6368\">Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#39;t contact you again.</p></div>"
+      },
+      {
+        "id": "1a134034195cc4f2",
+        "threadId": "1a120800ff0e30ec",
+        "labels": [
+          "DRAFT"
+        ],
+        "internalDate": "1791873990000",
+        "headers": [
+          {
+            "name": "Subject",
+            "value": "Re: Nexora demo for SMI's membership applications"
+          },
+          {
+            "name": "To",
+            "value": "Gary McCoy <gary@smihq.org>"
+          },
+          {
+            "name": "From",
+            "value": "ramishqureshi99@gmail.com"
+          },
+          {
+            "name": "In-Reply-To",
+            "value": "<CAM7y_D-SQ1HvuSd-3PhV1GBfaoaY5OqG1gLD+G2jMS+JZ9rf9Q@mail.gmail.com>"
+          },
+          {
+            "name": "References",
+            "value": "<CAM7y_D-SQ1HvuSd-3PhV1GBfaoaY5OqG1gLD+G2jMS+JZ9rf9Q@mail.gmail.com>"
+          },
+          {
+            "name": "Date",
+            "value": "Tue, 13 Oct 2026 01:46:30 -0500"
+          }
+        ],
+        "body": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.55;color:#202124\"><p>Hi Gary,</p><p>I hope SpringWorld went well. Your auto-reply mentioned an October 12 return, so I&#39;m following up on my October 9 note and 90-second Nexora demo.</p><p>Given SMI&#39;s separate manufacturer and supplier memberships, I&#39;d suggest a focused look at one application workflow: connecting company and employee records with staff review, with SMI&#39;s existing member login in mind.</p><p>Would you have 15 minutes next week for a walkthrough and a discussion of whether this would be useful to your team?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p style=\"font-size:12px;color:#5f6368\">Advertisement: Nexora membership management software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#39;t contact you again.</p></div><br><br><div class=\"gmail_quote\">On Fri, 09 Oct 2026 11:50:25 +0000, ramishqureshi99@gmail.com wrote:<br><blockquote><div style=\"white-space: pre-wrap;\">Hi Gary,\n\nI noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application.\n\nWe&#x27;ve built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system. SMI already has a member login; we&#x27;d like to explore whether a focused evaluation of one application workflow would be useful.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI&#x27;ve attached a 90-second narrated demo with captions.\n\nWould a 15-minute look at that workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#x27;t contact you again.</div></blockquote></div>"
+      }
+    ],
+    "draftInventory": {
+      "drafts": [
+        {
+          "draft_id": "r-4894002651180659563",
+          "message_id": "1a134034195cc4f2",
+          "thread_id": "1a120800ff0e30ec",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "Gary McCoy gary@smihq.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Re: Nexora demo for SMI's membership applications",
+          "snippet": "Hi Gary, I hope SpringWorld went well. Your auto-reply mentioned an October 12 return, so I'm following up on my October 9 note and 90-second Nexora demo. Given SMI's separate manufacturer and",
+          "labels": [
+            "DRAFT"
+          ],
+          "has_attachment": false,
+          "email_ts": "2026-10-13T01:46:30-05:00"
+        },
+        {
+          "draft_id": "r6151705065138909456",
+          "message_id": "1a13402e4f170fd3",
+          "thread_id": "1a13402e4f170fd3",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "Stephanie sgibbs@mpif.org"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "Nexora demo for MPIF's membership team",
+          "snippet": "Hi Stephanie, I emailed Dora on October 9 about Nexora; her retirement auto-reply listed you as MPIF's membership contact. For MPIF's business-entity membership across its federated",
+          "labels": [
+            "DRAFT"
+          ],
+          "has_attachment": false,
+          "email_ts": "2026-10-13T02:46:07-04:00"
+        }
+      ],
+      "next_page_token": null
+    },
+    "queueSentChecks": [
+      {
+        "query": "in:sent to:sgibbs@mpif.org subject:\"Nexora demo for MPIF's membership team\"",
+        "complete": true,
+        "ids": [],
+        "emails": []
+      },
+      {
+        "query": "in:sent to:gary@smihq.org subject:\"Nexora demo for SMI's membership applications\"",
+        "complete": true,
+        "ids": [
+          "1a120800ff0e30ec"
+        ],
+        "emails": [
+          {
+            "id": "1a120800ff0e30ec",
+            "thread_id": "1a120800ff0e30ec",
+            "subject": "Nexora demo for SMI's membership applications",
+            "to": [
+              "gary@smihq.org"
+            ],
+            "email_ts": "2026-10-09T11:50:25+00:00"
+          }
+        ]
+      },
+      {
+        "query": "in:sent after:2026/10/12",
+        "complete": true,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931"
+        ],
+        "emails": [
+          {
+            "id": "1a13062fb2f2ffa6",
+            "thread_id": "1a13062fb2f2ffa6",
+            "subject": "A focused website-content demo for NewFields Canada",
+            "to": [
+              "CanadaMarketing@newfields.com"
+            ],
+            "email_ts": "2026-10-12T06:52:35-07:00"
+          },
+          {
+            "id": "1a13062917b76b72",
+            "thread_id": "1a13062917b76b72",
+            "subject": "A focused website-content demo for Rawlinsons",
+            "to": [
+              "info@rawlinsons.co.nz"
+            ],
+            "email_ts": "2026-10-12T09:52:08-04:00"
+          },
+          {
+            "id": "1a130622ea0350f7",
+            "thread_id": "1a130622ea0350f7",
+            "subject": "A focused website-content demo for REGA",
+            "to": [
+              "info@regaeng.com"
+            ],
+            "email_ts": "2026-10-12T09:51:43-04:00"
+          },
+          {
+            "id": "1a1306111691b931",
+            "thread_id": "1a1306111691b931",
+            "subject": "A focused website-content demo for Berg Engineering",
+            "to": [
+              "marketing@bergengineering.com.au"
+            ],
+            "email_ts": "2026-10-12T06:50:29-07:00"
+          }
+        ]
+      },
+      {
+        "query": "in:anywhere -in:sent -in:drafts after:2026/10/12 {from:mpif.org from:smihq.org}",
+        "complete": true,
+        "ids": [],
+        "emails": []
+      }
+    ],
+    "sentBodies": [
+      {
+        "id": "1a120800ff0e30ec",
+        "threadId": "1a120800ff0e30ec",
+        "labels": [
+          "SENT"
+        ],
+        "internalDate": "1791546625000",
+        "headers": [
+          {
+            "name": "Subject",
+            "value": "Nexora demo for SMI's membership applications"
+          },
+          {
+            "name": "To",
+            "value": "gary@smihq.org"
+          },
+          {
+            "name": "From",
+            "value": "ramishqureshi99@gmail.com"
+          },
+          {
+            "name": "Reply-To",
+            "value": "ramishqureshi99@gmail.com"
+          },
+          {
+            "name": "Date",
+            "value": "Fri, 9 Oct 2026 11:50:25 +0000"
+          }
+        ],
+        "body": "Hi Gary,\n\nI noticed SMI has separate memberships for spring manufacturers and suppliers, with staff following up after an application.\n\nWe've built Nexora to connect member-company records, employee contacts, membership applications, staff review and member self-service in one system. SMI already has a member login; we'd like to explore whether a focused evaluation of one application workflow would be useful.\n\nAn optional AI assistant can also be enabled inside the CRM, so staff can use AI assistance alongside their membership work.\n\nI've attached a 90-second narrated demo with captions.\n\nWould a 15-minute look at that workflow be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora membership management software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.\n"
+      }
+    ],
+    "newPositiveReplies": [],
+    "newOptOuts": [],
+    "newBounces": [],
+    "draftVerifications": [
+      {
+        "to": "sgibbs@mpif.org",
+        "draftId": "r6151705065138909456",
+        "messageId": "1a13402e4f170fd3",
+        "threadId": "1a13402e4f170fd3",
+        "subject": "Nexora demo for MPIF's membership team",
+        "match": "I emailed Dora on October 9 about Nexora; her retirement auto-reply listed you",
+        "exactDraftAndMessageID": true,
+        "emptyCCBCC": true,
+        "expectedContextFound": true,
+        "approvedAsSaved": true,
+        "materialChange": false,
+        "attachmentAdded": false
+      },
+      {
+        "to": "gary@smihq.org",
+        "draftId": "r-4894002651180659563",
+        "messageId": "1a134034195cc4f2",
+        "threadId": "1a120800ff0e30ec",
+        "subject": "Re: Nexora demo for SMI's membership applications",
+        "match": "I hope SpringWorld went well. Your auto-reply mentioned an October 12 return",
+        "exactDraftAndMessageID": true,
+        "emptyCCBCC": true,
+        "expectedContextFound": true,
+        "approvedAsSaved": true,
+        "materialChange": false,
+        "attachmentAdded": false
+      }
+    ]
+  }
+}

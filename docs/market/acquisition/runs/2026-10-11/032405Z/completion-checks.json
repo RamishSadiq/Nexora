@@ -1,0 +1,14 @@
+{
+  "attemptedAt": "2026-10-11T03:30:00.325Z",
+  "lastSuccessfulAt": "2026-10-11T03:25:26.395Z",
+  "complete": false,
+  "reason": "Gmail transport unavailable after bounded retries and a later completion probe",
+  "failure": {
+    "at": "2026-10-11T03:27:49.967Z",
+    "query": "in:anywhere {to:apd.com from:apd.com}",
+    "error": "[{\"type\":\"text\",\"text\":\"tool call error: tool call failed for `codex_apps/gmail.search_emails`\\n\\nCaused by:\\n    Transport send error: Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (https://chatgpt.com/backend-api/ps/mcp)\"}]",
+    "attempts": 3
+  },
+  "sendCalls": 0,
+  "confirmedMessageIds": []
+}

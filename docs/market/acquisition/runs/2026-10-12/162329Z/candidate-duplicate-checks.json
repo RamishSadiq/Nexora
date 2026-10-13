@@ -1,0 +1,22 @@
+[
+  {
+    "query": "in:anywhere {to:mgac.com from:mgac.com to:mgac.co.uk from:mgac.co.uk}",
+    "emails": [],
+    "complete": true
+  },
+  {
+    "query": "in:anywhere {to:gsrestaurantequipment.com from:gsrestaurantequipment.com to:gsequipmentinc.com from:gsequipmentinc.com}",
+    "emails": [],
+    "complete": true
+  },
+  {
+    "query": "in:anywhere {to:northprojects.com.au from:northprojects.com.au}",
+    "emails": [],
+    "complete": true
+  },
+  {
+    "query": "in:anywhere {to:prismengineering.com from:prismengineering.com}",
+    "emails": [],
+    "complete": true
+  }
+]

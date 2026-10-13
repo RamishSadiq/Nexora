@@ -1,0 +1,85 @@
+{
+  "market": "Middle East",
+  "country": "United Arab Emirates",
+  "segment": "private_building_and_workshop_equipment_suppliers",
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "organisation": "DMW General Trading",
+  "domain": "dmwtrading.com",
+  "domains": [
+    "dmwtrading.com",
+    "dmwtrading.ae"
+  ],
+  "buyerContact": "info@dmwtrading.ae",
+  "buyerRole": null,
+  "buyerRoleSought": "Owner or marketing/content operations; unresolved",
+  "source": "https://dmwtrading.com/en/news/new-showroom",
+  "sourceDate": "2026-04-08",
+  "sourceCheckedAt": "2026-10-10T22:26:08.736Z",
+  "checkedAt": "2026-10-10T22:26:08.736Z",
+  "signal": "Indexed official article announces a new Mussafah M9 Abu Dhabi showroom.",
+  "observedFact": "Official search excerpt describes a 600-square-metre showroom and publishes info@dmwtrading.ae; full page retrieval failed.",
+  "needEvidence": [
+    {
+      "url": "https://dmwtrading.com/en/news/new-showroom",
+      "sourceDate": "2026-04-08",
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "observation": "Official-domain search excerpt describes showroom and new product divisions; full page returned internal fetch/cache error.",
+      "verification": "indexed_official_excerpt_only"
+    }
+  ],
+  "buyerContactEvidence": [
+    {
+      "url": "https://dmwtrading.com/en/news/new-showroom",
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "observation": "Indexed excerpt publishes info@dmwtrading.ae; cross-domain identity/contact not fully verified."
+    }
+  ],
+  "problemHypothesis": "Possible bounded public showroom/product-division information pages; not proof of buying intent.",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "capabilityFit": "Potential public information CMS only; identity and lawful email route must be resolved.",
+  "unsupportedRequirements": [
+    "No product checkout, booking, Arabic localisation or integration promised"
+  ],
+  "confidence": "low",
+  "sendEligible": false,
+  "outreachDecision": "hold_source_identity_and_recipient_specific_lawful_route",
+  "holdReasons": [
+    "Full official page/contact verification failed; .com website and .ae mailbox relationship not fully verified",
+    "Recipient-specific category/channel lawful basis unresolved; public contact is not consent"
+  ],
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "User-authorised individual first pitches in both markets every five hours; latest heartbeat 2026-10-10T22:19Z",
+  "outreachLegalBasis": "unresolved; no generic-mailbox exemption or prior-batch consent inferred",
+  "countryRulesCheckedAt": null,
+  "countryRulesRecord": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json; existing unresolved UAE requirements retained; new official legislation fetch failed, not marked newly verified",
+  "owner": "Ramish Qureshi",
+  "nextAction": "Recheck official source/contact and recipient-specific email basis when due; founder may supply a genuine introduction or documented opt-in; no automatic permission request or contact-form message",
+  "nextActionDue": "2026-10-17",
+  "reviewDue": "2026-10-17",
+  "stage": "research_only",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 1,
+    "buyerAccess": 0,
+    "timing": 0
+  },
+  "researchPriorityScore": 2,
+  "scoreMaximum": 12,
+  "pitchVersion": null,
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "No dedicated website/CMS video or truthful public product page has been delivered; attached video introduces wider membership platform.",
+  "history": [
+    {
+      "at": "2026-10-10T22:26:08.736Z",
+      "event": "Fresh UAE equipment/showroom cohort researched; held for actual source/contact/legal uncertainty, not simply lack of prior invitation."
+    }
+  ]
+}

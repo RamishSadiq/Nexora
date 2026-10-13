@@ -57,7 +57,10 @@ public sealed class Publication : TenantEntity, IAppendOnly
     public Guid? PageVersionId { get; set; }
     public Guid ActorId { get; set; }
 }
-public sealed record ContentBlock(string Type, string Heading, string Text, string? LinkLabel = null, string? LinkUrl = null, Guid? MediaId = null);
+public sealed record ContentItem(string Heading, string Text, Guid? MediaId = null, string? LinkLabel = null, string? LinkUrl = null);
+public sealed record ContentLayout(string Span = "full", string Alignment = "left", string Surface = "card", string Spacing = "normal", string Eyebrow = "", bool Hidden = false);
+public sealed record ContentBlock(string Type, string Heading, string Text, string? LinkLabel = null, string? LinkUrl = null, Guid? MediaId = null,
+    ContentLayout? Layout = null, WebsiteMotion? Motion = null, ContentItem[]? Items = null);
 public sealed record SiteRequest(string Name, string Tagline);
 public sealed record PageRequest(string Slug, string Title, string Description, ContentBlock[] Blocks, Guid? Version);
 public sealed record PublishRequest(Guid Version, Guid? RevisionId = null);

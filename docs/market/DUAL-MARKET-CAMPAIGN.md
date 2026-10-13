@@ -1,3 +1,5 @@
+> Superseded 12 October 2026 by [the international campaign](MULTI-MARKET-CAMPAIGN.md): Australia, United States, New Zealand and Canada only, one prospect per country every five hours. New Middle East pitches stop; history and replies remain monitored. The following records the 10 October policy.
+
 # Nexora US and Middle East campaign
 
 Updated 10 October 2026 on the user's instruction: "i didn't stopped you from sending pitches to us market, hit both simultaneously and send the pitches after every five hours".

@@ -1,0 +1,124 @@
+{
+  "runId": "dual-20261011T032405Z",
+  "automationId": "nexora-daily-us-sales-outreach",
+  "startedAt": "2026-10-11T03:24:05.048Z",
+  "completedAt": "2026-10-11T03:30:00.325Z",
+  "localStartedAt": "2026-10-11T04:24:05.048+01:00",
+  "timezone": "Europe/London",
+  "localDate": "2026-10-11",
+  "status": "completion_checks_failed",
+  "confirmedNewSends": 0,
+  "sendToolCalls": 0,
+  "messageIds": [],
+  "manifest": null,
+  "draftDirectory": "docs/market/acquisition/runs/2026-10-11/032405Z",
+  "markets": {
+    "United States": {
+      "status": "held",
+      "selectedUnsentReserve": "G&S Restaurant Equipment",
+      "reservePitch": "docs/market/acquisition/runs/2026-10-10/221900Z/prepared-pitch.eml",
+      "reserveVerifiedAbsentInSentAt": "2026-10-11T03:25:26.395Z",
+      "senderHold": "MCP tool call requires approval, but approval policy is never",
+      "freshResearch": "APD Engineering & Architecture",
+      "freshHold": [
+        "No relevant published email verified; contact forms/calls are not authorised",
+        "Existing sender approval block remains",
+        "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+      ],
+      "messageIds": [],
+      "attemptedRecipient": null
+    },
+    "Middle East": {
+      "status": "research_held",
+      "freshResearch": "Neatsmith Dubai",
+      "freshHold": [
+        "No relevant published email verified; forms not authorised",
+        "Country/category/channel lawful route unresolved; public pages do not establish recipient consent",
+        "Existing sender approval block remains",
+        "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+      ],
+      "messageIds": [],
+      "attemptedRecipient": null
+    }
+  },
+  "replyChecks": {
+    "initialComplete": true,
+    "completedAt": "2026-10-11T03:25:26.395Z",
+    "associatedConversationsRead": 55,
+    "allInitialPagesFinished": true,
+    "all55PriorSendIdsReconciled": true,
+    "sentCountIncludingSelfTest": 56,
+    "actualMessagesRead": [
+      "1a11bf33395d33a1",
+      "1a11f79e78082745",
+      "1a120804f5fbe7f3"
+    ],
+    "newPositiveAtInitialCheck": 0,
+    "newBouncesAtInitialCheck": 0,
+    "completionComplete": false,
+    "completionOutcome": "unknown_after_initial_success_due_transport_failure",
+    "candidateDuplicateChecksComplete": false,
+    "failure": {
+      "at": "2026-10-11T03:27:49.967Z",
+      "query": "in:anywhere {to:apd.com from:apd.com}",
+      "error": "[{\"type\":\"text\",\"text\":\"tool call error: tool call failed for `codex_apps/gmail.search_emails`\\n\\nCaused by:\\n    Transport send error: Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (https://chatgpt.com/backend-api/ps/mcp)\"}]",
+      "attempts": 3
+    },
+    "completionProbeFailure": [
+      {
+        "type": "text",
+        "text": "tool call error: tool call failed for `codex_apps/gmail.search_emails`\n\nCaused by:\n    Transport send error: Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (https://chatgpt.com/backend-api/ps/mcp)"
+      }
+    ]
+  },
+  "localGuards": {
+    "manifestCount": 4,
+    "pendingSendingUnknownOutcomes": 0,
+    "activeSendingRun": null,
+    "senderLockAbsent": true,
+    "rollingFiveHourConfirmedSends": 0,
+    "confirmedToday": 0,
+    "perMarketCap": 1,
+    "totalCap": 2,
+    "dailyCap": 24
+  },
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "sizeBytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+    "matchesState": true
+  },
+  "weeklyReview": {
+    "performed": false,
+    "lastDate": "2026-10-10",
+    "nextDue": "2026-10-17",
+    "reason": "Not due; no duplicate review or reset of measured buyer outcomes"
+  },
+  "proofDeliverables": [
+    {
+      "asset": "Dedicated CMS demonstration",
+      "status": "outstanding",
+      "nextAction": "Verify editor draft/preview/publication for three agreed sample information pages"
+    },
+    {
+      "asset": "Dedicated supported-portal demonstration",
+      "status": "outstanding",
+      "nextAction": "Verify allowed profile/private-page access and rejected unauthorised access"
+    },
+    {
+      "asset": "Truthful public product page",
+      "status": "outstanding_not_published",
+      "nextAction": "Prepare supported module outcomes and real founder/contact information; no deployment in this run"
+    }
+  ],
+  "partnerResearch": {
+    "organisation": "Brandinc.",
+    "source": "https://brandinc.ae/studio/",
+    "status": "research_only_no_known_relationship_or_willingness",
+    "messageSent": false
+  },
+  "nextAction": "Restore the Gmail connection and permit Gmail sending through the authorised session; before retrying a qualified unsent pitch repeat complete reply/Sent/suppression/cap checks. Do not bypass restrictions or change sender/channel.",
+  "notification": "New repeated Gmail transport failure requires user action; the previously notified sender block is unchanged.",
+  "changes": "Market research, held local drafts, acquisition pipeline and shared run evidence only; no application/sibling changes, deployment, purchases, commit/push or external messages.",
+  "newCandidateLocalLedgerDuplicates": []
+}

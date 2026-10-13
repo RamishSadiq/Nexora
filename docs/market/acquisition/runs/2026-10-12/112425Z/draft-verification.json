@@ -1,0 +1,17 @@
+[
+  {
+    "organisation": "Fitness Showrooms",
+    "recipient": "info@fitshowrooms.com",
+    "MIMEVerified": true,
+    "attachmentHashVerified": true,
+    "bytes": 2665219,
+    "sent": false
+  },
+  {
+    "organisation": "MOMA International",
+    "recipient": null,
+    "MIMEVerified": false,
+    "reason": "Held body only; recipient-specific UAE lawful route unresolved, To deliberately not selected",
+    "sent": false
+  }
+]

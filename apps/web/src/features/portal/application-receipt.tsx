@@ -35,7 +35,7 @@ export function ApplicationReceipt({ id, accountId }: { id: string; accountId?: 
     {error ? <div role="alert" className="mt-5 rounded-xl bg-red-50 p-4 text-red-900">{error} <button className="underline" onClick={refresh}>Try again</button></div> : !receipt ? <p role="status" className="mt-5">Loading your application…</p> : <>
       <h3 className="mt-5 text-xl font-semibold">{receipt.product}</h3>
       <p className="mt-2 text-sm text-slate-600">Application reference</p><p className="break-all font-mono text-sm">{receipt.id}</p>
-      <div className="mt-6 rounded-xl bg-[#eef3df] p-5">
+      <div className="portal-tinted mt-6 rounded-xl bg-[#eef3df] p-5">
         <p className="font-semibold capitalize">{receipt.status === "submitted" ? "Awaiting review" : receipt.status}</p>
         <p className="mt-2 text-sm leading-6">{receipt.status === "submitted" ? "Your association has received your application. Check this page for its decision. No further submission is needed." : receipt.status === "approved" ? "Your application has been approved. Your current membership details are shown below." : receipt.status === "rejected" ? "Your application was not approved. Contact your association if you would like to discuss the decision." : "Contact your association for help with this application."}</p>
       </div>

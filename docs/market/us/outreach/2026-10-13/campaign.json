@@ -1,0 +1,322 @@
+{
+  "campaign": "Nexora four-country first pitches",
+  "createdAt": "2026-10-13T02:42:07.359596+00:00",
+  "localDate": "2026-10-13",
+  "dailyCampaign": true,
+  "sender": "ramishqureshi99@gmail.com",
+  "postalAddress": "EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan",
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "size_bytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+  },
+  "messages": [
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-13T02:39:16Z",
+      "sourceCheckedAt": "2026-10-13T02:39:16Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "userAuthority": "Standing four-country individual first-pitch authorization; current heartbeat 2026-10-13T02:30:39.188Z; separate from recipient consent",
+      "owner": "Ramish Qureshi",
+      "pitchVersion": "cms-v2-four-country-role-focused",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction; dedicated CMS/portal demonstrations and public product page outstanding.",
+      "capabilityFit": "Three public company/service/news information pages with one staff editor, draft, preview and publication.",
+      "unsupportedRequirements": [
+        "No ecommerce/inventory, manufacturing or project-delivery systems, booking/LMS/quizzes, external integration or arbitrary forms/workflows",
+        "No migration, regional hosting/localisation, payments/tax or production readiness claims"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "countryRulesCheckedAt": "2026-10-13T02:39:16Z",
+      "permissionEvidence": [
+        {
+          "url": "https://www.jaeaust.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "publishedBy": "JAE organisation-owned website",
+          "address": "marketing@jaeaust.com.au",
+          "function": "Corporate and General Queries / marketing",
+          "refusalFound": false,
+          "exactOfferRelevance": "Staff-managed public corporate service/project-information pages belong to corporate/marketing communications"
+        }
+      ],
+      "nextActionDue": "2026-10-20",
+      "history": [
+        {
+          "at": "2026-10-13T02:39:16Z",
+          "event": "New scheduled run: current official contact/content source and live Sent rechecked. Historical send denial not treated as permanent permission hold; actual current access to be evaluated. Buyer problems/interest/budget unconfirmed."
+        }
+      ],
+      "market": "Australia",
+      "country": "Australia",
+      "segment": "mining_engineering_service_firms",
+      "organisation": "JAE Engineering Group",
+      "domain": "jaeaust.com.au",
+      "domains": [
+        "jaeaust.com.au"
+      ],
+      "source": "https://www.jaeaust.com.au/",
+      "sourceDate": null,
+      "observedFact": "Official Australian site publishes manufacturing, engineering and major-refurbishment service information; contact page designates marketing@jaeaust.com.au for Corporate and General Queries.",
+      "signal": "Current public service-information workflow; no active procurement or dated expansion assumed.",
+      "problemHypothesis": "Marketing/corporate staff may find a service/project-information CMS evaluation relevant; need unconfirmed.",
+      "needEvidence": [
+        {
+          "url": "https://www.jaeaust.com.au/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Manufacturing, engineering and refurbishment public information."
+        }
+      ],
+      "buyerRole": "Corporate/general enquiries function at the published marketing inbox; individual purchasing owner unknown",
+      "buyerContact": "marketing@jaeaust.com.au",
+      "buyerContactEvidence": [
+        {
+          "url": "https://www.jaeaust.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Direct official publication explicitly assigns Corporate and General Queries to marketing inbox; ABN and Rockhampton Queensland address shown."
+        }
+      ],
+      "consentStatus": "inferred_qualifying_conspicuous_publication",
+      "outreachLegalBasis": "Spam Act Schedule 2 clause 4(2)(a)(vii): published corporate/marketing work function; direct organisation-owned publication is attributable to the organisation; no accompanying refusal found. Exact offer is staff publishing of public corporate/service/project information, relevant to this function. This is not blanket public-email consent.",
+      "publicationNoticeChecks": [
+        {
+          "url": "https://www.jaeaust.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://www.jaeaust.com.au/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        }
+      ],
+      "linkedNoticeAssessment": "Inspected complete contact and home content/link inventories. No relevant privacy/terms/refusal notice links exposed on either page; no refusal accompanied the address. Forms and login/provider links not used.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.legislation.gov.au/C2004A01214/latest",
+          "checkedAt": "2026-10-12T21:38:34.261Z",
+          "observation": "Current in-force latest compilation verified as 10 March 2016."
+        },
+        {
+          "url": "https://www.legislation.gov.au/C2004A01214/2016-03-10/2016-03-10/text/original/epub/OEBPS/document_1/document_1.html",
+          "checkedAt": "2026-10-12T21:38:34.261Z",
+          "observation": "Schedule 2 clause 4 conditions including published work function, attributable publication, no accompanying refusal and exact functional relevance reviewed."
+        }
+      ],
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 1,
+        "timing": 0
+      },
+      "researchPriorityScore": 4,
+      "sendEligible": true,
+      "stage": "ready_first_pitch",
+      "outreachDecision": "ready_after_current_route_reply_duplicate_cap_checks",
+      "currentProvider": "Footer credits Adz Power Agencies; current contract/dissatisfaction unknown",
+      "holdReasons": [],
+      "nextAction": "Send individually under standing authority, then verify accepted message metadata; hold on an actual denied action.",
+      "runId": "four-country-20261013T023039Z",
+      "intervalHold": null,
+      "preSendChecks": {
+        "globalRepliesComplete": true,
+        "liveDuplicatesComplete": true,
+        "rollingCountrySlotsUsed": 0,
+        "todaySent": 0,
+        "actualCurrentSendAccess": "pending one qualified send",
+        "verifiedAt": "2026-10-13T02:39:16Z"
+      },
+      "reviewDue": "2026-10-20",
+      "qualificationEligible": true,
+      "contactRouteEligible": true,
+      "to": "marketing@jaeaust.com.au",
+      "subject": "Staff-managed public content for JAE Engineering Group",
+      "status": "held",
+      "bodyText": "Hello JAE corporate team,\n\nI saw JAE's public pages describe its manufacturing, engineering and mining-refurbishment services.\n\nI'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample service, project-information and news pages and one staff editor to evaluate that workflow.\n\nI've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.\n\nWould a 15-minute editor walkthrough be useful for your corporate service and project information?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.",
+      "bodyHtml": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.5\"><p>Hello JAE corporate team,</p><p>I saw JAE's public pages describe its manufacturing, engineering and mining-refurbishment services.</p><p>I'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample service, project-information and news pages and one staff editor to evaluate that workflow.</p><p>I've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.</p><p>Would a 15-minute editor walkthrough be useful for your corporate service and project information?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.</p></div>",
+      "mimeFile": "docs/market/acquisition/runs/2026-10-13/023039Z/australia.eml",
+      "events": [
+        {
+          "at": "2026-10-13T02:42:07.359596+00:00",
+          "status": "ready",
+          "reason": "Current official routes, complete global replies, duplicates and caps checked"
+        },
+        {
+          "at": "2026-10-13T02:43:08.351357+00:00",
+          "status": "held",
+          "reason": "Held after current send-action permission denial; not retried or bypassed",
+          "messageId": null
+        }
+      ],
+      "updatedAt": "2026-10-13T02:43:08.351357+00:00",
+      "statusReason": "Held after current send-action permission denial; not retried or bypassed"
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-13T02:39:16Z",
+      "sourceCheckedAt": "2026-10-13T02:39:16Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "userAuthority": "Standing four-country individual first-pitch authorization; current heartbeat 2026-10-13T02:30:39.188Z; separate from recipient consent",
+      "owner": "Ramish Qureshi",
+      "pitchVersion": "cms-v2-four-country-role-focused",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction; dedicated CMS/portal demonstrations and public product page outstanding.",
+      "capabilityFit": "Three public company/service/news information pages with one staff editor, draft, preview and publication.",
+      "unsupportedRequirements": [
+        "No ecommerce/inventory, manufacturing or project-delivery systems, booking/LMS/quizzes, external integration or arbitrary forms/workflows",
+        "No migration, regional hosting/localisation, payments/tax or production readiness claims"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "countryRulesCheckedAt": "2026-10-13T02:39:16Z",
+      "permissionEvidence": [],
+      "nextActionDue": "2026-10-20",
+      "history": [
+        {
+          "at": "2026-10-13T02:39:16Z",
+          "event": "New scheduled run: current official contact/content source and live Sent rechecked. Historical send denial not treated as permanent permission hold; actual current access to be evaluated. Buyer problems/interest/budget unconfirmed."
+        }
+      ],
+      "market": "United States",
+      "country": "United States",
+      "segment": "restaurant_equipment_showrooms",
+      "organisation": "G&S Restaurant Equipment",
+      "domain": "gsrestaurantequipment.com",
+      "domains": [
+        "gsrestaurantequipment.com",
+        "gsequipmentinc.com"
+      ],
+      "source": "https://gsequipmentinc.com/",
+      "sourceDate": "2026-09-14 (announced opening)",
+      "observedFact": "Official site announces September 14 showroom opening at 4680 Blanding Boulevard, Jacksonville; exact sales inbox remains published.",
+      "signal": "Showroom relocation/public information",
+      "problemHypothesis": "A narrow showroom/service/news content CMS evaluation may fit; current buying need unknown.",
+      "needEvidence": [
+        {
+          "url": "https://gsequipmentinc.com/",
+          "sourceDate": "2026-09-14 (announced opening)",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Showroom announcement, address and sales inbox reverified."
+        }
+      ],
+      "buyerRole": "Sales/business routing contact; actual website/marketing buyer not confirmed",
+      "buyerContact": "sales@gsrestaurantequipment.com",
+      "buyerContactEvidence": [
+        {
+          "url": "https://gsequipmentinc.com/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Exact direct public business address."
+        }
+      ],
+      "consentStatus": "US_commercial_first_pitch_route",
+      "outreachLegalBasis": "Current FTC commercial-email guidance; accurate identity/subject, advertisement, actual user-confirmed postal address and free reply opt-out. No buyer interest or recipient consent inferred.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Current official B2B commercial-email requirements reviewed."
+        }
+      ],
+      "publicationNoticeChecks": [
+        {
+          "url": "https://gsequipmentinc.com/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://gsequipmentinc.com/privacy-policy/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://gsequipmentinc.com/terms-of-use/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        }
+      ],
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "sendEligible": true,
+      "stage": "ready_first_pitch",
+      "outreachDecision": "ready_after_current_route_reply_duplicate_cap_checks",
+      "currentProvider": "Beedash catalogue; inventory/checkout/financing not part of evaluation",
+      "holdReasons": [],
+      "nextAction": "Send individually under standing authority, then verify accepted message metadata; hold on an actual denied action.",
+      "runId": "four-country-20261013T023039Z",
+      "intervalHold": null,
+      "preSendChecks": {
+        "globalRepliesComplete": true,
+        "liveDuplicatesComplete": true,
+        "rollingCountrySlotsUsed": 0,
+        "todaySent": 0,
+        "actualCurrentSendAccess": "pending one qualified send",
+        "verifiedAt": "2026-10-13T02:39:16Z"
+      },
+      "reviewDue": "2026-10-20",
+      "qualificationEligible": true,
+      "contactRouteEligible": true,
+      "aliasContactEvidence": {
+        "address": "sales@gsequipmentinc.com",
+        "purpose": "Privacy/unsubscribe contact, not chosen as a second recipient",
+        "source": "https://gsequipmentinc.com/privacy-policy/",
+        "checkedAt": "2026-10-13T02:39:16Z"
+      },
+      "to": "sales@gsrestaurantequipment.com",
+      "subject": "Keeping G&S showroom and service pages current",
+      "status": "failed",
+      "bodyText": "Hello G&S Restaurant Equipment team,\n\nI saw your announcement of the September 14 showroom opening on Blanding Boulevard.\n\nI'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample pages covering showroom information, services and company news and one staff editor to evaluate that workflow.\n\nI've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.\n\nWould a 15-minute walkthrough be useful for whoever manages G&S's public website content?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.",
+      "bodyHtml": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.5\"><p>Hello G&amp;S Restaurant Equipment team,</p><p>I saw your announcement of the September 14 showroom opening on Blanding Boulevard.</p><p>I&#x27;m Ramish, founder of Nexora. We&#x27;ve built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample pages covering showroom information, services and company news and one staff editor to evaluate that workflow.</p><p>I&#x27;ve attached a 90-second narrated and captioned introduction to Nexora&#x27;s wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.</p><p>Would a 15-minute walkthrough be useful for whoever manages G&amp;S&#x27;s public website content?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply &#x27;unsubscribe&#x27; or &#x27;no thanks&#x27; and we won&#x27;t contact you again.</p></div>",
+      "mimeFile": "docs/market/acquisition/runs/2026-10-13/023039Z/united-states.eml",
+      "events": [
+        {
+          "at": "2026-10-13T02:42:07.359596+00:00",
+          "status": "ready",
+          "reason": "Current official routes, complete global replies, duplicates and caps checked"
+        },
+        {
+          "at": "2026-10-13T02:42:24.150412+00:00",
+          "status": "sending",
+          "reason": "One authorized qualified first-pitch attempt after current reply, Sent, publication, suppression and cap checks",
+          "messageId": null
+        },
+        {
+          "at": "2026-10-13T02:43:08.203695+00:00",
+          "status": "failed",
+          "reason": "Current scheduled-session denial: MCP tool call requires approval, but approval policy is never; live Sent confirms absent, no accepted ID",
+          "messageId": null
+        }
+      ],
+      "updatedAt": "2026-10-13T02:43:08.203695+00:00",
+      "statusReason": "Current scheduled-session denial: MCP tool call requires approval, but approval policy is never; live Sent confirms absent, no accepted ID"
+    }
+  ],
+  "runIds": [
+    "four-country-20261013T023039Z"
+  ]
+}

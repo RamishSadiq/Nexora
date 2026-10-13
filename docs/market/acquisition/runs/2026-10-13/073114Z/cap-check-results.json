@@ -1,0 +1,31 @@
+{
+  "cases": [
+    {
+      "case": "rolling_total",
+      "passed": true,
+      "result": "Five-hour overall message limit reached (including one-time follow-ups)"
+    },
+    {
+      "case": "daily_total",
+      "passed": true,
+      "result": "Daily overall message limit reached (including one-time follow-ups)"
+    },
+    {
+      "case": "market_cap",
+      "passed": true,
+      "result": "Five-hour market organisation limit reached"
+    },
+    {
+      "case": "remaining_capacity",
+      "passed": true,
+      "result": "Allowed with remaining capacity; only synthetic fixture updated"
+    },
+    {
+      "case": "unknown_followup",
+      "passed": true,
+      "result": "Reconcile pending follow-up outcomes before a new first pitch"
+    }
+  ],
+  "allPassed": true,
+  "liveCampaignModifiedByChecks": false
+}

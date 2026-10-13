@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-10T16:58:07+00:00",
+  "updatedAt": "2026-10-12T11:30:21.464997Z",
   "policy": "docs/market/middle-east/PRODUCT-TARGETING.md",
   "scope": "Middle East offer-specific research: councils, procurement history and private-business website project signals. No record is send-ready.",
   "confirmedNoCrm": 0,
@@ -1397,6 +1397,541 @@
       "contactVerification": "Published email masked; no guessed address or form submission.",
       "sendEligible": false,
       "history": []
+    },
+    {
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "segment": "private_building_and_workshop_equipment_suppliers",
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "organisation": "DMW General Trading",
+      "domain": "dmwtrading.com",
+      "domains": [
+        "dmwtrading.com",
+        "dmwtrading.ae"
+      ],
+      "buyerContact": "info@dmwtrading.ae",
+      "buyerRole": null,
+      "buyerRoleSought": "Owner or marketing/content operations; unresolved",
+      "source": "https://dmwtrading.com/en/news/new-showroom",
+      "sourceDate": "2026-04-08",
+      "sourceCheckedAt": "2026-10-10T22:26:08.736Z",
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "signal": "Indexed official article announces a new Mussafah M9 Abu Dhabi showroom.",
+      "observedFact": "Official search excerpt describes a 600-square-metre showroom and publishes info@dmwtrading.ae; full page retrieval failed.",
+      "needEvidence": [
+        {
+          "url": "https://dmwtrading.com/en/news/new-showroom",
+          "sourceDate": "2026-04-08",
+          "checkedAt": "2026-10-10T22:26:08.736Z",
+          "observation": "Official-domain search excerpt describes showroom and new product divisions; full page returned internal fetch/cache error.",
+          "verification": "indexed_official_excerpt_only"
+        }
+      ],
+      "buyerContactEvidence": [
+        {
+          "url": "https://dmwtrading.com/en/news/new-showroom",
+          "checkedAt": "2026-10-10T22:26:08.736Z",
+          "observation": "Indexed excerpt publishes info@dmwtrading.ae; cross-domain identity/contact not fully verified."
+        }
+      ],
+      "problemHypothesis": "Possible bounded public showroom/product-division information pages; not proof of buying intent.",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "capabilityFit": "Potential public information CMS only; identity and lawful email route must be resolved.",
+      "unsupportedRequirements": [
+        "No product checkout, booking, Arabic localisation or integration promised"
+      ],
+      "confidence": "low",
+      "sendEligible": false,
+      "outreachDecision": "hold_source_identity_and_recipient_specific_lawful_route",
+      "holdReasons": [
+        "Full official page/contact verification failed; .com website and .ae mailbox relationship not fully verified",
+        "Recipient-specific category/channel lawful basis unresolved; public contact is not consent"
+      ],
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "User-authorised individual first pitches in both markets every five hours; latest heartbeat 2026-10-10T22:19Z",
+      "outreachLegalBasis": "unresolved; no generic-mailbox exemption or prior-batch consent inferred",
+      "countryRulesCheckedAt": null,
+      "countryRulesRecord": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json; existing unresolved UAE requirements retained; new official legislation fetch failed, not marked newly verified",
+      "owner": "Ramish Qureshi",
+      "nextAction": "Recheck official source/contact and recipient-specific email basis when due; founder may supply a genuine introduction or documented opt-in; no automatic permission request or contact-form message",
+      "nextActionDue": "2026-10-17",
+      "reviewDue": "2026-10-17",
+      "stage": "research_only",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 1,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 2,
+      "scoreMaximum": 12,
+      "pitchVersion": null,
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "No dedicated website/CMS video or truthful public product page has been delivered; attached video introduces wider membership platform.",
+      "history": [
+        {
+          "at": "2026-10-10T22:26:08.736Z",
+          "event": "Fresh UAE equipment/showroom cohort researched; held for actual source/contact/legal uncertainty, not simply lack of prior invitation."
+        }
+      ]
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "sourceCheckedAt": "2026-10-11T03:27:28.339Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "Five-hour dual-market first-pitch campaign; heartbeat 2026-10-11T03:24:05Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-18",
+      "reviewDue": "2026-10-18",
+      "stage": "research_only",
+      "pitchVersion": "website-cms-v2-expansion-cohort",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Required video demonstrates wider membership platform. Dedicated CMS/portal videos and public product page remain outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "capabilityFit": "Bounded public office/showroom, service and news pages with staff draft/preview/publication",
+      "unsupportedRequirements": [
+        "No booking, ecommerce, custom forms or third-party CRM integration",
+        "No Arabic localisation, regional hosting or automated migration promised"
+      ],
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "segment": "bespoke_interior_and_furniture_showrooms",
+      "organisation": "Neatsmith Dubai",
+      "domain": "neatsmith.ae",
+      "domains": [
+        "neatsmith.ae",
+        "neatsmith.co.uk"
+      ],
+      "source": "https://neatsmith.ae/our-first-international-showroom-opening-in-dubai/",
+      "sourceDate": "2026-02-06",
+      "observedFact": "Official UAE article announces first international Dubai showroom; current UAE website maintains showroom, product and project information.",
+      "signal": "Dubai showroom expansion dated February 2026; already operating website, no provider vacancy or active requirement assumed.",
+      "problemHypothesis": "A bounded public showroom/project-information CMS evaluation may fit; current systems, dissatisfaction and buying intent unknown.",
+      "needEvidence": [
+        {
+          "url": "https://neatsmith.ae/our-first-international-showroom-opening-in-dubai/",
+          "sourceDate": "2026-02-06",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Dated first international showroom announcement."
+        },
+        {
+          "url": "https://neatsmith.ae/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Current official Dubai showroom, services and project information."
+        }
+      ],
+      "buyerRole": "Dubai marketing/content or operations owner; unverified",
+      "buyerContact": null,
+      "buyerContactEvidence": [
+        {
+          "url": "https://neatsmith.ae/contact-us/",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Official contact page routes to LeadConnector-hosted contact form. No published email verified in inspected page; form not submitted."
+        }
+      ],
+      "leadershipEvidence": [
+        {
+          "url": "https://neatsmith.ae/our-first-international-showroom-opening-in-dubai/",
+          "sourceDate": "2026-02-06",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "observation": "Philipp Nagel quoted as Director; CMS buying responsibility/contact remains unknown."
+        }
+      ],
+      "existingSystemEvidence": [
+        {
+          "url": "https://neatsmith.ae/contact-us/",
+          "checkedAt": "2026-10-11T03:27:28.339Z",
+          "systemType": "third_party_contact_form",
+          "observation": "Official form hosted at api.leadconnectorhq.com; this alone does not confirm the underlying CRM."
+        }
+      ],
+      "currentProvider": "Third-party contact form observed; website/CMS and CRM provider unconfirmed",
+      "outreachDecision": "hold_no_verified_email_and_recipient_specific_lawful_route",
+      "holdReasons": [
+        "No relevant published email verified; forms not authorised",
+        "Country/category/channel lawful route unresolved; public pages do not establish recipient consent",
+        "Existing sender approval block remains",
+        "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+      ],
+      "outreachLegalBasis": "Unresolved; UAE gate retained. No generic-mailbox exemption, user authority or prior UAE sends treated as recipient consent.",
+      "countryRulesCheckedAt": null,
+      "countryRulesOperationalRecordReadAt": "2026-10-11T03:27:28.339Z",
+      "countryRulesSourceCheckAt": "2026-10-09T13:12:16.373080+00:00",
+      "nextAction": "When due or new evidence arrives, verify UAE responsible published email and applicable recipient/channel lawful route; founder may provide an actual introduction/opt-in; no automatic permission-request marketing",
+      "history": [
+        {
+          "at": "2026-10-11T03:27:28.339Z",
+          "event": "Fresh UAE showroom/CMS cohort researched from official announcement/current contact page; existing lead form recorded informationally without first-CRM exclusion."
+        },
+        {
+          "at": "2026-10-11T03:28:45.344Z",
+          "event": "Gmail duplicate check unavailable; research-only hold retained, no sending attempted."
+        }
+      ],
+      "liveDuplicateCheckComplete": false
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-11T08:28:22.493Z",
+      "sourceCheckedAt": "2026-10-11T08:28:22.493Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "User-authorised five-hour dual-market campaign; heartbeat 2026-10-11T08:20:39.795Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-18",
+      "reviewDue": "2026-10-18",
+      "stage": "research_only",
+      "pitchVersion": "website-cms-v2-showroom-content",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Required video introduces wider membership platform. Dedicated CMS/portal demonstrations and public product page remain outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "capabilityFit": "Bounded showroom/service/news information pages with staff draft, preview and publishing; no replacement of transactional functions.",
+      "unsupportedRequirements": [
+        "Ecommerce/checkout, booking, arbitrary forms and external CRM integrations unverified and excluded from this evaluation",
+        "No automated migration, Arabic localisation or regional hosting promised"
+      ],
+      "liveDuplicateCheckComplete": false,
+      "currentProvider": "Unknown; no dissatisfaction or vacant provider assumed",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "segment": "furniture_showrooms",
+      "organisation": "Honeypot Furniture UAE",
+      "domain": "honeypotfurniture.ae",
+      "domains": [
+        "honeypotfurniture.ae",
+        "honeypotfurniture.co.uk"
+      ],
+      "source": "https://honeypotfurniture.ae/pages/contact",
+      "sourceDate": null,
+      "observedFact": "Official contact search excerpt lists Dubai showroom Unit 56, Goshi Warehouse Village, Al Quoz, and public hello mailbox; official February article already mentions Dubai showroom.",
+      "signal": "Showroom/content workflow; September media first-opening claim conflicts with earlier official showroom references. Do not claim a verified September opening.",
+      "problemHypothesis": "A bounded evaluation of showroom information/content publishing may fit; current satisfaction, provider and buying intent unknown.",
+      "needEvidence": [
+        {
+          "url": "https://honeypotfurniture.ae/pages/contact",
+          "sourceDate": null,
+          "checkedAt": "2026-10-11T08:28:22.493Z",
+          "verification": "Official search excerpt only; full-page verification failed",
+          "observation": "Dubai showroom address and Monday-Sunday 10am-8pm listed."
+        },
+        {
+          "url": "https://honeypotfurniture.ae/blogs/hp-blogs/if-you-can-imagine-it-it-can-be-built",
+          "sourceDate": "2026-02-15",
+          "checkedAt": "2026-10-11T08:28:22.493Z",
+          "verification": "Official search excerpt only; full-page verification failed",
+          "observation": "Already refers to Dubai showroom; September media opening chronology unresolved."
+        }
+      ],
+      "buyerRole": "UAE content/marketing or owner; unverified",
+      "buyerContact": null,
+      "publishedContactCandidate": "hello@honeypotfurniture.ae",
+      "buyerContactEvidence": [
+        {
+          "url": "https://honeypotfurniture.ae/pages/contact",
+          "checkedAt": "2026-10-11T08:28:22.493Z",
+          "observation": "Search excerpt displays .ae email but mailto reportedly .co.uk; identity/routing requires full-page verification, no email selected."
+        }
+      ],
+      "outreachDecision": "hold_contact_routing_lawful_route_and_gmail_checks",
+      "holdReasons": [
+        "Full official page fetch failed; .ae/.co.uk contact routing unresolved",
+        "Recipient-specific UAE country/category/channel lawful route not established; public email is not consent",
+        "Existing Gmail send-approval restriction; no configuration change",
+        "Completion reply checks failed after three bounded transport attempts",
+        "New-candidate live Gmail duplicate checks incomplete"
+      ],
+      "outreachLegalBasis": "Unresolved UAE recipient/channel route; user authority recorded separately from recipient consent. No universal invitation gate or generic-mailbox exemption assumed.",
+      "countryRulesCheckedAt": null,
+      "countryRulesOperationalRecordReadAt": "2026-10-11T08:28:22.493Z",
+      "countryRulesSourceCheckAt": "2026-10-09T14:12:16.37308+01:00",
+      "dateConflictEvidence": [
+        {
+          "url": "https://www.khaleejtimes.com/kt-network/honeypot-furniture-uae-opens-its-first-dubai-showroom-in-al-quoz?amp=1",
+          "sourceDate": "2026-09-29",
+          "observation": "Media first-opening claim; not used as verified opening date because earlier official February content mentions Dubai showroom."
+        }
+      ],
+      "nextAction": "When due or new evidence arrives, verify official UAE contact routing/current facts and specific lawful channel/recipient basis. Await actual founder introduction/opt-in if provided; no permission-request marketing.",
+      "history": [
+        {
+          "at": "2026-10-11T08:28:22.493Z",
+          "event": "Fresh UAE furniture-showroom/CMS research; official search snippets only, chronology/contact conflicts retained; no outgoing contact."
+        }
+      ],
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "manifestCount": 4,
+        "priorConfirmedIds": 55,
+        "matches": []
+      }
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "sourceCheckedAt": "2026-10-12T06:33:49.591Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "User-authorised dual-market first pitches; heartbeat 2026-10-12T06:28:19.133Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-19",
+      "reviewDue": "2026-10-19",
+      "pitchVersion": "website-cms-v2-consultancy-expansion",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction only; dedicated CMS/portal demos and truthful public product page outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "scoreMaximum": 12,
+      "capabilityFit": "Staff-managed public office/service/project-information pages with draft, preview and publication.",
+      "unsupportedRequirements": [
+        "Engineering/project-delivery systems, CAD/document workflows, custom enquiry forms, booking and external CRM integrations outside evaluated scope",
+        "Arabic/local hosting, automated migration, payments and production acceptance not promised"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "buyerContactPurpose": "General project/business enquiries; responsible CMS buyer access unconfirmed",
+      "countryRulesCheckedAt": null,
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "segment": "engineering_design_studio_expansion",
+      "organisation": "SharpMinds Consulting Engineers",
+      "domain": "sharpmindsce.com",
+      "domains": [
+        "sharpmindsce.com"
+      ],
+      "stage": "research_only",
+      "source": "https://sharpmindsce.com/insights/sharpminds-consulting-engineers-opens-new-dubai-studio-to-support-integrated-design-and-engineering-solutions/",
+      "sourceDate": "2026-07-27",
+      "observedFact": "Official July article announces Jumeirah Dubai studio; contact page lists Dubai and Abu Dhabi offices.",
+      "signal": "Dated Dubai studio expansion; current service/project/insight information workflow, no buying request assumed.",
+      "problemHypothesis": "A public studio/service/project-information publishing evaluation may fit; not a confirmed content problem.",
+      "needEvidence": [
+        {
+          "url": "https://sharpmindsce.com/insights/sharpminds-consulting-engineers-opens-new-dubai-studio-to-support-integrated-design-and-engineering-solutions/",
+          "sourceDate": "2026-07-27",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "Dated new Dubai studio article names founder/CEO Amir H. Greiss."
+        },
+        {
+          "url": "https://sharpmindsce.com/contact/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "Official contact page lists Jumeirah Terrace Building Office 211, Dubai, and Makeen Tower Office 1101, Abu Dhabi."
+        }
+      ],
+      "buyerRole": "Founder/CEO Amir H. Greiss identified; actual CMS buyer role/contact unverified",
+      "buyerContact": null,
+      "buyerContactEvidence": [
+        {
+          "url": "https://sharpmindsce.com/contact/",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "observation": "Email link renders [email protected]; exact published email not verified. No guess, form submission or access bypass."
+        }
+      ],
+      "currentProvider": "Unknown; existing public site is operating",
+      "outreachDecision": "held_unverified_contact_and_recipient_lawful_route",
+      "holdReasons": [
+        "Exact published relevant email not verified",
+        "UAE recipient/category/channel lawful route not established; public contact not consent",
+        "Existing Gmail send-approval restriction persists"
+      ],
+      "outreachLegalBasis": "Unresolved UAE route. Read operational country gate; current UAE legislation URL fetch returned Internal Error. No blanket invitation requirement or generic-mailbox exemption asserted.",
+      "countryRulesOperationalRecordReadAt": "2026-10-12T06:33:49.591Z",
+      "countryRulesVerificationAttemptAt": "2026-10-12T06:33:49.591Z",
+      "countryRulesEvidence": [
+        {
+          "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+          "checkedAt": "2026-10-12T06:33:49.591Z",
+          "verification": "Internal Error; no current official legal text verified"
+        }
+      ],
+      "nextAction": "When due or new evidence arrives, verify exact relevant published email and specific UAE channel/recipient lawful route from current official sources; actual founder introduction/opt-in if available. No automatic permission-request marketing.",
+      "history": [
+        {
+          "at": "2026-10-12T06:33:49.591Z",
+          "event": "Fresh UAE engineering-studio/CMS cohort from dated official article; local presence verified, obscured contact and specific lawful basis held."
+        }
+      ],
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "manifestCount": 4,
+        "confirmedHistory": 55,
+        "matches": []
+      },
+      "preSendChecks": {
+        "replyChecksComplete": true,
+        "liveSentAndDuplicateChecksComplete": true,
+        "at": "2026-10-12T06:32:12.757Z",
+        "sendPermissionAvailable": false
+      }
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "sourceCheckedAt": "2026-10-12T11:29:32.815Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "consentStatus": "not_established",
+      "permissionEvidence": [],
+      "userAuthority": "Five-hour dual-market first pitches authorised by user; heartbeat 2026-10-12T11:24:25.827Z",
+      "sendEligible": false,
+      "owner": "Ramish Qureshi",
+      "nextActionDue": "2026-10-19",
+      "reviewDue": "2026-10-19",
+      "pitchVersion": "website-cms-v2-public-information",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Required membership-platform introduction is not a dedicated CMS/portal demo; dedicated demos and public product page outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 0
+      },
+      "researchPriorityScore": 3,
+      "scoreMaximum": 12,
+      "capabilityFit": "Bounded public information pages with staff draft, preview and publication.",
+      "unsupportedRequirements": [
+        "Inventory, checkout, financing, booking, arbitrary enquiries/document workflows and external CRM integration excluded",
+        "No automated migration, Arabic localisation, local hosting or production acceptance promised"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "countryRulesCheckedAt": null,
+      "currentProvider": "Unknown",
+      "market": "Middle East",
+      "country": "United Arab Emirates",
+      "segment": "architecture_interior_landscape_studios",
+      "organisation": "MOMA International",
+      "domain": "moma.design",
+      "domains": [
+        "moma.design"
+      ],
+      "stage": "research_only",
+      "source": "https://www.moma.design/",
+      "sourceDate": null,
+      "observedFact": "Official site maintains architecture/interior/landscape project information; official Dubai contact page names Rubia Morales at Dubai Design District.",
+      "signal": "Current public portfolio/services/office-information workflow; no dated active buying signal or expansion verified.",
+      "problemHypothesis": "An evaluation of public project/service information publishing may fit; buyer dissatisfaction, budget and intent unknown.",
+      "needEvidence": [
+        {
+          "url": "https://www.moma.design/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Current architecture, interiors, landscape and public project-information content."
+        },
+        {
+          "url": "https://www.moma.design/contact",
+          "sourceDate": null,
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Dubai Design District Building 6B Units 202-203 and Dubai business contact published."
+        }
+      ],
+      "buyerRole": "Rubia Morales, published Dubai contact person; marketing/CMS decision authority unconfirmed",
+      "buyerContact": "r.morales@moma.design",
+      "buyerContactEvidence": [
+        {
+          "url": "https://www.moma.design/contact",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "observation": "Named Dubai office business contact and exact email. Publication is not recipient marketing consent."
+        }
+      ],
+      "outreachDecision": "held_recipient_specific_lawful_route",
+      "holdReasons": [
+        "Named UAE recipient/channel lawful route and consent not established",
+        "Existing Gmail send-approval restriction persists"
+      ],
+      "outreachLegalBasis": "Unresolved named-recipient UAE route; official legislation fetch returned 403. Public business listing and user campaign authority not treated as recipient consent or blanket exemption.",
+      "countryRulesOperationalRecordReadAt": "2026-10-12T11:29:32.815Z",
+      "countryRulesVerificationAttemptAt": "2026-10-12T11:29:32.815Z",
+      "countryRulesEvidence": [
+        {
+          "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+          "checkedAt": "2026-10-12T11:29:32.815Z",
+          "verification": "403 Forbidden; no current legal text verified"
+        }
+      ],
+      "nextAction": "When due/new evidence arrives, verify applicable named UAE recipient/email lawful route; founder may supply an actual introduction/opt-in. No unsolicited permission-request marketing or forms/social/calls.",
+      "history": [
+        {
+          "at": "2026-10-12T11:29:32.815Z",
+          "event": "Fresh private UAE studio/CMS research with exact named business contact; no first-CRM or supplier-invitation gate imposed, lawful contact hold retained."
+        }
+      ],
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "manifestCount": 4,
+        "confirmedHistory": 55,
+        "matches": []
+      },
+      "preSendChecks": {
+        "replyChecksComplete": true,
+        "liveSentAndDuplicateChecksComplete": true,
+        "at": "2026-10-12T11:28:05.459Z",
+        "sendPermissionAvailable": false
+      }
     }
   ],
   "qualificationRuns": [
@@ -1476,6 +2011,31 @@
       "newResearchRecords": 0,
       "sendEligible": 0,
       "report": "docs/market/middle-east/research/2026-10-10/hourly/16-utc/SOURCE-NOTES.json"
+    },
+    {
+      "runId": "dual-20261011T082039Z",
+      "at": "2026-10-11T08:29:48.090493Z",
+      "candidate": "Honeypot Furniture UAE",
+      "offerType": "website_cms",
+      "eligible": false,
+      "reason": "hold_contact_routing_lawful_route_and_gmail_checks",
+      "fullContactFetchComplete": false
+    },
+    {
+      "runId": "dual-20261012T062819Z",
+      "at": "2026-10-12T06:35:47.210199Z",
+      "candidate": "SharpMinds Consulting Engineers",
+      "offerType": "website_cms",
+      "sendEligible": false,
+      "decision": "held_unverified_contact_and_recipient_lawful_route"
+    },
+    {
+      "runId": "dual-20261012T112425Z",
+      "at": "2026-10-12T11:30:21.464997Z",
+      "candidate": "MOMA International",
+      "offerType": "website_cms",
+      "sendEligible": false,
+      "decision": "held_recipient_specific_lawful_route"
     }
   ],
   "limitations": "Website announcements establish project signals only; provider appointment, buying intent, actual company size and lawful contact remain unverified. CRM is informational for website/portal. Source retrieval failures and identity concerns are recorded.",

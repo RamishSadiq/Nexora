@@ -1,0 +1,2205 @@
+{
+  "initial": {
+    "at": "2026-10-13T02:37:07.198Z",
+    "complete": true,
+    "searches": [
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+        "complete": true,
+        "ids": [],
+        "count": 0,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+        "complete": true,
+        "ids": [],
+        "count": 0,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:bergengineering.com.au from:regaeng.com from:rawlinsons.co.nz from:newfields.com from:arabiandream.com}",
+        "complete": true,
+        "ids": [],
+        "count": 0,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:newfieldscanada.ca}",
+        "complete": true,
+        "ids": [],
+        "count": 0,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent Nexora",
+        "complete": true,
+        "ids": [],
+        "count": 0,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:Undeliverable subject:\"Delivery failure\"}",
+        "complete": true,
+        "ids": [],
+        "count": 0,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:sent Nexora",
+        "complete": true,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931",
+          "1a126cdb46a0f8e5",
+          "1a126cd3439e26db",
+          "1a126cc99bcdbf2d",
+          "1a120800ff0e30ec",
+          "1a11f79c15f23dcf",
+          "1a11f7961e491a65",
+          "1a11f79086a34070",
+          "1a11f78af1ffedf9",
+          "1a11f7848a393b9b",
+          "1a11f77ea8a74a8d",
+          "1a11f778a20ccaad",
+          "1a11f772a971f528",
+          "1a11f76d0e3fea55",
+          "1a11f7678e41f57c",
+          "1a11c212432fee89",
+          "1a11c20c97b3046e",
+          "1a11c203d2286c33",
+          "1a11c1fe67945c8d",
+          "1a11c1f85aba49a0",
+          "1a11c1f2d4b368df",
+          "1a11c1ed082e39a4",
+          "1a11c1e794b80f6a",
+          "1a11c1e1f2f1e799",
+          "1a11c1c90d01fac1",
+          "1a11c1c3b2bf39f8",
+          "1a11c1bb06754473",
+          "1a11c1b58b9c985a",
+          "1a11c1ac175b0386",
+          "1a11c1a6ad5de964",
+          "1a11c19f0bb94c08",
+          "1a11c198ed3fea2e",
+          "1a11c181ca8691a6",
+          "1a11c17bb52abde3",
+          "1a11c17634387954",
+          "1a11c17068612088",
+          "1a11c16ad8942eeb",
+          "1a11c16528f62b29",
+          "1a11c15f48fbec90",
+          "1a11c15996661aa6",
+          "1a11c153e30859e2",
+          "1a11c14e24744bb3",
+          "1a11c14836da419f",
+          "1a11c141a7e55e69",
+          "1a11c1181b725d3a",
+          "1a11bed87d62d77f",
+          "1a11becb63c3868a",
+          "1a11bebbfc73d6fe",
+          "1a11beb04274d92a",
+          "1a11bea81abaec38",
+          "1a11be9e7b0beb9b",
+          "1a11be92ff3cd6f9",
+          "1a11be8a50e5deab",
+          "1a11be815953d93d",
+          "1a11be73bb6e873b",
+          "1a11bdf55d8130a2",
+          "1a11bc874d72d032"
+        ],
+        "count": 60,
+        "paginationComplete": true
+      },
+      {
+        "query": "in:sent filename:nexora-product-demo-male.mp4",
+        "complete": true,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931",
+          "1a126cdb46a0f8e5",
+          "1a126cd3439e26db",
+          "1a126cc99bcdbf2d",
+          "1a120800ff0e30ec",
+          "1a11f79c15f23dcf",
+          "1a11f7961e491a65",
+          "1a11f79086a34070",
+          "1a11f78af1ffedf9",
+          "1a11f7848a393b9b",
+          "1a11f77ea8a74a8d",
+          "1a11f778a20ccaad",
+          "1a11f772a971f528",
+          "1a11f76d0e3fea55",
+          "1a11f7678e41f57c",
+          "1a11c212432fee89",
+          "1a11c20c97b3046e",
+          "1a11c203d2286c33",
+          "1a11c1fe67945c8d",
+          "1a11c1f85aba49a0",
+          "1a11c1f2d4b368df",
+          "1a11c1ed082e39a4",
+          "1a11c1e794b80f6a",
+          "1a11c1e1f2f1e799",
+          "1a11c1c90d01fac1",
+          "1a11c1c3b2bf39f8",
+          "1a11c1bb06754473",
+          "1a11c1b58b9c985a",
+          "1a11c1ac175b0386",
+          "1a11c1a6ad5de964",
+          "1a11c19f0bb94c08",
+          "1a11c198ed3fea2e",
+          "1a11c181ca8691a6",
+          "1a11c17bb52abde3",
+          "1a11c17634387954",
+          "1a11c17068612088",
+          "1a11c16ad8942eeb",
+          "1a11c16528f62b29",
+          "1a11c15f48fbec90",
+          "1a11c15996661aa6",
+          "1a11c153e30859e2",
+          "1a11c14e24744bb3",
+          "1a11c14836da419f",
+          "1a11c141a7e55e69",
+          "1a11c1181b725d3a",
+          "1a11bed87d62d77f",
+          "1a11becb63c3868a",
+          "1a11bebbfc73d6fe",
+          "1a11beb04274d92a",
+          "1a11bea81abaec38",
+          "1a11be9e7b0beb9b",
+          "1a11be92ff3cd6f9",
+          "1a11be8a50e5deab",
+          "1a11be815953d93d",
+          "1a11be73bb6e873b",
+          "1a11bdf55d8130a2",
+          "1a11bc874d72d032"
+        ],
+        "count": 60,
+        "paginationComplete": true
+      }
+    ],
+    "threads": [
+      {
+        "id": "1a11bdf55d8130a2",
+        "messageIds": [
+          "1a11bdf55d8130a2"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11be73bb6e873b",
+        "messageIds": [
+          "1a11be73bb6e873b"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11be815953d93d",
+        "messageIds": [
+          "1a11be815953d93d",
+          "1a11bf33395d33a1"
+        ],
+        "inboundIds": [
+          "1a11bf33395d33a1"
+        ]
+      },
+      {
+        "id": "1a11be8a50e5deab",
+        "messageIds": [
+          "1a11be8a50e5deab"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11be92ff3cd6f9",
+        "messageIds": [
+          "1a11be92ff3cd6f9"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11be9e7b0beb9b",
+        "messageIds": [
+          "1a11be9e7b0beb9b"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11bea81abaec38",
+        "messageIds": [
+          "1a11bea81abaec38"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11beb04274d92a",
+        "messageIds": [
+          "1a11beb04274d92a"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11bebbfc73d6fe",
+        "messageIds": [
+          "1a11bebbfc73d6fe"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11becb63c3868a",
+        "messageIds": [
+          "1a11becb63c3868a"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11bed87d62d77f",
+        "messageIds": [
+          "1a11bed87d62d77f"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1181b725d3a",
+        "messageIds": [
+          "1a11c1181b725d3a"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c141a7e55e69",
+        "messageIds": [
+          "1a11c141a7e55e69"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c14836da419f",
+        "messageIds": [
+          "1a11c14836da419f"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c14e24744bb3",
+        "messageIds": [
+          "1a11c14e24744bb3"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c153e30859e2",
+        "messageIds": [
+          "1a11c153e30859e2"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c15996661aa6",
+        "messageIds": [
+          "1a11c15996661aa6"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c15f48fbec90",
+        "messageIds": [
+          "1a11c15f48fbec90"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c16528f62b29",
+        "messageIds": [
+          "1a11c16528f62b29"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c16ad8942eeb",
+        "messageIds": [
+          "1a11c16ad8942eeb"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c17068612088",
+        "messageIds": [
+          "1a11c17068612088"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c17634387954",
+        "messageIds": [
+          "1a11c17634387954"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c17bb52abde3",
+        "messageIds": [
+          "1a11c17bb52abde3"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c181ca8691a6",
+        "messageIds": [
+          "1a11c181ca8691a6"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c198ed3fea2e",
+        "messageIds": [
+          "1a11c198ed3fea2e"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c19f0bb94c08",
+        "messageIds": [
+          "1a11c19f0bb94c08"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1a6ad5de964",
+        "messageIds": [
+          "1a11c1a6ad5de964"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1ac175b0386",
+        "messageIds": [
+          "1a11c1ac175b0386"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1b58b9c985a",
+        "messageIds": [
+          "1a11c1b58b9c985a"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1bb06754473",
+        "messageIds": [
+          "1a11c1bb06754473"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1c3b2bf39f8",
+        "messageIds": [
+          "1a11c1c3b2bf39f8"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1c90d01fac1",
+        "messageIds": [
+          "1a11c1c90d01fac1"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1e1f2f1e799",
+        "messageIds": [
+          "1a11c1e1f2f1e799"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1e794b80f6a",
+        "messageIds": [
+          "1a11c1e794b80f6a"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1ed082e39a4",
+        "messageIds": [
+          "1a11c1ed082e39a4"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1f2d4b368df",
+        "messageIds": [
+          "1a11c1f2d4b368df"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1f85aba49a0",
+        "messageIds": [
+          "1a11c1f85aba49a0"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c1fe67945c8d",
+        "messageIds": [
+          "1a11c1fe67945c8d"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c203d2286c33",
+        "messageIds": [
+          "1a11c203d2286c33"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c20c97b3046e",
+        "messageIds": [
+          "1a11c20c97b3046e"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11c212432fee89",
+        "messageIds": [
+          "1a11c212432fee89"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f7678e41f57c",
+        "messageIds": [
+          "1a11f7678e41f57c"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f76d0e3fea55",
+        "messageIds": [
+          "1a11f76d0e3fea55"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f772a971f528",
+        "messageIds": [
+          "1a11f772a971f528"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f778a20ccaad",
+        "messageIds": [
+          "1a11f778a20ccaad"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f77ea8a74a8d",
+        "messageIds": [
+          "1a11f77ea8a74a8d"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f7848a393b9b",
+        "messageIds": [
+          "1a11f7848a393b9b"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f78af1ffedf9",
+        "messageIds": [
+          "1a11f78af1ffedf9"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f79086a34070",
+        "messageIds": [
+          "1a11f79086a34070"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f7961e491a65",
+        "messageIds": [
+          "1a11f7961e491a65"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a11f79c15f23dcf",
+        "messageIds": [
+          "1a11f79c15f23dcf"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a120800ff0e30ec",
+        "messageIds": [
+          "1a120800ff0e30ec"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a126cc99bcdbf2d",
+        "messageIds": [
+          "1a126cc99bcdbf2d"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a126cd3439e26db",
+        "messageIds": [
+          "1a126cd3439e26db"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a126cdb46a0f8e5",
+        "messageIds": [
+          "1a126cdb46a0f8e5"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a1306111691b931",
+        "messageIds": [
+          "1a1306111691b931"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a130622ea0350f7",
+        "messageIds": [
+          "1a130622ea0350f7"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a13062917b76b72",
+        "messageIds": [
+          "1a13062917b76b72"
+        ],
+        "inboundIds": []
+      },
+      {
+        "id": "1a13062fb2f2ffa6",
+        "messageIds": [
+          "1a13062fb2f2ffa6"
+        ],
+        "inboundIds": []
+      }
+    ],
+    "actualInboundBodies": [
+      {
+        "id": "1a11bf33395d33a1",
+        "threadId": "1a11be815953d93d",
+        "headers": [
+          {
+            "name": "From",
+            "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+          },
+          {
+            "name": "Subject",
+            "value": "Re: Nexora demo for BAFSA's membership administration"
+          },
+          {
+            "name": "Date",
+            "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+          }
+        ],
+        "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n"
+      }
+    ],
+    "priorExternalIdsVerified": 59,
+    "liveSentIncludingSelfTest": 60,
+    "newPositiveReplies": [],
+    "newOptOuts": [],
+    "newBounces": [],
+    "recentSent": {
+      "emails": [
+        {
+          "id": "1a13062fb2f2ffa6",
+          "thread_id": "1a13062fb2f2ffa6",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "CanadaMarketing@newfields.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A focused website-content demo for NewFields Canada",
+          "snippet": "Hello Jodie, I saw NewFields Canada's June announcement about the Calgary office. For your marketing team's office and service information, a focused website-content evaluation could be",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ_05Pkmft7upVcX_gn4RK8iSqMAzBa17VFAmFhmLsYbfKcFKHVxN6VBUFtqVzPFPhcpk7NG1Fp5_WjtaoEpv0nXH8z1ZUO-LHHsOBsrwm7TbPMA-vlji6EibtDm8yrSgQ-H7eMoEGuHSNvHfwr-3ABzgGoww37rb_5Tg0Gufoumujm0pVjd5EPnxURzS0kJXSwGJbydeNzdkb7TvsG3TOgOHKcBxAnLO9PzmdJtoA1BpDSqqpkhFQgNCtl7ssQVkO1ijdenXUoQWuhZUi6DFJbQJTa0hcqtBw599mk7tREdb4NJ9_ZTM58PiQCL8u473SJF-cmKw6cjNXqzxQQ1SraiF7rRI0_b1xPE3GFC_RmnlUZdg_1_aHjCbnTobfiDJUYiPokud4MPwLyX",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-12T06:52:35-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062fb2f2ffa6",
+          "display_title": "A focused website-content demo for NewFields Canada"
+        },
+        {
+          "id": "1a13062917b76b72",
+          "thread_id": "1a13062917b76b72",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@rawlinsons.co.nz"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A focused website-content demo for Rawlinsons",
+          "snippet": "Hello Rawlinsons team, I saw your September update about the Dunedin team settling into the Moran Building. With service, project and office information across your national practice, a focused website",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ99CFkhR2CFWisB5ahfzLIIIo0BKyITPFqGX28RwievRBCLOMT96FmlhVszfUiYGNkpHb-3mN3-YZ2BOLAN0KFw3MTA2wN3kaPE0x_fHDXIJr-PGxWTbhKJlQumiYnSWBOYyQQsTW24pqn32M70wEOkkIkm4nKIux1m9zTEuZHTWsHislkNmdXcwhbpgl5ExSy4QSkfKp7lITg2cJLF9E09CacY89fsg2Q9BuVAv8XnmavzKi374SUkvXsOqLcWjMLTIAv-ys5MREHfoqie7B0N8WJcnN5pS1mc3anEOF8zCeAKMxKYdzAhc3OTY8vQpL4yxajimYl3sRZ4W2lwwmOhMniDvBTbjOvijY5__KKt9Fzgo5ZHSIYnt7a7uz0TvrB6oPTf2DyKmndl",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-12T09:52:08-04:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062917b76b72",
+          "display_title": "A focused website-content demo for Rawlinsons"
+        },
+        {
+          "id": "1a130622ea0350f7",
+          "thread_id": "1a130622ea0350f7",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "info@regaeng.com"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A focused website-content demo for REGA",
+          "snippet": "Hello REGA team, I saw your company history notes the Omaha office opening in 2026. With office, service and project information across your locations, a focused content-publishing evaluation could be",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ-p34t8bk2ajOWQxTI-iAVNCrpwt3L1t8iAU6YZto2b7H-q6OU2uQLqdjpKkF0WxnKm50kvDDxEHM3yHZApbsLlVh3tLxv-TMkrJRHHiRAq5v6NHMCwNgbaIC3FF4RQge3y5SmlydHDHZ-ngk6wXI52o_dqGF8w6UIpohq1z7wJwtn5K17x9Mkr2CnC6W_AF4pdvNsUWMwjXWmgDezX8KPOyQh_7uX3JbBGeJ_I2wU9ixEzpL4QK3EanyP4saFBPZW_iVOCRWDVnziMuZHtvZ5swS_bOQ0SwW8XdI5AEGdd4oIZO_GiKzElXZY3vxOHgEp-rcnCnQiiRD3hSNKVmluNa7Gu3isn3X1m7U2C301dK3E195QAKIWyLeNjspU4UHV1wToBkA2faap6",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-12T09:51:43-04:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a130622ea0350f7",
+          "display_title": "A focused website-content demo for REGA"
+        },
+        {
+          "id": "1a1306111691b931",
+          "thread_id": "1a1306111691b931",
+          "from_": "ramishqureshi99@gmail.com",
+          "to": [
+            "marketing@bergengineering.com.au"
+          ],
+          "cc": [],
+          "bcc": [],
+          "subject": "A focused website-content demo for Berg Engineering",
+          "snippet": "Hello Berg marketing team, I saw your August project updates cover precision machining and refurbishment, alongside your Brisbane and Gladstone facilities. If your marketing team is reviewing how it",
+          "labels": [
+            "SENT"
+          ],
+          "has_attachment": true,
+          "attachments": [
+            {
+              "filename": "nexora-product-demo-male.mp4",
+              "mime_type": "video/mp4",
+              "size_bytes": 1945313,
+              "attachment_id": "ANGjdJ9EfhJSCQNjDQ38B90y6LOXmc-OYopCkW2w2YAAP3JrEbMdD6UV_kuc1aEpov8CL1YHt2EJW2t2QE1BHpWHz_Ps70aVv5qRR3O8wD9uK-UC8DpfSDxTXCEuDCA6sxHvKvCkaQJDull4nb7EjFri7lZmrehZh4__4rOVab0uag4CRpcydPhZs2QhVS6a5YcJj4pEAwolo-NsQX4qJTLLzzTPU5vFjRuhl8ROcdhe2MxyTOy8O0Zvez7rcEqqn_zzJbKFFfKP2lRCKi5RvGK63-9VAosJSPDvTQjXnQ9g1OHbGcpuo4jHfgLVeWAmeZBxqlkuNAaenFB5GsI6_QS7Xkneb_WZ2Zwa4DdvFAtoeJgKZgSGh3mTnNM00FbIUmdACUxC6yd_gR__tZaJ",
+              "read_attachment_supported": false
+            }
+          ],
+          "inline_images": [],
+          "email_ts": "2026-10-12T06:50:29-07:00",
+          "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a1306111691b931",
+          "display_title": "A focused website-content demo for Berg Engineering"
+        }
+      ],
+      "next_page_token": null
+    },
+    "candidateDuplicates": [
+      {
+        "query": "in:sent {to:marketing@jaeaust.com.au to:jaeaust.com.au}",
+        "complete": true,
+        "emails": []
+      },
+      {
+        "query": "in:sent {to:sales@gsrestaurantequipment.com to:gsrestaurantequipment.com to:gsequipmentinc.com}",
+        "complete": true,
+        "emails": []
+      },
+      {
+        "query": "in:sent {to:northprojects.com.au}",
+        "complete": true,
+        "emails": []
+      },
+      {
+        "query": "in:sent {to:prismengineering.com}",
+        "complete": true,
+        "emails": []
+      }
+    ],
+    "pluginPermission": {
+      "content": [
+        {
+          "type": "text",
+          "text": "Action completed."
+        }
+      ],
+      "structuredContent": {
+        "meta": null,
+        "content": [
+          {
+            "type": "text",
+            "text": "For Gmail: your default app permission is Allow low-risk actions. ChatGPT will automatically approve low-risk actions but may deny actions involving sensitive information. Learn more App-specific setting: Allow all actions. Gmail has a custom app-specific setting. ChatGPT won’t ask before reading or taking action. This comes with elevated risk. Learn more",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structuredContent": {
+          "app_id": "Gmail",
+          "app_name": "Gmail",
+          "status": "found",
+          "global_permission": "Allow low-risk actions",
+          "global_permission_description": "ChatGPT will automatically approve low-risk actions but may deny actions involving sensitive information. Learn more",
+          "app_permission": "Allow all actions",
+          "app_permission_description": "Gmail has a custom app-specific setting. ChatGPT won’t ask before reading or taking action. This comes with elevated risk. Learn more"
+        },
+        "isError": false
+      },
+      "isError": false
+    },
+    "sessionApprovalPolicy": "never",
+    "officialPermissionSources": [
+      "https://learn.chatgpt.com/docs/agent-approvals-security",
+      "https://learn.chatgpt.com/docs/permission-modes"
+    ],
+    "interpretation": "Plugin Allow all actions is current. Side-effect connector calls may independently need session approval. Actual current send access will be evaluated once with a qualified first pitch; no settings or channel bypass."
+  },
+  "checkedAt": "2026-10-13T02:39:16Z",
+  "date": "2026-10-13",
+  "runId": "four-country-20261013T023039Z",
+  "startedAt": "2026-10-13T02:30:39.188Z",
+  "candidates": [
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-13T02:39:16Z",
+      "sourceCheckedAt": "2026-10-13T02:39:16Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "userAuthority": "Standing four-country individual first-pitch authorization; current heartbeat 2026-10-13T02:30:39.188Z; separate from recipient consent",
+      "owner": "Ramish Qureshi",
+      "pitchVersion": "cms-v2-four-country-role-focused",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction; dedicated CMS/portal demonstrations and public product page outstanding.",
+      "capabilityFit": "Three public company/service/news information pages with one staff editor, draft, preview and publication.",
+      "unsupportedRequirements": [
+        "No ecommerce/inventory, manufacturing or project-delivery systems, booking/LMS/quizzes, external integration or arbitrary forms/workflows",
+        "No migration, regional hosting/localisation, payments/tax or production readiness claims"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "countryRulesCheckedAt": "2026-10-13T02:39:16Z",
+      "permissionEvidence": [
+        {
+          "url": "https://www.jaeaust.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "publishedBy": "JAE organisation-owned website",
+          "address": "marketing@jaeaust.com.au",
+          "function": "Corporate and General Queries / marketing",
+          "refusalFound": false,
+          "exactOfferRelevance": "Staff-managed public corporate service/project-information pages belong to corporate/marketing communications"
+        }
+      ],
+      "nextActionDue": "2026-10-20",
+      "history": [
+        {
+          "at": "2026-10-13T02:39:16Z",
+          "event": "New scheduled run: current official contact/content source and live Sent rechecked. Historical send denial not treated as permanent permission hold; actual current access to be evaluated. Buyer problems/interest/budget unconfirmed."
+        }
+      ],
+      "market": "Australia",
+      "country": "Australia",
+      "segment": "mining_engineering_service_firms",
+      "organisation": "JAE Engineering Group",
+      "domain": "jaeaust.com.au",
+      "domains": [
+        "jaeaust.com.au"
+      ],
+      "source": "https://www.jaeaust.com.au/",
+      "sourceDate": null,
+      "observedFact": "Official Australian site publishes manufacturing, engineering and major-refurbishment service information; contact page designates marketing@jaeaust.com.au for Corporate and General Queries.",
+      "signal": "Current public service-information workflow; no active procurement or dated expansion assumed.",
+      "problemHypothesis": "Marketing/corporate staff may find a service/project-information CMS evaluation relevant; need unconfirmed.",
+      "needEvidence": [
+        {
+          "url": "https://www.jaeaust.com.au/",
+          "sourceDate": null,
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Manufacturing, engineering and refurbishment public information."
+        }
+      ],
+      "buyerRole": "Corporate/general enquiries function at the published marketing inbox; individual purchasing owner unknown",
+      "buyerContact": "marketing@jaeaust.com.au",
+      "buyerContactEvidence": [
+        {
+          "url": "https://www.jaeaust.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Direct official publication explicitly assigns Corporate and General Queries to marketing inbox; ABN and Rockhampton Queensland address shown."
+        }
+      ],
+      "consentStatus": "inferred_qualifying_conspicuous_publication",
+      "outreachLegalBasis": "Spam Act Schedule 2 clause 4(2)(a)(vii): published corporate/marketing work function; direct organisation-owned publication is attributable to the organisation; no accompanying refusal found. Exact offer is staff publishing of public corporate/service/project information, relevant to this function. This is not blanket public-email consent.",
+      "publicationNoticeChecks": [
+        {
+          "url": "https://www.jaeaust.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://www.jaeaust.com.au/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        }
+      ],
+      "linkedNoticeAssessment": "Inspected complete contact and home content/link inventories. No relevant privacy/terms/refusal notice links exposed on either page; no refusal accompanied the address. Forms and login/provider links not used.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.legislation.gov.au/C2004A01214/latest",
+          "checkedAt": "2026-10-12T21:38:34.261Z",
+          "observation": "Current in-force latest compilation verified as 10 March 2016."
+        },
+        {
+          "url": "https://www.legislation.gov.au/C2004A01214/2016-03-10/2016-03-10/text/original/epub/OEBPS/document_1/document_1.html",
+          "checkedAt": "2026-10-12T21:38:34.261Z",
+          "observation": "Schedule 2 clause 4 conditions including published work function, attributable publication, no accompanying refusal and exact functional relevance reviewed."
+        }
+      ],
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 1,
+        "timing": 0
+      },
+      "researchPriorityScore": 4,
+      "sendEligible": true,
+      "stage": "ready_first_pitch",
+      "outreachDecision": "ready_after_current_route_reply_duplicate_cap_checks",
+      "currentProvider": "Footer credits Adz Power Agencies; current contract/dissatisfaction unknown",
+      "holdReasons": [],
+      "nextAction": "Send individually under standing authority, then verify accepted message metadata; hold on an actual denied action.",
+      "runId": "four-country-20261013T023039Z",
+      "intervalHold": null,
+      "preSendChecks": {
+        "globalRepliesComplete": true,
+        "liveDuplicatesComplete": true,
+        "rollingCountrySlotsUsed": 0,
+        "todaySent": 0,
+        "actualCurrentSendAccess": "pending one qualified send",
+        "verifiedAt": "2026-10-13T02:39:16Z"
+      },
+      "reviewDue": "2026-10-20",
+      "qualificationEligible": true,
+      "contactRouteEligible": true
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-13T02:39:16Z",
+      "sourceCheckedAt": "2026-10-13T02:39:16Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "userAuthority": "Standing four-country individual first-pitch authorization; current heartbeat 2026-10-13T02:30:39.188Z; separate from recipient consent",
+      "owner": "Ramish Qureshi",
+      "pitchVersion": "cms-v2-four-country-role-focused",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction; dedicated CMS/portal demonstrations and public product page outstanding.",
+      "capabilityFit": "Three public company/service/news information pages with one staff editor, draft, preview and publication.",
+      "unsupportedRequirements": [
+        "No ecommerce/inventory, manufacturing or project-delivery systems, booking/LMS/quizzes, external integration or arbitrary forms/workflows",
+        "No migration, regional hosting/localisation, payments/tax or production readiness claims"
+      ],
+      "liveDuplicateCheckComplete": true,
+      "countryRulesCheckedAt": "2026-10-13T02:39:16Z",
+      "permissionEvidence": [],
+      "nextActionDue": "2026-10-20",
+      "history": [
+        {
+          "at": "2026-10-13T02:39:16Z",
+          "event": "New scheduled run: current official contact/content source and live Sent rechecked. Historical send denial not treated as permanent permission hold; actual current access to be evaluated. Buyer problems/interest/budget unconfirmed."
+        }
+      ],
+      "market": "United States",
+      "country": "United States",
+      "segment": "restaurant_equipment_showrooms",
+      "organisation": "G&S Restaurant Equipment",
+      "domain": "gsrestaurantequipment.com",
+      "domains": [
+        "gsrestaurantequipment.com",
+        "gsequipmentinc.com"
+      ],
+      "source": "https://gsequipmentinc.com/",
+      "sourceDate": "2026-09-14 (announced opening)",
+      "observedFact": "Official site announces September 14 showroom opening at 4680 Blanding Boulevard, Jacksonville; exact sales inbox remains published.",
+      "signal": "Showroom relocation/public information",
+      "problemHypothesis": "A narrow showroom/service/news content CMS evaluation may fit; current buying need unknown.",
+      "needEvidence": [
+        {
+          "url": "https://gsequipmentinc.com/",
+          "sourceDate": "2026-09-14 (announced opening)",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Showroom announcement, address and sales inbox reverified."
+        }
+      ],
+      "buyerRole": "Sales/business routing contact; actual website/marketing buyer not confirmed",
+      "buyerContact": "sales@gsrestaurantequipment.com",
+      "buyerContactEvidence": [
+        {
+          "url": "https://gsequipmentinc.com/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Exact direct public business address."
+        }
+      ],
+      "consentStatus": "US_commercial_first_pitch_route",
+      "outreachLegalBasis": "Current FTC commercial-email guidance; accurate identity/subject, advertisement, actual user-confirmed postal address and free reply opt-out. No buyer interest or recipient consent inferred.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Current official B2B commercial-email requirements reviewed."
+        }
+      ],
+      "publicationNoticeChecks": [
+        {
+          "url": "https://gsequipmentinc.com/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://gsequipmentinc.com/privacy-policy/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://gsequipmentinc.com/terms-of-use/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        }
+      ],
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "sendEligible": true,
+      "stage": "ready_first_pitch",
+      "outreachDecision": "ready_after_current_route_reply_duplicate_cap_checks",
+      "currentProvider": "Beedash catalogue; inventory/checkout/financing not part of evaluation",
+      "holdReasons": [],
+      "nextAction": "Send individually under standing authority, then verify accepted message metadata; hold on an actual denied action.",
+      "runId": "four-country-20261013T023039Z",
+      "intervalHold": null,
+      "preSendChecks": {
+        "globalRepliesComplete": true,
+        "liveDuplicatesComplete": true,
+        "rollingCountrySlotsUsed": 0,
+        "todaySent": 0,
+        "actualCurrentSendAccess": "pending one qualified send",
+        "verifiedAt": "2026-10-13T02:39:16Z"
+      },
+      "reviewDue": "2026-10-20",
+      "qualificationEligible": true,
+      "contactRouteEligible": true,
+      "aliasContactEvidence": {
+        "address": "sales@gsequipmentinc.com",
+        "purpose": "Privacy/unsubscribe contact, not chosen as a second recipient",
+        "source": "https://gsequipmentinc.com/privacy-policy/",
+        "checkedAt": "2026-10-13T02:39:16Z"
+      }
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-13T02:39:16Z",
+      "sourceCheckedAt": "2026-10-13T02:39:16Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "currentProvider": "Unknown",
+      "consentStatus": "not_established_no_verified_address",
+      "permissionEvidence": [],
+      "userAuthority": "Standing four-country individual first-pitch authorization; current heartbeat 2026-10-13T02:30:39.188Z; separate from recipient consent",
+      "sendEligible": false,
+      "liveDuplicateCheckComplete": true,
+      "owner": "Ramish Qureshi",
+      "reviewDue": "2026-10-20",
+      "nextActionDue": "2026-10-20",
+      "pitchVersion": "website-cms-v2-four-country-information",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction only; dedicated CMS/portal demonstrations and truthful public product page outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "scoreMaximum": 12,
+      "capabilityFit": "Three public office/service/news information pages managed through staff draft, preview and publishing.",
+      "unsupportedRequirements": [
+        "Project management/document workflows, ecommerce/inventory/booking, arbitrary forms and third-party integrations outside evaluated scope",
+        "No automated migration, local hosting/localisation, payment/tax or production readiness claims"
+      ],
+      "countryRulesCheckedAt": "2026-10-12T16:30:14.018Z",
+      "publicationNoticesFullyInspected": false,
+      "noMarketingRefusal": null,
+      "contactRouteEligible": false,
+      "stage": "research_only",
+      "holdReasons": [
+        "Official contact page provides a form instead of a verified relevant email. No deemed-consent route established."
+      ],
+      "market": "New Zealand",
+      "country": "New Zealand",
+      "segment": "project_cost_consultancies",
+      "organisation": "North Projects",
+      "domain": "northprojects.com.au",
+      "domains": [
+        "northprojects.com.au"
+      ],
+      "source": "https://www.northprojects.com.au/2026/04/01/north-opens-nz-office/",
+      "sourceDate": "2026-04-01",
+      "observedFact": "Official April announcement states Auckland office opened February 2; lists Suite 6.2, Level 6, 1 Albert Street, Auckland.",
+      "signal": "New Zealand office opening with local public office/project/service content",
+      "problemHypothesis": "A scoped NZ office/service/project-information CMS evaluation may fit; buying intent unknown.",
+      "needEvidence": [
+        {
+          "url": "https://www.northprojects.com.au/2026/04/01/north-opens-nz-office/",
+          "sourceDate": "2026-04-01",
+          "checkedAt": "2026-10-12T16:30:14.018Z",
+          "observation": "NZ office opening and Auckland address; Callan Buchecker named Director and Country Lead NZ."
+        }
+      ],
+      "buyerRole": "NZ country/marketing or content owner; Callan Buchecker leads NZ but CMS responsibility unverified",
+      "buyerContact": null,
+      "buyerContactEvidence": [
+        {
+          "url": "https://www.northprojects.com.au/contact/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Auckland office verified; page directs email inquiries through form and exposes no published email. No form submitted."
+        }
+      ],
+      "outreachLegalBasis": "No express/inferred/deemed consent established; no direct relevant address available. NZ business presence assessed independently of .com.au domain.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://www.dia.govt.nz/Spam-Three-Steps",
+          "checkedAt": "2026-10-12T16:30:14.018Z",
+          "observation": "Deemed consent needs conspicuous business publication, no accompanying refusal and exact business/role relevance."
+        }
+      ],
+      "linkedNoticeSources": [
+        "Official contact/article links Privacy Policy; inspect before any publication route assessment"
+      ],
+      "outreachDecision": "held_no_verified_relevant_email",
+      "nextAction": "Find a directly published NZ content/marketing contact or founder-provided introduction; no form or guessed address.",
+      "history": [
+        {
+          "at": "2026-10-13T02:39:16Z",
+          "event": "New scheduled run: current official contact/content source and live Sent rechecked. Historical send denial not treated as permanent permission hold; actual current access to be evaluated. Buyer problems/interest/budget unconfirmed."
+        }
+      ],
+      "intervalHold": null,
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "confirmedPriorIds": 59,
+        "manifestCount": 5,
+        "matches": []
+      },
+      "preSendChecks": {
+        "globalRepliesComplete": true,
+        "liveDuplicatesComplete": true,
+        "rollingCountrySlotsUsed": 0,
+        "todaySent": 0,
+        "actualCurrentSendAccess": "pending one qualified send",
+        "verifiedAt": "2026-10-13T02:39:16Z"
+      },
+      "runId": "four-country-20261013T023039Z"
+    },
+    {
+      "offerType": "website_cms",
+      "acquisitionChannel": "individual_cold_email",
+      "crmStatus": "unknown_system",
+      "manualWorkflowEvidence": [],
+      "existingSystemEvidence": [],
+      "checkedAt": "2026-10-13T02:39:16Z",
+      "sourceCheckedAt": "2026-10-13T02:39:16Z",
+      "confidence": "medium",
+      "buyerConfirmedProblem": null,
+      "budget": null,
+      "currency": null,
+      "decisionDate": null,
+      "currentProvider": "Unknown",
+      "consentStatus": "unresolved_recipient_specific_implied_route",
+      "permissionEvidence": [],
+      "userAuthority": "Standing four-country individual first-pitch authorization; current heartbeat 2026-10-13T02:30:39.188Z; separate from recipient consent",
+      "sendEligible": false,
+      "liveDuplicateCheckComplete": true,
+      "owner": "Ramish Qureshi",
+      "reviewDue": "2026-10-20",
+      "nextActionDue": "2026-10-20",
+      "pitchVersion": "website-cms-v2-four-country-information",
+      "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+      "proofGap": "Wider membership introduction only; dedicated CMS/portal demonstrations and truthful public product page outstanding.",
+      "scores": {
+        "need": 1,
+        "capabilityFit": 2,
+        "buyerAccess": 0,
+        "timing": 1
+      },
+      "researchPriorityScore": 4,
+      "scoreMaximum": 12,
+      "capabilityFit": "Three public office/service/news information pages managed through staff draft, preview and publishing.",
+      "unsupportedRequirements": [
+        "Project management/document workflows, ecommerce/inventory/booking, arbitrary forms and third-party integrations outside evaluated scope",
+        "No automated migration, local hosting/localisation, payment/tax or production readiness claims"
+      ],
+      "countryRulesCheckedAt": "2026-10-12T16:30:14.018Z",
+      "publicationNoticesFullyInspected": false,
+      "noMarketingRefusal": null,
+      "contactRouteEligible": false,
+      "stage": "research_only",
+      "holdReasons": [
+        "Linked official privacy-policy page unavailable on direct and link checks; publication/refusal assessment incomplete.",
+        "Published head-office inbox does not establish specific CMS buyer-role relevance."
+      ],
+      "market": "Canada",
+      "country": "Canada",
+      "segment": "energy_sustainability_consultancies",
+      "organisation": "Prism Engineering",
+      "domain": "prismengineering.com",
+      "domains": [
+        "prismengineering.com"
+      ],
+      "source": "https://prismengineering.com/prism-moves-to-broadway-tech-centre/",
+      "sourceDate": "2026-06-01 (operational relocation date; publication date not verified)",
+      "observedFact": "Official article says Vancouver office at Broadway Tech Centre operational June 1; official head-office contact page publishes info@prismengineering.com.",
+      "signal": "Vancouver office relocation and public service/news content",
+      "problemHypothesis": "Office/service/news information CMS evaluation could fit; current buyer requirement unknown.",
+      "needEvidence": [
+        {
+          "url": "https://prismengineering.com/prism-moves-to-broadway-tech-centre/",
+          "sourceDate": "2026-06-01 (relocation)",
+          "checkedAt": "2026-10-12T16:30:14.018Z",
+          "observation": "Official Vancouver office relocation."
+        },
+        {
+          "url": "https://prismengineering.com/contact-us",
+          "sourceDate": null,
+          "checkedAt": "2026-10-12T16:30:14.018Z",
+          "observation": "Vancouver head office and published general company inbox."
+        }
+      ],
+      "buyerRole": "Website/content or marketing/operations owner unverified; general office enquiries address",
+      "buyerContact": "info@prismengineering.com",
+      "buyerContactEvidence": [
+        {
+          "url": "https://prismengineering.com/contact-us",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "observation": "Direct head-office info email published; specific CMS owner not established."
+        }
+      ],
+      "outreachLegalBasis": "Current CRTC guidance reviewed. Direct public email is insufficient by itself: exact offer-role relevance and accompanying/refusal/privacy notices still require verification.",
+      "countryRulesEvidence": [
+        {
+          "url": "https://crtc.gc.ca/eng/com500/faq500.htm",
+          "checkedAt": "2026-10-12T16:30:14.018Z",
+          "observation": "Implied-publication route requires attributable direct publication, no accompanying refusal and exact business/role relevance; sender must retain evidence."
+        }
+      ],
+      "linkedNoticeSources": [
+        "https://prismengineering.com/ (contact page linked Privacy Policy; inspection pending)"
+      ],
+      "outreachDecision": "held_incomplete_notices_and_recipient_route",
+      "nextAction": "Verify official privacy/refusal notices and exact responsible CMS/content function before relying on publication; no guessed email.",
+      "history": [
+        {
+          "at": "2026-10-13T02:39:16Z",
+          "event": "New scheduled run: current official contact/content source and live Sent rechecked. Historical send denial not treated as permanent permission hold; actual current access to be evaluated. Buyer problems/interest/budget unconfirmed."
+        }
+      ],
+      "intervalHold": null,
+      "localLedgerDuplicateCheck": {
+        "complete": true,
+        "confirmedPriorIds": 59,
+        "manifestCount": 5,
+        "matches": []
+      },
+      "preSendChecks": {
+        "globalRepliesComplete": true,
+        "liveDuplicatesComplete": true,
+        "rollingCountrySlotsUsed": 0,
+        "todaySent": 0,
+        "actualCurrentSendAccess": "pending one qualified send",
+        "verifiedAt": "2026-10-13T02:39:16Z"
+      },
+      "runId": "four-country-20261013T023039Z",
+      "publicationNoticeChecks": [
+        {
+          "url": "https://prismengineering.com/contact-us",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": true,
+          "refusalFound": false
+        },
+        {
+          "url": "https://prismengineering.com/privacy-policy/",
+          "checkedAt": "2026-10-13T02:39:16Z",
+          "complete": false,
+          "error": "Web open and click returned Internal Error",
+          "refusalFound": null
+        }
+      ]
+    }
+  ],
+  "drafts": [
+    {
+      "market": "Australia",
+      "country": "Australia",
+      "organisation": "JAE Engineering Group",
+      "offerType": "website_cms",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "to": "marketing@jaeaust.com.au",
+      "subject": "Staff-managed public content for JAE Engineering Group",
+      "body": "Hello JAE corporate team,\n\nI saw JAE's public pages describe its manufacturing, engineering and mining-refurbishment services.\n\nI'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample service, project-information and news pages and one staff editor to evaluate that workflow.\n\nI've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.\n\nWould a 15-minute editor walkthrough be useful for your corporate service and project information?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.5\"><p>Hello JAE corporate team,</p><p>I saw JAE's public pages describe its manufacturing, engineering and mining-refurbishment services.</p><p>I'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample service, project-information and news pages and one staff editor to evaluate that workflow.</p><p>I've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.</p><p>Would a 15-minute editor walkthrough be useful for your corporate service and project information?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.</p></div>",
+      "status": "ready",
+      "pitchVersion": "cms-v2-four-country-role-focused-20261013"
+    },
+    {
+      "market": "United States",
+      "country": "United States",
+      "organisation": "G&S Restaurant Equipment",
+      "offerType": "website_cms",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "to": "sales@gsrestaurantequipment.com",
+      "subject": "Keeping G&S showroom and service pages current",
+      "body": "Hello G&S Restaurant Equipment team,\n\nI saw your announcement of the September 14 showroom opening on Blanding Boulevard.\n\nI'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample showroom information, service pages and company news and one staff editor to evaluate that workflow.\n\nI've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.\n\nWould a 15-minute walkthrough be useful for whoever manages G&S's public website content?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.5\"><p>Hello G&amp;S Restaurant Equipment team,</p><p>I saw your announcement of the September 14 showroom opening on Blanding Boulevard.</p><p>I'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample showroom information, service pages and company news and one staff editor to evaluate that workflow.</p><p>I've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.</p><p>Would a 15-minute walkthrough be useful for whoever manages G&amp;S's public website content?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.</p></div>",
+      "status": "ready",
+      "pitchVersion": "cms-v2-four-country-role-focused-20261013"
+    },
+    {
+      "market": "New Zealand",
+      "country": "New Zealand",
+      "organisation": "North Projects",
+      "offerType": "website_cms",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "to": null,
+      "subject": "Staff-managed public content for North Projects",
+      "body": "Hello North Projects team,\n\nI saw North's Auckland office is listed alongside your project and service information.\n\nI'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample office, service and news pages and one staff editor to evaluate that workflow.\n\nI've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.\n\nWould a 15-minute website-editor walkthrough be useful for your public information pages?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.5\"><p>Hello North Projects team,</p><p>I saw North's Auckland office is listed alongside your project and service information.</p><p>I'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample office, service and news pages and one staff editor to evaluate that workflow.</p><p>I've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.</p><p>Would a 15-minute website-editor walkthrough be useful for your public information pages?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.</p></div>",
+      "status": "held_body_only",
+      "pitchVersion": "cms-v2-four-country-role-focused-20261013"
+    },
+    {
+      "market": "Canada",
+      "country": "Canada",
+      "organisation": "Prism Engineering",
+      "offerType": "website_cms",
+      "from": "ramishqureshi99@gmail.com",
+      "replyTo": "ramishqureshi99@gmail.com",
+      "to": null,
+      "subject": "Staff-managed public content for Prism Engineering",
+      "body": "Hello Prism Engineering team,\n\nI saw Prism publishes office and service information alongside company news.\n\nI'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample office, service and news pages and one staff editor to evaluate that workflow.\n\nI've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.\n\nWould a 15-minute website-editor walkthrough be useful for your public information pages?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.",
+      "html": "<div style=\"font-family:Arial,sans-serif;font-size:14px;line-height:1.5\"><p>Hello Prism Engineering team,</p><p>I saw Prism publishes office and service information alongside company news.</p><p>I'm Ramish, founder of Nexora. We've built a modular platform with a website CMS that lets staff draft, preview and publish branded public pages. We could start with three sample office, service and news pages and one staff editor to evaluate that workflow.</p><p>I've attached a 90-second narrated and captioned introduction to Nexora's wider membership platform. A CMS walkthrough would focus on editing and publishing your public content.</p><p>Would a 15-minute website-editor walkthrough be useful for your public information pages?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply 'unsubscribe' or 'no thanks' and we won't contact you again.</p></div>",
+      "status": "held_body_only",
+      "pitchVersion": "cms-v2-four-country-role-focused-20261013"
+    }
+  ],
+  "evidence": {
+    "initial": {
+      "at": "2026-10-13T02:37:07.198Z",
+      "complete": true,
+      "searches": [
+        {
+          "query": "in:anywhere after:2026/10/11 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+          "complete": true,
+          "ids": [],
+          "count": 0,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:anywhere after:2026/10/11 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+          "complete": true,
+          "ids": [],
+          "count": 0,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:anywhere after:2026/10/11 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:bergengineering.com.au from:regaeng.com from:rawlinsons.co.nz from:newfields.com from:arabiandream.com}",
+          "complete": true,
+          "ids": [],
+          "count": 0,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:anywhere after:2026/10/11 -in:sent {from:newfieldscanada.ca}",
+          "complete": true,
+          "ids": [],
+          "count": 0,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:anywhere after:2026/10/11 -in:sent Nexora",
+          "complete": true,
+          "ids": [],
+          "count": 0,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:anywhere after:2026/10/11 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:Undeliverable subject:\"Delivery failure\"}",
+          "complete": true,
+          "ids": [],
+          "count": 0,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:sent Nexora",
+          "complete": true,
+          "ids": [
+            "1a13062fb2f2ffa6",
+            "1a13062917b76b72",
+            "1a130622ea0350f7",
+            "1a1306111691b931",
+            "1a126cdb46a0f8e5",
+            "1a126cd3439e26db",
+            "1a126cc99bcdbf2d",
+            "1a120800ff0e30ec",
+            "1a11f79c15f23dcf",
+            "1a11f7961e491a65",
+            "1a11f79086a34070",
+            "1a11f78af1ffedf9",
+            "1a11f7848a393b9b",
+            "1a11f77ea8a74a8d",
+            "1a11f778a20ccaad",
+            "1a11f772a971f528",
+            "1a11f76d0e3fea55",
+            "1a11f7678e41f57c",
+            "1a11c212432fee89",
+            "1a11c20c97b3046e",
+            "1a11c203d2286c33",
+            "1a11c1fe67945c8d",
+            "1a11c1f85aba49a0",
+            "1a11c1f2d4b368df",
+            "1a11c1ed082e39a4",
+            "1a11c1e794b80f6a",
+            "1a11c1e1f2f1e799",
+            "1a11c1c90d01fac1",
+            "1a11c1c3b2bf39f8",
+            "1a11c1bb06754473",
+            "1a11c1b58b9c985a",
+            "1a11c1ac175b0386",
+            "1a11c1a6ad5de964",
+            "1a11c19f0bb94c08",
+            "1a11c198ed3fea2e",
+            "1a11c181ca8691a6",
+            "1a11c17bb52abde3",
+            "1a11c17634387954",
+            "1a11c17068612088",
+            "1a11c16ad8942eeb",
+            "1a11c16528f62b29",
+            "1a11c15f48fbec90",
+            "1a11c15996661aa6",
+            "1a11c153e30859e2",
+            "1a11c14e24744bb3",
+            "1a11c14836da419f",
+            "1a11c141a7e55e69",
+            "1a11c1181b725d3a",
+            "1a11bed87d62d77f",
+            "1a11becb63c3868a",
+            "1a11bebbfc73d6fe",
+            "1a11beb04274d92a",
+            "1a11bea81abaec38",
+            "1a11be9e7b0beb9b",
+            "1a11be92ff3cd6f9",
+            "1a11be8a50e5deab",
+            "1a11be815953d93d",
+            "1a11be73bb6e873b",
+            "1a11bdf55d8130a2",
+            "1a11bc874d72d032"
+          ],
+          "count": 60,
+          "paginationComplete": true
+        },
+        {
+          "query": "in:sent filename:nexora-product-demo-male.mp4",
+          "complete": true,
+          "ids": [
+            "1a13062fb2f2ffa6",
+            "1a13062917b76b72",
+            "1a130622ea0350f7",
+            "1a1306111691b931",
+            "1a126cdb46a0f8e5",
+            "1a126cd3439e26db",
+            "1a126cc99bcdbf2d",
+            "1a120800ff0e30ec",
+            "1a11f79c15f23dcf",
+            "1a11f7961e491a65",
+            "1a11f79086a34070",
+            "1a11f78af1ffedf9",
+            "1a11f7848a393b9b",
+            "1a11f77ea8a74a8d",
+            "1a11f778a20ccaad",
+            "1a11f772a971f528",
+            "1a11f76d0e3fea55",
+            "1a11f7678e41f57c",
+            "1a11c212432fee89",
+            "1a11c20c97b3046e",
+            "1a11c203d2286c33",
+            "1a11c1fe67945c8d",
+            "1a11c1f85aba49a0",
+            "1a11c1f2d4b368df",
+            "1a11c1ed082e39a4",
+            "1a11c1e794b80f6a",
+            "1a11c1e1f2f1e799",
+            "1a11c1c90d01fac1",
+            "1a11c1c3b2bf39f8",
+            "1a11c1bb06754473",
+            "1a11c1b58b9c985a",
+            "1a11c1ac175b0386",
+            "1a11c1a6ad5de964",
+            "1a11c19f0bb94c08",
+            "1a11c198ed3fea2e",
+            "1a11c181ca8691a6",
+            "1a11c17bb52abde3",
+            "1a11c17634387954",
+            "1a11c17068612088",
+            "1a11c16ad8942eeb",
+            "1a11c16528f62b29",
+            "1a11c15f48fbec90",
+            "1a11c15996661aa6",
+            "1a11c153e30859e2",
+            "1a11c14e24744bb3",
+            "1a11c14836da419f",
+            "1a11c141a7e55e69",
+            "1a11c1181b725d3a",
+            "1a11bed87d62d77f",
+            "1a11becb63c3868a",
+            "1a11bebbfc73d6fe",
+            "1a11beb04274d92a",
+            "1a11bea81abaec38",
+            "1a11be9e7b0beb9b",
+            "1a11be92ff3cd6f9",
+            "1a11be8a50e5deab",
+            "1a11be815953d93d",
+            "1a11be73bb6e873b",
+            "1a11bdf55d8130a2",
+            "1a11bc874d72d032"
+          ],
+          "count": 60,
+          "paginationComplete": true
+        }
+      ],
+      "threads": [
+        {
+          "id": "1a11bdf55d8130a2",
+          "messageIds": [
+            "1a11bdf55d8130a2"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11be73bb6e873b",
+          "messageIds": [
+            "1a11be73bb6e873b"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11be815953d93d",
+          "messageIds": [
+            "1a11be815953d93d",
+            "1a11bf33395d33a1"
+          ],
+          "inboundIds": [
+            "1a11bf33395d33a1"
+          ]
+        },
+        {
+          "id": "1a11be8a50e5deab",
+          "messageIds": [
+            "1a11be8a50e5deab"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11be92ff3cd6f9",
+          "messageIds": [
+            "1a11be92ff3cd6f9"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11be9e7b0beb9b",
+          "messageIds": [
+            "1a11be9e7b0beb9b"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11bea81abaec38",
+          "messageIds": [
+            "1a11bea81abaec38"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11beb04274d92a",
+          "messageIds": [
+            "1a11beb04274d92a"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11bebbfc73d6fe",
+          "messageIds": [
+            "1a11bebbfc73d6fe"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11becb63c3868a",
+          "messageIds": [
+            "1a11becb63c3868a"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11bed87d62d77f",
+          "messageIds": [
+            "1a11bed87d62d77f"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1181b725d3a",
+          "messageIds": [
+            "1a11c1181b725d3a"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c141a7e55e69",
+          "messageIds": [
+            "1a11c141a7e55e69"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c14836da419f",
+          "messageIds": [
+            "1a11c14836da419f"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c14e24744bb3",
+          "messageIds": [
+            "1a11c14e24744bb3"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c153e30859e2",
+          "messageIds": [
+            "1a11c153e30859e2"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c15996661aa6",
+          "messageIds": [
+            "1a11c15996661aa6"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c15f48fbec90",
+          "messageIds": [
+            "1a11c15f48fbec90"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c16528f62b29",
+          "messageIds": [
+            "1a11c16528f62b29"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c16ad8942eeb",
+          "messageIds": [
+            "1a11c16ad8942eeb"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c17068612088",
+          "messageIds": [
+            "1a11c17068612088"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c17634387954",
+          "messageIds": [
+            "1a11c17634387954"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c17bb52abde3",
+          "messageIds": [
+            "1a11c17bb52abde3"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c181ca8691a6",
+          "messageIds": [
+            "1a11c181ca8691a6"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c198ed3fea2e",
+          "messageIds": [
+            "1a11c198ed3fea2e"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c19f0bb94c08",
+          "messageIds": [
+            "1a11c19f0bb94c08"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1a6ad5de964",
+          "messageIds": [
+            "1a11c1a6ad5de964"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1ac175b0386",
+          "messageIds": [
+            "1a11c1ac175b0386"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1b58b9c985a",
+          "messageIds": [
+            "1a11c1b58b9c985a"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1bb06754473",
+          "messageIds": [
+            "1a11c1bb06754473"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1c3b2bf39f8",
+          "messageIds": [
+            "1a11c1c3b2bf39f8"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1c90d01fac1",
+          "messageIds": [
+            "1a11c1c90d01fac1"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1e1f2f1e799",
+          "messageIds": [
+            "1a11c1e1f2f1e799"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1e794b80f6a",
+          "messageIds": [
+            "1a11c1e794b80f6a"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1ed082e39a4",
+          "messageIds": [
+            "1a11c1ed082e39a4"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1f2d4b368df",
+          "messageIds": [
+            "1a11c1f2d4b368df"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1f85aba49a0",
+          "messageIds": [
+            "1a11c1f85aba49a0"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c1fe67945c8d",
+          "messageIds": [
+            "1a11c1fe67945c8d"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c203d2286c33",
+          "messageIds": [
+            "1a11c203d2286c33"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c20c97b3046e",
+          "messageIds": [
+            "1a11c20c97b3046e"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11c212432fee89",
+          "messageIds": [
+            "1a11c212432fee89"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f7678e41f57c",
+          "messageIds": [
+            "1a11f7678e41f57c"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f76d0e3fea55",
+          "messageIds": [
+            "1a11f76d0e3fea55"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f772a971f528",
+          "messageIds": [
+            "1a11f772a971f528"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f778a20ccaad",
+          "messageIds": [
+            "1a11f778a20ccaad"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f77ea8a74a8d",
+          "messageIds": [
+            "1a11f77ea8a74a8d"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f7848a393b9b",
+          "messageIds": [
+            "1a11f7848a393b9b"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f78af1ffedf9",
+          "messageIds": [
+            "1a11f78af1ffedf9"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f79086a34070",
+          "messageIds": [
+            "1a11f79086a34070"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f7961e491a65",
+          "messageIds": [
+            "1a11f7961e491a65"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a11f79c15f23dcf",
+          "messageIds": [
+            "1a11f79c15f23dcf"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a120800ff0e30ec",
+          "messageIds": [
+            "1a120800ff0e30ec"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a126cc99bcdbf2d",
+          "messageIds": [
+            "1a126cc99bcdbf2d"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a126cd3439e26db",
+          "messageIds": [
+            "1a126cd3439e26db"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a126cdb46a0f8e5",
+          "messageIds": [
+            "1a126cdb46a0f8e5"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a1306111691b931",
+          "messageIds": [
+            "1a1306111691b931"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a130622ea0350f7",
+          "messageIds": [
+            "1a130622ea0350f7"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a13062917b76b72",
+          "messageIds": [
+            "1a13062917b76b72"
+          ],
+          "inboundIds": []
+        },
+        {
+          "id": "1a13062fb2f2ffa6",
+          "messageIds": [
+            "1a13062fb2f2ffa6"
+          ],
+          "inboundIds": []
+        }
+      ],
+      "actualInboundBodies": [
+        {
+          "id": "1a11bf33395d33a1",
+          "threadId": "1a11be815953d93d",
+          "headers": [
+            {
+              "name": "From",
+              "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+            },
+            {
+              "name": "Subject",
+              "value": "Re: Nexora demo for BAFSA's membership administration"
+            },
+            {
+              "name": "Date",
+              "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+            }
+          ],
+          "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n"
+        }
+      ],
+      "priorExternalIdsVerified": 59,
+      "liveSentIncludingSelfTest": 60,
+      "newPositiveReplies": [],
+      "newOptOuts": [],
+      "newBounces": [],
+      "recentSent": {
+        "emails": [
+          {
+            "id": "1a13062fb2f2ffa6",
+            "thread_id": "1a13062fb2f2ffa6",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "CanadaMarketing@newfields.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A focused website-content demo for NewFields Canada",
+            "snippet": "Hello Jodie, I saw NewFields Canada's June announcement about the Calgary office. For your marketing team's office and service information, a focused website-content evaluation could be",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ_05Pkmft7upVcX_gn4RK8iSqMAzBa17VFAmFhmLsYbfKcFKHVxN6VBUFtqVzPFPhcpk7NG1Fp5_WjtaoEpv0nXH8z1ZUO-LHHsOBsrwm7TbPMA-vlji6EibtDm8yrSgQ-H7eMoEGuHSNvHfwr-3ABzgGoww37rb_5Tg0Gufoumujm0pVjd5EPnxURzS0kJXSwGJbydeNzdkb7TvsG3TOgOHKcBxAnLO9PzmdJtoA1BpDSqqpkhFQgNCtl7ssQVkO1ijdenXUoQWuhZUi6DFJbQJTa0hcqtBw599mk7tREdb4NJ9_ZTM58PiQCL8u473SJF-cmKw6cjNXqzxQQ1SraiF7rRI0_b1xPE3GFC_RmnlUZdg_1_aHjCbnTobfiDJUYiPokud4MPwLyX",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-12T06:52:35-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062fb2f2ffa6",
+            "display_title": "A focused website-content demo for NewFields Canada"
+          },
+          {
+            "id": "1a13062917b76b72",
+            "thread_id": "1a13062917b76b72",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@rawlinsons.co.nz"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A focused website-content demo for Rawlinsons",
+            "snippet": "Hello Rawlinsons team, I saw your September update about the Dunedin team settling into the Moran Building. With service, project and office information across your national practice, a focused website",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ99CFkhR2CFWisB5ahfzLIIIo0BKyITPFqGX28RwievRBCLOMT96FmlhVszfUiYGNkpHb-3mN3-YZ2BOLAN0KFw3MTA2wN3kaPE0x_fHDXIJr-PGxWTbhKJlQumiYnSWBOYyQQsTW24pqn32M70wEOkkIkm4nKIux1m9zTEuZHTWsHislkNmdXcwhbpgl5ExSy4QSkfKp7lITg2cJLF9E09CacY89fsg2Q9BuVAv8XnmavzKi374SUkvXsOqLcWjMLTIAv-ys5MREHfoqie7B0N8WJcnN5pS1mc3anEOF8zCeAKMxKYdzAhc3OTY8vQpL4yxajimYl3sRZ4W2lwwmOhMniDvBTbjOvijY5__KKt9Fzgo5ZHSIYnt7a7uz0TvrB6oPTf2DyKmndl",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-12T09:52:08-04:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a13062917b76b72",
+            "display_title": "A focused website-content demo for Rawlinsons"
+          },
+          {
+            "id": "1a130622ea0350f7",
+            "thread_id": "1a130622ea0350f7",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "info@regaeng.com"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A focused website-content demo for REGA",
+            "snippet": "Hello REGA team, I saw your company history notes the Omaha office opening in 2026. With office, service and project information across your locations, a focused content-publishing evaluation could be",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ-p34t8bk2ajOWQxTI-iAVNCrpwt3L1t8iAU6YZto2b7H-q6OU2uQLqdjpKkF0WxnKm50kvDDxEHM3yHZApbsLlVh3tLxv-TMkrJRHHiRAq5v6NHMCwNgbaIC3FF4RQge3y5SmlydHDHZ-ngk6wXI52o_dqGF8w6UIpohq1z7wJwtn5K17x9Mkr2CnC6W_AF4pdvNsUWMwjXWmgDezX8KPOyQh_7uX3JbBGeJ_I2wU9ixEzpL4QK3EanyP4saFBPZW_iVOCRWDVnziMuZHtvZ5swS_bOQ0SwW8XdI5AEGdd4oIZO_GiKzElXZY3vxOHgEp-rcnCnQiiRD3hSNKVmluNa7Gu3isn3X1m7U2C301dK3E195QAKIWyLeNjspU4UHV1wToBkA2faap6",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-12T09:51:43-04:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a130622ea0350f7",
+            "display_title": "A focused website-content demo for REGA"
+          },
+          {
+            "id": "1a1306111691b931",
+            "thread_id": "1a1306111691b931",
+            "from_": "ramishqureshi99@gmail.com",
+            "to": [
+              "marketing@bergengineering.com.au"
+            ],
+            "cc": [],
+            "bcc": [],
+            "subject": "A focused website-content demo for Berg Engineering",
+            "snippet": "Hello Berg marketing team, I saw your August project updates cover precision machining and refurbishment, alongside your Brisbane and Gladstone facilities. If your marketing team is reviewing how it",
+            "labels": [
+              "SENT"
+            ],
+            "has_attachment": true,
+            "attachments": [
+              {
+                "filename": "nexora-product-demo-male.mp4",
+                "mime_type": "video/mp4",
+                "size_bytes": 1945313,
+                "attachment_id": "ANGjdJ9EfhJSCQNjDQ38B90y6LOXmc-OYopCkW2w2YAAP3JrEbMdD6UV_kuc1aEpov8CL1YHt2EJW2t2QE1BHpWHz_Ps70aVv5qRR3O8wD9uK-UC8DpfSDxTXCEuDCA6sxHvKvCkaQJDull4nb7EjFri7lZmrehZh4__4rOVab0uag4CRpcydPhZs2QhVS6a5YcJj4pEAwolo-NsQX4qJTLLzzTPU5vFjRuhl8ROcdhe2MxyTOy8O0Zvez7rcEqqn_zzJbKFFfKP2lRCKi5RvGK63-9VAosJSPDvTQjXnQ9g1OHbGcpuo4jHfgLVeWAmeZBxqlkuNAaenFB5GsI6_QS7Xkneb_WZ2Zwa4DdvFAtoeJgKZgSGh3mTnNM00FbIUmdACUxC6yd_gR__tZaJ",
+                "read_attachment_supported": false
+              }
+            ],
+            "inline_images": [],
+            "email_ts": "2026-10-12T06:50:29-07:00",
+            "display_url": "https://mail.google.com/mail/u/?authuser=ramishqureshi99%40gmail.com#all/1a1306111691b931",
+            "display_title": "A focused website-content demo for Berg Engineering"
+          }
+        ],
+        "next_page_token": null
+      },
+      "candidateDuplicates": [
+        {
+          "query": "in:sent {to:marketing@jaeaust.com.au to:jaeaust.com.au}",
+          "complete": true,
+          "emails": []
+        },
+        {
+          "query": "in:sent {to:sales@gsrestaurantequipment.com to:gsrestaurantequipment.com to:gsequipmentinc.com}",
+          "complete": true,
+          "emails": []
+        },
+        {
+          "query": "in:sent {to:northprojects.com.au}",
+          "complete": true,
+          "emails": []
+        },
+        {
+          "query": "in:sent {to:prismengineering.com}",
+          "complete": true,
+          "emails": []
+        }
+      ],
+      "pluginPermission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "Action completed."
+          }
+        ],
+        "structuredContent": {
+          "meta": null,
+          "content": [
+            {
+              "type": "text",
+              "text": "For Gmail: your default app permission is Allow low-risk actions. ChatGPT will automatically approve low-risk actions but may deny actions involving sensitive information. Learn more App-specific setting: Allow all actions. Gmail has a custom app-specific setting. ChatGPT won’t ask before reading or taking action. This comes with elevated risk. Learn more",
+              "annotations": null,
+              "meta": null
+            }
+          ],
+          "structuredContent": {
+            "app_id": "Gmail",
+            "app_name": "Gmail",
+            "status": "found",
+            "global_permission": "Allow low-risk actions",
+            "global_permission_description": "ChatGPT will automatically approve low-risk actions but may deny actions involving sensitive information. Learn more",
+            "app_permission": "Allow all actions",
+            "app_permission_description": "Gmail has a custom app-specific setting. ChatGPT won’t ask before reading or taking action. This comes with elevated risk. Learn more"
+          },
+          "isError": false
+        },
+        "isError": false
+      },
+      "sessionApprovalPolicy": "never",
+      "officialPermissionSources": [
+        "https://learn.chatgpt.com/docs/agent-approvals-security",
+        "https://learn.chatgpt.com/docs/permission-modes"
+      ],
+      "interpretation": "Plugin Allow all actions is current. Side-effect connector calls may independently need session approval. Actual current send access will be evaluated once with a qualified first pitch; no settings or channel bypass."
+    },
+    "candidateDuplicates": [
+      {
+        "query": "in:sent {to:marketing@jaeaust.com.au to:jaeaust.com.au}",
+        "complete": true,
+        "emails": []
+      },
+      {
+        "query": "in:sent {to:sales@gsrestaurantequipment.com to:gsrestaurantequipment.com to:gsequipmentinc.com}",
+        "complete": true,
+        "emails": []
+      },
+      {
+        "query": "in:sent {to:northprojects.com.au}",
+        "complete": true,
+        "emails": []
+      },
+      {
+        "query": "in:sent {to:prismengineering.com}",
+        "complete": true,
+        "emails": []
+      }
+    ]
+  }
+}

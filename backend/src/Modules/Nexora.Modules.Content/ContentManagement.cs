@@ -24,12 +24,14 @@ public static partial class ContentModule
             if (!await db.Set<MediaAsset>().AnyAsync(m => m.Id == id && m.SiteId == siteId && (!publishing || m.IsPublic && m.ScanStatus == "clean"), ct))
                 throw new ValidationException(publishing ? "Every image must pass its scan and have a public grant before publication." : "Choose an image from this website's media library.");
     }
-    internal static IEnumerable<Guid> MediaIds(PageVersion revision) => (JsonSerializer.Deserialize<ContentBlock[]>(revision.BlocksJson, Json) ?? []).Where(b => b.MediaId.HasValue).Select(b => b.MediaId!.Value);
+    internal static IEnumerable<Guid> MediaIds(PageVersion revision) => (JsonSerializer.Deserialize<ContentBlock[]>(revision.BlocksJson, Json) ?? [])
+        .SelectMany(b => (b.MediaId.HasValue ? new[] { b.MediaId.Value } : []).Concat((b.Items ?? []).Where(i => i.MediaId.HasValue).Select(i => i.MediaId!.Value)));
     private static async Task ValidateRevisionMedia(ContentDbContext db, Guid siteId, PageVersion revision, bool publishing, CancellationToken ct)
     {
         await ValidateMedia(db, siteId, MediaIds(revision), publishing, ct);
         foreach (var block in JsonSerializer.Deserialize<ContentBlock[]>(revision.BlocksJson, Json) ?? [])
-            if (block.Type == "image" && !await db.Set<MediaAsset>().AnyAsync(m => m.Id == block.MediaId && m.SiteId == siteId && (m.ContentType == "image/png" || m.ContentType == "image/jpeg"), ct))
+            foreach (var id in (block.Type != "download" && block.MediaId.HasValue ? new[] { block.MediaId.Value } : []).Concat((block.Items ?? []).Where(i => i.MediaId.HasValue).Select(i => i.MediaId!.Value)))
+            if (!await db.Set<MediaAsset>().AnyAsync(m => m.Id == id && m.SiteId == siteId && (m.ContentType == "image/png" || m.ContentType == "image/jpeg"), ct))
                 throw new ValidationException("Image blocks require a PNG or JPEG. Use a download block for documents.");
     }
     private static async Task CancelSchedule(ContentDbContext db, Guid pageId, CancellationToken ct)

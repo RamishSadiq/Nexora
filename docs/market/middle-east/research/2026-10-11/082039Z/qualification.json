@@ -1,0 +1,112 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "checkedAt": "2026-10-11T08:28:22.493Z",
+  "sourceCheckedAt": "2026-10-11T08:28:22.493Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "User-authorised five-hour dual-market campaign; heartbeat 2026-10-11T08:20:39.795Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-18",
+  "reviewDue": "2026-10-18",
+  "stage": "research_only",
+  "pitchVersion": "website-cms-v2-showroom-content",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Required video introduces wider membership platform. Dedicated CMS/portal demonstrations and public product page remain outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 0
+  },
+  "researchPriorityScore": 3,
+  "scoreMaximum": 12,
+  "capabilityFit": "Bounded showroom/service/news information pages with staff draft, preview and publishing; no replacement of transactional functions.",
+  "unsupportedRequirements": [
+    "Ecommerce/checkout, booking, arbitrary forms and external CRM integrations unverified and excluded from this evaluation",
+    "No automated migration, Arabic localisation or regional hosting promised"
+  ],
+  "liveDuplicateCheckComplete": false,
+  "currentProvider": "Unknown; no dissatisfaction or vacant provider assumed",
+  "market": "Middle East",
+  "country": "United Arab Emirates",
+  "segment": "furniture_showrooms",
+  "organisation": "Honeypot Furniture UAE",
+  "domain": "honeypotfurniture.ae",
+  "domains": [
+    "honeypotfurniture.ae",
+    "honeypotfurniture.co.uk"
+  ],
+  "source": "https://honeypotfurniture.ae/pages/contact",
+  "sourceDate": null,
+  "observedFact": "Official contact search excerpt lists Dubai showroom Unit 56, Goshi Warehouse Village, Al Quoz, and public hello mailbox; official February article already mentions Dubai showroom.",
+  "signal": "Showroom/content workflow; September media first-opening claim conflicts with earlier official showroom references. Do not claim a verified September opening.",
+  "problemHypothesis": "A bounded evaluation of showroom information/content publishing may fit; current satisfaction, provider and buying intent unknown.",
+  "needEvidence": [
+    {
+      "url": "https://honeypotfurniture.ae/pages/contact",
+      "sourceDate": null,
+      "checkedAt": "2026-10-11T08:28:22.493Z",
+      "verification": "Official search excerpt only; full-page verification failed",
+      "observation": "Dubai showroom address and Monday-Sunday 10am-8pm listed."
+    },
+    {
+      "url": "https://honeypotfurniture.ae/blogs/hp-blogs/if-you-can-imagine-it-it-can-be-built",
+      "sourceDate": "2026-02-15",
+      "checkedAt": "2026-10-11T08:28:22.493Z",
+      "verification": "Official search excerpt only; full-page verification failed",
+      "observation": "Already refers to Dubai showroom; September media opening chronology unresolved."
+    }
+  ],
+  "buyerRole": "UAE content/marketing or owner; unverified",
+  "buyerContact": null,
+  "publishedContactCandidate": "hello@honeypotfurniture.ae",
+  "buyerContactEvidence": [
+    {
+      "url": "https://honeypotfurniture.ae/pages/contact",
+      "checkedAt": "2026-10-11T08:28:22.493Z",
+      "observation": "Search excerpt displays .ae email but mailto reportedly .co.uk; identity/routing requires full-page verification, no email selected."
+    }
+  ],
+  "outreachDecision": "hold_contact_routing_lawful_route_and_gmail_checks",
+  "holdReasons": [
+    "Full official page fetch failed; .ae/.co.uk contact routing unresolved",
+    "Recipient-specific UAE country/category/channel lawful route not established; public email is not consent",
+    "Existing Gmail send-approval restriction; no configuration change",
+    "Completion reply checks failed after three bounded transport attempts",
+    "New-candidate live Gmail duplicate checks incomplete"
+  ],
+  "outreachLegalBasis": "Unresolved UAE recipient/channel route; user authority recorded separately from recipient consent. No universal invitation gate or generic-mailbox exemption assumed.",
+  "countryRulesCheckedAt": null,
+  "countryRulesOperationalRecordReadAt": "2026-10-11T08:28:22.493Z",
+  "countryRulesSourceCheckAt": "2026-10-09T14:12:16.37308+01:00",
+  "dateConflictEvidence": [
+    {
+      "url": "https://www.khaleejtimes.com/kt-network/honeypot-furniture-uae-opens-its-first-dubai-showroom-in-al-quoz?amp=1",
+      "sourceDate": "2026-09-29",
+      "observation": "Media first-opening claim; not used as verified opening date because earlier official February content mentions Dubai showroom."
+    }
+  ],
+  "nextAction": "When due or new evidence arrives, verify official UAE contact routing/current facts and specific lawful channel/recipient basis. Await actual founder introduction/opt-in if provided; no permission-request marketing.",
+  "history": [
+    {
+      "at": "2026-10-11T08:28:22.493Z",
+      "event": "Fresh UAE furniture-showroom/CMS research; official search snippets only, chronology/contact conflicts retained; no outgoing contact."
+    }
+  ],
+  "localLedgerDuplicateCheck": {
+    "complete": true,
+    "manifestCount": 4,
+    "priorConfirmedIds": 55,
+    "matches": []
+  }
+}

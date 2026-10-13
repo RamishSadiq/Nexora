@@ -1,0 +1,87 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "checkedAt": "2026-10-11T08:28:22.493Z",
+  "sourceCheckedAt": "2026-10-11T08:28:22.493Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "User-authorised five-hour dual-market campaign; heartbeat 2026-10-11T08:20:39.795Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-18",
+  "reviewDue": "2026-10-18",
+  "stage": "research_only",
+  "pitchVersion": "website-cms-v2-showroom-content",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Required video introduces wider membership platform. Dedicated CMS/portal demonstrations and public product page remain outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 0
+  },
+  "researchPriorityScore": 3,
+  "scoreMaximum": 12,
+  "capabilityFit": "Bounded showroom/service/news information pages with staff draft, preview and publishing; no replacement of transactional functions.",
+  "unsupportedRequirements": [
+    "Ecommerce/checkout, booking, arbitrary forms and external CRM integrations unverified and excluded from this evaluation",
+    "No automated migration, Arabic localisation or regional hosting promised"
+  ],
+  "liveDuplicateCheckComplete": false,
+  "currentProvider": "Unknown; no dissatisfaction or vacant provider assumed",
+  "market": "United States",
+  "country": "United States",
+  "segment": "restaurant_equipment_showrooms",
+  "organisation": "Atlas Restaurant Equipment",
+  "domain": "atlasrest.com",
+  "domains": [
+    "atlasrest.com"
+  ],
+  "source": "https://www.atlasrest.com/resources/news/new-showroom-concord-ma/",
+  "sourceDate": "2026-06-11",
+  "observedFact": "Official June announcement describes relocation to a 10,000-square-foot showroom/test-kitchen/office/warehouse in Concord, Massachusetts.",
+  "signal": "Dated showroom relocation; current content workflow may fit CMS evaluation, buying intent unknown.",
+  "problemHypothesis": "Staff may benefit from maintaining showroom, service and news information pages; not a confirmed buyer problem.",
+  "needEvidence": [
+    {
+      "url": "https://www.atlasrest.com/resources/news/new-showroom-concord-ma/",
+      "sourceDate": "2026-06-11",
+      "checkedAt": "2026-10-11T08:28:22.493Z",
+      "verification": "Official article/search content inspected before transport failure",
+      "observation": "Concord showroom and test-kitchen relocation announcement."
+    }
+  ],
+  "buyerRole": "Owner Emre Yetistirici named in official announcement; responsibility for CMS purchasing unconfirmed",
+  "buyerContact": null,
+  "buyerContactEvidence": [],
+  "outreachDecision": "hold_contact_verification_and_gmail_checks",
+  "holdReasons": [
+    "Published relevant email not verified; official contact fetch failed; do not guess",
+    "Existing Gmail send-approval restriction; no configuration change",
+    "Completion reply checks failed after three bounded transport attempts",
+    "New-candidate live Gmail duplicate checks incomplete"
+  ],
+  "outreachLegalBasis": "US commercial-email footer prepared; recipient identity/contact and complete pre-send checks still required. No permission assumed.",
+  "countryRulesCheckedAt": null,
+  "nextAction": "When due or new evidence arrives, verify published owner/content/operations business contact and current official pages; repeat complete reply/Sent/cap checks in an approval-enabled session.",
+  "history": [
+    {
+      "at": "2026-10-11T08:28:22.493Z",
+      "event": "Fresh US showroom/CMS cohort; owner and expansion signal recorded without inferring buyer dissatisfaction; contact verification held due web transport failure."
+    }
+  ],
+  "localLedgerDuplicateCheck": {
+    "complete": true,
+    "manifestCount": 4,
+    "priorConfirmedIds": 55,
+    "matches": []
+  }
+}

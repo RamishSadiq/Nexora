@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { OrganisationAccessManagement } from "./organisation-access-management";
+import { OrganisationRequestReview } from "./organisation-request-review";
 import { moduleApi } from "@/features/shared/module-api";
 
 type Grant = { id: string; contactId: string; contactName: string | null; email: string; displayName: string; isRevoked: boolean; userIsActive: boolean; contactIsActive: boolean };
@@ -60,12 +61,13 @@ export function PortalAccessManagement({ users }: { users: { id: string; display
           </form>
         </div>
         <div><h3 className="font-semibold">Access records</h3>
-          <div className="mt-3 space-y-3">{data.items.length ? data.items.map(g => <article key={g.id} className="rounded-xl border border-slate-200 p-4"><h4 className="break-words font-semibold">{g.contactName ?? "Inactive or unavailable Contact"}</h4><p className="mt-1 break-all text-sm text-slate-600">{g.email}</p><p className="mt-2 text-sm">{g.isRevoked ? "Revoked" : !g.userIsActive || !g.contactIsActive ? "Blocked by inactive account or Contact" : "Active access"}</p>{!g.isRevoked && <button className="mt-3 text-sm font-semibold text-red-800 underline" disabled={busy} onClick={() => setRevoking(g)}>Revoke member access<span className="sr-only"> for {g.email}</span></button>}{!g.isRevoked && g.userIsActive && g.contactIsActive && <OrganisationAccessManagement accessId={g.id} />}</article>) : <p className="text-sm text-slate-600">No access records on this page.</p>}</div>
+          <div className="mt-3 space-y-3">{data.items.length ? data.items.map(g => <article key={g.id} className="rounded-xl border border-slate-200 p-4"><h4 className="break-words font-semibold">{g.contactName ?? "Inactive or unavailable Contact"}</h4><p className="mt-1 break-all text-sm text-slate-600">{g.email}</p><p className="mt-2 text-sm">{g.isRevoked ? "Revoked" : !g.userIsActive || !g.contactIsActive ? "Blocked by inactive account or Contact" : "Active access"}</p>{!g.isRevoked && <button className="mt-3 text-sm font-semibold text-red-800 underline" disabled={busy} onClick={() => setRevoking(g)}>Revoke member access<span className="sr-only"> for {g.email}</span></button>}{!g.isRevoked && g.userIsActive && g.contactIsActive && <OrganisationAccessManagement key={`${g.id}/${reload}`} accessId={g.id} />}</article>) : <p className="text-sm text-slate-600">No access records on this page.</p>}</div>
           <div className="mt-4 flex flex-wrap items-center gap-4 text-sm"><button disabled={busy || page === 1} className="underline disabled:opacity-40" onClick={() => { setData(null); setPage(p => p - 1); }}>Previous access page</button><span>Page {page} · {data.totalCount} records</span><button disabled={busy || page * data.pageSize >= data.totalCount} className="underline disabled:opacity-40" onClick={() => { setData(null); setPage(p => p + 1); }}>Next access page</button></div>
         </div>
       </div>
       {revoking && <div role="group" aria-label="Confirm member revocation" className="mt-5 rounded-xl bg-red-50 p-4"><p className="break-words text-sm text-red-900">Revoke access for {revoking.email}? Their existing portal session will stop working on its next request.</p><div className="mt-3 flex gap-4"><button disabled={busy} className="rounded-lg bg-red-800 px-4 py-2 font-semibold text-white" onClick={() => void run(async () => { await moduleApi("admin/portal-access", `/${revoking.id}`, "DELETE"); setRevoking(null); setReload(n => n + 1); setMessage("Member access revoked."); })}>Confirm revocation</button><button disabled={busy} className="underline" onClick={() => setRevoking(null)}>Keep access</button></div></div>}
     </>}
+    <OrganisationRequestReview onDecision={() => setReload(n => n + 1)} />
   </section>;
 }
 

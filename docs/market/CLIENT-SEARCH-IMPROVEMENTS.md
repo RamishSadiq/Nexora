@@ -1,6 +1,6 @@
 # Client search improvements
 
-Added 10 October 2026 at the user's request. Apply to both US and Middle East research under [the current campaign policy](DUAL-MARKET-CAMPAIGN.md). The existing five-hour schedule and sending limits continue to apply.
+Added 10 October; scope updated 12 October 2026 at the user's request. Apply to Australia, United States, New Zealand and Canada under [the current campaign policy](MULTI-MARKET-CAMPAIGN.md): one new prospect per country, four total per rolling five hours, with the shared daily maximum of 24.
 
 ## 1. Search by client segment and offer
 
@@ -61,7 +61,7 @@ On buyer interest, follow the existing positive-response stop and present the ne
 
 ## Every-run checklist
 
-1. Research both markets in separate segment/offer cohorts; prefer fresh current change signals.
+1. Research all four countries in separate segment/offer cohorts; prefer fresh current change signals.
 2. Record factual sources, buyer access and one supported outcome; keep unknowns explicit.
 3. Rank candidates using existing need/fit/buyer/timing scores and current sending checks.
 4. Prepare/send only under the current operating policy, and record copy/proof/next action.

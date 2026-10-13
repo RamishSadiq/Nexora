@@ -24,6 +24,7 @@ public sealed class CmsUpgradeTests
             Assert.Equal("#183a31", (await db.Sites.SingleAsync()).BrandColor);
             var migrated = await db.Pages.SingleAsync(); Assert.True(migrated.ShowInNavigation); Assert.Equal("About us", migrated.NavigationLabel); Assert.Equal(1, migrated.NavigationOrder);
             Assert.False(db.Database.HasPendingModelChanges());
+            Assert.Empty(await db.Set<WebsiteConfiguration>().ToListAsync());
         }
         finally { await db.Database.EnsureDeletedAsync(); }
     }

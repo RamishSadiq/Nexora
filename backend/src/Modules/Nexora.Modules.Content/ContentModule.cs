@@ -25,6 +25,7 @@ public static partial class ContentModule
         services.AddHostedService<ContentScheduler>();
         AddWorkflowCommands(services);
         services.AddScoped<IPortalPresentationDirectory, PortalPresentationDirectory>();
+        services.AddScoped<IPortalRegistrationDirectory, PortalRegistrationDirectory>();
         return services;
     }
     public static void MapNexoraContent(this IEndpointRouteBuilder endpoints)
@@ -47,12 +48,14 @@ public static partial class ContentModule
         });
         MapManagement(api);
         MapPortalPresentation(api);
+        MapWebsitePresentation(api);
         MapPublic(endpoints);
         api.MapGet("/site", async (ContentDbContext db, CancellationToken ct) =>
         {
             var site = await db.Sites.SingleOrDefaultAsync(ct);
             var pages = await (from p in db.Pages join v in db.Versions on p.DraftId equals v.Id orderby p.Slug select new { p.Id, p.Slug, p.Version, p.DraftId, p.PublishedId, p.NavigationLabel, p.NavigationOrder, p.ShowInNavigation, v.Title }).ToListAsync(ct);
-            return Results.Ok(new { site, pages });
+            var design = ReadWebsiteConfiguration(await db.Set<WebsiteConfiguration>().SingleOrDefaultAsync(ct));
+            return Results.Ok(new { site, pages, design });
         });
         api.MapPost("/site", async (SiteRequest r, ContentDbContext db, IRequestIdentity who, CancellationToken ct) =>
         {
@@ -95,7 +98,9 @@ public static partial class ContentModule
             await db.SaveChangesAsync(ct); return Results.Ok(page);
         }).RequireAuthorization("content.publish");
         api.MapGet("/pages/{id:guid}/preview/{revisionId:guid}",async(Guid id,Guid revisionId,ContentDbContext db,CancellationToken ct)=>{
-            var page=await Find(db,id,ct);var revision=await db.Versions.SingleOrDefaultAsync(x=>x.Id==revisionId&&x.PageId==id,ct);if(revision==null)return Results.NotFound();var site=await db.Sites.SingleAsync(x=>x.Id==page.SiteId,ct);return Results.Ok(new{site,slug=page.Slug,page=ReadRevision(revision),navigation=Array.Empty<object>()});
+            var page=await Find(db,id,ct);var revision=await db.Versions.SingleOrDefaultAsync(x=>x.Id==revisionId&&x.PageId==id,ct);if(revision==null)return Results.NotFound();var site=await db.Sites.SingleAsync(x=>x.Id==page.SiteId,ct);
+            var configuration=await db.Set<WebsiteConfiguration>().SingleOrDefaultAsync(x=>x.SiteId==site.Id,ct);
+            return Results.Ok(new{site,slug=page.Slug,page=ReadRevision(revision),navigation=Array.Empty<object>(),design=ReadWebsiteDesign(configuration?.DraftJson)});
         });
         api.MapPost("/pages/{id:guid}/unpublish", async (Guid id, PublishRequest r, ContentDbContext db, IRequestIdentity who, CancellationToken ct) =>
         {
@@ -126,13 +131,18 @@ public static partial class ContentModule
         if (r.Blocks == null || r.Blocks.Length is < 1 or > 20) throw new ValidationException("Choose between 1 and 20 content blocks.");
         var blocks = r.Blocks.Select(b =>
         {
-            if (b == null || b.Type is not ("hero" or "text" or "feature" or "cta" or "image" or "download")) throw new ValidationException("Unsupported content block.");
+            if (b == null || b.Type is not ("hero" or "text" or "feature" or "cta" or "image" or "download" or "feature-grid" or "showcase" or "gallery" or "faq")) throw new ValidationException("Unsupported content block.");
             if (b.Type is "image" or "download" && (b.MediaId == null || string.IsNullOrWhiteSpace(b.Text))) throw new ValidationException("Choose an image and enter its alternative text.");
-            var url = b.LinkUrl?.Trim();
-            if (!string.IsNullOrEmpty(url) && !(url.StartsWith('/') && !url.StartsWith("//") && !url.Contains('\\') && !url.Any(char.IsControl)) &&
-                !(Uri.TryCreate(url, UriKind.Absolute, out var uri) && uri.Scheme == "https" && string.IsNullOrEmpty(uri.UserInfo))) throw new ValidationException("Links must be local paths or HTTPS addresses.");
-            if (url?.Length > 2000) throw new ValidationException("Link is too long.");
-            return new ContentBlock(b.Type, Text(b.Heading, 160, false), Text(b.Text, 3000, false), Text(b.LinkLabel, 80, !string.IsNullOrEmpty(url)), url, b.MediaId);
+            var url = WebsiteLink(b.LinkUrl);
+            if (b.Items?.Length > 12 || b.Type is "feature-grid" or "showcase" or "gallery" or "faq" && (b.Items == null || b.Items.Length == 0))
+                throw new ValidationException("Interactive sections need between 1 and 12 items.");
+            var items = b.Items?.Select(item => {
+                if (item == null) throw new ValidationException("Choose a valid section item.");
+                var itemUrl = WebsiteLink(item.LinkUrl);
+                return new ContentItem(Text(item.Heading, 160), Text(item.Text, 1500, false), item.MediaId, Text(item.LinkLabel, 80, itemUrl != null), itemUrl);
+            }).ToArray();
+            return new ContentBlock(b.Type, Text(b.Heading, 160, false), Text(b.Text, 3000, false), Text(b.LinkLabel, 80, url != null), url, b.MediaId,
+                b.Layout == null ? null : ValidateLayout(b.Layout), b.Motion == null ? null : ValidateMotion(b.Motion), items);
         }).ToArray();
         var json = JsonSerializer.Serialize(blocks, Json); if (json.Length > 40000) throw new ValidationException("Page content is too large.");
         return new PageVersion { TenantId = page.TenantId, PageId = page.Id, Title = Text(r.Title, 120), Description = Text(r.Description, 300, false), BlocksJson = json, AuthorId = author };

@@ -1,11 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
 import { moduleApi } from "../shared/module-api";
-import type { Media, PageRecord, Site } from "./types";
+import type { Media, PageRecord, Site, WebsiteDesignState } from "./types";
+import { WebsiteDesignEditor } from "./website-controls";
 const input = "mt-1 block w-full rounded border border-slate-300 bg-white p-2 text-slate-900";
 const button = "rounded border border-slate-300 px-4 py-2 text-sm disabled:opacity-50";
 const api = <T,>(path: string, method = "GET", body?: unknown) => moduleApi<T>("content", path, method, body);
-export function CmsSettings({ site, media, canEdit, canPublish, changed }: { site: Site; media: Media[]; canEdit: boolean; canPublish: boolean; changed: () => void }) {
+export function CmsSettings({ site, media, design, canEdit, canPublish, changed }: { site: Site; media: Media[]; design?: WebsiteDesignState; canEdit: boolean; canPublish: boolean; changed: () => void }) {
   const [error, setError] = useState(""); const [message, setMessage] = useState(""); const [busy, setBusy] = useState(false);
   async function run(work: () => Promise<void>) { setBusy(true); setError(""); setMessage(""); try { await work(); changed(); } catch (e) { setError(e instanceof Error ? e.message : "Unable to save."); } finally { setBusy(false); } }
   return <details className="rounded-xl bg-white p-5 text-slate-900"><summary className="cursor-pointer font-semibold">Site branding and media</summary>
@@ -18,6 +19,7 @@ export function CmsSettings({ site, media, canEdit, canPublish, changed }: { sit
       <p className="text-sm sm:col-span-2">These settings change the public website immediately. Choose a dark brand colour for readable text.</p>
       <button className={button} disabled={busy || !canPublish}>Publish site settings</button>
     </form>
+    <WebsiteDesignEditor site={site} configuration={design} canEdit={canEdit} canPublish={canPublish} changed={changed} />
     <section aria-label="Media library" className="mt-6 border-t pt-5"><h2 className="font-semibold">Media library</h2><p className="mt-2 text-sm">PNG, JPEG, PDF or UTF-8 text, up to 5 MB each. Files need a clean security scan and an explicit public grant before visitors can see them.</p>
       {canEdit && <form className="my-4 flex flex-wrap items-end gap-3" onSubmit={e => { e.preventDefault(); const form = e.currentTarget; const data = new FormData(form); data.set("version", site.version!); void run(async () => {
         const token = await fetch("/api/v1/auth/csrf", { cache: "no-store" }); if (!token.ok) throw new Error("Sign in again.");

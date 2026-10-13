@@ -1,0 +1,116 @@
+{
+  "market": "United States",
+  "country": "United States",
+  "segment": "commercial_kitchen_equipment_suppliers",
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "sourceCheckedAt": "2026-10-10T22:26:08.736Z",
+  "checkedAt": "2026-10-10T22:26:08.736Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "buyerRole": null,
+  "owner": "Ramish Qureshi",
+  "nextAction": "Send one narrow evaluation pitch after final live reply/Sent checks; thereafter monitor only, no automatic follow-up",
+  "nextActionDue": "2026-10-10",
+  "pitchVersion": "website-cms-v2-cohort-1",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "No dedicated website/CMS video or truthful public product page has been delivered; attached video introduces wider membership platform.",
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "User-authorised individual first pitches in both markets every five hours; latest heartbeat 2026-10-10T22:19Z",
+  "outreachLegalBasis": "US B2B first commercial pitch under CAN-SPAM: accurate headers/subject, advertisement, actual postal address, easy reply opt-out and enforced global suppression; prior consent not asserted.",
+  "countryRulesSource": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+  "countryRulesCheckedAt": "2026-10-10T22:26:08.736Z",
+  "organisation": "G&S Restaurant Equipment",
+  "domain": "gsrestaurantequipment.com",
+  "domains": [
+    "gsrestaurantequipment.com",
+    "gsequipmentinc.com"
+  ],
+  "source": "https://gsequipmentinc.com/news/2026/7/we-re-moving-come-see-the-new-g-s.html",
+  "sourceDate": "2026-07-06",
+  "signal": "Announced September 14 showroom opening and expanded demonstration space; current official home/contact page lists 4680 Blanding Boulevard, Jacksonville FL.",
+  "observedFact": "Official announcement describes a September 14 new-showroom opening with expanded cooking demonstration areas.",
+  "problemHypothesis": "Staff may value managing showroom, service and news information pages; no dissatisfaction or buying intent established.",
+  "needEvidence": [
+    {
+      "url": "https://gsequipmentinc.com/news/2026/7/we-re-moving-come-see-the-new-g-s.html",
+      "sourceDate": "2026-07-06",
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "observation": "Announced showroom opening and expanded cooking-demonstration space."
+    },
+    {
+      "url": "https://gsequipmentinc.com/",
+      "sourceDate": null,
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "observation": "Home page lists September 14 2026 opening and current Jacksonville address."
+    }
+  ],
+  "buyerContact": "sales@gsrestaurantequipment.com",
+  "buyerContactEvidence": [
+    {
+      "url": "https://gsequipmentinc.com/contact-us/",
+      "checkedAt": "2026-10-10T22:26:08.736Z",
+      "observation": "Official sales contact and Jacksonville Florida address published; general routing inbox, not a verified owner/marketing decision maker."
+    }
+  ],
+  "buyerRoleSought": "Owner or person responsible for public website content; not named on inspected official pages",
+  "regionalPresence": "Jacksonville, Florida",
+  "localBusinessHours": "Official contact: Monday-Friday 08:30-17:00 local; current send is outside listed opening hours; asynchronous first email, no meeting assumed.",
+  "currentProvider": "Beedash, verified website footer; CRM provider unknown",
+  "capabilityFit": "Bounded public information-page editing, draft, preview and publication; membership optional.",
+  "unsupportedRequirements": [
+    "Existing ecommerce/catalogue/checkout functionality not included in proposed evaluation",
+    "No migration or external provider/CRM integration promised"
+  ],
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 1
+  },
+  "researchPriorityScore": 4,
+  "scoreMaximum": 12,
+  "scoreMeaning": "Research priority, not purchase probability",
+  "sendEligible": true,
+  "outreachDecision": "eligible_website_cms_cold_first_pitch",
+  "stage": "ready",
+  "holdReasons": [],
+  "history": [
+    {
+      "at": "2026-10-10T22:26:08.736Z",
+      "event": "Official local identity, published contact and showroom/content facts verified; unknown buying intent retained. Existing website vendor is acknowledged; CMS scope excludes commerce."
+    }
+  ],
+  "to": "sales@gsrestaurantequipment.com",
+  "from": "ramishqureshi99@gmail.com",
+  "replyTo": "ramishqureshi99@gmail.com",
+  "cc": [],
+  "bcc": [],
+  "subject": "Staff-managed showroom content for G&S",
+  "text": "Hello G&S team,\n\nI saw your announcement of the September 14 showroom opening at 4680 Blanding Boulevard, with expanded cooking demonstration space.\n\nI'm Ramish, founder of Nexora. We've built a website CMS that lets staff draft, preview and publish branded information pages. A focused evaluation could use three sample showroom, service and news pages with one editor before considering a wider scope.\n\nI've attached a 90-second narrated introduction to Nexora's wider membership platform, with captions. A website-editor walkthrough would focus on your public content.\n\nWould a 15-minute look at managing showroom news and service pages be useful?\n\nBest,\nRamish Qureshi\nFounder, Nexora\nramishqureshi99@gmail.com\n\nAdvertisement: Nexora website/CMS software.\nEOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.\nTo stop all marketing emails from Nexora, reply \"unsubscribe\" or \"no thanks\" and we won't contact you again.",
+  "html": "<div><p>Hello G&amp;S team,</p><p>I saw your announcement of the September 14 showroom opening at 4680 Blanding Boulevard, with expanded cooking demonstration space.</p><p>I&#39;m Ramish, founder of Nexora. We&#39;ve built a website CMS that lets staff draft, preview and publish branded information pages. A focused evaluation could use three sample showroom, service and news pages with one editor before considering a wider scope.</p><p>I&#39;ve attached a 90-second narrated introduction to Nexora&#39;s wider membership platform, with captions. A website-editor walkthrough would focus on your public content.</p><p>Would a 15-minute look at managing showroom news and service pages be useful?</p><p>Best,<br>Ramish Qureshi<br>Founder, Nexora<br>ramishqureshi99@gmail.com</p><p>Advertisement: Nexora website/CMS software.<br>EOBI Building, I-8 Markaz, Islamabad 44790, Pakistan.<br>To stop all marketing emails from Nexora, reply &quot;unsubscribe&quot; or &quot;no thanks&quot; and we won&#39;t contact you again.</p></div>",
+  "status": "ready",
+  "outreachStage": "initial",
+  "copyVersion": 2,
+  "attachment": {
+    "path": "D:\\Projects new\\Nexora\\docs\\market\\pitch\\nexora-product-demo-male.mp4",
+    "filename": "nexora-product-demo-male.mp4",
+    "mimeType": "video/mp4",
+    "sizeBytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7"
+  },
+  "events": [
+    {
+      "at": "2026-10-10T22:26:08.736Z",
+      "status": "ready",
+      "reason": "Prepared bounded CMS evaluation for independently verified US business; final pre-send checks pending."
+    }
+  ]
+}

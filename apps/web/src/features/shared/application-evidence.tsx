@@ -54,7 +54,7 @@ export function ApplicationEvidence({ path, staff = false, version, disabled = f
     {error && <p role="alert" className="break-words text-sm text-red-800">{error}</p>}
     {!items && !error && <p role="status">Loading documents…</p>}
     {items?.length === 0 && <p className="text-sm">No evidence files attached.</p>}
-    {items?.map(item => <article key={item.id} className="space-y-2 rounded-lg bg-slate-50 p-3 text-sm">
+    {items?.map(item => <article key={item.id} className="portal-subcard space-y-2 rounded-lg bg-slate-50 p-3 text-sm">
       <p className="break-all font-medium">{item.name}</p><p>{Math.ceil(item.size / 1024)} KB · {item.scanStatus === "clean" ? "Scan passed" : item.scanStatus === "rejected" ? "Blocked by security scan" : "Awaiting security scan"}</p>
       {item.scanStatus === "quarantined" && <p className="text-slate-600">The scanner has not cleared this file. Your association can retry the check when scanning is available.</p>}
       <div className="flex flex-wrap gap-4">
@@ -77,6 +77,6 @@ export function ApplicationEvidence({ path, staff = false, version, disabled = f
       const file = data.get("file");
       if (!(file instanceof File) || file.size === 0 || file.size > 5 * 1024 * 1024) { setError("Choose a file up to 5 MB."); return; }
       void run(async () => { const change: Change = await (await request("", "POST", data)).json(); onChanged?.(change.draftVersion); form.reset(); refresh(); });
-    }}><label className="block text-sm">Evidence file<input type="file" name="file" accept=".pdf,.png,.jpg,.jpeg,.txt" required disabled={locked} className="mt-2 block w-full min-w-0 text-sm" /></label><button disabled={locked || (items?.length ?? 0) >= 10} className="rounded-lg bg-[#183a31] px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">Upload evidence</button></form>}
+    }}><label className="block text-sm">Evidence file<input type="file" name="file" accept=".pdf,.png,.jpg,.jpeg,.txt" required disabled={locked} className="mt-2 block w-full min-w-0 text-sm" /></label><button disabled={locked || (items?.length ?? 0) >= 10} className="portal-action rounded-lg bg-[#183a31] px-4 py-2 text-sm font-semibold text-white disabled:opacity-50">Upload evidence</button></form>}
   </section>;
 }

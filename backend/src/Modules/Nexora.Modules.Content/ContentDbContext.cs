@@ -20,6 +20,11 @@ public sealed class ContentDbContext(DbContextOptions<ContentDbContext> options,
         b.HasDefaultSchema("content");WorkflowOutboxModel.Configure(b);b.Entity<WorkflowDomainEvent>().HasQueryFilter(x=>x.TenantId==TenantId);b.Entity<WorkflowActionReceipt>().HasQueryFilter(x=>x.TenantId==TenantId);
         Configure<Site>(b, "Sites"); Configure<Page>(b, "Pages");
         Configure<PortalConfiguration>(b, "PortalConfigurations");
+        Configure<WebsiteConfiguration>(b, "WebsiteConfigurations");
+        b.Entity<WebsiteConfiguration>().HasIndex(x => new { x.TenantId, x.SiteId }).IsUnique();
+        b.Entity<WebsiteConfiguration>().Property(x => x.DraftJson).HasMaxLength(10000);
+        b.Entity<WebsiteConfiguration>().Property(x => x.PublishedJson).HasMaxLength(10000);
+        b.Entity<WebsiteConfiguration>().HasOne<Site>().WithMany().HasForeignKey(x => new { x.TenantId, x.SiteId }).HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
         b.Entity<PortalConfiguration>().HasIndex(x => x.TenantId).IsUnique();
         b.Entity<PortalConfiguration>().Property(x => x.DraftJson).HasMaxLength(100000);
         b.Entity<PortalConfiguration>().Property(x => x.PublishedJson).HasMaxLength(100000);

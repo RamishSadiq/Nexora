@@ -1,0 +1,772 @@
+{
+  "at": "2026-10-13T02:43:58Z",
+  "complete": true,
+  "searches": [
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "ids": [],
+      "count": 0,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+      "ids": [],
+      "count": 0,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:bergengineering.com.au from:regaeng.com from:rawlinsons.co.nz from:newfields.com from:arabiandream.com}",
+      "ids": [],
+      "count": 0,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent {from:newfieldscanada.ca}",
+      "ids": [],
+      "count": 0,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 -in:sent Nexora",
+      "ids": [],
+      "count": 0,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:anywhere after:2026/10/11 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:Undeliverable subject:\"Delivery failure\"}",
+      "ids": [],
+      "count": 0,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:sent Nexora",
+      "ids": [
+        "1a13062fb2f2ffa6",
+        "1a13062917b76b72",
+        "1a130622ea0350f7",
+        "1a1306111691b931",
+        "1a126cdb46a0f8e5",
+        "1a126cd3439e26db",
+        "1a126cc99bcdbf2d",
+        "1a120800ff0e30ec",
+        "1a11f79c15f23dcf",
+        "1a11f7961e491a65",
+        "1a11f79086a34070",
+        "1a11f78af1ffedf9",
+        "1a11f7848a393b9b",
+        "1a11f77ea8a74a8d",
+        "1a11f778a20ccaad",
+        "1a11f772a971f528",
+        "1a11f76d0e3fea55",
+        "1a11f7678e41f57c",
+        "1a11c212432fee89",
+        "1a11c20c97b3046e",
+        "1a11c203d2286c33",
+        "1a11c1fe67945c8d",
+        "1a11c1f85aba49a0",
+        "1a11c1f2d4b368df",
+        "1a11c1ed082e39a4",
+        "1a11c1e794b80f6a",
+        "1a11c1e1f2f1e799",
+        "1a11c1c90d01fac1",
+        "1a11c1c3b2bf39f8",
+        "1a11c1bb06754473",
+        "1a11c1b58b9c985a",
+        "1a11c1ac175b0386",
+        "1a11c1a6ad5de964",
+        "1a11c19f0bb94c08",
+        "1a11c198ed3fea2e",
+        "1a11c181ca8691a6",
+        "1a11c17bb52abde3",
+        "1a11c17634387954",
+        "1a11c17068612088",
+        "1a11c16ad8942eeb",
+        "1a11c16528f62b29",
+        "1a11c15f48fbec90",
+        "1a11c15996661aa6",
+        "1a11c153e30859e2",
+        "1a11c14e24744bb3",
+        "1a11c14836da419f",
+        "1a11c141a7e55e69",
+        "1a11c1181b725d3a",
+        "1a11bed87d62d77f",
+        "1a11becb63c3868a",
+        "1a11bebbfc73d6fe",
+        "1a11beb04274d92a",
+        "1a11bea81abaec38",
+        "1a11be9e7b0beb9b",
+        "1a11be92ff3cd6f9",
+        "1a11be8a50e5deab",
+        "1a11be815953d93d",
+        "1a11be73bb6e873b",
+        "1a11bdf55d8130a2",
+        "1a11bc874d72d032"
+      ],
+      "count": 60,
+      "paginationComplete": true,
+      "complete": true
+    },
+    {
+      "query": "in:sent filename:nexora-product-demo-male.mp4",
+      "ids": [
+        "1a13062fb2f2ffa6",
+        "1a13062917b76b72",
+        "1a130622ea0350f7",
+        "1a1306111691b931",
+        "1a126cdb46a0f8e5",
+        "1a126cd3439e26db",
+        "1a126cc99bcdbf2d",
+        "1a120800ff0e30ec",
+        "1a11f79c15f23dcf",
+        "1a11f7961e491a65",
+        "1a11f79086a34070",
+        "1a11f78af1ffedf9",
+        "1a11f7848a393b9b",
+        "1a11f77ea8a74a8d",
+        "1a11f778a20ccaad",
+        "1a11f772a971f528",
+        "1a11f76d0e3fea55",
+        "1a11f7678e41f57c",
+        "1a11c212432fee89",
+        "1a11c20c97b3046e",
+        "1a11c203d2286c33",
+        "1a11c1fe67945c8d",
+        "1a11c1f85aba49a0",
+        "1a11c1f2d4b368df",
+        "1a11c1ed082e39a4",
+        "1a11c1e794b80f6a",
+        "1a11c1e1f2f1e799",
+        "1a11c1c90d01fac1",
+        "1a11c1c3b2bf39f8",
+        "1a11c1bb06754473",
+        "1a11c1b58b9c985a",
+        "1a11c1ac175b0386",
+        "1a11c1a6ad5de964",
+        "1a11c19f0bb94c08",
+        "1a11c198ed3fea2e",
+        "1a11c181ca8691a6",
+        "1a11c17bb52abde3",
+        "1a11c17634387954",
+        "1a11c17068612088",
+        "1a11c16ad8942eeb",
+        "1a11c16528f62b29",
+        "1a11c15f48fbec90",
+        "1a11c15996661aa6",
+        "1a11c153e30859e2",
+        "1a11c14e24744bb3",
+        "1a11c14836da419f",
+        "1a11c141a7e55e69",
+        "1a11c1181b725d3a",
+        "1a11bed87d62d77f",
+        "1a11becb63c3868a",
+        "1a11bebbfc73d6fe",
+        "1a11beb04274d92a",
+        "1a11bea81abaec38",
+        "1a11be9e7b0beb9b",
+        "1a11be92ff3cd6f9",
+        "1a11be8a50e5deab",
+        "1a11be815953d93d",
+        "1a11be73bb6e873b",
+        "1a11bdf55d8130a2",
+        "1a11bc874d72d032"
+      ],
+      "count": 60,
+      "paginationComplete": true,
+      "complete": true
+    }
+  ],
+  "threads": [
+    {
+      "id": "1a11bdf55d8130a2",
+      "messageIds": [
+        "1a11bdf55d8130a2"
+      ]
+    },
+    {
+      "id": "1a11be73bb6e873b",
+      "messageIds": [
+        "1a11be73bb6e873b"
+      ]
+    },
+    {
+      "id": "1a11be815953d93d",
+      "messageIds": [
+        "1a11be815953d93d",
+        "1a11bf33395d33a1"
+      ]
+    },
+    {
+      "id": "1a11be8a50e5deab",
+      "messageIds": [
+        "1a11be8a50e5deab"
+      ]
+    },
+    {
+      "id": "1a11be92ff3cd6f9",
+      "messageIds": [
+        "1a11be92ff3cd6f9"
+      ]
+    },
+    {
+      "id": "1a11be9e7b0beb9b",
+      "messageIds": [
+        "1a11be9e7b0beb9b"
+      ]
+    },
+    {
+      "id": "1a11bea81abaec38",
+      "messageIds": [
+        "1a11bea81abaec38"
+      ]
+    },
+    {
+      "id": "1a11beb04274d92a",
+      "messageIds": [
+        "1a11beb04274d92a"
+      ]
+    },
+    {
+      "id": "1a11bebbfc73d6fe",
+      "messageIds": [
+        "1a11bebbfc73d6fe"
+      ]
+    },
+    {
+      "id": "1a11becb63c3868a",
+      "messageIds": [
+        "1a11becb63c3868a"
+      ]
+    },
+    {
+      "id": "1a11bed87d62d77f",
+      "messageIds": [
+        "1a11bed87d62d77f"
+      ]
+    },
+    {
+      "id": "1a11c1181b725d3a",
+      "messageIds": [
+        "1a11c1181b725d3a"
+      ]
+    },
+    {
+      "id": "1a11c141a7e55e69",
+      "messageIds": [
+        "1a11c141a7e55e69"
+      ]
+    },
+    {
+      "id": "1a11c14836da419f",
+      "messageIds": [
+        "1a11c14836da419f"
+      ]
+    },
+    {
+      "id": "1a11c14e24744bb3",
+      "messageIds": [
+        "1a11c14e24744bb3"
+      ]
+    },
+    {
+      "id": "1a11c153e30859e2",
+      "messageIds": [
+        "1a11c153e30859e2"
+      ]
+    },
+    {
+      "id": "1a11c15996661aa6",
+      "messageIds": [
+        "1a11c15996661aa6"
+      ]
+    },
+    {
+      "id": "1a11c15f48fbec90",
+      "messageIds": [
+        "1a11c15f48fbec90"
+      ]
+    },
+    {
+      "id": "1a11c16528f62b29",
+      "messageIds": [
+        "1a11c16528f62b29"
+      ]
+    },
+    {
+      "id": "1a11c16ad8942eeb",
+      "messageIds": [
+        "1a11c16ad8942eeb"
+      ]
+    },
+    {
+      "id": "1a11c17068612088",
+      "messageIds": [
+        "1a11c17068612088"
+      ]
+    },
+    {
+      "id": "1a11c17634387954",
+      "messageIds": [
+        "1a11c17634387954"
+      ]
+    },
+    {
+      "id": "1a11c17bb52abde3",
+      "messageIds": [
+        "1a11c17bb52abde3"
+      ]
+    },
+    {
+      "id": "1a11c181ca8691a6",
+      "messageIds": [
+        "1a11c181ca8691a6"
+      ]
+    },
+    {
+      "id": "1a11c198ed3fea2e",
+      "messageIds": [
+        "1a11c198ed3fea2e"
+      ]
+    },
+    {
+      "id": "1a11c19f0bb94c08",
+      "messageIds": [
+        "1a11c19f0bb94c08"
+      ]
+    },
+    {
+      "id": "1a11c1a6ad5de964",
+      "messageIds": [
+        "1a11c1a6ad5de964"
+      ]
+    },
+    {
+      "id": "1a11c1ac175b0386",
+      "messageIds": [
+        "1a11c1ac175b0386"
+      ]
+    },
+    {
+      "id": "1a11c1b58b9c985a",
+      "messageIds": [
+        "1a11c1b58b9c985a"
+      ]
+    },
+    {
+      "id": "1a11c1bb06754473",
+      "messageIds": [
+        "1a11c1bb06754473"
+      ]
+    },
+    {
+      "id": "1a11c1c3b2bf39f8",
+      "messageIds": [
+        "1a11c1c3b2bf39f8"
+      ]
+    },
+    {
+      "id": "1a11c1c90d01fac1",
+      "messageIds": [
+        "1a11c1c90d01fac1"
+      ]
+    },
+    {
+      "id": "1a11c1e1f2f1e799",
+      "messageIds": [
+        "1a11c1e1f2f1e799"
+      ]
+    },
+    {
+      "id": "1a11c1e794b80f6a",
+      "messageIds": [
+        "1a11c1e794b80f6a"
+      ]
+    },
+    {
+      "id": "1a11c1ed082e39a4",
+      "messageIds": [
+        "1a11c1ed082e39a4"
+      ]
+    },
+    {
+      "id": "1a11c1f2d4b368df",
+      "messageIds": [
+        "1a11c1f2d4b368df"
+      ]
+    },
+    {
+      "id": "1a11c1f85aba49a0",
+      "messageIds": [
+        "1a11c1f85aba49a0"
+      ]
+    },
+    {
+      "id": "1a11c1fe67945c8d",
+      "messageIds": [
+        "1a11c1fe67945c8d"
+      ]
+    },
+    {
+      "id": "1a11c203d2286c33",
+      "messageIds": [
+        "1a11c203d2286c33"
+      ]
+    },
+    {
+      "id": "1a11c20c97b3046e",
+      "messageIds": [
+        "1a11c20c97b3046e"
+      ]
+    },
+    {
+      "id": "1a11c212432fee89",
+      "messageIds": [
+        "1a11c212432fee89"
+      ]
+    },
+    {
+      "id": "1a11f7678e41f57c",
+      "messageIds": [
+        "1a11f7678e41f57c"
+      ]
+    },
+    {
+      "id": "1a11f76d0e3fea55",
+      "messageIds": [
+        "1a11f76d0e3fea55"
+      ]
+    },
+    {
+      "id": "1a11f772a971f528",
+      "messageIds": [
+        "1a11f772a971f528"
+      ]
+    },
+    {
+      "id": "1a11f778a20ccaad",
+      "messageIds": [
+        "1a11f778a20ccaad"
+      ]
+    },
+    {
+      "id": "1a11f77ea8a74a8d",
+      "messageIds": [
+        "1a11f77ea8a74a8d"
+      ]
+    },
+    {
+      "id": "1a11f7848a393b9b",
+      "messageIds": [
+        "1a11f7848a393b9b"
+      ]
+    },
+    {
+      "id": "1a11f78af1ffedf9",
+      "messageIds": [
+        "1a11f78af1ffedf9"
+      ]
+    },
+    {
+      "id": "1a11f79086a34070",
+      "messageIds": [
+        "1a11f79086a34070"
+      ]
+    },
+    {
+      "id": "1a11f7961e491a65",
+      "messageIds": [
+        "1a11f7961e491a65"
+      ]
+    },
+    {
+      "id": "1a11f79c15f23dcf",
+      "messageIds": [
+        "1a11f79c15f23dcf"
+      ]
+    },
+    {
+      "id": "1a120800ff0e30ec",
+      "messageIds": [
+        "1a120800ff0e30ec"
+      ]
+    },
+    {
+      "id": "1a126cc99bcdbf2d",
+      "messageIds": [
+        "1a126cc99bcdbf2d"
+      ]
+    },
+    {
+      "id": "1a126cd3439e26db",
+      "messageIds": [
+        "1a126cd3439e26db"
+      ]
+    },
+    {
+      "id": "1a126cdb46a0f8e5",
+      "messageIds": [
+        "1a126cdb46a0f8e5"
+      ]
+    },
+    {
+      "id": "1a1306111691b931",
+      "messageIds": [
+        "1a1306111691b931"
+      ]
+    },
+    {
+      "id": "1a130622ea0350f7",
+      "messageIds": [
+        "1a130622ea0350f7"
+      ]
+    },
+    {
+      "id": "1a13062917b76b72",
+      "messageIds": [
+        "1a13062917b76b72"
+      ]
+    },
+    {
+      "id": "1a13062fb2f2ffa6",
+      "messageIds": [
+        "1a13062fb2f2ffa6"
+      ]
+    }
+  ],
+  "actualInboundBodies": [
+    {
+      "id": "1a11bf33395d33a1",
+      "threadId": "1a11be815953d93d",
+      "headers": [
+        {
+          "name": "Delivered-To",
+          "value": "ramishqureshi99@gmail.com"
+        },
+        {
+          "name": "Received",
+          "value": "by 2002:a05:7000:590a:b0:8d2:6dd8:4359 with SMTP id l10csp1648530max;        Thu, 8 Oct 2026 07:38:05 -0700 (PDT)"
+        },
+        {
+          "name": "X-Received",
+          "value": "by 2002:a05:6a00:2389:b0:886:9939:caa2 with SMTP id d2e1a72fcca58-891b2465666mr5454368b3a.52.1791470285412;        Thu, 08 Oct 2026 07:38:05 -0700 (PDT)"
+        },
+        {
+          "name": "ARC-Seal",
+          "value": "i=2; a=rsa-sha256; t=1791470285; cv=pass;        d=google.com; s=arc-20260327;        b=NqaoBBNPj8WclZGMU7QhH2fd3upp0dshlAVg+IgCv6FUibB5j7qR/cLVSVjJliCFex         WU7c9yYlVeS76t2PIPlHyIi6n185rAuPWdHjcLekKYpX1JKmI4Ys1bysbpTlmKBVbh4a         8L18OjRH9kf92HyMVaL5VsnB6D9+4bQEiu2aChIRS998j9pxmFzMh0Gl6PjQ+lp57zyX         2lqTmBI68WUEL1wWfDkEhyV+t6z5ZEKlDQTmMHggc+le475dzPgTtEGo+iyEhtn2Hka/         TW6i0WIVjIAyM2LE1SgBFe13iR8xetHXxEcF2iG+USf8Ppn78WV8WW4aJO4pyEmaXKyy         /SZw=="
+        },
+        {
+          "name": "ARC-Message-Signature",
+          "value": "i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;        h=mime-version:msip_labels:content-language:accept-language         :in-reply-to:references:message-id:date:thread-index:thread-topic         :subject:to:from:dkim-signature;        bh=ZQrxKCQwHjD+ObdUFmtp0z4RKF6b0t88D41vU4MZx8M=;        fh=+aTVwTN77bF6RFuCow5qDJak70e0NgnrU85hxmbwwgA=;        b=kooPCEgnk0e21qwykr/Uq5GydCdvcRN7bb9qlYclV7kcuoH3cFc4I7gPnUW2S46Pv3         6Fs2L5GofU21tUpIe0fHUrHQmx1fE7mh6nC+nvBIZNHHCxeByDeSONo42rJCuZhh9dwF         rjLVkSKnE5d8OKgXjxR0VDaV33zvKU/3KNs+WqhUQSlR6JoizSUwJRqid45zb4QKfstT         wS6c4uJiLdaaGc2VCFN1tsHvsitJKI5apjrh29vc9BvenUTSxXpBwWRPzLcT6bdWRhR9         qeB7bRxGTsQQQCYv+OG3a15tOJ+prJKvGrKlQWxnUj9FJeNGdqavdpjwjFNAhZ9LiBZ+         hC+A==;        dara=google.com"
+        },
+        {
+          "name": "ARC-Authentication-Results",
+          "value": "i=2; mx.google.com;       dkim=pass header.i=@bafsa.onmicrosoft.com header.s=selector2-bafsa-onmicrosoft-com header.b=atvRUtHh;       arc=pass (i=1 spf=pass spfdomain=bafsa.org.uk dkim=pass dkdomain=bafsa.org.uk dmarc=pass fromdomain=bafsa.org.uk);       spf=pass (google.com: domain of victoria@bafsa.org.uk designates 2a01:111:f403:c205::5 as permitted sender) smtp.mailfrom=victoria@bafsa.org.uk;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=bafsa.org.uk"
+        },
+        {
+          "name": "Return-Path",
+          "value": "<victoria@bafsa.org.uk>"
+        },
+        {
+          "name": "Received",
+          "value": "from LO0P265CU003.outbound.protection.outlook.com (mail-uksouthazlp170120005.outbound.protection.outlook.com. [2a01:111:f403:c205::5])        by mx.google.com with ESMTPS id d2e1a72fcca58-892bb28ede0si6319830b3a.55.2026.10.08.07.38.04        for <ramishqureshi99@gmail.com>        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);        Thu, 08 Oct 2026 07:38:05 -0700 (PDT)"
+        },
+        {
+          "name": "Received-SPF",
+          "value": "pass (google.com: domain of victoria@bafsa.org.uk designates 2a01:111:f403:c205::5 as permitted sender) client-ip=2a01:111:f403:c205::5;"
+        },
+        {
+          "name": "Authentication-Results",
+          "value": "mx.google.com;       dkim=pass header.i=@bafsa.onmicrosoft.com header.s=selector2-bafsa-onmicrosoft-com header.b=atvRUtHh;       arc=pass (i=1 spf=pass spfdomain=bafsa.org.uk dkim=pass dkdomain=bafsa.org.uk dmarc=pass fromdomain=bafsa.org.uk);       spf=pass (google.com: domain of victoria@bafsa.org.uk designates 2a01:111:f403:c205::5 as permitted sender) smtp.mailfrom=victoria@bafsa.org.uk;       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=bafsa.org.uk"
+        },
+        {
+          "name": "ARC-Seal",
+          "value": "i=1; a=rsa-sha256; s=arcselector10001; d=microsoft.com; cv=none; b=rULWD5VQ8ciWOCwPMlFG05rrJGpdb8VTmtKnm8NYvf2qOtNBeUmjiHxYBb643XENJkpJ/T4NcghlqO2mq+BqCS+pF19IXkqj/9O8jF9Zyb1v4PEKpd+5m0m5ZAky085x51g/OfZmOhkK3L2CfugmQm2HXJkrIBVFQJiChPiprpRx2SiT5PKxfFF3x69MllX3ixW+bZDRmRnSpSKHFJlc/XnO/DZ5cpMT72VwCnfn8zSOOm26Y9WwoefRzpYEznF+3G3Jj2IOORGG966LWEjLIaiLiBF5CP0MM7jErkyQP8zi61NKGElCQGUzOBG/ROuvMF24qd/VaeYpu9rG3u4cqA=="
+        },
+        {
+          "name": "ARC-Message-Signature",
+          "value": "i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; s=arcselector10001; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1; bh=ZQrxKCQwHjD+ObdUFmtp0z4RKF6b0t88D41vU4MZx8M=; b=uIl8ZbQ7NvtxBIk5HKxLdBwibDSxp0Xabd3e0rTwXB1YbIxN/bbiqSNCi9yXzxKILZpa63qXLAfIPmPWM/T2fhllD4A7f6xwFEtwEEoHol4tT/sc7kGwYwi951F4hHGI5hWrBCOVdeFflbGPRrAMxqhzLO8h7VjfyKky5KCN85KtTcKAl7nervWwzZmxxkJaXotcPF6lITTsNr5Q3f0OMxQ8iIUFKI3cg4r9FsHFVLU/IEdO03thhjXTrPNZMn9IuyVorpQfm2HphOCqrEaIG6tPDwnVpY43o5i1mtT5WAjmJDGD7OMkSQ34KU6bu1axKVt7ElYNb+liZXCrjr8IgQ=="
+        },
+        {
+          "name": "ARC-Authentication-Results",
+          "value": "i=1; mx.microsoft.com 1; spf=pass smtp.mailfrom=bafsa.org.uk; dmarc=pass action=none header.from=bafsa.org.uk; dkim=pass header.d=bafsa.org.uk; arc=none"
+        },
+        {
+          "name": "DKIM-Signature",
+          "value": "v=1; a=rsa-sha256; c=relaxed/relaxed; d=bafsa.onmicrosoft.com; s=selector2-bafsa-onmicrosoft-com; h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck; bh=ZQrxKCQwHjD+ObdUFmtp0z4RKF6b0t88D41vU4MZx8M=; b=atvRUtHhBbhbagOWqefK3VAs8zuSX2739WqzkW/QU6Hq+cWdP59Fo3KH8GVhPmJUm7X2OZclU695TWyXfJk+/NihWFl8wyNvFEE8JXC/2ww1tQuJ7TB9DxtNv3se1CyXn1YB3+Ma33s9idX+HsJtKXqG6TPFnkJV3yLjXuqGHPY="
+        },
+        {
+          "name": "Received",
+          "value": "from LO2P265MB1614.GBRP265.PROD.OUTLOOK.COM (2603:10a6:600:90::20) by CWXP265MB3672.GBRP265.PROD.OUTLOOK.COM (2603:10a6:400:fa::5) with Microsoft SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.21.496.17; Thu, 8 Oct 2026 14:37:59 +0000"
+        },
+        {
+          "name": "Received",
+          "value": "from LO2P265MB1614.GBRP265.PROD.OUTLOOK.COM ([fe80::6ec8:ffc3:3eee:6356]) by LO2P265MB1614.GBRP265.PROD.OUTLOOK.COM ([fe80::6ec8:ffc3:3eee:6356%5]) with mapi id 15.21.0496.010; Thu, 8 Oct 2026 14:37:59 +0000"
+        },
+        {
+          "name": "From",
+          "value": "Victoria Cuff <victoria@bafsa.org.uk>"
+        },
+        {
+          "name": "To",
+          "value": "\"ramishqureshi99@gmail.com\" <ramishqureshi99@gmail.com>"
+        },
+        {
+          "name": "Subject",
+          "value": "Re: Nexora demo for BAFSA's membership administration"
+        },
+        {
+          "name": "Thread-Topic",
+          "value": "Nexora demo for BAFSA's membership administration"
+        },
+        {
+          "name": "Thread-Index",
+          "value": "AQHdVzD0IJF0bq3PrEGgtPLrVnEsFLbztsbp"
+        },
+        {
+          "name": "Date",
+          "value": "Thu, 8 Oct 2026 14:37:59 +0000"
+        },
+        {
+          "name": "Message-ID",
+          "value": "<LO2P265MB16142C02FAFE04EB86F08112F4932@LO2P265MB1614.GBRP265.PROD.OUTLOOK.COM>"
+        },
+        {
+          "name": "References",
+          "value": "<CAM7y_D8qJbeo=-XyepebnUnM6FFEUrku01otrv6+Bn=03z6gUQ@mail.gmail.com>"
+        },
+        {
+          "name": "In-Reply-To",
+          "value": "<CAM7y_D8qJbeo=-XyepebnUnM6FFEUrku01otrv6+Bn=03z6gUQ@mail.gmail.com>"
+        },
+        {
+          "name": "Accept-Language",
+          "value": "en-GB, en-US"
+        },
+        {
+          "name": "Content-Language",
+          "value": "en-GB"
+        },
+        {
+          "name": "X-MS-Has-Attach",
+          "value": ""
+        },
+        {
+          "name": "X-MS-TNEF-Correlator",
+          "value": ""
+        },
+        {
+          "name": "msip_labels",
+          "value": ""
+        },
+        {
+          "name": "authentication-results",
+          "value": "mx.microsoft.com 1; dkim=none (message not signed) header.d=none;dmarc=none action=none header.from=bafsa.org.uk;"
+        },
+        {
+          "name": "x-ms-publictraffictype",
+          "value": "Email"
+        },
+        {
+          "name": "x-ms-traffictypediagnostic",
+          "value": "LO2P265MB1614:EE_|CWXP265MB3672:EE_"
+        },
+        {
+          "name": "x-ms-office365-filtering-correlation-id",
+          "value": "68358032-9c89-478c-6f77-08df2549c024"
+        },
+        {
+          "name": "x-ms-exchange-senderadcheck",
+          "value": "1"
+        },
+        {
+          "name": "x-ms-exchange-antispam-relay",
+          "value": "0"
+        },
+        {
+          "name": "x-microsoft-antispam",
+          "value": "BCL:0;ARA:13230040|1800799024|366016|69100299015|3109299003|376014|7049299003|10070799003|23010399003|18002099003|10067099003|22082099003|13003099007|8096899003|38070700021|5023799004|56012099006;"
+        },
+        {
+          "name": "x-microsoft-antispam-message-info",
+          "value": "dOAZRfj9Y4rgitMyFmK6OkCoHeC9eJojAYyppa+Et86w2xsTzkhs9fsFfnY/vHqYSBPVXOQKOQv7RtvJNrh5iQPCHfej5Wu37nuJkQ4asAF7NMy+uVsi483BTu0bBBe9XyuDZvvUrav8blBj/ChOwo8RtD7xRc7noceXZ1//S1ord0GcSTRx7eY1fAB5IBcJzftgSwnOX5gxHTbIVHwS3ZMTke5LNOQ9LMm0sp23ghduJYKNVzXZPaH14M2Ily1TNBHnxILqgmogr1idsZaQllXCNXFOWDQ6xBQ+OYJaRdfrR4AqOLAlwm6BAJVMNtp8L55j7SnJiz7Y8CW3GHKfo138r6F6Msd1uerVb/lOle8d97zg84LUWq8oXMgWqftx+mWoEs2pBbpT6wbN3yp35ODddIj2JbQPrPyMB2lyMVyVoWTQhUztj/B1kZYav1XFK129Hlt8qV4baoIoc3Byk+6QJChCRV/IVryTK47p+sTcviU1GG1XwZPHb054FlEMjk12R5NIa2ckF8DiwpWe2rveZ7XwPXjW4kp8Bp7ry1snp47xOS5HuSIXSAq74JD6zJm80pzTM5USa+vUUdPfs8FxdCq1kzyYxCHz5fwAFn6ZQ5HKif6kYfzxfHFdFkBz/iLMiLkJMnvnD9Lj4jJyZTwOMRCUFx3mLJBrcA4ljzM="
+        },
+        {
+          "name": "x-forefront-antispam-report",
+          "value": "CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:LO2P265MB1614.GBRP265.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230040)(1800799024)(366016)(69100299015)(3109299003)(376014)(7049299003)(10070799003)(23010399003)(18002099003)(10067099003)(22082099003)(13003099007)(8096899003)(38070700021)(5023799004)(56012099006);DIR:OUT;SFP:1102;"
+        },
+        {
+          "name": "x-ms-exchange-antispam-messagedata-chunkcount",
+          "value": "2"
+        },
+        {
+          "name": "x-ms-exchange-antispam-messagedata-0",
+          "value": "THYg9lk8+xLtYraiHKNKK5CH+khCW2dBdUC40qbJbDa5VSJJgiErOxcoGPkjCxAboD5b86g6SuEIlfMOAAgl6Wl8w5KkK30Z6ziv061WDakVr6/18VBK8xAt7GC4K0KYdtsfanob0cb/1up3tVsHiMN3tpn4nb5HAaVPEkJdQCU1t8kIsi/EU9p8DuEgOwy0Tdpwd1svVrVHayatIYBXGVCnbcLuKtrnNVoF8+fSIx5H9f5+IxsLmWCQHfm03Ahhjy0hWpAsWxBAobhG1WhXI/KKWyutQaYU2aNP1cfv0WgT02dwypCgHB0IvB9BtkmsFzDDZJnOXwBQRuMQHwXrAQD5hjWS0A3fQwPFjzySlon9lYxwJdmwvTmZlDr9v3XZi5sMMPBmQGwskpA1NgowQH9Br2wZb7mBXUCJI3GulZmogtTES//zoaXdTWO+BPF32xCL6PbiXSj3cS91G41MVcve51GjPuAt9EFTLrTZJusvHHrJdaZ3ewLg2QHojcqHy/zHMTBQVm5Y0O1AQeIOBFaLIj8C1aeH/Yrfyb0LBHI5pyqS7cxDR0Z1qaBFFQ4kinE1jgoJ6wUa2RwxkwvvpyHXy2XlCpo2L37qmeVs+ziQYY+AUM6wJ3k7vamlwLgy6Gu2e5Axp1hajA0bt9CfCruDtnDPr1QkuPyCBk3ui6aoE61WjBdOdxF6W5tlGK5FOQ3bEa5xbnTW6x8b6kVnsmYksu7CAm+jv6e1M6vEk8m1FtFLf/02TCKc27nOI/EC9yu1383gOQQDQSEL8d9Tq9c/PyrLOP1A4txLdG+m1nak+5C3g2i3krgKTfLHiqxxc7Z2/1qtnMb5tT3RTc3qEA6bJwfbs1Rm/TD3YdE4daaG4TD3XkQewE6rrKGLr9t78r4UaDQPzxb4iwv0LnPHAPeBRFeQzrmomf1tigSwSXChE1GyLzTOAeqNN8+s+Q0za+p+cfBwyg5YVXkFHXskArxkKdBYulRr4GD0SN9QZyt3K70PLAq6KpkRkg8JAxwv0IxN+iC66SIq9Djjg6WBUAPoYd1yzlXQ+yrseWR99Mv6wOCzZK9idAtlrxAtcBYuhO0BLHmNLinCB4UNGYO4CoC6fy8D4P5rWecNZQXIV/jKhGJF2Xct3RO7KzRXtDnRHgu3xBDuIbcRZU+Rr+67LGcjke7xnXfLFn/54r1M++AXN4s36MHcaoVgsGvpyRVYnQ/YtPu0iICzBPaRIQJG0phhItF5Pm5kVAhe47bTmKszd03F0iI5Ceag20YFLVXF0Qgo5+i4tIYrVpDd5EpMm2klIQj9Er55shLaSzZr/BtFjx16qZMGbkGlv5TBgoTdEoKGpE5e2Hv3bBEdGBS3f7QDkUbBWW+BXtQ7XMIs89HA4XfcVQnP7ufussOpx91UJSD6AfRi67vlL/Z3GsMJC9q2LujZPUwBt2wzlN/Gjr+OzliF4j4ssTcHbH0ihvGkGDnSYnCwFnDTzwiBVyiP9fRETh4z6f3ILCiJsdwBV/+V/AROnhbANU5qBw8zswnRADBnreQtT4IW7JMvCBh6IO9QXSNCv2L+FL8SXxHRrddYvedryHbYHP0QYZNF7t2F3POmfxqQgDdIFzjjPMLfQ/ltUICd7rDoym47vX5hi1SUJnGyDQ81KvHDoaHE5l8XeAHHH1Ulthofy4x9kMq9ouk6gr93lgya1SJP69xpdFI2dGGmBtJh3Nqj2m5UTfmJdRDZEIa99EpYhR2+vjeWYqNxpfy9jaRtqVOQ1pjYfjDtMN46eelvdxRXr7DL8f2UXLtR0TW5"
+        },
+        {
+          "name": "x-ms-exchange-antispam-messagedata-1",
+          "value": "YViI0qW4IRD6Lg=="
+        },
+        {
+          "name": "Content-Type",
+          "value": "multipart/alternative; boundary=\"_000_LO2P265MB16142C02FAFE04EB86F08112F4932LO2P265MB1614GBRP_\""
+        },
+        {
+          "name": "MIME-Version",
+          "value": "1.0"
+        },
+        {
+          "name": "X-OriginatorOrg",
+          "value": "bafsa.org.uk"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-AuthAs",
+          "value": "Internal"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-AuthSource",
+          "value": "LO2P265MB1614.GBRP265.PROD.OUTLOOK.COM"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-Network-Message-Id",
+          "value": "68358032-9c89-478c-6f77-08df2549c024"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-originalarrivaltime",
+          "value": "08 Oct 2026 14:37:59.6076 (UTC)"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-fromentityheader",
+          "value": "Hosted"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-id",
+          "value": "8372b036-beda-48ac-884d-b1a3ddec466f"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-mailboxtype",
+          "value": "HOSTED"
+        },
+        {
+          "name": "X-MS-Exchange-CrossTenant-userprincipalname",
+          "value": "XYgL4MmFFE6G+eVAnAScSp7+rpIBPsdo95EG2mxCbM/KBIqBV4oEqCfOKclA60jqeZWUe+wioIgYSBnNSvw3LQ=="
+        },
+        {
+          "name": "X-MS-Exchange-Transport-CrossTenantHeadersStamped",
+          "value": "CWXP265MB3672"
+        }
+      ],
+      "body": "No Thanks\r\n\r\nKind regards,\r\nVicky\r\n\r\n[photo]<https://www.bafsa.org.uk/>\r\nVictoria Cuff\r\nBAFSA Membership Manager\r\n\r\nBAFSA (British Automatic Fire Sprinkler Association<https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association>)\r\n\r\n(0) 7989 568 050 |  victoria@bafsa.org.uk<mailto:%20claire.mahoney@bafsa.org.uk>\r\n\r\n\r\nwww.bafsa.org.uk<http://www.bafsa.org.uk/>\r\n\r\n\r\n________________________________\r\nFrom: ramishqureshi99@gmail.com <ramishqureshi99@gmail.com>\r\nSent: 08 October 2026 15:25\r\nTo: Victoria Cuff <victoria@bafsa.org.uk>\r\nSubject: Nexora demo for BAFSA's membership administration\r\n\r\nYou don't often get email from ramishqureshi99@gmail.com. Learn why this is important<https://aka.ms/LearnAboutSenderIdentification>\r\n\r\nHi Victoria,\r\n\r\nI'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.\r\n\r\nWe've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.\r\n\r\nNexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.\r\n\r\nI've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.\r\n\r\nWe're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?\r\n\r\nBest,\r\nRamish Qureshi\r\nFounder, Nexora\r\nramishqureshi99@gmail.com<mailto:ramishqureshi99@gmail.com>\r\n\r\nI found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.\r\n\n<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=us-ascii\">\r\n<style type=\"text/css\" style=\"display:none;\"> P {margin-top:0;margin-bottom:0;} </style>\r\n</head>\r\n<body dir=\"ltr\">\r\n<div style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);\" class=\"elementToProof\">\r\nNo Thanks</div>\r\n<div id=\"Signature\" class=\"elementToProof\">\r\n<div style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);\">\r\n<br>\r\n</div>\r\n<div style=\"margin: 0px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);\">\r\nKind regards,&nbsp;</div>\r\n<div style=\"margin: 0px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);\">\r\nVicky&nbsp;<br>\r\n<br>\r\n</div>\r\n<div style=\"background-color: rgb(255, 255, 255); margin: 0px;\">\r\n<table id=\"x_x_x_x_table_0\" style=\"direction: ltr; text-align: left; line-height: 1.15; color: rgb(36, 36, 36); box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;\">\r\n<tbody>\r\n<tr>\r\n<td style=\"direction: ltr; text-align: center; line-height: 1.15; padding: 0.01px 12px 0.01px 1px; vertical-align: middle; width: 80px;\">\r\n<div id=\"OWAc37265f0-b4f5-8168-bdf5-4afcc26ab890\" style=\"margin: 0px 1px; display: block;\">\r\n<span style=\"font-family: Verdana; font-size: 0.1px; color: rgb(0, 0, 0);\"><a href=\"https://www.bafsa.org.uk/\" target=\"_blank\" id=\"OWAc37265f0-b4f5-8168-bdf5-4afcc26ab890\" class=\"x_x_x_x_OWAAutoLink x_x_x_x_elementToProof\" title=\"https://www.bafsa.org.uk/\" rel=\"noopener noreferrer\" style=\"display: block; margin: 0px;\"><img alt=\"photo\" id=\"x_x_x_x_image_0\" width=\"80\" height=\"80\" style=\"width: 80px; height: 80px; margin: 0px; border-radius: 4px; display: block;\" src=\"https://gifo.srv.wisestamp.com/im/sh/dS9SVm04NGQ4QXk3ci8xZjkxNTllYy00NGE2LTQ4ZWMtYjcyMC0xNTM2M2RkZGFlYTRfXzQwMHg0MDBfXy5wbmc=/rounded.png\"></a></span></div>\r\n</td>\r\n<td style=\"direction: ltr; text-align: left; line-height: 1.15; border-left: 1px solid rgb(17, 32, 61); padding: 0.01px 0.01px 0.01px 12px; vertical-align: top;\">\r\n<table id=\"x_x_x_table_0\" style=\"direction: ltr; text-align: left; line-height: 1.15; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;\">\r\n<tbody>\r\n<tr>\r\n<td style=\"direction: ltr; text-align: left; line-height: 1.15; padding: 0.01px;\">\r\n<div style=\"direction: ltr; text-align: left; line-height: 16.2px; margin: 0.1px; font-family: Verdana; font-size: 15px;\">\r\n<span style=\"color: rgb(0, 0, 0);\">Victoria Cuff&nbsp;<br>\r\n</span><span style=\"font-size: 12px; color: rgb(185, 0, 0);\"><b>BAFSA Membership Manager</b></span></div>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style=\"direction: ltr; text-align: left; line-height: 1.15; height: 0px;\">\r\n<table id=\"x_x_x_table_1\" style=\"direction: ltr; text-align: left; line-height: 1.15; box-sizing: border-box; border-collapse: collapse; border-spacing: 0px;\">\r\n<tbody>\r\n<tr>\r\n<td style=\"direction: ltr; text-align: left; line-height: 1.15; white-space: nowrap; padding-top: 12px; width: 378px; height: 0px;\">\r\n<p style=\"direction: ltr; text-align: left; line-height: 9.9px; white-space: nowrap; margin: 1px; font-size: 10px;\">\r\n<span style=\"font-family: Verdana; color: rgb(17, 32, 61); line-height: 12px;\"><b>BAFSA (</b><a href=\"https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association\" target=\"_blank\" id=\"OWA4a2a4ae2-12b8-261d-b447-d4a7b23e3278\" class=\"x_x_x_x_OWAAutoLink\" title=\"https://maps.google.com/?q=British%20Automatic%20Fire%20Sprinkler%20Association\" rel=\"noopener noreferrer\" style=\"color: rgb(17, 32, 61); text-decoration: none; margin: 0px;\"><b>British\r\n Automatic Fire Sprinkler Association</b></a><b>)</b></span></p>\r\n</td>\r\n</tr>\r\n<tr>\r\n<td style=\"direction: ltr; text-align: left; line-height: 1.15; white-space: nowrap; padding-top: 4px; width: 327px; height: 22px; box-sizing: border-box;\">\r\n<p style=\"direction: ltr; text-align: left; line-height: 9.9px; white-space: nowrap; margin: 1px; font-size: 10px;\">\r\n<span style=\"font-family: Verdana; color: rgb(23, 78, 134); line-height: 12px;\"><b>(0) 7989 568 050</b></span><span style=\"font-family: Verdana; color: rgb(23, 78, 134);\"><b>&nbsp;| &nbsp;victoria</b></span><span style=\"font-family: Verdana; color: rgb(23, 78, 134); line-height: 12px;\"><a href=\"mailto: claire.mahoney@bafsa.org.uk\" title=\"mailto: claire.mahoney@bafsa.org.uk\" style=\"color: rgb(23, 78, 134); margin: 0px;\"><b>@bafsa.org.uk</b></a></span></p>\r\n<p style=\"direction: ltr; text-align: left; line-height: 9.9px; white-space: nowrap; margin: 1px; font-size: 10px;\">\r\n<span style=\"font-family: Verdana; color: rgb(23, 78, 134); line-height: 12px;\"><br>\r\n</span></p>\r\n<p style=\"direction: ltr; text-align: left; line-height: 9.9px; white-space: nowrap; margin: 1px; font-size: 10px;\">\r\n<span style=\"font-family: Verdana; color: rgb(23, 78, 134); line-height: 12px;\"><a href=\"http://www.bafsa.org.uk/\" target=\"_blank\" title=\"http://www.bafsa.org.uk\" rel=\"noopener noreferrer\" style=\"color: rgb(23, 78, 134); margin: 0px;\"><b>www.bafsa.org.uk</b></a></span></p>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);\">\r\n<br>\r\n</div>\r\n</div>\r\n<div style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);\">\r\n<br>\r\n</div>\r\n</div>\r\n<div id=\"appendonsend\"></div>\r\n<hr style=\"display:inline-block;width:98%\" tabindex=\"-1\">\r\n<div id=\"divRplyFwdMsg\" dir=\"ltr\"><font face=\"Calibri, sans-serif\" style=\"font-size:11pt\" color=\"#000000\"><b>From:</b> ramishqureshi99@gmail.com &lt;ramishqureshi99@gmail.com&gt;<br>\r\n<b>Sent:</b> 08 October 2026 15:25<br>\r\n<b>To:</b> Victoria Cuff &lt;victoria@bafsa.org.uk&gt;<br>\r\n<b>Subject:</b> Nexora demo for BAFSA's membership administration</font>\r\n<div>&nbsp;</div>\r\n</div>\r\n<div>\r\n<table border=\"0\" cellspacing=\"0\" cellpadding=\"0\" width=\"100%\" align=\"left\" style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important; border:0!important; display:table!important; width:100%!important; table-layout:fixed!important; border-collapse:seperate!important; float:none!important; border-spacing:0px 0px!important\">\r\n<tbody style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important; display:block!important\">\r\n<tr style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important\">\r\n<td valign=\"middle\" width=\"1px\" bgcolor=\"#A6A6A6\" cellpadding=\"7px 2px 7px 2px\" style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important; padding:7px 2px 7px 2px!important; background-color:#A6A6A6!important; width:0px!important\">\r\n</td>\r\n<td valign=\"middle\" width=\"100%\" bgcolor=\"#EAEAEA\" cellpadding=\"7px 5px 7px 15px\" color=\"#212121\" style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important; width:100%!important; background-color:#EAEAEA!important; padding:7px 5px 7px 15px!important; font-family:wf_segoe-ui_normal,Segoe UI,Segoe WP,Tahoma,Arial,sans-serif!important; font-size:12px!important; font-weight:normal!important; color:#212121!important; text-align:left!important; word-wrap:break-word!important\">\r\n<div style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important\">\r\nYou don't often get email from ramishqureshi99@gmail.com. <a href=\"https://aka.ms/LearnAboutSenderIdentification\" style=\"background:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; opacity:revert!important; visibility:revert!important\">\r\nLearn why this is important</a> </div>\r\n</td>\r\n<td valign=\"middle\" align=\"left\" width=\"75px\" bgcolor=\"#EAEAEA\" cellpadding=\"7px 5px 7px 5px\" color=\"#212121\" style=\"background:revert!important; border:revert!important; bottom:revert!important; color:revert!important; direction:revert!important; display:revert!important; font-size:revert!important; height:revert!important; letter-spacing:revert!important; line-height:revert!important; margin:revert!important; opacity:revert!important; order:revert!important; outline:revert!important; overflow:revert!important; padding:revert!important; position:revert!important; tab-size:revert!important; table-layout:revert!important; text-align:revert!important; text-indent:revert!important; text-orientation:revert!important; text-overflow:revert!important; text-transform:revert!important; top:revert!important; vertical-align:revert!important; visibility:revert!important; white-space:revert!important; width:revert!important; word-break:revert!important; word-spacing:revert!important; writing-mode:revert!important; zoom:revert!important; width:75px!important; background-color:#EAEAEA!important; padding:7px 5px 7px 5px!important; font-family:wf_segoe-ui_normal,Segoe UI,Segoe WP,Tahoma,Arial,sans-serif!important; font-size:12px!important; font-weight:normal!important; color:#212121!important; text-align:left!important; word-wrap:break-word!important\">\r\n</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<div>\r\n<p>Hi Victoria,</p>\r\n<p>I'm contacting you about BAFSA's membership administration, particularly the connection between member-company records, their contacts and member services.</p>\r\n<p>We've built Nexora, a membership management platform for associations. It brings those records together with membership applications, staff review and member self-service, helping staff follow the same member journey across their workspace and portal.</p>\r\n<p>Nexora also supports an AI assistant inside the CRM workspace. When enabled, your team can access AI assistance alongside their day-to-day membership work.</p>\r\n<p>I've attached a 90-second narrated demonstration of Nexora. It also has on-screen captions, so you can watch it with or without sound.</p>\r\n<p>We're inviting a small number of associations to explore a focused evaluation around their membership process. Would you be open to a 15-minute conversation to see whether there's a useful fit for BAFSA?</p>\r\n<p>Best,<br>\r\nRamish Qureshi<br>\r\nFounder, Nexora<br>\r\n<a href=\"mailto:ramishqureshi99@gmail.com\">ramishqureshi99@gmail.com</a></p>\r\n<p>I found this contact on your association's public website. If this isn't relevant, reply 'no thanks' and I won't follow up.</p>\r\n</div>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    }
+  ],
+  "newReplies": [],
+  "priorExternalIdsVerified": 59,
+  "liveSentIncludingSelfTest": 60,
+  "positiveReplies": [],
+  "newOptOuts": [],
+  "newBounces": []
+}

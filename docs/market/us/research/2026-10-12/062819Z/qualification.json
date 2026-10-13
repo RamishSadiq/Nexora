@@ -1,0 +1,118 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "checkedAt": "2026-10-12T06:33:49.591Z",
+  "sourceCheckedAt": "2026-10-12T06:33:49.591Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "User-authorised dual-market first pitches; heartbeat 2026-10-12T06:28:19.133Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": null,
+  "reviewDue": "2026-10-19",
+  "pitchVersion": "website-cms-v2-consultancy-expansion",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Wider membership introduction only; dedicated CMS/portal demos and truthful public product page outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 1
+  },
+  "researchPriorityScore": 4,
+  "scoreMaximum": 12,
+  "capabilityFit": "Staff-managed public office/service/project-information pages with draft, preview and publication.",
+  "unsupportedRequirements": [
+    "Engineering/project-delivery systems, CAD/document workflows, custom enquiry forms, booking and external CRM integrations outside evaluated scope",
+    "Arabic/local hosting, automated migration, payments and production acceptance not promised"
+  ],
+  "liveDuplicateCheckComplete": true,
+  "buyerContactPurpose": "General project/business enquiries; responsible CMS buyer access unconfirmed",
+  "countryRulesCheckedAt": "2026-10-12T06:33:49.591Z",
+  "market": "United States",
+  "country": "United States",
+  "segment": "engineering_consultancy_office_expansion",
+  "organisation": "REGA Engineering Group",
+  "domain": "regaeng.com",
+  "domains": [
+    "regaeng.com"
+  ],
+  "stage": "sent",
+  "source": "https://www.regaeng.com/about",
+  "sourceDate": "2026 (year only; exact opening/publication date unverified)",
+  "observedFact": "Official history records an Omaha office opened in 2026; official page lists info@regaeng.com for Lincoln, Omaha and Houston.",
+  "signal": "2026 Omaha office expansion; no website dissatisfaction or open procurement claimed.",
+  "problemHypothesis": "A bounded office/service/project-information CMS evaluation could fit current public-content workflow; not a confirmed buyer need.",
+  "needEvidence": [
+    {
+      "url": "https://www.regaeng.com/about",
+      "sourceDate": "2026 (year only)",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "Official 2026 Omaha expansion entry and office/service information."
+    }
+  ],
+  "buyerRole": "President Nathaniel Burnett is identified in official company history; CMS ownership unconfirmed. General inbox as routing channel.",
+  "buyerContact": "info@regaeng.com",
+  "buyerContactEvidence": [
+    {
+      "url": "https://www.regaeng.com/about",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "General published business inbox repeated for three US offices."
+    }
+  ],
+  "currentProvider": "Official footer credits True North Technologies as website developer; current contract/provider scope unverified",
+  "providerEvidence": [
+    {
+      "url": "https://www.regaeng.com/about",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "Website developer credit links www.go-tnt.com. Existing provider is not itself a CMS-offer exclusion; no integration/replacement readiness assumed."
+    }
+  ],
+  "outreachDecision": "sent_verified",
+  "holdReasons": [],
+  "outreachLegalBasis": "US commercial-email first-pitch route evaluated against current FTC guide: accurate From/Reply-To/subject, advertisement, actual user-confirmed postal address and reply opt-out. Recipient consent not inferred.",
+  "countryRulesEvidence": [
+    {
+      "url": "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business",
+      "checkedAt": "2026-10-12T06:33:49.591Z",
+      "observation": "Commercial-email obligations include B2B messages and truthful headers/subject, ad identification, valid postal address and clear opt-out."
+    }
+  ],
+  "nextAction": "Monitor replies; no automatic follow-up",
+  "history": [
+    {
+      "at": "2026-10-12T06:33:49.591Z",
+      "event": "Fresh US engineering-consultancy/CMS cohort researched; published general inbox and existing website developer recorded; no guessed buyer need."
+    },
+    {
+      "at": "2026-10-12T13:55:50.186851+00:00",
+      "event": "Sender approval setting changed on explicit user instruction; requalified pitch sent and verified in four-country run",
+      "messageId": "1a130622ea0350f7",
+      "runId": "four-country-20261012T134550Z"
+    }
+  ],
+  "localLedgerDuplicateCheck": {
+    "complete": true,
+    "manifestCount": 4,
+    "confirmedHistory": 55,
+    "matches": []
+  },
+  "preSendChecks": {
+    "replyChecksComplete": true,
+    "liveSentAndDuplicateChecksComplete": true,
+    "at": "2026-10-12T06:32:12.757Z",
+    "sendPermissionAvailable": false
+  },
+  "messageId": "1a130622ea0350f7",
+  "priorHoldReasons": [
+    "Previously observed Gmail send-approval restriction persists; approval policy never and no authorised configuration change"
+  ]
+}

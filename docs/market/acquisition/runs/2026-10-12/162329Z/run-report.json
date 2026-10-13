@@ -1,0 +1,163 @@
+{
+  "runId": "four-country-20261012T162329Z",
+  "startedAt": "2026-10-12T16:23:29.573Z",
+  "completedAt": "2026-10-12T16:32:14.265132Z",
+  "localDate": "2026-10-12",
+  "status": "skipped_rolling_interval_full",
+  "manifest": null,
+  "sentCount": 0,
+  "sendToolCalls": 0,
+  "confirmedMessageIds": [],
+  "markets": {
+    "Australia": {
+      "status": "held_interval_cap",
+      "organisation": "MGAC",
+      "additionalHoldReasons": [
+        "No verified published relevant email or attributable role-specific publication",
+        "Linked relevant contact/privacy notices and publication-consent applicability remain unchecked"
+      ],
+      "preparedRecipient": null,
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "earliestEligibility": {
+        "eligibleAfterUTC": "2026-10-12T18:49:54.818794+00:00",
+        "eligibleAfterLondon": "2026-10-12T19:49:54.818794+01:00",
+        "consumedByMessageId": "1a1306111691b931"
+      }
+    },
+    "United States": {
+      "status": "held_interval_cap",
+      "organisation": "G&S Restaurant Equipment",
+      "additionalHoldReasons": [],
+      "preparedRecipient": "sales@gsrestaurantequipment.com",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "earliestEligibility": {
+        "eligibleAfterUTC": "2026-10-12T18:51:08.035197+00:00",
+        "eligibleAfterLondon": "2026-10-12T19:51:08.035197+01:00",
+        "consumedByMessageId": "1a130622ea0350f7"
+      }
+    },
+    "New Zealand": {
+      "status": "held_interval_cap",
+      "organisation": "North Projects",
+      "additionalHoldReasons": [
+        "Exact relevant published address and recipient-specific consent route not verified",
+        "Contact/privacy refusal-notice inspection incomplete"
+      ],
+      "preparedRecipient": null,
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "earliestEligibility": {
+        "eligibleAfterUTC": "2026-10-12T18:51:32.708626+00:00",
+        "eligibleAfterLondon": "2026-10-12T19:51:32.708626+01:00",
+        "consumedByMessageId": "1a13062917b76b72"
+      }
+    },
+    "Canada": {
+      "status": "held_interval_cap",
+      "organisation": "Prism Engineering",
+      "additionalHoldReasons": [
+        "Generic office mailbox: specific CMS recipient role/relevance and linked refusal/privacy notices not fully assessed"
+      ],
+      "preparedRecipient": "info@prismengineering.com",
+      "attemptedRecipient": null,
+      "messageIds": [],
+      "earliestEligibility": {
+        "eligibleAfterUTC": "2026-10-12T18:51:59.741215+00:00",
+        "eligibleAfterLondon": "2026-10-12T19:51:59.741215+01:00",
+        "consumedByMessageId": "1a13062fb2f2ffa6"
+      }
+    }
+  },
+  "verification": {
+    "initialReplyComplete": true,
+    "completionReplyComplete": true,
+    "priorExternalIdsVerified": 59,
+    "liveSentCountIncludingSelfTest": 60,
+    "newPositiveReplies": 0,
+    "newDeliveryFailures": 0,
+    "candidateDuplicatesComplete": true
+  },
+  "drafts": "docs/market/acquisition/runs/2026-10-12/162329Z/held-drafts.json",
+  "report": "docs/market/acquisition/runs/2026-10-12/162329Z/run-report.json",
+  "automationId": "nexora-daily-us-sales-outreach",
+  "timezone": "Europe/London",
+  "localStartedAt": "2026-10-12T17:23:29.573+01:00",
+  "localCompletedAt": "2026-10-12T17:32:14.265132+01:00",
+  "currentPolicy": "docs/market/MULTI-MARKET-CAMPAIGN.md",
+  "localGuards": {
+    "manifestCount": 5,
+    "pendingUnknownOutcomes": 0,
+    "activeSendingRun": null,
+    "senderLockAbsent": true,
+    "confirmedToday": 4,
+    "rollingFiveHourConfirmed": 4,
+    "perCountryLimit": 1,
+    "totalIntervalLimit": 4,
+    "dailyLimit": 24
+  },
+  "senderAccess": {
+    "historicalBlockActive": false,
+    "currentSendAccessAlreadyVerified": true,
+    "basis": "Four accepted messages earlier today reconciled in current live Sent; permission resolution preserved",
+    "restrictionBypass": false,
+    "additionalSendCallNeeded": false,
+    "reason": "All four rolling interval slots already consumed; no legal send attempt available this run"
+  },
+  "attachment": {
+    "filename": "nexora-product-demo-male.mp4",
+    "sizeBytes": 1945313,
+    "sha256": "3D079132720D56CE1A97A394643BD84297D8491CA70CDBF8FB06F9227C01D8E7",
+    "matchesState": true
+  },
+  "draftVerification": [
+    {
+      "market": "Australia",
+      "recipientSelected": false,
+      "MIMEVerified": false,
+      "attachmentHashVerified": false,
+      "sent": false
+    },
+    {
+      "market": "United States",
+      "recipientSelected": true,
+      "MIMEVerified": true,
+      "attachmentHashVerified": true,
+      "sent": false
+    },
+    {
+      "market": "New Zealand",
+      "recipientSelected": false,
+      "MIMEVerified": false,
+      "attachmentHashVerified": false,
+      "sent": false
+    },
+    {
+      "market": "Canada",
+      "recipientSelected": false,
+      "MIMEVerified": false,
+      "attachmentHashVerified": false,
+      "sent": false
+    }
+  ],
+  "weeklyReview": {
+    "performed": false,
+    "lastDate": "2026-10-10",
+    "nextDue": "2026-10-17"
+  },
+  "proofDeliverables": [
+    "Dedicated CMS demonstration outstanding",
+    "Dedicated supported-portal demonstration outstanding",
+    "Truthful public product page not yet published"
+  ],
+  "partnerResearch": {
+    "existingQueuePreserved": true,
+    "founderRelationshipOrWillingness": "None supplied/verified",
+    "specificIntroductionPrepared": false,
+    "messagesSent": 0
+  },
+  "newMiddleEastPitches": 0,
+  "nextAction": "Continue at next scheduled run without catch-up; recheck replies/outcomes/caps. AU/NZ/Canada prospects need remaining contact/notice/relevance assessment; G&S can be requalified independently after US interval expiry.",
+  "notification": "DONT_NOTIFY: no new send, reply or actionable failure; normal cap hold after verified earlier sends."
+}

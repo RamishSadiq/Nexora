@@ -36,6 +36,23 @@ public sealed partial class NexoraIdentityDbContext(DbContextOptions<NexoraIdent
 
 
         builder.HasDefaultSchema("identity");
+        builder.Entity<PortalOrganisationRequest>(entity =>
+        {
+            entity.ToTable("PortalOrganisationRequests");
+            entity.HasKey(x => x.Id);
+            entity.HasQueryFilter(x => SystemAccess || x.TenantId == CurrentTenantId);
+            entity.Property(x => x.OrganisationName).HasMaxLength(160);
+            entity.Property(x => x.NormalizedName).HasMaxLength(160);
+            entity.Property(x => x.JobTitle).HasMaxLength(160);
+            entity.Property(x => x.Message).HasMaxLength(2000);
+            entity.Property(x => x.DecisionMessage).HasMaxLength(1000);
+            entity.Property(x => x.Status).HasMaxLength(20);
+            entity.Property(x => x.Version).IsConcurrencyToken();
+            entity.HasIndex(x => new { x.TenantId, x.PortalAccessId, x.NormalizedName }).IsUnique().HasFilter("[Status] = 'pending'");
+            entity.HasIndex(x => new { x.TenantId, x.Status, x.CreatedAtUtc });
+            entity.HasOne<PortalAccess>().WithMany().HasForeignKey(x => new { x.TenantId, x.PortalAccessId })
+                .HasPrincipalKey(x => new { x.TenantId, x.Id }).OnDelete(DeleteBehavior.Restrict);
+        });
         builder.Entity<PortalOrganisationGrant>(entity =>
         {
             entity.ToTable("PortalOrganisationGrants");

@@ -1,0 +1,114 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "checkedAt": "2026-10-11T03:27:28.339Z",
+  "sourceCheckedAt": "2026-10-11T03:27:28.339Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "Five-hour dual-market first-pitch campaign; heartbeat 2026-10-11T03:24:05Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-18",
+  "reviewDue": "2026-10-18",
+  "stage": "research_only",
+  "pitchVersion": "website-cms-v2-expansion-cohort",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Required video demonstrates wider membership platform. Dedicated CMS/portal videos and public product page remain outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 0
+  },
+  "researchPriorityScore": 3,
+  "scoreMaximum": 12,
+  "capabilityFit": "Bounded public office/showroom, service and news pages with staff draft/preview/publication",
+  "unsupportedRequirements": [
+    "No booking, ecommerce, custom forms or third-party CRM integration",
+    "No Arabic localisation, regional hosting or automated migration promised"
+  ],
+  "market": "Middle East",
+  "country": "United Arab Emirates",
+  "segment": "bespoke_interior_and_furniture_showrooms",
+  "organisation": "Neatsmith Dubai",
+  "domain": "neatsmith.ae",
+  "domains": [
+    "neatsmith.ae",
+    "neatsmith.co.uk"
+  ],
+  "source": "https://neatsmith.ae/our-first-international-showroom-opening-in-dubai/",
+  "sourceDate": "2026-02-06",
+  "observedFact": "Official UAE article announces first international Dubai showroom; current UAE website maintains showroom, product and project information.",
+  "signal": "Dubai showroom expansion dated February 2026; already operating website, no provider vacancy or active requirement assumed.",
+  "problemHypothesis": "A bounded public showroom/project-information CMS evaluation may fit; current systems, dissatisfaction and buying intent unknown.",
+  "needEvidence": [
+    {
+      "url": "https://neatsmith.ae/our-first-international-showroom-opening-in-dubai/",
+      "sourceDate": "2026-02-06",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Dated first international showroom announcement."
+    },
+    {
+      "url": "https://neatsmith.ae/",
+      "sourceDate": null,
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Current official Dubai showroom, services and project information."
+    }
+  ],
+  "buyerRole": "Dubai marketing/content or operations owner; unverified",
+  "buyerContact": null,
+  "buyerContactEvidence": [
+    {
+      "url": "https://neatsmith.ae/contact-us/",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Official contact page routes to LeadConnector-hosted contact form. No published email verified in inspected page; form not submitted."
+    }
+  ],
+  "leadershipEvidence": [
+    {
+      "url": "https://neatsmith.ae/our-first-international-showroom-opening-in-dubai/",
+      "sourceDate": "2026-02-06",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "observation": "Philipp Nagel quoted as Director; CMS buying responsibility/contact remains unknown."
+    }
+  ],
+  "existingSystemEvidence": [
+    {
+      "url": "https://neatsmith.ae/contact-us/",
+      "checkedAt": "2026-10-11T03:27:28.339Z",
+      "systemType": "third_party_contact_form",
+      "observation": "Official form hosted at api.leadconnectorhq.com; this alone does not confirm the underlying CRM."
+    }
+  ],
+  "currentProvider": "Third-party contact form observed; website/CMS and CRM provider unconfirmed",
+  "outreachDecision": "hold_no_verified_email_and_recipient_specific_lawful_route",
+  "holdReasons": [
+    "No relevant published email verified; forms not authorised",
+    "Country/category/channel lawful route unresolved; public pages do not establish recipient consent",
+    "Existing sender approval block remains",
+    "Fresh-candidate Gmail duplicate check failed after bounded transport retries"
+  ],
+  "outreachLegalBasis": "Unresolved; UAE gate retained. No generic-mailbox exemption, user authority or prior UAE sends treated as recipient consent.",
+  "countryRulesCheckedAt": null,
+  "countryRulesOperationalRecordReadAt": "2026-10-11T03:27:28.339Z",
+  "countryRulesSourceCheckAt": "2026-10-09T13:12:16.373080+00:00",
+  "nextAction": "When due or new evidence arrives, verify UAE responsible published email and applicable recipient/channel lawful route; founder may provide an actual introduction/opt-in; no automatic permission-request marketing",
+  "history": [
+    {
+      "at": "2026-10-11T03:27:28.339Z",
+      "event": "Fresh UAE showroom/CMS cohort researched from official announcement/current contact page; existing lead form recorded informationally without first-CRM exclusion."
+    },
+    {
+      "at": "2026-10-11T03:28:45.344Z",
+      "event": "Gmail duplicate check unavailable; research-only hold retained, no sending attempted."
+    }
+  ],
+  "liveDuplicateCheckComplete": false
+}

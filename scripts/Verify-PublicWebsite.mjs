@@ -25,7 +25,11 @@ try {
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
       await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /.+/);
       await expect(page.locator(".site-portal-link")).toHaveAttribute("href", "/portal");
-      if (definition.visible) await expect(page.getByRole("navigation", { name: "Website navigation" }).locator('[aria-current="page"]')).toHaveAttribute("href", `/site/${siteId}/${definition.slug}`);
+      if (definition.visible) {
+        if (width < 760) await page.getByLabel("Open website menu", { exact: true }).click();
+        await expect(page.getByRole("navigation", { name: width < 760 ? "Mobile website navigation" : "Website navigation" }).getByRole("link", { name: definition.label, exact: true })).toHaveAttribute("href", `/site/${siteId}/${definition.slug === "home" ? "home" : definition.slug}`);
+        if (width < 760) await page.getByLabel("Open website menu", { exact: true }).click();
+      }
       if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) throw new Error(`Horizontal overflow: ${definition.slug} at ${width}`);
       for (const href of await page.locator(".association-site a[href]").evaluateAll(links => links.map(a => a.getAttribute("href")))) if (href?.startsWith("/") && !href.startsWith("//")) destinations.add(href);
       if (["home", "membership", "resources"].includes(definition.slug)) await page.screenshot({ path: path.join(root, `artifacts/public-${definition.slug}-${width}.png`), fullPage: true });
@@ -35,6 +39,7 @@ try {
     const response = await context.request.get(origin + href);
     if (!response.ok()) throw new Error(`Broken public link: ${href} (${response.status()})`);
   }
+  await page.setViewportSize({ width: 1440, height: 960 });
   await page.goto(`${origin}/site/${siteId}/home`);
   await page.getByRole("navigation", { name: "Website navigation" }).getByRole("link", { name: "Membership", exact: true }).click();
   await expect(page).toHaveURL(new RegExp(`/site/${siteId}/membership$`));

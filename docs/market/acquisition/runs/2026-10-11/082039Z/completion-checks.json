@@ -1,0 +1,13 @@
+{
+  "complete": false,
+  "startedAt": "2026-10-11T08:26:42.357Z",
+  "completedAt": "2026-10-11T08:26:47.710Z",
+  "attempts": 3,
+  "results": [
+    {
+      "query": "in:anywhere after:2026/10/07 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+      "error": "Error: [{\"type\":\"text\",\"text\":\"tool call error: tool call failed for `codex_apps/gmail.search_emails`\\n\\nCaused by:\\n    Transport send error: Transport [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::streamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client error: HTTP request failed: http/request failed: error sending request for url (https://chatgpt.com/backend-api/ps/mcp)\"}]",
+      "complete": false
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "offerType": "website_cms",
+  "acquisitionChannel": "individual_cold_email",
+  "crmStatus": "unknown_system",
+  "manualWorkflowEvidence": [],
+  "existingSystemEvidence": [],
+  "checkedAt": "2026-10-12T11:29:32.815Z",
+  "sourceCheckedAt": "2026-10-12T11:29:32.815Z",
+  "confidence": "medium",
+  "buyerConfirmedProblem": null,
+  "budget": null,
+  "currency": null,
+  "decisionDate": null,
+  "consentStatus": "not_established",
+  "permissionEvidence": [],
+  "userAuthority": "Five-hour dual-market first pitches authorised by user; heartbeat 2026-10-12T11:24:25.827Z",
+  "sendEligible": false,
+  "owner": "Ramish Qureshi",
+  "nextActionDue": "2026-10-19",
+  "reviewDue": "2026-10-19",
+  "pitchVersion": "website-cms-v2-public-information",
+  "proofAsset": "docs/market/pitch/nexora-product-demo-male.mp4",
+  "proofGap": "Required membership-platform introduction is not a dedicated CMS/portal demo; dedicated demos and public product page outstanding.",
+  "scores": {
+    "need": 1,
+    "capabilityFit": 2,
+    "buyerAccess": 0,
+    "timing": 0
+  },
+  "researchPriorityScore": 3,
+  "scoreMaximum": 12,
+  "capabilityFit": "Bounded public information pages with staff draft, preview and publication.",
+  "unsupportedRequirements": [
+    "Inventory, checkout, financing, booking, arbitrary enquiries/document workflows and external CRM integration excluded",
+    "No automated migration, Arabic localisation, local hosting or production acceptance promised"
+  ],
+  "liveDuplicateCheckComplete": true,
+  "countryRulesCheckedAt": null,
+  "currentProvider": "Unknown",
+  "market": "Middle East",
+  "country": "United Arab Emirates",
+  "segment": "architecture_interior_landscape_studios",
+  "organisation": "MOMA International",
+  "domain": "moma.design",
+  "domains": [
+    "moma.design"
+  ],
+  "stage": "research_only",
+  "source": "https://www.moma.design/",
+  "sourceDate": null,
+  "observedFact": "Official site maintains architecture/interior/landscape project information; official Dubai contact page names Rubia Morales at Dubai Design District.",
+  "signal": "Current public portfolio/services/office-information workflow; no dated active buying signal or expansion verified.",
+  "problemHypothesis": "An evaluation of public project/service information publishing may fit; buyer dissatisfaction, budget and intent unknown.",
+  "needEvidence": [
+    {
+      "url": "https://www.moma.design/",
+      "sourceDate": null,
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Current architecture, interiors, landscape and public project-information content."
+    },
+    {
+      "url": "https://www.moma.design/contact",
+      "sourceDate": null,
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Dubai Design District Building 6B Units 202-203 and Dubai business contact published."
+    }
+  ],
+  "buyerRole": "Rubia Morales, published Dubai contact person; marketing/CMS decision authority unconfirmed",
+  "buyerContact": "r.morales@moma.design",
+  "buyerContactEvidence": [
+    {
+      "url": "https://www.moma.design/contact",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "observation": "Named Dubai office business contact and exact email. Publication is not recipient marketing consent."
+    }
+  ],
+  "outreachDecision": "held_recipient_specific_lawful_route",
+  "holdReasons": [
+    "Named UAE recipient/channel lawful route and consent not established",
+    "Existing Gmail send-approval restriction persists"
+  ],
+  "outreachLegalBasis": "Unresolved named-recipient UAE route; official legislation fetch returned 403. Public business listing and user campaign authority not treated as recipient consent or blanket exemption.",
+  "countryRulesOperationalRecordReadAt": "2026-10-12T11:29:32.815Z",
+  "countryRulesVerificationAttemptAt": "2026-10-12T11:29:32.815Z",
+  "countryRulesEvidence": [
+    {
+      "url": "https://uaelegislation.gov.ae/en/legislations/1972",
+      "checkedAt": "2026-10-12T11:29:32.815Z",
+      "verification": "403 Forbidden; no current legal text verified"
+    }
+  ],
+  "nextAction": "When due/new evidence arrives, verify applicable named UAE recipient/email lawful route; founder may supply an actual introduction/opt-in. No unsolicited permission-request marketing or forms/social/calls.",
+  "history": [
+    {
+      "at": "2026-10-12T11:29:32.815Z",
+      "event": "Fresh private UAE studio/CMS research with exact named business contact; no first-CRM or supplier-invitation gate imposed, lawful contact hold retained."
+    }
+  ],
+  "localLedgerDuplicateCheck": {
+    "complete": true,
+    "manifestCount": 4,
+    "confirmedHistory": 55,
+    "matches": []
+  },
+  "preSendChecks": {
+    "replyChecksComplete": true,
+    "liveSentAndDuplicateChecksComplete": true,
+    "at": "2026-10-12T11:28:05.459Z",
+    "sendPermissionAvailable": false
+  }
+}

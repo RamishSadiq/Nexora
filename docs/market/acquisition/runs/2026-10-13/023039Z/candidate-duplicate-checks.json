@@ -1,0 +1,22 @@
+[
+  {
+    "query": "in:sent {to:marketing@jaeaust.com.au to:jaeaust.com.au}",
+    "complete": true,
+    "emails": []
+  },
+  {
+    "query": "in:sent {to:sales@gsrestaurantequipment.com to:gsrestaurantequipment.com to:gsequipmentinc.com}",
+    "complete": true,
+    "emails": []
+  },
+  {
+    "query": "in:sent {to:northprojects.com.au}",
+    "complete": true,
+    "emails": []
+  },
+  {
+    "query": "in:sent {to:prismengineering.com}",
+    "complete": true,
+    "emails": []
+  }
+]

@@ -62,16 +62,21 @@ public sealed class CmsPublishingTests
         var publicMedia = $"/api/v1/public/sites/{Id(site)}/media/{Id(media)}";
         Assert.Equal(HttpStatusCode.NotFound, (await visitor.GetAsync(publicMedia)).StatusCode);
         Assert.Equal(HttpStatusCode.OK, (await staff.GetAsync($"/api/v1/content/media/{Id(media)}")).StatusCode);
+        var nested = (await Json(await Send(staff, "/api/v1/content/pages", HttpMethod.Post, new { slug = "gallery", title = "Gallery", description = "", blocks = new[] { new ContentBlock("gallery", "Our community", "", Items: [new ContentItem("Photo", "Community photo", Guid.Parse(Id(media)))]) } })))["page"]!;
+        Assert.Equal(HttpStatusCode.BadRequest, (await Send(staff, $"/api/v1/content/pages/{Id(nested)}/publish", HttpMethod.Post, new { version = Version(nested) })).StatusCode);
         var created = await Create(staff, media: Id(media)); var page = created["page"]!;
         Assert.Equal(HttpStatusCode.BadRequest, (await Send(staff, $"/api/v1/content/pages/{Id(page)}/publish", HttpMethod.Post, new { version = Version(page) })).StatusCode);
         media = await Json(await Send(staff, $"/api/v1/content/media/{Id(media)}/publication", HttpMethod.Put, new { version = Version(media), isPublic = true }));
-        await Publish(staff, page);
+        await Publish(staff, page); await Publish(staff, nested);
+        Assert.Equal(Id(media), (await Json(await visitor.GetAsync($"/api/v1/public/sites/{Id(site)}/gallery")))["page"]!["blocks"]![0]!["items"]![0]!["mediaId"]!.GetValue<string>());
         Assert.Equal(HttpStatusCode.OK, (await visitor.GetAsync(publicMedia)).StatusCode);
         using var outside = await Login(app, "outside@nexora.test");
         Assert.Equal(HttpStatusCode.Forbidden, (await outside.GetAsync($"/api/v1/content/media/{Id(media)}")).StatusCode);
         media = await Json(await Send(staff, $"/api/v1/content/media/{Id(media)}/publication", HttpMethod.Put, new { version = Version(media), isPublic = false }));
         Assert.Equal(HttpStatusCode.NotFound, (await visitor.GetAsync(publicMedia)).StatusCode);
         Assert.Empty((await Json(await visitor.GetAsync($"/api/v1/public/sites/{Id(site)}/home")))["page"]!["blocks"]!.AsArray());
+        var item = (await Json(await visitor.GetAsync($"/api/v1/public/sites/{Id(site)}/gallery")))["page"]!["blocks"]![0]!["items"]![0]!;
+        Assert.Null(item["mediaId"]); Assert.Equal("Community photo", item["text"]!.GetValue<string>());
         Assert.Equal(HttpStatusCode.BadRequest, (await Send(staff, $"/api/v1/content/media/{Id(media)}", HttpMethod.Delete, new { version = Version(media) })).StatusCode);
     }
 

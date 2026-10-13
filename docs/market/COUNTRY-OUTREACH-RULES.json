@@ -1,0 +1,44 @@
+{
+  "checkedAt": "2026-10-12",
+  "scope": "Recipient-specific operational email checks; user authorization is separate from recipient consent",
+  "activeCountries": ["Australia", "United States", "New Zealand", "Canada"],
+  "unresolvedMeansHoldRecipient": true,
+  "publicEmailAloneIsNotConsent": true,
+  "unsubscribeFacilityMinimumDays": 60,
+  "operationalOptOutAction": "Suppress immediately when observed and before additional sending",
+  "countries": [
+    {
+      "country": "Australia",
+      "routes": ["documented express consent", "applicable inferred consent", "verified Spam Act Schedule 2 clause 4 conspicuous-publication conditions"],
+      "publicationChecks": ["official conspicuous publication attributable to account-holder/organisation", "address identifies work role/function", "no accompanying no-unsolicited-message statement", "exact pitch relevant to the published role/function"],
+      "requirements": ["identify sender and usable contact", "functional free email unsubscribe", "honour withdrawal within five business days; campaign suppresses upon observation"],
+      "sources": ["https://www.legislation.gov.au/C2004A01214/latest", "https://www.legislation.gov.au/C2004A01214/2016-03-10/2016-03-10/text/original/epub/OEBPS/document_1/document_1.html", "https://www.acma.gov.au/avoid-sending-spam"],
+      "decision": "Evidence must satisfy a specific route; a public generic mailbox does not automatically qualify. No marketing email requesting permission to evade consent."
+    },
+    {
+      "country": "United States",
+      "routes": ["individual commercial-email first pitch complying with CAN-SPAM"],
+      "requirements": ["truthful From/Reply-To/subject", "visible advertisement identification", "actual valid postal address", "clear free reply-based opt-out", "honour opt-out within ten business days; campaign suppresses upon observation"],
+      "sources": ["https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"],
+      "decision": "Verify identity, role/offer fit, suppressions and all required commercial-email content. No prior recipient interest or consent is inferred."
+    },
+    {
+      "country": "New Zealand",
+      "routes": ["documented express consent", "applicable inferred consent", "verified deemed consent from conspicuous business/official publication"],
+      "publicationChecks": ["public business/official address published by recipient or organisation", "no accompanying refusal of unsolicited commercial messages", "exact pitch relevant to recipient business/role/functions/duties"],
+      "requirements": ["clearly identify business and usable contact", "clear free email unsubscribe facility", "honour unsubscribe within five working days; campaign suppresses upon observation"],
+      "sources": ["https://www.dia.govt.nz/Spam-Three-Steps", "https://www.dia.govt.nz/spam-frequently-asked-questions"],
+      "decision": "Record source, date, refusal check and exact business-role relevance before relying on deemed consent. No harvested/purchased lists."
+    },
+    {
+      "country": "Canada",
+      "routes": ["documented express consent", "verified applicable implied consent including qualifying conspicuous publication"],
+      "publicationChecks": ["direct public publication by or caused by account-holder/recipient", "no accompanying no-CEM statement", "exact pitch relevant to recipient business/role/functions/duties", "preserve where/when found and relevance evidence"],
+      "requirements": ["identify sender and represented business", "mailing address and usable contact valid at least sixty days", "clear free unsubscribe valid at least sixty days", "honour unsubscribe within ten business days; campaign suppresses upon observation"],
+      "sources": ["https://crtc.gc.ca/eng/com500/guide.htm", "https://crtc.gc.ca/eng/com500/faq500.htm"],
+      "decision": "No broad right to email any public address. Assess each direct publication and exact message; copied third-party lists are insufficient."
+    }
+  ],
+  "historicalMiddleEastRules": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json",
+  "historicalMiddleEastStatus": "No new pitches after explicit four-country scope clarification on 12 October 2026; preserve history and monitor replies"
+}

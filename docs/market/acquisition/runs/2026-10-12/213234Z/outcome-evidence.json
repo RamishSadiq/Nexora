@@ -1,0 +1,208 @@
+{
+  "sendAttempt": {
+    "market": "Australia",
+    "recipient": "marketing@jaeaust.com.au",
+    "at": "2026-10-12T21:40:35.666Z",
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "MCP tool call requires approval, but approval policy is never"
+        }
+      ],
+      "isError": true
+    },
+    "attempts": 1,
+    "acceptedMessageId": null
+  },
+  "reconciliation": [
+    {
+      "query": "in:sent to:marketing@jaeaust.com.au",
+      "emails": [],
+      "complete": true
+    },
+    {
+      "query": "in:sent to:sales@gsrestaurantequipment.com",
+      "emails": [],
+      "complete": true
+    }
+  ],
+  "completion": {
+    "at": "2026-10-12T21:41:19.119Z",
+    "complete": true,
+    "results": [
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:gtma.co.uk from:theafi.co.uk from:bafsa.org.uk from:bpma.co.uk from:commercial-interiorsuk.com from:bcsa.org.uk from:bcf.co.uk from:siba.co.uk from:bira.co.uk from:taforum.org from:britishcleaningcouncil.org from:wcma.com from:cabinetmakers.org from:graphicmedia.org from:glga.info from:aiccbox.org from:ntma.org from:pma.org from:fmamfg.org from:amba.org}",
+        "complete": true,
+        "count": 0,
+        "ids": []
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:mappinc.com from:heattreat.net from:nwfa.org from:ptda.org from:fpda.org from:bsahome.org from:mheda.org from:isapartners.org from:nfda-fastener.org from:pmpa.org from:iapd.org from:pmahome.org from:acmanet.org from:anodizing.org from:aec.org from:industrialpackaging.org from:reusables.org from:paperbox.org from:tlmi.com from:awfs.org}",
+        "complete": true,
+        "count": 0,
+        "ids": []
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:doors.org from:americanfenceassociation.com from:glass.org from:ascouncil.org from:stafda.org from:nasf.org from:fibrebox.org from:spri.org from:investmentcasting.org from:diecasting.org from:mpif.org from:smihq.org from:amtc.ae from:ablaqco.com from:foundster.com from:bergengineering.com.au from:regaeng.com from:rawlinsons.co.nz from:newfields.com from:arabiandream.com}",
+        "complete": true,
+        "count": 0,
+        "ids": []
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent {from:newfieldscanada.ca}",
+        "complete": true,
+        "count": 0,
+        "ids": []
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 -in:sent Nexora",
+        "complete": true,
+        "count": 0,
+        "ids": []
+      },
+      {
+        "query": "in:anywhere after:2026/10/11 {from:mailer-daemon from:postmaster subject:\"Delivery Status Notification\" subject:Undeliverable subject:\"Delivery failure\"}",
+        "complete": true,
+        "count": 0,
+        "ids": []
+      },
+      {
+        "query": "in:sent Nexora",
+        "complete": true,
+        "count": 60,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931",
+          "1a126cdb46a0f8e5",
+          "1a126cd3439e26db",
+          "1a126cc99bcdbf2d",
+          "1a120800ff0e30ec",
+          "1a11f79c15f23dcf",
+          "1a11f7961e491a65",
+          "1a11f79086a34070",
+          "1a11f78af1ffedf9",
+          "1a11f7848a393b9b",
+          "1a11f77ea8a74a8d",
+          "1a11f778a20ccaad",
+          "1a11f772a971f528",
+          "1a11f76d0e3fea55",
+          "1a11f7678e41f57c",
+          "1a11c212432fee89",
+          "1a11c20c97b3046e",
+          "1a11c203d2286c33",
+          "1a11c1fe67945c8d",
+          "1a11c1f85aba49a0",
+          "1a11c1f2d4b368df",
+          "1a11c1ed082e39a4",
+          "1a11c1e794b80f6a",
+          "1a11c1e1f2f1e799",
+          "1a11c1c90d01fac1",
+          "1a11c1c3b2bf39f8",
+          "1a11c1bb06754473",
+          "1a11c1b58b9c985a",
+          "1a11c1ac175b0386",
+          "1a11c1a6ad5de964",
+          "1a11c19f0bb94c08",
+          "1a11c198ed3fea2e",
+          "1a11c181ca8691a6",
+          "1a11c17bb52abde3",
+          "1a11c17634387954",
+          "1a11c17068612088",
+          "1a11c16ad8942eeb",
+          "1a11c16528f62b29",
+          "1a11c15f48fbec90",
+          "1a11c15996661aa6",
+          "1a11c153e30859e2",
+          "1a11c14e24744bb3",
+          "1a11c14836da419f",
+          "1a11c141a7e55e69",
+          "1a11c1181b725d3a",
+          "1a11bed87d62d77f",
+          "1a11becb63c3868a",
+          "1a11bebbfc73d6fe",
+          "1a11beb04274d92a",
+          "1a11bea81abaec38",
+          "1a11be9e7b0beb9b",
+          "1a11be92ff3cd6f9",
+          "1a11be8a50e5deab",
+          "1a11be815953d93d",
+          "1a11be73bb6e873b",
+          "1a11bdf55d8130a2",
+          "1a11bc874d72d032"
+        ]
+      },
+      {
+        "query": "in:sent filename:nexora-product-demo-male.mp4",
+        "complete": true,
+        "count": 60,
+        "ids": [
+          "1a13062fb2f2ffa6",
+          "1a13062917b76b72",
+          "1a130622ea0350f7",
+          "1a1306111691b931",
+          "1a126cdb46a0f8e5",
+          "1a126cd3439e26db",
+          "1a126cc99bcdbf2d",
+          "1a120800ff0e30ec",
+          "1a11f79c15f23dcf",
+          "1a11f7961e491a65",
+          "1a11f79086a34070",
+          "1a11f78af1ffedf9",
+          "1a11f7848a393b9b",
+          "1a11f77ea8a74a8d",
+          "1a11f778a20ccaad",
+          "1a11f772a971f528",
+          "1a11f76d0e3fea55",
+          "1a11f7678e41f57c",
+          "1a11c212432fee89",
+          "1a11c20c97b3046e",
+          "1a11c203d2286c33",
+          "1a11c1fe67945c8d",
+          "1a11c1f85aba49a0",
+          "1a11c1f2d4b368df",
+          "1a11c1ed082e39a4",
+          "1a11c1e794b80f6a",
+          "1a11c1e1f2f1e799",
+          "1a11c1c90d01fac1",
+          "1a11c1c3b2bf39f8",
+          "1a11c1bb06754473",
+          "1a11c1b58b9c985a",
+          "1a11c1ac175b0386",
+          "1a11c1a6ad5de964",
+          "1a11c19f0bb94c08",
+          "1a11c198ed3fea2e",
+          "1a11c181ca8691a6",
+          "1a11c17bb52abde3",
+          "1a11c17634387954",
+          "1a11c17068612088",
+          "1a11c16ad8942eeb",
+          "1a11c16528f62b29",
+          "1a11c15f48fbec90",
+          "1a11c15996661aa6",
+          "1a11c153e30859e2",
+          "1a11c14e24744bb3",
+          "1a11c14836da419f",
+          "1a11c141a7e55e69",
+          "1a11c1181b725d3a",
+          "1a11bed87d62d77f",
+          "1a11becb63c3868a",
+          "1a11bebbfc73d6fe",
+          "1a11beb04274d92a",
+          "1a11bea81abaec38",
+          "1a11be9e7b0beb9b",
+          "1a11be92ff3cd6f9",
+          "1a11be8a50e5deab",
+          "1a11be815953d93d",
+          "1a11be73bb6e873b",
+          "1a11bdf55d8130a2",
+          "1a11bc874d72d032"
+        ]
+      }
+    ],
+    "newReplies": [],
+    "fail": null
+  }
+}
