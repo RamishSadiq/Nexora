@@ -1,8 +1,10 @@
 .card { height:180px; perspective:1000px; text-align:center; border-radius:18px; cursor:pointer; }
 .inner { display:block; position:relative; height:100%; transition:transform .6s ease; transform-style:preserve-3d; }
 .flipped { transform:rotateY(180deg); }
-.face { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; border-radius:18px; background:#fff7fc; color:#442c47; box-shadow:0 8px 25px #59344c12; backface-visibility:hidden; }
-.face small { color:#77667a; font-size:11px; }
-.back { transform:rotateY(180deg); background:#f4f1ff; }
-.card:focus-visible { outline:3px solid #5143b0; outline-offset:4px; }
+.face { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:20px; border:1px solid var(--workspace-border); border-radius:18px; background:radial-gradient(ellipse at 0 0,#50f5d609,transparent 65%),var(--workspace-surface); color:var(--workspace-fg); box-shadow:0 8px 25px #00000020; backface-visibility:hidden; }
+.face small { color:var(--workspace-muted); font-size:11px; }
+.back { transform:rotateY(180deg); background:radial-gradient(ellipse at 100% 0,#9255ff18,transparent 65%),var(--workspace-surface); border-color:#9255ff70; }
+.back > strong { color:var(--workspace-accent); font-variant-numeric:tabular-nums; }
+.card:hover .face { border-color:#50f5d655; box-shadow:0 0 24px #50f5d610; }
+.card:focus-visible { outline:2px solid var(--workspace-accent); outline-offset:4px; }
 @media(prefers-reduced-motion:reduce){.inner{transition:none;}}

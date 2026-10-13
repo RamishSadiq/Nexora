@@ -56,9 +56,9 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
   }
 
   return (
-    <div className={cn("min-h-screen bg-[#f5f7fb] workspace-theme", dashboardTheme && "dashboard-theme")}>
-      {mobileOpen && <button className="fixed inset-0 z-40 bg-[#0f1830]/35 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}
-      <aside className={cn("fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r border-[#e5e9ef] bg-white transition-transform lg:translate-x-0", mobileOpen ? "visible translate-x-0" : "invisible -translate-x-full lg:visible")}>
+    <div className={cn("min-h-screen workspace-theme", dashboardTheme && "dashboard-theme")}>
+      {mobileOpen && <button className="workspace-overlay fixed inset-0 z-40 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}
+      <aside className={cn("workspace-sidebar fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r transition-transform lg:translate-x-0", mobileOpen ? "visible translate-x-0" : "invisible -translate-x-full lg:visible")}>
         <div className="flex h-[68px] shrink-0 items-center justify-between px-5">
           <NexoraMark inverse />
           <button className="grid size-9 place-items-center rounded-lg text-[#667085] hover:bg-[#f2f4f8] lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation"><X className="size-5" /></button>
@@ -72,10 +72,10 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
               const expanded = openGroups[item.match] ?? active;
               return (
                 <div key={item.label}>
-                  {item.children ? <button type="button" onClick={() => setOpenGroups(groups => ({ ...groups, [item.match]: !expanded }))} aria-expanded={expanded} aria-controls={`navigation-${item.match.slice(1)}`} className={cn("group flex h-11 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-medium transition", active ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9] hover:text-[#263244]")}>
+                  {item.children ? <button type="button" onClick={() => setOpenGroups(groups => ({ ...groups, [item.match]: !expanded }))} data-active={active} aria-expanded={expanded} aria-controls={`navigation-${item.match.slice(1)}`} className="workspace-nav-item group flex h-11 w-full items-center gap-3 rounded-xl px-3 text-left text-sm font-medium transition">
                     <Icon className={cn("size-[18px]", active ? "text-[#4b66dd]" : "text-[#8b96a8] group-hover:text-[#5f6e82]")} />
                     <span className="flex-1">{item.label}</span><ChevronDown className={cn("size-3.5 opacity-45 transition-transform", expanded ? "rotate-0" : "-rotate-90")} />
-                  </button> : <Link href={item.href} aria-current={active ? "page" : undefined} onClick={() => setMobileOpen(false)} className={cn("group flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition", active ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9] hover:text-[#263244]")}>
+                  </button> : <Link href={item.href} data-active={active} aria-current={active ? "page" : undefined} onClick={() => setMobileOpen(false)} className="workspace-nav-item group flex h-11 items-center gap-3 rounded-xl px-3 text-sm font-medium transition">
                     <Icon className={cn("size-[18px]", active ? "text-[#4b66dd]" : "text-[#8b96a8] group-hover:text-[#5f6e82]")} /><span className="flex-1">{item.label}</span>{item.label !== "Home" && <ChevronDown className="size-3.5 -rotate-90 opacity-45" />}
                   </Link>}
                   {item.children && expanded && <div id={`navigation-${item.match.slice(1)}`} className="ml-8 mt-1 space-y-1 border-l border-[#dfe5f5] pl-3">
@@ -95,7 +95,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
         </nav>
         <div className="sidebar-account max-h-[45dvh] shrink-0 overflow-y-auto border-t border-[#e9ecf1] p-3">
           {session.permissions.includes("identity.read") && <>
-            <button type="button" aria-expanded={administrationOpen} aria-controls="administration-navigation" onClick={() => setOpenGroups(groups => ({...groups, "/settings": !administrationOpen}))} className={cn("flex min-h-11 w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm font-medium", pathname.startsWith("/settings") ? "bg-[#edf1ff] text-[#364fc7]" : "text-[#5c6879] hover:bg-[#f4f6f9]")}><Settings className="size-[18px] shrink-0 text-[#8b96a8]" /><span className="flex-1">Administration</span><ChevronDown className={cn("size-3.5 shrink-0", !administrationOpen && "-rotate-90")} /></button>
+            <button type="button" data-active={pathname.startsWith("/settings")} aria-expanded={administrationOpen} aria-controls="administration-navigation" onClick={() => setOpenGroups(groups => ({...groups, "/settings": !administrationOpen}))} className="workspace-nav-item flex min-h-11 w-full items-center gap-3 rounded-xl px-3 py-2 text-left text-sm font-medium"><Settings className="size-[18px] shrink-0 text-[#8b96a8]" /><span className="flex-1">Administration</span><ChevronDown className={cn("size-3.5 shrink-0", !administrationOpen && "-rotate-90")} /></button>
             {administrationOpen && <div id="administration-navigation" className="ml-8 mt-1 space-y-1 border-l border-[#dfe5f5] pl-3">{[["users", "Users"], ["security-groups", "Security groups"]].map(([section, label]) => <Link key={section} href={`/settings/${section}` as Route} aria-current={pathname === `/settings/${section}` ? "page" : undefined} onClick={() => setMobileOpen(false)} className={cn("block rounded-lg px-3 py-2 text-xs font-medium", pathname === `/settings/${section}` ? "bg-[#f1f4ff] text-[#364fc7]" : "text-[#7b8798] hover:bg-[#f6f7fa]")}>{label}</Link>)}</div>}
           </>}
           <div className="sidebar-profile mt-2">
@@ -129,14 +129,14 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
       </aside>
 
       <div className="lg:pl-[274px]">
-        <header className="sticky top-0 z-30 flex h-[56px] items-center gap-4 border-b border-[#e5e9ef] bg-white/90 px-4 backdrop-blur-xl sm:px-7">
+        <header className="workspace-header sticky top-0 z-30 flex h-[56px] items-center gap-4 border-b px-4 backdrop-blur-xl sm:px-7">
           <button className="grid size-10 place-items-center rounded-xl border border-[#e2e6ed] text-[#5d697b] lg:hidden" onClick={() => setMobileOpen(true)} aria-label="Open navigation"><Menu className="size-5" /></button>
           <div id="workspace-page-heading" className="flex min-w-0 flex-1 items-center justify-between gap-3" />
           <div className="ml-auto flex items-center gap-1.5">
             {session.permissions.includes("work.read") && <Link href={"/work/notifications" as Route} className="grid size-10 place-items-center rounded-xl text-[#687487] transition hover:bg-[#f2f4f8]" aria-label="Notifications"><Bell className="size-[19px]" /></Link>}
           </div>
         </header>
-        <div className="min-h-[calc(100vh-56px)]">{children}</div>
+        <div className="workspace-content min-h-[calc(100vh-56px)]">{children}</div>
         <footer className="pointer-events-none fixed bottom-3 right-4 z-20 text-right text-[10px] text-white/55 sm:right-7" aria-label="Copyright">
           © 2026 Nexora. All rights reserved.
         </footer>

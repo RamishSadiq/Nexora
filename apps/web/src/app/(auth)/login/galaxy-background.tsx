@@ -24,14 +24,14 @@ export function GalaxyBackground() {
     const g = galaxy.getContext("2d");
     if (!g) return;
     const glow = g.createRadialGradient(400, 400, 0, 400, 400, 360);
-    glow.addColorStop(0, "#fff0dcbb"); glow.addColorStop(.08, "#eec5e778"); glow.addColorStop(.3, "#ad62952a"); glow.addColorStop(1, "#512e8000");
+    glow.addColorStop(0, "#d0fff3bb"); glow.addColorStop(.08, "#50f5d678"); glow.addColorStop(.3, "#9255ff2a"); glow.addColorStop(1, "#9255ff00");
     g.fillStyle = glow; g.fillRect(0, 0, 800, 800);
     for (let i = 0; i < 14500; i++) {
       const radius = Math.pow(random(), .7) * 350;
       const angle = radius / 74 + (i % 3) * Math.PI * 2 / 3 + (random() - .5) * (.45 + radius / 500);
       const x = 400 + Math.cos(angle) * radius + (random() - .5) * 16;
       const y = 400 + Math.sin(angle) * radius + (random() - .5) * 16;
-      g.fillStyle = i % 5 === 0 ? "#d2d6ff9a" : i % 3 === 0 ? "#f5c8d879" : "#c594d04c";
+      g.fillStyle = i % 5 === 0 ? "#50f5d69a" : i % 3 === 0 ? "#c3a4ff79" : "#9255ff4c";
       g.beginPath(); g.arc(x, y, random() * 1.2 + .25, 0, Math.PI * 2); g.fill();
     }
     let width = 0, height = 0, frame = 0, last = 0, time = 0;
@@ -47,8 +47,8 @@ export function GalaxyBackground() {
       paintGalaxy(width * .81, height * .17, 280, -.5 + time * .000009, .45);
       paintGalaxy(width * .12, height * .83, 260, .2, .4);
       ctx.save(); ctx.translate(width * .83, height * .43); ctx.scale(1, .48);
-      for (let orbit=1;orbit<=4;orbit++) { const radius=orbit*25; ctx.strokeStyle='#a5bcff28'; ctx.beginPath(); ctx.arc(0,0,radius,0,Math.PI*2); ctx.stroke(); const angle=orbit*1.8+time*.00003/orbit; ctx.fillStyle=['','#7cbced','#cda7ee','#edbe92','#96d6c4'][orbit]; ctx.beginPath(); ctx.arc(Math.cos(angle)*radius,Math.sin(angle)*radius,3+orbit,0,Math.PI*2); ctx.fill(); }
-      ctx.fillStyle='#f4d9a3'; ctx.shadowColor='#f3be74'; ctx.shadowBlur=24; ctx.beginPath(); ctx.arc(0,0,10,0,Math.PI*2); ctx.fill(); ctx.restore();
+      for (let orbit=1;orbit<=4;orbit++) { const radius=orbit*25; ctx.strokeStyle='#50f5d628'; ctx.beginPath(); ctx.arc(0,0,radius,0,Math.PI*2); ctx.stroke(); const angle=orbit*1.8+time*.00003/orbit; ctx.fillStyle=['','#50f5d6','#9255ff','#c3a4ff','#96edc5'][orbit]; ctx.beginPath(); ctx.arc(Math.cos(angle)*radius,Math.sin(angle)*radius,3+orbit,0,Math.PI*2); ctx.fill(); }
+      ctx.fillStyle='#baffef'; ctx.shadowColor='#50f5d6'; ctx.shadowBlur=24; ctx.beginPath(); ctx.arc(0,0,10,0,Math.PI*2); ctx.fill(); ctx.restore();
       for (const star of stars) {
         const alpha = .35 + .45 * (.5 + .5 * Math.sin(time * .00065 + star.phase));
         ctx.fillStyle = `rgba(238,225,250,${alpha})`;
