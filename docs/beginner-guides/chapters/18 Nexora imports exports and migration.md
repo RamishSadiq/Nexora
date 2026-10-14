@@ -1,7 +1,7 @@
 # Nexora imports exports and migration
 
 Document 18 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand data previews, commit steps, export paths and the difference between importing data and database migrations.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0118 operations-workspace.tsx | Main UI or route for this topic |
-| Server | S0538 WorkModule.cs | Endpoints or server rules |
-| Data | S0520 WorkEntities.cs | Data shape or persistence structure |
+| Server | S0539 WorkModule.cs | Endpoints or server rules |
+| Data | S0521 WorkEntities.cs | Data shape or persistence structure |
 
 **Screen S0118**  
 [apps/web/src/features/operations/operations-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/operations/operations-workspace.tsx>)
 
-**Server S0538**  
+**Server S0539**  
 [backend/src/Modules/Nexora.Modules.Work/WorkModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/WorkModule.cs>)
 
-**Data S0520**  
+**Data S0521**  
 [backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0538 backend/src/Modules/Nexora.Modules.Work/WorkModule.cs
+Source reference S0539 backend/src/Modules/Nexora.Modules.Work/WorkModule.cs
 
 Extract from source line 25. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 25. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0520 backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs
+Source reference S0521 backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -165,7 +165,7 @@ SHA256 `82dce0d489a2d00deaf3715a4582af826a3c31d14f8af7e3c9bd092b223a5bc7`; 35 so
 0035  function Result({value}:{value:unknown}){if(value===null||value===undefined)return null;if(Array.isArray(value))return <ul className="space-y-3">{value.map((item,i)=><li className="rounded border p-3" key={i}><Result value={item}/></li>)}</ul>;if(typeof value==="object")return <dl className="space-y-2">{Object.entries(value).filter(([key])=>!key.endsWith("Id")&&!["id","version","tenantId","correlationId"].includes(key)).map(([key,item])=><div key={key}><dt className="text-sm font-medium text-slate-500">{key.replace(/([A-Z])/g," $1")}</dt><dd><Result value={item}/></dd></div>)}</dl>;return <span>{String(value)}</span>;}
 ```
 
-### S0538 WorkModule.cs
+### S0539 WorkModule.cs
 
 [backend/src/Modules/Nexora.Modules.Work/WorkModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/WorkModule.cs>)
 
@@ -221,7 +221,7 @@ SHA256 `2b32249e8167c8663a7741024130f3fd86fe9e99dd1533e61d0113204af7940e`; 47 so
 0047  public sealed record ImportVersion(Guid Version);
 ```
 
-### S0520 WorkEntities.cs
+### S0521 WorkEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs>)
 

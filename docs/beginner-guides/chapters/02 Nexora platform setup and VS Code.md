@@ -1,7 +1,7 @@
 # Nexora platform setup and VS Code
 
 Document 2 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Open the right project, recognise its folders, and run CRM, Portal and CMS locally.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Startup | S0004 next.config.ts | Local service setup |
-| Server | S0575 Program.cs | Endpoints or server rules |
-| Projects | S0185 Nexora.slnx | Backend solution projects |
+| Server | S0576 Program.cs | Endpoints or server rules |
+| Projects | S0186 Nexora.slnx | Backend solution projects |
 
 **Startup S0004**  
 [apps/web/next.config.ts](<D:/Projects new/Nexora/apps/web/next.config.ts>)
 
-**Server S0575**  
+**Server S0576**  
 [backend/src/Nexora.Api/Program.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/Program.cs>)
 
-**Projects S0185**  
+**Projects S0186**  
 [backend/Nexora.slnx](<D:/Projects new/Nexora/backend/Nexora.slnx>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -45,7 +45,7 @@ The complete HTML manual opens these source IDs inside its Source library. The W
 
 ### Read the code with an explanation
 
-Nexora uses one Next.js web project and a C# backend made of modules. The three local frontend processes share source but have separate debug outputs. A .tsx file draws a screen, .css changes appearance, .cs runs server rules, and .json supplies configuration. Company Dash appears in the launch menu but belongs to a separate repository; its source is outside this manual.
+Nexora uses one Next.js web project and a C# backend made of modules. The three local frontend processes share source but have separate debug outputs. A .tsx file draws a screen, .css changes appearance, .cs runs server rules, and .json supplies configuration. Company Dash appears in the launch menu and belongs to a separate repository; guides 31 to 36 and the company-dash source entries cover it in this manual.
 
 Source reference S0004 apps/web/next.config.ts
 
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0575 backend/src/Nexora.Api/Program.cs
+Source reference S0576 backend/src/Nexora.Api/Program.cs
 
 Extract from source line 83. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 83. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0185 backend/Nexora.slnx
+Source reference S0186 backend/Nexora.slnx
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -167,7 +167,7 @@ SHA256 `074cd2ab26cf11ba363d3977df22c2ef390fb45b774bb9e5baede47883bbd438`; 34 so
 0034  export default nextConfig;
 ```
 
-### S0575 Program.cs
+### S0576 Program.cs
 
 [backend/src/Nexora.Api/Program.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/Program.cs>)
 
@@ -302,7 +302,7 @@ SHA256 `ced3e2c3a7318361abebe285299108af8749da7016151db590405b9eac3d15ac`; 126 s
 0126  public partial class Program;
 ```
 
-### S0185 Nexora.slnx
+### S0186 Nexora.slnx
 
 [backend/Nexora.slnx](<D:/Projects new/Nexora/backend/Nexora.slnx>)
 

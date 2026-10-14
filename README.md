@@ -6,7 +6,7 @@ This standalone repository contains the complete Nexora platform source, tests, 
 
 Start with the [complete product blueprint](docs/blueprint/NEXORA_PRODUCT_BLUEPRINT.md) and the decisions in [docs/architecture](docs/architecture).
 
-New to coding? Use the [Nexora beginner guides](docs/beginner-guides/README.md): 30 guided topics, a combined Word manual, and a single offline HTML manual with the full captured frontend and backend code.
+New to coding? Use the [Nexora beginner guides](docs/beginner-guides/README.md): 36 guided topics covering Nexora and Company Dash, a combined Word manual, and a single offline HTML manual with the full captured frontend and backend code. The [maintenance workflow](docs/beginner-guides/DOCUMENTATION-MAINTENANCE.md) keeps the current copy updated and preserves dated versions.
 
 ## Delivery status
 

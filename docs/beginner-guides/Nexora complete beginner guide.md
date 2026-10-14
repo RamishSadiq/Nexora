@@ -1,9 +1,11 @@
 # Nexora complete beginner guide
 
-Source snapshot 13 October 2026 at 17:12 UTC  
+Source snapshot 14 October 2026 at 06:41 UTC  
 A learning manual for someone starting without coding experience
 
-This manual explains the complete Nexora platform through 30 beginner guides. Each guide identifies its screen, maps the frontend and backend files, follows the request into stored records, explains the code and gives a small practice task. The same structure as the approved Nexora login page guide is used throughout.
+This manual explains Nexora and its separate Company Dash maintenance application through 36 beginner guides. Each guide identifies its screen, maps the frontend and backend files, follows the request into stored records, explains the code and gives a small practice task. The same structure as the approved Nexora login page guide is used throughout.
+
+Guides 01 to 30 cover CRM, Portal, CMS, public website and the shared Nexora backend. Guides 31 to 36 cover Company Dash, including its complete frontend and backend source. The Company Dash source is a versioned documentation snapshot from its own repository; Nexora has no runtime dependency on that checkout.
 
 The Word edition is the readable teaching manual with short labelled code extracts. The self-contained HTML edition combines that same teaching text with the full captured source library. Open the HTML file in a browser, choose Full source library and read or search every included file without needing a server. Individual Word and Markdown guides are also saved alongside this manual.
 
@@ -45,6 +47,12 @@ Read the first login guide, then the platform setup and navigation guides. Conti
 28. [28 Nexora public website](#guide_28)
 29. [29 Nexora documents evidence and file safety](#guide_29)
 30. [30 Nexora backend database and maintenance](#guide_30)
+31. [31 Company Dash startup and dashboard](#guide_31)
+32. [32 Company Dash repository and source viewer](#guide_32)
+33. [33 Company Dash tasks agents and handoffs](#guide_33)
+34. [34 Company Dash QA and verification](#guide_34)
+35. [35 Company Dash proposal review and integration](#guide_35)
+36. [36 Company Dash history backups and settings](#guide_36)
 
 ## Start learning and run the platform
 
@@ -144,16 +152,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0011 page.tsx | Main UI or route for this topic |
-| Server | S0381 IdentityModule.cs | Endpoints or server rules |
-| Data | S0374 NexoraUser.cs | Data shape or persistence structure |
+| Server | S0382 IdentityModule.cs | Endpoints or server rules |
+| Data | S0375 NexoraUser.cs | Data shape or persistence structure |
 
 **Screen S0011**  
 [apps/web/src/app/(auth)/login/page.tsx](<D:/Projects new/Nexora/apps/web/src/app/(auth)/login/page.tsx>)
 
-**Server S0381**  
+**Server S0382**  
 [backend/src/Modules/Nexora.Modules.Identity/IdentityModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/IdentityModule.cs>)
 
-**Data S0374**  
+**Data S0375**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraUser.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraUser.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -769,16 +777,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Startup | S0004 next.config.ts | Local service setup |
-| Server | S0575 Program.cs | Endpoints or server rules |
-| Projects | S0185 Nexora.slnx | Backend solution projects |
+| Server | S0576 Program.cs | Endpoints or server rules |
+| Projects | S0186 Nexora.slnx | Backend solution projects |
 
 **Startup S0004**  
 [apps/web/next.config.ts](<D:/Projects new/Nexora/apps/web/next.config.ts>)
 
-**Server S0575**  
+**Server S0576**  
 [backend/src/Nexora.Api/Program.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/Program.cs>)
 
-**Projects S0185**  
+**Projects S0186**  
 [backend/Nexora.slnx](<D:/Projects new/Nexora/backend/Nexora.slnx>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -793,7 +801,7 @@ The complete HTML manual opens these source IDs inside its Source library. The W
 
 ### Read the code with an explanation
 
-Nexora uses one Next.js web project and a C# backend made of modules. The three local frontend processes share source but have separate debug outputs. A .tsx file draws a screen, .css changes appearance, .cs runs server rules, and .json supplies configuration. Company Dash appears in the launch menu but belongs to a separate repository; its source is outside this manual.
+Nexora uses one Next.js web project and a C# backend made of modules. The three local frontend processes share source but have separate debug outputs. A .tsx file draws a screen, .css changes appearance, .cs runs server rules, and .json supplies configuration. Company Dash appears in the launch menu and belongs to a separate repository; guides 31 to 36 and the company-dash source entries cover it in this manual.
 
 Source reference S0004 apps/web/next.config.ts
 
@@ -811,7 +819,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0575 backend/src/Nexora.Api/Program.cs
+Source reference S0576 backend/src/Nexora.Api/Program.cs
 
 Extract from source line 83. A fragment from a long line is shown without the rest of that line.
 
@@ -822,7 +830,7 @@ Extract from source line 83. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0185 backend/Nexora.slnx
+Source reference S0186 backend/Nexora.slnx
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -888,16 +896,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0058 app-shell.tsx | Main UI or route for this topic |
-| Server | S0408 NexoraClaimsPrincipalFactory.cs | Endpoints or server rules |
-| Data | S0378 RolePermission.cs | Data shape or persistence structure |
+| Server | S0409 NexoraClaimsPrincipalFactory.cs | Endpoints or server rules |
+| Data | S0379 RolePermission.cs | Data shape or persistence structure |
 
 **Screen S0058**  
 [apps/web/src/components/app-shell/app-shell.tsx](<D:/Projects new/Nexora/apps/web/src/components/app-shell/app-shell.tsx>)
 
-**Server S0408**  
+**Server S0409**  
 [backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs>)
 
-**Data S0378**  
+**Data S0379**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -930,7 +938,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0408 backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs
+Source reference S0409 backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -946,7 +954,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0378 backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs
+Source reference S0379 backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1013,16 +1021,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0101 live-dashboard.tsx | Main UI or route for this topic |
-| Server | S0577 ReportingEndpoints.cs | Endpoints or server rules |
-| Data | S0199 ReportDataset.cs | Data shape or persistence structure |
+| Server | S0578 ReportingEndpoints.cs | Endpoints or server rules |
+| Data | S0200 ReportDataset.cs | Data shape or persistence structure |
 
 **Screen S0101**  
 [apps/web/src/features/insights/live-dashboard.tsx](<D:/Projects new/Nexora/apps/web/src/features/insights/live-dashboard.tsx>)
 
-**Server S0577**  
+**Server S0578**  
 [backend/src/Nexora.Api/ReportingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/ReportingEndpoints.cs>)
 
-**Data S0199**  
+**Data S0200**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1055,7 +1063,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0577 backend/src/Nexora.Api/ReportingEndpoints.cs
+Source reference S0578 backend/src/Nexora.Api/ReportingEndpoints.cs
 
 Extract from source line 12. A fragment from a long line is shown without the rest of that line.
 
@@ -1066,7 +1074,7 @@ Extract from source line 12. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0199 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs
+Source reference S0200 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1133,16 +1141,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0080 crm-workspace.tsx | Main UI or route for this topic |
-| Server | S0249 CrmModule.cs | Endpoints or server rules |
-| Data | S0254 CrmEntities.cs | Data shape or persistence structure |
+| Server | S0250 CrmModule.cs | Endpoints or server rules |
+| Data | S0255 CrmEntities.cs | Data shape or persistence structure |
 
 **Screen S0080**  
 [apps/web/src/features/crm/crm-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/crm/crm-workspace.tsx>)
 
-**Server S0249**  
+**Server S0250**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs>)
 
-**Data S0254**  
+**Data S0255**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1175,7 +1183,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0249 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
+Source reference S0250 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
 
 Extract from source line 47. A fragment from a long line is shown without the rest of that line.
 
@@ -1186,7 +1194,7 @@ Extract from source line 47. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0254 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
+Source reference S0255 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1253,16 +1261,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0080 crm-workspace.tsx | Main UI or route for this topic |
-| Server | S0239 AccountContactEndpoints.cs | Endpoints or server rules |
-| Data | S0253 AccountContact.cs | Data shape or persistence structure |
+| Server | S0240 AccountContactEndpoints.cs | Endpoints or server rules |
+| Data | S0254 AccountContact.cs | Data shape or persistence structure |
 
 **Screen S0080**  
 [apps/web/src/features/crm/crm-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/crm/crm-workspace.tsx>)
 
-**Server S0239**  
+**Server S0240**  
 [backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs>)
 
-**Data S0253**  
+**Data S0254**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1295,7 +1303,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0239 backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs
+Source reference S0240 backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs
 
 Extract from source line 17. A fragment from a long line is shown without the rest of that line.
 
@@ -1306,7 +1314,7 @@ Extract from source line 17. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0253 backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs
+Source reference S0254 backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1373,16 +1381,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0141 filter-view-toolbar.tsx | Main UI or route for this topic |
-| Server | S0248 CrmListingSorting.cs | Endpoints or server rules |
-| Data | S0254 CrmEntities.cs | Data shape or persistence structure |
+| Server | S0249 CrmListingSorting.cs | Endpoints or server rules |
+| Data | S0255 CrmEntities.cs | Data shape or persistence structure |
 
 **Screen S0141**  
 [apps/web/src/features/shared/filter-view-toolbar.tsx](<D:/Projects new/Nexora/apps/web/src/features/shared/filter-view-toolbar.tsx>)
 
-**Server S0248**  
+**Server S0249**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs>)
 
-**Data S0254**  
+**Data S0255**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1415,7 +1423,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0248 backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs
+Source reference S0249 backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs
 
 Extract from source line 14. A fragment from a long line is shown without the rest of that line.
 
@@ -1426,7 +1434,7 @@ Extract from source line 14. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0254 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
+Source reference S0255 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1492,16 +1500,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0088 record-profiles.tsx | Main UI or route for this topic |
-| Server | S0251 CrmProfiles.cs | Endpoints or server rules |
-| Data | S0256 RecordProfiles.cs | Data shape or persistence structure |
+| Server | S0252 CrmProfiles.cs | Endpoints or server rules |
+| Data | S0257 RecordProfiles.cs | Data shape or persistence structure |
 
 **Screen S0088**  
 [apps/web/src/features/crm/record-profiles.tsx](<D:/Projects new/Nexora/apps/web/src/features/crm/record-profiles.tsx>)
 
-**Server S0251**  
+**Server S0252**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs>)
 
-**Data S0256**  
+**Data S0257**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1534,7 +1542,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0251 backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs
+Source reference S0252 backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs
 
 Extract from source line 12. A fragment from a long line is shown without the rest of that line.
 
@@ -1545,7 +1553,7 @@ Extract from source line 12. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0256 backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs
+Source reference S0257 backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1611,16 +1619,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0115 membership-workspace.tsx | Main UI or route for this topic |
-| Server | S0511 MembershipModule.cs | Endpoints or server rules |
-| Data | S0417 MembershipEntities.cs | Data shape or persistence structure |
+| Server | S0512 MembershipModule.cs | Endpoints or server rules |
+| Data | S0418 MembershipEntities.cs | Data shape or persistence structure |
 
 **Screen S0115**  
 [apps/web/src/features/membership/membership-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/membership/membership-workspace.tsx>)
 
-**Server S0511**  
+**Server S0512**  
 [backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs>)
 
-**Data S0417**  
+**Data S0418**  
 [backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1653,7 +1661,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0511 backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs
+Source reference S0512 backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs
 
 Extract from source line 54. A fragment from a long line is shown without the rest of that line.
 
@@ -1664,7 +1672,7 @@ Extract from source line 54. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0417 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
+Source reference S0418 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1731,16 +1739,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0103 membership-application-details.tsx | Main UI or route for this topic |
-| Server | S0505 MembershipApplicationDetails.cs | Endpoints or server rules |
-| Data | S0417 MembershipEntities.cs | Data shape or persistence structure |
+| Server | S0506 MembershipApplicationDetails.cs | Endpoints or server rules |
+| Data | S0418 MembershipEntities.cs | Data shape or persistence structure |
 
 **Screen S0103**  
 [apps/web/src/features/membership/membership-application-details.tsx](<D:/Projects new/Nexora/apps/web/src/features/membership/membership-application-details.tsx>)
 
-**Server S0505**  
+**Server S0506**  
 [backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs>)
 
-**Data S0417**  
+**Data S0418**  
 [backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1773,7 +1781,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0505 backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs
+Source reference S0506 backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs
 
 Extract from source line 21. A fragment from a long line is shown without the rest of that line.
 
@@ -1784,7 +1792,7 @@ Extract from source line 21. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0417 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
+Source reference S0418 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1850,16 +1858,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0113 membership-setup.tsx | Main UI or route for this topic |
-| Server | S0511 MembershipModule.cs | Endpoints or server rules |
-| Data | S0417 MembershipEntities.cs | Data shape or persistence structure |
+| Server | S0512 MembershipModule.cs | Endpoints or server rules |
+| Data | S0418 MembershipEntities.cs | Data shape or persistence structure |
 
 **Screen S0113**  
 [apps/web/src/features/membership/membership-setup.tsx](<D:/Projects new/Nexora/apps/web/src/features/membership/membership-setup.tsx>)
 
-**Server S0511**  
+**Server S0512**  
 [backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs>)
 
-**Data S0417**  
+**Data S0418**  
 [backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -1892,7 +1900,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0511 backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs
+Source reference S0512 backend/src/Modules/Nexora.Modules.Membership/MembershipModule.cs
 
 Extract from source line 54. A fragment from a long line is shown without the rest of that line.
 
@@ -1903,7 +1911,7 @@ Extract from source line 54. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0417 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
+Source reference S0418 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1970,16 +1978,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0097 events-workspace.tsx | Main UI or route for this topic |
-| Server | S0328 EventsModule.cs | Endpoints or server rules |
-| Data | S0327 EventEntities.cs | Data shape or persistence structure |
+| Server | S0329 EventsModule.cs | Endpoints or server rules |
+| Data | S0328 EventEntities.cs | Data shape or persistence structure |
 
 **Screen S0097**  
 [apps/web/src/features/events/events-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/events/events-workspace.tsx>)
 
-**Server S0328**  
+**Server S0329**  
 [backend/src/Modules/Nexora.Modules.Events/EventsModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/EventsModule.cs>)
 
-**Data S0327**  
+**Data S0328**  
 [backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2012,7 +2020,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0328 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
+Source reference S0329 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
 
 Extract from source line 27. A fragment from a long line is shown without the rest of that line.
 
@@ -2023,7 +2031,7 @@ Extract from source line 27. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0327 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
+Source reference S0328 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2090,16 +2098,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0097 events-workspace.tsx | Main UI or route for this topic |
-| Server | S0328 EventsModule.cs | Endpoints or server rules |
-| Data | S0327 EventEntities.cs | Data shape or persistence structure |
+| Server | S0329 EventsModule.cs | Endpoints or server rules |
+| Data | S0328 EventEntities.cs | Data shape or persistence structure |
 
 **Screen S0097**  
 [apps/web/src/features/events/events-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/events/events-workspace.tsx>)
 
-**Server S0328**  
+**Server S0329**  
 [backend/src/Modules/Nexora.Modules.Events/EventsModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/EventsModule.cs>)
 
-**Data S0327**  
+**Data S0328**  
 [backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2132,7 +2140,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0328 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
+Source reference S0329 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
 
 Extract from source line 27. A fragment from a long line is shown without the rest of that line.
 
@@ -2143,7 +2151,7 @@ Extract from source line 27. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0327 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
+Source reference S0328 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2210,16 +2218,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0097 events-workspace.tsx | Main UI or route for this topic |
-| Server | S0328 EventsModule.cs | Endpoints or server rules |
-| Data | S0327 EventEntities.cs | Data shape or persistence structure |
+| Server | S0329 EventsModule.cs | Endpoints or server rules |
+| Data | S0328 EventEntities.cs | Data shape or persistence structure |
 
 **Screen S0097**  
 [apps/web/src/features/events/events-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/events/events-workspace.tsx>)
 
-**Server S0328**  
+**Server S0329**  
 [backend/src/Modules/Nexora.Modules.Events/EventsModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/EventsModule.cs>)
 
-**Data S0327**  
+**Data S0328**  
 [backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2252,7 +2260,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0328 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
+Source reference S0329 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
 
 Extract from source line 27. A fragment from a long line is shown without the rest of that line.
 
@@ -2263,7 +2271,7 @@ Extract from source line 27. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0327 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
+Source reference S0328 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2330,16 +2338,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0098 finance-workspace.tsx | Main UI or route for this topic |
-| Server | S0348 FinanceModule.cs | Endpoints or server rules |
-| Data | S0347 FinanceEntities.cs | Data shape or persistence structure |
+| Server | S0349 FinanceModule.cs | Endpoints or server rules |
+| Data | S0348 FinanceEntities.cs | Data shape or persistence structure |
 
 **Screen S0098**  
 [apps/web/src/features/finance/finance-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/finance/finance-workspace.tsx>)
 
-**Server S0348**  
+**Server S0349**  
 [backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs>)
 
-**Data S0347**  
+**Data S0348**  
 [backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2372,7 +2380,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0348 backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs
+Source reference S0349 backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs
 
 Extract from source line 31. A fragment from a long line is shown without the rest of that line.
 
@@ -2383,7 +2391,7 @@ Extract from source line 31. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0347 backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs
+Source reference S0348 backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2449,16 +2457,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0118 operations-workspace.tsx | Main UI or route for this topic |
-| Server | S0308 EngagementModule.cs | Endpoints or server rules |
-| Data | S0307 EngagementEntities.cs | Data shape or persistence structure |
+| Server | S0309 EngagementModule.cs | Endpoints or server rules |
+| Data | S0308 EngagementEntities.cs | Data shape or persistence structure |
 
 **Screen S0118**  
 [apps/web/src/features/operations/operations-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/operations/operations-workspace.tsx>)
 
-**Server S0308**  
+**Server S0309**  
 [backend/src/Modules/Nexora.Modules.Engagement/EngagementModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Engagement/EngagementModule.cs>)
 
-**Data S0307**  
+**Data S0308**  
 [backend/src/Modules/Nexora.Modules.Engagement/Domain/EngagementEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Engagement/Domain/EngagementEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2491,7 +2499,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0308 backend/src/Modules/Nexora.Modules.Engagement/EngagementModule.cs
+Source reference S0309 backend/src/Modules/Nexora.Modules.Engagement/EngagementModule.cs
 
 Extract from source line 28. A fragment from a long line is shown without the rest of that line.
 
@@ -2502,7 +2510,7 @@ Extract from source line 28. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0307 backend/src/Modules/Nexora.Modules.Engagement/Domain/EngagementEntities.cs
+Source reference S0308 backend/src/Modules/Nexora.Modules.Engagement/Domain/EngagementEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2568,16 +2576,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0118 operations-workspace.tsx | Main UI or route for this topic |
-| Server | S0538 WorkModule.cs | Endpoints or server rules |
-| Data | S0520 WorkEntities.cs | Data shape or persistence structure |
+| Server | S0539 WorkModule.cs | Endpoints or server rules |
+| Data | S0521 WorkEntities.cs | Data shape or persistence structure |
 
 **Screen S0118**  
 [apps/web/src/features/operations/operations-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/operations/operations-workspace.tsx>)
 
-**Server S0538**  
+**Server S0539**  
 [backend/src/Modules/Nexora.Modules.Work/WorkModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/WorkModule.cs>)
 
-**Data S0520**  
+**Data S0521**  
 [backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2610,7 +2618,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0538 backend/src/Modules/Nexora.Modules.Work/WorkModule.cs
+Source reference S0539 backend/src/Modules/Nexora.Modules.Work/WorkModule.cs
 
 Extract from source line 25. A fragment from a long line is shown without the rest of that line.
 
@@ -2621,7 +2629,7 @@ Extract from source line 25. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0520 backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs
+Source reference S0521 backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2684,16 +2692,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0118 operations-workspace.tsx | Main UI or route for this topic |
-| Server | S0538 WorkModule.cs | Endpoints or server rules |
-| Data | S0520 WorkEntities.cs | Data shape or persistence structure |
+| Server | S0539 WorkModule.cs | Endpoints or server rules |
+| Data | S0521 WorkEntities.cs | Data shape or persistence structure |
 
 **Screen S0118**  
 [apps/web/src/features/operations/operations-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/operations/operations-workspace.tsx>)
 
-**Server S0538**  
+**Server S0539**  
 [backend/src/Modules/Nexora.Modules.Work/WorkModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/WorkModule.cs>)
 
-**Data S0520**  
+**Data S0521**  
 [backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2726,7 +2734,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0538 backend/src/Modules/Nexora.Modules.Work/WorkModule.cs
+Source reference S0539 backend/src/Modules/Nexora.Modules.Work/WorkModule.cs
 
 Extract from source line 25. A fragment from a long line is shown without the rest of that line.
 
@@ -2737,7 +2745,7 @@ Extract from source line 25. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0520 backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs
+Source reference S0521 backend/src/Modules/Nexora.Modules.Work/Domain/WorkEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2800,16 +2808,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0099 insights-workspace.tsx | Main UI or route for this topic |
-| Server | S0577 ReportingEndpoints.cs | Endpoints or server rules |
-| Data | S0199 ReportDataset.cs | Data shape or persistence structure |
+| Server | S0578 ReportingEndpoints.cs | Endpoints or server rules |
+| Data | S0200 ReportDataset.cs | Data shape or persistence structure |
 
 **Screen S0099**  
 [apps/web/src/features/insights/insights-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/insights/insights-workspace.tsx>)
 
-**Server S0577**  
+**Server S0578**  
 [backend/src/Nexora.Api/ReportingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/ReportingEndpoints.cs>)
 
-**Data S0199**  
+**Data S0200**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2842,7 +2850,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0577 backend/src/Nexora.Api/ReportingEndpoints.cs
+Source reference S0578 backend/src/Nexora.Api/ReportingEndpoints.cs
 
 Extract from source line 12. A fragment from a long line is shown without the rest of that line.
 
@@ -2853,7 +2861,7 @@ Extract from source line 12. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0199 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs
+Source reference S0200 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -2920,16 +2928,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0064 access-workspace.tsx | Main UI or route for this topic |
-| Server | S0370 AdministrationEndpoints.cs | Endpoints or server rules |
-| Data | S0373 NexoraRole.cs | Data shape or persistence structure |
+| Server | S0371 AdministrationEndpoints.cs | Endpoints or server rules |
+| Data | S0374 NexoraRole.cs | Data shape or persistence structure |
 
 **Screen S0064**  
 [apps/web/src/features/administration/access-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/administration/access-workspace.tsx>)
 
-**Server S0370**  
+**Server S0371**  
 [backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs>)
 
-**Data S0373**  
+**Data S0374**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -2962,7 +2970,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0370 backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs
+Source reference S0371 backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs
 
 Extract from source line 23. A fragment from a long line is shown without the rest of that line.
 
@@ -2973,7 +2981,7 @@ Extract from source line 23. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0373 backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs
+Source reference S0374 backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3040,16 +3048,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0136 automation-controller.tsx | Main UI or route for this topic |
-| Server | S0191 AutomationConfiguration.cs | Endpoints or server rules |
-| Data | S0193 EntityAttributes.cs | Data shape or persistence structure |
+| Server | S0192 AutomationConfiguration.cs | Endpoints or server rules |
+| Data | S0194 EntityAttributes.cs | Data shape or persistence structure |
 
 **Screen S0136**  
 [apps/web/src/features/shared/automation-controller.tsx](<D:/Projects new/Nexora/apps/web/src/features/shared/automation-controller.tsx>)
 
-**Server S0191**  
+**Server S0192**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs>)
 
-**Data S0193**  
+**Data S0194**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3082,7 +3090,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0191 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs
+Source reference S0192 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs
 
 Extract from source line 60. A fragment from a long line is shown without the rest of that line.
 
@@ -3093,7 +3101,7 @@ Extract from source line 60. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0193 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs
+Source reference S0194 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3160,16 +3168,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0156 workflow-designer-workspace.tsx | Main UI or route for this topic |
-| Server | S0564 WorkflowModule.cs | Endpoints or server rules |
-| Data | S0563 WorkflowModels.cs | Data shape or persistence structure |
+| Server | S0565 WorkflowModule.cs | Endpoints or server rules |
+| Data | S0564 WorkflowModels.cs | Data shape or persistence structure |
 
 **Screen S0156**  
 [apps/web/src/features/workflows/workflow-designer-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/workflows/workflow-designer-workspace.tsx>)
 
-**Server S0564**  
+**Server S0565**  
 [backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs>)
 
-**Data S0563**  
+**Data S0564**  
 [backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3202,7 +3210,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0564 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs
+Source reference S0565 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs
 
 Extract from source line 33. A fragment from a long line is shown without the rest of that line.
 
@@ -3213,7 +3221,7 @@ Extract from source line 33. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0563 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs
+Source reference S0564 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3280,16 +3288,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0013 page.tsx | Main UI or route for this topic |
-| Server | S0249 CrmModule.cs | Endpoints or server rules |
-| Data | S0201 CrmContextContracts.cs | Data shape or persistence structure |
+| Server | S0250 CrmModule.cs | Endpoints or server rules |
+| Data | S0202 CrmContextContracts.cs | Data shape or persistence structure |
 
 **Screen S0013**  
 [apps/web/src/app/(platform)/assistant/page.tsx](<D:/Projects new/Nexora/apps/web/src/app/(platform)/assistant/page.tsx>)
 
-**Server S0249**  
+**Server S0250**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs>)
 
-**Data S0201**  
+**Data S0202**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3322,7 +3330,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0249 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
+Source reference S0250 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
 
 Extract from source line 47. A fragment from a long line is shown without the rest of that line.
 
@@ -3333,7 +3341,7 @@ Extract from source line 47. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0201 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs
+Source reference S0202 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3400,16 +3408,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0123 member-portal.tsx | Main UI or route for this topic |
-| Server | S0401 PortalOnboardingEndpoints.cs | Endpoints or server rules |
-| Data | S0375 PortalAccess.cs | Data shape or persistence structure |
+| Server | S0402 PortalOnboardingEndpoints.cs | Endpoints or server rules |
+| Data | S0376 PortalAccess.cs | Data shape or persistence structure |
 
 **Screen S0123**  
 [apps/web/src/features/portal/member-portal.tsx](<D:/Projects new/Nexora/apps/web/src/features/portal/member-portal.tsx>)
 
-**Server S0401**  
+**Server S0402**  
 [backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs>)
 
-**Data S0375**  
+**Data S0376**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3442,7 +3450,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0401 backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs
+Source reference S0402 backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs
 
 Extract from source line 29. A fragment from a long line is shown without the rest of that line.
 
@@ -3453,7 +3461,7 @@ Extract from source line 29. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0375 backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs
+Source reference S0376 backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3520,16 +3528,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0123 member-portal.tsx | Main UI or route for this topic |
-| Server | S0399 PortalEndpoints.cs | Endpoints or server rules |
-| Data | S0376 PortalOrganisationGrant.cs | Data shape or persistence structure |
+| Server | S0400 PortalEndpoints.cs | Endpoints or server rules |
+| Data | S0377 PortalOrganisationGrant.cs | Data shape or persistence structure |
 
 **Screen S0123**  
 [apps/web/src/features/portal/member-portal.tsx](<D:/Projects new/Nexora/apps/web/src/features/portal/member-portal.tsx>)
 
-**Server S0399**  
+**Server S0400**  
 [backend/src/Modules/Nexora.Modules.Identity/PortalEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/PortalEndpoints.cs>)
 
-**Data S0376**  
+**Data S0377**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/PortalOrganisationGrant.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/PortalOrganisationGrant.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3562,7 +3570,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0399 backend/src/Modules/Nexora.Modules.Identity/PortalEndpoints.cs
+Source reference S0400 backend/src/Modules/Nexora.Modules.Identity/PortalEndpoints.cs
 
 Extract from source line 37. A fragment from a long line is shown without the rest of that line.
 
@@ -3573,7 +3581,7 @@ Extract from source line 37. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0376 backend/src/Modules/Nexora.Modules.Identity/Domain/PortalOrganisationGrant.cs
+Source reference S0377 backend/src/Modules/Nexora.Modules.Identity/Domain/PortalOrganisationGrant.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3640,16 +3648,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0067 portal-editor.tsx | Main UI or route for this topic |
-| Server | S0235 PortalPresentation.cs | Endpoints or server rules |
-| Data | S0216 ContentEntities.cs | Data shape or persistence structure |
+| Server | S0236 PortalPresentation.cs | Endpoints or server rules |
+| Data | S0217 ContentEntities.cs | Data shape or persistence structure |
 
 **Screen S0067**  
 [apps/web/src/features/content/portal-editor.tsx](<D:/Projects new/Nexora/apps/web/src/features/content/portal-editor.tsx>)
 
-**Server S0235**  
+**Server S0236**  
 [backend/src/Modules/Nexora.Modules.Content/PortalPresentation.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/PortalPresentation.cs>)
 
-**Data S0216**  
+**Data S0217**  
 [backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3682,7 +3690,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0235 backend/src/Modules/Nexora.Modules.Content/PortalPresentation.cs
+Source reference S0236 backend/src/Modules/Nexora.Modules.Content/PortalPresentation.cs
 
 Extract from source line 73. A fragment from a long line is shown without the rest of that line.
 
@@ -3693,7 +3701,7 @@ Extract from source line 73. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0216 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
+Source reference S0217 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3760,16 +3768,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0066 content-workspace.tsx | Main UI or route for this topic |
-| Server | S0218 ContentModule.cs | Endpoints or server rules |
-| Data | S0216 ContentEntities.cs | Data shape or persistence structure |
+| Server | S0219 ContentModule.cs | Endpoints or server rules |
+| Data | S0217 ContentEntities.cs | Data shape or persistence structure |
 
 **Screen S0066**  
 [apps/web/src/features/content/content-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/content/content-workspace.tsx>)
 
-**Server S0218**  
+**Server S0219**  
 [backend/src/Modules/Nexora.Modules.Content/ContentModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentModule.cs>)
 
-**Data S0216**  
+**Data S0217**  
 [backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3802,7 +3810,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0218 backend/src/Modules/Nexora.Modules.Content/ContentModule.cs
+Source reference S0219 backend/src/Modules/Nexora.Modules.Content/ContentModule.cs
 
 Extract from source line 33. A fragment from a long line is shown without the rest of that line.
 
@@ -3813,7 +3821,7 @@ Extract from source line 33. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0216 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
+Source reference S0217 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3880,16 +3888,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0068 site-renderer.tsx | Main UI or route for this topic |
-| Server | S0219 ContentPublic.cs | Endpoints or server rules |
-| Data | S0216 ContentEntities.cs | Data shape or persistence structure |
+| Server | S0220 ContentPublic.cs | Endpoints or server rules |
+| Data | S0217 ContentEntities.cs | Data shape or persistence structure |
 
 **Screen S0068**  
 [apps/web/src/features/content/site-renderer.tsx](<D:/Projects new/Nexora/apps/web/src/features/content/site-renderer.tsx>)
 
-**Server S0219**  
+**Server S0220**  
 [backend/src/Modules/Nexora.Modules.Content/ContentPublic.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentPublic.cs>)
 
-**Data S0216**  
+**Data S0217**  
 [backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -3922,7 +3930,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0219 backend/src/Modules/Nexora.Modules.Content/ContentPublic.cs
+Source reference S0220 backend/src/Modules/Nexora.Modules.Content/ContentPublic.cs
 
 Extract from source line 40. A fragment from a long line is shown without the rest of that line.
 
@@ -3933,7 +3941,7 @@ Extract from source line 40. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0216 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
+Source reference S0217 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -3999,16 +4007,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0133 application-evidence.tsx | Main UI or route for this topic |
-| Server | S0186 DocumentSafety.cs | Endpoints or server rules |
-| Data | S0415 ApplicationEvidence.cs | Data shape or persistence structure |
+| Server | S0187 DocumentSafety.cs | Endpoints or server rules |
+| Data | S0416 ApplicationEvidence.cs | Data shape or persistence structure |
 
 **Screen S0133**  
 [apps/web/src/features/shared/application-evidence.tsx](<D:/Projects new/Nexora/apps/web/src/features/shared/application-evidence.tsx>)
 
-**Server S0186**  
+**Server S0187**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs>)
 
-**Data S0415**  
+**Data S0416**  
 [backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -4041,7 +4049,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0186 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs
+Source reference S0187 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs
 
 Extract from source line 17. A fragment from a long line is shown without the rest of that line.
 
@@ -4052,7 +4060,7 @@ Extract from source line 17. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0415 backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs
+Source reference S0416 backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -4117,17 +4125,17 @@ The diagram shows the file roles. The full paths below are what you paste into C
 
 | Role | File and source ID | What it does |
 | --- | --- | --- |
-| Startup | S0676 Prepare-LocalDebug.ps1 | Local service setup |
-| Server | S0575 Program.cs | Endpoints or server rules |
-| Data | S0195 TenantDbContext.cs | Data shape or persistence structure |
+| Startup | S0678 Prepare-LocalDebug.ps1 | Local service setup |
+| Server | S0576 Program.cs | Endpoints or server rules |
+| Data | S0196 TenantDbContext.cs | Data shape or persistence structure |
 
-**Startup S0676**  
+**Startup S0678**  
 [scripts/Prepare-LocalDebug.ps1](<D:/Projects new/Nexora/scripts/Prepare-LocalDebug.ps1>)
 
-**Server S0575**  
+**Server S0576**  
 [backend/src/Nexora.Api/Program.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/Program.cs>)
 
-**Data S0195**  
+**Data S0196**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -4144,7 +4152,7 @@ The complete HTML manual opens these source IDs inside its Source library. The W
 
 A DbContext is a C# gateway to a group of tables. Different modules can use the same SQL database with separate schemas and migration histories. Identity plus eight business and Workflow contexts totals nine contexts in current source; read the generated context inventory for the exact names. Never apply one context's migration to another or drop a database to repair a missing table.
 
-Source reference S0676 scripts/Prepare-LocalDebug.ps1
+Source reference S0678 scripts/Prepare-LocalDebug.ps1
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -4160,7 +4168,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0575 backend/src/Nexora.Api/Program.cs
+Source reference S0576 backend/src/Nexora.Api/Program.cs
 
 Extract from source line 83. A fragment from a long line is shown without the rest of that line.
 
@@ -4171,7 +4179,7 @@ Extract from source line 83. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0195 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs
+Source reference S0196 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -4216,6 +4224,690 @@ A successful build, a health response and production approval are different resu
 ### Continue learning
 
 Related guides [02 Nexora platform setup and VS Code](#guide_02), [18 Nexora imports exports and migration](#guide_18), [20 Nexora administration and access](#guide_20), [22 Nexora workflow designer and runtime](#guide_22), [29 Nexora documents evidence and file safety](#guide_29).
+
+<!-- CHAPTER 31 -->
+## 31 Company Dash startup and dashboard
+
+Run the local maintenance dashboard and understand how it connects to Nexora.
+
+### Recognise the screen and its scope
+
+Open `http://127.0.0.1:8000/#overview`. Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.
+
+This guide covers Local startup; Overview and navigation; Configuration diagnostics; Local request token; Separate repository and data.
+
+![File journey for Company Dash startup and dashboard](assets/platform/guide-31-map.png)
+
+The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.
+
+### Find the files in VS Code
+
+| Role | File and source ID | What it does |
+| --- | --- | --- |
+| Screen | S0698 index.html | Main UI or route for this topic |
+| Server | S0701 app.mjs | Endpoints or server rules |
+| Data | S0704 config.mjs | Data shape or persistence structure |
+
+**Screen S0698**  
+[public/index.html](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/index.html>)
+
+**Server S0701**  
+[server/app.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/app.mjs>)
+
+**Data S0704**  
+[server/config.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/config.mjs>)
+
+Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.
+
+### Follow the request and the records
+
+1. Open the Company Dash folder in its own VS Code window and run node server/main.mjs.
+2. The Node server serves public/index.html, app.js and styles.css on loopback port 8000.
+3. The browser gets a local request token from /api/session and sends X-Command-Token with API requests.
+4. GET /api/state returns repository, tasks, runs and provider status.
+5. The browser renders the selected view; the server keeps task history in its own SQLite database.
+
+### Read the code with an explanation
+
+Company Dash is a separate Node.js application, not a Nexora API module. Its public folder is the frontend; server contains the backend. It needs Node 24 or newer for built-in SQLite and has no frontend build or npm dependencies. Run it from its own folder; opening index.html as a file will not provide its API. config.example.json shows safe defaults; local configuration and data stay private. The dashboard can inspect the Nexora checkout without becoming a runtime dependency of CRM, Portal or CMS.
+
+Source reference S0698 company-dash/public/index.html
+
+Extract from source line 8. A fragment from a long line is shown without the rest of that line.
+
+```html
+0008      <nav aria-label="Main navigation">
+```
+
+
+index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.
+
+Source reference S0701 company-dash/server/app.mjs
+
+Extract from source line 23. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0023  export function createApp(config) {
+```
+
+
+The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.
+
+Source reference S0704 company-dash/server/config.mjs
+
+Selected opening lines with their original numbers. The complete file is in the HTML source library.
+
+```mjs
+0001  import fs from 'node:fs';
+0002  import path from 'node:path';
+0003  import { fileURLToPath } from 'node:url';
+0004  import { resolveCodexPath } from './codex-path.mjs';
+0006  export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+0007  const local = path.join(root, 'config.local.json');
+```
+
+
+store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.
+
+### Make or trace your first change
+
+1. Press Ctrl+P and open [public/index.html](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/index.html>).
+2. Press Ctrl+F and search for `Work board<span`. In this snapshot it appears at line 10.
+3. Change the sidebar wording only, keeping the href, data-view and span intact. Refresh Company Dash and confirm the same work view opens. Restore the text after practising.
+4. Replace only `Work board<span` with `Work requests<span` in that intended location. Keep quotes, tags, JSON keys and routes intact.
+5. Save with Ctrl+S. Inspect Problems and the local screen. Review the diff and restore the original text when you finish practising.
+
+Extract from source line 10. A fragment from a long line is shown without the rest of that line.
+
+```html
+0010        <a href="#work" data-view="work"><span class="nav-icon">▤</span>Work board<span id="work-count" class="nav-count">0</span></a>
+```
+
+
+These exercises have not been applied to the application. Their search phrases are verified against the captured source. Line numbers can move; the phrase and file path are your main navigation aids.
+
+### Check a change and diagnose problems
+
+Confirm the original screen still loads, the changed words appear in the intended place, and another screen using the same component still behaves correctly. If an action fails, inspect the browser Network response, the relevant helper and server validation message. Use the common error table at the beginning of the manual. Reload on a version conflict instead of removing the version check.
+
+A syntax error after a text edit usually means a quote, brace or closing tag changed. Compare your diff with the original. An unchanged browser result can mean the wrong port, a saved published configuration overriding a default, or a running API that has not reloaded.
+
+### Understand the current limits
+
+The dashboard is local and single-user. Its request token and Host/Origin checks are not public multi-user authentication. Documentation capture does not start the dashboard, run an agent or change task history.
+
+### Continue learning
+
+Related guides [02 Nexora platform setup and VS Code](#guide_02), [32 Company Dash repository and source viewer](#guide_32), [33 Company Dash tasks agents and handoffs](#guide_33), [36 Company Dash history backups and settings](#guide_36).
+
+<!-- CHAPTER 32 -->
+## 32 Company Dash repository and source viewer
+
+Find Nexora source and documents and understand which files enter an isolated snapshot.
+
+### Recognise the screen and its scope
+
+Open `http://127.0.0.1:8000/#knowledge`. Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.
+
+This guide covers Repository refresh; File and code search; Source reader; Excluded and linked paths; Snapshot fingerprints.
+
+![File journey for Company Dash repository and source viewer](assets/platform/guide-32-map.png)
+
+The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.
+
+### Find the files in VS Code
+
+| Role | File and source ID | What it does |
+| --- | --- | --- |
+| Screen | S0696 app.js | Main UI or route for this topic |
+| Server | S0708 repository.mjs | Endpoints or server rules |
+| Data | S0704 config.mjs | Data shape or persistence structure |
+
+**Screen S0696**  
+[public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>)
+
+**Server S0708**  
+[server/repository.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/repository.mjs>)
+
+**Data S0704**  
+[server/config.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/config.mjs>)
+
+Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.
+
+### Follow the request and the records
+
+1. Repository and docs renders the current inventory returned by the server.
+2. Refresh requests POST /api/repository/scan; search requests GET /api/repository/files.
+3. Selecting a file requests GET /api/repository/file with its relative path.
+4. readSource checks path confinement and rejects excluded or linked paths.
+5. An agent snapshot copies allowed current source and records fingerprints; it leaves the original checkout unchanged.
+
+### Read the code with an explanation
+
+public/app.js defines knowledge() and the shared api() request helper. server/app.mjs maps the requests and delegates source access to repository.mjs. The visible inventory describes the configured Nexora repository, not the Company Dash implementation. Snapshots include allowed dirty and untracked source; secrets, runtime configuration, dependency folders and build outputs are excluded. A fingerprint is a content signature used to notice that a file or proposal changed; it is not a security review or a test result.
+
+Source reference S0696 company-dash/public/app.js
+
+Extract from source line 58. A fragment from a long line is shown without the rest of that line.
+
+```js
+0058  function knowledge() {
+```
+
+
+index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.
+
+Source reference S0708 company-dash/server/repository.mjs
+
+Extract from source line 16. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0016  export async function readSource(root, relative) {
+```
+
+
+The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.
+
+Source reference S0704 company-dash/server/config.mjs
+
+Selected opening lines with their original numbers. The complete file is in the HTML source library.
+
+```mjs
+0001  import fs from 'node:fs';
+0002  import path from 'node:path';
+0003  import { fileURLToPath } from 'node:url';
+0004  import { resolveCodexPath } from './codex-path.mjs';
+0006  export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+0007  const local = path.join(root, 'config.local.json');
+```
+
+
+store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.
+
+### Make or trace your first change
+
+1. Press Ctrl+P and open [public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>).
+2. Press Ctrl+F and search for `async function searchFiles()`. In this snapshot it appears at line 110.
+3. Read-only exercise: trace the file-search request into app.mjs, then locate readSource in repository.mjs. Explain why a path containing parent-directory traversal or a linked folder is rejected.
+4. Record the file, request path and server handler you found. This exercise is read-only; no stored records need to change.
+
+Extract from source line 110. A fragment from a long line is shown without the rest of that line.
+
+```js
+0110  async function searchFiles() { const result=await api(`/api/repository/fi
+```
+
+
+These exercises have not been applied to the application. Their search phrases are verified against the captured source. Line numbers can move; the phrase and file path are your main navigation aids.
+
+### Check a change and diagnose problems
+
+Confirm the original screen still loads, the changed words appear in the intended place, and another screen using the same component still behaves correctly. If an action fails, inspect the browser Network response, the relevant helper and server validation message. Use the common error table at the beginning of the manual. Reload on a version conflict instead of removing the version check.
+
+A syntax error after a text edit usually means a quote, brace or closing tag changed. Compare your diff with the original. An unchanged browser result can mean the wrong port, a saved published configuration overriding a default, or a running API that has not reloaded.
+
+### Understand the current limits
+
+Snapshots are not atomic against another process editing files during capture. Refresh after source changes and review exclusions. The complete learning manual embeds a separate dated Company Dash source copy; it does not expose private local configuration or runtime databases.
+
+### Continue learning
+
+Related guides [30 Nexora backend database and maintenance](#guide_30), [31 Company Dash startup and dashboard](#guide_31), [33 Company Dash tasks agents and handoffs](#guide_33), [35 Company Dash proposal review and integration](#guide_35).
+
+<!-- CHAPTER 33 -->
+## 33 Company Dash tasks agents and handoffs
+
+Follow a request from its form through a specialist run and a reviewed handoff.
+
+### Recognise the screen and its scope
+
+Open `http://127.0.0.1:8000/#work`, `http://127.0.0.1:8000/#agents`. Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.
+
+This guide covers Work board and filters; Six specialist roles; Linked workflows; Conversations and reports; Queued runs cancellation and restart recovery.
+
+![File journey for Company Dash tasks agents and handoffs](assets/platform/guide-33-map.png)
+
+The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.
+
+### Find the files in VS Code
+
+| Role | File and source ID | What it does |
+| --- | --- | --- |
+| Screen | S0696 app.js | Main UI or route for this topic |
+| Server | S0710 runner.mjs | Endpoints or server rules |
+| Data | S0711 store.mjs | Data shape or persistence structure |
+
+**Screen S0696**  
+[public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>)
+
+**Server S0710**  
+[server/runner.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/runner.mjs>)
+
+**Data S0711**  
+[server/store.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/store.mjs>)
+
+Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.
+
+### Follow the request and the records
+
+1. The request form sends title, description, agent, area, priority and workflow choice to POST /api/tasks.
+2. The server validates the fields and stores tasks and initial messages in a SQLite transaction.
+3. A linked workflow creates dependent tasks; each waits for the previous accepted handoff.
+4. Starting a role queues a serial run in an isolated source workspace and stores logs and artifacts.
+5. The operator reviews a structured report, requests revision or accepts the handoff to unlock the next role.
+
+### Read the code with an explanation
+
+The six roles are PM, BA, CRM Developer, Portal Developer, QA and Nexora Support Agent; catalog.mjs defines their names and instructions. PM, BA and Support use read-only execution, while Developer and QA write inside their isolated workspaces. Support defaults to standalone triage. Selecting a linked workflow creates a fixed sequence, not autonomous planning or automatic execution. store.mjs creates tasks, messages, runs, artifacts, events and metadata tables. A report in review is distinct from an accepted task, a passed test or applied code.
+
+Source reference S0696 company-dash/public/app.js
+
+Extract from source line 47. A fragment from a long line is shown without the rest of that line.
+
+```js
+0047  function work() {
+```
+
+
+index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.
+
+Source reference S0710 company-dash/server/runner.mjs
+
+Extract from source line 42. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0042    enqueue({ task, suite, targetTask, prepareRuntime = task?.agent === 'qa' }) {
+```
+
+
+The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.
+
+Source reference S0711 company-dash/server/store.mjs
+
+Selected opening lines with their original numbers. The complete file is in the HTML source library.
+
+```mjs
+0001  import { DatabaseSync } from 'node:sqlite';
+0002  import fs from 'node:fs';
+0003  import path from 'node:path';
+0004  import { randomUUID } from 'node:crypto';
+0005  import { usageParser } from './usage.mjs';
+0007  export const now = () => new Date().toISOString();
+```
+
+
+store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.
+
+### Make or trace your first change
+
+1. Press Ctrl+P and open [public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>).
+2. Press Ctrl+F and search for `function updateWorkflow()`. In this snapshot it appears at line 84.
+3. Read-only exercise: find which roles can create a workflow and why Support starts with it unchecked. Trace Accept handoff to the server and identify the dependent-task update without clicking it.
+4. Record the file, request path and server handler you found. This exercise is read-only; no stored records need to change.
+
+Extract from source line 84. A fragment from a long line is shown without the rest of that line.
+
+```js
+0084  function updateWorkflow() { const eligible=['pm','ba','support'].inclu
+```
+
+
+These exercises have not been applied to the application. Their search phrases are verified against the captured source. Line numbers can move; the phrase and file path are your main navigation aids.
+
+### Check a change and diagnose problems
+
+Confirm the original screen still loads, the changed words appear in the intended place, and another screen using the same component still behaves correctly. If an action fails, inspect the browser Network response, the relevant helper and server validation message. Use the common error table at the beginning of the manual. Reload on a version conflict instead of removing the version check.
+
+A syntax error after a text edit usually means a quote, brace or closing tag changed. Compare your diff with the original. An unchanged browser result can mean the wrong port, a saved published configuration overriding a default, or a running API that has not reloaded.
+
+### Understand the current limits
+
+Agent runs use the signed-in Codex provider and account limits. They may be blocked by missing dependencies or usage limits. Restarted unfinished runs are marked interrupted; inspect their logs before retrying. This chapter exercise creates no real tasks or customer messages.
+
+### Continue learning
+
+Related guides [32 Company Dash repository and source viewer](#guide_32), [34 Company Dash QA and verification](#guide_34), [35 Company Dash proposal review and integration](#guide_35), [36 Company Dash history backups and settings](#guide_36).
+
+<!-- CHAPTER 34 -->
+## 34 Company Dash QA and verification
+
+Read checkout and proposal verification evidence and diagnose blocked runtime preparation.
+
+### Recognise the screen and its scope
+
+Open `http://127.0.0.1:8000/#qa`. Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.
+
+This guide covers Fixed test suites; Checkout and proposal scope; Prepare test dependencies; Actual process logs; Structured reports and blocked runs.
+
+![File journey for Company Dash QA and verification](assets/platform/guide-34-map.png)
+
+The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.
+
+### Find the files in VS Code
+
+| Role | File and source ID | What it does |
+| --- | --- | --- |
+| Screen | S0696 app.js | Main UI or route for this topic |
+| Server | S0710 runner.mjs | Endpoints or server rules |
+| Data | S0702 catalog.mjs | Data shape or persistence structure |
+
+**Screen S0696**  
+[public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>)
+
+**Server S0710**  
+[server/runner.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/runner.mjs>)
+
+**Data S0702**  
+[server/catalog.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/catalog.mjs>)
+
+Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.
+
+### Follow the request and the records
+
+1. QA and verification shows fixed suites supplied by catalog.mjs.
+2. POST /api/qa/run validates the suite and optionally a proposal task id.
+3. The runner chooses the original checkout or a separate proposal verification copy.
+4. QA-agent runtime preparation restores .NET packages and locked frontend packages before model execution.
+5. Logs, exit codes and structured status/report data identify passed, failed, cancelled or blocked work.
+
+### Read the code with an explanation
+
+A checkout check evaluates the original Nexora source. Test this proposal evaluates an independent source copy associated with a task. Prepare test dependencies is a QA-agent option; setup success does not mean tests passed. If .NET assets or Playwright are missing, read the preparation log and structured blocked result. The runner must parse the model output status and report as well as the process exit code. catalog.mjs records allowed commands and timeouts rather than accepting arbitrary commands from a browser form.
+
+Source reference S0696 company-dash/public/app.js
+
+Extract from source line 53. A fragment from a long line is shown without the rest of that line.
+
+```js
+0053  function qaView() {
+```
+
+
+index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.
+
+Source reference S0710 company-dash/server/runner.mjs
+
+Extract from source line 92. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0092    async prepareQaRuntime(run, cwd) {
+```
+
+
+The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.
+
+Source reference S0702 company-dash/server/catalog.mjs
+
+Selected opening lines with their original numbers. The complete file is in the HTML source library.
+
+```mjs
+0001  export const areas = ['All Nexora', 'CRM', 'Portal', 'Website / CMS', 'Platform'];
+0002  export const agents = [
+0009  ];
+0010  export const suites = [
+0017  ];
+```
+
+
+store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.
+
+### Make or trace your first change
+
+1. Press Ctrl+P and open [server/runner.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/runner.mjs>).
+2. Press Ctrl+F and search for `prepareRuntime`. In this snapshot it appears at line 42.
+3. Read-only exercise: trace prepareRuntime from enqueue to dependency setup. Find where setup failure prevents model execution, then compare a structured report with a process exit code.
+4. Record the file, request path and server handler you found. This exercise is read-only; no stored records need to change.
+
+Extract from source line 42. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0042    enqueue({ task, suite, targetTask, prepareRuntime = task?.agent === 'qa' }) {
+```
+
+
+These exercises have not been applied to the application. Their search phrases are verified against the captured source. Line numbers can move; the phrase and file path are your main navigation aids.
+
+### Check a change and diagnose problems
+
+Confirm the original screen still loads, the changed words appear in the intended place, and another screen using the same component still behaves correctly. If an action fails, inspect the browser Network response, the relevant helper and server validation message. Use the common error table at the beginning of the manual. Reload on a version conflict instead of removing the version check.
+
+A syntax error after a text edit usually means a quote, brace or closing tag changed. Compare your diff with the original. An unchanged browser result can mean the wrong port, a saved published configuration overriding a default, or a running API that has not reloaded.
+
+### Understand the current limits
+
+The command center serializes its own checks, but other tools can still occupy test ports. Browser suites use the Nexora runner and disposable test databases; proposal fixtures do not create persistent shared CRM records. Documentation QA does not rerun these product suites.
+
+### Continue learning
+
+Related guides [30 Nexora backend database and maintenance](#guide_30), [33 Company Dash tasks agents and handoffs](#guide_33), [35 Company Dash proposal review and integration](#guide_35).
+
+<!-- CHAPTER 35 -->
+## 35 Company Dash proposal review and integration
+
+Understand the review copy, matching source fingerprints and the explicit apply action.
+
+### Recognise the screen and its scope
+
+Open `Company Dash task dialog then Proposal verification`. Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.
+
+This guide covers Cumulative proposed patches; Proposal test evidence; Accepted ancestors; Integration preview; Freshness and expiry checks; Explicit local apply.
+
+![File journey for Company Dash proposal review and integration](assets/platform/guide-35-map.png)
+
+The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.
+
+### Find the files in VS Code
+
+| Role | File and source ID | What it does |
+| --- | --- | --- |
+| Screen | S0696 app.js | Main UI or route for this topic |
+| Server | S0707 proposals.mjs | Endpoints or server rules |
+| Data | S0708 repository.mjs | Data shape or persistence structure |
+
+**Screen S0696**  
+[public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>)
+
+**Server S0707**  
+[server/proposals.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/proposals.mjs>)
+
+**Data S0708**  
+[server/repository.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/repository.mjs>)
+
+Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.
+
+### Follow the request and the records
+
+1. Read the task report and proposed patch before starting relevant proposal QA.
+2. Review integration requests POST /api/integration/preview with a task id.
+3. The backend checks the latest proposal, accepted handoffs, exact-source QA and unchanged original baseline.
+4. A separate review copy and cumulative patch are returned for operator inspection.
+5. Apply reviewed changes revalidates the review and updates the local Nexora checkout; checkout QA follows.
+
+### Read the code with an explanation
+
+public/app.js creates proposal controls and a review dialog. proposals.mjs requires passing evidence for the exact proposal fingerprint and compares the original checkout baseline. A downstream proposal includes earlier accepted developer changes. The review key expires after fifteen minutes and is revalidated on apply. Matching architecture evidence covers only that suite; choose API or browser checks when the change requires them. Applied source remains a local change until it is deliberately committed, pushed and deployed through the appropriate workflow.
+
+Source reference S0696 company-dash/public/app.js
+
+Extract from source line 68. A fragment from a long line is shown without the rest of that line.
+
+```js
+0068  function proposalActions(task) {
+```
+
+
+index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.
+
+Source reference S0707 company-dash/server/proposals.mjs
+
+Extract from source line 14. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0014  export async function proposalReview(store, config, taskId) {
+```
+
+
+The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.
+
+Source reference S0708 company-dash/server/repository.mjs
+
+Selected opening lines with their original numbers. The complete file is in the HTML source library.
+
+```mjs
+0001  import fs from 'node:fs/promises';
+0002  import path from 'node:path';
+0003  import { execFile } from 'node:child_process';
+0004  import { promisify } from 'node:util';
+0005  import { createHash } from 'node:crypto';
+0006  const exec = promisify(execFile);
+```
+
+
+store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.
+
+### Make or trace your first change
+
+1. Press Ctrl+P and open [server/proposals.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/proposals.mjs>).
+2. Press Ctrl+F and search for `Run proposal QA on this exact source before integration.`. In this snapshot it appears at line 26.
+3. Read-only exercise: find the exact-source QA requirement, then the original-checkout comparison and expiry check. Explain why a stale proposal must be refreshed rather than forced into the checkout.
+4. Record the file, request path and server handler you found. This exercise is read-only; no stored records need to change.
+
+Extract from source line 26. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0026    if (!evidence.length) throw new Error('Run proposal QA on this exact source before integration.');
+```
+
+
+These exercises have not been applied to the application. Their search phrases are verified against the captured source. Line numbers can move; the phrase and file path are your main navigation aids.
+
+### Check a change and diagnose problems
+
+Confirm the original screen still loads, the changed words appear in the intended place, and another screen using the same component still behaves correctly. If an action fails, inspect the browser Network response, the relevant helper and server validation message. Use the common error table at the beginning of the manual. Reload on a version conflict instead of removing the version check.
+
+A syntax error after a text edit usually means a quote, brace or closing tag changed. Compare your diff with the original. An unchanged browser result can mean the wrong port, a saved published configuration overriding a default, or a running API that has not reloaded.
+
+### Understand the current limits
+
+Accepting a handoff does not integrate code. Apply is an explicit state-changing operator action; never bypass the baseline or evidence checks. This documentation task does not review or apply any live proposal.
+
+### Continue learning
+
+Related guides [30 Nexora backend database and maintenance](#guide_30), [32 Company Dash repository and source viewer](#guide_32), [33 Company Dash tasks agents and handoffs](#guide_33), [34 Company Dash QA and verification](#guide_34).
+
+<!-- CHAPTER 36 -->
+## 36 Company Dash history backups and settings
+
+Locate persistent history, usage controls, backup verification and deliberate restoration.
+
+### Recognise the screen and its scope
+
+Open `http://127.0.0.1:8000/#activity`, `http://127.0.0.1:8000/#settings`. Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.
+
+This guide covers SQLite history and activity; Configuration diagnostics; Provider token usage; Optional usage thresholds; Checksummed backups; Restore to a new directory; Opt-in workspace retention.
+
+![File journey for Company Dash history backups and settings](assets/platform/guide-36-map.png)
+
+The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.
+
+### Find the files in VS Code
+
+| Role | File and source ID | What it does |
+| --- | --- | --- |
+| Screen | S0696 app.js | Main UI or route for this topic |
+| Server | S0706 maintenance.mjs | Endpoints or server rules |
+| Data | S0712 usage.mjs | Data shape or persistence structure |
+
+**Screen S0696**  
+[public/app.js](<C:/Users/ramish/Documents/ChatGPT/Company Dash/public/app.js>)
+
+**Server S0706**  
+[server/maintenance.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/maintenance.mjs>)
+
+**Data S0712**  
+[server/usage.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/usage.mjs>)
+
+Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.
+
+### Follow the request and the records
+
+1. Activity displays stored events; settings reads safe configuration and usage summaries from /api/state.
+2. Budget calculations combine provider usage with explicitly configured rates when available.
+3. Create backup requests POST /api/maintenance/backup after active and queued work has stopped.
+4. The server copies the database, reports and relevant workspaces and verifies a checksummed manifest.
+5. The restore command checks the backup and writes to a new data directory; retention previews precede deliberate cleanup.
+
+### Read the code with an explanation
+
+data/ contains the SQLite database, reports and isolated workspaces and stays outside Git and the source library. config.local.json contains workstation settings; config.example.json explains the keys without revealing private values. Token usage is provider-reported. Dollar estimates need explicit rates; subscription billing is not inferred. Zero-valued thresholds and retention mean disabled defaults. Backups omit regenerable dependencies and build output. server/restore.mjs calls restoreBackup from maintenance.mjs and expects a backup directory and a new destination.
+
+Source reference S0696 company-dash/public/app.js
+
+Extract from source line 63. A fragment from a long line is shown without the rest of that line.
+
+```js
+0063  function settings() { const d=state.data; return heading('Worksp
+```
+
+
+index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.
+
+Source reference S0706 company-dash/server/maintenance.mjs
+
+Extract from source line 25. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0025  export async function backupData(store, config) {
+```
+
+
+The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.
+
+Source reference S0712 company-dash/server/usage.mjs
+
+Selected opening lines with their original numbers. The complete file is in the HTML source library.
+
+```mjs
+0001  export function usageTotal(usage) { return (usage?.input_tokens || 0) + (usage?.output_tokens || 0); }
+0002  export function estimateCost(usage, rates) {
+0003    if (!usage || !rates) return null;
+0004    return ((usage.input_tokens - usage.cached_input_tokens) * rates.input + usage.cached_input_tokens * rates.cached + usage.output_tokens * rates.output) / 1000000;
+0005  }
+0006  export function usageParser(onUsage) {
+```
+
+
+store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.
+
+### Make or trace your first change
+
+1. Press Ctrl+P and open [server/maintenance.mjs](<C:/Users/ramish/Documents/ChatGPT/Company Dash/server/maintenance.mjs>).
+2. Press Ctrl+F and search for `export async function backupData`. In this snapshot it appears at line 25.
+3. Read-only exercise: find how backupData creates its manifest and how restoreBackup verifies each file. Then find retentionPlan and explain why previewing it does not delete history.
+4. Record the file, request path and server handler you found. This exercise is read-only; no stored records need to change.
+
+Extract from source line 25. A fragment from a long line is shown without the rest of that line.
+
+```mjs
+0025  export async function backupData(store, config) {
+```
+
+
+These exercises have not been applied to the application. Their search phrases are verified against the captured source. Line numbers can move; the phrase and file path are your main navigation aids.
+
+### Check a change and diagnose problems
+
+Confirm the original screen still loads, the changed words appear in the intended place, and another screen using the same component still behaves correctly. If an action fails, inspect the browser Network response, the relevant helper and server validation message. Use the common error table at the beginning of the manual. Reload on a version conflict instead of removing the version check.
+
+A syntax error after a text edit usually means a quote, brace or closing tag changed. Compare your diff with the original. An unchanged browser result can mean the wrong port, a saved published configuration overriding a default, or a running API that has not reloaded.
+
+### Understand the current limits
+
+Usage thresholds act at provider turn boundaries and cannot guarantee an exact in-flight spending cap. A backup is not a successful restore test. Do not run cleanup or restoration against existing history while learning; the documentation task performs neither action.
+
+### Continue learning
+
+Related guides [31 Company Dash startup and dashboard](#guide_31), [33 Company Dash tasks agents and handoffs](#guide_33), [35 Company Dash proposal review and integration](#guide_35).
 
 <!-- CHAPTER inventory -->
 ## Platform coverage and source index
@@ -4296,19 +4988,32 @@ The current source contains 9 concrete module contexts. Identity uses its own Id
 
 | Context | Owning module | Source ID |
 | --- | --- | --- |
-| ContentDbContext | Content | S0215 |
-| CrmDbContext | Crm | S0258 |
-| EngagementDbContext | Engagement | S0310 |
-| EventsDbContext | Events | S0330 |
-| FinanceDbContext | Finance | S0350 |
-| MembershipDbContext | Membership | S0428 |
-| NexoraIdentityDbContext | Identity | S0395 |
-| WorkDbContext | Work | S0535 |
-| WorkflowDbContext | Workflow | S0559 |
+| ContentDbContext | Content | S0216 |
+| CrmDbContext | Crm | S0259 |
+| EngagementDbContext | Engagement | S0311 |
+| EventsDbContext | Events | S0331 |
+| FinanceDbContext | Finance | S0351 |
+| MembershipDbContext | Membership | S0429 |
+| NexoraIdentityDbContext | Identity | S0396 |
+| WorkDbContext | Work | S0536 |
+| WorkflowDbContext | Workflow | S0560 |
+
+### Company Dash views and services
+
+Company Dash is served by its own Node server at 127.0.0.1:8000. These hash views are defined in public/index.html and public/app.js; app.mjs maps API requests. Its Store uses SQLite, separately from the Nexora SQL contexts above.
+
+| View or service | Implementation | Guide |
+| --- | --- | --- |
+| Overview and startup | public/index.html and server/app.mjs | 31 |
+| Repository and docs | public/app.js and server/repository.mjs | 32 |
+| Work board and AI team | server/runner.mjs store.mjs and catalog.mjs | 33 |
+| QA and verification | server/runner.mjs and catalog.mjs | 34 |
+| Proposal review and apply | server/proposals.mjs | 35 |
+| Activity settings and backups | server/maintenance.mjs usage.mjs and store.mjs | 36 |
 
 ### Find all supporting code
 
-The offline HTML Source library contains 686 text files and 151,827 lines. It includes production frontend and backend source, EF migrations, related test source and selected build/debug configuration. Search by source ID, path or a phrase inside code; select a guide to narrow the list. Each selected file displays its full captured code, numbered lines and SHA256 fingerprint. Configured local passwords are replaced by an explicit omitted marker, and those files are labelled redacted.
+The offline HTML Source library contains 717 text files and 154,253 lines. It includes production frontend and backend source, EF migrations, related test source and selected build/debug configuration. Search by source ID, path or a phrase inside code; select a guide to narrow the list. Each selected file displays its full captured code, numbered lines and SHA256 fingerprint. Configured local passwords are replaced by an explicit omitted marker, and those files are labelled redacted.
 
 The source library is part of the HTML file itself. It needs no server, network or dependency download. Its code is a dated reference; edit the actual repository file in VS Code. Copy raw source excludes the display line numbers. Open in VS Code is a user-clicked editor link and may prompt your browser.
 
@@ -4354,6 +5059,14 @@ The editorial explanations are in scripts/docs/platform_guide_catalog.py. The Ma
 ```
 
 The runtime path is specific to this workstation. The builder captures code, verifies every primary file and exercise search phrase, generates diagrams, writes the individual guides, and combines the complete Word, Markdown and offline HTML manuals. It excludes build output and checks that configured local password values were not copied. Review new source changes, scope and rendered pages before delivering a rebuilt Word file.
+
+### Keep the maintained copy current
+
+The complete manual keeps the same filename so saved links remain useful. scripts/docs/Sync-PlatformGuides.py --check compares the captured source fingerprints with both live repositories and detects added or removed files. It also checks the editorial catalogue and document tooling. When changes exist, inspect the changed behaviour and update the explanation, map or exercise before running --refresh.
+
+Refresh saves the previous complete HTML, Word and Markdown manuals, their manifests and diagrams in docs/beginner-guides/history. It then rebuilds the maintained copy. If authoring fails, the last complete collection is restored from an internal backup. Browser and Word page checks remain required; a copied source change alone does not prove that its explanation is correct.
+
+The hourly documentation check returns to this chat and runs only while the computer and Codex app can access local files. It stays quiet when nothing changes. This is a scheduled refresh, not an instantaneous file watcher or database audit. The manual records source and selected configuration; saved CRM business records are not copied into it. See DOCUMENTATION-MAINTENANCE.md for the maintainer commands and review state.
 
 ### Preserve the evidence boundaries
 

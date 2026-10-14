@@ -1,7 +1,7 @@
 # Nexora backend database and maintenance
 
 Document 30 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand the shared API, module boundaries, SQL contexts, migrations, health checks and Git maintenance.
@@ -20,17 +20,17 @@ The diagram shows the file roles. The full paths below are what you paste into C
 
 | Role | File and source ID | What it does |
 | --- | --- | --- |
-| Startup | S0676 Prepare-LocalDebug.ps1 | Local service setup |
-| Server | S0575 Program.cs | Endpoints or server rules |
-| Data | S0195 TenantDbContext.cs | Data shape or persistence structure |
+| Startup | S0678 Prepare-LocalDebug.ps1 | Local service setup |
+| Server | S0576 Program.cs | Endpoints or server rules |
+| Data | S0196 TenantDbContext.cs | Data shape or persistence structure |
 
-**Startup S0676**  
+**Startup S0678**  
 [scripts/Prepare-LocalDebug.ps1](<D:/Projects new/Nexora/scripts/Prepare-LocalDebug.ps1>)
 
-**Server S0575**  
+**Server S0576**  
 [backend/src/Nexora.Api/Program.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/Program.cs>)
 
-**Data S0195**  
+**Data S0196**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -47,7 +47,7 @@ The complete HTML manual opens these source IDs inside its Source library. The W
 
 A DbContext is a C# gateway to a group of tables. Different modules can use the same SQL database with separate schemas and migration histories. Identity plus eight business and Workflow contexts totals nine contexts in current source; read the generated context inventory for the exact names. Never apply one context's migration to another or drop a database to repair a missing table.
 
-Source reference S0676 scripts/Prepare-LocalDebug.ps1
+Source reference S0678 scripts/Prepare-LocalDebug.ps1
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0575 backend/src/Nexora.Api/Program.cs
+Source reference S0576 backend/src/Nexora.Api/Program.cs
 
 Extract from source line 83. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 83. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0195 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs
+Source reference S0196 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -124,7 +124,7 @@ Related guides [02 Nexora platform setup and VS Code](#guide_02), [18 Nexora imp
 
 These are the complete captured files, with numbered source lines. Other supporting files are included in the complete HTML manual. Configured local passwords, if any, are explicitly omitted. Do not paste the display line numbers into code.
 
-### S0676 Prepare-LocalDebug.ps1
+### S0678 Prepare-LocalDebug.ps1
 
 [scripts/Prepare-LocalDebug.ps1](<D:/Projects new/Nexora/scripts/Prepare-LocalDebug.ps1>)
 
@@ -204,7 +204,7 @@ SHA256 `ad606c0b78af806aabd0c6756919db3d630c05e4399359c8ff168ddd349f1f45`; 71 so
 0071  }
 ```
 
-### S0575 Program.cs
+### S0576 Program.cs
 
 [backend/src/Nexora.Api/Program.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/Program.cs>)
 
@@ -339,7 +339,7 @@ SHA256 `ced3e2c3a7318361abebe285299108af8749da7016151db590405b9eac3d15ac`; 126 s
 0126  public partial class Program;
 ```
 
-### S0195 TenantDbContext.cs
+### S0196 TenantDbContext.cs
 
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/TenantDbContext.cs>)
 

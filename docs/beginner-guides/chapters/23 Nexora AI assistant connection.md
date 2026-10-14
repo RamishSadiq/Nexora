@@ -1,7 +1,7 @@
 # Nexora AI assistant connection
 
 Document 23 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand the NexOrchestr AI page, its configured iframe and CRM context endpoint.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0013 page.tsx | Main UI or route for this topic |
-| Server | S0249 CrmModule.cs | Endpoints or server rules |
-| Data | S0201 CrmContextContracts.cs | Data shape or persistence structure |
+| Server | S0250 CrmModule.cs | Endpoints or server rules |
+| Data | S0202 CrmContextContracts.cs | Data shape or persistence structure |
 
 **Screen S0013**  
 [apps/web/src/app/(platform)/assistant/page.tsx](<D:/Projects new/Nexora/apps/web/src/app/(platform)/assistant/page.tsx>)
 
-**Server S0249**  
+**Server S0250**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs>)
 
-**Data S0201**  
+**Data S0202**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0249 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
+Source reference S0250 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
 
 Extract from source line 47. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 47. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0201 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs
+Source reference S0202 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -172,7 +172,7 @@ SHA256 `425bbe8c0fd597f6ff703ae09f4732e0328ed2defdbf19ef50614e6bcd9c0af5`; 38 so
 0038  }
 ```
 
-### S0249 CrmModule.cs
+### S0250 CrmModule.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs>)
 
@@ -552,7 +552,7 @@ SHA256 `5224194ce2b11eff3d60836a87bc9c58200ba591fc2390f2adefd01ca9793c7e`; 371 s
 0371  }
 ```
 
-### S0201 CrmContextContracts.cs
+### S0202 CrmContextContracts.cs
 
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Security/CrmContextContracts.cs>)
 

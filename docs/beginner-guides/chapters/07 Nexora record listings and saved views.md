@@ -1,7 +1,7 @@
 # Nexora record listings and saved views
 
 Document 7 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Learn the shared search, filters, column chooser, sorting and saved-view code used across modules.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0141 filter-view-toolbar.tsx | Main UI or route for this topic |
-| Server | S0248 CrmListingSorting.cs | Endpoints or server rules |
-| Data | S0254 CrmEntities.cs | Data shape or persistence structure |
+| Server | S0249 CrmListingSorting.cs | Endpoints or server rules |
+| Data | S0255 CrmEntities.cs | Data shape or persistence structure |
 
 **Screen S0141**  
 [apps/web/src/features/shared/filter-view-toolbar.tsx](<D:/Projects new/Nexora/apps/web/src/features/shared/filter-view-toolbar.tsx>)
 
-**Server S0248**  
+**Server S0249**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs>)
 
-**Data S0254**  
+**Data S0255**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0248 backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs
+Source reference S0249 backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs
 
 Extract from source line 14. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 14. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0254 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
+Source reference S0255 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -173,7 +173,7 @@ SHA256 `09d49d338627835abff94d6671a13bf2b28d9e7f78199303a51b8571733535c7`; 40 so
 0040  }
 ```
 
-### S0248 CrmListingSorting.cs
+### S0249 CrmListingSorting.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmListingSorting.cs>)
 
@@ -233,7 +233,7 @@ SHA256 `d7cb3abcdaa176529a62149ed9c784315f9e6abffdb04745ef6804bfbb2d3c09`; 51 so
 0051  }
 ```
 
-### S0254 CrmEntities.cs
+### S0255 CrmEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs>)
 

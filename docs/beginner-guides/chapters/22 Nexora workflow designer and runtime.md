@@ -1,7 +1,7 @@
 # Nexora workflow designer and runtime
 
 Document 22 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand workflow drafts, nodes, validation, publishing, activation, runs and operational gates.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0156 workflow-designer-workspace.tsx | Main UI or route for this topic |
-| Server | S0564 WorkflowModule.cs | Endpoints or server rules |
-| Data | S0563 WorkflowModels.cs | Data shape or persistence structure |
+| Server | S0565 WorkflowModule.cs | Endpoints or server rules |
+| Data | S0564 WorkflowModels.cs | Data shape or persistence structure |
 
 **Screen S0156**  
 [apps/web/src/features/workflows/workflow-designer-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/workflows/workflow-designer-workspace.tsx>)
 
-**Server S0564**  
+**Server S0565**  
 [backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs>)
 
-**Data S0563**  
+**Data S0564**  
 [backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0564 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs
+Source reference S0565 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs
 
 Extract from source line 33. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 33. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0563 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs
+Source reference S0564 backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -1784,7 +1784,7 @@ SHA256 `90cc459f08dcf3c0d975212c2ff17a31a2acb28583c471ecc7a0729c4c9a1466`; 1650 
 1650  }
 ```
 
-### S0564 WorkflowModule.cs
+### S0565 WorkflowModule.cs
 
 [backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Workflow/WorkflowModule.cs>)
 
@@ -1900,7 +1900,7 @@ SHA256 `3d0f0bc5d97ed631af59da8b6c99116ceef2d628ab939d93dc53e06820aa4f00`; 107 s
 0107  }
 ```
 
-### S0563 WorkflowModels.cs
+### S0564 WorkflowModels.cs
 
 [backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Workflow/WorkflowModels.cs>)
 

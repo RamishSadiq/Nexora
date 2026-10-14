@@ -1,7 +1,7 @@
 # Nexora documents evidence and file safety
 
 Document 29 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand CRM files, application evidence, CMS media and quarantined uploads.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0133 application-evidence.tsx | Main UI or route for this topic |
-| Server | S0186 DocumentSafety.cs | Endpoints or server rules |
-| Data | S0415 ApplicationEvidence.cs | Data shape or persistence structure |
+| Server | S0187 DocumentSafety.cs | Endpoints or server rules |
+| Data | S0416 ApplicationEvidence.cs | Data shape or persistence structure |
 
 **Screen S0133**  
 [apps/web/src/features/shared/application-evidence.tsx](<D:/Projects new/Nexora/apps/web/src/features/shared/application-evidence.tsx>)
 
-**Server S0186**  
+**Server S0187**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs>)
 
-**Data S0415**  
+**Data S0416**  
 [backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0186 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs
+Source reference S0187 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs
 
 Extract from source line 17. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 17. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0415 backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs
+Source reference S0416 backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -215,7 +215,7 @@ SHA256 `f76eea872477114ac23f7135337832208b7a3c70375cec88978bbe6961f479be`; 82 so
 0082  }
 ```
 
-### S0186 DocumentSafety.cs
+### S0187 DocumentSafety.cs
 
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Documents/DocumentSafety.cs>)
 
@@ -333,7 +333,7 @@ SHA256 `785c91939401dcce9b8a76b858ef2261fada0d66e6cdbd0dbb377d3aa678ae35`; 109 s
 0109  }
 ```
 
-### S0415 ApplicationEvidence.cs
+### S0416 ApplicationEvidence.cs
 
 [backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/ApplicationEvidence.cs>)
 

@@ -1,7 +1,7 @@
 # Nexora website editor and publishing
 
 Document 27 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand CRM-managed pages, design controls, media, revision history and publication.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0066 content-workspace.tsx | Main UI or route for this topic |
-| Server | S0218 ContentModule.cs | Endpoints or server rules |
-| Data | S0216 ContentEntities.cs | Data shape or persistence structure |
+| Server | S0219 ContentModule.cs | Endpoints or server rules |
+| Data | S0217 ContentEntities.cs | Data shape or persistence structure |
 
 **Screen S0066**  
 [apps/web/src/features/content/content-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/content/content-workspace.tsx>)
 
-**Server S0218**  
+**Server S0219**  
 [backend/src/Modules/Nexora.Modules.Content/ContentModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentModule.cs>)
 
-**Data S0216**  
+**Data S0217**  
 [backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0218 backend/src/Modules/Nexora.Modules.Content/ContentModule.cs
+Source reference S0219 backend/src/Modules/Nexora.Modules.Content/ContentModule.cs
 
 Extract from source line 33. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 33. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0216 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
+Source reference S0217 backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -236,7 +236,7 @@ SHA256 `d596d5cf809ba265acc0db00f639d53a048ef20f6354a0a9e2084922cdd01a3b`; 102 s
 0102  }
 ```
 
-### S0218 ContentModule.cs
+### S0219 ContentModule.cs
 
 [backend/src/Modules/Nexora.Modules.Content/ContentModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentModule.cs>)
 
@@ -395,7 +395,7 @@ SHA256 `b73dad7cff3279ffab5823c18b4ca0910fb9e3d14574f82a7f70575f3887109c`; 150 s
 0150  }
 ```
 
-### S0216 ContentEntities.cs
+### S0217 ContentEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Content/ContentEntities.cs>)
 

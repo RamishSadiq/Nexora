@@ -4,6 +4,7 @@ PDFs and PNGs stay in ignored artifacts. This is documentation QA, not an
 application regression. Review the generated images before delivery.
 """
 from pathlib import Path
+import hashlib
 import json
 import sys
 import pypdfium2 as pdfium
@@ -15,6 +16,9 @@ QA=ROOT/'artifacts/platform-guide-qa'
 FONT=ImageFont.truetype('C:/Windows/Fonts/arial.ttf',22)
 all_metadata=[]
 for file in sorted((QA/'pdf').glob('*.pdf')):
+    docx=ROOT/'docs/beginner-guides'/('' if file.stem=='Nexora complete beginner guide' else 'chapters')/(file.stem+'.docx')
+    if not docx.is_file():continue
+    if file.stat().st_mtime<docx.stat().st_mtime:raise ValueError('Word PDF must be exported again: '+file.stem)
     pdf=pdfium.PdfDocument(str(file));dest=QA/'render'/file.stem;dest.mkdir(parents=True,exist_ok=True)
     metadata=[];batch=[];overflow=[];sheet=0
     for n in range(len(pdf)):
@@ -32,7 +36,7 @@ for file in sorted((QA/'pdf').glob('*.pdf')):
                 x=(k%2)*img.width;y=(k//2)*(img.height+35);canvas.paste(img,(x,y+35));draw.text((x+12,y+4),f'Page {start+k}',font=FONT,fill='black')
             canvas.save(dest/f'review-{sheet:03d}.png');batch=[]
         tp.close();page.close()
-    record=dict(document=file.stem,pages=len(pdf),review_sheets=sheet,small_pages=[p['page'] for p in metadata if p['chars']<100],overflow_chars=len(overflow))
+    record=dict(document=file.stem,pages=len(pdf),review_sheets=sheet,small_pages=[p['page'] for p in metadata if p['chars']<100],overflow_chars=len(overflow),docx_sha256=hashlib.sha256(docx.read_bytes()).hexdigest())
     (dest/'pages.json').write_text(json.dumps(metadata,indent=2),encoding='utf-8');(dest/'overflow.json').write_text(json.dumps(overflow,indent=2),encoding='utf-8')
     all_metadata.append(record);pdf.close();print(json.dumps(record),flush=True)
 (QA/'render-evidence.json').write_text(json.dumps(all_metadata,indent=2),encoding='utf-8')

@@ -38,7 +38,7 @@ guide(2, 'Nexora platform setup and VS Code',
       ['VS Code opens the Nexora repository folder.', 'A CRM, Portal or CMS debug profile runs its preparation task.',
        'Prepare-LocalDebug.ps1 builds or reuses the shared API and waits for readiness.',
        'Next.js starts with its own port and build output folder.', 'The frontend forwards /api requests to the configured API.'],
-      'Nexora uses one Next.js web project and a C# backend made of modules. The three local frontend processes share source but have separate debug outputs. A .tsx file draws a screen, .css changes appearance, .cs runs server rules, and .json supplies configuration. Company Dash appears in the launch menu but belongs to a separate repository; its source is outside this manual.',
+      'Nexora uses one Next.js web project and a C# backend made of modules. The three local frontend processes share source but have separate debug outputs. A .tsx file draws a screen, .css changes appearance, .cs runs server rules, and .json supplies configuration. Company Dash appears in the launch menu and belongs to a separate repository; guides 31 to 36 and the company-dash source entries cover it in this manual.',
       ('apps/web/next.config.ts', 'NEXORA_API_URL', None, 'Read-only exercise: find the environment variable and its fallback. Compare it with the CRM launch profile. Write down why a terminal started without that variable can point to a different API; do not change a port.'),
       'The saved runtime path and SQL Express instance are workstation-specific. F5 dispatch itself is a manual action. Preparation can apply Development database migrations; it is not a production deployment procedure.', [1,30])
 
@@ -386,9 +386,12 @@ guide(30, 'Nexora backend database and maintenance',
       ('backend/src/Nexora.Api/Program.cs', 'AddNexora', None, 'Read-only exercise: list the registered modules, then find each DbContext. Compare the generated database inventory with the health/readiness checks. Follow the Git practice instructions using only your own documentation or text change.'),
       'A successful build, a health response and production approval are different results. This manual records source coverage and documentation checks; it does not claim a full platform regression, live provider delivery, backups or production acceptance.', [2,18,20,22,29])
 
+from company_dash_catalog import add_guides, OWNERS as COMPANY_DASH_OWNERS
+add_guides(guide)
+
 # Prefixes assign every production source file to at least one teaching chapter.
 # Multi-topic files can belong to several chapters; the master stores their code once.
-PREFIX_OWNERS = [
+PREFIX_OWNERS = COMPANY_DASH_OWNERS + [
     (APP+'(auth)/login/', [1]), (APP+'(platform)/dashboard/', [4]),
     (APP+'(platform)/relationships/', [5,6]), (APP+'(platform)/membership/setup/', [11]),
     (APP+'(platform)/membership/', [9,10]), (APP+'(platform)/events/', [12,13,14]),

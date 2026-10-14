@@ -1,7 +1,7 @@
 # Nexora courses and training
 
 Document 13 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand course applications, training approval and attendance through the shared events module.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0097 events-workspace.tsx | Main UI or route for this topic |
-| Server | S0328 EventsModule.cs | Endpoints or server rules |
-| Data | S0327 EventEntities.cs | Data shape or persistence structure |
+| Server | S0329 EventsModule.cs | Endpoints or server rules |
+| Data | S0328 EventEntities.cs | Data shape or persistence structure |
 
 **Screen S0097**  
 [apps/web/src/features/events/events-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/events/events-workspace.tsx>)
 
-**Server S0328**  
+**Server S0329**  
 [backend/src/Modules/Nexora.Modules.Events/EventsModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/EventsModule.cs>)
 
-**Data S0327**  
+**Data S0328**  
 [backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0328 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
+Source reference S0329 backend/src/Modules/Nexora.Modules.Events/EventsModule.cs
 
 Extract from source line 27. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 27. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0327 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
+Source reference S0328 backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -167,7 +167,7 @@ SHA256 `a4d5fc4b225aada646803a82590a350bef1f3b7a4cb8bfb9e785b9a686675b8c`; 33 so
 0033  }
 ```
 
-### S0328 EventsModule.cs
+### S0329 EventsModule.cs
 
 [backend/src/Modules/Nexora.Modules.Events/EventsModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/EventsModule.cs>)
 
@@ -254,7 +254,7 @@ SHA256 `836c6d3bff2a67a7577de084b7a788cd9f2baec86a8311476b98cf3703a7a577`; 78 so
 0078  public sealed record CancelRequest(Guid Version,string Reason);
 ```
 
-### S0327 EventEntities.cs
+### S0328 EventEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Events/Domain/EventEntities.cs>)
 

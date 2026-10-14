@@ -1,7 +1,7 @@
 # Nexora member portal login and onboarding
 
 Document 24 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand member sign-in, optional self-registration and organisation access requests.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0123 member-portal.tsx | Main UI or route for this topic |
-| Server | S0401 PortalOnboardingEndpoints.cs | Endpoints or server rules |
-| Data | S0375 PortalAccess.cs | Data shape or persistence structure |
+| Server | S0402 PortalOnboardingEndpoints.cs | Endpoints or server rules |
+| Data | S0376 PortalAccess.cs | Data shape or persistence structure |
 
 **Screen S0123**  
 [apps/web/src/features/portal/member-portal.tsx](<D:/Projects new/Nexora/apps/web/src/features/portal/member-portal.tsx>)
 
-**Server S0401**  
+**Server S0402**  
 [backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs>)
 
-**Data S0375**  
+**Data S0376**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0401 backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs
+Source reference S0402 backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs
 
 Extract from source line 29. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 29. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0375 backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs
+Source reference S0376 backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -285,7 +285,7 @@ SHA256 `d62b2f5b7e3fb6802b5011a45323c19c2875770f04534d9275e9f008cb3c21bf`; 151 s
 0151  
 ```
 
-### S0401 PortalOnboardingEndpoints.cs
+### S0402 PortalOnboardingEndpoints.cs
 
 [backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/PortalOnboardingEndpoints.cs>)
 
@@ -463,7 +463,7 @@ SHA256 `c0d0ec74e334b7caed7dd313308bb57a54dc54bdd5936feb19b70b66e4b51fbd`; 169 s
 0169  }
 ```
 
-### S0375 PortalAccess.cs
+### S0376 PortalAccess.cs
 
 [backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/PortalAccess.cs>)
 

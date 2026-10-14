@@ -9,6 +9,7 @@ const require = createRequire(path.join(runtime, 'package.json'));
 const { chromium } = require('playwright');
 const out = path.join(root, 'artifacts/platform-guide-qa');
 const source = JSON.parse(fs.readFileSync(path.join(out, 'source-data.json'), 'utf8'));
+const manifest = JSON.parse(fs.readFileSync(path.join(root, 'docs/beginner-guides/source-manifest.json'), 'utf8'));
 const errors = [];
 const browser = await chromium.launch({ channel: 'msedge', headless: true });
 try {
@@ -16,10 +17,10 @@ try {
   page.on('pageerror', error => errors.push(error.message));
   const requests=[]; page.on('request', r => { if (/^https?:/.test(r.url())) requests.push(r.url()); });
   await page.goto(new URL('file:///' + path.join(root, 'docs/beginner-guides/Nexora complete beginner guide.html').replaceAll('\\', '/')).href);
-  assert.equal(await page.locator('.chapter-nav').count(), 30);
+  assert.equal(await page.locator('.chapter-nav').count(), manifest.guide_count);
   const ids = await page.locator('[id]').evaluateAll(nodes => nodes.map(n => n.id));
   assert.equal(new Set(ids).size, ids.length, 'Duplicate navigation IDs');
-  assert.equal(await page.locator('[data-source]').count(), 90);
+  assert.equal(await page.locator('[data-source]').count(), manifest.guide_count * 3);
   assert.equal(await page.locator('#source-results button').count(), source.length);
   await page.screenshot({ path: path.join(out, 'manual-desktop.png'), fullPage: false });
   // Every chapter's three buttons must select the correct complete file.
@@ -30,6 +31,7 @@ try {
     const displayed = await page.locator('#source-code').textContent();
     const lines = expected.text.split(/\r?\n/);
     assert.equal(displayed, lines.map((t, i) => String(i + 1).padStart(5, '0') + '  ' + t).join('\n'), 'Source mismatch ' + id);
+    assert.equal(await page.locator('#editor-link').getAttribute('href'), 'vscode://file/' + encodeURI(expected.absolute_path || 'D:/Projects new/Nexora/' + expected.path));
   }
   await page.getByLabel('Find a file or code phrase').fill('member-portal.tsx');
   assert.equal(await page.locator('#source-results button').count(), 1);
@@ -58,6 +60,13 @@ try {
   await page.getByRole('button', { name: 'Learning guides', exact: true }).click();
   await page.getByLabel('Find a guide').fill('portal');
   assert.equal(await page.locator('.chapter-nav:visible').count(), 3);
+  await page.getByLabel('Find a guide').fill('Company Dash');
+  assert.equal(await page.locator('.chapter-nav:visible').count(), 6);
+  await page.locator('.chapter-nav').filter({hasText:'31 Company Dash startup'}).click();
+  const companyLink=page.locator('#learn-panel a[href="#source"]').filter({hasText:'public/index.html'}).last();
+  await companyLink.click();
+  assert.match(await page.locator('#source-title').textContent(),/company-dash\/public\/index.html/);
+  await page.getByRole('button', { name: 'Learning guides', exact: true }).click();
   await page.getByLabel('Find a guide').fill('');
   await page.setViewportSize({ width: 390, height: 844 });
   await page.evaluate(() => window.scrollTo(0,0));
@@ -70,7 +79,7 @@ try {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, 'Mobile overflow');
   assert.deepEqual(requests, [], 'The manual must work without external requests');
   assert.deepEqual(errors, [], 'Browser errors');
-  const report = { status: 'passed', chapters: 30, code_buttons: 90, full_source_files: source.length, raw_source_download: true, desktop_and_mobile: true, external_requests: requests.length, browser_errors: errors.length };
+  const report = { status: 'passed', snapshot: manifest.captured_at_utc, chapters: manifest.guide_count, code_buttons: buttons.length, full_source_files: source.length, company_dash_navigation_and_editor_links: true, raw_source_download: true, desktop_and_mobile: true, external_requests: requests.length, browser_errors: errors.length };
   fs.writeFileSync(path.join(out,'browser-evidence.json'),JSON.stringify(report,null,2));
   console.log(JSON.stringify(report));
 } finally { await browser.close(); }

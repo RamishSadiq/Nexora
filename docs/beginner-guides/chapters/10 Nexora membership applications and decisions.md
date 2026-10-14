@@ -1,7 +1,7 @@
 # Nexora membership applications and decisions
 
 Document 10 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand application forms, review details, evidence and staff approval or rejection.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0103 membership-application-details.tsx | Main UI or route for this topic |
-| Server | S0505 MembershipApplicationDetails.cs | Endpoints or server rules |
-| Data | S0417 MembershipEntities.cs | Data shape or persistence structure |
+| Server | S0506 MembershipApplicationDetails.cs | Endpoints or server rules |
+| Data | S0418 MembershipEntities.cs | Data shape or persistence structure |
 
 **Screen S0103**  
 [apps/web/src/features/membership/membership-application-details.tsx](<D:/Projects new/Nexora/apps/web/src/features/membership/membership-application-details.tsx>)
 
-**Server S0505**  
+**Server S0506**  
 [backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs>)
 
-**Data S0417**  
+**Data S0418**  
 [backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0505 backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs
+Source reference S0506 backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs
 
 Extract from source line 21. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 21. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0417 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
+Source reference S0418 backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -175,7 +175,7 @@ SHA256 `471250d7b06d58d593aea028c119cfdd89a53a057df6266d484927eb96286fb4`; 42 so
 0042  }
 ```
 
-### S0505 MembershipApplicationDetails.cs
+### S0506 MembershipApplicationDetails.cs
 
 [backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/MembershipApplicationDetails.cs>)
 
@@ -222,7 +222,7 @@ SHA256 `34c87c173209b1a0da9995a771d8d26202238986d5470a52cd2660a4b354753a`; 38 so
 0038  }
 ```
 
-### S0417 MembershipEntities.cs
+### S0418 MembershipEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs>)
 

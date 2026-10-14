@@ -1,7 +1,7 @@
 # Nexora automation controllers
 
 Document 21 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand the Attributes, Rules and Design controllers for configuring entity forms.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0136 automation-controller.tsx | Main UI or route for this topic |
-| Server | S0191 AutomationConfiguration.cs | Endpoints or server rules |
-| Data | S0193 EntityAttributes.cs | Data shape or persistence structure |
+| Server | S0192 AutomationConfiguration.cs | Endpoints or server rules |
+| Data | S0194 EntityAttributes.cs | Data shape or persistence structure |
 
 **Screen S0136**  
 [apps/web/src/features/shared/automation-controller.tsx](<D:/Projects new/Nexora/apps/web/src/features/shared/automation-controller.tsx>)
 
-**Server S0191**  
+**Server S0192**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs>)
 
-**Data S0193**  
+**Data S0194**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0191 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs
+Source reference S0192 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs
 
 Extract from source line 60. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 60. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0193 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs
+Source reference S0194 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -282,7 +282,7 @@ SHA256 `de84b0d372a896b77bd4fe87de6679279dc86ed0d1580d5c37fb0af97b46bf9e`; 148 s
 0148  }
 ```
 
-### S0191 AutomationConfiguration.cs
+### S0192 AutomationConfiguration.cs
 
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/AutomationConfiguration.cs>)
 
@@ -503,7 +503,7 @@ SHA256 `b20d6591433d5eb3ed9ba3ade75fc1168c326f42c02178820eb3556e905fcdb6`; 212 s
 0212  }
 ```
 
-### S0193 EntityAttributes.cs
+### S0194 EntityAttributes.cs
 
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Persistence/EntityAttributes.cs>)
 

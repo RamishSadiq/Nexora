@@ -1,5 +1,7 @@
 """Small reusable Markdown to Word renderer for the beginner documentation."""
 from pathlib import Path
+from io import BytesIO
+from zipfile import ZipFile
 import re
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -126,7 +128,7 @@ def build(markdown, destination, image_base, title):
         if heading:
             depth=len(heading[1]); text=heading[2]
             p=doc.add_paragraph(text,'Title' if depth==1 else 'Heading '+str(min(depth-1,4)))
-            m=re.match(r'(\d{2}) Nexora',text)
+            m=re.match(r'(\d{2}) (?:Nexora|Company Dash)',text)
             if m:bookmark(p,'guide_'+m[1],bkm); bkm+=1
         elif value.startswith('!['):
             m=re.match(r'!\[([^]]+)\]\(([^)]+)\)',value)
@@ -145,5 +147,10 @@ def build(markdown, destination, image_base, title):
         for e in style.element.findall('.//'+qn('w:pBdr')):e.getparent().remove(e)
     for p in doc.paragraphs:
         for e in p._p.findall('.//'+qn('w:pBdr')):e.getparent().remove(e)
-    doc.save(destination)
+    buffer=BytesIO();doc.save(buffer)
+    destination=Path(destination)
+    if destination.is_file():
+        with ZipFile(destination) as old, ZipFile(BytesIO(buffer.getvalue())) as new:
+            if set(old.namelist())==set(new.namelist()) and all(old.read(name)==new.read(name) for name in old.namelist()):return doc
+    destination.write_bytes(buffer.getvalue())
     return doc

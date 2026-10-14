@@ -1,7 +1,7 @@
 # Nexora sales and finance
 
 Document 15 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand catalogue products, orders, invoices, receipts, allocations and reconciliation.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0098 finance-workspace.tsx | Main UI or route for this topic |
-| Server | S0348 FinanceModule.cs | Endpoints or server rules |
-| Data | S0347 FinanceEntities.cs | Data shape or persistence structure |
+| Server | S0349 FinanceModule.cs | Endpoints or server rules |
+| Data | S0348 FinanceEntities.cs | Data shape or persistence structure |
 
 **Screen S0098**  
 [apps/web/src/features/finance/finance-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/finance/finance-workspace.tsx>)
 
-**Server S0348**  
+**Server S0349**  
 [backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs>)
 
-**Data S0347**  
+**Data S0348**  
 [backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0348 backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs
+Source reference S0349 backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs
 
 Extract from source line 31. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 31. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0347 backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs
+Source reference S0348 backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -160,7 +160,7 @@ SHA256 `a7d5b55d09e1e128a01eadfaa57b88b9043a46bbc94d4236c87643052eb7bad8`; 27 so
 0027  }
 ```
 
-### S0348 FinanceModule.cs
+### S0349 FinanceModule.cs
 
 [backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Finance/FinanceModule.cs>)
 
@@ -246,7 +246,7 @@ SHA256 `3859790347f46d3b1444b110866d1b32cea614164fb0c630846a4175914f461e`; 77 so
 0077  public sealed record ReconcileRequest(Guid Version,string StatementReference,decimal Amount,string Currency);
 ```
 
-### S0347 FinanceEntities.cs
+### S0348 FinanceEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Finance/Domain/FinanceEntities.cs>)
 

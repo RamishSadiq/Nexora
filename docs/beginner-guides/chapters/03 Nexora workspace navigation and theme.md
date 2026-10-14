@@ -1,7 +1,7 @@
 # Nexora workspace navigation and theme
 
 Document 3 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Find the shared sidebar, header, logo, responsive menu and staff workspace colours.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0058 app-shell.tsx | Main UI or route for this topic |
-| Server | S0408 NexoraClaimsPrincipalFactory.cs | Endpoints or server rules |
-| Data | S0378 RolePermission.cs | Data shape or persistence structure |
+| Server | S0409 NexoraClaimsPrincipalFactory.cs | Endpoints or server rules |
+| Data | S0379 RolePermission.cs | Data shape or persistence structure |
 
 **Screen S0058**  
 [apps/web/src/components/app-shell/app-shell.tsx](<D:/Projects new/Nexora/apps/web/src/components/app-shell/app-shell.tsx>)
 
-**Server S0408**  
+**Server S0409**  
 [backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs>)
 
-**Data S0378**  
+**Data S0379**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0408 backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs
+Source reference S0409 backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -79,7 +79,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0378 backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs
+Source reference S0379 backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -134,7 +134,7 @@ These are the complete captured files, with numbered source lines. Other support
 
 [apps/web/src/components/app-shell/app-shell.tsx](<D:/Projects new/Nexora/apps/web/src/components/app-shell/app-shell.tsx>)
 
-SHA256 `618b7ab2eaa8b966a53b645d34ff0c4cffb98e6ea51599afe151360a8335f368`; 154 source lines; complete captured text.
+SHA256 `5c61ee1cf609d61d4ea89b53bbdba71ff2fe1cff8e8e84d9dc645298e7c0228c`; 154 source lines; complete captured text.
 
 ```tsx
 0001  "use client";
@@ -204,7 +204,7 @@ SHA256 `618b7ab2eaa8b966a53b645d34ff0c4cffb98e6ea51599afe151360a8335f368`; 154 s
 0065          <span className="workspace-ambient-horizon" />
 0066        </div>
 0067        {mobileOpen && <button className="workspace-overlay fixed inset-0 z-40 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}
-0068        <aside id="workspace-navigation" inert={navigationCollapsed && !mobileOpen} className={cn("workspace-sidebar fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r transition-transform", mobileOpen ? "visible translate-x-0" : "invisible -translate-x-full")}>
+0068        <aside id="workspace-navigation" data-mobile-open={mobileOpen} inert={navigationCollapsed && !mobileOpen} className="workspace-sidebar fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r transition-transform">
 0069          <div className="flex h-[68px] shrink-0 items-center justify-between px-5">
 0070            <NexoraMark inverse />
 0071            <button className="grid size-9 place-items-center rounded-lg text-[#667085] hover:bg-[#f2f4f8] lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation"><X className="size-5" /></button>
@@ -293,7 +293,7 @@ SHA256 `618b7ab2eaa8b966a53b645d34ff0c4cffb98e6ea51599afe151360a8335f368`; 154 s
 0154  }
 ```
 
-### S0408 NexoraClaimsPrincipalFactory.cs
+### S0409 NexoraClaimsPrincipalFactory.cs
 
 [backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraClaimsPrincipalFactory.cs>)
 
@@ -347,7 +347,7 @@ SHA256 `6e21b92f5e837cd8219e32b6151135c8d5c89a27fb09d5a13b93f93e8c808c39`; 45 so
 0045  }
 ```
 
-### S0378 RolePermission.cs
+### S0379 RolePermission.cs
 
 [backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/RolePermission.cs>)
 

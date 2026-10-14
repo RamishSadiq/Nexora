@@ -1,7 +1,7 @@
 # Nexora home dashboard
 
 Document 4 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand the welcome screen, period selector, report cards and recent-record summaries.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0101 live-dashboard.tsx | Main UI or route for this topic |
-| Server | S0577 ReportingEndpoints.cs | Endpoints or server rules |
-| Data | S0199 ReportDataset.cs | Data shape or persistence structure |
+| Server | S0578 ReportingEndpoints.cs | Endpoints or server rules |
+| Data | S0200 ReportDataset.cs | Data shape or persistence structure |
 
 **Screen S0101**  
 [apps/web/src/features/insights/live-dashboard.tsx](<D:/Projects new/Nexora/apps/web/src/features/insights/live-dashboard.tsx>)
 
-**Server S0577**  
+**Server S0578**  
 [backend/src/Nexora.Api/ReportingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/ReportingEndpoints.cs>)
 
-**Data S0199**  
+**Data S0200**  
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0577 backend/src/Nexora.Api/ReportingEndpoints.cs
+Source reference S0578 backend/src/Nexora.Api/ReportingEndpoints.cs
 
 Extract from source line 12. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 12. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0199 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs
+Source reference S0200 backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -148,7 +148,7 @@ SHA256 `bdebbc0f6234dd57d1637074c11d28a1d1d37f839e8ce700dc9a3f03a01e1964`; 14 so
 0014  }
 ```
 
-### S0577 ReportingEndpoints.cs
+### S0578 ReportingEndpoints.cs
 
 [backend/src/Nexora.Api/ReportingEndpoints.cs](<D:/Projects new/Nexora/backend/src/Nexora.Api/ReportingEndpoints.cs>)
 
@@ -177,7 +177,7 @@ SHA256 `efe06155ca5e7139ff041fac8c1233d5a797f2fca056d59649082e472d458bb1`; 20 so
 0020  }
 ```
 
-### S0199 ReportDataset.cs
+### S0200 ReportDataset.cs
 
 [backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs](<D:/Projects new/Nexora/backend/src/BuildingBlocks/Nexora.BuildingBlocks/Reporting/ReportDataset.cs>)
 

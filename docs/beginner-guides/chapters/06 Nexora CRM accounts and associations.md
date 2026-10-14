@@ -1,7 +1,7 @@
 # Nexora CRM accounts and associations
 
 Document 6 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand company records and the history linking people to organisations.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0080 crm-workspace.tsx | Main UI or route for this topic |
-| Server | S0239 AccountContactEndpoints.cs | Endpoints or server rules |
-| Data | S0253 AccountContact.cs | Data shape or persistence structure |
+| Server | S0240 AccountContactEndpoints.cs | Endpoints or server rules |
+| Data | S0254 AccountContact.cs | Data shape or persistence structure |
 
 **Screen S0080**  
 [apps/web/src/features/crm/crm-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/crm/crm-workspace.tsx>)
 
-**Server S0239**  
+**Server S0240**  
 [backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs>)
 
-**Data S0253**  
+**Data S0254**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0239 backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs
+Source reference S0240 backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs
 
 Extract from source line 17. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 17. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0253 backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs
+Source reference S0254 backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -377,7 +377,7 @@ SHA256 `aeea3421ba16171ca13f3778d1ad68dc9eb640303291a9569f5a89993d4cc5a6`; 243 s
 0243  }
 ```
 
-### S0239 AccountContactEndpoints.cs
+### S0240 AccountContactEndpoints.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/AccountContactEndpoints.cs>)
 
@@ -582,7 +582,7 @@ SHA256 `a492277fbac524092498f19ef511af3d7bd7bdca928170a0b39b96bb7b7b6c23`; 196 s
 0196  public sealed record EndAccountContactRequest(Guid Version, DateTime EndDate, string Reason);
 ```
 
-### S0253 AccountContact.cs
+### S0254 AccountContact.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/AccountContact.cs>)
 

@@ -1,7 +1,7 @@
 # Nexora CRM contacts
 
 Document 5 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand the contact list, create form, detail screen and connected person information.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0080 crm-workspace.tsx | Main UI or route for this topic |
-| Server | S0249 CrmModule.cs | Endpoints or server rules |
-| Data | S0254 CrmEntities.cs | Data shape or persistence structure |
+| Server | S0250 CrmModule.cs | Endpoints or server rules |
+| Data | S0255 CrmEntities.cs | Data shape or persistence structure |
 
 **Screen S0080**  
 [apps/web/src/features/crm/crm-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/crm/crm-workspace.tsx>)
 
-**Server S0249**  
+**Server S0250**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs>)
 
-**Data S0254**  
+**Data S0255**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0249 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
+Source reference S0250 backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
 
 Extract from source line 47. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 47. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0254 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
+Source reference S0255 backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -377,7 +377,7 @@ SHA256 `aeea3421ba16171ca13f3778d1ad68dc9eb640303291a9569f5a89993d4cc5a6`; 243 s
 0243  }
 ```
 
-### S0249 CrmModule.cs
+### S0250 CrmModule.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs>)
 
@@ -757,7 +757,7 @@ SHA256 `5224194ce2b11eff3d60836a87bc9c58200ba591fc2390f2adefd01ca9793c7e`; 371 s
 0371  }
 ```
 
-### S0254 CrmEntities.cs
+### S0255 CrmEntities.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/CrmEntities.cs>)
 

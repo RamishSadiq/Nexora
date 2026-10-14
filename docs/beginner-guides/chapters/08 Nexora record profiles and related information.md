@@ -1,7 +1,7 @@
 # Nexora record profiles and related information
 
 Document 8 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand structured profile fields, taxonomy, audit history and record sections.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0088 record-profiles.tsx | Main UI or route for this topic |
-| Server | S0251 CrmProfiles.cs | Endpoints or server rules |
-| Data | S0256 RecordProfiles.cs | Data shape or persistence structure |
+| Server | S0252 CrmProfiles.cs | Endpoints or server rules |
+| Data | S0257 RecordProfiles.cs | Data shape or persistence structure |
 
 **Screen S0088**  
 [apps/web/src/features/crm/record-profiles.tsx](<D:/Projects new/Nexora/apps/web/src/features/crm/record-profiles.tsx>)
 
-**Server S0251**  
+**Server S0252**  
 [backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs>)
 
-**Data S0256**  
+**Data S0257**  
 [backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0251 backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs
+Source reference S0252 backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs
 
 Extract from source line 12. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 12. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0256 backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs
+Source reference S0257 backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -193,7 +193,7 @@ SHA256 `11b6a122fcf128a6a015b5915453676351e65efd4a3ec1dfda3eb87b6fd275f1`; 60 so
 0060  }
 ```
 
-### S0251 CrmProfiles.cs
+### S0252 CrmProfiles.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/CrmProfiles.cs>)
 
@@ -247,7 +247,7 @@ SHA256 `4ecc767888b9c61f1c5cce26e1b4754cc4e0fce8431e4bdd6ad73e72b7e1ead3`; 45 so
 0045  }
 ```
 
-### S0256 RecordProfiles.cs
+### S0257 RecordProfiles.cs
 
 [backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Crm/Domain/RecordProfiles.cs>)
 

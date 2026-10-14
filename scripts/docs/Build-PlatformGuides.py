@@ -11,6 +11,7 @@ import base64
 import hashlib
 import html
 import json
+import os
 import re
 import subprocess
 import sys
@@ -28,7 +29,14 @@ ASSETS=OUT/'assets/platform'
 QA=ROOT/'artifacts/platform-guide-qa'
 DATE=datetime.now(ZoneInfo('Europe/London')).strftime('%d %B %Y').lstrip('0')
 MASTER='Nexora complete beginner guide'
-SOURCE_EXT={'.tsx','.ts','.css','.cs','.csproj','.json','.http','.slnx','.props','.targets','.mjs','.ps1','.py','.yml','.yaml','.config','.md'}
+COMPANY_DASH_ROOT=Path(os.environ.get('NEXORA_DOCS_COMPANY_DASH_ROOT', 'C:/Users/ramish/Documents/ChatGPT/Company Dash'))
+SOURCE_EXT={'.tsx','.ts','.js','.html','.svg','.css','.cs','.csproj','.json','.http','.slnx','.props','.targets','.mjs','.ps1','.py','.yml','.yaml','.config','.md'}
+
+def editorial_fingerprints():
+    return {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted((ROOT/'scripts/docs').glob('*')) if p.is_file()}
+
+def origin_path(source):
+    return Path(source.get('absolute_path', (ROOT/source['path']).as_posix()))
 
 def capture():
     paths=subprocess.check_output(['rg','--files','apps/web/src','backend/src','apps/web/tests','backend/tests'],cwd=ROOT,text=True).splitlines()
@@ -53,7 +61,20 @@ def capture():
         result.append(dict(id='S'+str(len(result)+1).zfill(4),path=relative,text=text,
                            sha256=hashlib.sha256(raw).hexdigest(),lines=len(text.splitlines()),
                            chapters=owners(relative),redacted=redacted,
+                           absolute_path=p.as_posix(),project='nexora',
                            kind='test' if '/tests/' in relative else 'migration' if '/Migrations/' in relative else 'frontend' if relative.startswith('apps/web/src/') else 'backend' if relative.startswith('backend/src/') else 'configuration'))
+    if not COMPANY_DASH_ROOT.is_dir():raise FileNotFoundError('Company Dash source is unavailable: '+str(COMPANY_DASH_ROOT))
+    dash_paths=subprocess.check_output(['rg','--files','public','server','tests','docs'],cwd=COMPANY_DASH_ROOT,text=True).splitlines()
+    dash_paths+=['package.json','config.example.json','README.md']
+    for relative in sorted(set(p.replace('\\','/') for p in dash_paths)):
+        p=COMPANY_DASH_ROOT/relative
+        if not p.is_file() or p.is_symlink() or p.suffix not in SOURCE_EXT:continue
+        if any(x in p.parts for x in ['node_modules','data','artifacts','.git']):continue
+        raw=p.read_bytes();text=raw.decode('utf-8-sig');relative='company-dash/'+relative
+        result.append(dict(id='S'+str(len(result)+1).zfill(4),path=relative,text=text,
+                           sha256=hashlib.sha256(raw).hexdigest(),lines=len(text.splitlines()),
+                           chapters=owners(relative),redacted=False,absolute_path=p.as_posix(),project='company-dash',
+                           kind='frontend' if relative.startswith('company-dash/public/') else 'backend' if relative.startswith('company-dash/server/') else 'test' if relative.startswith('company-dash/tests/') else 'configuration'))
     return result,passwords
 
 def audit(sources):
@@ -79,8 +100,9 @@ def audit(sources):
     return bypath,routes,modules,sorted(unique_contexts.items())
 
 def source_link(source, label=None, line=None):
-    path=(ROOT/source['path']).as_posix()+(':'+str(line) if line else '')
-    return f"[{label or source['path']}](<{path}>)"
+    path=origin_path(source).as_posix()+(':'+str(line) if line else '')
+    display=label or (source['path'].removeprefix('company-dash/') if source.get('project')=='company-dash' else source['path'])
+    return f"[{display}](<{path}>)"
 
 def find_line(source,anchor):
     return next(n for n,line in enumerate(source['text'].splitlines(),1) if anchor in line)
@@ -141,7 +163,7 @@ def diagram(g):
     return path.relative_to(OUT).as_posix()
 
 def platform_diagram():
-    im=Image.new('RGB',(1540,890),'white');d=ImageDraw.Draw(im)
+    im=Image.new('RGB',(1540,1120),'white');d=ImageDraw.Draw(im)
     d.text((30,20),'The three Nexora applications share the platform',font=fnt(34,True),fill='black')
     box(d,(30,90,477,320),'Staff CRM','3017\nContacts, Membership and operations\nAdministration and editors','#e9f6ef')
     box(d,(547,90,994,320),'Member Portal','3018\nPersonal and company journeys\nSeparate member access','#edf3fa')
@@ -152,6 +174,8 @@ def platform_diagram():
     for x in [253,770,1287]:d.line([(x,320),(x,390)],fill='#4f6477',width=4)
     d.line([(770,575),(770,607),(450,607),(450,632)],fill='#4f6477',width=4)
     arrow(d,750,733,820)
+    box(d,(150,900,1390,1090),'Company Dash is a separate application',
+        '8000  Node server and plain browser frontend in its own repository.\nInspects Nexora source and manages isolated proposals and SQLite task history.', '#f1eff8')
     path=ASSETS/'platform-map.png';im.save(path)
     return path.relative_to(OUT).as_posix()
 
@@ -254,25 +278,33 @@ def chapter(g,bypath):
     data_role='Projects' if n==2 else 'Data'
     for label,s,purpose in [(entry_role,fid,'Local service setup' if n in [2,30] else 'Main UI or route for this topic'),('Server',bid,'Endpoints or server rules'),(data_role,mid,'Backend solution projects' if n==2 else 'Data shape or persistence structure')]:
         rows.append(f"| {label} | {s['id']} {Path(s['path']).name} | {purpose} |")
+    is_dash=n>=31
+    route_help=('Company Dash uses loopback port 8000 and hash navigation. Open its separate repository in VS Code before Ctrl+P. The source library uses company-dash as a project label, not a Nexora folder.' if is_dash else 'CRM routes use port 3017; member routes use 3018; public website routes can use 3019. Brackets name a route parameter, not text to paste into a browser. Choose a real record or site id from the application.')
+    server_explanation=('The browser api() helper sends a method and local request token. app.mjs checks the route and calls the relevant service. Follow that call to understand SQL writes, process execution and filesystem changes.' if is_dash else 'On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.')
+    model_explanation=('store.mjs defines SQLite history tables. catalog.mjs and config.mjs define configuration; repository.mjs records fingerprints. Trace each key into its service before assuming it is a stored table.' if is_dash else 'Follow model fields to their request names and database mapping. An id points to a particular record. A tenant id limits the organisation. A version or concurrency stamp protects newer edits. Some model files describe contracts rather than tables; check the owning DbContext before assuming storage.')
     paragraphs=[f"<!-- CHAPTER {n:02d} -->",f"## {n:02d} {g['title']}",'',g['purpose'],'',
                 '### Recognise the screen and its scope','',
-                'Open '+', '.join('`'+r+'`' for r in g['routes'])+'. CRM routes use port 3017; member routes use 3018; public website routes can use 3019. Brackets name a route parameter, not text to paste into a browser. Choose a real record or site id from the application.','',
+                'Open '+', '.join('`'+r+'`' for r in g['routes'])+'. '+route_help,'',
                 'This guide covers '+ '; '.join(g['scope'])+'.','',
                 f'![File journey for {g["title"]}]({figure})','',
                 'The diagram shows the file roles. The full paths below are what you paste into Ctrl+P.','',
                 '### Find the files in VS Code','', '\n'.join(rows),'']
     for label,s in [(entry_role,fid),('Server',bid),(data_role,mid)]:paragraphs.extend([f"**{label} {s['id']}**  ",source_link(s),''])
-    server_anchor=next((a for a in ['MapGroup','MapGet','MapPost','AddNexora','public static','public sealed','public class'] if a in bid['text']),None)
-    paragraphs.extend(['The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.','',
+    server_anchor=next((a for a in ['export function','export async function','enqueue(','MapGroup','MapGet','MapPost','AddNexora','public static','public sealed','public class'] if a in bid['text']),None)
+    frontend_anchor={31:'<nav aria-label',32:'function knowledge()',33:'function work()',34:'function qaView()',35:'function proposalActions(',36:'function settings()'}.get(n)
+    if is_dash:server_anchor={31:'export function createApp',32:'export async function readSource',33:'enqueue(',34:'async prepareQaRuntime',35:'export async function proposalReview',36:'export async function backupData'}[n]
+    source_help=('Use the HTML source buttons for full files. Word shows labelled extracts; individual Markdown guides contain complete primary files.' if is_dash else 'The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.')
+    frontend_help=('index.html supplies markup and app.js renders browser views. Follow api() to the server route handler.' if is_dash else 'The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.')
+    paragraphs.extend([source_help,'',
                        '### Follow the request and the records',''])
     paragraphs.extend(f'{i}. {sentence}' for i,sentence in enumerate(g['journey'],1))
     paragraphs.extend(['','### Read the code with an explanation','',g['explanation'],'',
-                       f"Source reference {fid['id']} {fid['path']}",'',excerpt(fid),'',
-                       'The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.','',
+                       f"Source reference {fid['id']} {fid['path']}",'',excerpt(fid,frontend_anchor),'',
+                       frontend_help,'',
                        f"Source reference {bid['id']} {bid['path']}",'',excerpt(bid,server_anchor),'',
-                       'On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.','',
+                       server_explanation,'',
                        f"Source reference {mid['id']} {mid['path']}",'',excerpt(mid),'',
-                       'Follow model fields to their request names and database mapping. An id points to a particular record. A tenant id limits the organisation. A version or concurrency stamp protects newer edits. Some model files describe contracts rather than tables; check the owning DbContext before assuming storage.','',
+                       model_explanation,'',
                        '### Make or trace your first change','',
                        f"1. Press Ctrl+P and open {source_link(ex)}.",
                        f"2. Press Ctrl+F and search for `{anchor}`. In this snapshot it appears at line {line}.",
@@ -313,10 +345,41 @@ def inventory(sources,routes,modules,contexts):
                    '| Context | Owning module | Source ID |','| --- | --- | --- |'])
     bypath={s['path']:s for s in sources}
     for name,path in contexts:result.append(f"| {name} | {path.split('Nexora.Modules.')[1].split('/')[0]} | {bypath[path]['id']} |")
-    result.extend(['','### Find all supporting code','',
+    result.extend(['','### Company Dash views and services','',
+                   'Company Dash is served by its own Node server at 127.0.0.1:8000. These hash views are defined in public/index.html and public/app.js; app.mjs maps API requests. Its Store uses SQLite, separately from the Nexora SQL contexts above.','',
+                   '| View or service | Implementation | Guide |','| --- | --- | --- |',
+                   '| Overview and startup | public/index.html and server/app.mjs | 31 |',
+                   '| Repository and docs | public/app.js and server/repository.mjs | 32 |',
+                   '| Work board and AI team | server/runner.mjs store.mjs and catalog.mjs | 33 |',
+                   '| QA and verification | server/runner.mjs and catalog.mjs | 34 |',
+                   '| Proposal review and apply | server/proposals.mjs | 35 |',
+                   '| Activity settings and backups | server/maintenance.mjs usage.mjs and store.mjs | 36 |',
+                   '', '### Find all supporting code','',
                    f"The offline HTML Source library contains {len(sources)} text files and {sum(s['lines'] for s in sources):,} lines. It includes production frontend and backend source, EF migrations, related test source and selected build/debug configuration. Search by source ID, path or a phrase inside code; select a guide to narrow the list. Each selected file displays its full captured code, numbered lines and SHA256 fingerprint. Configured local passwords are replaced by an explicit omitted marker, and those files are labelled redacted.",'',
                    'The source library is part of the HTML file itself. It needs no server, network or dependency download. Its code is a dated reference; edit the actual repository file in VS Code. Copy raw source excludes the display line numbers. Open in VS Code is a user-clicked editor link and may prompt your browser.',''])
     return '\n'.join(result)
+
+def write_readme(manifest):
+    rows=['# Nexora beginner documentation','',
+          f"Start with **{MASTER}.html**. This one offline file contains all {len(GUIDES)} teaching guides, embedded diagrams, VS Code maps and the complete captured code library. Guides 01 to 30 cover Nexora CRM, Portal, CMS, public website and backend. Guides 31 to 36 cover the separate Company Dash application.",'',
+          f'The **{MASTER}.docx** is the editable reading edition with short labelled code extracts. Full files are embedded in the HTML library. Individual Markdown guides append their complete primary implementation files; the originally approved login guide remains a dated reference.','',
+          f'- [Complete offline guide with full code]({MASTER.replace(" ","%20")}.html)',
+          f'- [Combined Word manual]({MASTER.replace(" ","%20")}.docx)',
+          f'- [Editable teaching source]({MASTER.replace(" ","%20")}.md)',
+          '- [Maintenance and automatic refresh](DOCUMENTATION-MAINTENANCE.md)',
+          '- [Source manifest](source-manifest.json)','- [Route coverage](coverage.json)','',
+          '## Individual guides','', '| Guide | Word | Teaching and primary code |','| --- | --- | --- |']
+    for g in GUIDES:
+        stem=('Nexora login page' if g['number']==1 else f"chapters/{g['number']:02d} {g['title']}").replace(' ','%20')
+        rows.append(f"| {g['number']:02d} {g['title']} | [Word]({stem}.docx) | [Markdown]({stem}.md) |")
+    rows.extend(['','## Snapshot and verification','',
+                 f"Captured {manifest['captured_at_utc']}: {manifest['file_count']} text files and {manifest['source_lines']:,} lines across the two application repositories. The Nexora inventory includes {manifest['route_entries']} page/layout/HTTP entries, {len(manifest['modules'])} modules and {len(manifest['contexts'])} concrete database contexts.",'',
+                 'The source snapshot includes allowed working-tree changes. Configured local passwords are omitted and marked; private local configuration, runtime databases, dependency/build folders and binary media are excluded. Company Dash is read for documentation only and stays a separate project. Capture metadata and SHA256 fingerprints identify the copied version; this documentation introduces no runtime dependency on its checkout.','',
+                 'Browser, source-copy and Word layout checks are documentation evidence. They do not prove that product regression suites, live providers or production acceptance ran again. See each guide for current limits.','',
+                 '## Maintenance','',
+                 'Use scripts/docs/Sync-PlatformGuides.py --check to detect changed, added or removed source and editorial changes. --refresh archives the previous complete manual before regenerating it. Review changed explanations and run the documented browser and Word checks. The hourly chat automation performs this workflow when local files are available; ongoing Nexora work must also follow the documentation rule in AGENTS.md.','',
+                 'The maintained filenames remain the same. Dated complete-manual copies are in history. See DOCUMENTATION-MAINTENANCE.md for commands, project paths, review steps and limitations.'])
+    (OUT/'README.md').write_text('\n'.join(rows)+'\n',encoding='utf-8')
 
 MAINTENANCE='''<!-- CHAPTER maintenance -->
 ## How to maintain the platform and these guides
@@ -360,6 +423,14 @@ The editorial explanations are in scripts/docs/platform_guide_catalog.py. The Ma
 ```
 
 The runtime path is specific to this workstation. The builder captures code, verifies every primary file and exercise search phrase, generates diagrams, writes the individual guides, and combines the complete Word, Markdown and offline HTML manuals. It excludes build output and checks that configured local password values were not copied. Review new source changes, scope and rendered pages before delivering a rebuilt Word file.
+
+### Keep the maintained copy current
+
+The complete manual keeps the same filename so saved links remain useful. scripts/docs/Sync-PlatformGuides.py --check compares the captured source fingerprints with both live repositories and detects added or removed files. It also checks the editorial catalogue and document tooling. When changes exist, inspect the changed behaviour and update the explanation, map or exercise before running --refresh.
+
+Refresh saves the previous complete HTML, Word and Markdown manuals, their manifests and diagrams in docs/beginner-guides/history. It then rebuilds the maintained copy. If authoring fails, the last complete collection is restored from an internal backup. Browser and Word page checks remain required; a copied source change alone does not prove that its explanation is correct.
+
+The hourly documentation check returns to this chat and runs only while the computer and Codex app can access local files. It stays quiet when nothing changes. This is a scheduled refresh, not an instantaneous file watcher or database audit. The manual records source and selected configuration; saved CRM business records are not copied into it. See DOCUMENTATION-MAINTENANCE.md for the maintainer commands and review state.
 
 ### Preserve the evidence boundaries
 
@@ -407,7 +478,7 @@ def md_html(markdown):
             output.append('</tbody></table></div>');continue
         m=re.match(r'^(#{1,5}) (.*)',line)
         if m:
-            close_list();depth=len(m[1]);text=m[2];id_match=re.match(r'(\d{2}) Nexora',text)
+            close_list();depth=len(m[1]);text=m[2];id_match=re.match(r'(\d{2}) (?:Nexora|Company Dash)',text)
             ident='guide_'+id_match[1] if id_match else re.sub(r'[^a-z0-9]+','-',text.lower()).strip('-')
             base=ident;duplicate=2
             while ident in heading_ids:ident=base+'-'+str(duplicate);duplicate+=1
@@ -445,12 +516,12 @@ const el=id=>document.getElementById(id);let selected=null;
 function showMode(mode){el('learn-panel').hidden=mode!=='learn';el('source-panel').hidden=mode!=='source';document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));}
 document.querySelectorAll('[data-mode]').forEach(b=>b.addEventListener('click',()=>showMode(b.dataset.mode)));
 function results(){const q=el('source-search').value.toLowerCase().trim(),guide=Number(el('source-guide').value);const found=files.filter(f=>(!guide||f.chapters.includes(guide))&&(!q||f.id.toLowerCase().includes(q)||f.path.toLowerCase().includes(q)||f.text.toLowerCase().includes(q)));el('source-results').replaceChildren();found.forEach(f=>{const b=document.createElement('button');b.textContent=f.id+'  '+f.path;b.type='button';b.addEventListener('click',()=>openSource(f.id));el('source-results').append(b)});el('source-count').textContent=found.length+' matching files';}
-function openSource(id,line){const f=files.find(f=>f.id===id);if(!f)return;selected=f;showMode('source');el('source-title').textContent=f.id+'  '+f.path;el('source-meta').textContent=f.lines+' source lines · '+f.kind+' · '+(f.redacted?'Configured local password omitted · ':'')+'SHA256 '+f.sha256;el('source-code').textContent=f.text.split(/\r?\n/).map((t,i)=>String(i+1).padStart(5,'0')+'  '+t).join('\n');el('editor-link').href='vscode://file/'+encodeURI('D:/Projects new/Nexora/'+f.path)+(line?':'+line:'');el('source-actions').hidden=false;el('source-status').textContent='Full captured file shown. Edit the live repository file in VS Code.';if(line)el('source-code').scrollTop=Math.max(0,(line-3)*22);else el('source-code').scrollTop=0;window.scrollTo({top:0,behavior:'smooth'});}
+function openSource(id,line){const f=files.find(f=>f.id===id);if(!f)return;selected=f;showMode('source');el('source-title').textContent=f.id+'  '+f.path;el('source-meta').textContent=f.lines+' source lines · '+f.kind+' · '+(f.redacted?'Configured local password omitted · ':'')+'SHA256 '+f.sha256;el('source-code').textContent=f.text.split(/\r?\n/).map((t,i)=>String(i+1).padStart(5,'0')+'  '+t).join('\n');el('editor-link').href='vscode://file/'+encodeURI(f.absolute_path||'D:/Projects new/Nexora/'+f.path)+(line?':'+line:'');el('source-actions').hidden=false;el('source-status').textContent='Full captured file shown. Edit the live repository file in VS Code.';if(line)el('source-code').scrollTop=Math.max(0,(line-3)*22);else el('source-code').scrollTop=0;window.scrollTo({top:0,behavior:'smooth'});}
 el('source-search').addEventListener('input',results);el('source-guide').addEventListener('change',results);
 el('chapter-search').addEventListener('input',e=>{const q=e.target.value.toLowerCase();document.querySelectorAll('.chapter-nav').forEach(a=>a.hidden=!a.textContent.toLowerCase().includes(q));});
 document.querySelectorAll('[data-source]').forEach(b=>b.addEventListener('click',()=>openSource(b.dataset.source,Number(b.dataset.line)||undefined)));
 document.querySelectorAll('.chapter-nav').forEach(a=>a.addEventListener('click',()=>showMode('learn')));
-document.querySelectorAll('#learn-panel a[href]').forEach(a=>{const href=a.getAttribute('href');const m=href.match(/^D:\/Projects new\/Nexora\/(.*?)(?::(\d+))?$/);if(m){const f=files.find(f=>f.path===m[1]);if(f){a.href='#source';a.addEventListener('click',e=>{e.preventDefault();openSource(f.id,Number(m[2])||undefined);});}}});
+document.querySelectorAll('#learn-panel a[href]').forEach(a=>{const href=a.getAttribute('href'),m=href.match(/^(.*?)(?::(\d+))?$/);const f=files.find(f=>(f.absolute_path||'D:/Projects new/Nexora/'+f.path)===m[1]);if(f){a.href='#source';a.addEventListener('click',e=>{e.preventDefault();openSource(f.id,Number(m[2])||undefined);});}});
 el('copy-source').addEventListener('click',async()=>{if(!selected)return;try{await navigator.clipboard.writeText(selected.text);el('source-status').textContent='Raw source copied without display line numbers.';}catch{el('source-status').textContent='Clipboard is unavailable on this file URL. Use Download source instead.';}});
 el('download-source').addEventListener('click',()=>{if(!selected)return;const a=document.createElement('a'),url=URL.createObjectURL(new Blob([selected.text],{type:'text/plain;charset=utf-8'}));a.href=url;a.download=selected.path.split('/').pop();a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);el('source-status').textContent='Downloaded the captured source. Review before using it in another checkout.';});
 results();
@@ -496,7 +567,8 @@ def run():
     mapping=platform_diagram()
     front=[f'# {MASTER}','',f'Source snapshot {capture_label}  ',
            'A learning manual for someone starting without coding experience','',
-           'This manual explains the complete Nexora platform through 30 beginner guides. Each guide identifies its screen, maps the frontend and backend files, follows the request into stored records, explains the code and gives a small practice task. The same structure as the approved Nexora login page guide is used throughout.','',
+           f'This manual explains Nexora and its separate Company Dash maintenance application through {len(GUIDES)} beginner guides. Each guide identifies its screen, maps the frontend and backend files, follows the request into stored records, explains the code and gives a small practice task. The same structure as the approved Nexora login page guide is used throughout.','',
+           'Guides 01 to 30 cover CRM, Portal, CMS, public website and the shared Nexora backend. Guides 31 to 36 cover Company Dash, including its complete frontend and backend source. The Company Dash source is a versioned documentation snapshot from its own repository; Nexora has no runtime dependency on that checkout.','',
            'The Word edition is the readable teaching manual with short labelled code extracts. The self-contained HTML edition combines that same teaching text with the full captured source library. Open the HTML file in a browser, choose Full source library and read or search every included file without needing a server. Individual Word and Markdown guides are also saved alongside this manual.','',
            'The snapshot reflects the working checkout, including implemented changes that may not yet be committed as application source. It is dated evidence, not a production release certificate. The documentation commit records the manuals; it does not silently commit other application edits. The originally approved login document is retained as its own dated reference.','',
            f'![Nexora applications and shared platform]({mapping})','',
@@ -542,6 +614,8 @@ def run():
     manifest=dict(date=DATE,captured_at_utc=captured_at,git_head_at_capture=head,working_tree_snapshot=True,
                   guide_count=len(GUIDES),route_entries=len(routes),modules=modules,contexts=contexts,
                   file_count=len(sources),source_lines=sum(s['lines'] for s in sources),
+                  projects=[dict(id='nexora',root=ROOT.as_posix(),source_files=sum(s.get('project','nexora')=='nexora' for s in sources)),dict(id='company-dash',root=COMPANY_DASH_ROOT.as_posix(),source_files=sum(s.get('project')=='company-dash' for s in sources))],
+                  editorial_fingerprints=editorial_fingerprints(),
                   files=[{k:v for k,v in s.items() if k!='text'} for s in sources])
     (OUT/'source-manifest.json').write_text(json.dumps(manifest,indent=2),encoding='utf-8')
     coverage=dict(routes=[dict(path=s['path'],route=route_name(s['path']),source_id=s['id'],guides=s['chapters']) for s in routes],
@@ -549,6 +623,7 @@ def run():
                   all_primary_paths_found=True,configured_password_values_included=False,
                   live_business_actions_performed=False,application_regression_run=False)
     (OUT/'coverage.json').write_text(json.dumps(coverage,indent=2),encoding='utf-8')
+    write_readme(manifest)
     (QA/'captured-status.txt').write_text(status,encoding='utf-8')
     (QA/'source-data.json').write_text(json.dumps(sources,ensure_ascii=False),encoding='utf-8')
     summary={k:v for k,v in manifest.items() if k not in ['files','contexts','modules']}

@@ -1,7 +1,7 @@
 # Nexora administration and access
 
 Document 20 of the Nexora learning guides  
-Source snapshot 13 October 2026 at 17:12 UTC
+Source snapshot 14 October 2026 at 06:41 UTC
 
 
 Understand staff users, security groups, permission assignment and tenant protection.
@@ -21,16 +21,16 @@ The diagram shows the file roles. The full paths below are what you paste into C
 | Role | File and source ID | What it does |
 | --- | --- | --- |
 | Screen | S0064 access-workspace.tsx | Main UI or route for this topic |
-| Server | S0370 AdministrationEndpoints.cs | Endpoints or server rules |
-| Data | S0373 NexoraRole.cs | Data shape or persistence structure |
+| Server | S0371 AdministrationEndpoints.cs | Endpoints or server rules |
+| Data | S0374 NexoraRole.cs | Data shape or persistence structure |
 
 **Screen S0064**  
 [apps/web/src/features/administration/access-workspace.tsx](<D:/Projects new/Nexora/apps/web/src/features/administration/access-workspace.tsx>)
 
-**Server S0370**  
+**Server S0371**  
 [backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs>)
 
-**Data S0373**  
+**Data S0374**  
 [backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs>)
 
 The complete HTML manual opens these source IDs inside its Source library. The Word manual shows short labelled extracts so you can learn the flow before reading large files. Each individual Markdown guide includes its complete primary files after the walkthrough.
@@ -63,7 +63,7 @@ Selected opening lines with their original numbers. The complete file is in the 
 
 The import lines lead to shared components and helpers. Start at the exported component or route function; follow the request helper to the server rather than assuming the whole feature lives in this file.
 
-Source reference S0370 backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs
+Source reference S0371 backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs
 
 Extract from source line 23. A fragment from a long line is shown without the rest of that line.
 
@@ -74,7 +74,7 @@ Extract from source line 23. A fragment from a long line is shown without the re
 
 On the server, look for MapGet to load records, MapPost to create or perform an action, MapPut or MapPatch to change data, and RequireAuthorization for permissions. Some shared methods register endpoints indirectly. Find SaveChangesAsync to see the database write. A request method alone does not tell you every side effect.
 
-Source reference S0373 backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs
+Source reference S0374 backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs
 
 Selected opening lines with their original numbers. The complete file is in the HTML source library.
 
@@ -240,7 +240,7 @@ SHA256 `4453cc0e04a868222421df750191d3bfa6a58d6bc49f17674074438a3b3e97c6`; 106 s
 0106  }
 ```
 
-### S0370 AdministrationEndpoints.cs
+### S0371 AdministrationEndpoints.cs
 
 [backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/AdministrationEndpoints.cs>)
 
@@ -453,7 +453,7 @@ SHA256 `5456b8efa4e7ed81886f319b5e67474d06605608f4089f1e35487f1e9701491e`; 204 s
 0204  public sealed record VersionRequest(string ConcurrencyStamp);
 ```
 
-### S0373 NexoraRole.cs
+### S0374 NexoraRole.cs
 
 [backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs](<D:/Projects new/Nexora/backend/src/Modules/Nexora.Modules.Identity/Domain/NexoraRole.cs>)
 
