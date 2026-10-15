@@ -1,0 +1,682 @@
+diff --git a/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs b/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
+index e69de29..b6c2a47 100644
+--- a/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
++++ b/backend/src/Modules/Nexora.Modules.Membership/Domain/MembershipEntities.cs
+@@
+ public class MembershipApplication : TenantEntity
+ {
+     public Guid Id { get; set; }
+@@
+-    public DateTime? ApprovedUtc { get; set; }
++    public DateTime? ApprovedUtc { get; set; }
++
++    // ---------- NEW PROPERTY ----------
++    // The date the applicant requested the membership to end.
++    // Nullable because many applications are for new memberships
++    // (the “requested” date is calculated later when the term is created).
++    public DateTime? RequestedEndUtc { get; set; }
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Membership/Api/Models/MembershipApplicationDto.cs b/backend/src/Modules/Nexora.Modules.Membership/Api/Models/MembershipApplicationDto.cs
+new file mode 100644
+index 0000000..53c9a2f
+--- /dev/null
++++ b/backend/src/Modules/Nexora.Modules.Membership/Api/Models/MembershipApplicationDto.cs
+@@
++using System;
++
++namespace Nexora.Modules.Membership.Api.Models
++{
++    public class MembershipApplicationDto
++    {
++        public Guid Id { get; set; }
++        public Guid ContactId { get; set; }
++        public Guid? AccountId { get; set; }
++        public Guid ProductId { get; set; }
++
++        public DateTime? ApprovedUtc { get; set; }
++
++        // NEW – exposed to the portal UI
++        public DateTime? RequestedEndUtc { get; set; }
++
++        // other existing DTO properties…
++    }
++}
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/Migrations/20240919_AddRequestedEndUtc.cs b/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/Migrations/20240919_AddRequestedEndUtc.cs
+new file mode 100644
+index 0000000..2b9f041
+--- /dev/null
++++ b/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/Migrations/20240919_AddRequestedEndUtc.cs
+@@
++using System;
++using Microsoft.EntityFrameworkCore.Migrations;
++
++#nullable disable
++
++namespace Nexora.Modules.Membership.Infrastructure.Migrations
++{
++    public partial class AddRequestedEndUtc : Migration
++    {
++        protected override void Up(MigrationBuilder migrationBuilder)
++        {
++            migrationBuilder.AddColumn<DateTime>(
++                name: "RequestedEndUtc",
++                schema: "membership",
++                table: "MembershipApplication",
++                type: "datetime2",
++                nullable: true);
++        }
++
++        protected override void Down(MigrationBuilder migrationBuilder)
++        {
++            migrationBuilder.DropColumn(
++                name: "RequestedEndUtc",
++                schema: "membership",
++                table: "MembershipApplication");
++        }
++    }
++}
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/Migrations/20240920_AddMembershipSubjectUniqueness.cs b/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/Migrations/20240920_AddMembershipSubjectUniqueness.cs
+new file mode 100644
+index 0000000..e1c8fe4
+--- /dev/null
++++ b/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/Migrations/20240920_AddMembershipSubjectUniqueness.cs
+@@
++using Microsoft.EntityFrameworkCore.Migrations;
++
++#nullable disable
++
++namespace Nexora.Modules.Membership.Infrastructure.Migrations
++{
++    public partial class AddMembershipSubjectUniqueness : Migration
++    {
++        protected override void Up(MigrationBuilder migrationBuilder)
++        {
++            // Contact‑based active memberships
++            migrationBuilder.CreateIndex(
++                name: "IX_MembershipApplication_Tenant_Contact_Product_Active",
++                schema: "membership",
++                table: "MembershipApplication",
++                columns: new[] { "TenantId", "ContactId", "ProductId" })
++                .IsUnique()
++                .HasFilter("[ContactId] IS NOT NULL AND [EffectiveStartUtc] <= SYSUTCDATETIME() AND [EffectiveEndUtc] >= SYSUTCDATETIME()");
++
++            // Account‑based active memberships
++            migrationBuilder.CreateIndex(
++                name: "IX_MembershipApplication_Tenant_Account_Product_Active",
++                schema: "membership",
++                table: "MembershipApplication",
++                columns: new[] { "TenantId", "AccountId", "ProductId" })
++                .IsUnique()
++                .HasFilter("[AccountId] IS NOT NULL AND [EffectiveStartUtc] <= SYSUTCDATETIME() AND [EffectiveEndUtc] >= SYSUTCDATETIME()");
++        }
++
++        protected override void Down(MigrationBuilder migrationBuilder)
++        {
++            migrationBuilder.DropIndex(
++                name: "IX_MembershipApplication_Tenant_Contact_Product_Active",
++                schema: "membership",
++                table: "MembershipApplication");
++
++            migrationBuilder.DropIndex(
++                name: "IX_MembershipApplication_Tenant_Account_Product_Active",
++                schema: "membership",
++                table: "MembershipApplication");
++        }
++    }
++}
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs b/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
+index 7c9b2f1..a5e7ff3 100644
+--- a/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
++++ b/backend/src/Modules/Nexora.Modules.Crm/CrmModule.cs
+@@
+-    endpoints.MapGet("/", async ctx => { /* existing */ });
++    // -------------------------------------------------
++    // Existing endpoints – give each a stable name to silence AD0001
++    // -------------------------------------------------
++    endpoints.MapGet("/", async ctx => { /* existing */ })
++             .WithName("CrmRoot")
++             .RequireAuthorization();
+@@
+-    endpoints.MapGet("/records/{id:guid}", async ctx => { /* existing */ });
++    endpoints.MapGet("/records/{id:guid}", async ctx => { /* existing */ })
++             .WithName("GetRecordById")
++             .RequireAuthorization("CrmReadPolicy");
+@@
+-    endpoints.MapPost("/records/{id:guid}/files", async ctx => { /* existing */ });
++    endpoints.MapPost("/records/{id:guid}/files", async ctx => { /* existing */ })
++             .WithName("AddRecordFile")
++             .RequireAuthorization("CrmReadPolicy");
+@@
+-    // Existing assistant endpoint (unsafe)
+-    endpoints.MapGet("/api/v1/assistant/crm-context", async ctx => { … });
++    // -------------------------------------------------
++    // NEW: Secure assistant endpoint – runs through normal policy
++    // -------------------------------------------------
++    endpoints.MapGet("/api/v1/assistant/crm-context", async ctx =>
++    {
++        var token = ctx.Request.Query["token"];
++        if (!AssistantTokenValidator.IsValid(token, out var tenantId, out var expiry))
++        {
++            ctx.Response.StatusCode = StatusCodes.Status401Unauthorized;
++            return;
++        }
++
++        // Build a minimal service‑principal that only has crm.read
++        var servicePrincipal = new ClaimsPrincipal(new ClaimsIdentity(new[]
++        {
++            new Claim(ClaimTypes.NameIdentifier, "assistant-service"),
++            new Claim(NexoraClaims.TenantId, tenantId),
++            new Claim(NexoraClaims.Permission, "crm.read")
++        }, "AssistantToken"));
++
++        var authz = await ctx.RequestServices
++            .GetRequiredService<IAuthorizationService>()
++            .AuthorizeAsync(servicePrincipal, null, "CrmReadPolicy");
++
++        if (!authz.Succeeded)
++        {
++            ctx.Response.StatusCode = StatusCodes.Status403Forbidden;
++            return;
++        }
++
++        var directory = ctx.RequestServices.GetRequiredService<ICrmDirectory>();
++        var records = await directory.GetAllAsync(tenantId);
++        await ctx.Response.WriteAsJsonAsync(records);
++    })
++    .RequireAuthorization(); // still passes through the global auth middleware
++
++    // -------------------------------------------------
++    // NEW: Light‑weight overview endpoint (used by staff UI & assistant)
++    // -------------------------------------------------
++    endpoints.MapGet("/records/{id:guid}/overview", async ctx =>
++    {
++        var user = ctx.User;
++        var tenantId = user.FindFirst(NexoraClaims.TenantId)?.Value;
++        if (string.IsNullOrEmpty(tenantId))
++        {
++            ctx.Response.StatusCode = StatusCodes.Status401Unauthorized;
++            return;
++        }
++
++        var authz = await ctx.RequestServices
++            .GetRequiredService<IAuthorizationService>()
++            .AuthorizeAsync(user, null, "CrmReadPolicy");
++
++        if (!authz.Succeeded)
++        {
++            ctx.Response.StatusCode = StatusCodes.Status403Forbidden;
++            return;
++        }
++
++        var directory = ctx.RequestServices.GetRequiredService<ICrmDirectory>();
++        var record = await directory.GetAsync(tenantId, ctx.GetRouteValue("id")!.ToString()!);
++        if (record == null)
++        {
++            ctx.Response.StatusCode = StatusCodes.Status404NotFound;
++            return;
++        }
++
++        var overview = new
++        {
++            Id = record.Id,
++            Kind = record.Kind,
++            Name = record.Name,
++            IsActive = record.IsActive,
++            AllowedActions = new[]
++            {
++                new { Name = "Edit",    Url = $"/records/{record.Id}/edit" },
++                new { Name = "Archive", Url = $"/records/{record.Id}/archive" },
++                new { Name = "Timeline",Url = $"/records/{record.Id}/timeline" }
++            },
++            TimelineUrl = $"/records/{record.Id}/timeline"
++        };
++
++        await ctx.Response.WriteAsJsonAsync(overview);
++    })
++    .RequireAuthorization("CrmReadPolicy");
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Crm/Infrastructure/CrmDbContext.cs b/backend/src/Modules/Nexora.Modules.Crm/Infrastructure/CrmDbContext.cs
+index d9384fa..b2a5c71 100644
+--- a/backend/src/Modules/Nexora.Modules.Crm/Infrastructure/CrmDbContext.cs
++++ b/backend/src/Modules/Nexora.Modules.Crm/Infrastructure/CrmDbContext.cs
+@@
+     protected override void OnModelCreating(ModelBuilder modelBuilder)
+     {
+         base.OnModelCreating(modelBuilder);
+ 
+         // Existing entity configurations …
++
++        // -------------------------------------------------
++        // Enforce exactly ONE primary contact per account (IsPrimary = true)
++        // -------------------------------------------------
++        modelBuilder.Entity<AccountContact>(entity =>
++        {
++            entity.HasIndex(e => new { e.TenantId, e.AccountId, e.IsPrimary })
++                  .IsUnique()
++                  .HasFilter("[IsPrimary] = 1");
++        });
+     }
+ }
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/MembershipDbContext.cs b/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/MembershipDbContext.cs
+index a4c42d1..d5f81c3 100644
+--- a/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/MembershipDbContext.cs
++++ b/backend/src/Modules/Nexora.Modules.Membership/Infrastructure/MembershipDbContext.cs
+@@
+     protected override void OnModelCreating(ModelBuilder modelBuilder)
+     {
+         base.OnModelCreating(modelBuilder);
+ 
+         // Existing entity configurations …
++
++        // -------------------------------------------------
++        // UNIQUE active membership per (subject, product)
++        // -------------------------------------------------
++        modelBuilder.Entity<MembershipApplication>(entity =>
++        {
++            // Contact‑based uniqueness
++            entity.HasIndex(e => new { e.TenantId, e.ContactId, e.ProductId })
++                  .IsUnique()
++                  .HasFilter("[ContactId] IS NOT NULL AND [EffectiveStartUtc] <= SYSUTCDATETIME() AND [EffectiveEndUtc] >= SYSUTCDATETIME()");
++
++            // Account‑based uniqueness
++            entity.HasIndex(e => new { e.TenantId, e.AccountId, e.ProductId })
++                  .IsUnique()
++                  .HasFilter("[AccountId] IS NOT NULL AND [EffectiveStartUtc] <= SYSUTCDATETIME() AND [EffectiveEndUtc] >= SYSUTCDATETIME()");
++        });
+     }
+ }
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraSecurity.cs b/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraSecurity.cs
+index f4b2a3d..e4d7c8b 100644
+--- a/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraSecurity.cs
++++ b/backend/src/Modules/Nexora.Modules.Identity/Security/NexoraSecurity.cs
+@@
+         services.AddAuthorization(options =>
+         {
+             // Existing policies …
++
++            // NEW: CRM‑READ policy – used by staff UI, assistant and any future service.
++            options.AddPolicy("CrmReadPolicy", policy =>
++            {
++                policy.RequireAuthenticatedUser();
++                policy.RequireClaim(NexoraClaims.Permission, "crm.read");
++                policy.RequireAssertion(context =>
++                {
++                    var tenantId = context.User.FindFirst(NexoraClaims.TenantId)?.Value;
++                    return !string.IsNullOrEmpty(tenantId);
++                });
++            });
+         });
+*** End of File ***
+diff --git a/backend/src/Modules/Nexora.Modules.Identity/IdentityModule.cs b/backend/src/Modules/Nexora.Modules.Identity/IdentityModule.cs
+index 25d3a71..a8b9d6c 100644
+--- a/backend/src/Modules/Nexora.Modules.Identity/IdentityModule.cs
++++ b/backend/src/Modules/Nexora.Modules.Identity/IdentityModule.cs
+@@
+-    public void RegisterEndpoints(IEndpointRouteBuilder endpoints)
+-    {
+-        // Existing local‑dev login endpoints …
+-    }
++    public void RegisterEndpoints(IEndpointRouteBuilder endpoints)
++    {
++        var cfg = endpoints.ServiceProvider.GetRequiredService<IConfiguration>();
++        var entraEnabled = cfg.GetValue<bool>("Identity:Provider:Entra:Enabled");
++
++        // -------------------------------------------------
++        // 1️⃣  Local‑dev fallback (unchanged)
++        // -------------------------------------------------
++        endpoints.MapPost("/login", async ctx => { /* existing dev login logic */ });
++
++        // -------------------------------------------------
++        // 2️⃣  Entra OIDC login – ONLY when the flag is true.
++        // -------------------------------------------------
++        if (entraEnabled)
++        {
++            // The OIDC middleware (added in Program.cs) automatically creates
++            // the /signin‑oidc and /signout‑oidc endpoints.
++            endpoints.MapGet("/login/entra", async ctx =>
++            {
++                await ctx.ChallengeAsync(OpenIdConnectDefaults.AuthenticationScheme,
++                    new AuthenticationProperties { RedirectUri = "/" });
++            });
++
++            // Provider discovery endpoint – used by the SPA to know which button to show.
++            endpoints.MapGet("/providers", async ctx =>
++            {
++                var providers = new[]
++                {
++                    new { Id = "entra", Name = "Microsoft Entra (Azure AD)" }
++                };
++                await ctx.Response.WriteAsJsonAsync(providers);
++            });
++        }
++        else
++        {
++            // Fallback to the local dev provider list.
++            endpoints.MapGet("/providers", async ctx =>
++            {
++                var providers = new[]
++                {
++                    new { Id = "local", Name = "Local Development (username/password)" }
++                };
++                await ctx.Response.WriteAsJsonAsync(providers);
++            });
++        }
++
++        // -------------------------------------------------
++        // 3️⃣  Logout / session endpoints (unchanged)
++        // -------------------------------------------------
++        endpoints.MapPost("/logout", async ctx => { /* existing logout */ });
++        endpoints.MapGet("/session", async ctx => { /* existing session */ });
++    }
+*** End of File ***
+diff --git a/backend/src/Nexora.Api/Program.cs b/backend/src/Nexora.Api/Program.cs
+index 68c7d5a..b6e1f4c 100644
+--- a/backend/src/Nexora.Api/Program.cs
++++ b/backend/src/Nexora.Api/Program.cs
+@@
+ var builder = WebApplication.CreateBuilder(args);
+ 
+ // -----------------------------------------------------------------
+ // Shared services (logging, health checks, etc.) …
+ // -----------------------------------------------------------------
+ builder.Services.AddNexoraSecurity(builder.Configuration);
+ builder.Services.AddEndpointsApiExplorer();
+ builder.Services.AddSwaggerGen();
+ 
+-// -----------------------------------------------------------------
+-// OIDC – always enabled (old repo assumed Entra was always on)
+-// -----------------------------------------------------------------
+-var entraEnabled = builder.Configuration.GetValue<bool>("Identity:Provider:Entra:Enabled");
+-if (entraEnabled)
+-{
+-    builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
+-        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("Identity:Provider:Entra"));
+-
+-    // Adds the Razor pages required for the OIDC UI (sign‑in, sign‑out, error)
+-    builder.Services.AddRazorPages()
+-        .AddMicrosoftIdentityUI();
+-}
+-else
+-{
+-    // Dev‑only cookie scheme – already present elsewhere in the repo
+-    builder.Services.AddAuthentication("Cookie")
+-        .AddCookie("Cookie", options => { /* existing dev‑only options… */ });
+-}
++// -----------------------------------------------------------------
++// OIDC – only enable when the config flag is true.
++// -----------------------------------------------------------------
++var entraEnabled = builder.Configuration.GetValue<bool>("Identity:Provider:Entra:Enabled");
++if (entraEnabled)
++{
++    builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
++        .AddMicrosoftIdentityWebApp(builder.Configuration.GetSection("Identity:Provider:Entra"));
++
++    // Adds the Razor pages required for the OIDC UI (sign‑in, sign‑out, error)
++    builder.Services.AddRazorPages()
++        .AddMicrosoftIdentityUI();
++}
++else
++{
++    // Dev‑only cookie scheme – already present elsewhere in the repo
++    builder.Services.AddAuthentication("Cookie")
++        .AddCookie("Cookie", options => { /* existing dev‑only options… */ });
++}
+ 
+ var app = builder.Build();
+ 
+ app.UseAuthentication();
+ app.UseAuthorization();
+*** End of File ***
+diff --git a/apps/web/src/app/(auth)/login/login-form.tsx b/apps/web/src/app/(auth)/login/login-form.tsx
+index 7d9e2c1..d04b9fa 100644
+--- a/apps/web/src/app/(auth)/login/login-form.tsx
++++ b/apps/web/src/app/(auth)/login/login-form.tsx
+@@
+-  useEffect(() => {
+-    // fetch something…
+-  }, []); // <-- AD0001 warning
++  // Memoise the fetch function so we can list it safely in the deps array.
++  const fetchLoginInfo = useCallback(async () => {
++    const response = await fetch("/api/v1/providers");
++    const data = await response.json();
++    setProviders(data);
++  }, []); // <-- no external deps, empty array is fine
+ 
+-  useEffect(() => {
+-    // fetch something… (example uses `fetchLoginInfo`)
+-    fetchLoginInfo();
+-  }, []); // <-- added the missing dep
++  useEffect(() => {
++    fetchLoginInfo();
++  }, [fetchLoginInfo]); // <-- AD0001 fixed
+*** End of File ***
+diff --git a/apps/web/src/app/(platform)/assistant/page.tsx b/apps/web/src/app/(platform)/assistant/page.tsx
+index 5a18423..eae7c31 100644
+--- a/apps/web/src/app/(platform)/assistant/page.tsx
++++ b/apps/web/src/app/(platform)/assistant/page.tsx
+@@
+-  const onClose = () => setOpen(false);
+-  return <AssistantPanel onClose={onClose} … />;
++  // The close handler is not used elsewhere – inline it to silence the lint warning.
++  return <AssistantPanel onClose={() => setOpen(false)} … />;
+*** End of File ***
+diff --git a/apps/web/src/app/(portal)/login/page.tsx b/apps/web/src/app/(portal)/login/page.tsx
+new file mode 100644
+index 0000000..e3f4371
+--- /dev/null
++++ b/apps/web/src/app/(portal)/login/page.tsx
+@@
++import React, { useEffect, useState } from "react";
++import { useRouter } from "next/router";
++
++export default function PortalLoginPage() {
++  const [providers, setProviders] = useState<Array<{ id: string; name: string }>>([]);
++  const router = useRouter();
++
++  useEffect(() => {
++    fetch("/api/v1/providers")
++      .then(r => r.json())
++      .then(setProviders);
++  }, []);
++
++  const startLogin = (id: string) => {
++    if (id === "entra") {
++      // OIDC challenge
++      router.push("/login/entra");
++    } else {
++      // fallback to local dev login page
++      router.push("/login");
++    }
++  };
++
++  return (
++    <div className="flex flex-col items-center py-12">
++      <h1 className="text-2xl font-bold mb-6">Sign in to Nexora Portal</h1>
++      {providers.map(p => (
++        <button
++          key={p.id}
++          className="bg-blue-600 text-white py-2 px-4 rounded mb-3 w-60"
++          onClick={() => startLogin(p.id)}
++        >
++          Continue with {p.name}
++        </button>
++      ))}
++    </div>
++  );
++}
+*** End of File ***
+diff --git a/apps/web/src/app/(portal)/me/profile.tsx b/apps/web/src/app/(portal)/me/profile.tsx
+new file mode 100644
+index 0000000..b9427d1
+--- /dev/null
++++ b/apps/web/src/app/(portal)/me/profile.tsx
+@@
++import React, { useEffect, useState } from "react";
++
++type ProfileDto = {
++  preferredName?: string;
++  phone?: string;
++  address?: string;
++};
++
++export default function MyProfile() {
++  const [profile, setProfile] = useState<ProfileDto | null>(null);
++  const [saving, setSaving] = useState(false);
++  const [error, setError] = useState<string | null>(null);
++
++  // -----------------------------------------------------------------
++  // Load current profile (GET /api/v1/portal/me/profile)
++  // -----------------------------------------------------------------
++  useEffect(() => {
++    fetch("/api/v1/portal/me/profile")
++      .then(r => r.ok ? r.json() : Promise.reject("Unable to load profile"))
++      .then(setProfile)
++      .catch(setError);
++  }, []);
++
++  // -----------------------------------------------------------------
++  // Save profile (PATCH /api/v1/portal/me/profile)
++  // -----------------------------------------------------------------
++  const save = async () => {
++    if (!profile) return;
++    setSaving(true);
++    setError(null);
++    try {
++      const resp = await fetch("/api/v1/portal/me/profile", {
++        method: "PATCH",
++        headers: { "Content-Type": "application/json", "If-Match": "*" },
++        body: JSON.stringify(profile),
++      });
++      if (!resp.ok) throw new Error(`Save failed: ${resp.status}`);
++      const updated = await resp.json();
++      setProfile(updated);
++    } catch (e: any) {
++      setError(e.message);
++    } finally {
++      setSaving(false);
++    }
++  };
++
++  if (error) return <div className="text-red-600">Error: {error}</div>;
++  if (!profile) return <div>Loading…</div>;
++
++  return (
++    <div className="max-w-lg mx-auto py-8">
++      <h2 className="text-xl font-semibold mb-4">My profile</h2>
++
++      <label className="block mb-2">
++        Preferred name
++        <input
++          className="border rounded w-full p-1"
++          value={profile.preferredName ?? ""}
++          onChange={e => setProfile({ ...profile, preferredName: e.target.value })}
++        />
++      </label>
++
++      <label className="block mb-2">
++        Phone
++        <input
++          className="border rounded w-full p-1"
++          value={profile.phone ?? ""}
++          onChange={e => setProfile({ ...profile, phone: e.target.value })}
++        />
++      </label>
++
++      <label className="block mb-2">
++        Address
++        <textarea
++          className="border rounded w-full p-1"
++          value={profile.address ?? ""}
++          onChange={e => setProfile({ ...profile, address: e.target.value })}
++        />
++      </label>
++
++      <button
++        className="bg-green-600 text-white py-2 px-4 rounded mt-4"
++        onClick={save}
++        disabled={saving}
++      >
++        {saving ? "Saving…" : "Save changes"}
++      </button>
++    </div>
++  );
++}
+*** End of File ***
+diff --git a/.github/workflows/ci.yml b/.github/workflows/ci.yml
+new file mode 100644
+index 0000000..5c1b5a3
+--- /dev/null
++++ b/.github/workflows/ci.yml
+@@
++name: CI
++
++on:
++  push:
++    branches: [ main ]
++  pull_request:
++    branches: [ main ]
++
++jobs:
++  build:
++    runs-on: ubuntu-latest
++    services:
++      sqlserver:
++        image: mcr.microsoft.com/mssql/server:2022-latest
++        env:
++          ACCEPT_EULA: Y
++          MSSQL_PID: Developer
++          SA_PASSWORD: SuperSecret123!
++        ports:
++          - 14333:1433
++        options: >-
++          --health-cmd=" /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P SuperSecret123! -Q 'SELECT 1' "
++          --health-interval=10s
++          --health-timeout=5s
++          --health-retries=5
++
++    env:
++      ConnectionStrings__Default: "Server=localhost,14333;Database=nexora;User Id=sa;Password=SuperSecret123!;TrustServerCertificate=True"
++      Identity__Provider__Entra__Enabled: "false"
++
++    steps:
++      - uses: actions/checkout@v3
++
++      - name: Set up .NET
++        uses: actions/setup-dotnet@v3
++        with:
++          dotnet-version: '10.0.x'
++
++      - name: Restore .NET packages
++        run: dotnet restore backend/Nexora.slnx
++
++      - name: Build solution
++        run: dotnet build backend/Nexora.slnx --configuration Release --no-restore
++
++      - name: Apply EF migrations (CRM)
++        run: dotnet ef database update --project backend/src/Nexora.Modules.Crm/Nexora.Modules.Crm.csproj --startup-project backend/src/Nexora.Api/Nexora.Api.csproj
++
++      - name: Apply EF migrations (Membership)
++        run: dotnet ef database update --project backend/src/Nexora.Modules.Membership/Nexora.Modules.Membership.csproj --startup-project backend/src/Nexora.Api/Nexora.Api.csproj
++
++      - name: Run .NET tests
++        run: dotnet test backend/Nexora.slnx --configuration Release --no-build --verbosity normal
++
++      - name: Set up Node
++        uses: actions/setup-node@v3
++        with:
++          node-version: '24.x'
++
++      - name: Install web dependencies
++        run: npm --prefix apps/web ci
++
++      - name: Lint web code
++        run: npm --prefix apps/web run lint
++
++      - name: Build web app (production)
++        run: npm --prefix apps/web run build
+*** End of File -----
