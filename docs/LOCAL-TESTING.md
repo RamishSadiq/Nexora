@@ -37,7 +37,11 @@ For an integrated check, sign into Portal, edit the profile or submit a test app
 
 ## Important local behavior
 
-The Development API applies pending migrations at startup when the seed configuration is present. Existing CRM files are retained but quarantined by the file-safety migration; retry their scans after configuring the shared ClamAV service. An unavailable scanner deliberately keeps files quarantined. The clean-scan path is covered by controlled tests; no live antivirus service, production identity or payment provider is configured by this setup.
+The Development API applies pending migrations at startup when the seed configuration is present. Existing CRM files are retained but quarantined by the file-safety migration; use **Retry scan** to scan them with the local service. An unavailable scanner deliberately keeps files quarantined. Production identity and payment providers require separate configuration.
+
+Windows API preparation now runs `scripts/Prepare-LocalDocumentScanner.ps1`. On first launch it downloads the official ClamAV 1.5.4 Windows x64 package, verifies its pinned SHA-256 checksum, downloads antivirus signatures and starts a hidden scanner listening only on **127.0.0.1:3310**. The package, signatures, logs and process IDs stay in the ignored `artifacts/local-document-scanner` directory. A hidden FreshClam process checks for signature updates six times daily. Concurrent frontend launches share one scanner startup. You can run the script directly to prepare or check it; no system service is installed.
+
+Development configuration points document and Contact/Account image scans to that local scanner. Images may have any dimensions, must be PNG/JPEG and at most 5 MB, and appear in an 80 × 80 circular frame after a clean scan. Scanner outages return a retryable upload error; rejected images cannot be saved. Production still requires its own configured scanner. For the opt-in real-scanner regression tests, set `NEXORA_TEST_CLAMAV_HOST=127.0.0.1` and filter `LocalDocumentScannerTests`; those tests use isolated databases.
 
 Install the recommended C# extension if VS Code requests it. The configured Node runtime exists on this workstation. For another workstation, adjust its `runtimeExecutable` and SQL instance in `.vscode/launch.json`.
 

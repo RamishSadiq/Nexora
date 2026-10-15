@@ -1,0 +1,13 @@
+# Entity listing column sorting — 13 October 2026
+
+Shared entity tables had no column controls, CRM supported only name/latest-update sorting in the API, and Membership used fixed server ordering. Membership and CRM paginate on the server; ordering only visible rows would give misleading results across pages.
+
+Data headers now show a neutral arrow pair or the active ascending/descending arrow. Clicking the column name or arrow selects ascending order, then toggles descending. Buttons support keyboard activation; headers expose `aria-sort`. Selection and action columns remain separate from data sorting.
+
+The shared listing orders the complete filtered dataset before slicing pages. Text sorting ignores case, treats embedded numbers naturally and keeps ties stable. Dates with explicit sort values use chronological order. CRM sorts Name, Status, Category, Updated and typed custom fields in its tenant-scoped query; its URL and saved views retain the order. Membership sorts member/applicant names, product names, statuses, term end dates and quoted/member rates before paging. Reports apply ordering before paging and export. Membership setup values use the same header control.
+
+Changing order returns paginated lists to page 1 without clearing filters. Unavailable CRM custom fields fall back to name ordering when metadata is reloaded. The shared component carries the controls to Events, Finance, Engagement, Work, Website/Portal pages, membership products and administration listings. No schema migration is required.
+
+Regression evidence covers server sorting across page boundaries, custom-field types, tenant boundaries, saved-view validation, report export order and browser pagination/filter/keyboard/mobile behavior. Browser fixture data is intercepted in the browser; API regression fixtures use isolated in-memory databases. Local records are not seeded or modified for these checks. Verification results are recorded in `artifacts/sorting-review` and `artifacts/listing-sort-*.png`.
+
+Verified: production frontend build and TypeScript, scoped ESLint, 26 existing API checks and seven new sorting regressions in separate scoped runs, and all three column-sorting browser tests. The shared local API was rebuilt and readiness confirmed. A further 36 read-only queries against local SQL Server covered built-in CRM columns, available custom fields and Membership columns; live Accounts checks confirmed row ordering and reload persistence. Existing ASP.NET route-analyzer AD0001 warnings remain in the local API build, which completed with no errors. No production deployment or Git delivery is claimed.

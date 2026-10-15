@@ -1,6 +1,6 @@
 # NEXORA — PROJECT PROGRESS REPORT
 
-**Latest assessment:** 12 October 2026, 9:02 pm daily review (Europe/London)<br>
+**Latest assessment:** 15 October 2026, 9:15 am catch-up review (Europe/London)<br>
 **Reporting baseline:** Revised delivery priority: a tangible, working CRM, association website and member portal.  
 **Daily update:** 9:00 pm Europe/London; scheduled in the current Codex task.  
 **Companion documents:** [Master plan](NEXORA_PRODUCT_ARCHITECTURE_MASTER_PLAN.md) · [Execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md)
@@ -71,7 +71,7 @@ The entries below summarize recorded delivery evidence. Current CRM and integrat
 | Integrated CRM/Portal/CMS browser journeys | All 5 passed, 24 September | CRM import/search/context/files, 3 portal journeys and CMS publishing against one isolated production frontend. No public deployment. |
 | TypeScript/targeted lint | Full TypeScript and changed CRM/test lint passed, 24 September | Prior CMS/proxy/routes checks also passed; no blanket full-repository lint claim. |
 | Production frontend build | Passed on 24 September | Isolated `next build --webpack` and browser verification against `next start`. API uses Development local identity; production identity/deployment remain unverified. |
-| Git integration | Latest commit `539a446`, 10 October; subsequent Portal/Website work is uncommitted | The 10 October integration checkpoint is committed; newer work has scoped evidence rather than a fresh whole-system regression. |
+| Git integration | Latest commit `6793449`, 14 October, adds maintained beginner manuals and Company Dash documentation | Later CRM/interface and sorting changes remain uncommitted; documentation review is not a new product regression. |
 
 **Release position:** Working local product slices; full MVP acceptance and commercial readiness are not complete. Production staff identity remains disabled. The confirmed personal/company one-active-membership rule now has application checks and passing SQL concurrency coverage; live provider and antivirus operations remain release dependencies. These concerns are tracked independently from functional percentages.
 
@@ -98,6 +98,24 @@ This is a proposed next-work order, not authorization to launch a production ser
 - If there is no material change, leave percentages unchanged and record that briefly. Daily reporting does not itself prove daily delivery.
 
 ## 7. Daily progress log
+
+### 15 October 2026 — Beginner documentation maintenance catch-up
+
+**Recorded delivery:** Commit `6793449` (14 October) adds Company Dash documentation and the beginner-manual maintenance workflow. The guide index now lists 36 guides and a 14 October source snapshot covering 717 text files across the two applications. Company Dash is captured for documentation only; it remains a separate application with no Nexora runtime dependency. The maintenance instructions require source comparison, archived prior manuals, offline/browser checks and Word visual review before marking a refreshed collection reviewed.
+
+**Verification boundary:** Reviewed Git history/status, the guide index and maintenance records, delivery-note timestamps and available artifact timestamps. The maintenance state records the 14 October snapshot as reviewed, with source/browser checks and rendered Word visual review passed. Documentation capture/review is separate from product regression; no newer completed application test result was found beyond the previously recorded full backend and scoped UI evidence. This reporting-only edit changes neither implementation nor selected runtime configuration, so it does not trigger a manual regeneration. No claim is made that a fresh source-fingerprint or Word review ran today.
+
+**Estimates and next actions:** CRM **95%**, Portal **85%**, Website/CMS **90%**, unchanged. Documentation breadth does not increase functional completion. Later CRM/interface/sorting work remains uncommitted; review it with its scoped evidence and maintain matching guides when implementation changes. Retained Portal acceptance, field/import/settlement requirements, production identity, live providers/scanning, deployment/restore and the recorded dependency-advisory review remain open. This is a morning catch-up, not a completed day-end review; no missed-date delivery entries are invented. Only this report was edited; no tests, migrations, services, publication, commits or pushes were performed.
+
+### 13 October 2026 — CRM presentation, sorting and learning guides
+
+**Implemented and integrated:** `6c43592` preserves website/Portal onboarding and outreach updates; `9344fe2` backs up CRM theme work in progress; latest commit `2bf1d97` adds the beginner learning guides. The guide index describes 30 teaching guides and an offline source-linked HTML manual plus Word versions. Later CRM/interface and sorting changes remain uncommitted; a backup commit is not completed acceptance.
+
+**Recorded scoped verification:** [CRM theme alignment](CRM-THEME-2026-10-13.md) records production build, TypeScript, scoped lint and desktop/mobile checks, including preview isolation, reduced motion and print styling. [Listing sorting](LISTING-SORTING-2026-10-13.md) records 26 existing API checks and seven new sorting regressions in separate runs, three browser tests and 36 read-only local SQL-backed queries. Sorting is applied before server pagination where required and retained in CRM URLs/views. These results are delivery-note evidence, not reruns or a new whole-system regression. Saved record-panel/tag visual-review JSON reports no browser errors and checks responsive audit panels, independent rails, popup focus, cancel/Escape and mobile fit. Screenshot presence alone is not business acceptance.
+
+**Estimates and boundaries:** CRM **95%**, Portal **85%**, Website/CMS **90%**, unchanged. Presentation, sorting and documentation improve existing scope; they do not close the remaining provider, import or deployment requirements. The 7 October full backend baseline remains the latest broad evidence reviewed. The 12 October Portal journeys remain newer scoped evidence; retained ten-member acceptance is still separate.
+
+**Next actions:** Review and integrate the outstanding sorting/interface changes with their scoped evidence, finish retained acceptance in its owning task and continue the agreed field/import/settlement requirements. Production identity, live providers/scanning, operational recovery/deployment and the recorded development-dependency advisory review remain open. A local scanner helper filename does not establish live scanner acceptance. This reporting run edited only the report and did not execute tests, migrations, services, publication, commits or pushes.
 
 ### 12 October 2026 — Website design controls and Portal theme
 

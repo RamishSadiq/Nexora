@@ -36,6 +36,14 @@ An hourly follow-up in the current Codex chat checks both source repositories. I
 
 Local scheduled runs need this computer on, the Codex app running and access to both source paths. The schedule is not an instantaneous file watcher. The Nexora AGENTS.md maintenance rule also requires documentation updates as part of code changes, so planned development should not wait for the hourly check.
 
+## Daily document refresh and Git backup
+
+From 14 October 2026, the active **Nexora daily Git backup and documentation** schedule checks this collection every day at **13:40 Europe/London**. It refreshes changed guides and completes the source, offline browser and Word page review described above before the Git backup. The existing hourly check remains active; the two runs must coordinate before writing the collection or changing Git state. An unchanged, reviewed collection needs no rebuild.
+
+The verified destination is the **public** repository https://github.com/RamishSadiq/Nexora.git, branch **main**, with local upstream **origin/main**. On 14 October 2026, the user explicitly approved daily publication to this destination of inspected Nexora source, tests, safe project configuration and documentation, with the exclusions below. **Daily automatic commits and pushes are enabled.** This is standing authorization; a different remote, branch or publication scope requires new confirmation.
+
+The backup scope is all inspected, Git-eligible Nexora application source, tests, safe project configuration, scripts and project documentation, including the reviewed beginner manuals and their dated history. Credentials, private configuration, databases, keys, runtime data, personal business/contact records, dependencies, caches, build output and generated QA artifacts stay local. Existing outgoing commits require the same inspection. Documentation and implementation commits stay separate; existing source edits are preserved. A normal fast-forward push to the verified destination is followed by a remote commit check. Divergent history, sensitive files or incomplete documentation review require a reported action instead of a force push or an inaccurate completion claim. When there are no eligible changes or unpushed commits and the guide is current and reviewed, the daily run takes no action.
+
 ## History and recovery
 
 Each history ZIP names the previous source-capture time and a digest of its HTML file. It contains that complete offline manual, the Word and Markdown reading copies, source/coverage manifests and diagrams. Open the extracted HTML directly to read the older complete version. The original approved login guide remains separately preserved. Do not overwrite history files or label a pending rebuild as reviewed.
