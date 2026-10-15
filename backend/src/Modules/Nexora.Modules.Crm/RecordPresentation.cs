@@ -23,7 +23,8 @@ public static partial class CrmModule
             if(!Guid.TryParse(form["version"],out var version)||version!=record.Version)return Conflict();
             if(ImageType(upload.Content)==null)throw new ValidationException("Choose a PNG or JPEG image.");
             var scan=await scanner.ScanAsync(upload.Content,ct);
-            if(scan!="clean")throw new ValidationException("The image must pass a security scan before it can be used.");
+            if(scan=="rejected")throw new ValidationException("This image was rejected by the security scan. Choose another image.");
+            if(scan!="clean")return Results.Problem(statusCode:StatusCodes.Status503ServiceUnavailable,title:"Image scanning is temporarily unavailable. Please try again shortly.");
             var file=new RecordFile{TenantId=who.TenantId!.Value,RecordId=id,Name=upload.Name,Content=upload.Content,Sha256=Convert.ToHexString(SHA256.HashData(upload.Content)),ScanStatus=scan,ScannedAtUtc=DateTime.UtcNow};
             db.Add(file);record.PhotoFileId=file.Id;record.Version=Guid.NewGuid();record.UpdatedAtUtc=DateTime.UtcNow;await db.SaveChangesAsync(ct);return Results.Ok(new{file.Id});
         }).RequireAuthorization("crm.manage","crm.files");

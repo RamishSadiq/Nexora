@@ -26,6 +26,12 @@ export function useCrmListing(initial: ListState, initialRecord: string, fixedKi
     const valid = [...new Set(columns)].filter(c => allowed.has(c));
     return ["name", ...valid.filter(c => c !== "name")];
   }
+  function cleanSort(sort: string, kind: string, definitions: Field[]) {
+    if (sort === "updated") return sort;
+    const key = sort.replace(/^-/, "");
+    const allowed = [...defaults, "updatedAtUtc", ...definitions.filter(f => f.kind === kind).map(f => `field:${f.id}`)];
+    return allowed.includes(key) ? sort : "name";
+  }
   function writeUrl(next: State, push: boolean) {
     const url = new URL(window.location.href);
     for (const [key, value] of Object.entries(next.query)) url.searchParams.set(key, String(value ?? ""));
@@ -58,7 +64,7 @@ export function useCrmListing(initial: ListState, initialRecord: string, fixedKi
         if (params.has(key)) query[key] = params.get(key)!;
       }
       if (!["", "active", "prospect", "inactive", "lapsed"].includes(query.status)) query.status = "";
-      if (!["name", "-name", "updated"].includes(query.sort)) query.sort = "name";
+      query.sort = cleanSort(query.sort, kind, definitions);
       if (params.has("archived")) query.archived = params.get("archived") === "true";
       const page = Number(params.get("page") ?? 1);
       const size=Number(params.get("pageSize")??20); query.pageSize=[10,20,50,100].includes(size)?size:20;
@@ -78,9 +84,10 @@ export function useCrmListing(initial: ListState, initialRecord: string, fixedKi
       else {
         const previous = current.current;
         const columns = cleanColumns(previous.columns, previous.query.kind, f);
-        if (columns.join() !== previous.columns.join()) {
-          setNotice("Unavailable columns were removed from this listing.");
-          commit({ ...previous, columns }, false);
+        const sort = cleanSort(previous.query.sort, previous.query.kind, f);
+        if (columns.join() !== previous.columns.join() || sort !== previous.query.sort) {
+          setNotice(sort !== previous.query.sort ? "The sorting field is unavailable. Showing records by name." : "Unavailable columns were removed from this listing.");
+          commit({ ...previous, columns, query: { ...previous.query, sort, ...(sort !== previous.query.sort ? { page: 1 } : {}) } }, false);
         }
       }
       setReady(true);

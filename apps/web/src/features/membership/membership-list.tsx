@@ -2,11 +2,12 @@
 
 import { useCallback, useEffect, useState, useSyncExternalStore, type ReactNode } from "react";
 import { moduleApi } from "../shared/module-api";
+import { ColumnChooser } from "../shared/column-chooser";
 import { FilterViewToolbar } from "../shared/filter-view-toolbar";
 import { ListingSearch } from "../shared/entity-listing-controls";
 import { Field, inputClass, buttonClass } from "../shared/module-ui";
 
-type Query = { page: number; pageSize: number; search: string; status: string; archive: string };
+type Query = { page: number; pageSize: number; search: string; status: string; archive: string; sort?: string };
 type PagedResult<T> = { items: T[]; totalCount: number; page: number; pageSize: number };
 const defaultQuery = JSON.stringify({ page: 1, pageSize: 20, search: "", status: "", archive: "current" });
 const queryEvent = "nexora-membership-query-change";
@@ -37,6 +38,7 @@ export function useMembershipList<T>(path: "members" | "applications", refresh: 
   }, [storageKey]);
   const params = new URLSearchParams({ page: String(query.page), pageSize: String(query.pageSize), search: query.search, status: query.status });
   if (path === "members") params.set("archive", query.archive);
+  if (query.sort) params.set("sort", query.sort);
   const url = `/${path}?${params}`;
   const key = `${url}:${refresh}`;
   const [result, setResult] = useState<{ key: string; data?: PagedResult<T>; error?: string }>();
@@ -70,17 +72,17 @@ export function useMembershipList<T>(path: "members" | "applications", refresh: 
 
 type ListControls = ReturnType<typeof useMembershipList>;
 
-export function MembershipListControls({ label, statuses, list, retry, actions, columns }: {
-  actions?: ReactNode; columns?: ReactNode; label: string; statuses: string[]; list: ListControls; retry: () => void;
+export function MembershipListControls({ label, statuses, list, retry, actions }: {
+  actions?: ReactNode; label: string; statuses: string[]; list: ListControls; retry: () => void;
 }) {
   const { query, change, error } = list;
   return <div className="mb-4 space-y-3">
-    <FilterViewToolbar actions={actions} onAllRecords={() => change({search:"",status:"",...(label==="members"?{archive:"all"}:{})})} search={<ListingSearch label={`Search ${label}`} value={query.search} onChange={value => change({search:value})} onSearch={() => change({search:query.search})} />} filters={<div className="grid gap-3 sm:grid-cols-2"><Field label={`${label} status`}><select className={inputClass} value={query.status} onChange={e => change({ status: e.target.value })}><option value="">All statuses</option>{statuses.map(status => <option key={status}>{status}</option>)}</select></Field><Field label={`${label} page size`}><select className={inputClass} value={query.pageSize} onChange={e => change({ pageSize: Number(e.target.value) })}>{[10,20,50,100].map(size => <option key={size}>{size}</option>)}</select></Field>{label === "members" && <Field label="Archive state"><select className={inputClass} value={query.archive} onChange={e => change({ archive: e.target.value })}><option value="current">Current records</option><option value="archived">Archived records</option><option value="all">All records</option></select></Field>}</div>} columns={columns} />
+    <FilterViewToolbar actions={actions} onAllRecords={() => change({search:"",status:"",...(label==="members"?{archive:"all"}:{})})} search={<ListingSearch label={`Search ${label}`} value={query.search} onChange={value => change({search:value})} onSearch={() => change({search:query.search})} />} filters={<div className="grid gap-3 sm:grid-cols-2"><Field label={`${label} status`}><select className={inputClass} value={query.status} onChange={e => change({ status: e.target.value })}><option value="">All statuses</option>{statuses.map(status => <option key={status}>{status}</option>)}</select></Field><Field label={`${label} page size`}><select className={inputClass} value={query.pageSize} onChange={e => change({ pageSize: Number(e.target.value) })}>{[10,20,50,100].map(size => <option key={size}>{size}</option>)}</select></Field>{label === "members" && <Field label="Archive state"><select className={inputClass} value={query.archive} onChange={e => change({ archive: e.target.value })}><option value="current">Current records</option><option value="archived">Archived records</option><option value="all">All records</option></select></Field>}</div>} />
     {error && <div role="alert">{error} <button className={buttonClass} onClick={retry}>Retry {label}</button></div>}
   </div>;
 }
-export function MembershipListFooter({label,list}:{label:string;list:ListControls}) {
+export function MembershipListFooter({label,list,columns}:{label:string;list:ListControls;columns?:ReactNode}) {
  const {query,change,loading,error,totalCount,items}=list;
  const pages=Math.max(1,Math.ceil(totalCount/query.pageSize));const first=items.length?(query.page-1)*query.pageSize+1:0;
- return <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 px-4 py-3 text-sm"><p role="status">{loading?'Loading…':`Showing ${first}–${items.length?first+items.length-1:0} of ${totalCount}`}</p><label>Rows per page <select aria-label="Rows per page" className="ml-2 rounded border p-1" value={query.pageSize} onChange={e=>change({pageSize:Number(e.target.value)})}>{[10,20,50,100].map(n=><option key={n}>{n}</option>)}</select></label><nav aria-label={`${label} pages`} className="flex items-center gap-3"><button className={buttonClass} disabled={loading||!!error||query.page<=1} onClick={()=>change({page:query.page-1})}>Previous</button><span>Page {query.page} of {pages}</span><button className={buttonClass} disabled={loading||!!error||query.page>=pages} onClick={()=>change({page:query.page+1})}>Next</button></nav></footer>;
+ return <footer className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-200 px-4 py-3 text-sm"><div className="flex items-center gap-3">{columns&&<ColumnChooser>{columns}</ColumnChooser>}<p role="status">{loading?'Loading…':`Showing ${first}–${items.length?first+items.length-1:0} of ${totalCount}`}</p></div><label>Rows per page <select aria-label="Rows per page" className="ml-2 rounded border p-1" value={query.pageSize} onChange={e=>change({pageSize:Number(e.target.value)})}>{[10,20,50,100].map(n=><option key={n}>{n}</option>)}</select></label><nav aria-label={`${label} pages`} className="flex items-center gap-3"><button className={buttonClass} disabled={loading||!!error||query.page<=1} onClick={()=>change({page:query.page-1})}>Previous</button><span>Page {query.page} of {pages}</span><button className={buttonClass} disabled={loading||!!error||query.page>=pages} onClick={()=>change({page:query.page+1})}>Next</button></nav></footer>;
 }

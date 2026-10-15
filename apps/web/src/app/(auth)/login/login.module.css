@@ -27,7 +27,7 @@
 .card form > button[type=button] { height:40px; border:1px solid #30303b; border-radius:9px; background:#ffffff04; color:#adaeba; font-size:12px; box-shadow:none; }
 .card form > button[type=button] span { background:#241b38; color:#d7c4ff; }
 .card form > div:has(> div > span) span { background:#15161c; color:#adaeba; font-size:9px; }
-.card form > div:has(> div > span) .border-t { border-color:#30303b; }
+.card form > div:has(> div > span) :global(.border-t) { border-color:#30303b; }
 .card form > p:last-child { background:#ffffff05; color:#adaeba; font-size:10px; line-height:1.6; }
 .card form [role=alert] { background:#361d28; border-color:#ffb0c050; color:#ffb0c0; font-size:12px; }
 .footer { display:flex; justify-content:center; flex-wrap:wrap; gap:8px 24px; padding:12px 130px 20px; color:#adaeba; font-size:10px; }

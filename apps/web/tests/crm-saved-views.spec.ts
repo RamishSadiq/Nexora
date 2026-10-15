@@ -39,8 +39,9 @@ test("personal CRM views save typed columns and filters, restore, update and rec
   await openFilters(page);
   await page.getByRole("combobox", { name: "Status", exact: true }).selectOption("active");
   await page.getByLabel("Category", { exact: true }).fill("Member");
-  await page.getByRole("button", { name: "Columns", exact: true }).click();
-  const panel = page.getByLabel("Columns panel", { exact: true });
+  await page.keyboard.press("Escape");
+  await page.getByRole("button", { name: "Choose columns", exact: true }).click();
+  const panel = page.getByRole("dialog", { name: "Columns", exact: true });
   await expect(panel.getByLabel("Name", { exact: true })).toBeDisabled();
   for (const dataType of ["text", "number", "boolean", "date"]) await panel.getByLabel(`${dataType} ${suffix} (${dataType})`, { exact: true }).check();
   await page.keyboard.press("Escape");

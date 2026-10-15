@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
+import { PanelToggle, useCollapsedPanel } from "@/features/shared/panel-toggle";
 import {
   ArrowLeft,
   ChevronDown,
@@ -105,6 +106,10 @@ const nodeNames: Record<string, string> = {
 };
 
 export function WorkflowDesignerWorkspace() {
+  const [toolsCollapsed, toggleTools] = useCollapsedPanel("nexora.layout.workflow-tools-collapsed");
+  const [settingsCollapsed, toggleSettings] = useCollapsedPanel("nexora.layout.workflow-settings-collapsed");
+  const toolsId = useId();
+  const settingsId = useId();
   const [preview, setPreview] = useState<unknown>(null);
   const [previewMode, setPreviewMode] = useState(false);
   const [bulkTargets, setBulkTargets] = useState<string[]>([]);
@@ -697,8 +702,10 @@ export function WorkflowDesignerWorkspace() {
         ) : view === "settings" ? (
           <WorkflowSettings canAi={can("ai")} onDraft={loadDraft} />
         ) : view === "designer" ? (
-          <div className="grid min-h-[calc(100vh-11rem)] items-stretch gap-4 xl:grid-cols-[190px_minmax(0,1fr)_340px]">
-            <aside className="min-w-0 rounded-xl border border-slate-200 bg-white p-3">
+          <div>
+          <div className={styles.panelControls}><PanelToggle label="designer tools" collapsed={toolsCollapsed} controls={toolsId} onToggle={toggleTools}>Tools</PanelToggle><PanelToggle label="node settings" collapsed={settingsCollapsed} controls={settingsId} side="right" onToggle={toggleSettings}>Node settings</PanelToggle></div>
+          <div className={styles.designerPanels} data-tools-collapsed={toolsCollapsed} data-settings-collapsed={settingsCollapsed}>
+            <aside id={toolsId} hidden={toolsCollapsed} className="min-w-0 rounded-xl border border-slate-200 bg-white p-3">
               <h2 className="font-semibold">Designer tools</h2>
               <p className="mt-1 text-xs leading-5 text-slate-500">
                 Add steps to the WFL canvas.
@@ -1022,7 +1029,7 @@ export function WorkflowDesignerWorkspace() {
                 </div>
               </div>
             </section>
-            <section className="space-y-4 rounded-xl border border-slate-200 bg-white p-5">
+            <section id={settingsId} hidden={settingsCollapsed} className="space-y-4 rounded-xl border border-slate-200 bg-white p-5">
               <h2 className="font-semibold">Node settings</h2>
               {currentNode && (
                 <>
@@ -1161,6 +1168,7 @@ export function WorkflowDesignerWorkspace() {
                 </>
               )}
             </section>
+          </div>
           </div>
         ) : (
           <section className="space-y-4">

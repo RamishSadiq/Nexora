@@ -19,6 +19,7 @@ function Wait-NexoraApi {
 }
 if ($WaitForApi) { Wait-NexoraApi; exit 0 }
 if (!$WaitForApi) {
+    if ($env:OS -eq 'Windows_NT') { & "$root/scripts/Prepare-LocalDocumentScanner.ps1" }
     $mutex = New-Object System.Threading.Mutex($false, 'Local\NexoraDevApi5097')
     $locked = $false
     try {

@@ -52,3 +52,14 @@
 .workspace button[data-destructive] {
   color: #b91c1c;
 }
+.panelControls { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.workspace .panelControls button { background: var(--workspace-surface, #141419); color: var(--workspace-accent, #50f5d6); border-color: var(--workspace-border, #30303b); }
+.workspace .panelControls button:hover { background: var(--workspace-tint, #122b28); border-color: var(--workspace-accent, #50f5d6); }
+.designerPanels { display: grid; min-height: calc(100vh - 11rem); align-items: stretch; gap: 16px; }
+.designerPanels > [hidden] { display: none; }
+@media (min-width: 1280px) {
+  .designerPanels { grid-template-columns: 190px minmax(0, 1fr) 340px; }
+  .designerPanels[data-tools-collapsed=true] { grid-template-columns: minmax(0, 1fr) 340px; }
+  .designerPanels[data-settings-collapsed=true] { grid-template-columns: 190px minmax(0, 1fr); }
+  .designerPanels[data-tools-collapsed=true][data-settings-collapsed=true] { grid-template-columns: minmax(0, 1fr); }
+}

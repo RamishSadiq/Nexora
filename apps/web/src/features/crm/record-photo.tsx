@@ -17,11 +17,11 @@ export function RecordPhotoField({ record, disabled, hasChanges = false, onChang
     if (!file) return;
     setBusy(true); onBusyChange?.(true); setError("");
     try {
-      if (!['image/png', 'image/jpeg'].includes(file.type)) throw new Error("Choose a PNG or JPEG image.");
+      if (!['image/png', 'image/jpeg'].includes(file.type) && (file.type || !/\.(png|jpe?g)$/i.test(file.name))) throw new Error("Choose a PNG or JPEG image.");
       if (file.size > 5 * 1024 * 1024) throw new Error("Choose an image up to 5 MB.");
       const body = new FormData(); body.set("file", file); body.set("version", record.version);
       await crm(`/records/${record.id}/photo`, "POST", body); onChanged();
     } catch (err) { setError(err instanceof Error ? err.message : "Unable to save image."); }
     finally { field.value = ""; setBusy(false); onBusyChange?.(false); }
-  }} /></label><p className="mt-2 text-xs text-slate-500">{busy ? "Saving image…" : hasChanges ? "Save your details before uploading an image." : "PNG or JPEG, up to 5 MB. Saved immediately and displayed in an 80 × 80 pixel circular frame."}</p>{error && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}</div>;
+  }} /></label><p className="mt-2 text-xs text-slate-500">{busy ? "Saving image…" : hasChanges ? "Save your details before uploading an image." : "PNG or JPEG, up to 5 MB. Any image dimensions; displayed in an 80 × 80 pixel circular frame."}</p>{error && <p role="alert" className="mt-2 text-sm text-red-700">{error}</p>}</div>;
 }

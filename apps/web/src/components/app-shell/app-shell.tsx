@@ -11,6 +11,7 @@ import { cn } from "@/lib/cn";
 import type { Session } from "@/lib/auth/session";
 
 import { setupKinds } from "@/features/membership/setup-kinds";
+import { PanelToggle, useCollapsedPanel } from "@/features/shared/panel-toggle";
 
 const navigation: Array<{ label: string; href: Route; match: string; icon: typeof LayoutDashboard; children?: Array<{ label: string; href: string; children?: Array<{label: string; href: string}> }> }> = [
   { label: "Home", href: "/dashboard", match: "/dashboard", icon: LayoutDashboard },
@@ -30,6 +31,7 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
   const pathname = usePathname();
   const router = useRouter();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [navigationCollapsed, toggleNavigation] = useCollapsedPanel("nexora.layout.navigation-collapsed");
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
   const accountPopover = useRef<HTMLDivElement>(null);
   const hasAdminTools = session.permissions.some(permission => permission.endsWith(".manage") || permission === "crm.configure" || permission === "workflows.read");
@@ -56,9 +58,14 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
   }
 
   return (
-    <div className={cn("min-h-screen workspace-theme", dashboardTheme && "dashboard-theme")}>
+    <div className={cn("min-h-screen workspace-theme", dashboardTheme && "dashboard-theme")} data-navigation-collapsed={navigationCollapsed}>
+      <div className="workspace-ambient" aria-hidden="true">
+        <span className="workspace-ambient-blue" />
+        <span className="workspace-ambient-cobalt" />
+        <span className="workspace-ambient-horizon" />
+      </div>
       {mobileOpen && <button className="workspace-overlay fixed inset-0 z-40 backdrop-blur-sm lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation overlay" />}
-      <aside className={cn("workspace-sidebar fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r transition-transform lg:translate-x-0", mobileOpen ? "visible translate-x-0" : "invisible -translate-x-full lg:visible")}>
+      <aside id="workspace-navigation" data-mobile-open={mobileOpen} inert={navigationCollapsed && !mobileOpen} className="workspace-sidebar fixed inset-y-0 left-0 z-50 flex w-[274px] flex-col border-r transition-transform">
         <div className="flex h-[68px] shrink-0 items-center justify-between px-5">
           <NexoraMark inverse />
           <button className="grid size-9 place-items-center rounded-lg text-[#667085] hover:bg-[#f2f4f8] lg:hidden" onClick={() => setMobileOpen(false)} aria-label="Close navigation"><X className="size-5" /></button>
@@ -128,9 +135,10 @@ export function AppShell({ children, session }: { children: ReactNode; session: 
         </div>
       </aside>
 
-      <div className="lg:pl-[274px]">
+      <div className="workspace-main">
         <header className="workspace-header sticky top-0 z-30 flex h-[56px] items-center gap-4 border-b px-4 backdrop-blur-xl sm:px-7">
           <button className="grid size-10 place-items-center rounded-xl border border-[#e2e6ed] text-[#5d697b] lg:hidden" onClick={() => setMobileOpen(true)} aria-label="Open navigation"><Menu className="size-5" /></button>
+          <PanelToggle className="workspace-navigation-toggle" label="navigation" collapsed={navigationCollapsed} controls="workspace-navigation" onToggle={() => { accountPopover.current?.hidePopover(); setMobileOpen(false); toggleNavigation(); }} />
           <div id="workspace-page-heading" className="flex min-w-0 flex-1 items-center justify-between gap-3" />
           <div className="ml-auto flex items-center gap-1.5">
             {session.permissions.includes("work.read") && <Link href={"/work/notifications" as Route} className="grid size-10 place-items-center rounded-xl text-[#687487] transition hover:bg-[#f2f4f8]" aria-label="Notifications"><Bell className="size-[19px]" /></Link>}

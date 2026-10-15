@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 namespace Nexora.BuildingBlocks.Reporting;
-public sealed record ReportQuery(string? Search=null,string? Status=null,DateTime? FromUtc=null,DateTime? ToUtc=null,int Skip=0,int Take=50);
+public sealed record ReportQuery(string? Search=null,string? Status=null,DateTime? FromUtc=null,DateTime? ToUtc=null,int Skip=0,int Take=50,string Sort="-createdAtUtc");
 public sealed class ReportRow { public Guid Id {get;init;} public string Label {get;init;}=""; public string Status {get;init;}=""; public DateTime CreatedAtUtc {get;init;} }
 public sealed record ReportPage(int Total,IReadOnlyList<ReportRow> Items);
 public interface IReportDataset
@@ -21,7 +21,12 @@ public sealed class ReportDataset(string key,string title,string permission,IQue
   if(request.FromUtc!=null)query=query.Where(x=>x.CreatedAtUtc>=request.FromUtc);
   if(request.ToUtc!=null)query=query.Where(x=>x.CreatedAtUtc<request.ToUtc);
   var total=await query.CountAsync(ct);
-  var rows=await query.OrderByDescending(x=>x.CreatedAtUtc).ThenBy(x=>x.Id).Skip(request.Skip).Take(request.Take).ToListAsync(ct);
+  var ordered=request.Sort switch {
+   "label"=>query.OrderBy(x=>x.Label), "-label"=>query.OrderByDescending(x=>x.Label),
+   "status"=>query.OrderBy(x=>x.Status), "-status"=>query.OrderByDescending(x=>x.Status),
+   "createdAtUtc"=>query.OrderBy(x=>x.CreatedAtUtc), _=>query.OrderByDescending(x=>x.CreatedAtUtc)
+  };
+  var rows=await ordered.ThenBy(x=>x.Id).Skip(request.Skip).Take(request.Take).ToListAsync(ct);
   return new(total,rows);
  }
 }

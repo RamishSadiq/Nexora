@@ -119,14 +119,14 @@ public static partial class MembershipModule
             product.Name = Text(r.Name); product.Category = Text(r.Category,80); product.TermMonths = r.TermMonths; product.Rate = r.Rate; product.Currency = r.Currency; product.IsActive = r.IsActive;
             History(db,who,http,id,"product.updated","Updated catalogue; existing quotes unchanged"); await db.SaveChangesAsync(ct); return Results.Ok(product);
         }).RequireAuthorization("membership.manage");
-        api.MapGet("/applications", async (MembershipDbContext db, string? search, string? status, string? page, string? pageSize, CancellationToken ct) =>
+        api.MapGet("/applications", async (MembershipDbContext db, string? search, string? status, string? page, string? pageSize, string? sort, CancellationToken ct) =>
         {
             var (number, size, offset) = Pagination(page, pageSize);
             var q = db.Set<MembershipApplication>().AsNoTracking();
             if (!string.IsNullOrWhiteSpace(search)) { var term = Text(search); q = q.Where(x => (x.ContactName.Contains(term) || (x.AccountName != null && x.AccountName.Contains(term)))); }
             if (!string.IsNullOrWhiteSpace(status)) { Choice(status,"submitted","approved","rejected"); q = q.Where(x => x.Status == status); }
             var totalCount = await q.CountAsync(ct);
-            var items = await q.OrderByDescending(x => x.CreatedAtUtc).ThenBy(x => x.Id).Skip(offset).Take(size).ToListAsync(ct);
+            var items = await MembershipListingSorting.Applications(q, db, sort).ThenBy(x => x.Id).Skip(offset).Take(size).ToListAsync(ct);
             return Results.Ok(new { items, totalCount, page = number, pageSize = size });
         });
         api.MapGet("/applications/{id:guid}", async (Guid id, MembershipDbContext db, CancellationToken ct) => await db.Set<MembershipApplication>().AsNoTracking().SingleOrDefaultAsync(x => x.Id == id, ct) is { } application ? Results.Ok(application) : Results.NotFound());
@@ -142,7 +142,7 @@ public static partial class MembershipModule
             await ApplyDecision(application,r,db,crm,recipients,who,http,ct);
             await db.SaveChangesAsync(ct); return Results.Ok(application);
         }).RequireAuthorization("membership.decide");
-        api.MapGet("/members", async (MembershipDbContext db, string? search, string? status, string? archive, string? page, string? pageSize, CancellationToken ct) =>
+        api.MapGet("/members", async (MembershipDbContext db, string? search, string? status, string? archive, string? page, string? pageSize, string? sort, CancellationToken ct) =>
         {
             var (number, size, offset) = Pagination(page, pageSize);
             var q = db.Set<MemberSubscription>().AsNoTracking();
@@ -151,7 +151,7 @@ public static partial class MembershipModule
             if (!string.IsNullOrWhiteSpace(search)) { var term = Text(search); q = q.Where(x => (x.ContactName.Contains(term) || (x.AccountName != null && x.AccountName.Contains(term)))); }
             if (!string.IsNullOrWhiteSpace(status)) { Choice(status,"active","cancelled","lapsed"); q = q.Where(x => x.Status == status); }
             var totalCount = await q.CountAsync(ct);
-            var items = await q.OrderBy(x => x.ContactName).ThenBy(x => x.Id).Skip(offset).Take(size).ToListAsync(ct);
+            var items = await MembershipListingSorting.Members(q, db, sort).ThenBy(x => x.Id).Skip(offset).Take(size).ToListAsync(ct);
             return Results.Ok(new { items, totalCount, page = number, pageSize = size });
         });
         api.MapGet("/members/{id:guid}", async (Guid id, MembershipDbContext db, CancellationToken ct) =>

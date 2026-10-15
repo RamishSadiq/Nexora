@@ -1,10 +1,13 @@
 .card { height:180px; perspective:1000px; text-align:center; border-radius:18px; cursor:pointer; }
 .inner { display:block; position:relative; height:100%; transition:transform .6s ease; transform-style:preserve-3d; }
 .flipped { transform:rotateY(180deg); }
-.face { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:20px; border:1px solid var(--workspace-border); border-radius:18px; background:radial-gradient(ellipse at 0 0,#50f5d609,transparent 65%),var(--workspace-surface); color:var(--workspace-fg); box-shadow:0 8px 25px #00000020; backface-visibility:hidden; }
+.face { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; padding:20px; border:1px solid #50f5d638; border-radius:18px; background:radial-gradient(ellipse at 0 0,#50f5d618,transparent 70%),radial-gradient(ellipse at 100% 100%,#9255ff12,transparent 70%),var(--workspace-surface); color:var(--workspace-fg); box-shadow:0 8px 25px #00000020,0 0 30px #50f5d607; backface-visibility:hidden; }
+.face::after { content:""; position:absolute; top:0; left:18%; right:18%; height:1px; background:linear-gradient(90deg,transparent,var(--workspace-accent),transparent); box-shadow:0 0 14px #50f5d650; }
+.card:nth-child(3n + 2) .face { border-color:#9255ff61; background:radial-gradient(ellipse at 100% 0,#9255ff28,transparent 75%),var(--workspace-surface); }
+.card:nth-child(3n + 2) .face::after { background:linear-gradient(90deg,transparent,#b78bff,transparent); box-shadow:0 0 14px #9255ff70; }
 .face small { color:var(--workspace-muted); font-size:11px; }
 .back { transform:rotateY(180deg); background:radial-gradient(ellipse at 100% 0,#9255ff18,transparent 65%),var(--workspace-surface); border-color:#9255ff70; }
 .back > strong { color:var(--workspace-accent); font-variant-numeric:tabular-nums; }
-.card:hover .face { border-color:#50f5d655; box-shadow:0 0 24px #50f5d610; }
+.card:hover .face { border-color:#50f5d680; box-shadow:0 0 28px #50f5d61c; }
 .card:focus-visible { outline:2px solid var(--workspace-accent); outline-offset:4px; }
 @media(prefers-reduced-motion:reduce){.inner{transition:none;}}

@@ -20,7 +20,8 @@ public sealed class RecordPresentationTests
  private sealed class Scanner(string result):Nexora.BuildingBlocks.Documents.IDocumentScanner { public Task<string> ScanAsync(byte[] content,CancellationToken ct)=>Task.FromResult(result); }
  [Theory]
  [InlineData("clean",HttpStatusCode.OK)]
- [InlineData("unavailable",HttpStatusCode.BadRequest)]
+ [InlineData("unavailable",HttpStatusCode.ServiceUnavailable)]
+ [InlineData("rejected",HttpStatusCode.BadRequest)]
  public async Task Contact_photo_requires_clean_scan_and_uses_record_version(string scan,HttpStatusCode expected)
  {
   using var app=new IdentityApiFactory(new Scanner(scan));using var client=await Login(app);var record=await Contact(client);var path="/api/v1/crm/records/"+Id(record);
@@ -28,5 +29,6 @@ public sealed class RecordPresentationTests
   using var body=new MultipartFormDataContent();body.Add(new StringContent(Version(record)),"version");body.Add(new ByteArrayContent(bytes),"file","avatar.png");using var request=new HttpRequestMessage(HttpMethod.Post,path+"/photo"){Content=body};request.Headers.Add("X-CSRF-TOKEN",csrf!.Token);
   Assert.Equal(expected,(await client.SendAsync(request)).StatusCode);
   if(scan=="clean") { var photo=await client.GetAsync(path+"/photo");Assert.Equal(HttpStatusCode.OK,photo.StatusCode);Assert.Equal("image/png",photo.Content.Headers.ContentType!.MediaType);Assert.Equal(bytes,await photo.Content.ReadAsByteArrayAsync());var detail=await Json(await client.GetAsync(path));Assert.NotNull(detail["record"]!["photoFileId"]);Assert.NotEqual(Version(record),Version(detail["record"]!));using var outside=await Login(app,"outside@nexora.test");Assert.Equal(HttpStatusCode.Forbidden,(await outside.GetAsync(path+"/photo")).StatusCode); }
+  else { var detail=await Json(await client.GetAsync(path));Assert.Null(detail["record"]!["photoFileId"]);Assert.Equal(Version(record),Version(detail["record"]!)); }
  }
 }

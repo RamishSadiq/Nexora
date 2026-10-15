@@ -176,7 +176,7 @@ public static partial class CrmModule
 
     private static async Task ApplyViewAsync(SavedView row, ViewRequest r, CrmDbContext db, CancellationToken ct)
     {
-        Choice(r.Kind, "contact", "account"); Choice(r.Sort, "name", "-name", "updated"); Choice(r.Status, "", "active", "prospect", "inactive", "lapsed");
+        Choice(r.Kind, "contact", "account"); await CrmListingSorting.ValidateAsync(db, r.Kind, r.Sort, ct); Choice(r.Status, "", "active", "prospect", "inactive", "lapsed");
         var columns = Required(r.Columns, 4000).Split(',');
         if (columns.Length > 54 || columns.Distinct().Count() != columns.Length || !columns.Contains("name"))
             throw new ValidationException("Choose up to 54 distinct columns, including Name.");
@@ -195,7 +195,7 @@ public static partial class CrmModule
     private static async Task<IResult> ListAsync(CrmDbContext db, IEnumerable<ICrmContextProvider> providers, Microsoft.AspNetCore.Authorization.IAuthorizationService auth, HttpContext http, string? kind, string? search, string? status, string? sort, bool? archived, int? page, int? pageSize, string? ownerUserId, string? ownerTeamId, string? category, CancellationToken ct)
     {
         kind ??= "contact"; sort ??= "name";
-        Choice(kind, "contact", "account"); Choice(sort, "name", "-name", "updated");
+        Choice(kind, "contact", "account");
         if (!string.IsNullOrEmpty(status)) Choice(status, "active", "prospect", "inactive", "lapsed");
         var term = Optional(search, 160);
         var query = db.Records.AsNoTracking().Where(x => x.Kind == kind && x.IsArchived == (archived ?? false));
@@ -219,7 +219,7 @@ public static partial class CrmModule
         var categoryFilter = Optional(category, 100);
         if (categoryFilter != null) query = query.Where(x => x.Category == categoryFilter);
         var count = await query.CountAsync(ct);
-        var ordered = sort switch { "-name" => query.OrderByDescending(x => x.Name), "updated" => query.OrderByDescending(x => x.UpdatedAtUtc), _ => query.OrderBy(x => x.Name) };
+        var ordered = await CrmListingSorting.ApplyAsync(query, db, kind, sort, ct);
         var number = Math.Clamp(page ?? 1, 1, 10000); var size = Math.Clamp(pageSize ?? 20, 1, 100);
         var rows = await ordered.ThenBy(x => x.Id).Skip((number - 1) * size).Take(size).ToListAsync(ct);
         var ids = rows.Select(x => x.Id).ToArray();
