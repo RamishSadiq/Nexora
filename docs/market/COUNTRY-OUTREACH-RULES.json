@@ -1,7 +1,13 @@
 {
-  "checkedAt": "2026-10-12",
+  "checkedAt": "2026-10-19",
   "scope": "Recipient-specific operational email checks; user authorization is separate from recipient consent",
-  "activeCountries": ["Australia", "United States", "New Zealand", "Canada"],
+  "activeCountries": [
+    "Australia",
+    "United States",
+    "New Zealand",
+    "Canada",
+    "United Kingdom"
+  ],
   "unresolvedMeansHoldRecipient": true,
   "publicEmailAloneIsNotConsent": true,
   "unsubscribeFacilityMinimumDays": 60,
@@ -9,34 +15,117 @@
   "countries": [
     {
       "country": "Australia",
-      "routes": ["documented express consent", "applicable inferred consent", "verified Spam Act Schedule 2 clause 4 conspicuous-publication conditions"],
-      "publicationChecks": ["official conspicuous publication attributable to account-holder/organisation", "address identifies work role/function", "no accompanying no-unsolicited-message statement", "exact pitch relevant to the published role/function"],
-      "requirements": ["identify sender and usable contact", "functional free email unsubscribe", "honour withdrawal within five business days; campaign suppresses upon observation"],
-      "sources": ["https://www.legislation.gov.au/C2004A01214/latest", "https://www.legislation.gov.au/C2004A01214/2016-03-10/2016-03-10/text/original/epub/OEBPS/document_1/document_1.html", "https://www.acma.gov.au/avoid-sending-spam"],
+      "routes": [
+        "documented express consent",
+        "applicable inferred consent",
+        "verified Spam Act Schedule 2 clause 4 conspicuous-publication conditions"
+      ],
+      "publicationChecks": [
+        "official conspicuous publication attributable to account-holder/organisation",
+        "address identifies work role/function",
+        "no accompanying no-unsolicited-message statement",
+        "exact pitch relevant to the published role/function"
+      ],
+      "requirements": [
+        "identify sender and usable contact",
+        "functional free email unsubscribe",
+        "honour withdrawal within five business days; campaign suppresses upon observation"
+      ],
+      "sources": [
+        "https://www.legislation.gov.au/C2004A01214/latest",
+        "https://www.legislation.gov.au/C2004A01214/2016-03-10/2016-03-10/text/original/epub/OEBPS/document_1/document_1.html",
+        "https://www.acma.gov.au/avoid-sending-spam"
+      ],
       "decision": "Evidence must satisfy a specific route; a public generic mailbox does not automatically qualify. No marketing email requesting permission to evade consent."
     },
     {
       "country": "United States",
-      "routes": ["individual commercial-email first pitch complying with CAN-SPAM"],
-      "requirements": ["truthful From/Reply-To/subject", "visible advertisement identification", "actual valid postal address", "clear free reply-based opt-out", "honour opt-out within ten business days; campaign suppresses upon observation"],
-      "sources": ["https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"],
+      "routes": [
+        "individual commercial-email first pitch complying with CAN-SPAM"
+      ],
+      "requirements": [
+        "truthful From/Reply-To/subject",
+        "visible advertisement identification",
+        "actual valid postal address",
+        "clear free reply-based opt-out",
+        "honour opt-out within ten business days; campaign suppresses upon observation"
+      ],
+      "sources": [
+        "https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business"
+      ],
       "decision": "Verify identity, role/offer fit, suppressions and all required commercial-email content. No prior recipient interest or consent is inferred."
     },
     {
       "country": "New Zealand",
-      "routes": ["documented express consent", "applicable inferred consent", "verified deemed consent from conspicuous business/official publication"],
-      "publicationChecks": ["public business/official address published by recipient or organisation", "no accompanying refusal of unsolicited commercial messages", "exact pitch relevant to recipient business/role/functions/duties"],
-      "requirements": ["clearly identify business and usable contact", "clear free email unsubscribe facility", "honour unsubscribe within five working days; campaign suppresses upon observation"],
-      "sources": ["https://www.dia.govt.nz/Spam-Three-Steps", "https://www.dia.govt.nz/spam-frequently-asked-questions"],
+      "routes": [
+        "documented express consent",
+        "applicable inferred consent",
+        "verified deemed consent from conspicuous business/official publication"
+      ],
+      "publicationChecks": [
+        "public business/official address published by recipient or organisation",
+        "no accompanying refusal of unsolicited commercial messages",
+        "exact pitch relevant to recipient business/role/functions/duties"
+      ],
+      "requirements": [
+        "clearly identify business and usable contact",
+        "clear free email unsubscribe facility",
+        "honour unsubscribe within five working days; campaign suppresses upon observation"
+      ],
+      "sources": [
+        "https://www.dia.govt.nz/Spam-Three-Steps",
+        "https://www.dia.govt.nz/spam-frequently-asked-questions"
+      ],
       "decision": "Record source, date, refusal check and exact business-role relevance before relying on deemed consent. No harvested/purchased lists."
     },
     {
       "country": "Canada",
-      "routes": ["documented express consent", "verified applicable implied consent including qualifying conspicuous publication"],
-      "publicationChecks": ["direct public publication by or caused by account-holder/recipient", "no accompanying no-CEM statement", "exact pitch relevant to recipient business/role/functions/duties", "preserve where/when found and relevance evidence"],
-      "requirements": ["identify sender and represented business", "mailing address and usable contact valid at least sixty days", "clear free unsubscribe valid at least sixty days", "honour unsubscribe within ten business days; campaign suppresses upon observation"],
-      "sources": ["https://crtc.gc.ca/eng/com500/guide.htm", "https://crtc.gc.ca/eng/com500/faq500.htm"],
+      "routes": [
+        "documented express consent",
+        "verified applicable implied consent including qualifying conspicuous publication"
+      ],
+      "publicationChecks": [
+        "direct public publication by or caused by account-holder/recipient",
+        "no accompanying no-CEM statement",
+        "exact pitch relevant to recipient business/role/functions/duties",
+        "preserve where/when found and relevance evidence"
+      ],
+      "requirements": [
+        "identify sender and represented business",
+        "mailing address and usable contact valid at least sixty days",
+        "clear free unsubscribe valid at least sixty days",
+        "honour unsubscribe within ten business days; campaign suppresses upon observation"
+      ],
+      "sources": [
+        "https://crtc.gc.ca/eng/com500/guide.htm",
+        "https://crtc.gc.ca/eng/com500/faq500.htm"
+      ],
       "decision": "No broad right to email any public address. Assess each direct publication and exact message; copied third-party lists are insufficient."
+    },
+    {
+      "country": "United Kingdom",
+      "routes": [
+        "Verified corporate-subscriber business email under PECR, plus UK GDPR lawful basis where personal data is processed",
+        "Documented valid consent or verified applicable soft opt-in for individual subscribers"
+      ],
+      "publicationChecks": [
+        "Verify actual legal entity and corporate/individual subscriber category; published address alone is insufficient",
+        "Official relevant business contact and exact offer relevance",
+        "Inspect accompanying contact/privacy/terms restrictions and all shared user/recipient exclusions",
+        "Where personal data is used, document purpose/necessity/balancing legitimate-interests assessment and required privacy information"
+      ],
+      "requirements": [
+        "Do not conceal sender identity",
+        "Valid free reply-based opt-out and usable contact",
+        "Suppress objections immediately across both mailboxes and all campaigns",
+        "No tracking pixels; minimise personal data",
+        "Treat uncertain legal form/category as individual subscriber; hold unless consent/soft opt-in route proven"
+      ],
+      "sources": [
+        "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/business-to-business-marketing/"
+      ],
+      "checkedAt": "2026-10-19T11:35:05.579Z",
+      "decision": "Corporate-subscriber email does not require PECR consent, but does not remove UK GDPR duties or exclusions. Sole traders and some partnerships need valid consent or applicable soft opt-in; no cold permission-request workaround. Prefer verified corporate bodies and generic business-role routes; hold unclear identities or missing route. Current ICO guidance notes review following Data (Use and Access) Act; recheck before a new pitch."
     }
   ],
   "historicalMiddleEastRules": "docs/market/middle-east/COUNTRY-OUTREACH-RULES.json",
