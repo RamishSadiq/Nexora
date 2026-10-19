@@ -1,0 +1,48 @@
+{
+  "publishedOn": "2026-10-19",
+  "authorization": "User: Publish the brochure and continue listings",
+  "type": "static_product_information_brochure",
+  "customerApplicationDeployed": false,
+  "publicUrl": "https://nexora-membership.ramish-sadiq.chatgpt.site",
+  "projectId": "appgprj_6ad6000009f88191933d1fd31318b0ec",
+  "slug": "nexora-membership",
+  "accessMode": "public",
+  "accessRevision": 2,
+  "versionNumber": 1,
+  "versionId": "appgprj_6ad6000009f88191933d1fd31318b0ec~appgver_5e34670837cc8191b28ec636c450574f",
+  "deploymentId": "appgdep_6ad60124ebc88191a81e3ee3f1f1c25d",
+  "deploymentStatus": "succeeded",
+  "deploymentUpdatedAt": "2026-10-19T11:38:30.290867+00:00",
+  "verifiedSourceCommitSha": "0c9e5a6a2a4a6895cf44ab70c59a892329d13ef3",
+  "canonicalSource": "docs/market/listings/product-page",
+  "isolatedSourceCheckout": "artifacts/listings/2026-10-19/site-source",
+  "mainNexoraRepositoryCommittedOrPushed": false,
+  "archive": "artifacts/listings/2026-10-19/nexora-brochure-deploy.tar",
+  "archiveSha256": "9f43773d21fa23b18d40872bc29e7e935b1460b1b3140cdb07c39b02fb868bea",
+  "publishedFiles": [
+    "dist/index.html",
+    "dist/assets/contact-management.png",
+    "dist/assets/crm-dashboard.png",
+    "dist/assets/membership-administration.png",
+    "dist/assets/nexora-product-demo.mp4",
+    "dist/.openai/hosting.json"
+  ],
+  "packaging": {
+    "officialWorkflowSourceCommitPushAndVerification": "succeeded",
+    "officialArchiveWrapper": "failed_missing_bash_on_windows",
+    "equivalentPackaging": "Bundled prepare-site-build.cjs normalizer followed by Windows tar.exe -czf with dist at archive root",
+    "archiveEntriesAndManifestVerified": true,
+    "nativeVersionSaveAndDeployment": "succeeded"
+  },
+  "browserVerification": {
+    "publicUrlOpened": true,
+    "localReviewBannerAbsent": true,
+    "heroImageLoaded": true,
+    "videoDurationSeconds": 90,
+    "videoReadyState": 4,
+    "completeFreshPlaybackVerified": false,
+    "screenshot": "artifacts/listings/2026-10-19/brochure-live.png"
+  },
+  "payloadScope": "Approved brochure copy, selected demonstration images/video and hosting manifest only; no campaign/contact records, secrets, credentials, private runtime configuration or unrelated source",
+  "beginnerGuideRefreshTriggered": false
+}

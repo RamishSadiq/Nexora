@@ -1,6 +1,6 @@
 # NEXORA — PROJECT PROGRESS REPORT
 
-**Latest assessment:** 15 October 2026, 9:15 am catch-up review (Europe/London)<br>
+**Latest assessment:** 19 October 2026, 7:30 am catch-up review (Europe/London)<br>
 **Reporting baseline:** Revised delivery priority: a tangible, working CRM, association website and member portal.  
 **Daily update:** 9:00 pm Europe/London; scheduled in the current Codex task.  
 **Companion documents:** [Master plan](NEXORA_PRODUCT_ARCHITECTURE_MASTER_PLAN.md) · [Execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md)
@@ -71,7 +71,7 @@ The entries below summarize recorded delivery evidence. Current CRM and integrat
 | Integrated CRM/Portal/CMS browser journeys | All 5 passed, 24 September | CRM import/search/context/files, 3 portal journeys and CMS publishing against one isolated production frontend. No public deployment. |
 | TypeScript/targeted lint | Full TypeScript and changed CRM/test lint passed, 24 September | Prior CMS/proxy/routes checks also passed; no blanket full-repository lint claim. |
 | Production frontend build | Passed on 24 September | Isolated `next build --webpack` and browser verification against `next start`. API uses Development local identity; production identity/deployment remain unverified. |
-| Git integration | Latest commit `6793449`, 14 October, adds maintained beginner manuals and Company Dash documentation | Later CRM/interface and sorting changes remain uncommitted; documentation review is not a new product regression. |
+| Git integration | Latest commit `e936abc`, 15 October, backs up CRM/listing implementation after delivery-note commit `75cb746` | Application work is captured in Git; pending market changes and this report remain separate. Backup is not a new regression result. |
 
 **Release position:** Working local product slices; full MVP acceptance and commercial readiness are not complete. Production staff identity remains disabled. The confirmed personal/company one-active-membership rule now has application checks and passing SQL concurrency coverage; live provider and antivirus operations remain release dependencies. These concerns are tracked independently from functional percentages.
 
@@ -98,6 +98,14 @@ This is a proposed next-work order, not authorization to launch a production ser
 - If there is no material change, leave percentages unchanged and record that briefly. Daily reporting does not itself prove daily delivery.
 
 ## 7. Daily progress log
+
+### 19 October 2026 — Repository backup catch-up
+
+**Repository position:** Latest commit `e936abc` (15 October) backs up the CRM/listing implementation, following `75cb746` for backup policy and delivery notes. Application changes previously reported as uncommitted are now captured in Git; current pending changes inspected are market documents and a marketing-review script. This is a backup/integration milestone, not a new product acceptance result.
+
+**Evidence and estimates:** No newer completed application verification was found in the inspected delivery documents and artifacts. CRM **95%**, Portal **85%**, Website/CMS **90%** remain unchanged; prior full-suite and scoped UI results retain their recorded boundaries. Beginner-manual state still records the 14 October snapshot as reviewed. No fresh source-fingerprint check was run, so current-source documentation parity is not newly certified. This report-only change does not alter implementation/runtime configuration or regenerate manuals.
+
+**Next actions and limitations:** Review the backed-up implementation against the remaining acceptance requirements and keep matching documentation current when source changes. Retained Portal acceptance, field/import/settlement work, production identity, live providers/scanning, deployment/restore and the recorded dependency-advisory review remain open. This is a morning catch-up; no daily delivery is invented for intervening dates. Only this report was edited; no tests, migrations, services, publication, commits or pushes were performed.
 
 ### 15 October 2026 — Beginner documentation maintenance catch-up
 
