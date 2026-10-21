@@ -1,6 +1,6 @@
 # NEXORA — PROJECT PROGRESS REPORT
 
-**Latest assessment:** 19 October 2026, 7:30 am catch-up review (Europe/London)<br>
+**Latest assessment:** 21 October 2026, 7:22 am catch-up review (Europe/London)<br>
 **Reporting baseline:** Revised delivery priority: a tangible, working CRM, association website and member portal.  
 **Daily update:** 9:00 pm Europe/London; scheduled in the current Codex task.  
 **Companion documents:** [Master plan](NEXORA_PRODUCT_ARCHITECTURE_MASTER_PLAN.md) · [Execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md)
@@ -71,7 +71,7 @@ The entries below summarize recorded delivery evidence. Current CRM and integrat
 | Integrated CRM/Portal/CMS browser journeys | All 5 passed, 24 September | CRM import/search/context/files, 3 portal journeys and CMS publishing against one isolated production frontend. No public deployment. |
 | TypeScript/targeted lint | Full TypeScript and changed CRM/test lint passed, 24 September | Prior CMS/proxy/routes checks also passed; no blanket full-repository lint claim. |
 | Production frontend build | Passed on 24 September | Isolated `next build --webpack` and browser verification against `next start`. API uses Development local identity; production identity/deployment remain unverified. |
-| Git integration | Latest commit `e936abc`, 15 October, backs up CRM/listing implementation after delivery-note commit `75cb746` | Application work is captured in Git; pending market changes and this report remain separate. Backup is not a new regression result. |
+| Git integration | Latest commit `aaa9ee4`, 19 October, records brochure publication after asset/policy backup `608ae4a`; application backup remains `e936abc` | Pending market documents, marketing-review script and this report remain separate. Marketing publication and backup are not application regression results. |
 
 **Release position:** Working local product slices; full MVP acceptance and commercial readiness are not complete. Production staff identity remains disabled. The confirmed personal/company one-active-membership rule now has application checks and passing SQL concurrency coverage; live provider and antivirus operations remain release dependencies. These concerns are tracked independently from functional percentages.
 
@@ -98,6 +98,14 @@ This is a proposed next-work order, not authorization to launch a production ser
 - If there is no material change, leave percentages unchanged and record that briefly. Daily reporting does not itself prove daily delivery.
 
 ## 7. Daily progress log
+
+### 21 October 2026 — Morning catch-up
+
+**Recorded delivery:** The 19 October commits `608ae4a` and `aaa9ee4` preserve brochure assets, outreach policy and publication evidence. The [brochure delivery record](../market/listings/product-page/README.md) records successful publication and desktop/mobile browser checks in its owning task. This is a public marketing page, not a deployed CRM/Portal/CMS service or accepted directory listing; no live publication check was repeated today.
+
+**Evidence and estimates:** No newer completed application verification was found in the inspected delivery records and artifacts. CRM **95%**, Portal **85%**, Website/CMS **90%** remain unchanged: marketing publication does not close functional acceptance gaps. Current pending changes concern market documents and the marketing-review script. Earlier broad and scoped verification retain their original dates and limits.
+
+**Blockers and next actions:** Complete retained Portal acceptance in its owning task, reconcile remaining field/import/settlement scope, and address production identity (still deferred), external providers/scanning, deployment/restore and the recorded dependency-advisory review before release. This is a 7:22 am catch-up, not a completed day-end assessment; no missed-day delivery is invented. Only this report was edited; no application code, tests, migrations, services, publication, commits or pushes were performed. Report-only edits do not require beginner-manual regeneration.
 
 ### 19 October 2026 — Repository backup catch-up
 
