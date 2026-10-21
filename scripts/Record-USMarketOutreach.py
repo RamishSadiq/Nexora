@@ -26,6 +26,9 @@ daily_state = json.loads(daily_path.read_text(encoding='utf-8')) if campaign.get
 if daily_state and args.status == 'sending':
     if daily_state['campaignStatus'] != 'active':
         raise RuntimeError('Daily campaign is stopped; sending is not allowed')
+    # Business-quality checks supplement, never replace, the existing live guards.
+    from marketing_strategy import assert_strategy_allows
+    assert_strategy_allows(message, root)
     followup_path = root / 'docs/market/us/daily/ONE-TIME-FOLLOWUPS.json'
     followup_queue = json.loads(followup_path.read_text(encoding='utf-8')) if followup_path.exists() else {}
     followups = followup_queue.get('entries', [])
