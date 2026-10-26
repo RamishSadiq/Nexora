@@ -1,6 +1,6 @@
 # NEXORA — PROJECT PROGRESS REPORT
 
-**Latest assessment:** 21 October 2026, 7:22 am catch-up review (Europe/London)<br>
+**Latest assessment:** 26 October 2026, 7:05 am catch-up review (Europe/London)<br>
 **Reporting baseline:** Revised delivery priority: a tangible, working CRM, association website and member portal.  
 **Daily update:** 9:00 pm Europe/London; scheduled in the current Codex task.  
 **Companion documents:** [Master plan](NEXORA_PRODUCT_ARCHITECTURE_MASTER_PLAN.md) · [Execution plan](WEEK_BY_WEEK_EXECUTION_PLAN.md)
@@ -71,7 +71,7 @@ The entries below summarize recorded delivery evidence. Current CRM and integrat
 | Integrated CRM/Portal/CMS browser journeys | All 5 passed, 24 September | CRM import/search/context/files, 3 portal journeys and CMS publishing against one isolated production frontend. No public deployment. |
 | TypeScript/targeted lint | Full TypeScript and changed CRM/test lint passed, 24 September | Prior CMS/proxy/routes checks also passed; no blanket full-repository lint claim. |
 | Production frontend build | Passed on 24 September | Isolated `next build --webpack` and browser verification against `next start`. API uses Development local identity; production identity/deployment remain unverified. |
-| Git integration | Latest commit `aaa9ee4`, 19 October, records brochure publication after asset/policy backup `608ae4a`; application backup remains `e936abc` | Pending market documents, marketing-review script and this report remain separate. Marketing publication and backup are not application regression results. |
+| Git integration | Latest commit `424da72`, 21 October, preserves pitch templates and the report after acquisition-script/test backup `8be9211`; application backup remains `e936abc` | Pending market documents, marketing scripts and this report remain separate. Backup and test-source presence are not application regression results. |
 
 **Release position:** Working local product slices; full MVP acceptance and commercial readiness are not complete. Production staff identity remains disabled. The confirmed personal/company one-active-membership rule now has application checks and passing SQL concurrency coverage; live provider and antivirus operations remain release dependencies. These concerns are tracked independently from functional percentages.
 
@@ -98,6 +98,20 @@ This is a proposed next-work order, not authorization to launch a production ser
 - If there is no material change, leave percentages unchanged and record that briefly. Daily reporting does not itself prove daily delivery.
 
 ## 7. Daily progress log
+
+### 26 October 2026 — Morning catch-up
+
+**Evidence and estimates:** No material product change or newer completed application verification was found in the inspected Git history, working-tree status, delivery records and available artifacts since the 23 October review. Latest commit remains `424da72` (21 October); pending changes concern market documents, marketing scripts and this report. CRM **95%**, Portal **85%**, Website/CMS **90%** remain unchanged. Earlier test results retain their original dates and verification limits.
+
+**Blockers and next actions:** Retained Portal acceptance, field/import/settlement reconciliation, deferred production identity, external providers/scanning, deployment/restore and the recorded dependency-advisory review remain open. Continue acceptance in its owning implementation task when resumed. This is a 7:05 am catch-up, not a completed day-end report; no delivery is invented for missed dates. Only this report was edited; no application code, tests, migrations, services, publication, commits or pushes were performed. Report-only edits do not require beginner-manual regeneration.
+
+### 23 October 2026 — Morning catch-up
+
+**Repository and evidence:** Commits `8be9211` and `424da72` (21 October) preserve acquisition evidence gates, marketing test source, pitch templates and the prior report. Pending changes remain in market documents and two marketing scripts. No newer completed application verification was found in the inspected delivery records and artifacts; test-source additions alone do not prove a passing run.
+
+**Estimates and next actions:** CRM **95%**, Portal **85%**, Website/CMS **90%** remain unchanged because the recorded changes do not close product acceptance gaps. Remaining work is retained Portal acceptance in its owning task, field/import/settlement reconciliation, deferred production identity, external providers/scanning, deployment/restore and the recorded dependency-advisory review. Earlier verification retains its original dates and limits.
+
+**Reporting boundary:** This is a 7:21 am catch-up, not a completed day-end review. No delivery is invented for missed dates. Only this report was edited; no application code, tests, migrations, services, publication, commits or pushes were performed. Beginner manuals were not regenerated for this report-only change.
 
 ### 21 October 2026 — Morning catch-up
 
